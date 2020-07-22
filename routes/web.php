@@ -25,6 +25,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/setinfo', 'SetController@index')->name('setInfo');
 Route::post('/setinfo/create', 'SetController@create')->name('setInfo_create');
 
+
 Route::get('/', 'MainController@index')->name('single');
     Route::get('/signup', 'MainController@register_form_one')->name('register_form_one');
     

@@ -6,9 +6,11 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Auth;
 use App\Aboutme;
+use App\AddPhoto;
 use App\Education;
+use App\OfficeUse;
 use App\Personal;
-
+use App\Religion;
 
 class LoginController extends Controller
 {
@@ -39,7 +41,9 @@ class LoginController extends Controller
         $aboutme = Aboutme::whereuser_id($user_id)->get();
         $education = Education::whereuser_id($user_id)->get();
         $personal = Personal::whereuser_id($user_id)->get();
-
+        $religion = Religion::whereuser_id($user_id)->get();
+        $officeUse = OfficeUse::whereuser_id($user_id)->get();
+        $addPhoto = AddPhoto::whereuser_id($user_id)->get();
 
 
         if($aboutme->isEmpty())
@@ -53,6 +57,18 @@ class LoginController extends Controller
         elseif($personal->isEmpty())
         {
           return '/signup/personal';
+        }
+         elseif($religion->isEmpty())
+        {
+          return '/signup/religion';
+        }
+        elseif($officeUse->isEmpty())
+        {
+          return '/signup/officeUse';
+        }
+        elseif($addPhoto->isEmpty())
+        {
+          return '/signup/addPhoto';
         }
         else{
           return '/user/dashboard';

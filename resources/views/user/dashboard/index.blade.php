@@ -186,15 +186,15 @@
                                     <div class="fill-absolute z-page-click-target page-click" data-for="open-gallery"></div>
                                 </div>
                                 <div class="user-details padding-box center-align fontsize-24 primary-font-2 padding-large">
-                                    <span class="Male-text-color">  </span>
+                                    <span class="Male-text-color">  {{ Auth::user()->UserName }}  </span>
                                     <span class="padding-box ng-binding Male-text-color"> 23 </span>
 
-                                    <div class="rating rating-2 Male-text-color z-page-click-target page-click tutorial-step rating" data-for="show-star-help">
+                                    {{-- <div class="rating rating-2 Male-text-color z-page-click-target page-click tutorial-step rating" data-for="show-star-help">
                                         <div class="rating">
                                             <span class="sm-line male star-full"></span><span class="sm-line male star-full"></span><span class="sm-line male star-full"></span><span class="sm-line male star-empty"></span>
                                             <span class="sm-line male star-empty"></span>
                                         </div>
-                                    </div>
+                                    </div> --}}
                                 </div>
                                 <div class="user-controls clear-fix shift-icon padding-box double-padding top-only watch-in-viewport in-view">
                                     <div class="pading-box center-align button2 float-left z-page-click-target page-click ng-scope">

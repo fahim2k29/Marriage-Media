@@ -814,42 +814,45 @@
                         <div class="col-md-10 col-lg-10 logo_topbar">
                             <div class="login_innerbar">
                                 <div class="topnav_bar">
-                    <form action="/login" method="post" class="navbar-form navbar-right form-inline topnav_bar" role="form" style="padding-top: 11px;">
                                 
-                        @guest
-                            
-                            <a href="/login" class="btn fontsize-14 sm-color sm-female background-contrast width-76">Login</a> 
-                         
-                            @if (Route::has('register'))
+                        <div class="navbar-form navbar-right form-inline topnav_bar" role="form" style="padding-top: 11px;">
+                        
+                            @guest
                                 
-                                <a href="/signup" class="btn btn fontsize-14 sm-color sm-male background-contrast">Register</a>
-                               
-                            @endif
-                        @else
-                            
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->UserName }} 
-                                </a>
-
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                <a href="/login" class="btn fontsize-14 sm-color sm-female background-contrast width-76">Login</a> 
+                             
+                                @if (Route::has('register'))
+                                    
+                                    <a href="/signup" class="btn btn fontsize-14 sm-color sm-male background-contrast">Register</a>
+                                   
+                                @endif
+                            @else
+                                
+                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                        {{ Auth::user()->UserName }} 
                                     </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                                </div>
-                          
-                        @endguest
+    
+                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="{{ route('logout') }}"
+                                           onclick="event.preventDefault();
+                                                         document.getElementById('logout-form').submit();">
+                                            {{ __('Logout') }}
+                                        </a>
+    
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            @csrf
+                                        </form>
+                                    </div>
+                              
+                            @endguest
+                        
+                        </div>
 
 
                                     <!-- <form action="/login" method="post" class="navbar-form navbar-right form-inline topnav_bar" role="form" style="padding-top: 11px;">
                                         <a href="/login" class="btn fontsize-14 sm-color sm-female background-contrast width-76">Login</a> 
                                         <a href="/signup" class="btn btn fontsize-14 sm-color sm-male background-contrast">Register</a> -->
-                                    </form>
+                                    
                                 </div>
                             </div>
                         </div>

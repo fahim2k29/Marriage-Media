@@ -1,7 +1,7 @@
 <?php
 
-use App\Personal;
 use Illuminate\Database\Seeder;
+use App\PersonalData;
 
 class PersonalTableSedeer extends Seeder
 {
@@ -12,7 +12,7 @@ class PersonalTableSedeer extends Seeder
      */
     public function run()
     {
-         Personal::create([
+         PersonalData::create([
             'Citizenship_data'=> 'American',
             'Origin_data'=> 'United Kingdom',
             'Relocation_data'=> 'Locally',
@@ -30,7 +30,7 @@ class PersonalTableSedeer extends Seeder
             'Disabilities_data'=> 'No',
             ]);
 
-            Personal::create([
+            PersonalData::create([
             'Citizenship_data'=> 'British',
             'Origin_data'=> 'Dhaka',
             'Relocation_data'=> 'Nationally',

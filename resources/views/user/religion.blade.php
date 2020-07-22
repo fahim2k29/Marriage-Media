@@ -277,8 +277,10 @@
 
                                         <form method="post" action="{{ route('religion_create') }}">
                                         @csrf
-                                            <input type="hidden" name="is_prev" id="is_prev" value="0" />
+                                            
+                                            @if(@isset($religion))
 
+                                                <input type="hidden" name="is_prev" id="is_prev" value="0" />
                                                 <div role="form" class="form-horizontal">
                                                     <div id="Religiosness-group" class="form-group has-feedback form-control-group">
                                                         <label for="Religiosness" class="control-label"><span class="required">*</span> Religiousness</label>
@@ -287,18 +289,15 @@
                                                                 name="Religiosness"
                                                                 id="Religiosness"
                                                                 required="required"
-                                                                class="select2-hidden-accessible"
                                                                 data-select2-id="Religiosness"
                                                                 tabindex="-1"
                                                                 aria-hidden="true"
                                                                 data-error="Please fill out this field."
                                                             >
-                                                                <option value="" selected="" data-select2-id="4">Select Option</option>
-                                                                <option value="12" data-select2-id="22">Very religious</option>
-                                                                <option value="188" data-select2-id="23">Religious</option>
-                                                                <option value="13" data-select2-id="24">Somewhat religious</option>
-                                                                <option value="14" data-select2-id="25">Not religious</option>
-                                                                <option value="15" data-select2-id="26">Prefer not to say</option>
+                                                               <option>{{$religion->Religiosness}}</option>
+                                                               @foreach ($religiondatas as $religiondata)
+                                                                <option>{{$religiondata->Religiosness_data}}</option>
+                                                               @endforeach
                                                             </select>
                                                             
                                                         </div>
@@ -312,17 +311,15 @@
                                                                 name="Sect"
                                                                 id="Sect"
                                                                 required="required"
-                                                                class="select2-hidden-accessible"
                                                                 data-select2-id="Sect"
                                                                 tabindex="-1"
                                                                 aria-hidden="true"
                                                                 data-error="Please fill out this field."
                                                             >
-                                                                <option value="" selected="" data-select2-id="6">Select Option</option>
-                                                                <option value="284" data-select2-id="28">Just Muslim</option>
-                                                                <option value="17" data-select2-id="29">Shia</option>
-                                                                <option value="16" data-select2-id="30">Sunni</option>
-                                                                <option value="362" data-select2-id="31">Other - please ask me</option>
+                                                                <option>{{$religion->Sect}}</option>
+                                                               @foreach ($religiondatas as $religiondata)
+                                                                <option>{{$religiondata->Sect_data}}</option>
+                                                               @endforeach
                                                             </select>
                                                             
                                                         </div>
@@ -336,17 +333,15 @@
                                                                 name="Hijab"
                                                                 id="Hijab"
                                                                 required="required"
-                                                                class="select2-hidden-accessible"
                                                                 data-select2-id="Hijab"
                                                                 tabindex="-1"
                                                                 aria-hidden="true"
                                                                 data-error="Please fill out this field."
                                                             >
-                                                                <option value="" selected="" data-select2-id="8">Select Option</option>
-                                                                <option value="18" data-select2-id="33">Yes Hijab</option>
-                                                                <option value="553" data-select2-id="34">Yes Niqab</option>
-                                                                <option value="19" data-select2-id="35">No</option>
-                                                                <option value="20" data-select2-id="36">Prefer not to say</option>
+                                                                <option>{{$religion->Hijab}}</option>
+                                                               @foreach ($religiondatas as $religiondata)
+                                                                <option>{{$religiondata->Hijab_data}}</option>
+                                                               @endforeach
                                                             </select>
                                                            
                                                         </div>
@@ -360,16 +355,15 @@
                                                                 name="Beard"
                                                                 id="Beard"
                                                                 required="required"
-                                                                class="select2-hidden-accessible"
                                                                 data-select2-id="Beard"
                                                                 tabindex="-1"
                                                                 aria-hidden="true"
                                                                 data-error="Please fill out this field."
                                                             >
-                                                                <option value="" selected="" data-select2-id="10">Select Option</option>
-                                                                <option value="22" data-select2-id="38">No</option>
-                                                                <option value="21" data-select2-id="39">Yes</option>
-                                                                <option value="23" data-select2-id="40">Prefer not to say</option>
+                                                                <option>{{$religion->Beard}}</option>
+                                                               @foreach ($religiondatas as $religiondata)
+                                                                <option>{{$religiondata->Beard_data}}</option>
+                                                               @endforeach
                                                             </select>
                                                             
                                                         </div>
@@ -383,15 +377,15 @@
                                                                 name="Convert"
                                                                 id="Convert"
                                                                 required="required"
-                                                                class="select2-hidden-accessible"
                                                                 data-select2-id="Convert"
                                                                 tabindex="-1"
                                                                 aria-hidden="true"
                                                                 data-error="Please fill out this field."
                                                             >
-                                                                <option value="" selected="" data-select2-id="12">Select Option</option>
-                                                                <option value="175" data-select2-id="42">No</option>
-                                                                <option value="174" data-select2-id="43">Yes</option>
+                                                                <option>{{$religion->Convert}}</option>
+                                                               @foreach ($religiondatas as $religiondata)
+                                                                <option>{{$religiondata->Convert_data}}</option>
+                                                               @endforeach
                                                             </select>
                                                             
                                                         </div>
@@ -405,17 +399,15 @@
                                                                 name="Halaal"
                                                                 id="Halaal"
                                                                 required="required"
-                                                                class="select2-hidden-accessible"
                                                                 data-select2-id="Halaal"
                                                                 tabindex="-1"
                                                                 aria-hidden="true"
                                                                 data-error="Please fill out this field."
                                                             >
-                                                                <option value="" selected="" data-select2-id="14">Select Option</option>
-                                                                <option value="176" data-select2-id="45">I Always Keep Halal</option>
-                                                                <option value="177" data-select2-id="46">Usually Keep Halal</option>
-                                                                <option value="178" data-select2-id="47">I Keep Halal at Home Only</option>
-                                                                <option value="179" data-select2-id="48">I Do Not Keep halal</option>
+                                                               <option>{{$religion->Halaal}}</option>
+                                                               @foreach ($religiondatas as $religiondata)
+                                                                <option>{{$religiondata->Halaal_data}}</option>
+                                                               @endforeach
                                                             </select>
                                                             
                                                         </div>
@@ -429,17 +421,15 @@
                                                                 name="Salaah"
                                                                 id="Salaah"
                                                                 required="required"
-                                                                class="select2-hidden-accessible"
                                                                 data-select2-id="Salaah"
                                                                 tabindex="-1"
                                                                 aria-hidden="true"
                                                                 data-error="Please fill out this field."
                                                             >
-                                                                <option value="" selected="" data-select2-id="16">Select Option</option>
-                                                                <option value="180" data-select2-id="50">Always</option>
-                                                                <option value="181" data-select2-id="51">Usually</option>
-                                                                <option value="182" data-select2-id="52">Sometimes</option>
-                                                                <option value="183" data-select2-id="53">Never</option>
+                                                            <option>{{$religion->Salaah}}</option>
+                                                               @foreach ($religiondatas as $religiondata)
+                                                                <option>{{$religiondata->Salaah_data}}</option>
+                                                               @endforeach
                                                             </select>
                                                             
                                                         </div>
@@ -452,6 +442,170 @@
                                                         </div>
                                                     </div>
                                                 </div>
+                                            @else
+                                                <input type="hidden" name="is_prev" id="is_prev" value="0" />
+                                                <div role="form" class="form-horizontal">
+                                                    <div id="Religiosness-group" class="form-group has-feedback form-control-group">
+                                                        <label for="Religiosness" class="control-label"><span class="required">*</span> Religiousness</label>
+                                                        <div class="controls">
+                                                            <select
+                                                                name="Religiosness"
+                                                                id="Religiosness"
+                                                                required="required"
+                                                                data-select2-id="Religiosness"
+                                                                tabindex="-1"
+                                                                aria-hidden="true"
+                                                                data-error="Please fill out this field."
+                                                            >
+                                                               <option>Select Option</option>
+                                                               @foreach ($religiondatas as $religiondata)
+                                                                <option>{{$religiondata->Religiosness_data}}</option>
+                                                               @endforeach
+                                                            </select>
+                                                            
+                                                        </div>
+                                                        
+                                                    </div>
+
+                                                    <div id="Sect-group" class="form-group has-feedback form-control-group">
+                                                        <label for="Sect" class="control-label"><span class="required">*</span> My Sect</label>
+                                                        <div class="controls">
+                                                            <select
+                                                                name="Sect"
+                                                                id="Sect"
+                                                                required="required"
+                                                                data-select2-id="Sect"
+                                                                tabindex="-1"
+                                                                aria-hidden="true"
+                                                                data-error="Please fill out this field."
+                                                            >
+                                                                <option>Select Option</option>
+                                                               @foreach ($religiondatas as $religiondata)
+                                                                <option>{{$religiondata->Sect_data}}</option>
+                                                               @endforeach
+                                                            </select>
+                                                            
+                                                        </div>
+                                                       
+                                                    </div>
+
+                                                    <div id="Hijab-group" class="form-group has-feedback form-control-group">
+                                                        <label for="Hijab" class="control-label"><span class="required">*</span> Do you prefer Hijab/Niqab?</label>
+                                                        <div class="controls">
+                                                            <select
+                                                                name="Hijab"
+                                                                id="Hijab"
+                                                                required="required"
+                                                                data-select2-id="Hijab"
+                                                                tabindex="-1"
+                                                                aria-hidden="true"
+                                                                data-error="Please fill out this field."
+                                                            >
+                                                                <option>Select Option</option>
+                                                               @foreach ($religiondatas as $religiondata)
+                                                                <option>{{$religiondata->Hijab_data}}</option>
+                                                               @endforeach
+                                                            </select>
+                                                           
+                                                        </div>
+                                                       
+                                                    </div>
+
+                                                    <div id="Beard-group" class="form-group has-feedback form-control-group">
+                                                        <label for="Beard" class="control-label"><span class="required">*</span> Do you have a beard?</label>
+                                                        <div class="controls">
+                                                            <select
+                                                                name="Beard"
+                                                                id="Beard"
+                                                                required="required"
+                                                                data-select2-id="Beard"
+                                                                tabindex="-1"
+                                                                aria-hidden="true"
+                                                                data-error="Please fill out this field."
+                                                            >
+                                                                <option>Select Option</option>
+                                                               @foreach ($religiondatas as $religiondata)
+                                                                <option>{{$religiondata->Beard_data}}</option>
+                                                               @endforeach
+                                                            </select>
+                                                            
+                                                        </div>
+                                                        
+                                                    </div>
+
+                                                    <div id="Convert-group" class="form-group has-feedback form-control-group">
+                                                        <label for="Convert" class="control-label"><span class="required">*</span> Are You a Revert?</label>
+                                                        <div class="controls">
+                                                            <select
+                                                                name="Convert"
+                                                                id="Convert"
+                                                                required="required"
+                                                                data-select2-id="Convert"
+                                                                tabindex="-1"
+                                                                aria-hidden="true"
+                                                                data-error="Please fill out this field."
+                                                            >
+                                                                <option>Select Option</option>
+                                                               @foreach ($religiondatas as $religiondata)
+                                                                <option>{{$religiondata->Convert_data}}</option>
+                                                               @endforeach
+                                                            </select>
+                                                            
+                                                        </div>
+                                                        
+                                                    </div>
+
+                                                    <div id="Halaal-group" class="form-group has-feedback form-control-group">
+                                                        <label for="Halaal" class="control-label"><span class="required">*</span> Do You Keep Halal?</label>
+                                                        <div class="controls">
+                                                            <select
+                                                                name="Halaal"
+                                                                id="Halaal"
+                                                                required="required"
+                                                                data-select2-id="Halaal"
+                                                                tabindex="-1"
+                                                                aria-hidden="true"
+                                                                data-error="Please fill out this field."
+                                                            >
+                                                               <option>Select Option</option>
+                                                               @foreach ($religiondatas as $religiondata)
+                                                                <option>{{$religiondata->Halaal_data}}</option>
+                                                               @endforeach
+                                                            </select>
+                                                            
+                                                        </div>
+                                                        
+                                                    </div>
+
+                                                    <div id="Salaah-group" class="form-group has-feedback form-control-group">
+                                                        <label for="Salaah" class="control-label"><span class="required">*</span> Do You Perform Salaah?</label>
+                                                        <div class="controls">
+                                                            <select
+                                                                name="Salaah"
+                                                                id="Salaah"
+                                                                required="required"
+                                                                data-select2-id="Salaah"
+                                                                tabindex="-1"
+                                                                aria-hidden="true"
+                                                                data-error="Please fill out this field."
+                                                            >
+                                                            <option>Select Option</option>
+                                                               @foreach ($religiondatas as $religiondata)
+                                                                <option>{{$religiondata->Salaah_data}}</option>
+                                                               @endforeach
+                                                            </select>
+                                                            
+                                                        </div>
+                                                        
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <div class="col-sm-offset-0 col-sm-12 textalignright">
+                                                            <button name="Submit" id="Submit" type="submit"  class="btn btn-primary btn-lg textalignright disabled">Next</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            @endif
 
                                                 <span class="pull-left required stepsRequired">* Required Field</span>
                                                 <div class="textalignright abspositionBack">

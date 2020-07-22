@@ -16,8 +16,10 @@ use App\Personal;
 use App\Registration_form;
 use App\Religion;
 use App\Employment;
-
-
+use App\PersonalData;
+use App\ReligionData;
+use App\SignupData;
+use App\User;
 
 class MainController extends Controller
 {
@@ -26,16 +28,34 @@ class MainController extends Controller
         return view('index');
     }
 
+
+
     public function register_form_one()
     {   
-        $userPhotos=AddPhoto::all();
-        return view('user.register', compact('userPhotos'));
-    }
+        $signupdatas= SignupData::all();
+       
+        return view('user.register', compact('signupdatas'));
+    }               
+            function register_create_one(Request $request)
+                {
+        
+                    Registration_form::create([
+                        'UserName'=>$request->UserName,
+                        'Email'=>$request->Email,
+                        'ConfirmEmail'=>$request->ConfirmEmail,
+                        'Country'=>$request->Country,
+                        'Gender'=>$request->Gender,
+                        'DOB_day'=>$request->DOB_day,
+                        'DOB_month'=>$request->DOB_month,
+                        'DOB_year'=>$request->DOB_year,
+                        'RegistrationReason'=>$request->RegistrationReason,
+                        'HearAboutUs'=>$request->HearAboutUs,
+                        'Accept'=>$request->Accept,
+                        'password'=>$request->password,
+                    ]);
+                    return redirect()->route('aboutme');
+                }
 
-    // public function form()
-    // {
-    //     return view('user.addPhoto');
-    // }
 
      public function aboutme()
     {   
@@ -118,15 +138,20 @@ class MainController extends Controller
 
         public function personal()
         {
-            return view('user.personal');
+            $user_id = Auth::user()->id;
+            $personal = Personal::whereuser_id($user_id)->first();
+            $personaldatas = PersonalData::all();
+            return view('user.personal', compact('personal','personaldatas'));
         }
              function personal_create(Request $request)
                 {
-                    $id = Auth::user()->id;
+                    $user_id = Auth::user()->id;
+                    $info = Personal::whereuser_id($user_id)->get();
+                    if($info->isEmpty())
+                    {
                     Personal::create([
-                        
+                        'user_id'=>$user_id,
                         'Citizenship'=>$request->Citizenship,
-                        'user_id'=>$id,
                         'Origin'=>$request->Origin,
                         'Relocation'=>$request->Relocation,
                         'Income'=>$request->Income,
@@ -143,43 +168,99 @@ class MainController extends Controller
                         'Disabilities'=>$request->Disabilities,
                         ]);
                         return redirect()->route('religion');
+                    }
+                     else{
+
+                        $info = Personal::whereuser_id($user_id)->first();
+
+                        Personal::find($info->id)->update([
+                        'user_id'=>$user_id,
+                        'Citizenship'=>$request->Citizenship,
+                        'Origin'=>$request->Origin,
+                        'Relocation'=>$request->Relocation,
+                        'Income'=>$request->Income,
+                        'MarryIn'=>$request->MarryIn,
+                        'MaritalStatus'=>$request->MaritalStatus,
+                        'Children'=>$request->Children,
+                        'HaveChildren'=>$request->HaveChildren,
+                        'Living'=>$request->Living,
+                        'Height'=>$request->Height,
+                        'Build'=>$request->Build,
+                        'Hair'=>$request->Hair,
+                        'EyeColour'=>$request->EyeColour,
+                        'Smoke'=>$request->Smoke,
+                        'Disabilities'=>$request->Disabilities,
+
+                         ]);
+                        return redirect()->route('religion');
+                    }
                 }
 
 
         public function religion()
         {
-            return view('user.religion');
+            $user_id = Auth::user()->id;
+            $religion = Religion::whereuser_id($user_id)->first();
+            $religiondatas = ReligionData::all();
+            return view('user.religion', compact('religion','religiondatas'));
         }
 
-               function religion_create( Request $request)
-               {
-                $id = Auth::user()->id;
-                Religion::create([
-                    'Religiosness'=>$request->Religiosness,
-                    'user_id'=>$id,
+            function religion_create( Request $request)
+            {
+
+                $user_id = Auth::user()->id;
+                $info = Religion::whereuser_id($user_id)->get();
+                if($info->isEmpty())
+                {
+                    Religion::create([
+                        'user_id'=>$user_id,
+                        'Religiosness'=>$request->Religiosness,
                         'Sect'=>$request->Sect,
                         'Hijab'=>$request->Hijab,
                         'Beard'=>$request->Beard,
                         'Convert'=>$request->Convert,
                         'Halaal'=>$request->Halaal,
                         'Salaah'=>$request->Salaah,
+                    ]);
+                        return redirect()->route('officeUse');
+                }
 
-                   ]);
-                    return redirect()->route('officeUse');
+                else{
 
-               }
+                    $info = Religion::whereuser_id($user_id)->first();
+
+                    Religion::find($info->id)->update([
+                        'user_id'=>$user_id,
+                        'Religiosness'=>$request->Religiosness,
+                        'Sect'=>$request->Sect,
+                        'Hijab'=>$request->Hijab,
+                        'Beard'=>$request->Beard,
+                        'Convert'=>$request->Convert,
+                        'Halaal'=>$request->Halaal,
+                        'Salaah'=>$request->Salaah,
+                    ]);
+                        return redirect()->route('officeUse');
+                }
+            }
 
         public function officeUse()
         {
-            return view('user.officeUse');
+            $user_id = Auth::user()->id;
+            $officeUse = OfficeUse::whereuser_id($user_id)->first();
+            $users=User::whereid($user_id)->first();
+            $signupdatas = SignupData::all();
+            return view('user.officeUse',compact('officeUse','signupdatas','users'));
         }
 
         function officeUse_create(Request $request)
         {
-            $id = Auth::user()->id;
+            $user_id = Auth::user()->id;
+            $info = OfficeUse::whereuser_id($user_id)->get();
+            if($info->isEmpty())
+            {
             OfficeUse::create([
+                'user_id'=>$user_id,
                 'FirstName'=>$request->FirstName,
-                'user_id'=>$id,
                 'LastName'=>$request->LastName,
                 'Address'=>$request->Address,
                 'City'=>$request->City,
@@ -191,8 +272,31 @@ class MainController extends Controller
                 'DOB_month'=>$request->DOB_month,
                 'DOB_year'=>$request->DOB_year,
             ]);
-            return redirect()->route('addPhoto');
+                return redirect()->route('addPhoto');
+            }
+
+            else{
+               
+               $info = OfficeUse::whereuser_id($user_id)->first();
+
+                OfficeUse::find($info->id)->update([
+                'user_id'=>$user_id,
+                'FirstName'=>$request->FirstName,
+                'LastName'=>$request->LastName,
+                'Address'=>$request->Address,
+                'City'=>$request->City,
+                'Country'=>$request->Country,
+                'PostCode'=>$request->PostCode,
+                'ContactTel'=>$request->ContactTel,
+                'MobileTel'=>$request->MobileTel,
+                'DOB_day'=>$request->DOB_day,
+                'DOB_month'=>$request->DOB_month,
+                'DOB_year'=>$request->DOB_year,
+            ]);
+                return redirect()->route('addPhoto');
+            }
         }
+
 
         public function addPhoto()
         {
@@ -220,34 +324,6 @@ class MainController extends Controller
                         }                              
                               return redirect()->route('user_dashboard');
                       }
-
-
-   
-
-    function register_create_one(Request $request)
-    {
-
-        $id = Auth::user()->id;
-        Registration_form::create([
-            'UserName'=>$request->UserName,
-            'user_id'=>$id,
-            'Email'=>$request->Email,
-            'ConfirmEmail'=>$request->ConfirmEmail,
-            'Country'=>$request->Country,
-            'Gender'=>$request->Gender,
-            'DOB_day'=>$request->DOB_day,
-            'DOB_month'=>$request->DOB_month,
-            'DOB_year'=>$request->DOB_year,
-            'RegistrationReason'=>$request->RegistrationReason,
-            'HearAboutUs'=>$request->HearAboutUs,
-            'Accept'=>$request->Accept,
-            'password'=>$request->password,
-        ]);
-        return redirect()->route('aboutme');
-    }
-
-
-
 
 
 }

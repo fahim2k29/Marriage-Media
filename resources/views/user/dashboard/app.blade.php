@@ -949,14 +949,14 @@
                                         </li>
                                         <li class="dropdown" style="padding-top: 5px; text-align: center;">
                                             <div style="float: left; padding-right: 10px; padding-left: 8px; line-height: 32px;">
-                                                <a href="/dashboard">
-                                                    <img class="img-circle" src="//gallery.singlemuslim.com/primary/32x32/YjdmODQ4N2NjN2QxNmMwZEkYeDp-LaVP60CDgspCXNiMlg3m7aetc2etkT_G5cqPJ6L6nbWHS8JnzFH2qZOUYnZEhJAGMawkFZvo5E97rbg8vVG96ulsVnFEgHdVgcPv0SS9gb9zxd0LTboPVZqzqOEnxAl4PkXzDCOWzlYt0LI$$.jpg" height="32px"
-                                                    width="32px" />
+                                                <a href="/user/dashboard">
+                                                    <img class="img-circle" src="{{asset('frontend/assets/images/')}}/{{ $addPhoto->image }}"  height="32px" width="32px" />
+
                                                 </a>
                                             </div>
                                             
                                             <div style="margin-top: 10px;">
-                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="font-size: 10px;"> fahim900<!--                                                <b class="caret"></b>--> </a>
+                                                <a href="/user/dashboard" class="dropdown-toggle" data-toggle="dropdown" style="font-size: 10px;"> {{Auth::user()->UserName}} </a>
                                             </div>
                                             <div style="clear: both;"></div>
                                         </li>
