@@ -1,15 +1,37 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+use Illuminate\Support\Facades\Route;
+
+// Backend Routes
+
+require_once __DIR__ . '/backend/authentication.php';
+
+Route::group(['prefix' => 'sadmin', 'middleware' => ['auth:admin', 'admin'], 'namespace' => 'Backend'], function () {
+    // Dashboard
+    require_once __DIR__ . '/backend/dashboard.php';
+
+    // Site Config
+    require_once __DIR__ . '/backend/site_config.php';
+
+    // Product
+    require_once __DIR__ . '/backend/product.php';
+
+    // Customer
+    require_once __DIR__ . '/backend/customer.php';
+
+    // Order
+    require_once __DIR__ . '/backend/order.php';
+
+    // Purchase
+    require_once __DIR__ . '/backend/purchase.php';
+});
+
+
+
+
+
+
+
 
 Route::get('/welcome', function () {
     return view('welcome');
@@ -57,12 +79,6 @@ Route::get('/search', 'SearchController@index')->name('search_quick');
     Route::get('/education', 'SearchController@search_education')->name('search_education');
     Route::get('/personal', 'SearchController@search_personal')->name('search_personal');
     Route::get('/profession', 'SearchController@search_profession')->name('search_profession');
-
-
-
-
-
-
 
 
 

@@ -29,7 +29,6 @@ class MainController extends Controller
     }
 
 
-
     public function register_form_one()
     {   
         $signupdatas= SignupData::all();
