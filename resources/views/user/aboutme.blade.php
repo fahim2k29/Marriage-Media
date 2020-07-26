@@ -272,9 +272,9 @@
                                 </div>
                                 <div class="panel-body">
 
-                                        <form  method="POST" action="{{ route('aboutme_create' ) }}" >
-                
-                                            @csrf
+                                    <form  method="POST" action="{{ route('aboutme_create' ) }}" >
+            
+                                        @csrf
                                             @if(isset($aboutme))
                                         <div role="form" class="form-horizontal">
                                             <div id="Headline-group" class="form-group has-feedback form-control-group">

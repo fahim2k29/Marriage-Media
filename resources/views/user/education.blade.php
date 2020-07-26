@@ -614,10 +614,10 @@
         
 
         <span class="pull-left required stepsRequired">* Required Field</span>
-        <div class="textalignright abspositionBack">
-            <button   onClick="location.href='/signup/aboutme'" id="savePreviousDatas" class="btn btn-primary btn-lg" value="back">Previous</button>   
-        </div>
     </form>
+            <div class="textalignright abspositionBack">
+                <button   onClick="location.href='/signup/aboutme'" id="savePreviousDatas" class="btn btn-primary btn-lg" value="back">Previous</button>   
+            </div>
 </div>
 </div>
 </div>

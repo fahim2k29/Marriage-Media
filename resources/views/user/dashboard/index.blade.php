@@ -198,7 +198,7 @@
                                 </div>
                                 <div class="user-controls clear-fix shift-icon padding-box double-padding top-only watch-in-viewport in-view">
                                     <div class="pading-box center-align button2 float-left z-page-click-target page-click ng-scope">
-                                        <a href="/profile/edit#edit">
+                                        <a href="/user/dashboard/profile">
                                             <div class="z-page-click-target icon sm-line relative-position sm-line fontsize-28 lineheight-30 basic-webpage-img-txt Male-text-color"></div>
                                             <div class="z-page-click-target txt fontsize-10 lineheight-18 shift-icon-2 ng-binding">Edit profile</div>
                                         </a>

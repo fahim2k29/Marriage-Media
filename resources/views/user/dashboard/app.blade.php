@@ -950,8 +950,12 @@
                                         <li class="dropdown" style="padding-top: 5px; text-align: center;">
                                             <div style="float: left; padding-right: 10px; padding-left: 8px; line-height: 32px;">
                                                 <a href="/user/dashboard">
-                                                    <img class="img-circle" src="{{asset('frontend/assets/images/')}}/{{ $addPhoto->image }}"  height="32px" width="32px" />
-
+                                                   <img
+                                                            class="img-circle"
+                                                            src="{{asset('frontend/assets/images/')}}/{{ $addPhoto->image }}"
+                                                            height="32px"
+                                                            width="32px"
+                                                        />
                                                 </a>
                                             </div>
                                             
