@@ -23,30 +23,24 @@
     ])
 
     <table class="table table-bordered">
-        <tbody>
-        <tr>
-            <th class="bg-dark" style="width: 10%">SL</th>
-            <th class="bg-dark" style="width: 20%">Name</th>
-            <th class="bg-dark" style="width: 20%">Address</th>
-            <th class="bg-dark" style="width: 20%">Image</th>
-            <th class="bg-dark" style="">Action</th>
-        </tr>
-
+        <thead >
+            <tr user="row">
+                <th class="bg-dark" style="width: 10%">ID</th>
+                <th class="bg-dark" style="width: 20%">Name</th>
+                <th class="bg-dark" style="width: 20%">Address</th>
+                {{-- <th class="bg-dark" style="width: 20%">Image</th> --}}
+                <th class="bg-dark" style="">Action</th>
+            </tr>
+        </thead>
+        
+    <tbody>
         @foreach ($users as $user)
-        @foreach ($addPhotos as $addPhoto)
+        {{-- @foreach ($addPhotos as $addPhoto) --}}
             <tr>
                 <td>{{$user->id}}</td>
                 <td>{{$user->UserName}}</td>
                 <td>{{$user->Country}}</td>            
-                <td>
-                    <img src="{{asset('frontend/assets/images/')}}/{{ $addPhoto->image }}"  class="img-responsive img-circle"  height="80"
-                         width="120" alt="No Image">
-
-                    {{-- <img src="{{ asset('assets/images/avatars/profile-pic.jpg') }}"
-                         height="80"
-                         width="120"
-                         alt="No Image"> --}}
-                </td>
+                {{-- <td><img src="{{asset('frontend/assets/images/')}}/{{ $addPhoto->image }}"  class="img-responsive img-circle"  height="40"width="60" alt="No Image"></td> --}}
                 <td>
                     <div class="btn-group btn-group-mini btn-corner">
                         <a href="{{ route('backend.customer.show', $user->id) }}"
@@ -54,31 +48,30 @@
                            title="Edit">
                             <i class="ace-icon fa fa-pencil"></i>
                         </a>
-
-                        <button type="button" class="btn btn-xs btn-danger"
-                                onclick="delete_check()"
-                                title="Delete">
+                        <button type="submit" class="btn btn-xs btn-danger"
+                            onclick="delete_check()"
+                            title="Delete">
                             <i class="ace-icon fa fa-trash-o"></i>
                         </button>
-                    </div>
-                    <form action=""
-                          id="deleteCheck_{{-- {{ $banner->id }} --}}" method="GET">
+
+                    {{-- <form action="{{ route('backend.customer.destroy', $user->id)}}" id="deleteCheck_{{ $user->id }}" method="POST">
                         @csrf
-                    </form>
+                        @method('POST')
+                    </form> --}}
+                                            
+                    </div>
                 </td>
             </tr>
         @endforeach
-        @endforeach
+        {{-- @endforeach --}}
 
-        {{-- @empty --}}
-            {{-- <tr> --}}
-                {{-- <td colspan="3">No data available in table</td> --}}
-            {{-- </tr> --}}
-        {{-- @endforelse --}}
-        </tbody>
+       
+    </tbody>
     </table>
-    {{-- @include('backend.partials._paginate', ['data' => $customers]) --}}
 @endsection
+
+
+
 
 @push('js')
     <script type="text/javascript">

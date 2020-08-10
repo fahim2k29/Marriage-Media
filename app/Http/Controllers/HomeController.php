@@ -14,8 +14,11 @@ use App\AddPhoto;
 use App\Employment;
 use App\PersonalData;
 use App\ReligionData;
+use App\Rules\MatchOldPassword;
 use App\SignupData;
 use Auth;
+use Illuminate\Support\Facades\Hash;
+
 class HomeController extends Controller
 {
     /**
@@ -147,6 +150,33 @@ class HomeController extends Controller
                 'Salaah'=>$request->Salaah,
             ]);
             return back();
-        }
+    }
 
+
+    public function changePassword()
+    {
+        $userid = Auth::id();
+        $user = User::whereid($userid)->first();
+        $addPhoto = AddPhoto::whereuser_id($userid)->first();
+        return view('user.profile.changePassword', compact('user','addPhoto'));
+    }
+
+    public function changePassword_store(Request $request)
+    {
+        $request->validate([
+            'current_password' => ['required', new MatchOldPassword],
+            'new_password' => ['required'],
+            'new_confirm_password' => ['same:new_password'],
+        ]);
+        User::find(auth()->user()->id)->update(['password'=> Hash::make($request->new_password)]);
+        return redirect()->back()->with('success', 'Your Password Changed successfully!');
+    }
+
+    public function editPhoto()
+    {
+        $userid = Auth::id();
+        $user = User::whereid($userid)->first();
+        $addPhoto = AddPhoto::whereuser_id($userid)->first();
+        return view('user.profile.editPhoto', compact('user','addPhoto'));
+    }
 }

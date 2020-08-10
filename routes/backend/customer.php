@@ -6,5 +6,5 @@ use Illuminate\Support\Facades\Route;
 Route::group(['prefix' => '/customer'], function (){
     Route::get('/','CustomerController@index')->name('backend.customer.index');
     Route::get('/show/{id}','CustomerController@show')->name('backend.customer.show');
-    Route::get('/delete/{id}','CustomerController@destroy')->name('backend.customer.destroy');
+    Route::post('/delete/{id}','CustomerController@destroy')->name('backend.customer.destroy');
 });

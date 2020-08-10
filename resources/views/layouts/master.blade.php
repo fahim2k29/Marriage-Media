@@ -843,7 +843,7 @@
 
                 <div class="landing-header__app" style="visibility: hidden;">
                     <a href="https://itunes.apple.com/gb/app/singlemuslim/id1116597910?mt=8" target="_blank" class="landing-header__app-store-badge" title="Download SingleMuslim on the Apple App Store!">
-                        <img src="/frontend/assets/svg/app-store-badge.svg" width="125" />
+                        <img src="/frontend/assets/images/app_store.png" width="125" />
                     </a>
                     <a href="https://play.google.com/store/apps/details?id=com.singlemuslim.sm" target="_blank" class="landing-header__app-store-badge" title="Download SingleMuslim on the Apple App Store!">
                         <img src="/frontend/assets/svg/google-play-badge.png" width="125" />
@@ -853,7 +853,7 @@
                 <nav class="landing-header__nav">
                     <ul>
                         <li class="has-dropdown login">
-                            <a href="" class="has-dropdown" title="Search for your perfect marriage partner">Search </a>
+                            <a href="/search" class="has-dropdown" title="Search for your perfect marriage partner">Search </a>
                             <div class="nav--item-dropdown login login-links">
                                 <a href="" class="has-dropdown" title="Search for your perfect marriage partner"> </a>
                                 <ul class="nav--item-dropdownli">
@@ -996,8 +996,9 @@
 
                     <div class="col-xs-12">
                         <div class="col-xs-9">
-                            <p style="font-size: 13px;">Copyright © 2020 Single Muslim. All rights reserved. All third party logos are for illustration only and are copyright of their respective owners.</p>
+                            <p style="font-size: 13px;">2020 © Smart Software Ltd</p>
                         </div>
+                        
 
                         <div class="col-xs-3" style="padding-left: 52px;">
                             <div class="appstorelogos_footer">

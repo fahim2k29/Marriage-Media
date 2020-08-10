@@ -43,12 +43,19 @@ Route::get('/home', 'HomeController@index')->name('home');
     Route::get('/user/dashboard', 'HomeController@user_dashboard')->name('user_dashboard');
     Route::get('/user/dashboard/profile', 'HomeController@user_dashboard_profile')->name('user_dashboard_profile');
     Route::post('/signup/create_one', 'HomeController@register_create_one')->name('register_create_one');
+
+    
     
     //...!...profile update//
     Route::post('/profile_update/aboutme', 'HomeController@aboutme_update')->name('aboutme_update');
     Route::post('/profile_update/education', 'HomeController@education_update')->name('education_update');
     Route::post('/profile_update/personal', 'HomeController@personal_update')->name('personal_update');
     Route::post('/profile_update/religion', 'HomeController@religion_update')->name('religion_update');
+    
+    Route::get('/changePassword', 'HomeController@changePassword')->name('changePassword');
+    Route::post('/changePassword/store', 'HomeController@changePassword_store')->name('changePassword_store');
+    Route::get('/editPhoto', 'HomeController@editPhoto')->name('editPhoto');
+
 
 
 

@@ -450,13 +450,13 @@
                         <div class="col-md-12 nopaddingleft nopaddingright middlesection-label">
                             <div class="tab_container">
                                 <input id="tab1" type="radio" name="tabs" checked="" />
-                                <label for="tab1" data-label-id="1" style="margin-left: 100px;"> <i class="sm-line basic-world iconmarginright fontsize-24 vertical-alignment"></i><span class="padding12left">Online</span> </label>
+                                <label for="tab1" data-label-id="1" style="margin-left: 100px;"> <span class="padding12left">Online</span> </label>
 
                                 <input id="tab2" type="radio" name="tabs" data-type-id="2" />
-                                <label for="tab2" data-label-id="2"> <i class="sm-line basic-geolocalize-05 iconmarginright fontsize-24 vertical-alignment"></i><span class="padding12left">Near Me</span> </label>
+                                <label for="tab2" data-label-id="2"> Near Me </label>
 
                                 <input id="tab3" type="radio" name="tabs" data-type-id="3" />
-                                <label for="tab3" data-label-id="3"> <i class="sm-line basic-anticlockwise iconmarginright fontsize-24 vertical-alignment"></i><span class="padding12left">Latest</span> </label>
+                                <label for="tab3" data-label-id="3"> <span class="padding12left">Latest</span> </label>
 
                                 <section id="content1" class="tab-content usertabsdisplay_new">
                                     <div class="dashbaord-tabs" style="text-align: center;">

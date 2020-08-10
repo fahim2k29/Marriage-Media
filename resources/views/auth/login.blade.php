@@ -117,10 +117,10 @@
         <div class="bottom-absolute right-align storebutton-placement">
             <div class="container-login">
                 <a href="https://itunes.apple.com/gb/app/singlemuslim/id1116597910?mt=8" target="_blank" class="landing-header__app-store-badge" title="Download SingleMuslim on the Apple App Store!" style="cursor: pointer;">
-                    <img src="/frontend/assets/svg/app-store-badge.svg" width="125" />
+                    <img src="/frontend/assets/images/app_store.png" width="125" />
                 </a>
                 <a href="https://play.google.com/store/apps/details?id=com.singlemuslim.sm" target="_blank" class="landing-header__app-store-badge" title="Download SingleMuslim on the Apple App Store!" style="cursor: pointer;">
-                    <img src="/frontend/assets/svg/google-play-badge.png" width="125" />
+                    <img src="/frontend/assets/images/android_logo.png" width="125" />
                 </a>
             </div>
         </div>

@@ -122,10 +122,10 @@
                 <div class="bottom-absolute right-align storebutton-placement">
                     <div class="container">
                         <a href="https://itunes.apple.com/gb/app/singlemuslim/id1116597910?mt=8" target="_blank" class="landing-header__app-store-badge" title="Download SingleMuslim on the Apple App Store!" style="cursor: pointer;">
-                            <img src="/frontend/assets/svg/app-store-badge.svg" width="125" />
+                            <img src="/frontend/assets/images/app_store.png" width="125" />
                         </a>
                         <a href="https://play.google.com/store/apps/details?id=com.singlemuslim.sm" target="_blank" class="landing-header__app-store-badge" title="Download SingleMuslim on the Apple App Store!" style="cursor: pointer;">
-                            <img src="/frontend/assets/svg/google-play-badge.png" width="125" />
+                            <img src="/frontend/assets/images/android_logo.png" width="125" />
                         </a>
                     </div>
                 </div>
@@ -3288,7 +3288,7 @@
                         <div class="picscroll">
                             <div class="col-md-3 card">
                                 <a href="/success-story/soniaandabid">
-                                    <img src="/frontend/assets/static/userfiles/images/success/soniaandabid/IMG_4797_edit.jpg" class="img-responsive imagesuccess-story" />
+                                    <img src="/frontend/assets/images/soniaandabid.jpg" class="img-responsive imagesuccess-story" />
                                 </a>
                                 <a href="/success-story/soniaandabid">
                                     <span class="playbutton"><i class="glyphicon glyphicon-play"></i></span>
@@ -3297,7 +3297,7 @@
 
                             <div class="col-md-3 card">
                                 <a href="/success-story/AdilandAmira">
-                                    <img src="/frontend/assets/static/userfiles/images/success/AdilandAmira/normal.jpg" class="img-responsive imagesuccess-story" />
+                                    <img src="/frontend/assets/images/adilandamira.jpg" class="img-responsive imagesuccess-story" />
                                 </a>
                                 <a href="/success-story/AdilandAmira">
                                     <span class="playbutton"><i class="glyphicon glyphicon-play"></i></span>
@@ -3306,7 +3306,7 @@
 
                             <div class="col-md-3 card">
                                 <a href="/success-story/WaqasandAishiya">
-                                    <img src="/frontend/assets/static/userfiles/images/success/waqasandaishiya/normal.jpg" class="img-responsive imagesuccess-story" />
+                                    <img src="/frontend/assets/images/waqasandaishiya.jpg" class="img-responsive imagesuccess-story" />
                                 </a>
                                 <a href="/success-story/WaqasandAishiya">
                                     <span class="playbutton"><i class="glyphicon glyphicon-play"></i></span>
@@ -3315,7 +3315,7 @@
 
                             <div class="col-md-3 card">
                                 <a href="/success-story/RussellandTaslima">
-                                    <img src="/frontend/assets//static/userfiles/images/success/russelandtaslima/normal.jpg" class="img-responsive imagesuccess-story" />
+                                    <img src="/frontend/assets/images/russelandtaslima.jpg" class="img-responsive imagesuccess-story" />
                                 </a>
                                 <a href="/success-story/RussellandTaslima">
                                     <span class="playbutton"><i class="glyphicon glyphicon-play"></i></span>

@@ -61,88 +61,7 @@
 </div>
 </div>
 
-<div class="modal fade" id="menusettingsModal" tabindex="-1" role="dialog" aria-labelledby="menusettingsModal" aria-hidden="true">
-<div class="modal-dialog" role="document">
-<div class="modal-content">
-<div class="modal-header">
-    <h2 class="headernotification">Account</h2>
-</div>
-<div class="modal-body">
-    <div class="  ">
-        <nav class="nav-sidebar nav-sidebar-2">
-            <ul class="nav">
-                {{-- <h6 class="dropdown-header sidemenuheader sm-heading-title" style="margin-top: 0px;">Profile</h6> --}}
-                <li class="">
-                    <a href="/user/dashboard/profile"><i class="sm-line basic-settings sm-nav-dropdown-icons"></i> Edit My Profile <span class="smicon-new smicon-angle-right pull-right arrow-font-size"></span></a>
-                </li>
-                <li class="">
-                    <a href="/profile/personalinfo"><i class="sm-line basic-book-pencil sm-nav-dropdown-icons"></i>Edit Personal Info <span class="smicon-new smicon-angle-right pull-right arrow-font-size"></span></a>
-                </li>
-                <li class="bottombodernone">
-                    <a href="/profile/preferences">
-                        <i class="sm-line basic-alarm sm-nav-dropdown-icons"></i>Notifications / Preferences <span class="smicon-new smicon-angle-right pull-right arrow-font-size"></span>
-                    </a>
-                </li>
 
-                <!--        <li class="--><!-- bottombodernone"><a href="/profile/communication-preferences"><i class="sm-line basic-alarm sm-nav-dropdown-icons"></i>Notifications / Preferences <span class=" smicon-new smicon-angle-right pull-right arrow-font-size"></span></a></li>-->
-                <!--       -->
-
-                <h6 class="dropdown-header sidemenuheader sm-heading-title">Photos</h6>
-                <li class="">
-                    <a href="/profile/photos"><i class="sm-line basic-photo sm-nav-dropdown-icons"></i>Edit My Photos <span class="smicon-new smicon-angle-right pull-right arrow-font-size"></span></a>
-                </li>
-                <li class="bottombodernone">
-                    <a class="pointerCursor" href="/profile/accesslist/2">
-                        <i class="sm-line basic-lock-open sm-nav-dropdown-icons"></i>
-                        Photo Access
-
-                        <span class="badge progress-bar-danger badge-xs messageCounterUpdate_photo" style="margin-top: -4px; left: -1px; margin-left: 2px; top: 9px; visibility: hidden;"> 0 </span>
-
-                        <span class="smicon-new smicon-angle-right pull-right arrow-font-size"></span>
-                    </a>
-                </li>
-
-                <h6 class="dropdown-header sidemenuheader sm-heading-title">Account &amp; Security</h6>
-
-                <li class="">
-                    <a href="/profile/username"><i class="sm-line basic-keyboard sm-nav-dropdown-icons"></i>Change Username <span class="smicon-new smicon-angle-right pull-right arrow-font-size"></span></a>
-                </li>
-                <li class="">
-                    <a href="/profile/email"><i class="sm-line basic-mail sm-nav-dropdown-icons"></i>Change Email <span class="smicon-new smicon-angle-right pull-right arrow-font-size"></span></a>
-                </li>
-                <li class="">
-                    <a href="/profile/password"><i class="sm-line sm-line basic-key sm-nav-dropdown-icons"></i>Change Password <span class="smicon-new smicon-angle-right pull-right arrow-font-size"></span></a>
-                </li>
-                <li class="">
-                    <a href="/membership/history"><i class="sm-line basic-calendar sm-nav-dropdown-icons"></i>Memberships History <span class="smicon-new smicon-angle-right pull-right arrow-font-size"></span></a>
-                </li>
-                <li class="">
-                    <a href="/profile/blocked"><i class="sm-line basic-ban sm-nav-dropdown-icons"></i>Blocked Users <span class="smicon-new smicon-angle-right pull-right arrow-font-size"></span></a>
-                </li>
-                <li class="">
-                    <a href="/profile/communication-preferences">
-                        <i class="sm-line basic-elaboration-mail-noaccess sm-nav-dropdown-icons"></i>Communication Preferences <span class="smicon-new smicon-angle-right pull-right arrow-font-size"></span>
-                    </a>
-                </li>
-                <!--        <li class="--><!--"><a href="/profile/devices"><i class=" sm-line  sm-line basic-smartphone sm-nav-dropdown-icons"></i>Devices <span class=" smicon-new smicon-angle-right pull-right arrow-font-size"></span></a></li>-->
-                <!--      -->
-
-                <li class="">
-                    <a href="/profile/login-devices"><i class="sm-line sm-line basic-smartphone sm-nav-dropdown-icons"></i>Devices <span class="smicon-new smicon-angle-right pull-right arrow-font-size"></span></a>
-                </li>
-
-                <li class="deletesidemenu">
-                    <a href="/profile/delete" data-username="Abdul26">
-                        <i class="sm-line basic-trashcan-remove sm-nav-dropdown-icons"></i>Delete Profile <span class="smicon-new smicon-angle-right pull-right arrow-font-size"></span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </div>
-</div>
-</div>
-</div>
-</div>
 
 <!-- need to work on it -->
 
@@ -684,7 +603,7 @@
 
         <h6 class="dropdown-header sidemenuheader">Photos</h6>
         <li class="">
-            <a href="/profile/photos"><i class="sm-line basic-photo sm-nav-dropdown-icons"></i>Edit My Photos <span class="smicon-new smicon-angle-right pull-right arrow-font-size"></span></a>
+            <a href="/editPhoto"><i class="sm-line basic-photo sm-nav-dropdown-icons"></i>Edit My Photos <span class="smicon-new smicon-angle-right pull-right arrow-font-size"></span></a>
         </li>
         <li class="bottombodernone">
             <a class="pointerCursor" href="/profile/accesslist/2">
@@ -706,7 +625,7 @@
             <a href="/profile/email"><i class="sm-line basic-mail sm-nav-dropdown-icons"></i>Change Email <span class="smicon-new smicon-angle-right pull-right arrow-font-size"></span></a>
         </li>
         <li class="">
-            <a href="/profile/password"><i class="sm-line sm-line basic-key sm-nav-dropdown-icons"></i>Change Password <span class="smicon-new smicon-angle-right pull-right arrow-font-size"></span></a>
+            <a href="/changePassword"><i class="sm-line sm-line basic-key sm-nav-dropdown-icons"></i>Change Password <span class="smicon-new smicon-angle-right pull-right arrow-font-size"></span></a>
         </li>
         <li class="">
             <a href="/membership/history"><i class="sm-line basic-calendar sm-nav-dropdown-icons"></i>Memberships History <span class="smicon-new smicon-angle-right pull-right arrow-font-size"></span></a>

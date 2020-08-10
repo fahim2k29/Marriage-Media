@@ -52,9 +52,10 @@ class CustomerController extends Controller
     public function show($id)
     {
        
-        $users= User::find($id);
-        //dd($users);
-        return view('backend.customer.show', compact('users'));
+        $users= User::findOrFail($id);
+        $addPhotos=AddPhoto::whereuser_id($id)->first();
+        // dd($addPhotos);
+        return view('backend.customer.show', compact('users','addPhotos'));
     }
 
     /**
@@ -88,6 +89,10 @@ class CustomerController extends Controller
      */
     public function destroy($id)
     {
-        //
+        //  User::where('id',$id)->delete();
+        //          return redirect()->route('backend.customer.index')
+        //          ->with('success','User deleted successfully from the user list.');
     }
+     
+
 }

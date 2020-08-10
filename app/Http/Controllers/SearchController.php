@@ -2,32 +2,43 @@
 
 namespace App\Http\Controllers;
 
+use App\Employment;
+use App\PersonalData;
+use App\ReligionData;
+use App\SignupData;
 use Illuminate\Http\Request;
 
 class SearchController extends Controller
 {
     public function index()
     {
-        return view('search.quick');
+         $signupdatas= SignupData::all();
+        return view('search.quick', compact('signupdatas'));
     }
 
     public function search_religion()
     {
-        return view('search.religion');
+        $religiondatas = ReligionData::all();
+        return view('search.religion', compact('religiondatas'));
     }
 
     public function search_education()
     {
-        return view('search.education');
+        $employments = Employment::all();
+        $personaldatas = PersonalData::all();
+        return view('search.education', compact('employments', 'personaldatas'));
     }
 
     public function search_personal()
     {
-        return view('search.personal');
+        $personaldatas = PersonalData::all();
+        return view('search.personal', compact('personaldatas'));
     }
 
     public function search_profession()
     {
-        return view('search.profession');
+         $employments = Employment::all();
+        $personaldatas = PersonalData::all();
+        return view('search.profession', compact('employments', 'personaldatas'));
     }
 }

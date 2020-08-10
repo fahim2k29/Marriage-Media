@@ -24,11 +24,9 @@
 
    <div class="col-xs-12 col-sm-3 center">
         <div>
-            <span class="profile-picture">
-            <img id="avatar" class="editable img-responsive editable-click editable-empty" alt="Alex's Avatar" src="{{ asset('assets/images/avatars/profile-pic.jpg')}}">
-             {{-- <img src="{{asset('frontend/assets/images/')}}/{{ $addPhotos->image }}"  class="img-responsive img-circle"  height="80"
-                         width="120" > --}}
-        </span>
+            {{-- <span class="profile-picture">
+            <img id="avatar" class="editable img-responsive editable-click editable-empty" src="{{asset('frontend/assets/images/')}}/{{ $addPhotos->image }}" alt="Alex's Avatar" >
+            </span> --}}
 
             <div class="space-4"></div>
 
@@ -51,76 +49,88 @@
     
 
     <div class="col-xs-12 col-sm-9">
-        <div class="profile-user-info profile-user-info-striped">
-                                                <div class="profile-info-row">
-                                                    <div class="profile-info-name"> Username </div>
+    <div class="profile-user-info profile-user-info-striped">
+                    <div class="profile-info-row">
+                    <div class="profile-info-name"> Profile Picture </div>
 
-                                                    <div class="profile-info-value">
-                                                    <span class="editable editable-click" id="username">{{$users->UserName}}</span>
-                                                    </div>
-                                                </div>
+                    <div class="profile-info-value">
+                    <span class="editable editable-click" id="">
+                        <img id="avatar" class="editable img-responsive editable-click editable-empty" 
+                        src="{{asset('frontend/assets/images/')}}/{{ $addPhotos->image }}" alt="Alex's Avatar" 
+                        >
+                    </span>
+                    </div>
+                </div>
 
-                                                <div class="profile-info-row">
-                                                    <div class="profile-info-name"> Email </div>
+                <div class="profile-info-row">
+                    <div class="profile-info-name"> Username </div>
 
-                                                    <div class="profile-info-value">
-                                                        <i class=" light-orange bigger-110"></i>
-                                                        <span class="editable editable-click" id="country">{{$users->Email}}</span>
-                                                        {{-- <span class="editable editable-click" id="city">Amsterdam</span> --}}
-                                                    </div>
-                                                </div>
+                    <div class="profile-info-value">
+                    <span class="editable editable-click" id="username">{{$users->UserName}}</span>
+                    </div>
+                </div>
 
-                                                <div class="profile-info-row">
-                                                    <div class="profile-info-name"> Location </div>
+                <div class="profile-info-row">
+                    <div class="profile-info-name"> Email </div>
 
-                                                    <div class="profile-info-value">
-                                                        <i class="fa fa-map-marker light-orange bigger-110"></i>
-                                                        <span class="editable editable-click" id="country">{{$users->Country}}</span>
-                                                        {{-- <span class="editable editable-click" id="city">Amsterdam</span> --}}
-                                                    </div>
-                                                </div>
+                    <div class="profile-info-value">
+                        <i class=" light-orange bigger-110"></i>
+                        <span class="editable editable-click" id="country">{{$users->Email}}</span>
+                        {{-- <span class="editable editable-click" id="city">Amsterdam</span> --}}
+                    </div>
+                </div>
 
-                                                <div class="profile-info-row">
-                                                    <div class="profile-info-name"> Registration Reason </div>
+                <div class="profile-info-row">
+                    <div class="profile-info-name"> Location </div>
 
-                                                    <div class="profile-info-value">
-                                                        <span class="editable editable-click" id="age">{{$users->RegistrationReason}}</span>
-                                                    </div>
-                                                </div>
-                                                <div class="profile-info-row">
-                                                    <div class="profile-info-name"> Hear About Us </div>
+                    <div class="profile-info-value">
+                        <i class="fa fa-map-marker light-orange bigger-110"></i>
+                        <span class="editable editable-click" id="country">{{$users->Country}}</span>
+                        {{-- <span class="editable editable-click" id="city">Amsterdam</span> --}}
+                    </div>
+                </div>
 
-                                                    <div class="profile-info-value">
-                                                        <span class="editable editable-click" id="age">{{$users->HearAboutUs}}</span>
-                                                    </div>
-                                                </div>
+                <div class="profile-info-row">
+                    <div class="profile-info-name"> Registration Reason </div>
 
-                                                <div class="profile-info-row">
-                                                    <div class="profile-info-name"> Date Of Birth </div>
+                    <div class="profile-info-value">
+                        <span class="editable editable-click" id="age">{{$users->RegistrationReason}}</span>
+                    </div>
+                </div>
+                <div class="profile-info-row">
+                    <div class="profile-info-name"> Hear About Us </div>
 
-                                                    <div class="profile-info-value">
-                                                        <span class="editable editable-click" id="age">{{$users->DOB_day}}-{{$users->DOB_month}}-{{$users->DOB_year}}</span>
-                                                    </div>
-                                                </div>
-                                                
+                    <div class="profile-info-value">
+                        <span class="editable editable-click" id="age">{{$users->HearAboutUs}}</span>
+                    </div>
+                </div>
 
-                                                <div class="profile-info-row">
-                                                    <div class="profile-info-name">Resistered/Joined </div>
+                <div class="profile-info-row">
+                    <div class="profile-info-name"> Date Of Birth </div>
 
-                                                    <div class="profile-info-value">
-                                                        <span class="editable editable-click" id="signup">2010/06/20</span>
-                                                    </div>
-                                                </div>
+                    <div class="profile-info-value">
+                        <span class="editable editable-click" id="age">{{$users->DOB_day}}-{{$users->DOB_month}}-{{$users->DOB_year}}</span>
+                    </div>
+                </div>
+                
 
-                                                <div class="profile-info-row">
-                                                    <div class="profile-info-name"> Last Time Order </div>
+                <div class="profile-info-row">
+                    <div class="profile-info-name">Resistered/Joined </div>
 
-                                                    <div class="profile-info-value">
-                                                        <span class="editable editable-click" id="login">3 hours ago</span>
-                                                    </div>
-                                                </div>
-                                            </div>
+                    <div class="profile-info-value">
+                        <span class="editable editable-click" id="signup">2010/06/20</span>
+                    </div>
+                </div>
+
+                <div class="profile-info-row">
+                    <div class="profile-info-name"> Last Time Active </div>
+
+                    <div class="profile-info-value">
+                        <span class="editable editable-click" id="login">3 hours ago</span>
+                    </div>
+                </div>
     </div>
+</div>
     {{-- @include('backend.partials._paginate', ['data' => $customers]) --}}
 @endsection
 
