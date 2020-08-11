@@ -26,13 +26,7 @@ Route::group(['prefix' => 'sadmin', 'middleware' => ['auth:admin', 'admin'], 'na
     require_once __DIR__ . '/backend/purchase.php';
 });
 
-
-
-
-
-
-
-
+ 
 Route::get('/welcome', function () {
     return view('welcome');
 });
@@ -51,22 +45,25 @@ Route::get('/home', 'HomeController@index')->name('home');
     Route::post('/profile_update/education', 'HomeController@education_update')->name('education_update');
     Route::post('/profile_update/personal', 'HomeController@personal_update')->name('personal_update');
     Route::post('/profile_update/religion', 'HomeController@religion_update')->name('religion_update');
+    Route::post('/profile_update/personalInfo', 'HomeController@personalInfo_update')->name('personalInfo_update');
+
     
     Route::get('/changePassword', 'HomeController@changePassword')->name('changePassword');
     Route::post('/changePassword/store', 'HomeController@changePassword_store')->name('changePassword_store');
     Route::get('/editPhoto', 'HomeController@editPhoto')->name('editPhoto');
+    Route::get('/editPersonalInfo', 'HomeController@editPersonalInfo')->name('editPersonalInfo');
+    Route::get('/changeUsername', 'HomeController@changeUsername')->name('changeUsername');
+    Route::post('/changeUsername/store', 'HomeController@changeUsername_store')->name('changeUsername_store');
+    Route::get('/changeEmail', 'HomeController@changeEmail')->name('changeEmail');
+    Route::post('/changeEmail/store', 'HomeController@changeEmail_store')->name('changeEmail_store');
 
 
-
-
-
-
-Route::get('/setinfo', 'SetController@index')->name('setInfo');
-Route::post('/setinfo/create', 'SetController@create')->name('setInfo_create');
+ 
 
 
 Route::get('/', 'MainController@index')->name('single');
     Route::get('/signup', 'MainController@register_form_one')->name('register_form_one');
+    
     
     Route::get('/signup/aboutme', 'MainController@aboutme')->name('aboutme');
         Route::post('/signup/aboutme/create', 'MainController@aboutme_create')->name('aboutme_create');
@@ -96,6 +93,8 @@ Route::get('/search', 'SearchController@index')->name('search_quick');
     Route::get('/education', 'SearchController@search_education')->name('search_education');
     Route::get('/personal', 'SearchController@search_personal')->name('search_personal');
     Route::get('/profession', 'SearchController@search_profession')->name('search_profession');
+    Route::get('/search/result', 'SearchController@search_result')->name('search_result');
+
 
 
 

@@ -2,17 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\AddPhoto;
 use App\Employment;
 use App\PersonalData;
 use App\ReligionData;
 use App\SignupData;
+use App\User;
+use Auth;
 use Illuminate\Http\Request;
 
 class SearchController extends Controller
 {
     public function index()
     {
-         $signupdatas= SignupData::all();
+        $signupdatas = SignupData::all();
         return view('search.quick', compact('signupdatas'));
     }
 
@@ -37,8 +40,16 @@ class SearchController extends Controller
 
     public function search_profession()
     {
-         $employments = Employment::all();
+        $employments = Employment::all();
         $personaldatas = PersonalData::all();
         return view('search.profession', compact('employments', 'personaldatas'));
+    }
+
+    public function search_result()
+    {
+        $userid = Auth::id();
+        $user = User::whereid($userid)->first();
+        $addPhoto = AddPhoto::whereuser_id($userid)->first();
+        return view('search.result', compact('user', 'addPhoto'));
     }
 }

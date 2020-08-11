@@ -1,4 +1,6 @@
 @extends('user.profile.app') @section('content')
+
+
 <div class="container headerColor">
  <div class="page-header pageheaderown">
   <div class="pageheader-heading">
@@ -6,11 +8,12 @@
   </div>
  </div>
 </div>
+
 <div class="wide_fullbgimage">
  <div class="container containerbgColor">
   <!-- Content Row -->
   <div class="">
-   <div class="col-lg-12 col-md-12" id="changepassword_Display">
+   <div class="col-lg-12 col-md-12" id="changeusername_Display">
     <div class="row">
      <div class="col-lg-12 col-md-12 topbar-bg containerTopmargin">
       <div class="row setting-bgcolor roundcornerPanel">
@@ -22,7 +25,7 @@
          <a href="/user/dashboard/profile">Setting</a>
 
          <i class="smicon-new smicon-angle-right"></i>
-         <a href="#" id="changeBeadcrum" class="breadcrumLast">Change Password</a>
+         <a href="#" id="changeBreadcrum" class="breadcrumLast">Change Username</a>
         </nav>
         <nav class="nav-sidebar">
          <ul class="nav">
@@ -34,7 +37,7 @@
            <a href="/editPersonalInfo"><i class="sm-line basic-book-pencil sm-nav-dropdown-icons"></i>Edit Personal Info <span class="smicon-new smicon-angle-right pull-right arrow-font-size"></span></a>
           </li>
           <li class="bottombodernone">
-           <a href="/profile/preferences"> <i class="sm-line basic-alarm sm-nav-dropdown-icons"></i>Notifications / Preferences <span class="smicon-new smicon-angle-right pull-right arrow-font-size"></span> </a>
+           <a href="/profile/preferences"><i class="sm-line basic-alarm sm-nav-dropdown-icons"></i>Notifications / Preferences <span class="smicon-new smicon-angle-right pull-right arrow-font-size"></span></a>
           </li>
 
           <!--        <li class="--><!-- bottombodernone"><a href="/profile/communication-preferences"><i class="sm-line basic-alarm sm-nav-dropdown-icons"></i>Notifications / Preferences <span class=" smicon-new smicon-angle-right pull-right arrow-font-size"></span></a></li>-->
@@ -42,29 +45,29 @@
 
           <h6 class="dropdown-header sidemenuheader">Photos</h6>
           <li class="">
-           <a href="/profile/photos"><i class="sm-line basic-photo sm-nav-dropdown-icons"></i>Edit My Photos <span class="smicon-new smicon-angle-right pull-right arrow-font-size"></span></a>
+           <a href="/editPhoto"><i class="sm-line basic-photo sm-nav-dropdown-icons"></i>Edit My Photos <span class="smicon-new smicon-angle-right pull-right arrow-font-size"></span></a>
           </li>
-         
+        
 
           <h6 class="dropdown-header sidemenuheader">Account &amp; Security</h6>
 
-          <li class="">
-           <a href="/profile/username"><i class="sm-line basic-keyboard sm-nav-dropdown-icons"></i>Change Username <span class="smicon-new smicon-angle-right pull-right arrow-font-size"></span></a>
-          </li>
-          <li class="">
-           <a href="/profile/email"><i class="sm-line basic-mail sm-nav-dropdown-icons"></i>Change Email <span class="smicon-new smicon-angle-right pull-right arrow-font-size"></span></a>
-          </li>
           <li class="active">
+           <a href="/changeUsername"><i class="sm-line basic-keyboard sm-nav-dropdown-icons"></i>Change Username <span class="smicon-new smicon-angle-right pull-right arrow-font-size"></span></a>
+          </li>
+          <li class="">
+           <a href="/changeEmail"><i class="sm-line basic-mail sm-nav-dropdown-icons"></i>Change Email <span class="smicon-new smicon-angle-right pull-right arrow-font-size"></span></a>
+          </li>
+          <li class="">
            <a href="/changePassword"><i class="sm-line sm-line basic-key sm-nav-dropdown-icons"></i>Change Password <span class="smicon-new smicon-angle-right pull-right arrow-font-size"></span></a>
           </li>
           <li class="">
-           <a href="/membership/history"><i class="sm-line basic-calendar sm-nav-dropdown-icons"></i>Memberships History <span class="smicon-new smicon-angle-right pull-right arrow-font-size"></span></a>
+           <a href="#"><i class="sm-line basic-calendar sm-nav-dropdown-icons"></i>Memberships History <span class="smicon-new smicon-angle-right pull-right arrow-font-size"></span></a>
           </li>
           <li class="">
-           <a href="/profile/blocked"><i class="sm-line basic-ban sm-nav-dropdown-icons"></i>Blocked Users <span class="smicon-new smicon-angle-right pull-right arrow-font-size"></span></a>
+           <a href="#"><i class="sm-line basic-ban sm-nav-dropdown-icons"></i>Blocked Users <span class="smicon-new smicon-angle-right pull-right arrow-font-size"></span></a>
           </li>
           <li class="">
-           <a href="/profile/communication-preferences">
+           <a href="#">
             <i class="sm-line basic-elaboration-mail-noaccess sm-nav-dropdown-icons"></i>Communication Preferences <span class="smicon-new smicon-angle-right pull-right arrow-font-size"></span>
            </a>
           </li>
@@ -72,17 +75,17 @@
           <!--      -->
 
           <li class="">
-           <a href="/profile/login-devices"><i class="sm-line sm-line basic-smartphone sm-nav-dropdown-icons"></i>Devices <span class="smicon-new smicon-angle-right pull-right arrow-font-size"></span></a>
+           <a href="#"><i class="sm-line sm-line basic-smartphone sm-nav-dropdown-icons"></i>Devices <span class="smicon-new smicon-angle-right pull-right arrow-font-size"></span></a>
           </li>
 
           <li class="deletesidemenu">
-           <a href="/profile/delete" data-username="fahim900"> <i class="sm-line basic-trashcan-remove sm-nav-dropdown-icons"></i>Delete Profile <span class="smicon-new smicon-angle-right pull-right arrow-font-size"></span> </a>
+           <a href="#" data-username="fahim900"><i class="sm-line basic-trashcan-remove sm-nav-dropdown-icons"></i>Delete Profile <span class="smicon-new smicon-angle-right pull-right arrow-font-size"></span></a>
           </li>
          </ul>
         </nav>
        </div>
-       <div class="col-lg-9 col-md-9 minheightprofile" style="padding: 0px;">
-        <div class="subTitleround secondFont headingchange">Change Password</div>
+          <div class="col-lg-9 col-md-9 minheightprofile" style="padding: 0px;">
+        <div class="subTitleround secondFont headingchange">Change Username</div>
 
         <div id="signupbox" class="col-md-11 col-lg-11 leftmargin boxforms">
          <!-- server side error snippet  -->
@@ -95,7 +98,7 @@
 -->
          <div class="panel panel-info">
           <div class="panel-body">
-           <form method="POST" action="{{ route('changePassword_store') }}">
+           <form method="POST" action="{{ route('changeUsername_store') }}">
             @csrf @if (session()->has('success'))
             <h4 class="text-success">{{ session('success') }}</h4>
             @endif
@@ -105,31 +108,31 @@
             <p class="text-danger">{{ $error }}</p>
             @endforeach
             <div class="form-group row">
+             <label for="password" class="col-md-4 col-form-label text-md-right">New Username</label>
+
+             <div class="col-md-6">
+              <input id="password" type="text" class="form-control" name="new_username" autocomplete="current-password" />
+             </div>
+            </div>
+
+            <div class="form-group row">
+             <label for="password" class="col-md-4 col-form-label text-md-right">Confirm New Username</label>
+
+             <div class="col-md-6">
+              <input id="new_password" type="text" class="form-control"  name="new_confirm_username" autocomplete="current-password" />
+             </div>
+            </div>
+            <div class="form-group row">
              <label for="password" class="col-md-4 col-form-label text-md-right">Current Password</label>
 
              <div class="col-md-6">
-              <input id="password" type="password" class="form-control" name="current_password" autocomplete="current-password" />
-             </div>
-            </div>
-
-            <div class="form-group row">
-             <label for="password" class="col-md-4 col-form-label text-md-right">New Password</label>
-
-             <div class="col-md-6">
-              <input id="new_password" type="password" class="form-control" placeholder="At least 8 character" name="new_password" autocomplete="current-password" />
-             </div>
-            </div>
-            <div class="form-group row">
-             <label for="password" class="col-md-4 col-form-label text-md-right">New Confirm Password</label>
-
-             <div class="col-md-6">
-              <input id="new_confirm_password" type="password" class="form-control" placeholder="Re-type your new password" name="new_confirm_password" autocomplete="current-password" />
+              <input id="new_confirm_password" type="password" class="form-control" placeholder="Type your Password" name="current_password" autocomplete="current-password" />
              </div>
             </div>
             <div class="form-group row mb-0">
              <div class="col-md-8 offset-md-4">
               <button type="submit" class="btn btn-primary">
-               Update Password
+               Update Username
               </button>
              </div>
             </div>
@@ -138,15 +141,12 @@
          </div>
         </div>
        </div>
-       
       </div>
      </div>
     </div>
-    <!--section('topHeading')-->
    </div>
   </div>
   <!-- /.row -->
  </div>
 </div>
-
 @endsection
