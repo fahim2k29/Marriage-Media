@@ -253,7 +253,7 @@
              <div class="panel-body">
               <div role="form" class="form-horizontal">
                <div id="Gender-group" class="form-group">
-                <label for="Gender" class="col-sm-3 control-label">Gender</label>
+                <label for="Gender" class="col-sm-3 control-label" >Gender</label>
                 <div class="col-sm-8">
                  <div class="input-group input-group-maxwidth btn-group btn-group-radio">
                   <input name="Gender" id="Gender-" type="radio" class="radio" value="" checked="" />
@@ -280,12 +280,7 @@
                  <div class="input-group input-group-maxwidth">
                   <select name="MinAge" id="MinAge" class="form-control-values select2-hidden-accessible" data-select2-id="MinAge" tabindex="-1" aria-hidden="true">
                    <option value="" selected="" data-select2-id="2">Any</option>
-                   <option value="18" data-select2-id="123">18</option>
-                   <option value="19" data-select2-id="124">19</option>
-                   <option value="20" data-select2-id="125">20</option>
-                   <option value="21" data-select2-id="126">21</option>
-                   <option value="22" data-select2-id="127">22</option>
-                   <option value="23" data-select2-id="128">23</option>
+                   
                   </select>
                  </div>
                 </div>
@@ -346,21 +341,7 @@
 
                 <div class="col-sm-1 label-tick hidelabel"><span id="Area-span-success" class="smicon-new smicon-check form-control-feedback male span-info-label" title=""></span></div>
                </div>
-               <div id="County-group" class="form-group" style="display: none;">
-                <label for="County" class="col-sm-3 control-label">
-                 County/State
-                 <!--<i class="smicon smicon-question" data-original-title="" style="margin-left: 4px;"></i> -->
-                </label>
-                <div class="col-sm-8">
-                 <div class="input-group input-group-maxwidth">
-                  <select name="County" id="County" class="select2-hidden-accessible dirty" data-select2-id="County" tabindex="-1" aria-hidden="true">
-                   <option value="" data-select2-id="1257">NA</option>
-                  </select>
-                 </div>
-                </div>
-
-                <div class="col-sm-1 label-tick hidelabel"><span id="County-span-success" class="smicon-new smicon-check form-control-feedback male span-info-label" title=""></span></div>
-               </div>
+               
                <div id="Rating-group" class="form-group">
                 <label for="Rating" class="col-sm-3 control-label">
                  Profile Rating

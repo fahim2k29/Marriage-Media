@@ -34,10 +34,11 @@
         </thead>
         
     <tbody>
-        @foreach ($users as $user)
+       {{-- @php($key=1) --}}
+        @foreach ($users as $key=> $user)
         {{-- @foreach ($addPhotos as $addPhoto) --}}
             <tr>
-                <td>{{$user->id}}</td>
+                <td>{{$key+1}}</td>
                 <td>{{$user->UserName}}</td>
                 <td>{{$user->Country}}</td>            
                 {{-- <td><img src="{{asset('frontend/assets/images/')}}/{{ $addPhoto->image }}"  class="img-responsive img-circle"  height="40"width="60" alt="No Image"></td> --}}

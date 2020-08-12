@@ -21,4 +21,6 @@ class Religion extends Model
       {
         return $this->hasOne('App\User','id','user_id');
       }
+
+      
 }

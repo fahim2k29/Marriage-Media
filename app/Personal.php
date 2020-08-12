@@ -25,8 +25,13 @@ class Personal extends Model
             'Disabilities',
     ];
 
-        public function user_personal()
-      {
-        return $this->hasOne('App\User','id','user_id');
-      }
+      //   public function user_personal()
+      // {
+      //   return $this->hasOne('App\User','id','user_id');
+      // }
+
+      public function user()
+    {
+        return $this->belongsTo('App\User', 'user_id');
+    }
 }

@@ -4,12 +4,15 @@ namespace App\Http\Controllers;
 
 use App\AddPhoto;
 use App\Employment;
+use App\Personal;
 use App\PersonalData;
+use App\Religion;
 use App\ReligionData;
 use App\SignupData;
 use App\User;
 use Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth as FacadesAuth;
 
 class SearchController extends Controller
 {
@@ -47,9 +50,38 @@ class SearchController extends Controller
 
     public function search_result()
     {
-        $userid = Auth::id();
-        $user = User::whereid($userid)->first();
-        $addPhoto = AddPhoto::whereuser_id($userid)->first();
-        return view('search.result', compact('user', 'addPhoto'));
+        $data['user']       = User::find(auth()->id())->first();
+        $data['addPhoto']   = AddPhoto::whereuser_id(auth()->id())->first();
+        $data['users']      = User::paginate(30);
+        $data['religions']  = Religion::all();
+
+        return view('search.result', $data);
     }
+
+    public function search_users(Request $request)
+    {
+        $data['user']       = User::find(auth()->id())->first();
+        $data['addPhoto']   = AddPhoto::whereuser_id(auth()->id())->first();
+        // $data['users']      = User::paginate(30);
+        $data['religions']  = Religion::all();
+
+        $data['users'] = User::with('education')
+        ->whereHas('education', function($q) use($request) {
+            $q
+            ->where('EducationLevel', $request->EducationLevel)
+            ->where('FirstLang', $request->FirstLang)
+            ->where('SecondLang', $request->SecondLang)
+            ->where('Employment', $request->Employment);
+        })
+        ->whereHas('personal', function($q) use($request) {
+            $q->where('Income', $request->Income);
+        })
+        ->get();
+
+        // return $request->all();
+        // return $data;
+
+        return view('search.result', $data);
+    }
+
 }

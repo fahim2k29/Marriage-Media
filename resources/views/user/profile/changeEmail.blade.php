@@ -51,10 +51,10 @@
 
           <h6 class="dropdown-header sidemenuheader">Account &amp; Security</h6>
 
-          <li class="active">
+          <li class="">
            <a href="/changeUsername"><i class="sm-line basic-keyboard sm-nav-dropdown-icons"></i>Change Username <span class="smicon-new smicon-angle-right pull-right arrow-font-size"></span></a>
           </li>
-          <li class="">
+          <li class="active">
            <a href="/changeEmail"><i class="sm-line basic-mail sm-nav-dropdown-icons"></i>Change Email <span class="smicon-new smicon-angle-right pull-right arrow-font-size"></span></a>
           </li>
           <li class="">

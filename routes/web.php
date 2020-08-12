@@ -94,6 +94,8 @@ Route::get('/search', 'SearchController@index')->name('search_quick');
     Route::get('/personal', 'SearchController@search_personal')->name('search_personal');
     Route::get('/profession', 'SearchController@search_profession')->name('search_profession');
     Route::get('/search/result', 'SearchController@search_result')->name('search_result');
+    Route::get('/search/users', 'SearchController@search_users')->name('search_users');
+
 
 
 
