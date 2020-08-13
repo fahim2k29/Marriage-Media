@@ -21,8 +21,8 @@ class OfficeUse extends Model
         'DOB_year',
 ];
 
-        public function user_officeUse()
-      {
-        return $this->hasOne('App\User','id','user_id');
-      }
+    public function user()
+    {
+        return $this->belongsTo('App\User', 'user_id');
+    }
 }

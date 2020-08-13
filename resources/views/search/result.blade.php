@@ -112,7 +112,13 @@
                <div class="pull-right"></div>
               </div>
 
-              <div class="sector clearfix secondFont" itemprop="jobTitle">Teacher</div>
+              <div class="sector clearfix secondFont" itemprop="jobTitle"> 
+                @if ($user->education)
+                {{ $user->education->Employment }}
+                @endif
+                {{-- {{App\Education::where('user_id',$user->id)->first('Employment')->Employment}} --}}
+
+              </div>
               <div class="religious clearfix secondFont customPadding"></div>
               <div class="location-miles clearfix secondFont customPadding" itemprop="homeLocation" itemscope="" itemtype="http://schema.org/Place">
                <span itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress">

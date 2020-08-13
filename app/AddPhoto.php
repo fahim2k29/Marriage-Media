@@ -12,8 +12,8 @@ class AddPhoto extends Model
         'image',
     ];
 
-        public function user_photo()
-      {
-        return $this->hasOne('App\User','id','user_id');
-      }
+    public function user()
+    {
+        return $this->belongsTo('App\User', 'user_id');
+    }
 }

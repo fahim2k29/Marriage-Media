@@ -19,7 +19,8 @@ class CustomerController extends Controller
 
         $users = User::all();
         $addPhotos=AddPhoto::all();
-        return view('backend.customer.index', compact('users','addPhotos'));
+        $photo = User::with('addphoto')->get();
+        return view('backend.customer.index', compact('users','addPhotos','photo'));
     }
 
     /**

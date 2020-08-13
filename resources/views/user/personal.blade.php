@@ -424,7 +424,7 @@
                 @endforeach
                </select>
               </div>
-              <
+              
              </div>
 
              <div id="Build-group" class="form-group has-feedback form-control-group">

@@ -13,6 +13,8 @@ class EmploymentTableSeeder extends Seeder
      */
     public function run()
     {
+         
+
         Employment::create([
             
             'employment_value' => 'Communications Manager',

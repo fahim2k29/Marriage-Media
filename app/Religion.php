@@ -17,9 +17,9 @@ class Religion extends Model
         'Salaah',
     ];
     
-    public function user_religion()
+    public function user()
       {
-        return $this->hasOne('App\User','id','user_id');
+        return $this->belongsTo('App\User','user_id','id');
       }
 
       

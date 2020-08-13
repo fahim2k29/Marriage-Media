@@ -21,7 +21,7 @@ class CreateReligionsTable extends Migration
            $table->string('Beard');
            $table->string('Convert');
            $table->string('Halaal');
-           $table->string('Salaah');            
+           $table->string('Salaah');
             $table->timestamps();
 
             $table->bigInteger('user_id')->unsigned()->nullable();

@@ -30,8 +30,8 @@ class Personal extends Model
       //   return $this->hasOne('App\User','id','user_id');
       // }
 
-      public function user()
-    {
-        return $this->belongsTo('App\User', 'user_id');
-    }
+     public function user()
+      {
+        return $this->belongsTo('App\User','user_id','id');
+      }
 }

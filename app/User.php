@@ -60,12 +60,32 @@ class User extends Authenticatable
     //    return $this->belongsTo( 'App\Personal','user_id');
     //  }
 
+    public function aboutme()
+    {
+        return $this->hasOne(Aboutme::class, 'user_id', 'id');
+    }
+
+    public function religion()
+    {
+        return $this->hasOne(Religion::class, 'user_id', 'id');
+    }
+    
+    public function officeuse()
+    {
+        return $this->hasOne(OfficeUse::class, 'user_id', 'id');
+    }
+
     public function personal()
     {
         return $this->hasOne(Personal::class, 'user_id', 'id');
     }
 
     public function education()
+    {
+        return $this->hasOne(Education::class, 'user_id', 'id');
+    }
+
+    public function addphoto()
     {
         return $this->hasOne(Education::class, 'user_id', 'id');
     }

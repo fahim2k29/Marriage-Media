@@ -13,8 +13,8 @@ class Aboutme extends Model
         'LookingFor',
     ];
 
-    public function user_aboutme()
+    public function user()
     {
-      return $this->hasOne('App\User','id','user_id');
+        return $this->belongsTo('App\User', 'user_id');
     }
 }
