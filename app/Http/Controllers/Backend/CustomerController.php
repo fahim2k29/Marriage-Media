@@ -17,10 +17,11 @@ class CustomerController extends Controller
     public function index()
     {
 
-        $users = User::all();
-        $addPhotos=AddPhoto::all();
-        $photo = User::with('addphoto')->get();
-        return view('backend.customer.index', compact('users','addPhotos','photo'));
+        $users      = User::all();
+        $addPhotos  = AddPhoto::all();
+        // $photo = User::with('addPhoto')->get();
+        // dd($photo->toArray());
+        return view('backend.customer.index', compact('users','addPhotos'));
     }
 
     /**
@@ -52,7 +53,6 @@ class CustomerController extends Controller
      */
     public function show($id)
     {
-       
         $users= User::findOrFail($id);
         $addPhotos=AddPhoto::whereuser_id($id)->first();
         // dd($addPhotos);

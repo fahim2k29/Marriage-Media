@@ -28,61 +28,62 @@
          <a href="#" id="changeBreadcrum" class="breadcrumLast">Change Username</a>
         </nav>
         <nav class="nav-sidebar">
-         <ul class="nav">
-          <h6 class="dropdown-header sidemenuheader" style="margin-top: 0px;">Profile</h6>
-          <li class="">
-           <a href="/user/dashboard/profile"><i class="sm-line basic-settings sm-nav-dropdown-icons"></i> Edit My Profile <span class="smicon-new smicon-angle-right pull-right arrow-font-size"></span></a>
-          </li>
-          <li class="">
-           <a href="/editPersonalInfo"><i class="sm-line basic-book-pencil sm-nav-dropdown-icons"></i>Edit Personal Info <span class="smicon-new smicon-angle-right pull-right arrow-font-size"></span></a>
-          </li>
-          <li class="bottombodernone">
-           <a href="/profile/preferences"><i class="sm-line basic-alarm sm-nav-dropdown-icons"></i>Notifications / Preferences <span class="smicon-new smicon-angle-right pull-right arrow-font-size"></span></a>
-          </li>
+        <ul class="nav">
+        
+        <li class="active">
+            <a href="/user/dashboard/profile"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>  Edit My Profile </a>
+        </li>
+        <li class="">
+            <a href="/editPersonalInfo"><i class="fa fa-pencil" aria-hidden="true"></i>  Edit Personal Info </a>
+        </li>
+        <li class="bottombodernone">
+            <a href="#"><i class="fa fa-bell-o" aria-hidden="true"></i>  Notifications / Preferences </a>
+        </li>
 
-          <!--        <li class="--><!-- bottombodernone"><a href="/profile/communication-preferences"><i class="sm-line basic-alarm sm-nav-dropdown-icons"></i>Notifications / Preferences <span class=" smicon-new smicon-angle-right pull-right arrow-font-size"></span></a></li>-->
-          <!--       -->
+        <!--        <li class="--><!-- bottombodernone"><a href="/profile/communication-preferences"><i class="sm-line basic-alarm sm-nav-dropdown-icons"></i>Notifications / Preferences <span class=" smicon-new smicon-angle-right pull-right arrow-font-size"></span></a></li>-->
+        <!--       -->
 
-          <h6 class="dropdown-header sidemenuheader">Photos</h6>
-          <li class="">
-           <a href="/editPhoto"><i class="sm-line basic-photo sm-nav-dropdown-icons"></i>Edit My Photos <span class="smicon-new smicon-angle-right pull-right arrow-font-size"></span></a>
-          </li>
-          
+        <h6 class="dropdown-header sidemenuheader">Photos</h6>
+        <li class="">
+            <a href="/editPhoto"><i class="fa fa-picture-o" aria-hidden="true"></i>  Edit My Photos </a>
+        </li>
+        
 
-          <h6 class="dropdown-header sidemenuheader">Account &amp; Security</h6>
+        <h6 class="dropdown-header sidemenuheader">Account &amp; Security</h6>
 
-          <li class="">
-           <a href="/changeUsername"><i class="sm-line basic-keyboard sm-nav-dropdown-icons"></i>Change Username <span class="smicon-new smicon-angle-right pull-right arrow-font-size"></span></a>
-          </li>
-          <li class="active">
-           <a href="/changeEmail"><i class="sm-line basic-mail sm-nav-dropdown-icons"></i>Change Email <span class="smicon-new smicon-angle-right pull-right arrow-font-size"></span></a>
-          </li>
-          <li class="">
-           <a href="/changePassword"><i class="sm-line sm-line basic-key sm-nav-dropdown-icons"></i>Change Password <span class="smicon-new smicon-angle-right pull-right arrow-font-size"></span></a>
-          </li>
-          <li class="">
-           <a href="#"><i class="sm-line basic-calendar sm-nav-dropdown-icons"></i>Memberships History <span class="smicon-new smicon-angle-right pull-right arrow-font-size"></span></a>
-          </li>
-          <li class="">
-           <a href="#"><i class="sm-line basic-ban sm-nav-dropdown-icons"></i>Blocked Users <span class="smicon-new smicon-angle-right pull-right arrow-font-size"></span></a>
-          </li>
-          <li class="">
-           <a href="#">
-            <i class="sm-line basic-elaboration-mail-noaccess sm-nav-dropdown-icons"></i>Communication Preferences <span class="smicon-new smicon-angle-right pull-right arrow-font-size"></span>
-           </a>
-          </li>
-          <!--        <li class="--><!--"><a href="/profile/devices"><i class=" sm-line  sm-line basic-smartphone sm-nav-dropdown-icons"></i>Devices <span class=" smicon-new smicon-angle-right pull-right arrow-font-size"></span></a></li>-->
-          <!--      -->
+        <li class="">
+            <a href="/changeUsername"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Change Username </a>
+        </li>
+        <li class="">
+            <a href="/changeEmail"><i class="fa fa-envelope" aria-hidden="true"></i> Change Email </a>
+        </li>
+        <li class="">
+            <a href="/changePassword"><i class="fa fa-unlock-alt" aria-hidden="true"></i> Change Password </a>
+        </li>
+        <li class="">
+            <a href="#"><i class="fa fa-delicious" aria-hidden="true"></i> Memberships History </a>
+        </li>
+        <li class="">
+            <a href="#"><i class="fa fa-ban" aria-hidden="true"></i> Blocked Users </a>
+        </li>
+        <li class="">
+            <a href="#"><i class="fa fa-envelope-open-o" aria-hidden="true"></i> Communication Preferences 
+            </a>
+        </li>
+        <!--        <li class="--><!--"><a href="/profile/devices"><i class=" sm-line  sm-line basic-smartphone sm-nav-dropdown-icons"></i>Devices <span class=" smicon-new smicon-angle-right pull-right arrow-font-size"></span></a></li>-->
+        <!--      -->
 
-          <li class="">
-           <a href="#"><i class="sm-line sm-line basic-smartphone sm-nav-dropdown-icons"></i>Devices <span class="smicon-new smicon-angle-right pull-right arrow-font-size"></span></a>
-          </li>
+        <li class="">
+            <a href="#"><i class="fa fa-desktop" aria-hidden="true"></i> Devices </a>
+        </li>
 
-          <li class="deletesidemenu">
-           <a href="#" data-username="fahim900"><i class="sm-line basic-trashcan-remove sm-nav-dropdown-icons"></i>Delete Profile <span class="smicon-new smicon-angle-right pull-right arrow-font-size"></span></a>
-          </li>
-         </ul>
-        </nav>
+        <li class="deletesidemenu">
+            <a href="#" data-username="fahim900">
+                <i class="fa fa-trash-o" aria-hidden="true"></i> Delete Profile
+            </a>
+        </li>
+    </ul>
+</nav>
        </div>
           <div class="col-lg-9 col-md-9 minheightprofile" style="padding: 0px;">
         <div class="subTitleround secondFont headingchange">Change Username</div>

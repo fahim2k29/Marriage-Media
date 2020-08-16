@@ -56,6 +56,7 @@ Route::get('/home', 'HomeController@index')->name('home');
     Route::post('/changeUsername/store', 'HomeController@changeUsername_store')->name('changeUsername_store');
     Route::get('/changeEmail', 'HomeController@changeEmail')->name('changeEmail');
     Route::post('/changeEmail/store', 'HomeController@changeEmail_store')->name('changeEmail_store');
+    Route::get('/showInfo/{id}', 'HomeController@showInfo')->name('showInfo');
 
 
  
@@ -95,6 +96,7 @@ Route::get('/search', 'SearchController@index')->name('search_quick');
     Route::get('/profession', 'SearchController@search_profession')->name('search_profession');
     Route::get('/search/result', 'SearchController@search_result')->name('search_result');
     Route::get('/search/users', 'SearchController@search_users')->name('search_users');
+
 
 
 

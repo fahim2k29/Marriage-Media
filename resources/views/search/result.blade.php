@@ -91,10 +91,15 @@
             {{-- ..!..card --}}
           <div itemscope="" itemtype="http://schema.org/Person" class="photoSearchbox photoBox clearfix MoniKhanom female" id="photoBox-MoniKhanom ">
            <span class="hidden"><a itemprop="url" href="/user/MoniKhanom"></a> </span>
-           <a href="/searchuser/MoniKhanom/4d878d0b5c4cbbfb074873e06eb40996 " target="_parent" title="MoniKhanom ">
+           <a href="{{ route('showInfo', $user->id) }}" target="_parent" title="MoniKhanom ">
             <div class="mainBox clearfix female">
              <div class="pull-left picBox">
               <div class="div-gallery-status">Online</div>
+               {{-- @if($user->addphoto)
+                <img src="{{asset('frontend/assets/images/')}}/{{ $user->addphoto->image }}" class="img-responsive img-circle" />
+                @else
+                <img src="{{asset('frontend/assets/images/')}}/default.png" class="img-responsive img-circle" />
+              @endif --}}
               <img
                itemprop="image"
                class="image-gallery img-responsive"
@@ -119,7 +124,10 @@
                 {{-- {{App\Education::where('user_id',$user->id)->first('Employment')->Employment}} --}}
 
               </div>
-              <div class="religious clearfix secondFont customPadding"></div>
+              <div class="religious clearfix secondFont customPadding">  
+                @if ($user->religion)
+                {{ $user->religion->Sect }}
+                @endif</div>
               <div class="location-miles clearfix secondFont customPadding" itemprop="homeLocation" itemscope="" itemtype="http://schema.org/Place">
                <span itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress">
                 <span itemprop="addressLocality">{{$user->Country}}  </span>

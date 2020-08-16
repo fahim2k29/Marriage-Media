@@ -55,11 +55,14 @@ class SearchController extends Controller
         $data['users']      = User::paginate(30);
         $data['religions']  = Religion::all();
         $data['emp']        = User::with('education')->get();
-        $data['prsn']        = User::with('person')->get();
-
+        $data['rlgn']       = User::with('religion')->get();
+        $data['img']        = User::with('addphoto')->get();
+        
         // dd($emp->toArray());
         return view('search.result', $data);
     }
+
+    
 
     public function search_users(Request $request)
     {
@@ -95,26 +98,26 @@ class SearchController extends Controller
         ->get();
 
 
-        $data['users'] = User::with('personal')
-        ->whereHas('personal', function($q) use($request) {
-            $q
-            ->where ('Origin', $request ->Origin)
-            ->where ('Citizenship', $request ->Citizenship)
-            ->where ('Relocation', $request ->Relocation)
-            ->where ('Income', $request ->Income)
-            ->where ('MarryIn', $request ->MarryIn)
-            ->where ('MaritalStatus', $request ->MaritalStatus)
-            ->where ('Children', $request ->Children)
-            ->where ('HaveChildren', $request ->HaveChildren)
-            ->where ('Living', $request ->Living)
-            ->where ('Height', $request ->Height)
-            ->where ('Build', $request ->Build)
-            ->where ('Hair', $request ->Hair)
-            ->where ('EyeColour', $request ->EyeColour)
-            ->where ('Smoke', $request ->Smoke)
-            ->where ('Disabilities', $request ->Disabilities);
-        })
-        ->get();
+        // $data['users'] = User::with('personal')
+        // ->whereHas('personal', function($q) use($request) {
+        //     $q
+        //     ->where ('Origin', $request ->Origin)
+        //     ->where ('Citizenship', $request ->Citizenship)
+        //     ->where ('Relocation', $request ->Relocation)
+        //     ->where ('Income', $request ->Income)
+        //     ->where ('MarryIn', $request ->MarryIn)
+        //     ->where ('MaritalStatus', $request ->MaritalStatus)
+        //     ->where ('Children', $request ->Children)
+        //     ->where ('HaveChildren', $request ->HaveChildren)
+        //     ->where ('Living', $request ->Living)
+        //     ->where ('Height', $request ->Height)
+        //     ->where ('Build', $request ->Build)
+        //     ->where ('Hair', $request ->Hair)
+        //     ->where ('EyeColour', $request ->EyeColour)
+        //     ->where ('Smoke', $request ->Smoke)
+        //     ->where ('Disabilities', $request ->Disabilities);
+        // })
+        // ->get();
 
         // return $request->all();
         // return $data;

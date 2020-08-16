@@ -212,7 +212,11 @@
                                 </a>
                             </div>
 
-                            <div class="arrow animated bounce sm-line arrows-down-double-34 white-text-color fontsize-54"></div>
+                        <span style="font-size: 56px; color: rgb(66, 197, 230);">
+                                 <i class="fa fa-angle-double-down" aria-hidden="true"></i>
+                        </span>
+
+
                         </div>
                     </div>
                 </div>

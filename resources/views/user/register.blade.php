@@ -96,7 +96,10 @@
        <div class="controls">
         <input name="UserName" id="UserName" type="text" required="required" data-remote="/checkusername" class="form-control" />
        </div>
-       <span id="UserName-span-success" class="smicon-new form-control-feedback smicon-info male span-info-label" data-toggle="tooltip" data-placement="right" title="" data-original-title="Letters, numbers, underscores only"></span>
+       <span id="UserName-span-success" class="smicon-new form-control-feedback smicon-info male span-info-label" data-toggle="tooltip" data-placement="right" title="" data-original-title="Letters, numbers, underscores only">
+        <i class="fa fa-info-circle" aria-hidden="true"></i>
+       </span>
+       
        <span class="help-block with-errors" aria-hidden="false"></span>
 
        <div class="clearfix"></div>

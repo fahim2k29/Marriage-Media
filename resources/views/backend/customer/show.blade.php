@@ -54,11 +54,15 @@
                     <div class="profile-info-name"> Profile Picture </div>
 
                     <div class="profile-info-value">
-                    <span class="editable editable-click" id="">
+                        <span class="editable editable-click" id="">
+                            @if(isset($addPhotos))
                         <img id="avatar" class="editable img-responsive editable-click editable-empty" 
-                        src="{{asset('frontend/assets/images/')}}/{{ $addPhotos->image }}" alt="Alex's Avatar" 
+                        src="{{asset('frontend/assets/images/')}}/{{ $addPhotos->image }}" alt="Alex's Avatar" height="300px" width="200px"
                         >
-                    </span>
+                         @else
+                        <img src="{{asset('frontend/assets/images/')}}/default.png" class="img-responsive img-circle" height="300px" width="200px"/>
+                        @endif
+                        </span>
                     </div>
                 </div>
 

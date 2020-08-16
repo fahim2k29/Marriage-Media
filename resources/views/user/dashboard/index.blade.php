@@ -199,25 +199,33 @@
         <div class="user-controls clear-fix shift-icon padding-box double-padding top-only watch-in-viewport in-view">
          <div class="pading-box center-align button2 float-left z-page-click-target page-click ng-scope">
           <a href="/user/dashboard/profile">
-           <div class="z-page-click-target icon sm-line relative-position sm-line fontsize-28 lineheight-30 basic-webpage-img-txt Male-text-color"></div>
-           <div class="z-page-click-target txt fontsize-10 lineheight-18 shift-icon-2 ng-binding">Edit profile</div>
+                <span style="font-size: 25px; color: rgb(66, 197, 230);">
+                        <i class="fa fa-id-card-o"></i>
+                </span>
+                <div class="z-page-click-target txt fontsize-10 lineheight-18 shift-icon-2 ng-binding">Edit profile</div>
           </a>
          </div>
          <div class="pading-box center-align button2 float-left z-page-click-target page-click ng-scope">
           <a href="/editPhoto">
-           <div class="z-page-click-target icon sm-line relative-position sm-line fontsize-26 lineheight-30 layers-image Male-text-color"></div>
-           <div class="z-page-click-target txt fontsize-10 lineheight-18 shift-icon-2 ng-binding">My Photos</div>
+                <span style="font-size: 25px; color: rgb(66, 197, 230);">
+                        <i class="fa fa-picture-o"></i>
+                </span>
+                <div class="z-page-click-target txt fontsize-10 lineheight-18 shift-icon-2 ng-binding">My Photos</div>
           </a>
          </div>
          <div class="pading-box center-align button2 float-left z-page-click-target page-click ng-scope">
           <a href="#">
-           <div class="z-page-click-target icon sm-line relative-position sm-line fontsize-28 lineheight-30 basic-gear tutorial-step settings Male-text-color"></div>
-           <div class="z-page-click-target txt fontsize-10 lineheight-18 shift-icon-2 ng-binding">Preferences</div>
+                <span style="font-size: 25px; color: rgb(66, 197, 230);">
+                        <i class="fa fa-cog"></i>
+                </span>
+                <div class="z-page-click-target txt fontsize-10 lineheight-18 shift-icon-2 ng-binding">Preferences</div>
           </a>
          </div>
          <div class="pading-box center-align button2 float-left z-page-click-target page-click ng-scope" data-toggle="modal" data-target="#notificationModal" style="cursor: pointer;">
-          <div class="z-page-click-target icon sm-line relative-position sm-line fontsize-26 lineheight-30 music-bell Male-text-color"></div>
-          <div class="z-page-click-target txt fontsize-10 lineheight-18 shift-icon-2 ng-binding">Notifications</div>
+                <span style="font-size: 25px; color: rgb(66, 197, 230);">
+                        <i class="fa fa-bell-o"></i>
+                </span>
+                <div class="z-page-click-target txt fontsize-10 lineheight-18 shift-icon-2 ng-binding">Notifications</div>
          </div>
         </div>
        </div>
@@ -226,7 +234,9 @@
       <div class="width-100 shortcut-boxes padding-box">
        <div class="box width-48 pull-left bg-white margin-right-5" data-toggle="modal" data-target="#menusettingsModal">
         <div class="z-page-click-target icon padding-box double-padding">
-         <div class="sm-line fontsize-56 lineheight-56 basic-webpage-img-txt z-page-click-target fontsize-56 button-56 sm-button squared shift-icon-8" style="color: rgb(64, 135, 241);"></div>
+                 <span style="font-size: 56px; color: rgb(66, 197, 230);">
+                        <i class="fa fa-id-card-o"></i>
+                </span>
         </div>
         <div class="account text-box bg-blue font-color-white">
          Account
@@ -235,8 +245,10 @@
        <div class="box width-48 bg-white pull-right">
         <a href="/membership/history">
          <div class="z-page-click-target icon padding-box double-padding">
-          <div class="sm-line fontsize-56 lineheight-56 basic-calendar z-page-click-target fontsize-56 button-56 sm-button squared shift-icon-8" ng-style="{'color':box.color}" style="color: rgb(62, 168, 119);"></div>
-         </div>
+                <span style="font-size: 56px; color: rgb(66, 197, 230);">
+                        <i class="fa fa-delicious"></i>
+                </span> 
+        </div>
 
          <div class="account text-box bg-green font-color-white">
           Membership
@@ -251,8 +263,10 @@
        <div class="box width-48 pull-left bg-white margin-right-5">
         <a href="/profile/blocked">
          <div class="z-page-click-target icon padding-box double-padding">
-          <div class="sm-line fontsize-56 lineheight-56 arrows-deny z-page-click-target fontsize-56 button-56 sm-button squared shift-icon-8" ng-style="{'color':box.color}" style="color: rgb(101, 46, 128);"></div>
-         </div>
+                <span style="font-size: 56px; color: rgb(66, 197, 230);">
+                        <i class="fa fa-ban"></i>
+                </span> 
+        </div>
          <div class="account text-box bg-purple font-color-white">
           Blocked Users
          </div>
@@ -261,8 +275,10 @@
        <div class="box width-48 bg-white pull-right">
         <a href="/profile/communication-preferences">
          <div class="z-page-click-target icon padding-box double-padding relative-position">
-          <div class="sm-line fontsize-56 lineheight-56 basic-elaboration-mail-noaccess z-page-click-target fontsize-56 button-56 sm-button squared shift-icon-8" ng-style="{'color':box.color}" style="color: rgb(132, 49, 91);"></div>
-         </div>
+                <span style="font-size: 56px; color: rgb(66, 197, 230);">
+                        <i class="fa fa-envelope-open-o"></i>
+                </span> 
+        </div>
 
          <div class="account text-box bg-mahroon font-color-white">
           Communications
@@ -273,34 +289,17 @@
        <div class="clearfix"></div>
       </div>
 
-      <div class="divBottomsectionadv">
-       <!-- success stories -->
-       <div class="success-stories">
-        <div class="card" style="background: transparent !important;">
-         <div class="">
-          <div class="activity-box">
-           <div class="viewvideo-one padding-box bottom-only double-padding">
-            <a href="/success-stories">
-             <img src="/static/userfiles/images/success/soniaandabid/IMG_4797_edit.jpg" class="img-border img-responsive" />
-            </a>
-            <div class="username-deashboard-success">Sonia &amp; Abid</div>
-           </div>
-
-           <!--                </div>   -->
-          </div>
-         </div>
-        </div>
-       </div>
-       <div class="clearfix"></div>
-      </div>
+      
       <div class="clearfix"></div>
 
       <div class="width-100 shortcut-boxes padding-box">
        <div class="box width-48 pull-left bg-white margin-right-5">
         <a href="/pages/helpandsupportnew">
          <div class="z-page-click-target icon padding-box double-padding">
-          <div class="z-page-click-target sm-line fontsize-56 lineheight-56 arrows-question fontsize-56 button-56 sm-button squared shift-icon-8" ng-style="{'color':box.color}" style="color: rgb(115, 82, 175);"></div>
-         </div>
+                <span style="font-size: 56px; color: rgb(66, 197, 230);">
+                        <i class="fa fa-question-circle-o" ></i>
+                </span> 
+        </div>
          <div class="account text-box bg-light-purple font-color-white">
           Help &amp; Support
          </div>
@@ -309,8 +308,10 @@
        <div class="box width-48 bg-white pull-right">
         <a href="/page/contactus">
          <div class="z-page-click-target icon padding-box double-padding">
-          <div class="z-page-click-target sm-line fontsize-56 lineheight-56 basic-mail-open-text fontsize-56 button-56 sm-button squared shift-icon-8" ng-style="{'color':box.color}" style="color: rgb(142, 175, 82);"></div>
-         </div>
+                <span style="font-size: 56px; color: rgb(66, 197, 230);">
+                        <i class="fa fa-address-book-o" ></i>
+                </span>  
+        </div>
 
          <div class="account text-box bg-lightgreen font-color-white">
           Contact Us
@@ -339,8 +340,11 @@
           <!-- end ngIf: !contentCtr.articles[1].youtubeVideoID -->
          </div>
          <div class="story-image-overlay fill-absolute sm-shadow-transparent litle-more sm-color z-page-click-targe">
-          <div class="play-button sm-button squared button-90 sm-line music-play-button fontsize-64 vertical-alignment-in-parent center-block white-text-color"></div>
-         </div>
+                <span style="font-size:64; color:white; ">
+                       <span class="playbutton"><i class="glyphicon glyphicon-play"></i></span>
+
+                </span>
+        </div>
         </div>
        </a>
        <style>
@@ -376,8 +380,11 @@
        <div class="box width-48 pull-left bg-white margin-right-5">
         <a href="/success-stories">
          <div class="z-page-click-target icon padding-box double-padding">
-          <div class="z-page-click-target sm-line fontsize-56 lineheight-56 basic-postcard-multiple fontsize-56 button-56 sm-button squared shift-icon-8" style="color: rgb(255, 152, 0);"></div>
-         </div>
+                <span style="font-size: 56px; color: rgb(66, 197, 230);">
+                        <i class="fa fa-snowflake-o" ></i>
+                </span>  
+ 
+        </div>
          <div class="account text-box bg-orange font-color-white" style="color: rgb(255, 152, 0);">
           Success Stories
          </div>
@@ -386,8 +393,10 @@
        <div class="box width-48 bg-white pull-right">
         <a href="/page/news/allnews/In%20The%20News">
          <div class="z-page-click-target icon padding-box double-padding">
-          <div class="z-page-click-target sm-line fontsize-56 lineheight-56 basic-spread-text-bookmark fontsize-56 button-56 sm-button squared shift-icon-8" style="color: rgb(142, 175, 82);"></div>
-         </div>
+                <span style="font-size: 56px; color: rgb(66, 197, 230);">
+                        <i class="fa fa-newspaper-o" ></i>
+                </span> 
+        </div>
 
          <div class="account text-box bg-geenish font-color-white" style="color: rgb(142, 175, 82);">
           In The news
@@ -402,8 +411,10 @@
        <div class="box width-48 pull-left bg-white margin-right-5">
         <a href="/page/terms_and_conditions">
          <div class="icon padding-box double-padding">
-          <div class="sm-line fontsize-56 lineheight-56 basic-sheet-pen fontsize-56 button-56 sm-button squared shift-icon-8" style="color: rgb(234, 62, 121);"></div>
-         </div>
+                <span style="font-size: 56px; color: rgb(66, 197, 230);">
+                        <i class="fa fa-link" ></i>
+                </span> 
+        </div>
          <div class="account text-box bg-pink font-color-white" style="color: rgb(234, 62, 121);">
           Terms and Conditions
          </div>
@@ -412,8 +423,10 @@
        <div class="box width-48 bg-white pull-right">
         <a href="/page/privacy_security">
          <div class="icon padding-box double-padding">
-          <div class="sm-line fontsize-56 lineheight-56 basic-server fontsize-56 button-56 sm-button squared shift-icon-8" style="color: rgb(33, 150, 243);"></div>
-         </div>
+                <span style="font-size: 56px; color: rgb(66, 197, 230);">
+                        <i class="fa fa-user-secret" ></i>
+                </span> 
+        </div>
 
          <div class="account text-box bg-bluish font-color-white" style="color: rgb(33, 150, 243);">
           Privacy and Security

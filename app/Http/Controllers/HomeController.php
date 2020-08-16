@@ -249,4 +249,25 @@ class HomeController extends Controller
     }
 
 
+    public function showInfo($id)
+    {
+        $userid = Auth::id();
+        $user = User::whereid($userid)->first();
+        $aboutmes = Aboutme::whereuser_id($userid)->first();
+        $addPhoto = AddPhoto::whereuser_id($userid)->first();
+        $religions = Religion::whereuser_id($userid)->first();
+        $personals = Personal::whereuser_id($userid)->first();
+        $educations = Education::whereuser_id($userid)->first();
+        $signupdatas = SignupData::all();
+
+        $users= User::findOrFail($id);
+        $addPhotos=AddPhoto::whereuser_id($id)->first();
+           // dd($addPhotos);
+        return view('user.profile.showInfo', compact('user', 'aboutmes', 'addPhoto', 'signupdatas', 'users', 'addPhotos','religions', 'personals', 'educations'));
+    } 
+
+    
+
+
+
 }

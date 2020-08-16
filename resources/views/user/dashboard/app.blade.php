@@ -837,6 +837,9 @@
     }
    }
   </script>
+ 
+ <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+
 
   <meta name="viewport" content="width=1200" />
   <meta name="author" content="Single Muslim" />
@@ -850,12 +853,19 @@
   <meta name="keywords" content="single muslim,single,muslim,singlemuslim,singlemuslims,muslims,singles,shaadi,marriage,islamic,islam,shadi" />
 
   <meta name="Author" content="Single Muslim" />
+  <link rel="stylesheet" href="/frontend/assets/css/less/font-awesome.css">
+  <link rel="stylesheet" href="font-awesome-animation.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <link href="/frontend/assets/css/less/global.css" media="screen" rel="stylesheet" type="text/css" />
   <link href="/frontend/assets/css/less/controller/DashboardController.css" media="screen" rel="stylesheet" type="text/css" />
+
+  
   <script type="text/javascript" src="/frontend/assets/js/global.min.js"></script>
   <script type="text/javascript" src="/frontend/assets/js/controller/DashboardController.min.js"></script>
   <script type="text/javascript" src="/frontend/assets/validation/validator.min.js"></script>
+
+
 
   <script>
    //var dataLayer=[];
@@ -903,15 +913,18 @@
           <ul class="nav navbar-nav navbar-right">
            <li class="homelink dashboard_class">
             <a href="/user/dashboard">
-             <div class="sm-line basic-home iconsheder-fontsize sm-icondefaultcolor"></div>
-
-             <div class="icontopheader_left sm-icondefaultcolor">Home</div>
+              <span style="font-size: 25px; color: rgb(66, 197, 230);">
+                <i class="fa fa-home"></i>
+            </span>
+              <div class="icontopheader_left sm-icondefaultcolor">Home</div>
             </a>
            </li>
 
            <li class="">
             <a href="/gallery">
-             <div class="sm-line basic-picture-multiple iconsheder-fontsize sm-icondefaultcolor"></div>
+            <span style="font-size: 25px; color: rgb(66, 197, 230);">
+                <i class="fa fa-picture-o"></i>
+            </span>
              <div class="icontopheader_left sm-icondefaultcolor">Gallery</div>
              <div class="clearfix"></div>
             </a>
@@ -919,14 +932,18 @@
 
            <li class="searchlink">
             <a href="/search">
-             <div class="sm-line basic-magnifier iconsheder-fontsize sm-icondefaultcolor"></div>
+            <span style="font-size: 25px; color: rgb(66, 197, 230);">
+                <i class="fa fa-search"></i>
+            </span>
              <div class="icontopheader_left sm-icondefaultcolor">Search</div>
             </a>
            </li>
 
            <li class="no-cpu">
             <a href="/profile/favourites">
-             <div class="sm-line no-cpu iconsheder-fontsize sm-icondefaultcolor basic-heart"></div>
+            <span style="font-size: 25px; color: red;">
+                <i class="fa fa-heart fa-spin"></i>
+            </span>
              <div class="icontopheader_left sm-icondefaultcolor basic-heart">Likes</div>
 
              <div class="fav-outline animate-ripple-delayed ng-scope" style="visibility: hidden;"></div>
@@ -936,8 +953,9 @@
 
            <li>
             <a href="#" class="dropdown-toggle" data-toggle="modal" data-target="#chatModal">
-             <div class="sm-line basic-message-multiple iconsheder-fontsize sm-icondefaultcolor"></div>
-
+            <span style="font-size: 25px; color: rgb(66, 197, 230);">
+                <i class="fa fa-comments"></i>
+            </span>
              <div class="icontopheader_left sm-icondefaultcolor">
               Messages
 
