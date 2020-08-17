@@ -5,118 +5,33 @@
         <div class="fullwidthHomepage">
             <section class="sectionHomepage" style="background-position: 0px 0px;">
                 <div class="sectionHomeSlider">
-                    <ul style="position: relative;">
-                        <li class="li4Header" style="background-color: rgb(0, 0, 0); position: absolute; top: 0px; left: 0px; display: none; z-index: 5; opacity: 0;">
-                            <div class="container">
-                                <div class="usermesage-landing title-box white-text-color center-align bottom-absolute bottom-message">
-                                    <div class="title fontsize-22">
-                                        Abid &amp; Sonia
-                                    </div>
-                                    <div class="subtitle fontsize-16 primary-font-2 light-font">
-                                        Real Life Success Story
-                                    </div>
+                    <ul >
+                         @foreach ($slider as $key => $slide)
+                         <li  style="background-color: rgb(0, 0, 0);">
+                                <div class="item{{ $key == 0 ? ' active' : '' }}">
+                                    <img src="{{ $slide->image }}" height="620px" width="1350px" >
                                 </div>
+                                <div class="container">
+                                    <div class="usermesage-landing title-box white-text-color center-align bottom-absolute bottom-message">
+                                        <div class="title fontsize-22">
+                                            Abid &amp; Sonia
+                                        </div>
+                                        <div class="subtitle fontsize-16 primary-font-2 light-font">
+                                            Real Life Success Story
+                                        </div>
+                                    </div>
 
-                                <div class="bigbgsuccessstories">
-                                    <div class="reallifestory">Real Life Success Story</div>
-                                    <div class="storyusertitle">
-                                        Sedki <span class="">&amp;</span> Shayda
-                                        <br />
-                                        <div class="clearfix"></div>
+                                    <div class="bigbgsuccessstories">
+                                        <div class="reallifestory">Real Life Success Story</div>
+                                        <div class="storyusertitle">
+                                            Sedki <span class="">&amp;</span> Shayda
+                                            <br />
+                                            <div class="clearfix"></div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </li>
-                        <li class="li2Header" style="background-color: rgb(0, 0, 0); position: absolute; top: 0px; left: 0px; display: none; z-index: 5; opacity: 0;">
-                            <div class="container">
-                                <div class="usermesage-landing title-box white-text-color center-align bottom-absolute bottom-message">
-                                    <div class="title fontsize-22">
-                                        Welcome
-                                    </div>
-                                    <div class="subtitle fontsize-16 primary-font-2 light-font">
-                                        Safe, Secure, Halal app
-                                    </div>
-                                </div>
-
-                                <div class="bigbgsuccessstories">
-                                    <div class="reallifestory">Real Life Success Story</div>
-                                    <div class="storyusertitle">
-                                        Adam <span class="">&amp;</span> Saffiya
-                                        <br />
-                                        <!--                                    <span class="pull-right smallcontentreadmore"><a href="/pages/news/root/Umrah%20Winners/adam&safiyya" style="color: #ffffff;"> Read their story ></a></span>-->
-                                        <!--                                    -->
-                                        <div class="clearfix"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="li1Header" style="background-color: rgb(0, 0, 0); position: absolute; top: 0px; left: 0px; display: none; z-index: 5; opacity: 0;">
-                            <div class="container">
-                                <div class="usermesage-landing title-box white-text-color center-align bottom-absolute bottom-message">
-                                    <div class="title fontsize-22">
-                                        Search
-                                    </div>
-                                    <div class="subtitle fontsize-16 primary-font-2 light-font">
-                                        Millions of users with powerful filters
-                                    </div>
-                                </div>
-
-                                <div class="bigbgsuccessstories">
-                                    <div class="reallifestory">Real Life Success Story</div>
-                                    <div class="storyusertitle">
-                                        Halim <span class="">&amp;</span> Munira
-                                        <br />
-                                        <!--                                    <span class="pull-right smallcontentreadmore"> <a href="/pages/news/root/Umrah%20Winners/halim&munira" style="color: #ffffff;">Read their story ></a></span>-->
-                                        <!--                                   -->
-                                        <div class="clearfix"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="li3Header" style="background-color: rgb(0, 0, 0); position: absolute; top: 0px; left: 0px; display: block; z-index: 5; opacity: 0.3714;">
-                            <div class="container">
-                                <div class="usermesage-landing title-box white-text-color center-align bottom-absolute bottom-message">
-                                    <div class="title fontsize-22">
-                                        Search
-                                    </div>
-                                    <div class="subtitle fontsize-16 primary-font-2 light-font">
-                                        Millions of users with powerful filters
-                                    </div>
-                                </div>
-
-                                <div class="bigbgsuccessstories">
-                                    <div class="reallifestory">Real Life Success Story</div>
-                                    <div class="storyusertitle">
-                                        Aaron <span class="">&amp;</span> Tasleemah
-                                        <br />
-                                        <div class="clearfix"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="li5Header" style="background-color: rgb(0, 0, 0); position: absolute; top: 0px; left: 0px; display: block; z-index: 6; opacity: 0.6286;">
-                            <div class="container">
-                                <div class="usermesage-landing title-box white-text-color center-align bottom-absolute bottom-message">
-                                    <div class="title fontsize-22">
-                                        Like &amp; Chat
-                                    </div>
-                                    <div class="subtitle fontsize-16 primary-font-2 light-font">
-                                        Have a meaningful, respectful conversation
-                                    </div>
-                                </div>
-
-                                <div class="bigbgsuccessstories">
-                                    <div class="reallifestory">Real Life Success Story</div>
-                                    <div class="storyusertitle">
-                                        Ahmed <span class="">&amp;</span> Cylina
-                                        <!--                                    <br />-->
-                                        <!--                                    <span class="pull-right smallcontentreadmore"> <a href="/pages/news/root/Umrah%20Winners/celina&ahmed" style="color: #ffffff;">Read their story ></a></span>-->
-                                        <!--                                    -->
-                                        <div class="clearfix"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
+                            </li>
+                            @endforeach
                     </ul>
                 </div>
                 <div class="bottom-absolute right-align storebutton-placement">

@@ -27,9 +27,12 @@ class SiteInfoController extends Controller
         $info->update([
             'logo' => $logo,
             'name' => $request->name,
+            'site_title' => $request->site_title,
             'email' => $request->email,
             'mobile' => $request->mobile,
             'address' => $request->address,
+            'meta_key' => $request->meta_key,
+            'meta_desc' => $request->meta_desc,
             'short_desc' => $request->short_desc,
         ]);
 

@@ -36,6 +36,25 @@
                 </div>
             </div>
 
+
+            <div class="form-group">
+                <label class="col-sm-2 no-padding-right bolder" for="site_title">Site-Title</label>
+
+                <div class="col-sm-10">
+                    <input name="site_title"
+                           type="text"
+                           id="site_title"
+                           placeholder="Site Title"
+                           class="form-control"
+                           value="{{ $info->site_title ?? old('site_title') }}">
+                </div>
+                <div class="col-sm-9 col-sm-offset-2">
+                    <strong class=" red">{{ $errors->first('site_title') }}</strong>
+                </div>
+            </div>
+
+
+
             <div class="form-group">
                 <label class="col-sm-2 no-padding-right bolder" for="email">Email</label>
 
@@ -56,7 +75,7 @@
                 <label class="col-sm-2 no-padding-right bolder" for="mobile">Mobile</label>
                 <div class="col-sm-10 ">
                     <input name="mobile"
-                           type="text"
+                           type="number"
                            id="mobile"
                            placeholder="Mobile No."
                            class="form-control"
@@ -99,7 +118,39 @@
                        for="logo">Minimum 150x33 pixels</label>
             </div>
 
+
             <div class="form-group">
+                <label class="col-sm-2 no-padding-right bolder" for="meta_key">Meta Key</label>
+
+                <div class="col-sm-10">
+                    <input name="meta_key"
+                           type="text"
+                           id="meta_key"
+                           placeholder="Meta Key"
+                           class="form-control"
+                           value="{{ $info->meta_key ?? old('meta_key') }}">
+                </div>
+                <div class="col-sm-9 col-sm-offset-2">
+                    <strong class=" red">{{ $errors->first('meta_key') }}</strong>
+                </div>
+            </div>
+            
+`           <div class="form-group">
+                <label class="col-sm-2 no-padding-right bolder" for="short_desc">Address</label>
+                <div class="col-sm-10">
+                                <textarea name="short_desc"
+                                          id="short_desc"
+                                          rows="1"
+                                          class="form-control"
+                                          placeholder="short_desc"
+                                          style="resize: none;padding: 5px 4px 6px !important;">{{ $info->short_desc ?? old('short_desc') }}</textarea>
+                </div>
+                <div class="col-sm-9 col-sm-offset-2">
+                    <strong class=" red">{{ $errors->first('short_desc') }}</strong>
+                </div>
+            </div>
+
+            {{-- <div class="form-group">
                 <label class="col-sm-2 no-padding-right bolder" for="short_desc">Description </label>
                 <div class="col-sm-10">
                     @include('backend.components.summer_note',[
@@ -110,7 +161,23 @@
                         <strong class=" red">{{ $errors->first('short_desc') }}</strong>
                     </div>
                 </div>
+            </div> --}}
+            
+             <div class="form-group">
+                <label class="col-sm-2 no-padding-right bolder" for="meta_desc">Address</label>
+                <div class="col-sm-10">
+                                <textarea name="meta_desc"
+                                          id="meta_desc"
+                                          rows="1"
+                                          class="form-control"
+                                          placeholder="meta_desc"
+                                          style="resize: none;padding: 5px 4px 6px !important;">{{ $info->meta_desc ?? old('meta_desc') }}</textarea>
+                </div>
+                <div class="col-sm-9 col-sm-offset-2">
+                    <strong class=" red">{{ $errors->first('meta_desc') }}</strong>
+                </div>
             </div>
+
 
             <div class="row">
                 <div class="col-sm-12">

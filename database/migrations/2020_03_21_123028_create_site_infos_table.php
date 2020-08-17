@@ -16,10 +16,13 @@ class CreateSiteInfosTable extends Migration
         Schema::create('site_infos', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
+            $table->string('site_title');
             $table->string('logo')->nullable();
             $table->string('address')->nullable();
             $table->string('email')->nullable();
             $table->string('mobile')->nullable();
+            $table->text('meta_key')->nullable();
+            $table->text('meta_desc')->nullable();
             $table->text('short_desc')->nullable();
             $table->timestamps();
         });

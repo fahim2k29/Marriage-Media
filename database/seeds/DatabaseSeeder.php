@@ -14,9 +14,9 @@ class DatabaseSeeder extends Seeder
         
         $this->call([
         //     AdminsTableSeeder::class,
-        //     SiteInfosTableSeeder::class,
+            // SiteInfosTableSeeder::class,
         //     AboutusTableSeeder::class,
-           EmploymentTableSeeder::class,
+        //    EmploymentTableSeeder::class,
         //    PersonalTableSedeer::class,
         //    ReligionTableSeeder::class,
         //    SignupTableSeeder::class,

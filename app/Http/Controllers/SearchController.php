@@ -101,21 +101,21 @@ class SearchController extends Controller
         // $data['users'] = User::with('personal')
         // ->whereHas('personal', function($q) use($request) {
         //     $q
-        //     ->where ('Origin', $request ->Origin)
-        //     ->where ('Citizenship', $request ->Citizenship)
-        //     ->where ('Relocation', $request ->Relocation)
-        //     ->where ('Income', $request ->Income)
-        //     ->where ('MarryIn', $request ->MarryIn)
-        //     ->where ('MaritalStatus', $request ->MaritalStatus)
-        //     ->where ('Children', $request ->Children)
-        //     ->where ('HaveChildren', $request ->HaveChildren)
-        //     ->where ('Living', $request ->Living)
-        //     ->where ('Height', $request ->Height)
-        //     ->where ('Build', $request ->Build)
-        //     ->where ('Hair', $request ->Hair)
-        //     ->where ('EyeColour', $request ->EyeColour)
-        //     ->where ('Smoke', $request ->Smoke)
-        //     ->where ('Disabilities', $request ->Disabilities);
+        //     ->where ('Citizenship', $request->Citizenship)
+        //     ->where ('Origin', $request->Origin)
+        //     ->where ('Relocation', $request->Relocation)
+        //     ->where ('Income', $request->Income)
+        //     ->where ('MarryIn', $request->MarryIn)
+        //     ->where ('MaritalStatus', $request->MaritalStatus)
+        //     ->where ('HaveChildren', $request->HaveChildren)
+        //     ->where ('Children', $request->Children)
+        //     ->where ('Living', $request->Living)
+        //     ->where ('Height', $request->Height)
+        //     ->where ('Build', $request->Build)
+        //     ->where ('Hair', $request->Hair)
+        //     ->where ('EyeColour', $request->EyeColour)
+        //     ->where ('Smoke', $request->Smoke)
+        //     ->where ('Disabilities', $request->Disabilities);
         // })
         // ->get();
 

@@ -16,6 +16,7 @@ use App\Personal;
 use App\Registration_form;
 use App\Religion;
 use App\Employment;
+use App\Models\Slider;
 use App\PersonalData;
 use App\ReligionData;
 use App\SignupData;
@@ -25,7 +26,9 @@ class MainController extends Controller
 {
     public function index()
     {
-        return view('index');
+        $users  = User::all()->random(30);
+        $slider = Slider::all();
+        return view('index', compact('users', 'slider'));
     }
 
     public function register_form_one()

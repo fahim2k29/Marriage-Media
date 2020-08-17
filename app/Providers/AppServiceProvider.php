@@ -31,6 +31,7 @@ class AppServiceProvider extends ServiceProvider
             if (!session()->has('info')) {
                 session()->put('info', SiteInfo::find(1));
             }
+            
 
             view()->share('info', session()->get('info'));
 

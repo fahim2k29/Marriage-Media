@@ -273,24 +273,6 @@
                                     -->
              <div class="panel-body">
               <div role="form" class="form-horizontal">
-               <div id="Origin-group" class="form-group">
-                <label for="Origin" class="col-sm-3 control-label" data-placeholder="Select your option">
-                 Country of Origin
-                 <!--<i class="smicon smicon-question" data-original-title="" style="margin-left: 4px;"></i> -->
-                </label>
-                <div class="col-sm-8">
-                 <div class="input-group input-group-maxwidth">
-                  <select name="Origin[]" id="Origin" multiple="" data-placeholder="Select your option" class="select2-hidden-accessible" data-select2-id="Origin" tabindex="-1" aria-hidden="true">
-                   <option>Select Option</option>
-                   @foreach ($personaldatas as $personaldata)
-                   <option>{{$personaldata->Origin_data}}</option>
-                   @endforeach
-                  </select>
-                 </div>
-                </div>
-
-                <div class="col-sm-1 label-tick hidelabel"><span id="Origin-span-success" class="smicon-new smicon-check form-control-feedback male span-info-label" title=""></span></div>
-               </div>
                <div id="Citizenship-group" class="form-group">
                 <label for="Citizenship" class="col-sm-3 control-label" data-placeholder="Select your option">
                  Current Citizenship
@@ -298,7 +280,7 @@
                 </label>
                 <div class="col-sm-8">
                  <div class="input-group input-group-maxwidth">
-                  <select name="Citizenship[]" id="Citizenship" multiple="" data-placeholder="Select your option" class="select2-hidden-accessible" data-select2-id="Citizenship" tabindex="-1" aria-hidden="true">
+                  <select name="Citizenship" id="Citizenship"  data-placeholder="Select your option" class="select2-hidden-accessible" data-select2-id="Citizenship" tabindex="-1" aria-hidden="true">
                    <option>Select Option</option>
                    @foreach ($personaldatas as $personaldata)
                    <option>{{$personaldata->Citizenship_data}}</option>
@@ -309,6 +291,27 @@
 
                 <div class="col-sm-1 label-tick hidelabel"><span id="Citizenship-span-success" class="smicon-new smicon-check form-control-feedback male span-info-label" title=""></span></div>
                </div>
+               
+               
+                <div id="Origin-group" class="form-group">
+                <label for="Origin" class="col-sm-3 control-label" data-placeholder="Select your option">
+                 Country of Origin
+                 <!--<i class="smicon smicon-question" data-original-title="" style="margin-left: 4px;"></i> -->
+                </label>
+                <div class="col-sm-8">
+                 <div class="input-group input-group-maxwidth">
+                  <select name="Origin" id="Origin"  data-placeholder="Select your option" class="select2-hidden-accessible" data-select2-id="Origin" tabindex="-1" aria-hidden="true">
+                   <option>Select Option</option>
+                   @foreach ($personaldatas as $personaldata)
+                   <option>{{$personaldata->Origin_data}}</option>
+                   @endforeach
+                  </select>
+                 </div>
+                </div>
+
+                <div class="col-sm-1 label-tick hidelabel"><span id="Origin-span-success" class="smicon-new smicon-check form-control-feedback male span-info-label" title=""></span></div>
+               </div>
+               
                <div id="Relocation-group" class="form-group">
                 <label for="Relocation" class="col-sm-3 control-label" data-placeholder="Select your option">
                  Will Relocate
@@ -316,7 +319,7 @@
                 </label>
                 <div class="col-sm-8">
                  <div class="input-group input-group-maxwidth">
-                  <select name="Relocation[]" id="Relocation" multiple="" data-placeholder="Select your option" class="select2-hidden-accessible" data-select2-id="Relocation" tabindex="-1" aria-hidden="true">
+                  <select name="Relocation" id="Relocation" data-placeholder="Select your option" class="select2-hidden-accessible" data-select2-id="Relocation" tabindex="-1" aria-hidden="true">
                    <option>Select Option</option>
                    @foreach ($personaldatas as $personaldata)
                    <option>{{$personaldata->Relocation_data}}</option>
@@ -330,16 +333,13 @@
                <div id="Smoke-group" class="form-group">
                 <label for="Smoke" class="col-sm-3 control-label">Smokes</label>
                 <div class="col-sm-8">
-                 <div class="input-group input-group-maxwidth btn-group btn-group-radio">
-                  <input name="Smoke" id="Smoke-" type="radio" class="radio" value="" checked="" /><label id="label-Smoke-" for="Smoke-" class="btn"> Any </label>
-
-                  <input name="Smoke" id="Smoke-155" type="radio" class="radio" value="155" /><label id="label-Smoke-155" for="Smoke-155" class="btn"> No </label>
-
-                  <input name="Smoke" id="Smoke-154" type="radio" class="radio" value="154" /><label id="label-Smoke-154" for="Smoke-154" class="btn"> Yes </label>
-
-                  <input name="Smoke" id="Smoke-337" type="radio" class="radio" value="337" /><label id="label-Smoke-337" for="Smoke-337" class="btn"> Sometimes </label>
-
-                  <input name="Smoke" id="Smoke-366" type="radio" class="radio" value="366" /><label id="label-Smoke-366" for="Smoke-366" class="btn"> I've stopped smoking </label>
+                 <div class="input-group input-group-maxwidth">
+                  <select name="Smoke" id="Smoke"  data-placeholder="Select your option" class="select2-hidden-accessible" tabindex="-1" aria-hidden="true">
+                    <option>Select Option</option>
+                   @foreach ($personaldatas as $personaldata)
+                   <option>{{$personaldata->Smoke_data}}</option>
+                   @endforeach
+                  </select>
                  </div>
                 </div>
                 <div class="col-sm-1 label-tick hidelabel"><span id="Smoke-span-success" class="smicon-new smicon-check form-control-feedback male span-info-label" title=""></span></div>
@@ -351,7 +351,7 @@
                 </label>
                 <div class="col-sm-8">
                  <div class="input-group input-group-maxwidth">
-                  <select name="MarryIn[]" id="MarryIn" multiple="" data-placeholder="Select your option" class="select2-hidden-accessible" data-select2-id="MarryIn" tabindex="-1" aria-hidden="true">
+                  <select name="MarryIn" id="MarryIn"  data-placeholder="Select your option" class="select2-hidden-accessible" data-select2-id="MarryIn" tabindex="-1" aria-hidden="true">
                    <option>Select Option</option>
                    @foreach ($personaldatas as $personaldata)
                    <option>{{$personaldata->MarryIn_data}}</option>
@@ -369,7 +369,7 @@
                 </label>
                 <div class="col-sm-8">
                  <div class="input-group input-group-maxwidth">
-                  <select name="MaritalStatus[]" id="MaritalStatus" multiple="" data-placeholder="Select your option" class="select2-hidden-accessible" data-select2-id="MaritalStatus" tabindex="-1" aria-hidden="true">
+                  <select name="MaritalStatus" id="MaritalStatus"  data-placeholder="Select your option" class="select2-hidden-accessible" data-select2-id="MaritalStatus" tabindex="-1" aria-hidden="true">
                    <option>Select Option</option>
                    @foreach ($personaldatas as $personaldata)
                    <option>{{$personaldata->MaritalStatus_data}}</option>
@@ -389,7 +389,7 @@
                 </label>
                 <div class="col-sm-8">
                  <div class="input-group input-group-maxwidth">
-                  <select name="HaveChildren[]" id="HaveChildren" multiple="" data-placeholder="Select your option" class="select2-hidden-accessible" data-select2-id="HaveChildren" tabindex="-1" aria-hidden="true">
+                  <select name="HaveChildren" id="HaveChildren"  data-placeholder="Select your option" class="select2-hidden-accessible" data-select2-id="HaveChildren" tabindex="-1" aria-hidden="true">
                    <option>Select Option</option>
                    @foreach ($personaldatas as $personaldata)
                    <option>{{$personaldata->HaveChildren_data}}</option>
@@ -431,7 +431,7 @@
                 </label>
                 <div class="col-sm-8">
                  <div class="input-group input-group-maxwidth">
-                  <select name="Children[]" id="Children" multiple="" data-placeholder="Select your option" class="select2-hidden-accessible" data-select2-id="Children" tabindex="-1" aria-hidden="true">
+                  <select name="Children" id="Children"  data-placeholder="Select your option" class="select2-hidden-accessible" data-select2-id="Children" tabindex="-1" aria-hidden="true">
                    <option>Select Option</option>
                    @foreach ($personaldatas as $personaldata)
                    <option>{{$personaldata->Children_data}}</option>
@@ -451,7 +451,7 @@
                 </label>
                 <div class="col-sm-8">
                  <div class="input-group input-group-maxwidth">
-                  <select name="Build[]" id="Build" multiple="" data-placeholder="Select your option" class="select2-hidden-accessible" data-select2-id="Build" tabindex="-1" aria-hidden="true">
+                  <select name="Build" id="Build"  data-placeholder="Select your option" class="select2-hidden-accessible" data-select2-id="Build" tabindex="-1" aria-hidden="true">
                    <option>Select Option</option>
                    @foreach ($personaldatas as $personaldata)
                    <option>{{$personaldata->Build_data}}</option>
@@ -469,7 +469,7 @@
                 </label>
                 <div class="col-sm-8">
                  <div class="input-group input-group-maxwidth">
-                  <select name="Hair[]" id="Hair" multiple="" data-placeholder="Select your option" class="select2-hidden-accessible" data-select2-id="Hair" tabindex="-1" aria-hidden="true">
+                  <select name="Hair" id="Hair"  data-placeholder="Select your option" class="select2-hidden-accessible" data-select2-id="Hair" tabindex="-1" aria-hidden="true">
                    <option>Select Option</option>
                    @foreach ($personaldatas as $personaldata)
                    <option>{{$personaldata->Hair_data}}</option>
@@ -487,7 +487,7 @@
                 </label>
                 <div class="col-sm-8">
                  <div class="input-group input-group-maxwidth">
-                  <select name="Living[]" id="Living" multiple="" data-placeholder="Select your option" class="select2-hidden-accessible" data-select2-id="Living" tabindex="-1" aria-hidden="true">
+                  <select name="Living" id="Living"  data-placeholder="Select your option" class="select2-hidden-accessible" data-select2-id="Living" tabindex="-1" aria-hidden="true">
                    <option>Select Option</option>
                    @foreach ($personaldatas as $personaldata)
                    <option>{{$personaldata->Living_data}}</option>
@@ -505,7 +505,7 @@
                 </label>
                 <div class="col-sm-8">
                  <div class="input-group input-group-maxwidth">
-                  <select name="EyeColour[]" id="EyeColour" multiple="" data-placeholder="Select your option" class="select2-hidden-accessible" data-select2-id="EyeColour" tabindex="-1" aria-hidden="true">
+                  <select name="EyeColour" id="EyeColour"  data-placeholder="Select your option" class="select2-hidden-accessible" data-select2-id="EyeColour" tabindex="-1" aria-hidden="true">
                    <option>Select Option</option>
                    @foreach ($personaldatas as $personaldata)
                    <option>{{$personaldata->EyeColour_data}}</option>
@@ -516,14 +516,14 @@
 
                 <div class="col-sm-1 label-tick hidelabel"><span id="EyeColour-span-success" class="smicon-new smicon-check form-control-feedback male span-info-label" title=""></span></div>
                </div>
-               <div id="MinHeight-group" class="form-group">
-                <label for="MinHeight" class="col-sm-3 control-label">
-                 Minimum Height
+               <div id="Height-group" class="form-group">
+                <label for="Height" class="col-sm-3 control-label">
+                 Height
                  <!--<i class="smicon smicon-question" data-original-title="" style="margin-left: 4px;"></i> -->
                 </label>
                 <div class="col-sm-8">
                  <div class="input-group input-group-maxwidth">
-                  <select name="MinHeight" id="MinHeight" class="form-control-values select2-hidden-accessible" data-select2-id="MinHeight" tabindex="-1" aria-hidden="true">
+                  <select name="Height" id="MinHeight" class="form-control-values select2-hidden-accessible" data-select2-id="MinHeight" tabindex="-1" aria-hidden="true">
                    <option>Select Option</option>
                    @foreach ($personaldatas as $personaldata)
                    <option>{{$personaldata->Height_data}}</option>
@@ -534,7 +534,7 @@
 
                 <div class="col-sm-1 label-tick hidelabel"><span id="MinHeight-span-success" class="smicon-new smicon-check form-control-feedback male span-info-label" title=""></span></div>
                </div>
-               <div id="MaxHeight-group" class="form-group">
+               {{-- <div id="MaxHeight-group" class="form-group">
                 <label for="MaxHeight" class="col-sm-3 control-label">
                  Maximum Height
                  <!--<i class="smicon smicon-question" data-original-title="" style="margin-left: 4px;"></i> -->
@@ -551,7 +551,7 @@
                 </div>
 
                 <div class="col-sm-1 label-tick hidelabel"><span id="MaxHeight-span-success" class="smicon-new smicon-check form-control-feedback male span-info-label" title=""></span></div>
-               </div>
+               </div> --}}
                <div id="Disabilities-group" class="form-group">
                 <label for="Disabilities" class="col-sm-3 control-label" data-placeholder="Select your option">
                  Disabilities
@@ -559,7 +559,7 @@
                 </label>
                 <div class="col-sm-8">
                  <div class="input-group input-group-maxwidth">
-                  <select name="Disabilities[]" id="Disabilities" multiple="" data-placeholder="Select your option" class="select2-hidden-accessible" data-select2-id="Disabilities" tabindex="-1" aria-hidden="true">
+                  <select name="Disabilities" id="Disabilities"  data-placeholder="Select your option" class="select2-hidden-accessible" data-select2-id="Disabilities" tabindex="-1" aria-hidden="true">
                    <option>Select Option</option>
                    @foreach ($personaldatas as $personaldata)
                    <option>{{$personaldata->Disabilities_data}}</option>

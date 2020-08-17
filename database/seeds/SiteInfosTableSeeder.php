@@ -13,7 +13,8 @@ class SiteInfosTableSeeder extends Seeder
     public function run()
     {
         SiteInfo::create([
-            'name' => 'Company'
+            'name' => 'Company',
+            'site_title' => 'Software Company',
         ]);
     }
 }

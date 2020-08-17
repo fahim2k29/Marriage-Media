@@ -764,7 +764,9 @@
         <link href="/frontend/assets/images/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
         <meta name="apple-itunes-app" content="app-id=1116597910" />
 
-        <title>SingleMuslim.com - Islamic Muslim Singles, Shaadi and Marriage Introductions Online - Single Muslim Rest of the World</title>
+        {{-- <title>SingleMuslim.com - Islamic Muslim Singles, Shaadi and Marriage Introductions Online - Single Muslim Rest of the World</title> --}}
+        <title>{{$info->site_title}} - {{$info->short_desc}} </title>
+
 
         <meta name="description" content="SingleMuslim.com the world's leading Islamic Muslim Singles, Marriage and Shaadi introduction service. Over 2 million members online. Register for FREE!" />
 
@@ -837,7 +839,7 @@
         <header class="landing-header transition">
             <div class="container">
                 <h1 class="landing-header__logo">
-                    <a href="/" title="SingleMuslim.com - The world's leading Muslim introduction agency"><img src="/frontend/assets/images/single-muslim.png" alt="Single Muslim" /></a>
+                    <a href="/" title="SingleMuslim.com - The world's leading Muslim introduction agency"><img src="/frontend/assets/images/marriageMedia.png" alt="Single Muslim" /></a>
                     <!--                <div class="landing-header__strapline">-->
                     <!--                    <p>The world's leading Muslim introduction agency</p>-->
                     <!--                </div>-->
@@ -861,8 +863,8 @@
                                 <ul class="nav--item-dropdownli">
                                     <a href="" class="has-dropdown" title="Search for your perfect marriage partner"> </a>
                                     <li><a href="" class="has-dropdown" title="Search for your perfect marriage partner"></a><a href="/search" class="navlinks">Search</a></li>
-                                    <li><a href="/professionsearch" class="navlinks">Profession Search</a></li>
-                                    <li><a href="/gallery/0/0/18/100" class="navlinks">Photo Gallery</a></li>
+                                    <li><a href="/profession" class="navlinks">Profession Search</a></li>
+                                    <li><a href="/search/result" class="navlinks">Photo Gallery</a></li>
                                     <li><a href="/usernamesearch" class="navlinks">Username Search</a></li>
                                 </ul>
                             </div>
@@ -998,15 +1000,19 @@
 
                     <div class="col-xs-12">
                         <div class="col-xs-9">
-                            <p style="font-size: 13px;">2020 © Smart Software Ltd</p>
+                            <p style="font-size: 13px;"> 2020 ©  {{$info->site_title}} - {{$info->short_desc}} </p>
                         </div>
                         
 
                         <div class="col-xs-3" style="padding-left: 52px;">
-                            <div class="appstorelogos_footer">
-                                <a href="https://itunes.apple.com/gb/app/singlemuslim/id1116597910?mt=8" target="_blank"><img src="/frontend/assets/images/app_store.png" height="50px" style="padding-bottom: 10px;" /></a>
-                                <a href="https://play.google.com/store/apps/details?id=com.singlemuslim.sm" target="_blank"><img src="/frontend/assets/images/android_logo.png" height="50px" style="padding-bottom: 10px;" /></a>
-                            </div>
+                           
+                            <a href="https://www.smartsoftware.com.bd/"><p style="font-size: 13px;  text-decoration: underline; color:green">Developed By:  <b> {{$info->name}} </b> </p></a>
+
+                               
+
+                                {{-- <a href="https://itunes.apple.com/gb/app/singlemuslim/id1116597910?mt=8" target="_blank"><img src="/frontend/assets/images/app_store.png" height="50px" style="padding-bottom: 10px;" /></a>
+                                <a href="https://play.google.com/store/apps/details?id=com.singlemuslim.sm" target="_blank"><img src="/frontend/assets/images/android_logo.png" height="50px" style="padding-bottom: 10px;" /></a> --}}
+                            
                         </div>
                     </div>
                 </div>
