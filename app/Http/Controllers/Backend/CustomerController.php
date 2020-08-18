@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\AddPhoto;
 use App\Http\Controllers\Controller;
+use App\Personal;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -54,9 +55,10 @@ class CustomerController extends Controller
     public function show($id)
     {
         $users= User::findOrFail($id);
+        $personals = Personal::whereuser_id($id)->first();
+        // dd($personals);
         $addPhotos=AddPhoto::whereuser_id($id)->first();
-        // dd($addPhotos);
-        return view('backend.customer.show', compact('users','addPhotos'));
+        return view('backend.customer.show', compact('users','addPhotos', 'personals'));
     }
 
     /**

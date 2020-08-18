@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Aboutme;
 use App\AddPhoto;
+use App\Education;
 use App\Employment;
 use App\Personal;
 use App\PersonalData;
@@ -53,10 +55,15 @@ class SearchController extends Controller
         $data['user']       = User::find(auth()->id())->first();
         $data['addPhoto']   = AddPhoto::whereuser_id(auth()->id())->first();
         $data['users']      = User::paginate(30);
+        $data['aboutmes']   = Aboutme::all();
         $data['religions']  = Religion::all();
+        $data['educations'] = Education::all();
+        $data['personals']  = Personal::all();
         $data['emp']        = User::with('education')->get();
         $data['rlgn']       = User::with('religion')->get();
+        $data['prsn']       = User::with('personal')->get();
         $data['img']        = User::with('addphoto')->get();
+        $data['user']       = User::first(['DOB_year']);
         
         // dd($emp->toArray());
         return view('search.result', $data);

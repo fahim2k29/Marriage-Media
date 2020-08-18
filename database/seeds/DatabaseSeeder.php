@@ -16,7 +16,7 @@ class DatabaseSeeder extends Seeder
         //     AdminsTableSeeder::class,
             // SiteInfosTableSeeder::class,
         //     AboutusTableSeeder::class,
-        //    EmploymentTableSeeder::class,
+           EmploymentTableSeeder::class,
         //    PersonalTableSedeer::class,
         //    ReligionTableSeeder::class,
         //    SignupTableSeeder::class,

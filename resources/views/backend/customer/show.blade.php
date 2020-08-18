@@ -110,6 +110,18 @@
                 </div>
 
                 <div class="profile-info-row">
+                    <div class="profile-info-name"> Height </div>
+
+                    <div class="profile-info-value">
+                        <span class="editable editable-click" id="age">
+                            @if($personals)
+                            {{$personals->Height}}
+                            @endif
+                        </span>
+                    </div>
+                </div>
+
+                <div class="profile-info-row">
                     <div class="profile-info-name"> Date Of Birth </div>
 
                     <div class="profile-info-value">

@@ -769,7 +769,9 @@
         <meta name="keywords" content="single muslim,single,muslim,singlemuslim,singlemuslims,muslims,singles,shaadi,marriage,islamic,islam,shadi" />
 
         <meta name="Author" content="Single Muslim" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
+        
         <link href="/frontend/assets/css/less/global.css" media="screen" rel="stylesheet" type="text/css" />
         <link href="/frontend/assets/css/less/controller/SearchController.css" media="screen" rel="stylesheet" type="text/css" />
         <script type="text/javascript" src="/frontend/assets/js/global.min.js"></script>
@@ -832,6 +834,7 @@
         </div>
 
         <!-- Footer -->
+       
         <footer class="primary-font-2 relative-position">
             <div class="container">
                 <div class="row">
@@ -946,14 +949,17 @@
 
                     <div class="col-xs-12">
                         <div class="col-xs-9">
-                            <p style="font-size: 13px;">Copyright © 2020 Single Muslim. All rights reserved. All third party logos are for illustration only and are copyright of their respective owners.</p>
+                            <p style="font-size: 13px;">  <?php echo date("Y"); ?> &copy;  {{$info->site_title}} </p>
                         </div>
+                        
 
-                        <div class="col-xs-3" style="padding-left: 52px;">
-                            <div class="appstorelogos_footer">
-                                <a href="https://itunes.apple.com/gb/app/singlemuslim/id1116597910?mt=8" target="_blank"><img src="/frontend/assets/images/app_store.png" height="50px" style="padding-bottom: 10px;" /></a>
-                                <a href="https://play.google.com/store/apps/details?id=com.singlemuslim.sm" target="_blank"><img src="/frontend/assets/images/android_logo.png" height="50px" style="padding-bottom: 10px;" /></a>
-                            </div>
+                        <div class="col-xs-3">
+                           
+                            <a href="https://www.smartsoftware.com.bd/">Developed By:  <b> {{$info->name}} </b></a>                               
+
+                                {{-- <a href="https://itunes.apple.com/gb/app/singlemuslim/id1116597910?mt=8" target="_blank"><img src="/frontend/assets/images/app_store.png" height="50px" style="padding-bottom: 10px;" /></a>
+                                <a href="https://play.google.com/store/apps/details?id=com.singlemuslim.sm" target="_blank"><img src="/frontend/assets/images/android_logo.png" height="50px" style="padding-bottom: 10px;" /></a> --}}
+                            
                         </div>
                     </div>
                 </div>

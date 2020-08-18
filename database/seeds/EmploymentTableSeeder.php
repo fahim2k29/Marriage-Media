@@ -33,5 +33,11 @@ class EmploymentTableSeeder extends Seeder
             'employment_EducationLevel'=>'College',
             'employment_Language'=>'Arabic',
             ]);
+        Employment::create([
+    
+            'employment_value' => 'Desk Manager',
+            'employment_EducationLevel'=>'College',
+            'employment_Language'=>'Arabic',
+            ]);
     }
 }

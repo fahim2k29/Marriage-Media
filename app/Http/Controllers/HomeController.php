@@ -35,14 +35,16 @@ class HomeController extends Controller
      */
     public function index()
     {
-         $userid = Auth::id();
+        $userid = Auth::id();
         $addPhoto = AddPhoto::whereuser_id($userid)->first();
-        return view('user.dashboard.index', compact('addPhoto'));
+        $user   = User::all();
+        return view('user.dashboard.index', compact('addPhoto' , 'user'));
     }
 
     public function user_dashboard()
     {
         $userid = Auth::id();
+        $user   = User::first(['DOB_year']);
         $aboutme = Aboutme::whereuser_id($userid)->first();
         $education = Education::whereuser_id($userid)->first();
         $personal = Personal::whereuser_id($userid)->first();
@@ -54,7 +56,7 @@ class HomeController extends Controller
         // dd($Dob);
         // $years = Carbon::parse($Dob)->age;
             
-        return view('user.dashboard.index', compact('aboutme', 'education', 'personal', 'religion', 'officeUse', 'addPhoto'));
+        return view('user.dashboard.index', compact('aboutme', 'education', 'personal', 'religion', 'officeUse', 'addPhoto', 'user'));
     }
 
     public function user_dashboard_profile()
@@ -253,16 +255,17 @@ class HomeController extends Controller
     {
         $userid = Auth::id();
         $user = User::whereid($userid)->first();
-        $aboutmes = Aboutme::whereuser_id($userid)->first();
         $addPhoto = AddPhoto::whereuser_id($userid)->first();
-        $religions = Religion::whereuser_id($userid)->first();
-        $personals = Personal::whereuser_id($userid)->first();
-        $educations = Education::whereuser_id($userid)->first();
-        $signupdatas = SignupData::all();
-
-        $users= User::findOrFail($id);
-        $addPhotos=AddPhoto::whereuser_id($id)->first();
-           // dd($addPhotos);
+        // $signupdatas = SignupData::all();
+        
+        $users      = User::findOrFail($id);
+        $aboutmes   = Aboutme::whereuser_id($id)->first();
+        $personals  = Personal::whereuser_id($id)->first();
+        $educations = Education::whereuser_id($id)->first();
+        $religions  = Religion::whereuser_id($id)->first();
+        // dd($aboutmes);
+        $addPhotos  = AddPhoto::whereuser_id($id)->first();
+        // dd($aboutmes->toArray());
         return view('user.profile.showInfo', compact('user', 'aboutmes', 'addPhoto', 'signupdatas', 'users', 'addPhotos','religions', 'personals', 'educations'));
     } 
 

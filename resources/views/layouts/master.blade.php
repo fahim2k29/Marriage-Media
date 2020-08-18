@@ -869,10 +869,37 @@
                                 </ul>
                             </div>
                         </li>
-                        <li class="login">
-                            <a href="/login" title="Log in to your existing Single Muslim account" id="btnhomelogins">Login</a>
-                        </li>
-                        <li><a href="/signup" title="Register to find your perfect marriage partner">Register</a></li>
+                            @guest
+                                    <li class="login">
+                                        <a href="/login" title="Log in to your existing Single Muslim account" id="btnhomelogins">Login</a>
+                                    </li>
+                                    <li>
+                                        @if (Route::has('register'))
+                                        <a href="/signup" title="Register to find your perfect marriage partner">Register</a>
+                                        @endif 
+                                    </li>
+                                @else
+
+                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->UserName }}
+                                    </a>
+
+                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a
+                                        class="dropdown-item"
+                                        href="{{ route('logout') }}"
+                                        onclick="event.preventDefault();
+                                                                                    document.getElementById('logout-form').submit();"
+                                    >
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                    </div>
+
+                            @endguest
                     </ul>
                 </nav>
             </div>
@@ -1000,15 +1027,13 @@
 
                     <div class="col-xs-12">
                         <div class="col-xs-9">
-                            <p style="font-size: 13px;"> 2020 ©  {{$info->site_title}} - {{$info->short_desc}} </p>
+                            <p style="font-size: 13px;">  <?php echo date("Y"); ?> &copy;  {{$info->site_title}} </p>
                         </div>
                         
 
-                        <div class="col-xs-3" style="padding-left: 52px;">
+                        <div class="col-xs-3">
                            
-                            <a href="https://www.smartsoftware.com.bd/"><p style="font-size: 13px;  text-decoration: underline; color:green">Developed By:  <b> {{$info->name}} </b> </p></a>
-
-                               
+                            <a href="https://www.smartsoftware.com.bd/">Developed By:  <b> {{$info->name}} </b></a>                               
 
                                 {{-- <a href="https://itunes.apple.com/gb/app/singlemuslim/id1116597910?mt=8" target="_blank"><img src="/frontend/assets/images/app_store.png" height="50px" style="padding-bottom: 10px;" /></a>
                                 <a href="https://play.google.com/store/apps/details?id=com.singlemuslim.sm" target="_blank"><img src="/frontend/assets/images/android_logo.png" height="50px" style="padding-bottom: 10px;" /></a> --}}

@@ -9,8 +9,8 @@
     <div class="alertpostion"></div>
 
     <div class="topbarProfileview">
-     <div class="backtosearch absolute-position">
-      <a href="/searchdisplayresults/2eeb2403dca2a356791516e79c96cbf5/false/1"><i class="sm-line arrows-left vertical-alignment"></i> Back to search</a>
+     <div class="backtosearch absolute-position " style="background-color: rgb(66, 197, 230)">
+      <a href="/search" style="color: black"><i class="fa fa-angle-left"></i> Back to search</a>
      </div>
 
      <div class="pull-left userBigPic">
@@ -24,7 +24,7 @@
          </div>
 
          <div class="pull-left userAge">
-          22
+         <b> {{\Carbon\Carbon::parse($users->DOB_year)->diff(\Carbon\Carbon::now())->format('%y')}}</b>
          </div>
          <div class="clearfix"></div>
         </div>
@@ -42,10 +42,10 @@
         <div class="pull-right">
          <div class="starSection">
           <div class="pointerCursor ratingUser">
-           <div class="rating">
+           {{-- <div class="rating">
             <span class="sm-line none star-full"></span><span class="sm-line none star-empty graybackGround"></span><span class="sm-line none star-empty graybackGround"></span><span class="sm-line none star-empty graybackGround"></span>
             <span class="sm-line none star-empty graybackGround"></span>
-           </div>
+           </div> --}}
           </div>
          </div>
         </div>
@@ -57,7 +57,7 @@
             src="{{asset('frontend/assets/images/')}}/{{ $addPhotos->image }}" alt="Alex's Avatar"  width="320px"
             >
                 @else
-            <img src="{{asset('frontend/assets/images/')}}/default.png" class="img-responsive img-circle" height="300px" width="200px"/>
+            <img src="{{asset('frontend/assets/images/')}}/default.png" class="img-responsive img-circle" height="300px" width="320px"/>
         @endif
 
       <div class="thumbImages"></div>
@@ -189,7 +189,10 @@
         My Sect
        </div>
        <div class="pull-left profileContent">
-        {{$religions->Sect}}
+        @if ($religions)
+            {{ $religions->Sect }}
+        @endif
+        
        </div>
       </div>
 
@@ -198,7 +201,9 @@
         Religiousness
        </div>
        <div class="pull-left profileContent">
-        {{$religions->Religiosness}}
+         @if ($religions)
+            {{ $religions->Religiosness }}
+        @endif
        </div>
       </div>
 
@@ -207,7 +212,11 @@
         My Profession
        </div>
        <div class="pull-left profileContent">
-        <span itemprop="jobTitle"> {{$educations->Employment}} </span>
+        <span itemprop="jobTitle"> 
+        @if ($educations)
+            {{ $educations->Employment }}
+        @endif    
+        </span>
        </div>
       </div>
 
@@ -216,7 +225,9 @@
         Marital Status
        </div>
        <div class="pull-left profileContent">
-        {{$personals->MaritaStatus}}
+        @if ($personals)
+            {{$personals->MaritalStatus }}
+        @endif 
        </div>
       </div>
 
@@ -232,7 +243,11 @@
 
         <span itemprop="homeLocation" itemscope="" itemtype="http://schema.org/Place">
          <span itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress">
-          <span itemprop="addressCountry"> {{$personals->Citizenship}} </span>
+          <span itemprop="addressCountry"> 
+            @if ($personals)
+                {{ $personals->Citizenship }}
+            @endif  
+          </span>
           <span class="hidden" itemprop="addressRegion"> </span>
          </span>
         </span>
@@ -244,7 +259,7 @@
         Registration Reason
        </div>
        <div class="pull-left profileContent">
-        {{$users->RegistrationReason}}
+        {{$users->RagistrationReason}}
        </div>
       </div>
 
@@ -262,7 +277,7 @@
          data-userkey="YWU1YTY3OTUyMzY3ZmEyYhwgLF5RmSK7JuLlhZxPGHNs579tvQI2h0tEulQQlypa$"
          data-original-title=""
         >
-         <span class="icon sm-line basic-flag1 iconabsolute female"></span><br />
+         <span><i class="fa fa-ban"></i><br />
          <span class="messagecolor">Report</span>
         </a>
 
@@ -275,21 +290,21 @@
          data-popout="true"
          data-isblocked="false"
         >
-         <span class="icon sm-line basic-ban iconabsolute female"></span><br />
+         <span><i class="fa fa-ban"></i></span><br />
          <span class="messagecolor">Block</span>
         </a>
        </div>
       </div>
 
       <div class="col-lg-12 contentshare">
-       <span><a itemprop="url" class="female" href="/user/Jaequilin">Profile Link</a></span>
+       <span><a itemprop="url" class="female" href="/showInfo/{{$users->UserName}}">Profile Link</a></span>
        <span>
         <form>
          <div class="input-group">
-          <input type="text" class="form-control" style="border-radius: 0px !important;" value="https://www.singlemuslim.com/user/Jaequilin" placeholder="Some path" id="copy-input" />
+          <input type="text" class="form-control" style="border-radius: 0px !important;" value="https://www.singlemuslim.com/showInfo/{{$users->UserName}}" placeholder="Some path" id="copy-input" />
           <span class="input-group-btn">
            <button class="btn btn-default" type="button" id="copy-button" style="height: 34px;" data-toggle="tooltip" data-placement="button" data-original-title="" title="">
-            <i class="sm-line basic-sheet-multiple"></i>
+            <i class="fa fa-clipboard"></i>
            </button>
           </span>
          </div>
@@ -305,7 +320,11 @@
          A Little Bit About Me
         </div>
         <div class="col-md-12 detailpart">
-         <span itemprop="description"> {{$aboutmes->Description}} </span>
+         <span itemprop="description"> 
+        @if ($aboutmes)
+            {{ $aboutmes->Description }}
+        @endif      
+        </span>
         </div>
         <p class="read-more">Read More</p>
         <div class="clearfix"></div>
@@ -315,7 +334,11 @@
         <div class="col-md-12 headings">
          What I Am Looking For
         </div>
-        <div class="col-md-12 detailpart">{{$aboutmes->LookingFor}}</div>
+        <div class="col-md-12 detailpart">
+        @if ($aboutmes)
+            {{ $aboutmes->LookingFor }}
+        @endif     
+        </div>
         <p class="read-more">Read More</p>
         <div class="clearfix"></div>
        </div>
@@ -329,7 +352,11 @@
           <div class="col-md-6 font-size-class-header">My Citizenship</div>
 
           <div class="col-md-6 font-size-class">
-           <span>{{$personals->Citizenship}}</span>
+           <span>
+            @if ($personals)
+            {{ $personals->Citizenship }}
+            @endif 
+           </span>
           </div>
 
           <div class="clearfix"></div>
@@ -337,7 +364,9 @@
           <div class="col-md-6 font-size-class-header">Country of Origin</div>
 
           <div class="col-md-6 font-size-class">
-           {{$personals->Origin}}
+            @if ($personals)
+                {{ $personals->Origin }}
+            @endif 
           </div>
 
           <div class="clearfix"></div>
@@ -345,7 +374,9 @@
           <div class="col-md-6 font-size-class-header">Willing to Relocate?</div>
 
           <div class="col-md-6 font-size-class">
-           {{$personals->Relocation}}
+            @if ($personals)
+                {{ $personals->Relocation }}
+            @endif 
           </div>
 
           <div class="clearfix"></div>
@@ -353,7 +384,9 @@
           <div class="col-md-6 font-size-class-header">I am Looking to Marry</div>
 
           <div class="col-md-6 font-size-class">
-           {{$personals->MarryIn}}
+            @if ($personals)
+                {{ $personals->MarryIn }}
+            @endif 
           </div>
 
           <div class="clearfix"></div>
@@ -361,7 +394,9 @@
           <div class="col-md-6 font-size-class-header">My Income</div>
 
           <div class="col-md-6 font-size-class">
-           {{$personals->Income}}
+           @if ($personals)
+                {{ $personals->Income }}
+            @endif 
           </div>
 
           <div class="clearfix"></div>
@@ -369,7 +404,9 @@
           <div class="col-md-6 font-size-class-header">Marital Status</div>
 
           <div class="col-md-6 font-size-class">
-           {{$personals->MaritaStatus}}
+           @if ($personals)
+                {{ $personals->MaritaStatus }}
+            @endif 
           </div>
 
           <div class="clearfix"></div>
@@ -377,7 +414,9 @@
           <div class="col-md-6 font-size-class-header">Would I like to have Children?</div>
 
           <div class="col-md-6 font-size-class">
-           {{$personals->HaveChildren}}
+           @if ($personals)
+                {{ $personals->HaveChildren }}
+            @endif 
           </div>
 
           <div class="clearfix"></div>
@@ -385,7 +424,9 @@
           <div class="col-md-6 font-size-class-header">Do I have children?</div>
 
           <div class="col-md-6 font-size-class">
-           {{$personals->Children}}
+           @if ($personals)
+                {{ $personals->Children }}
+            @endif 
           </div>
 
           <div class="clearfix"></div>
@@ -393,7 +434,9 @@
           <div class="col-md-6 font-size-class-header">My Living Arrangements?</div>
 
           <div class="col-md-6 font-size-class">
-          {{$personals->Living}}
+          @if ($personals)
+                {{ $personals->Living }}
+            @endif 
           </div>
 
           <div class="clearfix"></div>
@@ -423,7 +466,9 @@
           <div class="col-md-6 font-size-class-header">My Height</div>
 
           <div class="col-md-6 font-size-class">
-           {{$personals->Height}}
+           @if ($personals)
+                {{ $personals->Height }}
+            @endif 
           </div>
 
           <div class="clearfix"></div>
@@ -431,7 +476,9 @@
           <div class="col-md-6 font-size-class-header">My Build</div>
 
           <div class="col-md-6 font-size-class">
-           {{$personals->Build}}
+            @if ($personals)
+                {{ $personals->Build }}
+            @endif 
           </div>
 
           <div class="clearfix"></div>
@@ -439,7 +486,9 @@
           <div class="col-md-6 font-size-class-header">My Hair Colour</div>
 
           <div class="col-md-6 font-size-class">
-           {{$personals->Hair}}
+           @if ($personals)
+                {{ $personals->Hair }}
+            @endif 
           </div>
 
           <div class="clearfix"></div>
@@ -447,7 +496,9 @@
           <div class="col-md-6 font-size-class-header">Colour of My Eyes</div>
 
           <div class="col-md-6 font-size-class">
-           {{$personals->EyeColour}}
+            @if ($personals)
+                {{ $personals->EyeColour }}
+            @endif 
           </div>
 
           <div class="clearfix"></div>
@@ -455,7 +506,9 @@
           <div class="col-md-6 font-size-class-header">Do I Smoke?</div>
 
           <div class="col-md-6 font-size-class">
-           No
+            @if ($personals)
+                {{ $personals->Smoke }}
+            @endif 
           </div>
 
           <div class="clearfix"></div>
@@ -463,7 +516,9 @@
           <div class="col-md-6 font-size-class-header">Do I Have Any Disabilities?</div>
 
           <div class="col-md-6 font-size-class">
-           {{$personals->Smoke}}
+           @if ($personals)
+                {{ $personals->Disabilities }}
+            @endif 
           </div>
 
           <div class="clearfix"></div>
@@ -481,7 +536,9 @@
           <div class="col-md-6 font-size-class-header">My Education Level</div>
 
           <div class="col-md-6 font-size-class">
-           {{$educations->EducationLevel}}
+           @if ($educations)
+                {{ $educations->EducationLevel }}
+            @endif 
           </div>
 
           <div class="clearfix"></div>
@@ -489,7 +546,11 @@
           <div class="col-md-6 font-size-class-header">Subject I Studied</div>
 
           <div class="col-md-6 font-size-class">
-           <span itemprop="knowsAbout">{{$educations->SubjectStudied}}</span>
+           <span itemprop="knowsAbout">
+            @if ($educations)
+                {{$educations->SubjectStudied }}
+            @endif 
+           </span>
           </div>
 
           <div class="clearfix"></div>
@@ -507,7 +568,11 @@
           <div class="col-md-6 font-size-class-header">My First Language</div>
 
           <div class="col-md-6 font-size-class">
-           <span itemprop="knowsLanguage">{{$educations->FirstLang}}</span>
+           <span itemprop="knowsLanguage">
+            @if ($educations)
+                {{ $educations->FirstLang }}
+            @endif
+           </span>
           </div>
 
           <div class="clearfix"></div>
@@ -515,7 +580,9 @@
           <div class="col-md-6 font-size-class-header">My Second Language</div>
 
           <div class="col-md-6 font-size-class">
-           {{$educations->SecondLang}}
+           @if ($educations)
+                {{ $educations->SecondLang }}
+            @endif
           </div>
 
           <div class="clearfix"></div>
@@ -533,7 +600,9 @@
           <div class="col-md-6 font-size-class-header">My Profession</div>
 
           <div class="col-md-6 font-size-class">
-           {{$educations->Employment}}
+           @if ($educations)
+                {{ $educations->Employment }}
+            @endif
           </div>
 
           <div class="clearfix"></div>
@@ -541,7 +610,9 @@
           <div class="col-md-6 font-size-class-header">My Job Title</div>
 
           <div class="col-md-6 font-size-class">
-           {{$educations->jobTitle}}
+           @if ($educations)
+                {{ $educations->jobTitle }}
+            @endif
           </div>
 
           <div class="clearfix"></div>
@@ -559,7 +630,9 @@
           <div class="col-md-6 font-size-class-header">Religiousness</div>
 
           <div class="col-md-6 font-size-class">
-           {{$religions->Religiosness}}
+            @if ($religions)
+                {{ $religions->Religiosness }}
+            @endif
           </div>
 
           <div class="clearfix"></div>
@@ -567,7 +640,9 @@
           <div class="col-md-6 font-size-class-header">My Sect</div>
 
           <div class="col-md-6 font-size-class">
-           {{$religions->Sect}}
+           @if ($religions)
+                {{ $religions->Sect }}
+            @endif
           </div>
 
           <div class="clearfix"></div>
@@ -575,7 +650,9 @@
           <div class="col-md-6 font-size-class-header">Hijab/Niqab</div>
 
           <div class="col-md-6 font-size-class">
-           {{$religions->Hijab}}
+           @if ($religions)
+                {{ $religions->Hijab }}
+            @endif
           </div>
 
           <div class="clearfix"></div>
@@ -583,7 +660,9 @@
           <div class="col-md-6 font-size-class-header">Beard</div>
 
           <div class="col-md-6 font-size-class">
-           {{$religions->Beard}}
+           @if ($religions)
+                {{ $religions->Beard }}
+            @endif
           </div>
 
           <div class="clearfix"></div>
@@ -591,7 +670,9 @@
           <div class="col-md-6 font-size-class-header">Are You a Revert?</div>
 
           <div class="col-md-6 font-size-class">
-          {{$religions->Convert}}
+          @if ($religions)
+                {{ $religions->Convert }}
+            @endif
           </div>
 
           <div class="clearfix"></div>
@@ -599,7 +680,9 @@
           <div class="col-md-6 font-size-class-header">Do You Keep Halal?</div>
 
           <div class="col-md-6 font-size-class">
-           {{$religions->Halaal}}
+           @if ($religions)
+                {{ $religions->Halaal }}
+            @endif
           </div>
 
           <div class="clearfix"></div>
@@ -607,7 +690,9 @@
           <div class="col-md-6 font-size-class-header">Do You Perform Salaah?</div>
 
           <div class="col-md-6 font-size-class">
-           {{$religions->Salaah}}
+           @if ($religions)
+                {{ $religions->Salaal }}
+            @endif
           </div>
 
           <div class="clearfix"></div>
@@ -729,7 +814,7 @@
               </div>
               <div class="pull-left rightRowsection">
                <div class="topBar">
-                <div class="pull-left nameGender female"><a href="/user/Jaequilin"> Jaequilin </a> , <span class="userColorheading"> 22 </span></div>
+                <div class="pull-left nameGender female"><a href="/showInfo/{id}"> {{$users->UserName}} </a> , <span class="userColorheading"> {{\Carbon\Carbon::parse($users->DOB_year)->diff(\Carbon\Carbon::now())->format('%y')}} </span></div>
                 <div class="pull-right starReview">
                  <div class="rating">
                   <span class="sm-line female star-full"></span><span class="sm-line female star-empty graybackGround"></span><span class="sm-line female star-empty graybackGround"></span>
@@ -757,7 +842,7 @@
             </div>
             <div class="messageType">
              <div class="userMessagebox">
-              <div class="usercustomText">Send a Custom Message to <span class="genderColor female"> Jaequilin </span></div>
+              <div class="usercustomText">Send a Custom Message to <span class="genderColor female"> {{$users->UserName}} </span></div>
               <div class="textBoxsection">
                <div class="pull-left textUserSection">
                 <textarea name="textarea" class="txtTextarea" style="overflow-x: hidden; overflow-wrap: break-word; resize: none;"> </textarea>

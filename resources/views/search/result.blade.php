@@ -114,7 +114,7 @@
                <div class="pull-left usernamesection">
                 {{$user->UserName}}
                </div>
-               <div class="pull-right"></div>
+               <div class="pull-right">{{\Carbon\Carbon::parse($user->DOB_year)->diff(\Carbon\Carbon::now())->format('%y')}}</div>
               </div>
 
               <div class="sector clearfix secondFont" itemprop="jobTitle"> 
@@ -138,8 +138,43 @@
               <div class="flag-stars clearfix secondFont customPadding-rating">
                <div class="pull-left">
                 <div class="rating">
-                 <span class="sm-line female star-full"></span><span class="sm-line female star-full"></span><span class="sm-line female star-empty graybackGround"></span><span class="sm-line female star-empty graybackGround"></span>
-                 <span class="sm-line female star-empty graybackGround"></span>
+                
+                @if($user->education)
+                <i class="fa fa-star " aria-hidden="true" style="color: green"></i>
+                @else
+                <i class="fa fa-star-o " aria-hidden="true" ></i>
+                @endif
+
+                @if($user->religion)
+                <i class="fa fa-star" aria-hidden="true" style="color: green"></i>
+                @else
+                <i class="fa fa-star-o" aria-hidden="true" ></i>
+                @endif
+
+                                
+                @if($user->personal)
+                <i class="fa fa-star" aria-hidden="true" style="color: green"></i>
+                @else
+                <i class="fa fa-star-o" aria-hidden="true" ></i>
+                @endif
+
+                @if($user->addphoto)
+                <i class="fa fa-star" aria-hidden="true" style="color: green"></i>
+                @else
+                <i class="fa fa-star-o" aria-hidden="true" ></i>
+                @endif
+
+                <i class="fa fa-star-o" aria-hidden="true" ></i>
+
+
+                
+                  {{-- <span class="sm-line female star-full">
+                  </span>
+                  <span class="sm-line female star-empty graybackGround">
+                  </span>
+                  <span class="sm-line female star-empty graybackGround">
+                  </span>
+                 <span class="sm-line female star-empty graybackGround"></span> --}}
                 </div>
                </div>
                <div class="pull-right" itemprop="nationality"><i class="sm-flag-medium bd"></i></div>

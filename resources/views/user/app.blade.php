@@ -814,35 +814,36 @@
       <div class="col-md-10 col-lg-10 logo_topbar">
        <div class="login_innerbar">
         <div class="topnav_bar">
-         <div class="navbar-form navbar-right form-inline topnav_bar" role="form" style="padding-top: 11px;">
+         <div class="navbar-form navbar-right form-inline topnav_bar" role="form" style="padding-top: 20px;">
           @guest
+                <li class="login">
+                    <a href="/login" title="Log in to your existing Single Muslim account" id="btnhomelogins">Login</a>
+                </li>
+                <li>
+                    @if (Route::has('register'))
+                    <a href="/signup" title="Register to find your perfect marriage partner">Register</a>
+                    @endif 
+                </li>
+            @else
 
-          <a href="/login" class="btn fontsize-14 sm-color sm-female background-contrast width-76">Login</a>
+                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"  aria-haspopup="true"  aria-expanded="false" v-pre>
+                 <b>{{ Auth::user()->UserName }}</b>
+                </a>
 
-          @if (Route::has('register'))
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown" >
+                  <a
+                        class="dropdown-item"
+                        href="{{ route('logout') }}"
+                        onclick="event.preventDefault();
+                        document.getElementById('logout-form').submit();"
+                    >
+                        {{ __('Logout') }}
+                  </a>
 
-          <a href="/signup" class="btn btn fontsize-14 sm-color sm-male background-contrast">Register</a>
-
-          @endif @else
-
-          <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-           {{ Auth::user()->UserName }}
-          </a>
-
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-           <a
-            class="dropdown-item"
-            href="{{ route('logout') }}"
-            onclick="event.preventDefault();
-                                                         document.getElementById('logout-form').submit();"
-           >
-            {{ __('Logout') }}
-           </a>
-
-           <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-            @csrf
-           </form>
-          </div>
+                  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="padding-left: 30px;">
+                      @csrf
+                  </form>
+                </div>
 
           @endguest
          </div>
@@ -867,133 +868,136 @@
   </div>
 
   <!-- Footer -->
-  <footer class="primary-font-2 relative-position">
-   <div class="container">
-    <div class="row">
-     <div class="col-xs-3">
-      <ul>
-       <li class="liheader female-text-color">
-        <h4 class="primary-text-color fontsize-14">
-         About Us
-        </h4>
-       </li>
-       <li class="primary-font-2 light-font fontsize-12">
-        <a href="/login">
-         Login
-        </a>
-       </li>
-       <li class="primary-font-2 light-font fontsize-12">
-        <a href="/signup">
-         Register
-        </a>
-       </li>
-       <li class="primary-font-2 light-font fontsize-12">
-        <a href="/search">
-         Search
-        </a>
-       </li>
+   <footer class="primary-font-2 relative-position">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <ul>
+                            <li class="liheader female-text-color">
+                                <h4 class="primary-text-color fontsize-14">
+                                    About Us
+                                </h4>
+                            </li>
+                            <li class="primary-font-2 light-font fontsize-12">
+                                <a href="/login">
+                                    Login
+                                </a>
+                            </li>
+                            <li class="primary-font-2 light-font fontsize-12">
+                                <a href="/signup">
+                                    Register
+                                </a>
+                            </li>
+                            <li class="primary-font-2 light-font fontsize-12">
+                                <a href="/search">
+                                    Search
+                                </a>
+                            </li>
 
-       <li class="primary-font-2 light-font fontsize-12">
-        <a href="/find/men">
-         Singlemuslim Men
-        </a>
-       </li>
+                            <li class="primary-font-2 light-font fontsize-12">
+                                <a href="/find/men">
+                                    Singlemuslim Men
+                                </a>
+                            </li>
 
-       <li class="primary-font-2 light-font fontsize-12">
-        <a href="/find/women">
-         Singlemuslim Women
-        </a>
-       </li>
-      </ul>
-     </div>
-     <div class="col-xs-3">
-      <ul>
-       <li class="liheader male-text-color fontsize-12">
-        <h4 class="primary-text-color fontsize-14">News</h4>
-       </li>
-       <li class="primary-font-2 light-font fontsize-12">
-        <a href="/page/news/allnews/Umrah Winners"> Umrah Winners </a>
-       </li>
-       <li class="primary-font-2 light-font fontsize-12">
-        <a href="/success-stories"> Success Stories </a>
-       </li>
-       <li class="primary-font-2 light-font fontsize-12">
-        <a href="/page/news/allnews/Reviews"> Reviews </a>
-       </li>
-       <li class="primary-font-2 light-font fontsize-12">
-        <a href="/page/news/allnews/In The News"> In The News </a>
-       </li>
-       <li class="primary-font-2 light-font fontsize-12">
-        <a href="/page/news/allnews/Site news">
-         Site News
-        </a>
-       </li>
-       <li class="primary-font-2 light-font fontsize-12">
-        <a href="/page/news/allnews/PR">
-         PR
-        </a>
-       </li>
-      </ul>
-     </div>
-     <div class="col-xs-3">
-      <ul>
-       <li class="liheader female-text-color">
-        <h4 class="primary-text-color fontsize-14">Our Standards</h4>
-       </li>
-       <li class="primary-font-2 light-font fontsize-12">
-        <a href="/page/code_of_conduct">
-         Code of Conduct
-        </a>
-       </li>
-       <li class="primary-font-2 light-font fontsize-12">
-        <a href="/page/privacy_security">
-         Privacy &amp; Security
-        </a>
-       </li>
+                            <li class="primary-font-2 light-font fontsize-12">
+                                <a href="/find/women">
+                                    Singlemuslim Women
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-3">
+                        <ul>
+                            <li class="liheader male-text-color fontsize-12">
+                                <h4 class="primary-text-color fontsize-14">News</h4>
+                            </li>
+                            <li class="primary-font-2 light-font fontsize-12">
+                                <a href="/page/news/allnews/Umrah Winners"> Umrah Winners </a>
+                            </li>
+                            <li class="primary-font-2 light-font fontsize-12">
+                                <a href="/success-stories"> Success Stories </a>
+                            </li>
+                            <li class="primary-font-2 light-font fontsize-12">
+                                <a href="/page/news/allnews/Reviews"> Reviews </a>
+                            </li>
+                            <li class="primary-font-2 light-font fontsize-12">
+                                <a href="/page/news/allnews/In The News"> In The News </a>
+                            </li>
+                            <li class="primary-font-2 light-font fontsize-12">
+                                <a href="/page/news/allnews/Site news">
+                                    Site News
+                                </a>
+                            </li>
+                            <li class="primary-font-2 light-font fontsize-12">
+                                <a href="/page/news/allnews/PR">
+                                    PR
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-3">
+                        <ul>
+                            <li class="liheader female-text-color">
+                                <h4 class="primary-text-color fontsize-14">Our Standards</h4>
+                            </li>
+                            <li class="primary-font-2 light-font fontsize-12">
+                                <a href="/page/code_of_conduct">
+                                    Code of Conduct
+                                </a>
+                            </li>
+                            <li class="primary-font-2 light-font fontsize-12">
+                                <a href="/page/privacy_security">
+                                    Privacy &amp; Security
+                                </a>
+                            </li>
 
-       <li class="primary-font-2 light-font fontsize-12">
-        <a href="/page/terms_and_conditions">
-         Terms and Conditions
-        </a>
-       </li>
-      </ul>
-     </div>
+                            <li class="primary-font-2 light-font fontsize-12">
+                                <a href="/page/terms_and_conditions">
+                                    Terms and Conditions
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
 
-     <div class="col-xs-3">
-      <ul>
-       <li class="liheader male-text-color">
-        <h4 class="primary-text-color fontsize-14">Help</h4>
-       </li>
-       <li class="primary-font-2 light-font fontsize-12">
-        <a href="/pages/helpandsupportnew"> Help and Support </a>
-       </li>
+                    <div class="col-xs-3">
+                        <ul>
+                            <li class="liheader male-text-color">
+                                <h4 class="primary-text-color fontsize-14">Help</h4>
+                            </li>
+                            <li class="primary-font-2 light-font fontsize-12">
+                                <a href="/pages/helpandsupportnew"> Help and Support </a>
+                            </li>
 
-       <li class="primary-font-2 light-font fontsize-12">
-        <a href="/page/contactus">
-         Contact Us
-        </a>
-       </li>
-       <li class="primary-font-2 light-font fontsize-12">
-        <a href="/submitabug"> Submit a Bug</a>
-       </li>
-      </ul>
-     </div>
+                            <li class="primary-font-2 light-font fontsize-12">
+                                <a href="/page/contactus">
+                                    Contact Us
+                                </a>
+                            </li>
+                            <li class="primary-font-2 light-font fontsize-12">
+                                <a href="/submitabug"> Submit a Bug</a>
+                            </li>
+                        </ul>
+                    </div>
 
-     <div class="col-xs-12">
-      <div class="col-xs-9">
-       <p style="font-size: 13px;">Copyright © 2020 Single Muslim. All rights reserved. All third party logos are for illustration only and are copyright of their respective owners.</p>
-      </div>
+                    <div class="col-xs-12">
+                        <div class="col-xs-9">
+                            <p style="font-size: 13px;">  <?php echo date("Y"); ?> &copy;  {{$info->site_title}} </p>
+                        </div>
+                        
 
-      <div class="col-xs-3" style="padding-left: 52px;">
-       <div class="appstorelogos_footer">
-        <a href="https://itunes.apple.com/gb/app/singlemuslim/id1116597910?mt=8" target="_blank"><img src="/frontend/assets/images/app_store.png" height="50px" style="padding-bottom: 10px;" /></a>
-        <a href="https://play.google.com/store/apps/details?id=com.singlemuslim.sm" target="_blank"><img src="/frontend/assets/images/android_logo.png" height="50px" style="padding-bottom: 10px;" /></a>
-       </div>
-      </div>
-     </div>
-    </div>
-   </div>
-  </footer>
+                        <div class="col-xs-3">
+                           
+                            <a href="https://www.smartsoftware.com.bd/">Developed By:  <b> {{$info->name}} </b></a>                               
+
+                                {{-- <a href="https://itunes.apple.com/gb/app/singlemuslim/id1116597910?mt=8" target="_blank"><img src="/frontend/assets/images/app_store.png" height="50px" style="padding-bottom: 10px;" /></a>
+                                <a href="https://play.google.com/store/apps/details?id=com.singlemuslim.sm" target="_blank"><img src="/frontend/assets/images/android_logo.png" height="50px" style="padding-bottom: 10px;" /></a> --}}
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
 
   <div class="site-overlay"></div>
   <div class="site-overlaynotification"></div>

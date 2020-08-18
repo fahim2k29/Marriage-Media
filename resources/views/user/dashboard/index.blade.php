@@ -185,7 +185,7 @@
         </div>
         <div class="user-details padding-box center-align fontsize-24 primary-font-2 padding-large">
          <span class="Male-text-color"> {{ Auth::user()->UserName }} </span>
-         <span class="padding-box ng-binding Male-text-color"> 23</span>
+         <span class="padding-box ng-binding Male-text-color"> {{\Carbon\Carbon::parse($user->DOB_year)->diff(\Carbon\Carbon::now())->format('%y')}}</span>
 
          {{--
          <div class="rating rating-2 Male-text-color z-page-click-target page-click tutorial-step rating" data-for="show-star-help">
