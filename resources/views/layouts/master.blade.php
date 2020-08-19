@@ -957,28 +957,35 @@
                             <li class="liheader male-text-color fontsize-12">
                                 <h4 class="primary-text-color fontsize-14">News</h4>
                             </li>
+                            
+                            @foreach ($pages ->where('section', 1) as $pages)
                             <li class="primary-font-2 light-font fontsize-12">
-                                <a href="/page/news/allnews/Umrah Winners"> Umrah Winners </a>
+                                <a href="/pages/news/Umrah-Winners/{{$pages->id}}"> {{$pages->name}} </a>
+                            </li>
+                            @endforeach
+                            
+                                
+                            {{-- @endforeach --}}
+
+                            {{-- <li class="primary-font-2 light-font fontsize-12">
+                            <a href="/pages/news/{{$page->slug}}/{{$page->id}}"> {{$page->name}} </a>
                             </li>
                             <li class="primary-font-2 light-font fontsize-12">
-                                <a href="/success-stories"> Success Stories </a>
+                                <a href="/pages/news/Reviews/3"> Reviews </a>
                             </li>
                             <li class="primary-font-2 light-font fontsize-12">
-                                <a href="/page/news/allnews/Reviews"> Reviews </a>
+                                <a href="/pages/news/In-The-News"> In The News </a>
                             </li>
                             <li class="primary-font-2 light-font fontsize-12">
-                                <a href="/page/news/allnews/In The News"> In The News </a>
-                            </li>
-                            <li class="primary-font-2 light-font fontsize-12">
-                                <a href="/page/news/allnews/Site news">
+                                <a href="/pages/news/Site-News">
                                     Site News
                                 </a>
                             </li>
                             <li class="primary-font-2 light-font fontsize-12">
-                                <a href="/page/news/allnews/PR">
+                                <a href="/pages/news/PR">
                                     PR
                                 </a>
-                            </li>
+                            </li> --}}
                         </ul>
                     </div>
                     <div class="col-xs-3">
@@ -986,22 +993,13 @@
                             <li class="liheader female-text-color">
                                 <h4 class="primary-text-color fontsize-14">Our Standards</h4>
                             </li>
-                            <li class="primary-font-2 light-font fontsize-12">
-                                <a href="/page/code_of_conduct">
-                                    Code of Conduct
-                                </a>
-                            </li>
-                            <li class="primary-font-2 light-font fontsize-12">
-                                <a href="/page/privacy_security">
-                                    Privacy &amp; Security
-                                </a>
-                            </li>
 
+                            @foreach ($pages ->where('section', 3) as $pages)
                             <li class="primary-font-2 light-font fontsize-12">
-                                <a href="/page/terms_and_conditions">
-                                    Terms and Conditions
-                                </a>
+                                <a href="/pages/news/Umrah-Winners/{{$pages->id}}"> {{$pages->name}} </a>
                             </li>
+                            @endforeach
+
                         </ul>
                     </div>
 

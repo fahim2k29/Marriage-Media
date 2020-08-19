@@ -28,7 +28,9 @@
             <th class="bg-dark" style="width: 10px">SL</th>
             <th class="bg-dark" style="width: 20%">Name</th>
             <th class="bg-dark" style="width: 20%">Slug</th>
-            <th class="bg-dark" style="width: 20%">Descripyion</th>
+            <th class="bg-dark" style="width: 20%">Section</th>
+            <th class="bg-dark" style="width: 20%">Status</th>
+
             <th class="bg-dark" style="">Action</th>
         </tr>
         @forelse($pages as $key => $page)
@@ -36,9 +38,11 @@
                 <td>{{ $key + 1 }}</td>
                 <td>{{ $page->name }}</td>
                 <td>{{ $page->slug }}</td>
-                <td>
+                <td>{{ $page->section }}</td>
+                {{-- <td>
                     {!! \Illuminate\Support\Str::limit($page->short_desc,50) !!}
-                </td>
+                </td> --}}
+                <td>{{ $page->status == 1 ? 'active' : 'inactive'  }}</td>
                 <td>
                     <div class="btn-group btn-group-mini btn-corner">
                         <a href="{{ route('backend.site_config.quick-page.edit', $page->id) }}"

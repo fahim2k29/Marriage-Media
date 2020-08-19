@@ -17,7 +17,10 @@ class CreateQuickPagesTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('slug');
+            $table->string('section');
             $table->longText('short_desc');
+            $table->boolean('status');
+
             $table->timestamps();
         });
     }

@@ -1,9 +1,9 @@
 <?php
 
 namespace App\Models;
+use Illuminate\Database\Eloquent\Model;
 use App\Traits\AutoTimeStamp;
 use App\Traits\Sluggable;
-use Illuminate\Database\Eloquent\Model;
 
 class QuickPage extends Model
 {
@@ -11,6 +11,6 @@ class QuickPage extends Model
 	
     protected $guarded = ['id'];
     protected $fillable = [
-        'name','short_desc','slug',
+        'name','section','short_desc','status', 'slug',
     ];
 }

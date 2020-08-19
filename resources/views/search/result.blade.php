@@ -127,7 +127,8 @@
               <div class="religious clearfix secondFont customPadding">  
                 @if ($user->religion)
                 {{ $user->religion->Sect }}
-                @endif</div>
+                @endif
+              </div>
               <div class="location-miles clearfix secondFont customPadding" itemprop="homeLocation" itemscope="" itemtype="http://schema.org/Place">
                <span itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress">
                 <span itemprop="addressLocality">{{$user->Country}}  </span>

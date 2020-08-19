@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\AddPhoto;
+use App\Models\QuickPage;
 use App\Models\SiteInfo;
 use App\User;
 use Illuminate\Support\Facades\Schema;
@@ -38,9 +39,15 @@ class AppServiceProvider extends ServiceProvider
             if ($view->getName() == 'backend.partials._footer') {
                 session()->forget('info');
             }
+        }); 
+
+
+        view()->composer('*', function () {
+            // if (!session()->has('page')) {
+            //     session()->put('page', QuickPage::get());
+            // }
+            view()->share('pages', QuickPage::all());
         });
-
-
         
     }
 }

@@ -30,13 +30,31 @@
                         <input name="name"
                                type="text"
                                id="name"
-                               placeholder="Company Name"
+                               placeholder="Title Name"
                                class="form-control"
                                value="{{ $page->name }}">
                     </div>
                     <div class="col-sm-9 col-sm-offset-2">
                         <strong class=" red">{{ $errors->first('name') }}</strong>
                     </div>
+                </div>
+
+
+                <div class="form-group">
+                 <label class="col-sm-2 no-padding-right bolder" for="section">Section <sup class="red">*</sup></label>
+                    <div class="col-md-10">
+                            <div class="text-center">
+                                <select class="chosen-select col-sm-5 no-padding-right bolder" id="section" name="section">
+                                    <option value="{{ $page->section }}">{{ $page->section }}</option>
+                                    <option value="1">First Section</option>
+                                    <option value="2">Second Section</option>
+                                    <option value="3">Third Section</option>
+                                    <option value="4">Fourth Section</option>
+
+                                </select>
+                            </div>
+                            <strong class=" red">{{ $errors->first('Section') }}</strong>
+                        </div>
                 </div>
 
                 <div class="form-group">
@@ -50,6 +68,21 @@
                             <strong class=" red">{{ $errors->first('short_desc') }}</strong>
                         </div>
                     </div>
+                </div>
+
+
+                <div class="form-group">
+                 <label class="col-sm-2 no-padding-right bolder" for="status">Status <sup class="red">*</sup></label>
+                    <div class="col-md-10">
+                            <div class="text-center">
+                                <select class="chosen-select col-sm-5 no-padding-right bolder" id="status" name="status">
+                                   <option value="{{ $page->status }}">{{ $page->status == 1 ? 'active' : 'inactive'  }}</option>
+                                    <option value="1" >Active</option>
+                                    <option value="0" >Inactive</option>
+                                </select>
+                            </div>
+                            <strong class=" red">{{ $errors->first('status') }}</strong>
+                        </div>
                 </div>
 
                  <div class="form-group">
