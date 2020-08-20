@@ -74,8 +74,6 @@ class LoginController extends Controller
           return '/user/dashboard';
         }
         
-
-        
       }
 
     /**

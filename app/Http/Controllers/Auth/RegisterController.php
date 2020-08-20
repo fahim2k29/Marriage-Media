@@ -1,12 +1,12 @@
 <?php
 
 namespace App\Http\Controllers\Auth;
-
 use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+// use App\Http\Requests\User\SignupRequest;
 
 class RegisterController extends Controller
 {
@@ -54,21 +54,23 @@ class RegisterController extends Controller
             // 'password' => ['required', 'string', 'min:8', 'confirmed'],
 
                         
-            'UserName'=>['required'],
-            'Email'=>['required'],
-            'ConfirmEmail'=>['required'],
-            'Country'=>['required'],
-            'Gender'=>['required'],
-            'DOB_day'=>['required'],
-            'DOB_month'=>['required'],
-            'DOB_year'=>['required'],
-            'RegistrationReason'=>['required'],
-            'HearAboutUs'=>['required'],
-            'Accept'=>['required'],
-            'password'=>['required'],
+            // 'UserName'=>['required'],
+            'UserName' => 'required|string|unique:Users',
+            'Email'=>'required|string|email|unique:Users',
+            'ConfirmEmail'=>'required|same:Email',
+            'Country'=>'required',
+            'Gender'=>'required',
+            'DOB_day'=>'required',
+            'DOB_month'=>'required',
+            'DOB_year'=>'required',
+            'RegistrationReason'=>'required',
+            'HearAboutUs'=>'required',
+            'Accept'=>'required',
+            'password'=>'required|min:8',
 
         ]);
     }
+
 
     /**
      * Create a new user instance after a valid registration.
@@ -93,5 +95,6 @@ class RegisterController extends Controller
             'Accept' => $data['Accept'],         
             'password' => Hash::make($data['password']),
         ]);
+        return redirect()->route('aboutme');
     }
 }

@@ -727,6 +727,44 @@
     }
    }
   </style>
+  
+<style>
+.dropbtn {
+  background-color: rgba(19, 206, 128, 0.596);
+  color: black;
+  padding: 10px;
+  font-size: 14px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 80px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: rgb(0, 0, 0);
+  padding: 7px 7px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+</style>
+
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -770,6 +808,9 @@
   <meta name="keywords" content="single muslim,single,muslim,singlemuslim,singlemuslims,muslims,singles,shaadi,marriage,islamic,islam,shadi" />
 
   <meta name="Author" content="Single Muslim" />
+  <link rel="stylesheet" href="/frontend/assets/css/less/font-awesome.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
 
   <link href="/frontend/assets/css/less/global.css" media="screen" rel="stylesheet" type="text/css" />
   <link href="/frontend/assets/css/less/controller/UserController.css" media="screen" rel="stylesheet" type="text/css" />
@@ -810,50 +851,55 @@
         </a>
        </div>
       </div>
-
-      <div class="col-md-10 col-lg-10 logo_topbar">
-       <div class="login_innerbar">
-        <div class="topnav_bar">
-         <div class="navbar-form navbar-right form-inline topnav_bar" role="form" style="padding-top: 20px;">
-          @guest
-                <li class="login">
-                    <a href="/login" title="Log in to your existing Single Muslim account" id="btnhomelogins">Login</a>
-                </li>
-                <li>
+       <div style="text-align: right; padding-top: 20px"  >
+         @guest
+                
+                    <button class="btn btn-primary" >
+                        <a href="/login" style="color: white" title="Log in to your existing Single Muslim account" id="btnhomelogins">Login</a>
+                    </button>
+             
+                   <button class="btn btn-primary" style="background-color: brown">
                     @if (Route::has('register'))
-                    <a href="/signup" title="Register to find your perfect marriage partner">Register</a>
+                    <a href="/signup" style="color: white" title="Register to find your perfect marriage partner">Register</a>
                     @endif 
-                </li>
+                   </button>
+                
             @else
-
-                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"  aria-haspopup="true"  aria-expanded="false" v-pre>
-                 <b>{{ Auth::user()->UserName }}</b>
+            <div class="dropdown">
+                <button class="dropbtn">
+                <a id="navbarDropdown" style="color: black" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"  aria-haspopup="true"  aria-expanded="false" v-pre>
+                {{ Auth::user()->UserName }}
                 </a>
+                </button>
 
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown" >
-                  <a
+
+                <div class="dropdown-content">
+                    <a href="/user/dashboard">Dashboard</a>
+                    <a
                         class="dropdown-item"
                         href="{{ route('logout') }}"
                         onclick="event.preventDefault();
                         document.getElementById('logout-form').submit();"
                     >
                         {{ __('Logout') }}
-                  </a>
-
+                </a>
+                
                   <form id="logout-form" action="{{ route('logout') }}" method="POST" style="padding-left: 30px;">
                       @csrf
                   </form>
+
                 </div>
+            </div>
 
           @endguest
-         </div>
 
-         <!-- <form action="/login" method="post" class="navbar-form navbar-right form-inline topnav_bar" role="form" style="padding-top: 11px;">
-                                        <a href="/login" class="btn fontsize-14 sm-color sm-female background-contrast width-76">Login</a> 
-                                        <a href="/signup" class="btn btn fontsize-14 sm-color sm-male background-contrast">Register</a> -->
-        </div>
+
+
+               
+                
+
        </div>
-      </div>
+    
      </div>
     </div>
    </div>

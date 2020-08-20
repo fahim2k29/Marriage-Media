@@ -35,7 +35,7 @@
                                value="">
                     </div>
                     <div class="col-sm-9 col-sm-offset-2">
-                        <strong class=" red">{{ $errors->first('name') }}</strong>
+                        <strong class="red">{{ $errors->first('name') }}</strong>
                     </div>
                 </div>
 

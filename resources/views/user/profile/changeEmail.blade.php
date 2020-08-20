@@ -100,7 +100,8 @@
          <div class="panel panel-info">
           <div class="panel-body">
            <form method="POST" action="{{ route('changeEmail_store') }}">
-            @csrf @if (session()->has('success'))
+            @csrf 
+            @if (session()->has('success'))
             <h4 class="text-success">{{ session('success') }}</h4>
             @endif
             <br />

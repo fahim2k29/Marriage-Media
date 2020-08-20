@@ -1,6 +1,6 @@
 <?php
 namespace App\Http\Controllers;
-
+use App\Http\Requests\User\SignupRequest;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
@@ -37,25 +37,7 @@ class MainController extends Controller
 
         return view('user.register', compact('signupdatas'));
     }
-    function register_create_one(Request $request)
-    {
-        Registration_form::create([
-            'UserName' => $request->UserName,
-            'Email' => $request->Email,
-            'ConfirmEmail' => $request->ConfirmEmail,
-            'Country' => $request->Country,
-            'Gender' => $request->Gender,
-            'DOB_day' => $request->DOB_day,
-            'DOB_month' => $request->DOB_month,
-            'DOB_year' => $request->DOB_year,
-            'RegistrationReason' => $request->RegistrationReason,
-            'HearAboutUs' => $request->HearAboutUs,
-            'Accept' => $request->Accept,
-            'password' => $request->password,
-        ]);
-        return redirect()->route('aboutme');
-    }
-
+    
     public function aboutme()
     {
         $user_id = Auth::user()->id;
@@ -231,7 +213,7 @@ class MainController extends Controller
         return view('user.officeUse', compact('officeUse', 'signupdatas', 'users'));
     }
 
-    function officeUse_create(Request $request)
+    function officeUse_create(SignupRequest $request)
     {
         $user_id = Auth::user()->id;
         $info = OfficeUse::whereuser_id($user_id)->get();

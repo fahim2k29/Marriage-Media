@@ -286,12 +286,18 @@
               <div class="controls">
                <input name="FirstName" id="FirstName" type="text" required="required" value="{{$officeUse->FirstName}}" class="form-control" />
               </div>
+              <div class="col-sm-9 col-md-offset-3">
+                <small class="red" style="color: brown">{{ $errors->first('FirstName') }}</small>
+              </div>
              </div>
 
              <div id="LastName-group" class="form-group has-feedback form-control-group">
               <label for="LastName" class="control-label"><span class="required">*</span> Last Name</label>
               <div class="controls">
                <input name="LastName" id="LastName" type="text" required="required" value="{{$officeUse->LastName}}" class="form-control" />
+              </div>
+              <div class="col-sm-9 col-md-offset-3">
+                <small class="red" style="color: brown">{{ $errors->first('LastName') }}</small>
               </div>
              </div>
 
@@ -300,12 +306,18 @@
               <div class="controls">
                <input name="Address" id="Address" type="text" required="required" value="{{$officeUse->Address}}" class="form-control" />
               </div>
+              <div class="col-sm-9 col-md-offset-3">
+                <small class="red" style="color: brown">{{ $errors->first('Address') }}</small>
+              </div>
              </div>
 
              <div id="City-group" class="form-group has-feedback form-control-group">
               <label for="City" class="control-label"><span class="required">*</span> City</label>
               <div class="controls">
                <input name="City" id="City" type="text" required="required" value="{{$officeUse->City}}" class="form-control" />
+              </div>
+              <div class="col-sm-9 col-md-offset-3">
+                <small class="red" style="color: brown">{{ $errors->first('City') }}</small>
               </div>
              </div>
 
@@ -315,6 +327,9 @@
                <select name="Country" id="Country" data-select2-id="Country" tabindex="-1" aria-hidden="true">
                 <option value="{{$users->Country}}">{{$users->Country}}</option>
                </select>
+              </div>
+              <div class="col-sm-9 col-md-offset-3">
+                <small class="red" style="color: brown">{{ $errors->first('Country') }}</small>
               </div>
              </div>
 
@@ -330,12 +345,18 @@
               <div class="controls">
                <input name="ContactTel" id="ContactTel" type="number" required="required" value="{{$officeUse->ContactTel}}" class="form-control" />
               </div>
+              <div class="col-sm-9 col-md-offset-3">
+                <small class="red" style="color: brown">{{ $errors->first('ContactTel') }}</small>
+              </div>
              </div>
 
              <div id="MobileTel-group" class="form-group has-feedback form-control-group">
               <label for="MobileTel" class="control-label"> Mobile Tel</label>
               <div class="controls">
                <input name="MobileTel" id="MobileTel" type="number" value="{{$officeUse->MobileTel}}" class="form-control" />
+              </div>
+              <div class="col-sm-9 col-md-offset-3">
+                <small class="red" style="color: brown">{{ $errors->first('MobileTel') }}</small>
               </div>
              </div>
 
@@ -378,6 +399,9 @@
               <div class="controls">
                <input name="FirstName" id="FirstName" type="text" required="required" value="" class="form-control" />
               </div>
+              <div class="col-sm-9">
+                <small class="red" style="color: brown">{{ $errors->first('FirstName') }}</small>
+                </div>
              </div>
 
              <div id="LastName-group" class="form-group has-feedback form-control-group">

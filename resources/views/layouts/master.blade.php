@@ -958,9 +958,10 @@
                                 <h4 class="primary-text-color fontsize-14">News</h4>
                             </li>
                             
-                            @foreach ($pages ->where('section', 1) as $pages)
+                            @foreach ($pages ->where('section', 2) as $page)
+                            {{-- @dd($page); --}}
                             <li class="primary-font-2 light-font fontsize-12">
-                                <a href="/pages/news/Umrah-Winners/{{$pages->id}}"> {{$pages->name}} </a>
+                                <a href="/pages/news/Umrah-Winners/{{$page->id}}"> {{$page->name}} </a>
                             </li>
                             @endforeach
                             
@@ -993,10 +994,11 @@
                             <li class="liheader female-text-color">
                                 <h4 class="primary-text-color fontsize-14">Our Standards</h4>
                             </li>
-
-                            @foreach ($pages ->where('section', 3) as $pages)
+                            
+                            @foreach ($pages->where('section', 3) as $page)
+                            {{-- @dd($page); --}}
                             <li class="primary-font-2 light-font fontsize-12">
-                                <a href="/pages/news/Umrah-Winners/{{$pages->id}}"> {{$pages->name}} </a>
+                                <a href="/pages/news/Umrah-Winners/{{$page->id}}"> {{$page->name}} </a>
                             </li>
                             @endforeach
 
@@ -1008,18 +1010,12 @@
                             <li class="liheader male-text-color">
                                 <h4 class="primary-text-color fontsize-14">Help</h4>
                             </li>
+                           @foreach ($pages->where('section', 4) as $page)
+                            {{-- @dd($page); --}}
                             <li class="primary-font-2 light-font fontsize-12">
-                                <a href="/pages/helpandsupportnew"> Help and Support </a>
+                                <a href="/pages/news/Umrah-Winners/{{$page->id}}"> {{$page->name}} </a>
                             </li>
-
-                            <li class="primary-font-2 light-font fontsize-12">
-                                <a href="/page/contactus">
-                                    Contact Us
-                                </a>
-                            </li>
-                            <li class="primary-font-2 light-font fontsize-12">
-                                <a href="/submitabug"> Submit a Bug</a>
-                            </li>
+                            @endforeach
                         </ul>
                     </div>
 
