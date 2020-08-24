@@ -83,10 +83,14 @@ Route::get('/search', 'SearchController@index')->name('search_quick');
     Route::get('/search/users', 'SearchController@search_users')->name('search_users');
 
 
-
-
 Route::get('/pages/news/Umrah-Winners/{id}', 'FooterController@Umrah_Winners')->name('Umrah_Winners');
 
+
+
+//..!..paypal...//
+Route::get('payment', 'PayPalController@payment')->name('payment');
+Route::get('cancel', 'PayPalController@cancel')->name('payment.cancel');
+Route::get('payment/success', 'PayPalController@success')->name('payment.success');
 
 
 

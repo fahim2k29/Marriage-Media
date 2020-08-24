@@ -138,6 +138,7 @@
             </section>
 
             <section class="sectionOnline galleryGrid" style="margin-top: 0px;">
+                @foreach ($users as $user) 
                 <div itemscope="" itemtype="http://schema.org/Person" class="flip-container wrapper" data-variable="1">
                     <a href="/frontend/assets/user/Happy_chap2" itemprop="url">
                         <img src="/frontend/assets/images/1pximage.png" class="imgfiller" />
@@ -153,14 +154,18 @@
                             <div class="slidecontent3 male">
                                 <div class="hover-userinfo">
                                     <div class="user-title">
-                                        <div class="pull-left username" itemprop="name">Abzz2020</div>
-                                        <div class="pull-right age">34</div>
+                                        <div class="pull-left username" itemprop="name">{{$user->UserName}}</div>
+                                        <div class="pull-right age">{{\Carbon\Carbon::parse($user->DOB_year)->diff(\Carbon\Carbon::now())->format('%y')}}</div>
                                         <div class="clearfix"></div>
                                     </div>
 
                                     <div class="country-flag clearfix">
                                         <div class="pull-left country">
-                                            <span itemprop="jobTitle"> Manager</span>
+                                            <span itemprop="jobTitle"> 
+                                                @if ($user->education)
+                                                {{ $user->education->Employment }}
+                                                @endif
+                                            </span>
                                         </div>
                                         <div class="pull-right countryflag"><i itemprop="nationality" class="sm-flag-medium gb"></i></div>
                                     </div>
@@ -170,7 +175,7 @@
                                             <span itemprop="addressLocality">
                                                 Greater London
                                             </span>
-                                            <div class="hidden" itemprop="addressCountry">United Kingdom</div>
+                                            <div class="hidden" itemprop="addressCountry">{{$user->Country}}</div>
                                         </span>
                                     </div>
                                 </div>
@@ -187,14 +192,18 @@
                             <div class="slidecontent3 male">
                                 <div class="hover-userinfo">
                                     <div class="user-title">
-                                        <div class="pull-left username" itemprop="name">Happy_chap2</div>
-                                        <div class="pull-right age">40</div>
+                                        <div class="pull-left username" itemprop="name">{{$user->UserName}}</div>
+                                        <div class="pull-right age">{{\Carbon\Carbon::parse($user->DOB_year)->diff(\Carbon\Carbon::now())->format('%y')}}</div>
                                         <div class="clearfix"></div>
                                     </div>
 
                                     <div class="country-flag clearfix">
                                         <div class="pull-left country">
-                                            <span itemprop="jobTitle"> Doctor</span>
+                                            <span itemprop="jobTitle"> 
+                                                @if ($user->education)
+                                                {{ $user->education->Employment }}
+                                                @endif
+                                            </span>
                                         </div>
                                         <div class="pull-right countryflag"><i itemprop="nationality" class="sm-flag-medium gb"></i></div>
                                     </div>
@@ -204,7 +213,7 @@
                                             <span itemprop="addressLocality">
                                                 West Midlands
                                             </span>
-                                            <div class="hidden" itemprop="addressCountry">United Kingdom</div>
+                                            <div class="hidden" itemprop="addressCountry">{{$user->Country}}</div>
                                         </span>
                                     </div>
                                 </div>
@@ -212,7 +221,8 @@
                         </div>
                     </a>
                 </div>
-
+                @endforeach
+{{-- 
                 <div itemscope="" itemtype="http://schema.org/Person" class="flip-container wrapper" data-variable="2">
                     <a href="/frontend/assets/user/Zeynne" itemprop="url">
                         <img src="/frontend/assets/images/1pximage.png" class="imgfiller" />
@@ -3184,7 +3194,7 @@
                         </div>
                         <div class="mainBack back" isempty="true"></div>
                     </a>
-                </div>
+                </div> --}}
 
                 <div class="clearfix"></div>
             </section>

@@ -24,11 +24,30 @@ use App\User;
 
 class MainController extends Controller
 {
+    // public function __construct()
+    // {
+      
+    //    \View::Share([
+    //        'aboutme' => Aboutme::first()
+    //    ]);        
+    // }
+
+    
     public function index()
     {
-        $users  = User::all()->random(30);
-        $slider = Slider::all();
-        return view('index', compact('users', 'slider'));
+        // $users  = User::all()->random(30);
+        $data['users']      = User::paginate(30);
+        $data['slider']     = Slider::all();
+        $data['aboutmes']   = Aboutme::all();
+        $data['religions']  = Religion::all();
+        $data['educations'] = Education::all();
+        $data['personals']  = Personal::all();
+        $data['emp']        = User::with('education')->get();
+        $data['rlgn']       = User::with('religion')->get();
+        $data['prsn']       = User::with('personal')->get();
+        $data['img']        = User::with('addphoto')->get();
+        $data['user']       = User::first(['DOB_year']);
+        return view('index',$data);
     }
 
     public function register_form_one()
@@ -43,6 +62,7 @@ class MainController extends Controller
         $user_id = Auth::user()->id;
         $aboutme = Aboutme::whereuser_id($user_id)->first();
         return view('user.aboutme', compact('aboutme'));
+        return view('user.aboutme');
     }
     function aboutme_create(Request $request)
     {

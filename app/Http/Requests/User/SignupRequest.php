@@ -24,25 +24,25 @@ class SignupRequest extends FormRequest
     public function rules()
     {
         return [
-        'FirstName' => 'required|string|min:4',
-        'LastName' => 'required|string|min:4',
+        'FirstName' => 'required|string|min:3',
+        'LastName' => 'required|string|min:3',
         'Address' => 'required|min:4',
-        'City' => 'required|string|max:15',
+        'City' => 'required|string|min:3|max:15',
         'PostCode' => 'required|min:4|max:6',
-        'ContactTel' => 'required|phone|min:11|max:13',
-        'MobileTel' => 'required|phone|min:11|max:13',
+        'ContactTel' => 'required',
+        'MobileTel' => 'required',
         ];
     }
 
 
-    public function messages()
-    {
-        return [
-            'FirstName.string'          =>  "FirstName must be string.",
-            'LastName.string'           => "LastName must be string.",
-            'City.string'               => "City must be string.",
-            'ContactTel.phone'          => "Contact Number Should be valid",
-            'MobileTel.regex'           => "Mobile Number Should be valid",
-        ];
-    }
+    // public function messages()
+    // {
+    //     return [
+    //         'FirstName.string'          =>  "FirstName must be string.",
+    //         'LastName.string'           => "LastName must be string.",
+    //         'City.string'               => "City must be string.",
+    //         // 'ContactTel.phone'          => "Contact Number Should be valid",
+    //         // 'MobileTel.phone'           => "Mobile Number Should be valid",
+    //     ];
+    // }
 }

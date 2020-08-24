@@ -730,8 +730,8 @@
   
 <style>
 .dropbtn {
-  background-color: rgba(19, 206, 128, 0.596);
-  color: black;
+  background-color: rgb(15, 120, 155);
+  color: white;
   padding: 10px;
   font-size: 14px;
   border: none;
@@ -867,7 +867,7 @@
             @else
             <div class="dropdown">
                 <button class="dropbtn">
-                <a id="navbarDropdown" style="color: black" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"  aria-haspopup="true"  aria-expanded="false" v-pre>
+                <a id="navbarDropdown" style="color: rgb(245, 253, 169)" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"  aria-haspopup="true"  aria-expanded="false" v-pre>
                 {{ Auth::user()->UserName }}
                 </a>
                 </button>
