@@ -13,6 +13,7 @@ use App\Religion;
 use App\OfficeUse;
 use App\AddPhoto;
 use App\Employment;
+use App\Models\Offer;
 use App\PersonalData;
 use App\ReligionData;
 use App\Rules\MatchOldPassword;
@@ -33,6 +34,15 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
+
+
+    public function welcome($id)
+    {
+        $offer = Offer::where('id', $id)->first();
+        // dd($offer);
+        return view('welcome', compact('offer'));
+    }
+
     public function index()
     {
         $userid = Auth::id();
@@ -235,6 +245,15 @@ class HomeController extends Controller
         $addPhoto = AddPhoto::whereuser_id($userid)->first();
         $signupdatas = SignupData::all();
         return view('user.profile.changeEmail', compact('user', 'officeUse', 'addPhoto', 'signupdatas'));
+    }
+
+     public function packages()
+    {
+        $userid = Auth::id();
+        $user = User::whereid($userid)->first();
+        $addPhoto = AddPhoto::whereuser_id($userid)->first();
+        $offers = Offer::all();
+        return view('user.profile.membership', compact('user','addPhoto','offers'));
     }
 
     public function changeEmail_store(Request $request)

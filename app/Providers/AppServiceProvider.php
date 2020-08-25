@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\AddPhoto;
+use App\Models\Offer;
 use App\Models\QuickPage;
 use App\Models\SiteInfo;
 use App\User;
@@ -47,7 +48,12 @@ class AppServiceProvider extends ServiceProvider
             //     session()->put('page', QuickPage::get());
             // }
             view()->share('pages', QuickPage::all());
+            // view()->share('offer', Offer::all());
+
         });
+
+
+       
         
     }
 }

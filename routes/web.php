@@ -27,11 +27,14 @@ Route::group(['prefix' => 'sadmin', 'middleware' => ['auth:admin', 'admin'], 'na
 });
 
  
-Route::get('/welcome', function () {
-    return view('welcome');
-});
+// Route::get('/welcome/{id}', function () {
+//     return view('welcome');
+// });
 
 Auth::routes();
+
+    Route::get('/welcome/{id}', 'HomeController@welcome')->name('welcome');
+
 
 Route::get('/home', 'HomeController@index')->name('home');
     Route::get('/user/dashboard', 'HomeController@user_dashboard')->name('user_dashboard');
@@ -53,6 +56,7 @@ Route::get('/home', 'HomeController@index')->name('home');
     Route::post('/changeUsername/store', 'HomeController@changeUsername_store')->name('changeUsername_store');
     Route::get('/changeEmail', 'HomeController@changeEmail')->name('changeEmail');
     Route::post('/changeEmail/store', 'HomeController@changeEmail_store')->name('changeEmail_store');
+    Route::get('/membership/packages', 'HomeController@packages')->name('packages');
     Route::get('/showInfo/{id}', 'HomeController@showInfo')->name('showInfo');
 
 
@@ -69,7 +73,7 @@ Route::get('/', 'MainController@index')->name('single');
     Route::get('/signup/officeUse', 'MainController@officeUse')->name('officeUse');
         Route::post('/signup/officeUse/create', 'MainController@officeUse_create')->name('officeUse_create');
     Route::get('/signup/addPhoto', 'MainController@addPhoto')->name('addPhoto');
-        Route::post('/signup/addPhoto/create', 'MainController@addPhoto_create')->name('addPhoto_create');
+    Route::post('/signup/addPhoto/create', 'MainController@addPhoto_create')->name('addPhoto_create');
 
 
    //Route::get('/form', 'MainController@form')->name('form');
@@ -88,9 +92,9 @@ Route::get('/pages/news/Umrah-Winners/{id}', 'FooterController@Umrah_Winners')->
 
 
 //..!..paypal...//
-Route::get('payment', 'PayPalController@payment')->name('payment');
-Route::get('cancel', 'PayPalController@cancel')->name('payment.cancel');
-Route::get('payment/success', 'PayPalController@success')->name('payment.success');
+// Route::get('payment', 'PayPalController@payment')->name('payment');
+// Route::get('cancel', 'PayPalController@cancel')->name('payment.cancel');
+// Route::get('payment/success', 'PayPalController@success')->name('payment.success');
 
 
 

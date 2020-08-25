@@ -28,7 +28,7 @@
 
 
             <!-- Image -->
-            <div class="form-group">
+            {{-- <div class="form-group">
                 <label class="col-sm-2 bolder" for="image">Image
                 </label>
                 <div class="col-sm-4">
@@ -41,20 +41,57 @@
                     @if($errors->first('image'))
                         <br>
                     @endif
+                    <strong class="red">Minimum 150x33 pixels</strong> 
+                </div>
+            </div> --}}
+
+            <div class="form-group">
+                <label class="col-sm-2 bolder" for="name"> Name
+                </label>
+                <div class="col-sm-4">
+                    <input name="name"
+                           type="text"
+                           id="name"
+                           class="form-control"
+                           onchange="readURL(this);">
+                    <strong class="red">{{ $errors->first('name') }}</strong>
+                    @if($errors->first('name'))
+                        <br>
+                    @endif
                     {{-- <strong class="red">Minimum 150x33 pixels</strong> --}}
                 </div>
             </div>
+
             <div class="form-group">
-                <label class="col-sm-2 bolder" for="image">Position
+                <label class="col-sm-2 bolder" for="price"> Price (USD)
                 </label>
                 <div class="col-sm-4">
-                    <input name="position"
+                    <input name="price"
                            type="text"
-                           id="position"
+                           id="price"
+                           
                            class="form-control"
                            >
-                    <strong class="red">{{ $errors->first('position') }}</strong>
-                    @if($errors->first('position'))
+                    <strong class="red">{{ $errors->first('price') }}</strong>
+                    @if($errors->first('price'))
+                        <br>
+                    @endif
+                    {{-- <strong class="red">Minimum 150x33 pixels</strong> --}}
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-2 bolder" for="duration"> Duration (Month)
+                </label>
+                <div class="col-sm-4">
+                    <input name="duration"
+                           type="text"
+                           id="duration"
+                           
+                           class="form-control"
+                           >
+                    <strong class="red">{{ $errors->first('duration') }}</strong>
+                    @if($errors->first('duration'))
                         <br>
                     @endif
                     {{-- <strong class="red">Minimum 150x33 pixels</strong> --}}

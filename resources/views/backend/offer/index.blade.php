@@ -26,19 +26,28 @@
         <tbody>
         <tr>
             <th class="bg-dark" style="width: 10px">SL</th>
-            <th class="bg-dark" style="width: 40%">Image</th>
+            <th class="bg-dark" style="width: 40%">Name</th>
+            <th class="bg-dark" style="width: 40%">Price</th>
+            <th class="bg-dark" style="width: 40%">Duration</th>
             <th class="bg-dark" style="">Action</th>
         </tr>
         @forelse($offers as $key => $offer)
             <tr>
                 <td>{{ $key + 1 }}</td>
                 
-                <td>
+                {{-- <td>
                     <img src="{{ asset($offer->image) }}"
                          height="30"
                          width="120"
                          alt="No Image">
-                </td>
+                </td> --}}
+
+                <td>{{ $offer->name }}</td>
+
+                <td>{{ $offer->price }}</td>
+
+                <td>{{ $offer->duration }}</td>
+
                 <td>
                     <div class="btn-group btn-group-mini btn-corner">
                         <a href="{{ route('backend.site_config.offer.edit', $offer->id) }}"

@@ -176,7 +176,7 @@ $ed = App\User::with('education')->get();
         </div>
        </div>
        <div class="box width-48 bg-white pull-right">
-        <a href="/membership/history">
+        <a href="/membership/packages">
          <div class="z-page-click-target icon padding-box double-padding">
                 <span style="font-size: 56px; color: rgb(66, 197, 230);">
                         <i class="fa fa-delicious"></i>

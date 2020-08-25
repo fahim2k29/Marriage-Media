@@ -776,7 +776,9 @@
 
   <link href="/frontend/assets/css/less/global.css" media="screen" rel="stylesheet" type="text/css" />
   <link href="/frontend/assets/css/less/controller/ProfileController.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/frontend/assets/css/less/controller/MembershipController.css" media="screen" rel="stylesheet" type="text/css" />
   <script type="text/javascript" src="/frontend/assets/js/global.min.js"></script>
+  <script type="text/javascript" src="/frontend/assets/js/MembershipController.min.js"></script>
   <script type="text/javascript" src="/frontend/assets/js/controller/ProfileController.min.js"></script>
   <script type="text/javascript" src="/validation/validator.min.js"></script>
 

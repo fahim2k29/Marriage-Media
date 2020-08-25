@@ -42,13 +42,13 @@ class OfferController extends Controller
     public function store(OfferRequest $request)
     {
         $all = $request->all();
-        $all['image'] = (new SimpleUpload)
-            ->file($request->image)
-            ->dirName('offers')
-            ->save();
+        // $all['image'] = (new SimpleUpload)
+        //     ->file($request->image)
+        //     ->dirName('offers')
+        //     ->save();
 
         Offer::create($all);
-        return back()->with('message','Offer image Inserted Successfully');
+        return back()->with('message','Offer Created Successfully');
     }
 
     /**
@@ -84,11 +84,11 @@ class OfferController extends Controller
     public function update(OfferUpdateRequest $request,Offer $offer)
     {
         $all = $request->all();
-        $all['image'] = (new SimpleUpload)
-            ->file($request->image)
-            ->dirName('banners')
-            ->deleteIfExists($offer->image)
-            ->save();
+        // $all['image'] = (new SimpleUpload)
+        //     ->file($request->image)
+        //     ->dirName('banners')
+        //     ->deleteIfExists($offer->image)
+        //     ->save();
 
         $all = $offer->update($all);
         return back()->with('message', 'Offer Update Successfully!');

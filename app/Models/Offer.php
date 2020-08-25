@@ -8,6 +8,6 @@ class Offer extends Model
 {
     use AutoTimeStamp;
     protected $fillable = [
-        'image','position',
+        'name','price','duration',
     ];
 }
