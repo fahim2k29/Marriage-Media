@@ -765,7 +765,17 @@
         <meta name="apple-itunes-app" content="app-id=1116597910" />
 
         {{-- <title>SingleMuslim.com - Islamic Muslim Singles, Shaadi and Marriage Introductions Online - Single Muslim Rest of the World</title> --}}
-        <title>{{$info->site_title}} - {{$info->short_desc}} </title>
+      
+            @if(!empty($info->site_title && $info->short_desc))
+
+            <title>{{$info->site_title}} - {{$info->short_desc}} </title>
+           
+            @else
+           <title> Company Name
+             </title>
+            @endif
+
+        
 
 
         <meta name="description" content="SingleMuslim.com the world's leading Islamic Muslim Singles, Marriage and Shaadi introduction service. Over 2 million members online. Register for FREE!" />

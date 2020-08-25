@@ -136,7 +136,7 @@
             </div>
             
 `           <div class="form-group">
-                <label class="col-sm-2 no-padding-right bolder" for="short_desc">Address</label>
+                <label class="col-sm-2 no-padding-right bolder" for="short_desc">Description</label>
                 <div class="col-sm-10">
                                 <textarea name="short_desc"
                                           id="short_desc"
@@ -164,7 +164,7 @@
             </div> --}}
             
              <div class="form-group">
-                <label class="col-sm-2 no-padding-right bolder" for="meta_desc">Address</label>
+                <label class="col-sm-2 no-padding-right bolder" for="meta_desc">Meta Description</label>
                 <div class="col-sm-10">
                                 <textarea name="meta_desc"
                                           id="meta_desc"

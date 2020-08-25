@@ -9,8 +9,7 @@
                          @foreach ($slider as $key => $slide)
                          <li  style="background-color: rgb(0, 0, 0);">
                                 <div class="item{{ $key == 0 ? ' active' : '' }}">
-                                    <img src="{{asset('frontend/assets/images/')}}/{{ $slide->image }}" height="620px" width="1350px" >
-                                  
+                                    <img src="{{ $slide->image }}" height="620px" width="1350px" >
                                 </div>
                                 <div class="container">
                                     <div class="usermesage-landing title-box white-text-color center-align bottom-absolute bottom-message">
