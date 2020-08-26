@@ -738,33 +738,12 @@
         <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
         <script type="text/javascript" async="" src="https://www.gstatic.com/recaptcha/releases/nuX0GNR875hMLA1LR7ayD9tc/recaptcha__en.js"></script>
         <script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-NNGBZLJ"></script>
-        <script type="application/ld+json" data-json="webSchema" class="ng-binding ng-isolate-scope">
-            {
-                "@context": "http://schema.org",
-                "@type": "WebSite",
-                "keywords": "single muslim,single,muslim,singlemuslim,singlemuslims,muslims,singles,shaadi,marriage,islamic,islam,shadi",
-                "url": "https://singlemuslim.com",
-                "author": {
-                    "@type": "Organization",
-                    "name": "SingleMuslim",
-                    "url": "https://singlemuslim.com",
-                    "logo": "https://singlemuslim.com/images/header-logo.gif"
-                },
-                "about": {
-                    "@type": "Thing",
-                    "name": "SingleMuslim.com ",
-                    "description": "SingleMuslim.com the world's leading Islamic Muslim Singles, Marriage and Shaadi introduction service. Over 2 million members online. Register for FREE!",
-                    "image": "https://singlemuslim.com/images/header-logo.gif"
-                }
-            }
-        </script>
+       
 
         <meta name="viewport" content="width=1200" />
-        <meta name="author" content="Single Muslim" />
         <link href="/frontend/assets/images/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
         <meta name="apple-itunes-app" content="app-id=1116597910" />
 
-        {{-- <title>SingleMuslim.com - Islamic Muslim Singles, Shaadi and Marriage Introductions Online - Single Muslim Rest of the World</title> --}}
       
             @if(!empty($info->site_title && $info->short_desc))
 
@@ -777,12 +756,6 @@
 
         
 
-
-        <meta name="description" content="SingleMuslim.com the world's leading Islamic Muslim Singles, Marriage and Shaadi introduction service. Over 2 million members online. Register for FREE!" />
-
-        <meta name="keywords" content="single muslim,single,muslim,singlemuslim,singlemuslims,muslims,singles,shaadi,marriage,islamic,islam,shadi" />
-
-        <meta name="Author" content="Single Muslim" />
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="/frontend/assets/css/less/font-awesome.css">
 
@@ -849,17 +822,15 @@
         <header class="landing-header transition">
             <div class="container">
                 <h1 class="landing-header__logo">
-                    <a href="/" title="SingleMuslim.com - The world's leading Muslim introduction agency"><img src="/frontend/assets/images/marriageMedia.png" alt="Single Muslim" /></a>
-                    <!--                <div class="landing-header__strapline">-->
-                    <!--                    <p>The world's leading Muslim introduction agency</p>-->
-                    <!--                </div>-->
+                    <a href="/" title=""><img src="/frontend/assets/images/marriageMedia.png" alt="" /></a>
+                  
                 </h1>
 
                 <div class="landing-header__app" style="visibility: hidden;">
-                    <a href="https://itunes.apple.com/gb/app/singlemuslim/id1116597910?mt=8" target="_blank" class="landing-header__app-store-badge" title="Download SingleMuslim on the Apple App Store!">
+                    <a href="#" target="_blank" class="landing-header__app-store-badge" title="">
                         <img src="/frontend/assets/images/app_store.png" width="125" />
                     </a>
-                    <a href="https://play.google.com/store/apps/details?id=com.singlemuslim.sm" target="_blank" class="landing-header__app-store-badge" title="Download SingleMuslim on the Apple App Store!">
+                    <a href="#" target="_blank" class="landing-header__app-store-badge" title="">
                         <img src="/frontend/assets/svg/google-play-badge.png" width="125" />
                     </a>
                 </div>
@@ -881,7 +852,7 @@
                         </li>
                             @guest
                                     <li class="login">
-                                        <a href="/login" title="Log in to your existing Single Muslim account" id="btnhomelogins">Login</a>
+                                        <a href="/login" title="" id="btnhomelogins">Login</a>
                                     </li>
                                     <li>
                                         @if (Route::has('register'))
@@ -951,13 +922,13 @@
 
                             <li class="primary-font-2 light-font fontsize-12">
                                 <a href="/find/men">
-                                    Singlemuslim Men
+                                    Men
                                 </a>
                             </li>
 
                             <li class="primary-font-2 light-font fontsize-12">
                                 <a href="/find/women">
-                                    Singlemuslim Women
+                                   Women
                                 </a>
                             </li>
                         </ul>
@@ -1039,8 +1010,6 @@
                            
                             <a href="https://www.smartsoftware.com.bd/">Developed By:  <b> {{$info->name}} </b></a>                               
 
-                                {{-- <a href="https://itunes.apple.com/gb/app/singlemuslim/id1116597910?mt=8" target="_blank"><img src="/frontend/assets/images/app_store.png" height="50px" style="padding-bottom: 10px;" /></a>
-                                <a href="https://play.google.com/store/apps/details?id=com.singlemuslim.sm" target="_blank"><img src="/frontend/assets/images/android_logo.png" height="50px" style="padding-bottom: 10px;" /></a> --}}
                             
                         </div>
                     </div>

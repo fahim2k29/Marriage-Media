@@ -87,6 +87,6 @@ class User extends Authenticatable
 
     public function addphoto()
     {
-        return $this->hasOne(Education::class, 'user_id', 'id');
+        return $this->hasOne(AddPhoto::class, 'user_id', 'id');
     }
 }

@@ -62,7 +62,7 @@ class MainController extends Controller
         $user_id = Auth::user()->id;
         $aboutme = Aboutme::whereuser_id($user_id)->first();
         return view('user.aboutme', compact('aboutme'));
-        return view('user.aboutme');
+        // return view('user.aboutme');
     }
     function aboutme_create(Request $request)
     {

@@ -53,20 +53,17 @@ class HomeController extends Controller
 
     public function user_dashboard()
     {
-        $userid = Auth::id();
-        $user   = User::first(['DOB_year']);
-        $aboutme = Aboutme::whereuser_id($userid)->first();
-        $education = Education::whereuser_id($userid)->first();
-        $personal = Personal::whereuser_id($userid)->first();
-        $religion = Religion::whereuser_id($userid)->first();
-        $officeUse = OfficeUse::whereuser_id($userid)->first();
-        $addPhoto = AddPhoto::whereuser_id($userid)->first();
-
-        // $Dob=User::whereid($userid)->get();
-        // dd($Dob);
-        // $years = Carbon::parse($Dob)->age;
+        $data['user']       = User::find(auth()->id())->first();
+        $data['addPhoto']   = AddPhoto::whereuser_id(auth()->id())->first();
+        $data['users']      = User::paginate(30)->random(20);
+        $data['emp']        = User::with('education')->get();
+        $data['rlgn']       = User::with('religion')->get();
+        $data['prsn']       = User::with('personal')->get();
+        $data['img']        = User::with('addphoto')->get();
+        $data['dob']       = User::first(['DOB_year']);
+        // dd($emp->toArray());
+        return view('user.dashboard.index', $data);
             
-        return view('user.dashboard.index', compact('aboutme', 'education', 'personal', 'religion', 'officeUse', 'addPhoto', 'user'));
     }
 
     public function user_dashboard_profile()

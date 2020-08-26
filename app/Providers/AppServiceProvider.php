@@ -6,6 +6,7 @@ use App\AddPhoto;
 use App\Models\Offer;
 use App\Models\QuickPage;
 use App\Models\SiteInfo;
+use App\Models\Slider;
 use App\User;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
@@ -49,6 +50,8 @@ class AppServiceProvider extends ServiceProvider
             // }
             view()->share('pages', QuickPage::all());
             // view()->share('offer', Offer::all());
+            view()->share('slider', Slider::all());
+
 
         });
 

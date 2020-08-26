@@ -11,35 +11,16 @@
                                 <div class="item{{ $key == 0 ? ' active' : '' }}">
                                     <img src="{{ $slide->image }}" height="620px" width="1350px" >
                                 </div>
-                                <div class="container">
-                                    <div class="usermesage-landing title-box white-text-color center-align bottom-absolute bottom-message">
-                                        <div class="title fontsize-22">
-                                            Abid &amp; Sonia
-                                        </div>
-                                        <div class="subtitle fontsize-16 primary-font-2 light-font">
-                                            Real Life Success Story
-                                        </div>
-                                    </div>
-
-                                    <div class="bigbgsuccessstories">
-                                        <div class="reallifestory">Real Life Success Story</div>
-                                        <div class="storyusertitle">
-                                            Sedki <span class="">&amp;</span> Shayda
-                                            <br />
-                                            <div class="clearfix"></div>
-                                        </div>
-                                    </div>
-                                </div>
                             </li>
                             @endforeach
                     </ul>
                 </div>
                 <div class="bottom-absolute right-align storebutton-placement">
                     <div class="container">
-                        <a href="https://itunes.apple.com/gb/app/singlemuslim/id1116597910?mt=8" target="_blank" class="landing-header__app-store-badge" title="Download SingleMuslim on the Apple App Store!" style="cursor: pointer;">
+                        <a href="#" target="_blank" class="landing-header__app-store-badge" title=" " style="cursor: pointer;">
                             <img src="/frontend/assets/images/app_store.png" width="125" />
                         </a>
-                        <a href="https://play.google.com/store/apps/details?id=com.singlemuslim.sm" target="_blank" class="landing-header__app-store-badge" title="Download SingleMuslim on the Apple App Store!" style="cursor: pointer;">
+                        <a href="#" target="_blank" class="landing-header__app-store-badge" title=" " style="cursor: pointer;">
                             <img src="/frontend/assets/images/android_logo.png" width="125" />
                         </a>
                     </div>
@@ -232,8 +213,8 @@
                     <div class="bgBackground">
                         <img id="Image-Maps-Com-image-maps-2017-10-23-040457" class="img-responsive imageOurnewapp" src="/frontend/assets/images/middle_banner_back.png" width="1140px" border="0" usemap="#image-maps-2017-10-23-040457" alt="" />
                         <map name="image-maps-2017-10-23-040457" id="ImageMapsCom-image-maps-2017-10-23-040457">
-                            <area alt="" title="" href="https://itunes.apple.com/gb/app/singlemuslim/id1116597910?mt=8" shape="rect" coords="180,238,290,300" style="outline: none;" target="_blank" />
-                            <area alt="" title="" href="https://play.google.com/store/apps/details?id=com.singlemuslim.sm" shape="rect" coords="290,300,458,230" style="outline: none;" target="_blank" />
+                            <area alt="" title="" href="#" shape="rect" coords="180,238,290,300" style="outline: none;" target="_blank" />
+                            <area alt="" title="" href="#" shape="rect" coords="290,300,458,230" style="outline: none;" target="_blank" />
                         </map>
                     </div>
                 </div>

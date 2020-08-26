@@ -727,6 +727,50 @@
                 }
             }
         </style>
+        <style>
+            .dropbtn {
+                background-color: rgb(4, 116, 153);
+                color: whitesmoke;
+                padding: 10px;
+                font-size: 14px;
+                font-weight: 700;
+                border: none;
+                border-radius: 8px;
+            }
+
+            .dropdown {
+                position: relative;
+                display: inline-block;
+            }
+
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background-color: #f1f1f1;
+                min-width: 80px;
+                box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                z-index: 1;
+            }
+
+            .dropdown-content a {
+                color: rgb(0, 0, 0);
+                padding: 7px 7px;
+                text-decoration: none;
+                display: block;
+            }
+
+            .dropdown-content a:hover {
+                background-color: #ddd;
+            }
+
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }
+
+            .dropdown:hover .dropbtn {
+                background-color: #3e8e41;
+            }
+        </style>
 
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -736,42 +780,17 @@
         <script async="" src="https://connect.facebook.net/en_US/fbevents.js"></script>
         <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
         <script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-NNGBZLJ"></script>
-        <script type="application/ld+json" data-json="webSchema" class="ng-binding ng-isolate-scope">
-            {
-                "@context": "http://schema.org",
-                "@type": "WebSite",
-                "keywords": "single muslim,single,muslim,singlemuslim,singlemuslims,muslims,singles,shaadi,marriage,islamic,islam,shadi",
-                "url": "https://singlemuslim.com",
-                "author": {
-                    "@type": "Organization",
-                    "name": "SingleMuslim",
-                    "url": "https://singlemuslim.com",
-                    "logo": "https://singlemuslim.com/images/header-logo.gif"
-                },
-                "about": {
-                    "@type": "Thing",
-                    "name": "SingleMuslim.com ",
-                    "description": "SingleMuslim.com the world's leading Islamic Muslim Singles, Marriage and Shaadi introduction service. Over 2 million members online. Register for FREE!",
-                    "image": "https://singlemuslim.com/images/header-logo.gif"
-                }
-            }
-        </script>
-
+        
         <meta name="viewport" content="width=1200" />
-        <meta name="author" content="Single Muslim" />
+        
         <link href="/images/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
         <meta name="apple-itunes-app" content="app-id=1116597910" />
 
-        <title>SingleMuslim.com - Islamic Muslim Singles, Shaadi and Marriage Introductions Online - Single Muslim Rest of the World</title>
-
-        <meta name="description" content="SingleMuslim.com the world's leading Islamic Muslim Singles, Marriage and Shaadi introduction service. Over 2 million members online. Register for FREE!" />
-
-        <meta name="keywords" content="single muslim,single,muslim,singlemuslim,singlemuslims,muslims,singles,shaadi,marriage,islamic,islam,shadi" />
-
-        <meta name="Author" content="Single Muslim" />
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <title> {{$info->name}}  </title>
 
         
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+
         <link href="/frontend/assets/css/less/global.css" media="screen" rel="stylesheet" type="text/css" />
         <link href="/frontend/assets/css/less/controller/SearchController.css" media="screen" rel="stylesheet" type="text/css" />
         <script type="text/javascript" src="/frontend/assets/js/global.min.js"></script>
@@ -811,14 +830,45 @@
                             </div>
                         </div>
 
-                        <div class="col-md-10 col-lg-10 logo_topbar">
-                            <div class="login_innerbar">
-                                <div class="topnav_bar">
-                                    <form action="/login" method="post" class="navbar-form navbar-right form-inline topnav_bar" role="form" style="padding-top: 11px;">
-                                        <a href="/login" class="btn fontsize-14 sm-color sm-female background-contrast width-76">Login</a> <a href="/signup" class="btn btn fontsize-14 sm-color sm-male background-contrast">Register</a>
+                        <div style="text-align: right; padding-top: 15px; ">
+                            @guest
+
+                            <button class="btn btn-primary">
+                                <a href="/login" style="color: white;" title=" " id="btnhomelogins">Login</a>
+                            </button>
+
+                            <button class="btn btn-primary" style="background-color: brown;">
+                                @if (Route::has('register'))
+                                <a href="/signup" style="color: white;" title="Register to find your perfect marriage partner">Register</a>
+                                @endif
+                            </button>
+
+                            @else
+                            <div class="dropdown">
+                                <button class="dropbtn">
+                                    <a id="navbarDropdown" style="color: whitesmoke" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                        {{ Auth::user()->UserName }}
+                                    </a>
+                                </button>
+
+                                <div class="dropdown-content">
+                                    <a href="/user/dashboard">Dashboard</a>
+                                    <a
+                                        class="dropdown-item"
+                                        href="{{ route('logout') }}"
+                                        onclick="event.preventDefault();
+                        document.getElementById('logout-form').submit();"
+                                    >
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="padding-left: 30px;">
+                                        @csrf
                                     </form>
                                 </div>
                             </div>
+
+                            @endguest
                         </div>
                     </div>
                 </div>
@@ -834,7 +884,7 @@
         </div>
 
         <!-- Footer -->
-       
+
         <footer class="primary-font-2 relative-position">
             <div class="container">
                 <div class="row">
@@ -863,13 +913,13 @@
 
                             <li class="primary-font-2 light-font fontsize-12">
                                 <a href="/find/men">
-                                    Singlemuslim Men
+                                    Men
                                 </a>
                             </li>
 
                             <li class="primary-font-2 light-font fontsize-12">
                                 <a href="/find/women">
-                                    Singlemuslim Women
+                                    Women
                                 </a>
                             </li>
                         </ul>
@@ -879,28 +929,36 @@
                             <li class="liheader male-text-color fontsize-12">
                                 <h4 class="primary-text-color fontsize-14">News</h4>
                             </li>
+                            
+                            @foreach ($pages ->where('section', 2) as $page)
+                            {{-- @dd($page); --}}
                             <li class="primary-font-2 light-font fontsize-12">
-                                <a href="/page/news/allnews/Umrah Winners"> Umrah Winners </a>
+                                <a href="/pages/news/Umrah-Winners/{{$page->id}}"> {{$page->name}} </a>
+                            </li>
+                            @endforeach
+                            
+                                
+                            {{-- @endforeach --}}
+
+                            {{-- <li class="primary-font-2 light-font fontsize-12">
+                            <a href="/pages/news/{{$page->slug}}/{{$page->id}}"> {{$page->name}} </a>
                             </li>
                             <li class="primary-font-2 light-font fontsize-12">
-                                <a href="/success-stories"> Success Stories </a>
+                                <a href="/pages/news/Reviews/3"> Reviews </a>
                             </li>
                             <li class="primary-font-2 light-font fontsize-12">
-                                <a href="/page/news/allnews/Reviews"> Reviews </a>
+                                <a href="/pages/news/In-The-News"> In The News </a>
                             </li>
                             <li class="primary-font-2 light-font fontsize-12">
-                                <a href="/page/news/allnews/In The News"> In The News </a>
-                            </li>
-                            <li class="primary-font-2 light-font fontsize-12">
-                                <a href="/page/news/allnews/Site news">
+                                <a href="/pages/news/Site-News">
                                     Site News
                                 </a>
                             </li>
                             <li class="primary-font-2 light-font fontsize-12">
-                                <a href="/page/news/allnews/PR">
+                                <a href="/pages/news/PR">
                                     PR
                                 </a>
-                            </li>
+                            </li> --}}
                         </ul>
                     </div>
                     <div class="col-xs-3">
@@ -908,22 +966,14 @@
                             <li class="liheader female-text-color">
                                 <h4 class="primary-text-color fontsize-14">Our Standards</h4>
                             </li>
+                            
+                            @foreach ($pages->where('section', 3) as $page)
+                            {{-- @dd($page); --}}
                             <li class="primary-font-2 light-font fontsize-12">
-                                <a href="/page/code_of_conduct">
-                                    Code of Conduct
-                                </a>
+                                <a href="/pages/news/Umrah-Winners/{{$page->id}}"> {{$page->name}} </a>
                             </li>
-                            <li class="primary-font-2 light-font fontsize-12">
-                                <a href="/page/privacy_security">
-                                    Privacy &amp; Security
-                                </a>
-                            </li>
+                            @endforeach
 
-                            <li class="primary-font-2 light-font fontsize-12">
-                                <a href="/page/terms_and_conditions">
-                                    Terms and Conditions
-                                </a>
-                            </li>
                         </ul>
                     </div>
 
@@ -932,34 +982,26 @@
                             <li class="liheader male-text-color">
                                 <h4 class="primary-text-color fontsize-14">Help</h4>
                             </li>
+                           @foreach ($pages->where('section', 4) as $page)
+                            {{-- @dd($page); --}}
                             <li class="primary-font-2 light-font fontsize-12">
-                                <a href="/pages/helpandsupportnew"> Help and Support </a>
+                                <a href="/pages/news/Umrah-Winners/{{$page->id}}"> {{$page->name}} </a>
                             </li>
-
-                            <li class="primary-font-2 light-font fontsize-12">
-                                <a href="/page/contactus">
-                                    Contact Us
-                                </a>
-                            </li>
-                            <li class="primary-font-2 light-font fontsize-12">
-                                <a href="/submitabug"> Submit a Bug</a>
-                            </li>
+                            @endforeach
                         </ul>
                     </div>
 
                     <div class="col-xs-12">
                         <div class="col-xs-9">
-                            <p style="font-size: 13px;">  <?php echo date("Y"); ?> &copy;  {{$info->site_title}} </p>
+                            <p style="font-size: 13px;">
+                                <?php echo date("Y"); ?>
+                                &copy; {{$info->site_title}}
+                            </p>
                         </div>
-                        
 
                         <div class="col-xs-3">
-                           
-                            <a href="https://www.smartsoftware.com.bd/">Developed By:  <b> {{$info->name}} </b></a>                               
+                            <a href="https://www.smartsoftware.com.bd/">Developed By: <b> {{$info->name}} </b></a>
 
-                                {{-- <a href="https://itunes.apple.com/gb/app/singlemuslim/id1116597910?mt=8" target="_blank"><img src="/frontend/assets/images/app_store.png" height="50px" style="padding-bottom: 10px;" /></a>
-                                <a href="https://play.google.com/store/apps/details?id=com.singlemuslim.sm" target="_blank"><img src="/frontend/assets/images/android_logo.png" height="50px" style="padding-bottom: 10px;" /></a> --}}
-                            
                         </div>
                     </div>
                 </div>

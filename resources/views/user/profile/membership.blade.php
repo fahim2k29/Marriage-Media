@@ -57,7 +57,6 @@
                                 <h3 class="pull-right"></h3>
                                 <div class="clearfix"></div>
                             </div>
-                            
                             <br>
                             <br>
                             <div class="row" style="color: #007EA5"  id="first">

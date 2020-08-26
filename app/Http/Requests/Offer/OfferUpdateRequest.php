@@ -14,17 +14,20 @@ class OfferUpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            'position' => 'required|integer|unique:banners',
-            // 'image' => 'nullable|image|dimensions:min_width=100,min_height=100',
+            'name' => 'required|unique:offers',
+            'price' => 'required|integer',
+            'duration' => 'required|string',
         ];
     }
 
     public function messages()
     {
         return [
-            'position.required' => "position is required.",
-            'position.integer'   => 'position must be Number.',
-            'position.unique'   => 'position has already been taken.',
+            'name.required' => "position is required.",
+            'duration|string' => 'must fill this and also string ',
+            'position.integer'  => 'position must be Number.',
+            'name.unique'   => 'position has already been taken.',
+            'price.integer'  => 'Invalid price type.',
         ];
     }
 }

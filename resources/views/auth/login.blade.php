@@ -3,7 +3,20 @@
 
 <div class="fullwidthHomepage">
     <section class="sectionHomepage" style="background-position: 0px 0px;">
-<div class="sectionHomeSlider">
+    <div class="sectionHomeSlider">
+        <ul >
+            @foreach ($slider as $key => $slide)
+            <li  style="background-color: rgb(0, 0, 0);">
+                <div class="item{{ $key == 0 ? ' active' : '' }}">
+                    <img src="{{ $slide->image }}" height="620px" width="1350px" >
+                </div>
+            </li>
+            @endforeach
+        </ul>
+    </div>
+
+
+{{-- <div class="sectionHomeSlider">
     <ul style="position: relative;">
         <li class="li4Header" style="background-color: rgb(0, 0, 0); position: absolute; top: 0px; left: 0px; display: none; z-index: 5; opacity: 0;">
             <div class="container">
@@ -113,13 +126,13 @@
             </div>
         </li>
     </ul>
-</div>
+</div> --}}
 <div class="bottom-absolute right-align storebutton-placement">
     <div class="container-login">
-        <a href="https://itunes.apple.com/gb/app/singlemuslim/id1116597910?mt=8" target="_blank" class="landing-header__app-store-badge" title="Download SingleMuslim on the Apple App Store!" style="cursor: pointer;">
+        <a href="#" target="_blank" class="landing-header__app-store-badge" title="" style="cursor: pointer;">
             <img src="/frontend/assets/images/app_store.png" width="125" />
         </a>
-        <a href="https://play.google.com/store/apps/details?id=com.singlemuslim.sm" target="_blank" class="landing-header__app-store-badge" title="Download SingleMuslim on the Apple App Store!" style="cursor: pointer;">
+        <a href="#" target="_blank" class="landing-header__app-store-badge" title="" style="cursor: pointer;">
             <img src="/frontend/assets/images/android_logo.png" width="125" />
         </a>
     </div>

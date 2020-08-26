@@ -54,7 +54,7 @@ class SearchController extends Controller
     {
         $data['user']       = User::find(auth()->id())->first();
         $data['addPhoto']   = AddPhoto::whereuser_id(auth()->id())->first();
-        $data['users']      = User::paginate(30);
+        $data['users']      = User::paginate(30)->random(20);
         $data['aboutmes']   = Aboutme::all();
         $data['religions']  = Religion::all();
         $data['educations'] = Education::all();

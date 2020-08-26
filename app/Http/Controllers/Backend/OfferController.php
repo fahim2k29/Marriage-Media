@@ -81,7 +81,7 @@ class OfferController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(OfferUpdateRequest $request,Offer $offer)
+    public function update(Request $request,Offer $offer)
     {
         $all = $request->all();
         // $all['image'] = (new SimpleUpload)
@@ -91,6 +91,7 @@ class OfferController extends Controller
         //     ->save();
 
         $all = $offer->update($all);
+        
         return back()->with('message', 'Offer Update Successfully!');
     }
 

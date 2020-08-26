@@ -6,52 +6,7 @@
 <div class="modal fade" id="notificationModal" tabindex="-1" role="dialog" aria-labelledby="notificationModal" aria-hidden="true">
 <div class="modal-dialog" role="document">
 <div class="modal-content">
-<div class="modal-header">
-    <h2 class="headernotification">Notifications</h2>
-    <div class="notificationheading span12" style="text-align: center; width: 100%;">
-        <div class="filtericon">
-            <select name="filter" class="filterdrop select2-hidden-accessible" id="filter" data-select2-id="filter" tabindex="-1" aria-hidden="true">
-                <option value="showall" data-select2-id="2">
-                    Show All
-                </option>
-                <option value="login" data-select2-id="615">
-                    Favourite Online
-                </option>
-                <option value="view" data-select2-id="616">
-                    Visitors
-                </option>
-                <option value="gallery" data-select2-id="617">
-                    Gallery Requests
-                </option>
-                <option value="profile" data-select2-id="618">
-                    Admin
-                </option>
-            </select>
-            <span class="select2 select2-container select2-container--default select2width" dir="ltr" data-select2-id="734" style="width: 2.22222px;">
-                <span class="selection">
-                    <span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-filter-container">
-                        <span
-                            class="select2-selection__rendered"
-                            id="select2-filter-container"
-                            role="textbox"
-                            aria-readonly="true"
-                            title="
-                    Show All
-                "
-                        >
-                            Show All
-                        </span>
-                        <span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span>
-                    </span>
-                </span>
-                <span class="dropdown-wrapper" aria-hidden="true"></span>
-            </span>
-            <div class="settingsnotification">
-                <a href="/profile/preferences"> <i class="smicon-new smicon-cog"></i></a>
-            </div>
-        </div>
-    </div>
-</div>
+
 <div class="modal-body">
     <div class="photoBoxHolder2">
         <div class="notifications customheight"></div>
@@ -124,7 +79,7 @@
     {{-- <img
         align="left"
         class="img-responsive"
-        src="//gallery.singlemuslim.com/primary/316x316/NjU4MzY1MjYzMzAyM2UwZtA7bYmSo2GnjrmiggfXt_ZhZ0zD19Dgh4WnleNxAqV5rZ1uwjBglktcJYTaohpHE1j4V4bUBvrzpVL0zLnA8-QNvJlNdFIcfjrBaVM3o6WI7F-aM6BBuefTi1BID_R-Ww$$$.jpg"
+        src=""
         alt="fahim900"
     /> --}}
 </div>
@@ -185,21 +140,7 @@
 
 <div class="clearfix"></div>
 
-<div class="col-lg-12 contentshare">
-    <span><a class="male" href="/user/fahim900">Permalink</a></span>
-    <span>
-        <form>
-            <div class="input-group">
-                <input type="text" class="form-control" style="border-radius: 0px !important;" value="https://www.singlemuslim.com/user/fahim900" placeholder="Some path" id="copy-input" />
-                <span class="input-group-btn">
-                    <button class="btn btn-default" type="button" id="copy-button" style="height: 34px;" data-toggle="tooltip" data-placement="button" data-original-title="" title="">
-                        <i class="sm-line basic-sheet-multiple"></i>
-                    </button>
-                </span>
-            </div>
-        </form>
-    </span>
-</div>
+
 </div>
 <div class="pull-right rightDetails rightDetails-edit">
 <div class="userinfosectiontop">
@@ -1383,24 +1324,7 @@
                             <div class="description" style="display: none;"></div>
                         </div>
                     </div>
-                    <div class="strip">
-                        <div class="thumbnails">
-                            <div class="thumbnail">
-                                <div class="picture"></div>
-                                <div class="metadata jsHide">
-                                    <div class="url">
-                                        //gallery.singlemuslim.com/image/100x100/YTJmNWI3ZjkyMjhmYTVjMEqCvhZlW2uwrH2M-koCFrE1SKV-L9-lEC_bM_OOIvjD6vNJmUz2vN56ypkm3NAeo0NsNgW8KU7NhmOKGwWOdqZbKiVLJcooxL0MOEEVKMoz1OuBOSUOGcyYCFY4rBCwe6OiUAKN2l6VosHI5phAA_GBcUv5g9pgI8okfwCjV85VxgKS7GFhTyrNPxTYFtYLFA$$$.jpg
-                                    </div>
-
-                                    <div class="description"></div>
-
-                                    <div class="urlFull" data-number="0">
-                                        //gallery.singlemuslim.com/image/512x512/YTJmNWI3ZjkyMjhmYTVjMEqCvhZlW2uwrH2M-koCFrE1SKV-L9-lEC_bM_OOIvjD6vNJmUz2vN56ypkm3NAeo0NsNgW8KU7NhmOKGwWOdqZbKiVLJcooxL0MOEEVKMoz1OuBOSUOGcyYCFY4rBCwe6OiUAKN2l6VosHI5phAA_GBcUv5g9pgI8okfwCjV85VxgKS7GFhTyrNPxTYFtYLFA$$$.jpg
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    
                     <div class="currentViewer">
                         <div class="arrow"></div>
                     </div>

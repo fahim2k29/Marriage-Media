@@ -49,7 +49,7 @@
                            id="name"
                            class="form-control"
                            >
-                    <strong class="red">{{ $errors->first('name') }}</strong>
+                    {{-- <strong class="red">{{ $errors->first('name') }}</strong> --}}
                     @if($errors->first('name'))
                         <br>
                     @endif
@@ -67,7 +67,7 @@
                            id="price"
                            class="form-control"
                            >
-                    <strong class="red">{{ $errors->first('price') }}</strong>
+                    {{-- <strong class="red">{{ $errors->first('price') }}</strong> --}}
                     @if($errors->first('price'))
                         <br>
                     @endif
@@ -85,7 +85,7 @@
                             value="{{ $offer->duration }}" 
                            class="form-control"
                            >
-                    <strong class="red">{{ $errors->first('duration') }}</strong>
+                    {{-- <strong class="red">{{ $errors->first('duration') }}</strong> --}}
                     @if($errors->first('duration'))
                         <br>
                     @endif
