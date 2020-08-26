@@ -26,7 +26,7 @@ $factory->define(User::class, function (Faker $faker) {
         'UserName'          => $faker->name,
         'Email'             => $faker->unique()->safeEmail,
         'ConfirmEmail'      => $faker->unique()->safeEmail,
-        'Country'           => $faker->country,
+        'Country'           => $faker->name,
         'Gender'            => $gender[rand(0,1)],
         'DOB_day'           => rand(1,30),
         'DOB_month'         =>  rand(1,12),
