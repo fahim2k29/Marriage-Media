@@ -20,7 +20,7 @@ class SliderController extends Controller
     {
         $sliders = Slider::paginate(10);
         // dd($Sliders);
-         return view('backend.Slider.index',compact('sliders'));
+         return view('backend.slider.index',compact('sliders'));
     }
 
     /**
