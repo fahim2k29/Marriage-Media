@@ -55,7 +55,7 @@ class HomeController extends Controller
     {
         $data['user']       = User::find(auth()->id())->first();
         $data['addPhoto']   = AddPhoto::whereuser_id(auth()->id())->first();
-        $data['users']      = User::paginate(30)->random(20);
+        $data['users']      = User::paginate(30);
         $data['emp']        = User::with('education')->get();
         $data['rlgn']       = User::with('religion')->get();
         $data['prsn']       = User::with('personal')->get();
@@ -164,12 +164,19 @@ class HomeController extends Controller
             'LastName' => $request->LastName,
             'Address' => $request->Address,
             'City' => $request->City,
-            'Country' => $request->Country,
             'PostCode' => $request->PostCode,
             'ContactTel' => $request->ContactTel,
             'MobileTel' => $request->MobileTel,
+            
         ]);
-        return back();
+        User::find($user_id)->update([
+            'Country' => $request->Country,
+            'DOB_day' => $request->DOB_day,
+            'DOB_month' => $request->DOB_month,
+            'DOB_year' => $request->DOB_year,
+        ]);
+    
+            return back();
     }
 
     public function changePassword()

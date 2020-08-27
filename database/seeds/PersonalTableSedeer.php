@@ -19,15 +19,15 @@ class PersonalTableSedeer extends Seeder
             'Income_data'=> '15000-25000',
             'MarryIn_data'=> 'As soon as possible',
             'MaritalStatus_data'=> 'Never Married',
-            'Children_data'=> 'No',
-            'HaveChildren_data'=> 'No',
+            'Children_data'=> 'Yes',
+            'HaveChildren_data'=> 'Yes',
             'Living_data'=> 'I Live Alone',
             'Height_data'=> '1.38m',
             'Build_data'=> 'Slim',
             'Hair_data'=> 'Black',
             'EyeColour_data'=> 'Brown',
-            'Smoke_data'=> 'No',
-            'Disabilities_data'=> 'No',
+            'Smoke_data'=> 'Yes',
+            'Disabilities_data'=> 'Yes',
             ]);
 
             PersonalData::create([
@@ -44,8 +44,8 @@ class PersonalTableSedeer extends Seeder
             'Build_data'=> 'Fat',
             'Hair_data'=> 'White',
             'EyeColour_data'=> 'Black',
-            'Smoke_data'=> 'Yes',
-            'Disabilities_data'=> 'Yes',
+            'Smoke_data'=> 'No',
+            'Disabilities_data'=> 'No',
             ]);
 
          

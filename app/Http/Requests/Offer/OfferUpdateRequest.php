@@ -15,7 +15,7 @@ class OfferUpdateRequest extends FormRequest
     {
         return [
             'name' => 'required|unique:offers',
-            'price' => 'required|integer',
+            'price' => 'required|max:4',
             'duration' => 'required|string',
         ];
     }
@@ -24,10 +24,10 @@ class OfferUpdateRequest extends FormRequest
     {
         return [
             'name.required' => "position is required.",
-            'duration|string' => 'must fill this and also string ',
+            'duration.string' => 'must fill this and also string ',
             'position.integer'  => 'position must be Number.',
             'name.unique'   => 'position has already been taken.',
-            'price.integer'  => 'Invalid price type.',
+            'price.max'  => 'Invalid price type.',
         ];
     }
 }

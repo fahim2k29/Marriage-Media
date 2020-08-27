@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\SiteInfo\UpdateRequest;
 use App\Models\SiteInfo;
+use Illuminate\Http\Request;
 use NabilAnam\SimpleUpload\SimpleUpload;
 
 class SiteInfoController extends Controller
@@ -14,7 +15,7 @@ class SiteInfoController extends Controller
         return view('backend.site_info.index');
     }
 
-    public function update(UpdateRequest $request)
+    public function update(Request $request)
     {
         $info = SiteInfo::find(1);
 

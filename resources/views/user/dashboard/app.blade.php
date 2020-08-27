@@ -935,11 +935,19 @@
                                                 </a>
                                             </li>
                                             <li class="dropdown" style="padding-top: 5px; text-align: center;">
+                                                @if (isset($addPhoto->image))
                                                 <div style="float: left; padding-right: 10px; padding-left: 8px; line-height: 32px;">
                                                     <a href="/user/dashboard">
                                                         <img class="img-circle" src="{{asset('frontend/assets/images/')}}/{{ $addPhoto->image }}" height="32px" width="32px" />
                                                     </a>
                                                 </div>
+                                                @else
+                                                <div style="float: left; padding-right: 10px; padding-left: 8px; line-height: 32px;">
+                                                    <a href="/user/dashboard">
+                                                        <img class="img-circle" src="{{asset('frontend/assets/images/')}}/default2.jpg" height="32px" width="32px" />
+                                                    </a>
+                                                </div>                                                 
+                                                @endif
 
                                                 <div style="margin-top: 10px;">
                                                     <a href="/user/dashboard" class="dropdown-toggle" data-toggle="dropdown" style="font-size: 10px;"> {{Auth::user()->UserName}} </a>

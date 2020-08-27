@@ -56,7 +56,7 @@
                                             <a href="/changePassword"><i class="fa fa-unlock-alt" aria-hidden="true"></i> Change Password </a>
                                         </li>
                                         <li class="">
-                                            <a href="#"><i class="fa fa-delicious" aria-hidden="true"></i> Memberships History </a>
+                                            <a href="/membership/packages"><i class="fa fa-delicious" aria-hidden="true"></i> Memberships History </a>
                                         </li>
                                         <li class="">
                                             <a href="#"><i class="fa fa-ban" aria-hidden="true"></i> Blocked Users </a>

@@ -98,7 +98,7 @@
                                                 @if(isset($addPhoto))
                                                 <img src="{{asset('frontend/assets/images/')}}/{{ $addPhoto->image }}" class="img-responsive img-circle" />
                                                 @else
-                                                <img src="{{asset('frontend/assets/images/')}}/default.png" class="img-responsive img-circle" />
+                                                <img src="{{asset('frontend/assets/images/')}}/default2.jpg" class="img-responsive img-circle" />
                                                 @endif
                                             </div>
                                         </div>

@@ -40,7 +40,7 @@
     <div class="rate-statut-wrapper absolute-position">
         <!-- ngIf: contentCtr.otherPictures && contentCtr.otherPictures.totalImages >= 1 -->
     </div>
-    <div class="userinfoonpic">
+    {{-- <div class="userinfoonpic">
         <div class="col-md-12">
             <div class="pull-left usernameLeft2 usernamesection">
                 <div class="pull-left">
@@ -49,9 +49,9 @@
                     </h1>
                 </div>
 
-                {{-- <div class="pull-left userAge">
+                <div class="pull-left userAge">
                     23
-                </div> --}}
+                </div>
                 <div class="clearfix"></div>
             </div>
             <div class="pull-right flagposition">
@@ -72,7 +72,7 @@
             </div>
         </div>
     </div>
-   
+    --}}
         <img align="left" class="img-responsive" src="{{asset('frontend/assets/images/')}}/{{ $addPhoto->image }}"  class="img-responsive img-circle" >
        
 
@@ -560,7 +560,7 @@
             <a href="/changePassword"><i class="fa fa-unlock-alt" aria-hidden="true"></i> Change Password </a>
         </li>
         <li class="">
-            <a href="#"><i class="fa fa-delicious" aria-hidden="true"></i> Memberships History </a>
+            <a href="/membership/packages"><i class="fa fa-delicious" aria-hidden="true"></i> Memberships History </a>
         </li>
         <li class="">
             <a href="#"><i class="fa fa-ban" aria-hidden="true"></i> Blocked Users </a>

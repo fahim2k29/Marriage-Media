@@ -57,7 +57,7 @@
                                             <a href="/changePassword"><i class="fa fa-unlock-alt" aria-hidden="true"></i> Change Password </a>
                                         </li>
                                         <li class="">
-                                            <a href="#"><i class="fa fa-delicious" aria-hidden="true"></i> Memberships History </a>
+                                            <a href="/membership/packages"><i class="fa fa-delicious" aria-hidden="true"></i> Memberships History </a>
                                         </li>
                                         <li class="">
                                             <a href="#"><i class="fa fa-ban" aria-hidden="true"></i> Blocked Users </a>
@@ -160,7 +160,7 @@
                                                         <label class="labelbold">Date of Birth</label>
                                                     </div>
                                                     <div class="col-md-8 col-6">
-                                                        {{$officeUse->DOB_day}} {{$officeUse->DOB_month}} {{$officeUse->DOB_year}}
+                                                        {{$officeUse->DOB_day}}-{{$officeUse->DOB_month}}-{{$officeUse->DOB_year}}
                                                     </div>
                                                 </div>
                                                 <hr />
@@ -267,14 +267,14 @@
                                                         <span class="help-block with-errors" aria-hidden="false"></span>
                                                         <div class="clearfix"></div>
                                                     </div>
-                                                    {{--
+                                                    
                                                     <div id="DOB-group" class="form-group DOB-row">
                                                         <label for="DOB" class="col-sm-4 control-label"><span class="required">*</span>Date of Birth</label>
                                                         <div class="col-sm-8">
                                                             <div class="input-group input-group-maxwidth">
                                                                 <div class="row">
                                                                     <div class="col-xs-3">
-                                                                        <select name="DOB[day]" id="DOB-day" data-select2-id="DOB-day" tabindex="-1" aria-hidden="true">
+                                                                        <select name="DOB_day" id="DOB-day" data-select2-id="DOB-day" tabindex="-1" aria-hidden="true">
                                                                             <option>Select Day</option>
                                                                             @foreach ($signupdatas as $signupdata)
                                                                             <option>{{$signupdata-> DOB_day_data}}</option>
@@ -282,7 +282,7 @@
                                                                         </select>
                                                                     </div>
                                                                     <div class="col-xs-5">
-                                                                        <select name="DOB[month]" id="DOB-month" data-select2-id="DOB-month" tabindex="-1" aria-hidden="true">
+                                                                        <select name="DOB_month" id="DOB-month" data-select2-id="DOB-month" tabindex="-1" aria-hidden="true">
                                                                             <option>Select Month</option>
                                                                             @foreach ($signupdatas as $signupdata)
                                                                             <option>{{$signupdata-> DOB_month_data}}</option>
@@ -290,7 +290,7 @@
                                                                         </select>
                                                                     </div>
                                                                     <div class="col-xs-4">
-                                                                        <select name="DOB[year]" id="DOB-year" data-select2-id="DOB-year" tabindex="-1" aria-hidden="true">
+                                                                        <select name="DOB_year" id="DOB-year" data-select2-id="DOB-year" tabindex="-1" aria-hidden="true">
                                                                             <option>Select Year</option>
                                                                             @foreach ($signupdatas as $signupdata)
                                                                             <option>{{$signupdata-> DOB_year_data}}</option>
@@ -304,7 +304,7 @@
                                                         <span class="help-block with-errors" aria-hidden="false"></span>
                                                         <div class="clearfix"></div>
                                                     </div>
-                                                    --}}
+                                                   
                                                     <div class="form-group">
                                                         <div class="col-md-12 col-lg-12" style="text-align: right;">
                                                             <span class="pull-left required" style="margin-left: 107px; margin-top: 8px;">* Required Field</span>

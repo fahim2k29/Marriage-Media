@@ -63,6 +63,7 @@
                 <div class="col-sm-4">
                     <input name="price"
                            type="number"
+                           step="any"
                            value="{{ $offer->price }}" 
                            id="price"
                            class="form-control"

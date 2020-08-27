@@ -67,7 +67,7 @@ Route::post('create-payment', function(){
 
         $baseUrl = getBaseUrl();
         $redirectUrls = new RedirectUrls();
-        $redirectUrls->setReturnUrl("$baseUrl/ExecutePayment.php?success=true")
+        $redirectUrls->setReturnUrl("/user/dashboard")
             ->setCancelUrl("$baseUrl/ExecutePayment.php?success=false");
 
         $inputFields = new InputFields();   

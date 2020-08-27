@@ -67,7 +67,8 @@
                 </label>
                 <div class="col-sm-4">
                     <input name="price"
-                           type="text"
+                           type="number"
+                           step="0.01"
                            id="price"
                            
                            class="form-control"
