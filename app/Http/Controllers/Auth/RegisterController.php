@@ -55,8 +55,8 @@ class RegisterController extends Controller
 
                         
             // 'UserName'=>['required'],
-            'UserName' => 'required|string|unique:Users',
-            'Email'=>'required|string|email|unique:Users',
+            'UserName' => 'required|string|unique:users',
+            'Email'=>'required|string|email|unique:users',
             'ConfirmEmail'=>'required|same:Email',
             'Country'=>'required',
             'Gender'=>'required',

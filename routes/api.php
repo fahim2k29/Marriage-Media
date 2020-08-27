@@ -17,9 +17,9 @@ use Illuminate\Http\Request;
 //    return $request->user();
 //});
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::middleware('auth:api')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
 
 Route::post('create-payment', function(){
     $apiContext = new \PayPal\Rest\ApiContext(

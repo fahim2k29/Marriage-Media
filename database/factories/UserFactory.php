@@ -20,24 +20,27 @@ use Illuminate\Support\Str;
 */
 
 $factory->define(User::class, function (Faker $faker) {
-    $gender= ['Male','Female'];
+    // $gender= ['Male','Female'];
+    $gender = $faker->randomElement($array = array('male','female'));
+
+    $mail = $faker->unique()->safeEmail;
 
     return [
-        'UserName'          => $faker->name,
-        'Email'             => $faker->unique()->safeEmail,
-        'ConfirmEmail'      => $faker->unique()->safeEmail,
-        'Country'           => $faker->name,
-        'Gender'            => $gender[rand(0,1)],
+        'UserName'          => $faker->userName($gender),
+        'Email'             => 'fahim@gmail.com',
+        'ConfirmEmail'      => 'fahim@gmail.com',
+        'Country'           => $faker->country,
+        'Gender'            => $gender,
         'DOB_day'           => rand(1,30),
-        'DOB_month'         =>  rand(1,12),
-        'DOB_year'          =>  rand(1970,2002),
+        'DOB_month'         => rand(1,12),
+        'DOB_year'          => rand(1970,2002),
         'RegistrationReason'=> 'for got Married',
         'HearAboutUs'       => 'Google',
         'Accept'            => rand(0,1),
         'email_verified_at' => now(),
         'password'          => Hash::make(12345678), //password
         'remember_token'    => Str::random(10),
-    ];
+        ];
 });
 
 // $factory->define(Education::class, function (Faker $faker) {
