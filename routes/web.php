@@ -34,9 +34,14 @@ Route::group(['prefix' => 'sadmin', 'middleware' => ['auth:admin', 'admin'], 'na
 Auth::routes();
 
     Route::get('/welcome/{id}', 'HomeController@welcome')->name('welcome');
+    
 
+    
+    // Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/', 'HomeController@index')->name('home')->middleware('verified');
+
     Route::get('/user/dashboard', 'HomeController@user_dashboard')->name('user_dashboard');
     Route::get('/user/dashboard/profile', 'HomeController@user_dashboard_profile')->name('user_dashboard_profile');
     Route::post('/signup/create_one', 'HomeController@register_create_one')->name('register_create_one');
@@ -88,6 +93,11 @@ Route::get('/search', 'SearchController@index')->name('search_quick');
 
 
 Route::get('/pages/news/Umrah-Winners/{id}', 'FooterController@Umrah_Winners')->name('Umrah_Winners');
+
+Route::get('/success_story', 'SuccessStoryController@successStory')->name('successStory');
+Route::get('/success_story/{id}', 'SuccessStoryController@successStory_show')->name('successStory_show');
+
+
 
 
 

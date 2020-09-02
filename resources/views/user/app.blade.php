@@ -775,12 +775,12 @@
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-        <script type="text/javascript" async="" src="https://www.google-analytics.com/plugins/ua/ec.js"></script>
+        {{-- <script type="text/javascript" async="" src="https://www.google-analytics.com/plugins/ua/ec.js"></script>
         <script src="https://connect.facebook.net/signals/config/2251928191696851?v=next&amp;r=canary" async=""></script>
         <script async="" src="https://connect.facebook.net/en_US/fbevents.js"></script>
         <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
         <script type="text/javascript" async="" src="https://www.gstatic.com/recaptcha/releases/nuX0GNR875hMLA1LR7ayD9tc/recaptcha__en.js"></script>
-        <script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-NNGBZLJ"></script>
+        <script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-NNGBZLJ"></script> --}}
 
         <meta name="viewport" content="width=1200" />
 
@@ -792,8 +792,10 @@
 
         <link href="/frontend/assets/css/less/global.css" media="screen" rel="stylesheet" type="text/css" />
         <link href="/frontend/assets/css/less/controller/UserController.css" media="screen" rel="stylesheet" type="text/css" />
+        <link href="/frontend/assets/css/less/controller/CmsController.css" media="screen" rel="stylesheet" type="text/css" />
         <script type="text/javascript" src="/frontend/assets/js/global.min.js"></script>
         <script type="text/javascript" src="/frontend/assets/js/controller/UserController.min.js"></script>
+        <script type="text/javascript" src="/frontend/assets/js/controller/CmsController.min.js"></script>
         <script type="text/javascript" src="/frontend/assets/validation/validator.min.js"></script>
 
         <script>
@@ -825,7 +827,7 @@
                         <div class="col-md-2 col-lg-2 logo_topbar">
                             <div class="abslogo_position">
                                 <a href="/">
-                                    <img src="/frontend/assets/images/header-logo.gif" border="0" style="height: 65px;" />
+                                    <img src="/frontend/assets/images/mmdb.png" border="0" style="height: 65px;" />
                                 </a>
                             </div>
                         </div>
@@ -998,7 +1000,7 @@
                         </div>
 
                         <div class="col-xs-3">
-                            <a href="https://www.smartsoftware.com.bd/">Developed By: <b> {{$info->name}} </b></a>
+                            <a href="https://www.smartsoftware.com.bd/">Developed By: <b> SmartSoftware Ltd. </b></a>
                         </div>
                     </div>
                 </div>

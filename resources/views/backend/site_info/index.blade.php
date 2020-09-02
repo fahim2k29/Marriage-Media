@@ -135,7 +135,7 @@
                 </div>
             </div>
             
-`           <div class="form-group">
+             <div class="form-group">
                 <label class="col-sm-2 no-padding-right bolder" for="short_desc">Description</label>
                 <div class="col-sm-10">
                                 <textarea name="short_desc"

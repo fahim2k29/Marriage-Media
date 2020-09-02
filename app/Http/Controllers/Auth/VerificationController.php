@@ -19,14 +19,17 @@ class VerificationController extends Controller
     |
     */
 
-    use VerifiesEmails;
+    // use VerifiesEmails {
+	// 	verify as parentVerify;
+	// }
 
     /**
      * Where to redirect users after verification.
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    // protected $redirectTo = RouteServiceProvider::HOME;
+    protected $redirectTo = '/signup/aboutme';
 
     /**
      * Create a new controller instance.

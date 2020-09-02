@@ -1,8 +1,8 @@
 @extends('backend.layouts.master')
 
-@section('title','Edit Offer')
+@section('title','Edit Package')
 @section('page-header')
-    <i class="fa fa-pencil"></i> Edit Offer
+    <i class="fa fa-pencil"></i> Edit Package
 @stop
 @push('css')
     <style>
@@ -106,7 +106,7 @@
             </div>
         </form>
     </div>
-    <div class="col-sm-3">
+    {{-- <div class="col-sm-3">
         <div class="widget-box first">
             <div class="widget-header">
                 <h4 class="widget-title">Uploaded Image</h4>
@@ -156,7 +156,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 @endsection
 
 @push('js')

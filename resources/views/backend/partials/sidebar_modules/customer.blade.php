@@ -3,7 +3,7 @@
             <a href="#" class="dropdown-toggle">
                 <i class="menu-icon fa fa-users"></i>
                 <span class="menu-text">
-                   Customer
+                   Member
                 </span>
                 <b class="arrow fa fa-angle-down"></b>
             </a>
@@ -12,7 +12,7 @@
                 <li class="{{ $routeName === 'backend.customer.index' ? 'open' : ''}}">
                     <a href="{{ route('backend.customer.index') }}">
                         <i class="menu-icon fa fa-caret-right"></i>
-                        All Customer
+                        All Member
                     </a>
                     <b class="arrow"></b>
                 </li>

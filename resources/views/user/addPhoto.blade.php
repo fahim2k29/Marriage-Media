@@ -80,7 +80,31 @@
                                                                 <div class="col-sm-5">
                                                                     <ul>
                                                                         <li>
-                                                                            <img src="/frontend/assets/images/guideline_images/primarypic.jpg" class="img-responsive" />
+                                                                              <div class="col-sm-3">
+        <div class="widget-box first">
+            <div class="widget-header">
+                <h4 class="widget-title">Current Image</h4>
+
+                <div class="widget-toolbar">
+                    <a href="#" data-action="collapse">
+                        <i class="ace-icon fa fa-chevron-up"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="widget-body"
+                 style="display:flex; align-items: center; justify-content: center; height:100px;">
+                <div class="widget-main">
+                    <div class="form-group">
+                        <div class="col-xs-12">
+                            <img id="current" src="" width="100" height="100" class="img-responsive center-block"
+                                 alt="image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+                                                                            {{-- <img src="/frontend/assets/images/guideline_images/primarypic.jpg" class="img-responsive" /> --}}
                                                                         </li>
                                                                     </ul>
                                                                     <div class="clearfix"></div>
@@ -103,7 +127,7 @@
                                                         <div class="clearfix"></div>
                                                     </div>
 
-                                                    <div class="uploadRow_moreimages">
+                                                    {{-- <div class="uploadRow_moreimages">
                                                         <div class="uploadGuiderow1"></div>
                                                         <div class="uploadGuiderow2">
                                                             <div class="notAllowedGuide">
@@ -185,7 +209,7 @@
                                                         </div>
 
                                                         <div class="clearfix"></div>
-                                                    </div>
+                                                    </div> --}}
                                                 </div>
 
                                                 <div class="pull-left prevButton">
@@ -199,212 +223,8 @@
 
                                             <div class="clearfix"></div>
 
-                                            <div class="modal fade modalPictureEdit" role="dialog" id="gridSystemModal" aria-labelledby="gridSystemModalLabel">
-                                                <div class="modal-dialog" role="document">
-                                                    <div class="modal-content">
-                                                        <div class="modal-body">
-                                                            <div class="mainEditor">
-                                                                <div class="pull-left pictureEditArea">
-                                                                    <div class="pictureCanvas img-container" data-loadimage="">
-                                                                        <img src="" />
-                                                                    </div>
-                                                                    <div class="clearfix buttonsArea docs-actions">
-                                                                        <span class="pull-left smicon-new smicon-info informationIcon pointerCursor"></span>
-
-                                                                        <div class="col-xs-2 btnsetZoom">
-                                                                            <div class="btn-group">
-                                                                                <div class="topbutton">
-                                                                                    <button type="button" class="btn btn-primary" data-method="zoom" data-option="0.1" title="Zoom In">
-                                                                                        <span class="docs-tooltip" data-toggle="tooltip" title="" data-original-title="" style="display: inline;">
-                                                                                            <span class="glyphicon glyphicon-plus"> </span>
-                                                                                        </span>
-                                                                                    </button>
-                                                                                </div>
-                                                                                <div class="bottombutton">
-                                                                                    <button type="button" class="btn btn-primary" data-method="zoom" data-option="-0.1" title="Zoom Out">
-                                                                                        <span class="docs-tooltip" data-toggle="tooltip" title="" data-original-title="" style="display: inline;">
-                                                                                            <span class="glyphicon glyphicon-minus"> </span>
-                                                                                        </span>
-                                                                                    </button>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-
-                                                                        <div class="col-xs-6 btnsetRotate">
-                                                                            <div class="btn-group">
-                                                                                <button type="button" class="btn btn-primary btn-rotateLeft" title="Rotate Left">
-                                                                                    <span class="docs-tooltip" data-toggle="tooltip" title="" data-original-title="" style="display: inline;">
-                                                                                        <span class="smicon-new smicon-rotate-left"></span>
-                                                                                    </span>
-                                                                                </button>
-                                                                                <button type="button" class="btn btn-primary btn-rotateRight" title="Rotate Right">
-                                                                                    <span class="docs-tooltip" data-toggle="tooltip" title="" data-original-title="" style="display: inline;">
-                                                                                        <span class="smicon-new smicon-rotate-right"></span>
-                                                                                    </span>
-                                                                                </button>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="col-xs-6 btnsetArrows">
-                                                                            <!-- arrow controls -->
-                                                                            <div class="btn-group-arrow btn-group">
-                                                                                <div class="arrowButton">
-                                                                                    <div class="row">
-                                                                                        <div class="col-sm-4"></div>
-                                                                                        <div class="col-sm-4">
-                                                                                            <button type="button" class="btn btn-primary" data-method="move" data-option="0" data-second-option="-10" title="Move Up">
-                                                                                                <span class="docs-tooltip" data-toggle="tooltip" title="" data-original-title="" style="display: inline;">
-                                                                                                    <span class="glyphicon glyphicon-arrow-up"></span>
-                                                                                                </span>
-                                                                                            </button>
-                                                                                        </div>
-                                                                                        <div class="col-sm-4"></div>
-                                                                                    </div>
-                                                                                    <div class="row">
-                                                                                        <div class="col-sm-4">
-                                                                                            <button type="button" class="btn btn-primary" data-method="move" data-option="-10" data-second-option="0" title="Move Left">
-                                                                                                <span class="docs-tooltip" data-toggle="tooltip" title="" data-original-title="" style="display: inline;">
-                                                                                                    <span class="glyphicon glyphicon-arrow-left"> </span>
-                                                                                                </span>
-                                                                                            </button>
-                                                                                        </div>
-                                                                                        <div class="col-sm-4"></div>
-                                                                                        <div class="col-sm-4">
-                                                                                            <button type="button" class="btn btn-primary" data-method="move" data-option="10" data-second-option="0" title="Move Right">
-                                                                                                <span class="docs-tooltip" data-toggle="tooltip" title="" data-original-title="" style="display: inline;">
-                                                                                                    <span class="glyphicon glyphicon-arrow-right"></span>
-                                                                                                </span>
-                                                                                            </button>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <div class="row">
-                                                                                        <div class="col-sm-4"></div>
-                                                                                        <div class="col-sm-4">
-                                                                                            <button type="button" class="btn btn-primary" data-method="move" data-option="0" data-second-option="10" title="Move Down">
-                                                                                                <span class="docs-tooltip" data-toggle="tooltip" title="" data-original-title="" style="display: inline;">
-                                                                                                    <span class="glyphicon glyphicon-arrow-down"></span>
-                                                                                                </span>
-                                                                                            </button>
-                                                                                        </div>
-                                                                                        <div class="col-sm-4"></div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                            <!-- end arrow controls -->
-                                                                        </div>
-
-                                                                        <div class="clearfix"></div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="pull-right picdescriptionArea">
-                                                                    <div class="pictureDescriptionAreainner">
-                                                                        <div class="infoIcons">
-                                                                            <span class="pointerCursor pull-right" data-dismiss="modal" aria-label="Close">
-                                                                                <span aria-hidden="true" style="margin-top: -8px; font-size: 20px; padding-top: -10px; margin-left: -9px; position: absolute;">×</span>
-                                                                            </span>
-                                                                        </div>
-
-                                                                        <div class="groupbutton">
-                                                                            <div class="btn-group">
-                                                                                <!--  <button type="button" data-typename="primary" class="col-xs-12 btn btn-primary">Primary Photo</button> -->
-                                                                                <span data-typename="primary" class="col-xs-12" style="font-size: 25px;">Primary Photo</span>
-                                                                            </div>
-                                                                        </div>
-
-                                                                        <div class="userGuideContent secondFont">
-                                                                            <span class="col-xs-12" style="font-size: 15px; text-align: center; margin-bottom: 10px;">This will be your main profile picture</span>
-                                                                            <h4>Guidelines</h4>
-                                                                            <ul class="userguideline-primary" style="display: block;">
-                                                                                <li>Passport Style</li>
-                                                                                <li>Clear face image</li>
-                                                                                <li>Cropped face image</li>
-                                                                            </ul>
-
-                                                                            <ul class="userguideline-public" style="display: none;">
-                                                                                <li>Any pictures of yourself</li>
-                                                                                <li>Yourself with family</li>
-                                                                                <li>Yourself with friends</li>
-                                                                            </ul>
-                                                                            <div class="forMaindashboard" style="display: none;">
-                                                                                Your primary picture must be a clear, closely cropped face image of yourself, similar to your passport photo.
-                                                                            </div>
-                                                                        </div>
-
-                                                                        <div class="descriptionBox">
-                                                                            <textarea id="txtPicDescription" maxlength="100" style="resize: none; overflow-x: hidden; overflow-wrap: break-word;" placeholder="Add description here"></textarea>
-
-                                                                            <div id="textarea_feedback">100 characters remaining</div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="buttonsAreaAction">
-                                                                        <div class="pull-left buttonmidWidth">
-                                                                            <button type="button" class="btn btn-danger btn-delete-main btn-Delete" data-islocation="true">Delete</button>
-                                                                        </div>
-                                                                        <div class="pull-left buttonrightWidth">
-                                                                            <button type="button" class="btn btn-primary btn-cancel" onclick="location.reload();">Cancel</button>
-                                                                        </div>
-
-                                                                        <div class="pull-left buttonleftWidth">
-                                                                            <button type="button" class="btn btn-success btn-savePicture">Save</button>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="clearfix"></div>
-                                                            </div>
-
-                                                            <div class="guidelines">
-                                                                <div class="picdescriptionArea_1">
-                                                                    <div class="guideline">
-                                                                        <div class="hideClose pull-right">
-                                                                            <span aria-hidden="true" style="margin-top: -9px; font-size: 35px; padding-top: -10px; margin-left: -29px; position: absolute;">×</span>
-                                                                        </div>
-                                                                        <div class="primaryPicGuide">
-                                                                            <div class="col-sm-12">
-                                                                                <h4 style="color: #007ea5; text-align: center; margin-top: -22px; width: 80%; margin-left: 32px;">Primary Picture Guidelines</h4>
-                                                                                <ul>
-                                                                                    <li style="width: 271px; list-style: none; margin-top: 15px;">
-                                                                                        <img src="/images/guideline-images/primarypic.jpg" class="img-responsive" style="margin-left: 70px; height: 172px;" />
-                                                                                    </li>
-                                                                                </ul>
-                                                                                <div class="clearfix"></div>
-                                                                            </div>
-                                                                            <div class="col-sm-12 secondFont" style="padding-left: 35px; padding-right: 0px;">
-                                                                                <div class="userGuideContent secondFont" style="height: 90px; margin-top: 13px;">
-                                                                                    <div class="col-sm-6">
-                                                                                        <ul class="clearfix userguideline-primary_2" style="display: block;">
-                                                                                            <li style="width: 100%; padding: 5px 3px;">Passport Style</li>
-                                                                                            <li style="width: 100%; padding: 5px 3px;">Clear face image</li>
-                                                                                        </ul>
-                                                                                    </div>
-                                                                                    <div class="col-sm-6" style="padding: 0px;">
-                                                                                        <ul class="clearfix userguideline-primary_2" style="display: block;">
-                                                                                            <li class="span-icon smicon-new smicon-remove newlistyle" style="padding-top: 11px;"><span class="secondFont">No sun glasses</span></li>
-                                                                                            <li class="span-icon smicon-new smicon-remove newlistyle"><span class="secondFont">No snapchat filters</span></li>
-                                                                                        </ul>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="clearfix"></div>
-                                                                        </div>
-
-                                                                        <div class="clearfix"></div>
-                                                                        <div class="clearfix checkboxanddismiss">
-                                                                            <div class=" " style="text-align: center; padding-left: 10px;">
-                                                                                <a class="dismissContent hideClose">
-                                                                                    Dismiss
-                                                                                </a>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="clearfix"></div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <!-- /.modal-content -->
-                                                </div>
-                                                <!-- /.modal-dialog -->
-                                            </div>
-                                            <!-- /.modal -->
+                                            
+                                          
                                         </div>
                                     </div>
                                 </div>
@@ -419,9 +239,31 @@
                         });
                     });
                 </script>
+
+                @push('js')
+    <script>
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                let reader = new FileReader();
+                reader.onload = function (e) {
+                    $('#current')
+                        .attr('src', e.target.result);
+                };
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+    </script>
+@endpush
             </div>
         </div>
         <!-- /.row -->
     </div>
 </div>
+
+
+  
+
+
+
+
 @endsection

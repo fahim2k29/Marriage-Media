@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 // Offer page
-Route::group(['prefix' => '/customer'], function (){
+Route::group(['prefix' => '/member'], function (){
     Route::get('/','CustomerController@index')->name('backend.customer.index');
     Route::get('/show/{id}','CustomerController@show')->name('backend.customer.show');
     Route::post('/delete/{id}','CustomerController@destroy')->name('backend.customer.destroy');

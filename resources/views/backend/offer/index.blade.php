@@ -1,8 +1,8 @@
 @extends('backend.layouts.master')
 
-@section('title',' Offers Image List')
+@section('title',' Package List')
 @section('page-header')
-    <i class="fa fa-list"></i> Offers Image List
+    <i class="fa fa-list"></i> Package List
 @stop
 
 @push('css')
@@ -17,9 +17,9 @@
 
 @section('content')
     @include('backend.components.page_header', [
-       'fa' => 'fa fa-pencil',
-       'name' => 'Create Offer',
-       'route' => route('backend.site_config.offer.create')
+    //    'fa' => 'fa fa-pencil',
+    //    'name' => 'Create Offer',
+    //    'route' => route('backend.site_config.offer.create')
     ])
 
     <table class="table table-bordered">

@@ -775,11 +775,11 @@
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-        <script type="text/javascript" async="" src="https://www.google-analytics.com/plugins/ua/ec.js"></script>
+        {{-- <script type="text/javascript" async="" src="https://www.google-analytics.com/plugins/ua/ec.js"></script>
         <script src="https://connect.facebook.net/signals/config/2251928191696851?v=2.9.22&amp;r=stable" async=""></script>
         <script async="" src="https://connect.facebook.net/en_US/fbevents.js"></script>
         <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
-        <script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-NNGBZLJ"></script>
+        <script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-NNGBZLJ"></script> --}}
         
         <meta name="viewport" content="width=1200" />
         
@@ -1000,7 +1000,7 @@
                         </div>
 
                         <div class="col-xs-3">
-                            <a href="https://www.smartsoftware.com.bd/">Developed By: <b> {{$info->name}} </b></a>
+                            <a href="https://www.smartsoftware.com.bd/">Developed By: <b> SmartSoftware Ltd. </b></a>
 
                         </div>
                     </div>

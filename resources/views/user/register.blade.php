@@ -34,12 +34,12 @@
                         </div>
 
                         <div id="Email-group" class="form-group has-feedback form-control-group">
-                            <label for="Email" class="control-label"><span class="required">*</span> Enter your Email</label>
+                            <label for="email" class="control-label"><span class="required">*</span> Enter your Email</label>
                             <div class="controls">
-                                <input name="Email" id="Email" type="email" placeholder="Enter Your Email" data-remote="/registerCheckEmail" required="required" class="form-control" />
+                                <input name="email" id="email" type="email" placeholder="Enter Your Email" data-remote="/registerCheckEmail" required="required" class="form-control" />
                             </div>
                             <div class="col-sm-9">
-                                <small class="red" style="color: brown;">{{ $errors->first('Email') }}</small>
+                                <small class="red" style="color: brown;">{{ $errors->first('email') }}</small>
                             </div>
                             <span
                                 id="Email-span-success"

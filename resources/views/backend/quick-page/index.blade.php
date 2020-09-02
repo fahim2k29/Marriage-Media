@@ -1,6 +1,6 @@
 @extends('backend.layouts.master')
 
-@section('title','Quick-page List')
+@section('title','page List')
 @section('page-header')
     <i class="fa fa-list"></i> Page List
 @stop

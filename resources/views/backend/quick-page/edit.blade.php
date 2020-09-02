@@ -1,7 +1,7 @@
 @extends('backend.layouts.master')
-@section('title', 'Quick Page')
+@section('title', 'Page')
 @section('page-header')
-    <i class="fa fa-info"></i> Quick Page
+    <i class="fa fa-info"></i> Page
 @endsection
 @push('css')
     <style>

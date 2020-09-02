@@ -812,11 +812,11 @@
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-        <script type="text/javascript" async="" src="https://www.google-analytics.com/plugins/ua/ec.js"></script>
+        {{-- <script type="text/javascript" async="" src="https://www.google-analytics.com/plugins/ua/ec.js"></script>
         <script src="https://connect.facebook.net/signals/config/2251928191696851?v=2.9.22&amp;r=stable" async=""></script>
         <script async="" src="https://connect.facebook.net/en_US/fbevents.js"></script>
         <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
-        <script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-NNGBZLJ"></script>
+        <script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-NNGBZLJ"></script> --}}
 
         <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
 
@@ -938,7 +938,7 @@
                                                 @if (isset($addPhoto->image))
                                                 <div style="float: left; padding-right: 10px; padding-left: 8px; line-height: 32px;">
                                                     <a href="/user/dashboard">
-                                                        <img class="img-circle" src="{{asset('frontend/assets/images/')}}/{{ $addPhoto->image }}" height="32px" width="32px" />
+                                                        <img class="img-circle" src="{{asset($addPhoto->image) }}" height="32px" width="32px" />
                                                     </a>
                                                 </div>
                                                 @else
@@ -1089,7 +1089,7 @@
                         </div>
 
                         <div class="col-xs-3">
-                            <a href="https://www.smartsoftware.com.bd/">Developed By: <b> {{$info->name}} </b></a>
+                            <a href="https://www.smartsoftware.com.bd/">Developed By: <b> SmartSoftware Ltd. </b></a>
                         </div>
                     </div>
                 </div>

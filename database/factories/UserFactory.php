@@ -27,7 +27,7 @@ $factory->define(User::class, function (Faker $faker) {
 
     return [
         'UserName'          => $faker->userName($gender),
-        'Email'             => 'fahim@gmail.com',
+        'email'             => 'fahim@gmail.com',
         'ConfirmEmail'      => 'fahim@gmail.com',
         'Country'           => $faker->country,
         'Gender'            => $gender,
@@ -36,9 +36,9 @@ $factory->define(User::class, function (Faker $faker) {
         'DOB_year'          => rand(1970,2002),
         'RegistrationReason'=> 'for got Married',
         'HearAboutUs'       => 'Google',
-        'Accept'            => rand(0,1),
+        'Accept'            => '1',
         'email_verified_at' => now(),
-        'password'          => Hash::make(12345678), //password
+        'password'          => '123456789', //password
         'remember_token'    => Str::random(10),
         ];
 });

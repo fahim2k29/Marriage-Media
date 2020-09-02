@@ -56,8 +56,8 @@ class RegisterController extends Controller
                         
             // 'UserName'=>['required'],
             'UserName' => 'required|string|unique:users',
-            'Email'=>'required|string|email|unique:users',
-            'ConfirmEmail'=>'required|same:Email',
+            'email'=>'required|string|email|unique:users',
+            'ConfirmEmail'=>'required|same:email',
             'Country'=>'required',
             'Gender'=>'required',
             'DOB_day'=>'required',
@@ -83,7 +83,7 @@ class RegisterController extends Controller
         return User::create([
             
             'UserName' => $data['UserName'],
-            'Email' => $data['Email'],
+            'email' => $data['email'],
             'ConfirmEmail' => $data['ConfirmEmail'],
             'Country' => $data['Country'],
             'Gender' => $data['Gender'],

@@ -6,7 +6,7 @@
                 <small class="text-primary font-weight-bold" style="font-weight: 600">
                     <span class="white">
                         <i class="fa fa-flag"></i>
-                        {{ $info->name }}
+                        Admin Panel
                     </span>
                 </small>
             </a>

@@ -9,7 +9,7 @@ class Registration_form extends Model
 
     protected $fillable = [
         'UserName',
-        'Email',
+        'email',
         'ConfirmEmail',
         'Country',
         'Gender',
@@ -18,6 +18,7 @@ class Registration_form extends Model
         'DOB_year',
         'RegistrationReason',
         'HearAboutUs',
-        'Accept',   
+        'Accept',
+        'password'
     ];
 }

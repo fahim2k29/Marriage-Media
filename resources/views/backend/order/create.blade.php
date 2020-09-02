@@ -1,7 +1,7 @@
 @extends('backend.layouts.master')
-@section('title', 'Add Package')
+@section('title', 'Add Slider')
 @section('page-header')
-    <i class="fa fa-info"></i> Add Package
+    <i class="fa fa-info"></i> Add Story
 @endsection
 @push('css')
     <style>
@@ -11,28 +11,45 @@
             }
         }
     </style>
-@endpush    
+@endpush
 
 @section('content')
     @include('backend.components.page_header', [
-    //    'fa' => 'fa fa-list',
-    //    'name' => 'Offer List',
-    //    'route' =>route('backend.site_config.offer.index'),
+       'fa' => 'fa fa-list',
+       'name' => 'Story List',
+       'route' =>route('backend.order.index'),
     ])
 
-    <div class="col-sm-9 col-md-12">
-        <form class="form-horizontal" method="post" action="{{route('backend.site_config.offer.store')}}"
+    <div class="col-sm-9">
+        <form class="form-horizontal" method="post" action="{{route('backend.order.store')}}"
               role="form"
               enctype="multipart/form-data">
         @csrf
 
+        <div class="form-group">
+                <label class="col-sm-2 bolder" for="image">Story Title
+                </label>
+                <div class="col-sm-8">
+                    <input name="title"
+                           type="text"
+                           id="title"
+                           class="form-control"
+                           >
+                    <strong class="red">{{ $errors->first('title') }}</strong>
+                    @if($errors->first('title'))
+                        <br>
+                    @endif
+                    {{-- <strong class="red">Minimum 150x33 pixels</strong> --}}
+                </div>
+            </div>
+
 
             <!-- Image -->
-            {{-- <div class="form-group">
-                <label class="col-sm-2 bolder" for="image">Image
+            <div class="form-group">
+                <label class="col-sm-2 bolder" for="image">Main_Image
                 </label>
-                <div class="col-sm-4">
-                    <input name="image"
+                <div class="col-sm-8">
+                    <input name="main_image"
                            type="file"
                            id="image"
                            class="form-control"
@@ -41,21 +58,51 @@
                     @if($errors->first('image'))
                         <br>
                     @endif
-                    <strong class="red">Minimum 150x33 pixels</strong> 
+                    {{-- <strong class="red">Minimum 150x33 pixels</strong> --}}
                 </div>
-            </div> --}}
+            </div>
+
 
             <div class="form-group">
-                <label class="col-sm-2 bolder" for="name"> Name
+                    <label class="col-sm-2 no-padding-right bolder" for="description">Description </label>
+                    <div class="col-sm-8">
+                        @include('backend.components.summer_note',[
+                        'name'=>'description',
+                        ])
+                        <div class="col-sm-9 col-sm-offset-2">
+                            <strong class=" red">{{ $errors->first('description') }}</strong>
+                        </div>
+                    </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-2 bolder" for="image">Body_image
                 </label>
-                <div class="col-sm-4">
-                    <input name="name"
+                <div class="col-sm-8">
+                    <input name="body_image"
+                           type="file"
+                           id="image"
+                           class="form-control"
+                           >
+                    <strong class="red">{{ $errors->first('image') }}</strong>
+                    @if($errors->first('image'))
+                        <br>
+                    @endif
+                    {{-- <strong class="red">Minimum 150x33 pixels</strong> --}}
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-2 bolder" for="address">Address
+                </label>
+                <div class="col-sm-8">
+                    <input name="address"
                            type="text"
-                           id="name"
+                           id="address"
                            class="form-control"
                            onchange="readURL(this);">
-                    <strong class="red">{{ $errors->first('name') }}</strong>
-                    @if($errors->first('name'))
+                    <strong class="red">{{ $errors->first('address') }}</strong>
+                    @if($errors->first('address'))
                         <br>
                     @endif
                     {{-- <strong class="red">Minimum 150x33 pixels</strong> --}}
@@ -63,36 +110,16 @@
             </div>
 
             <div class="form-group">
-                <label class="col-sm-2 bolder" for="price"> Price (USD)
+                <label class="col-sm-2 bolder" for="address">Marriage Date
                 </label>
-                <div class="col-sm-4">
-                    <input name="price"
-                           type="number"
-                           step="0.01"
-                           id="price"
-                           
+                <div class="col-sm-8">
+                    <input name="marriage_date"
+                           type="date"
+                           id="date"
                            class="form-control"
-                           >
-                    <strong class="red">{{ $errors->first('price') }}</strong>
-                    @if($errors->first('price'))
-                        <br>
-                    @endif
-                    {{-- <strong class="red">Minimum 150x33 pixels</strong> --}}
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label class="col-sm-2 bolder" for="duration"> Duration (Month)
-                </label>
-                <div class="col-sm-4">
-                    <input name="duration"
-                           type="text"
-                           id="duration"
-                           
-                           class="form-control"
-                           >
-                    <strong class="red">{{ $errors->first('duration') }}</strong>
-                    @if($errors->first('duration'))
+                           onchange="readURL(this);">
+                    <strong class="red">{{ $errors->first('marriage_date') }}</strong>
+                    @if($errors->first('marriage_date'))
                         <br>
                     @endif
                     {{-- <strong class="red">Minimum 150x33 pixels</strong> --}}
@@ -114,7 +141,7 @@
         </form>
     </div>
 
-    {{-- <div class="col-sm-3">
+    <div class="col-sm-3">
         <div class="widget-box first">
             <div class="widget-header">
                 <h4 class="widget-title">Current Image</h4>
@@ -137,7 +164,7 @@
                 </div>
             </div>
         </div>
-    </div> --}}
+    </div>
 @endsection
 
 @push('js')

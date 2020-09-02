@@ -35,9 +35,9 @@
                         <div class="center">
                             <h1>
                                 <i class="ace-icon fa fa-leaf green"></i>
-                                <span class="white" id="id-text2">Single Muslim</span>
+                                <span class="white" id="id-text2">Admin</span>
                             </h1>
-                            <h4 class="blue" id="id-company-text">&copy; Single Muslim</h4>
+                            <h4 class="blue" id="id-company-text">&copy; Admin</h4>
                         </div>
 
                         <div class="space-6"></div>

@@ -90,13 +90,16 @@
                                     </form>
                                 </div>
                                 <div class="clearfix"></div>
-
+ {{-- <img src="{{ asset($slider->image) }}"
+                         height="30"
+                         width="120"
+                         alt="No Image"> --}}
                                 <div class="img welcome tutorial-step" onclick="window.location.href='/profile/photos'" style="cursor: pointer;">
                                     <div class="sm-controlpanel-image no-target fill-absolute z-page-click-target page-click ng-isolate-scope" data-for="open-control" data-name="gallery">
                                         <div class="no-target fill-absolute ng-scope">
                                             <div class="z-page-click-target page-click fill-absolute view-other fill-parent hidden-overflow relative-position photo-box ng-scope" data-for="my-photo">
                                                 @if(isset($addPhoto))
-                                                <img src="{{asset('frontend/assets/images/')}}/{{ $addPhoto->image }}" class="img-responsive img-circle" />
+                                                <img src="{{asset($addPhoto->image) }}" class="img-responsive img-circle" />
                                                 @else
                                                 <img src="{{asset('frontend/assets/images/')}}/default2.jpg" class="img-responsive img-circle" />
                                                 @endif
@@ -422,8 +425,9 @@
                                                             <div class="mainImage">
                                                                 {{-- @if ($us->addphoto)
                                                                 <img class="img-responsive" src="{{asset('frontend/assets/images/')}}/{{ $us->addphoto->image }}" height="211" width="211" alt="Shhhh" />
-                                                                @endif --}} @if (isset($us->addphoto))
-                                                                <img class="img-responsive" src="{{asset('frontend/assets/images/')}}/{{ $us->addphoto->image }}" height="211" width="211" />
+                                                                @endif --}} 
+                                                                @if (isset($us->addphoto))
+                                                                <img class="img-responsive" src="{{asset($us->addphoto->image) }}" height="211" width="211" />
                                                                 @else
                                                                 <img src="{{asset('frontend/assets/images/')}}/default2.jpg" height="160" width="211" />
                                                                 @endif

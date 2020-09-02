@@ -5,6 +5,8 @@ use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use NabilAnam\SimpleUpload\SimpleUpload;
+
 use Auth;
 use Image;
 use App\Aboutme;
@@ -47,7 +49,7 @@ class MainController extends Controller
         $data['prsn']       = User::with('personal')->get();
         $data['img']        = User::with('addphoto')->get();
         $data['user']       = User::first(['DOB_year']);
-        return view('index',$data);
+        return view('index', $data);
     }
 
     public function register_form_one()
@@ -279,25 +281,34 @@ class MainController extends Controller
         return view('user.addPhoto');
     }
 
-    function addPhoto_create(Request $request)
+    function addPhoto_create(Request $request, SimpleUpload $upload)
     {
-        $id = Auth::user()->id;
-        $last_inserted_id = AddPhoto::insertGetId([
-            'user_id' => $id,
-            'image' => $request->image,
-        ]);
+        // $id = Auth::user()->id;
+        // $data = $request->all();
+        $data['user_id'] = Auth::user()->id;
+        $data['image'] = $upload->file($request->image)
+            ->dirName('User_Profile')->resizeImage(320, 240)
+            ->save();
+
+        AddPhoto::create($data);
+
+
+        // $last_inserted_id = AddPhoto::insertGetId([
+        //     'user_id' => $id,
+        //     'image' => $request->image,
+        // ]);
         //   dd($last_inserted_id);
-        if ($request->hasFile('image')) {
-            $photo_upload = $request->image;
-            $photo_extension = $photo_upload->getClientOriginalExtension();
-            $photo_name = $last_inserted_id . "." . $photo_extension;
-            Image::make($photo_upload)
-                ->resize(320, 240)
-                ->save(base_path('public/frontend/assets/images/' . $photo_name), 100);
-            AddPhoto::find($last_inserted_id)->update([
-                'image' => $photo_name,
-            ]);
-        }
+        // if ($request->hasFile('image')) {
+        //     $photo_upload = $request->image;
+        //     $photo_extension = $photo_upload->getClientOriginalExtension();
+        //     $photo_name = $last_inserted_id . "." . $photo_extension;
+        //     Image::make($photo_upload)
+        //         ->resize(320, 240)
+        //         ->save(base_path('public/frontend/assets/images/' . $photo_name), 100);
+        //     AddPhoto::find($last_inserted_id)->update([
+        //         'image' => $photo_name,
+        //     ]);
+        // }
         return redirect()->route('user_dashboard');
     }
 }

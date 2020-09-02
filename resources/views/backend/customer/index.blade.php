@@ -1,8 +1,8 @@
 @extends('backend.layouts.master')
 
-@section('title','customer-List')
+@section('title','User-List')
 @section('page-header')
-    <i class="fa fa-list"></i> customer List
+    <i class="fa fa-list"></i> User List
 @stop
 
 @push('css')
@@ -17,9 +17,9 @@
 
 @section('content')
     @include('backend.components.page_header', [
-       'fa' => 'fa fa-pencil',
-       'name' => 'List customer',
-       'route' => route('backend.customer.index')
+    //    'fa' => 'fa fa-pencil',
+    //    'name' => 'List customer',
+    //    'route' => route('backend.customer.index')
     ])
 
     <table class="table table-bordered">

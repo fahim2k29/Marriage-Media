@@ -732,12 +732,12 @@
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-        <script type="text/javascript" async="" src="https://www.google-analytics.com/plugins/ua/ec.js"></script>
+        {{-- <script type="text/javascript" async="" src="/frontend/assets/js/plugins/ec.js"></script>
         <script src="https://connect.facebook.net/signals/config/2251928191696851?v=2.9.22&amp;r=stable" async=""></script>
         <script async="" src="https://connect.facebook.net/en_US/fbevents.js"></script>
         <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
         <script type="text/javascript" async="" src="https://www.gstatic.com/recaptcha/releases/nuX0GNR875hMLA1LR7ayD9tc/recaptcha__en.js"></script>
-        <script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-NNGBZLJ"></script>
+        <script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-NNGBZLJ"></script> --}}
        
 
         <meta name="viewport" content="width=1200" />
@@ -750,8 +750,7 @@
             <title>{{$info->site_title}} - {{$info->short_desc}} </title>
            
             @else
-           <title> Company Name
-             </title>
+           <title> Company Name</title>
             @endif
 
         
@@ -802,11 +801,11 @@
                                 <div class="topnav_bar">
                                     <div class="form-group">
                                         <label class="sr-only" for="username_login">Email</label>
-                                        <input class="form-control" id="username_login" name="username_login" placeholder="User Name" autofocus="" required="" />
+                                        <input class="form-control" id="username_login" name="email" placeholder="User Name" autofocus="" required="" />
                                     </div>
                                     <div class="form-group">
                                         <label class="sr-only" for="Password">Password</label>
-                                        <input type="password" class="form-control" id="Password" name="password" placeholder="Password" required="" /> 1§
+                                        <input type="password" class="form-control" id="Password" name="password" placeholder="Password" required="" />
                                     </div>
                                     <button type="submit" class="btn btn-success">Login</button> <span style="color: white;"> or </span> <a href="/signup" class="btn btn-success">Register</a>
                                     <a href="/forgetpassword" style="padding-left: 10px; color: #ffffff;">Forgotten Password</a>
@@ -1008,7 +1007,7 @@
 
                         <div class="col-xs-3">
                            
-                            <a href="https://www.smartsoftware.com.bd/">Developed By:  <b> {{$info->name}} </b></a>                               
+                            <a href="https://www.smartsoftware.com.bd/">Developed By:  <b> SmartSoftware Ltd. </b></a>                               
 
                             
                         </div>

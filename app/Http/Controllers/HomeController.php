@@ -43,13 +43,14 @@ class HomeController extends Controller
         return view('welcome', compact('offer'));
     }
 
-    public function index()
-    {
-        $userid = Auth::id();
-        $addPhoto = AddPhoto::whereuser_id($userid)->first();
-        $user   = User::all();
-        return view('user.dashboard.index', compact('addPhoto' , 'user'));
-    }
+    // public function index()
+    // {
+    //     $userid = Auth::id();
+    //     $addPhoto = AddPhoto::whereuser_id($userid)->first();
+    //     $user   = User::all();
+    //     $dob = User::first(['DOB_year']);
+    //     return view('user.dashboard.index', compact('addPhoto' , 'user', 'dob'));
+    // }
 
     public function user_dashboard()
     {
@@ -61,6 +62,7 @@ class HomeController extends Controller
         $data['prsn']       = User::with('personal')->get();
         $data['img']        = User::with('addphoto')->get();
         $data['dob']       = User::first(['DOB_year']);
+        
         // dd($emp->toArray());
         return view('user.dashboard.index', $data);
             
@@ -267,7 +269,7 @@ class HomeController extends Controller
             'new_confirm_email' => ['same:new_email'],
             'current_password' => ['required', new MatchOldPassword()],
         ]);
-        User::find(auth()->user()->id)->update(['Email' => $request->new_email]);
+        User::find(auth()->user()->id)->update(['email' => $request->new_email]);
         return redirect()
             ->back()
             ->with('success', 'Your Email Changed successfully!');
