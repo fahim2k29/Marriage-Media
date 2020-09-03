@@ -54,7 +54,7 @@ class SearchController extends Controller
     {
         $data['user']       = User::find(auth()->id())->first();
         $data['addPhoto']   = AddPhoto::whereuser_id(auth()->id())->first();
-        $data['users']      = User::paginate(30)->random(20);
+        $data['users']      = User::paginate(30);
         $data['aboutmes']   = Aboutme::all();
         $data['religions']  = Religion::all();
         $data['educations'] = Education::all();
@@ -91,18 +91,18 @@ class SearchController extends Controller
         })
         ->get();
         
-        $data['users'] = User::with('religion')
-        ->whereHas('religion', function($q) use($request) {
-            $q
-            ->where('Sect', $request->Sect)
-            ->where ('Religiosness', $request->Religiosness)
-            ->where ('Hijab', $request->Hijab)
-            ->where ('Beard', $request->Beard)
-            ->where ('Convert', $request->Convert)
-            ->where ('Halaal', $request->Halaal)
-            ->where ('Salaah', $request->Salaah);
-        })
-        ->get();
+        // $data['users'] = User::with('religion')
+        // ->whereHas('religion', function($q) use($request) {
+        //     $q
+        //     ->where('Sect', $request->Sect)
+        //     ->where ('Religiosness', $request->Religiosness)
+        //     ->where ('Hijab', $request->Hijab)
+        //     ->where ('Beard', $request->Beard)
+        //     ->where ('Convert', $request->Convert)
+        //     ->where ('Halaal', $request->Halaal)
+        //     ->where ('Salaah', $request->Salaah);
+        // })
+        // ->get();
 
 
         // $data['users'] = User::with('personal')

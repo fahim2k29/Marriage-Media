@@ -10,87 +10,6 @@
 
 <div class="wide_fullbgimage">
     <div class="container containerbgColor">
-        <div class="modal fade" id="menusettingsModal" tabindex="-1" role="dialog" aria-labelledby="menusettingsModal" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h2 class="headernotification">Account</h2>
-                    </div>
-                    <div class="modal-body">
-                        <div class="  ">
-                            <nav class="nav-sidebar nav-sidebar-2">
-                                <ul class="nav">
-                                    <h6 class="dropdown-header sidemenuheader sm-heading-title" style="margin-top: 0px;">Profile</h6>
-                                    <li class="">
-                                        <a href="/profile/edit#edit"><i class="sm-line basic-settings sm-nav-dropdown-icons"></i> Edit My Profile <span class="smicon-new smicon-angle-right pull-right arrow-font-size"></span></a>
-                                    </li>
-                                    <li class="">
-                                        <a href="/profile/personalinfo"><i class="sm-line basic-book-pencil sm-nav-dropdown-icons"></i>Edit Personal Info <span class="smicon-new smicon-angle-right pull-right arrow-font-size"></span></a>
-                                    </li>
-                                    <li class="bottombodernone">
-                                        <a href="/profile/preferences"><i class="sm-line basic-alarm sm-nav-dropdown-icons"></i>Notifications / Preferences <span class="smicon-new smicon-angle-right pull-right arrow-font-size"></span></a>
-                                    </li>
-
-                                    <!--        <li class="--><!-- bottombodernone"><a href="/profile/communication-preferences"><i class="sm-line basic-alarm sm-nav-dropdown-icons"></i>Notifications / Preferences <span class=" smicon-new smicon-angle-right pull-right arrow-font-size"></span></a></li>-->
-                                    <!--       -->
-
-                                    <h6 class="dropdown-header sidemenuheader sm-heading-title">Photos</h6>
-                                    <li class="">
-                                        <a href="/profile/photos"><i class="sm-line basic-photo sm-nav-dropdown-icons"></i>Edit My Photos <span class="smicon-new smicon-angle-right pull-right arrow-font-size"></span></a>
-                                    </li>
-                                    <li class="bottombodernone">
-                                        <a class="pointerCursor" href="/profile/accesslist/2">
-                                            <i class="sm-line basic-lock-open sm-nav-dropdown-icons"></i>
-                                            Photo Access
-
-                                            <span class="badge progress-bar-danger badge-xs messageCounterUpdate_photo" style="margin-top: -4px; left: -1px; margin-left: 2px; top: 9px; visibility: hidden;"> 0 </span>
-
-                                            <span class="smicon-new smicon-angle-right pull-right arrow-font-size"></span>
-                                        </a>
-                                    </li>
-
-                                    <h6 class="dropdown-header sidemenuheader sm-heading-title">Account &amp; Security</h6>
-
-                                    <li class="">
-                                        <a href="/profile/username"><i class="sm-line basic-keyboard sm-nav-dropdown-icons"></i>Change Username <span class="smicon-new smicon-angle-right pull-right arrow-font-size"></span></a>
-                                    </li>
-                                    <li class="">
-                                        <a href="/profile/email"><i class="sm-line basic-mail sm-nav-dropdown-icons"></i>Change Email <span class="smicon-new smicon-angle-right pull-right arrow-font-size"></span></a>
-                                    </li>
-                                    <li class="">
-                                        <a href="/profile/password"><i class="sm-line sm-line basic-key sm-nav-dropdown-icons"></i>Change Password <span class="smicon-new smicon-angle-right pull-right arrow-font-size"></span></a>
-                                    </li>
-                                    <li class="">
-                                        <a href="/membership/history"><i class="sm-line basic-calendar sm-nav-dropdown-icons"></i>Memberships History <span class="smicon-new smicon-angle-right pull-right arrow-font-size"></span></a>
-                                    </li>
-                                    <li class="">
-                                        <a href="/profile/blocked"><i class="sm-line basic-ban sm-nav-dropdown-icons"></i>Blocked Users <span class="smicon-new smicon-angle-right pull-right arrow-font-size"></span></a>
-                                    </li>
-                                    <li class="">
-                                        <a href="/profile/communication-preferences">
-                                            <i class="sm-line basic-elaboration-mail-noaccess sm-nav-dropdown-icons"></i>Communication Preferences <span class="smicon-new smicon-angle-right pull-right arrow-font-size"></span>
-                                        </a>
-                                    </li>
-                                    <!--        <li class="--><!--"><a href="/profile/devices"><i class=" sm-line  sm-line basic-smartphone sm-nav-dropdown-icons"></i>Devices <span class=" smicon-new smicon-angle-right pull-right arrow-font-size"></span></a></li>-->
-                                    <!--      -->
-
-                                    <li class="">
-                                        <a href="/profile/login-devices"><i class="sm-line sm-line basic-smartphone sm-nav-dropdown-icons"></i>Devices <span class="smicon-new smicon-angle-right pull-right arrow-font-size"></span></a>
-                                    </li>
-
-                                    <li class="deletesidemenu">
-                                        <a href="/profile/delete" data-username="Abdul26">
-                                            <i class="sm-line basic-trashcan-remove sm-nav-dropdown-icons"></i>Delete Profile <span class="smicon-new smicon-angle-right pull-right arrow-font-size"></span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
         <!-- Content Row -->
         <div class="">
             <div class="col-lg-12 col-md-12" id="searchMain">
@@ -101,139 +20,15 @@
                                 <nav class="secondFont breadcrumbs-newstyle" style="">
                                     <a href="/dashboard">Home</a>
 
-                                    <i class="smicon-new smicon-angle-right"></i>
+                                    <i class="fa fa-angle-right"></i>
                                     <a href="/search">Search</a>
 
-                                    <i class="smicon-new smicon-angle-right"></i>
+                                    <i class="fa fa-angle-right"></i>
                                     <a href="#" id="changeBreadcrum" class="breadcrumLast">Personal</a>
                                 </nav>
 
-                                <nav class="nav-sidebar searchLeftnav">
-                                    <ul class="nav tabs">
-                                        <!--<li class="" style="background-color: #a8217e;color: #fff;padding: 10px; font-size:23px;height: 52px;">-->
-                                        <!--<span class="smicon smicon-cog arrow-font-size" style="font-size:26px;position:relative;top:3px;">-->
-                                        <!--</span>-->
-                                        <!--<span>Search</span></li>-->
+                        @include('search.side-nav-search')
 
-                                        <!-- start dynamic -->
-
-                                        <li class="">
-                                            <a href="/search" data-title="Quick" aria-expanded="false">
-                                                <div class="pull-left serachBaricon">
-                                                    <span class="icon smicon-new smicon-search-quick2 male"></span>
-                                                </div>
-                                                <div class="pull-left searchBarname">
-                                                    Quick
-                                                </div>
-                                                <div class="pull-left searcyBartickicon">
-                                                    <div class="pull-left icontickbox">
-                                                        <i class="smicon-new smicon-check tab1" style="line-height: 9px; visibility: hidden;"></i>
-                                                    </div>
-                                                    <div class="pull-left iconarrowright">
-                                                        <i class="smicon-new smicon-angle-right"></i>
-                                                    </div>
-                                                    <div class="clearfix"></div>
-                                                </div>
-                                                <div class="clearfix"></div>
-                                            </a>
-                                        </li>
-
-                                        <li class="">
-                                            <a href="/religion" data-title="Religion">
-                                                <div class="pull-left serachBaricon">
-                                                    <span class="icon smicon-new smicon-religion male"></span>
-                                                </div>
-                                                <div class="pull-left searchBarname">
-                                                    Religion
-                                                </div>
-                                                <div class="pull-left searcyBartickicon">
-                                                    <div class="pull-left icontickbox">
-                                                        <i class="smicon-new smicon-check tab2" style="line-height: 9px; visibility: hidden;"></i>
-                                                    </div>
-                                                    <div class="pull-left iconarrowright">
-                                                        <i class="smicon-new smicon-angle-right"></i>
-                                                    </div>
-                                                    <div class="clearfix"></div>
-                                                </div>
-                                                <div class="clearfix"></div>
-                                            </a>
-                                        </li>
-
-                                        <li class="">
-                                            <a href="/education" data-title="Education" aria-expanded="false" class="current">
-                                                <div class="pull-left serachBaricon">
-                                                    <span class="icon smicon-new smicon-education male"></span>
-                                                </div>
-                                                <div class="pull-left searchBarname educaitonname">
-                                                    Education
-                                                </div>
-                                                <div class="pull-left searcyBartickicon">
-                                                    <div class="pull-left icontickbox">
-                                                        <i class="smicon-new smicon-check tab3" style="line-height: 9px; visibility: hidden;"></i>
-                                                    </div>
-                                                    <div class="pull-left iconarrowright">
-                                                        <i class="smicon-new smicon-angle-right"></i>
-                                                    </div>
-                                                    <div class="clearfix"></div>
-                                                </div>
-                                                <div class="clearfix"></div>
-                                            </a>
-                                        </li>
-
-                                        <li class="active">
-                                            <a href="/personal" data-title="Personal" aria-expanded="true" class="current">
-                                                <div class="pull-left serachBaricon">
-                                                    <span class="icon smicon-new smicon-user male"></span>
-                                                </div>
-                                                <div class="pull-left searchBarname">
-                                                    Personal
-                                                </div>
-                                                <div class="pull-left searcyBartickicon">
-                                                    <div class="pull-left icontickbox">
-                                                        <i class="smicon-new smicon-check tab4" style="line-height: 9px; visibility: hidden;"></i>
-                                                    </div>
-                                                    <div class="pull-left iconarrowright">
-                                                        <i class="smicon-new smicon-angle-right"></i>
-                                                    </div>
-                                                    <div class="clearfix"></div>
-                                                </div>
-                                                <div class="clearfix"></div>
-                                            </a>
-                                        </li>
-
-                                        <!-- need to build this as dynamic -->
-
-                                        <br />
-                                        <br />
-
-                                        <li class="">
-                                            <a href="/profession" data-title="Profession Search">
-                                                <div class="pull-left serachBaricon">
-                                                    <span class="icon smicon-new smicon-profession male"></span>
-                                                </div>
-                                                <div class="pull-left searchBarname">
-                                                    Profession
-                                                </div>
-                                                <div class="pull-left searcyBartickicon">
-                                                    <div class="pull-left icontickbox">
-                                                        <i class="smicon-new smicon-check" style="line-height: 9px; visibility: hidden;"></i>
-                                                    </div>
-                                                    <div class="pull-left iconarrowright">
-                                                        <i class="smicon-new smicon-angle-right"></i>
-                                                    </div>
-                                                    <div class="clearfix"></div>
-                                                </div>
-                                                <div class="clearfix"></div>
-                                            </a>
-                                        </li>
-
-                                        <br />
-                                        <br />
-
-                                        <br />
-                                        <br />
-                                    </ul>
-                                </nav>
                             </div>
 
                             <!-- tab content -->
@@ -251,27 +46,13 @@
                                         <div class="tab-content">
                                             <div class="tab-pane text-style" id="tab1" data-counter="0">
                                                 <div class="panel panel-info" style="border: 0px; box-shadow: 0 0px 0px rgba(0, 0, 0, 0.05);">
-                                                    <!--
-                                    <div class="panel-heading">
-                                        <div class="panel-title">
-                                            Quick Search
-                                        </div>
-                                        <hr />
-                                    </div>
-                                    -->
+                                                   
                                                 </div>
                                             </div>
 
                                             <div class="tab-pane text-style active" id="tab4" data-counter="0">
                                                 <div class="panel panel-info" style="border: 0px; box-shadow: 0 0px 0px rgba(0, 0, 0, 0.05);">
-                                                    <!--
-                                    <div class="panel-heading">
-                                        <div class="panel-title">
-                                            Search Personal
-                                        </div>
-                                        <hr />
-                                    </div>
-                                    -->
+                                                   
                                                     <div class="panel-body">
                                                         <div role="form" class="form-horizontal">
                                                             <div id="Citizenship-group" class="form-group">
@@ -298,7 +79,7 @@
                                                                     </div>
                                                                 </div>
 
-                                                                <div class="col-sm-1 label-tick hidelabel"><span id="Citizenship-span-success" class="smicon-new smicon-check form-control-feedback male span-info-label" title=""></span></div>
+                                                                <div class="col-sm-1 label-tick hidelabel"><span id="Citizenship-span-success" class="form-control-feedback male span-info-label" title=""><i class="fa fa-check fas-lg" style="color: #337ab7"></i></span></div>
                                                             </div>
 
                                                             <div id="Origin-group" class="form-group">
@@ -317,7 +98,7 @@
                                                                     </div>
                                                                 </div>
 
-                                                                <div class="col-sm-1 label-tick hidelabel"><span id="Origin-span-success" class="smicon-new smicon-check form-control-feedback male span-info-label" title=""></span></div>
+                                                                <div class="col-sm-1 label-tick hidelabel"><span id="Origin-span-success" class="form-control-feedback male span-info-label" title=""><i class="fa fa-check fas-lg" style="color: #337ab7"></i></span></div>
                                                             </div>
 
                                                             <div id="Relocation-group" class="form-group">
@@ -344,7 +125,7 @@
                                                                     </div>
                                                                 </div>
 
-                                                                <div class="col-sm-1 label-tick hidelabel"><span id="Relocation-span-success" class="smicon-new smicon-check form-control-feedback male span-info-label" title=""></span></div>
+                                                                <div class="col-sm-1 label-tick hidelabel"><span id="Relocation-span-success" class="form-control-feedback male span-info-label" title=""><i class="fa fa-check fas-lg" style="color: #337ab7"></i></span></div>
                                                             </div>
                                                             <div id="Smoke-group" class="form-group">
                                                                 <label for="Smoke" class="col-sm-3 control-label">Smokes</label>
@@ -358,7 +139,7 @@
                                                                         </select>
                                                                     </div>
                                                                 </div>
-                                                                <div class="col-sm-1 label-tick hidelabel"><span id="Smoke-span-success" class="smicon-new smicon-check form-control-feedback male span-info-label" title=""></span></div>
+                                                                <div class="col-sm-1 label-tick hidelabel"><span id="Smoke-span-success" class="form-control-feedback male span-info-label" title=""><i class="fa fa-check fas-lg" style="color: #337ab7"></i></span></div>
                                                             </div>
                                                             <div id="MarryIn-group" class="form-group">
                                                                 <label for="MarryIn" class="col-sm-3 control-label" data-placeholder="Select your option">
@@ -376,7 +157,7 @@
                                                                     </div>
                                                                 </div>
 
-                                                                <div class="col-sm-1 label-tick hidelabel"><span id="MarryIn-span-success" class="smicon-new smicon-check form-control-feedback male span-info-label" title=""></span></div>
+                                                                <div class="col-sm-1 label-tick hidelabel"><span id="MarryIn-span-success" class="form-control-feedback male span-info-label" title=""><i class="fa fa-check fas-lg" style="color: #337ab7"></i></span></div>
                                                             </div>
                                                             <div id="MaritalStatus-group" class="form-group">
                                                                 <label for="MaritalStatus" class="col-sm-3 control-label" data-placeholder="Select your option">
@@ -403,7 +184,7 @@
                                                                 </div>
 
                                                                 <div class="col-sm-1 label-tick hidelabel">
-                                                                    <span id="MaritalStatus-span-success" class="smicon-new smicon-check form-control-feedback male span-info-label" title=""></span>
+                                                                    <span id="MaritalStatus-span-success" class="form-control-feedback male span-info-label" title=""><i class="fa fa-check fas-lg" style="color: #337ab7"></i></span>
                                                                 </div>
                                                             </div>
                                                             <div id="HaveChildren-group" class="form-group">
@@ -431,33 +212,10 @@
                                                                 </div>
 
                                                                 <div class="col-sm-1 label-tick hidelabel">
-                                                                    <span id="HaveChildren-span-success" class="smicon-new smicon-check form-control-feedback male span-info-label" title=""></span>
+                                                                    <span id="HaveChildren-span-success" class="form-control-feedback male span-info-label" title=""><i class="fa fa-check fas-lg" style="color: #337ab7"></i></span>
                                                                 </div>
                                                             </div>
-                                                            {{--
-                                                            <div id="Children-group" class="form-group">
-                                                                <label for="Children" class="col-sm-3 control-label">Wants Children</label>
-                                                                <div class="col-sm-8">
-                                                                    <div class="input-group input-group-maxwidth btn-group btn-group-radio">
-                                                                        <div style="margin-right: 10px; float: left;">
-                                                                            <input name="Children[]" id="Children-127" type="checkbox" class="pseudo-checkbox sr-only" value="127" />
-                                                                            <label for="Children-127" class="fancy-checkbox-label"> No</label>
-                                                                        </div>
-
-                                                                        <div style="margin-right: 10px; float: left;">
-                                                                            <input name="Children[]" id="Children-126" type="checkbox" class="pseudo-checkbox sr-only" value="126" />
-                                                                            <label for="Children-126" class="fancy-checkbox-label"> Yes</label>
-                                                                        </div>
-
-                                                                        <div style="margin-right: 10px; float: left;">
-                                                                            <input name="Children[]" id="Children-389" type="checkbox" class="pseudo-checkbox sr-only" value="389" />
-                                                                            <label for="Children-389" class="fancy-checkbox-label"> Unsure</label>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-sm-1 label-tick hidelabel"><span id="Children-span-success" class="smicon-new smicon-check form-control-feedback male span-info-label" title=""></span></div>
-                                                            </div>
-                                                            --}}
+                                                            
                                                             <div id="Children-group" class="form-group">
                                                                 <label for="Children" class="col-sm-3 control-label" data-placeholder="Select your option">
                                                                     Children
@@ -483,7 +241,7 @@
                                                                 </div>
 
                                                                 <div class="col-sm-1 label-tick hidelabel">
-                                                                    <span id="Children-span-success" class="smicon-new smicon-check form-control-feedback male span-info-label" title=""></span>
+                                                                    <span id="Children-span-success" class="form-control-feedback male span-info-label" title=""><i class="fa fa-check fas-lg" style="color: #337ab7"></i></span>
                                                                 </div>
                                                             </div>
                                                             <div id="Build-group" class="form-group">
@@ -502,7 +260,7 @@
                                                                     </div>
                                                                 </div>
 
-                                                                <div class="col-sm-1 label-tick hidelabel"><span id="Build-span-success" class="smicon-new smicon-check form-control-feedback male span-info-label" title=""></span></div>
+                                                                <div class="col-sm-1 label-tick hidelabel"><span id="Build-span-success" class="form-control-feedback male span-info-label" title=""><i class="fa fa-check fas-lg" style="color: #337ab7"></i></span></div>
                                                             </div>
                                                             <div id="Hair-group" class="form-group">
                                                                 <label for="Hair" class="col-sm-3 control-label" data-placeholder="Select your option">
@@ -520,7 +278,7 @@
                                                                     </div>
                                                                 </div>
 
-                                                                <div class="col-sm-1 label-tick hidelabel"><span id="Hair-span-success" class="smicon-new smicon-check form-control-feedback male span-info-label" title=""></span></div>
+                                                                <div class="col-sm-1 label-tick hidelabel"><span id="Hair-span-success" class="form-control-feedback male span-info-label" title=""><i class="fa fa-check fas-lg" style="color: #337ab7"></i></span></div>
                                                             </div>
                                                             <div id="Living-group" class="form-group">
                                                                 <label for="Living" class="col-sm-3 control-label" data-placeholder="Select your option">
@@ -538,7 +296,7 @@
                                                                     </div>
                                                                 </div>
 
-                                                                <div class="col-sm-1 label-tick hidelabel"><span id="Living-span-success" class="smicon-new smicon-check form-control-feedback male span-info-label" title=""></span></div>
+                                                                <div class="col-sm-1 label-tick hidelabel"><span id="Living-span-success" class="form-control-feedback male span-info-label" title=""><i class="fa fa-check fas-lg" style="color: #337ab7"></i></span></div>
                                                             </div>
                                                             <div id="EyeColour-group" class="form-group">
                                                                 <label for="EyeColour" class="col-sm-3 control-label" data-placeholder="Select your option">
@@ -564,7 +322,7 @@
                                                                     </div>
                                                                 </div>
 
-                                                                <div class="col-sm-1 label-tick hidelabel"><span id="EyeColour-span-success" class="smicon-new smicon-check form-control-feedback male span-info-label" title=""></span></div>
+                                                                <div class="col-sm-1 label-tick hidelabel"><span id="EyeColour-span-success" class="form-control-feedback male span-info-label" title=""><i class="fa fa-check fas-lg" style="color: #337ab7"></i></span></div>
                                                             </div>
                                                             <div id="Height-group" class="form-group">
                                                                 <label for="Height" class="col-sm-3 control-label">
@@ -582,28 +340,9 @@
                                                                     </div>
                                                                 </div>
 
-                                                                <div class="col-sm-1 label-tick hidelabel"><span id="MinHeight-span-success" class="smicon-new smicon-check form-control-feedback male span-info-label" title=""></span></div>
+                                                                <div class="col-sm-1 label-tick hidelabel"><span id="MinHeight-span-success" class="form-control-feedback male span-info-label" title=""><i class="fa fa-check fas-lg" style="color: #337ab7"></i></span></div>
                                                             </div>
-                                                            {{--
-                                                            <div id="MaxHeight-group" class="form-group">
-                                                                <label for="MaxHeight" class="col-sm-3 control-label">
-                                                                    Maximum Height
-                                                                    <!--<i class="smicon smicon-question" data-original-title="" style="margin-left: 4px;"></i> -->
-                                                                </label>
-                                                                <div class="col-sm-8">
-                                                                    <div class="input-group input-group-maxwidth">
-                                                                        <select name="MaxHeight" id="MaxHeight" class="form-control-values select2-hidden-accessible" data-select2-id="MaxHeight" tabindex="-1" aria-hidden="true">
-                                                                            <option>Select Option</option>
-                                                                            @foreach ($personaldatas as $personaldata)
-                                                                            <option>{{$personaldata->Height_data}}</option>
-                                                                            @endforeach
-                                                                        </select>
-                                                                    </div>
-                                                                </div>
-
-                                                                <div class="col-sm-1 label-tick hidelabel"><span id="MaxHeight-span-success" class="smicon-new smicon-check form-control-feedback male span-info-label" title=""></span></div>
-                                                            </div>
-                                                            --}}
+                                                           
                                                             <div id="Disabilities-group" class="form-group">
                                                                 <label for="Disabilities" class="col-sm-3 control-label" data-placeholder="Select your option">
                                                                     Disabilities
@@ -629,7 +368,7 @@
                                                                 </div>
 
                                                                 <div class="col-sm-1 label-tick hidelabel">
-                                                                    <span id="Disabilities-span-success" class="smicon-new smicon-check form-control-feedback male span-info-label" title=""></span>
+                                                                    <span id="Disabilities-span-success" class="form-control-feedback male span-info-label" title=""><i class="fa fa-check fas-lg" style="color: #337ab7"></i></span>
                                                                 </div>
                                                             </div>
                                                             <div class="form-group">
@@ -644,14 +383,7 @@
                                             </div>
                                             <div class="tab-pane text-style" id="tab5" data-counter="0">
                                                 <div class="panel panel-info" style="border: 0px; box-shadow: 0 0px 0px rgba(0, 0, 0, 0.05);">
-                                                    <!--
-                                    <div class="panel-heading">
-                                        <div class="panel-title">
-                                            
-                                        </div>
-                                        <hr />
-                                    </div>
-                                    -->
+                                                 
                                                     <div class="panel-body">
                                                         <div role="form" class="form-horizontal">
                                                             <div id="UserName-group" class="form-group">

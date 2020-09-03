@@ -826,15 +826,21 @@
 
         <title>{{$info->name}}</title>
 
+        
+        
         <link rel="stylesheet" href="/frontend/assets/css/less/font-awesome.css" />
         <link rel="stylesheet" href="font-awesome-animation.min.css" />
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-
+        
         <link href="/frontend/assets/css/less/global.css" media="screen" rel="stylesheet" type="text/css" />
         <link href="/frontend/assets/css/less/controller/DashboardController.css" media="screen" rel="stylesheet" type="text/css" />
-
+        <link href="/frontend/assets/css/less/controller/ProfileController.css" media="screen" rel="stylesheet" type="text/css" />
+        <link href="/frontend/assets/css/less/controller/MembershipController.css" media="screen" rel="stylesheet" type="text/css" />
+        
         <script type="text/javascript" src="/frontend/assets/js/global.min.js"></script>
         <script type="text/javascript" src="/frontend/assets/js/controller/DashboardController.min.js"></script>
+        <script type="text/javascript" src="/frontend/assets/js/MembershipController.min.js"></script>
+        <script type="text/javascript" src="/frontend/assets/js/controller/ProfileController.min.js"></script>
         <script type="text/javascript" src="/frontend/assets/validation/validator.min.js"></script>
 
         <script>
@@ -858,7 +864,7 @@
         </script>
     </head>
 
-    <body id="DashboardController" class="hiddenScroll">
+    <body id="DashboardController" class="hiddenScroll ProfileController">
         <!-- Navigation -->
         <nav class="navbar navbar-default" id="mainTopnav">
             <div class="row-fluid">

@@ -10,87 +10,7 @@
 
 <div class="wide_fullbgimage">
     <div class="container containerbgColor">
-        <div class="modal fade" id="menusettingsModal" tabindex="-1" role="dialog" aria-labelledby="menusettingsModal" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h2 class="headernotification">Account</h2>
-                    </div>
-                    <div class="modal-body">
-                        <div class="  ">
-                            <nav class="nav-sidebar nav-sidebar-2">
-                                <ul class="nav">
-                                    <h6 class="dropdown-header sidemenuheader sm-heading-title" style="margin-top: 0px;">Profile</h6>
-                                    <li class="">
-                                        <a href="/profile/edit#edit"><i class="sm-line basic-settings sm-nav-dropdown-icons"></i> Edit My Profile <span class="smicon-new smicon-angle-right pull-right arrow-font-size"></span></a>
-                                    </li>
-                                    <li class="">
-                                        <a href="/profile/personalinfo"><i class="sm-line basic-book-pencil sm-nav-dropdown-icons"></i>Edit Personal Info <span class="smicon-new smicon-angle-right pull-right arrow-font-size"></span></a>
-                                    </li>
-                                    <li class="bottombodernone">
-                                        <a href="/profile/preferences"><i class="sm-line basic-alarm sm-nav-dropdown-icons"></i>Notifications / Preferences <span class="smicon-new smicon-angle-right pull-right arrow-font-size"></span></a>
-                                    </li>
-
-                                    <!--        <li class="--><!-- bottombodernone"><a href="/profile/communication-preferences"><i class="sm-line basic-alarm sm-nav-dropdown-icons"></i>Notifications / Preferences <span class=" smicon-new smicon-angle-right pull-right arrow-font-size"></span></a></li>-->
-                                    <!--       -->
-
-                                    <h6 class="dropdown-header sidemenuheader sm-heading-title">Photos</h6>
-                                    <li class="">
-                                        <a href="/profile/photos"><i class="sm-line basic-photo sm-nav-dropdown-icons"></i>Edit My Photos <span class="smicon-new smicon-angle-right pull-right arrow-font-size"></span></a>
-                                    </li>
-                                    <li class="bottombodernone">
-                                        <a class="pointerCursor" href="/profile/accesslist/2">
-                                            <i class="sm-line basic-lock-open sm-nav-dropdown-icons"></i>
-                                            Photo Access
-
-                                            <span class="badge progress-bar-danger badge-xs messageCounterUpdate_photo" style="margin-top: -4px; left: -1px; margin-left: 2px; top: 9px; visibility: hidden;"> 0 </span>
-
-                                            <span class="smicon-new smicon-angle-right pull-right arrow-font-size"></span>
-                                        </a>
-                                    </li>
-
-                                    <h6 class="dropdown-header sidemenuheader sm-heading-title">Account &amp; Security</h6>
-
-                                    <li class="">
-                                        <a href="/profile/username"><i class="sm-line basic-keyboard sm-nav-dropdown-icons"></i>Change Username <span class="smicon-new smicon-angle-right pull-right arrow-font-size"></span></a>
-                                    </li>
-                                    <li class="">
-                                        <a href="/profile/email"><i class="sm-line basic-mail sm-nav-dropdown-icons"></i>Change Email <span class="smicon-new smicon-angle-right pull-right arrow-font-size"></span></a>
-                                    </li>
-                                    <li class="">
-                                        <a href="/profile/password"><i class="sm-line sm-line basic-key sm-nav-dropdown-icons"></i>Change Password <span class="smicon-new smicon-angle-right pull-right arrow-font-size"></span></a>
-                                    </li>
-                                    <li class="">
-                                        <a href="/membership/history"><i class="sm-line basic-calendar sm-nav-dropdown-icons"></i>Memberships History <span class="smicon-new smicon-angle-right pull-right arrow-font-size"></span></a>
-                                    </li>
-                                    <li class="">
-                                        <a href="/profile/blocked"><i class="sm-line basic-ban sm-nav-dropdown-icons"></i>Blocked Users <span class="smicon-new smicon-angle-right pull-right arrow-font-size"></span></a>
-                                    </li>
-                                    <li class="">
-                                        <a href="/profile/communication-preferences">
-                                            <i class="sm-line basic-elaboration-mail-noaccess sm-nav-dropdown-icons"></i>Communication Preferences <span class="smicon-new smicon-angle-right pull-right arrow-font-size"></span>
-                                        </a>
-                                    </li>
-                                    <!--        <li class="--><!--"><a href="/profile/devices"><i class=" sm-line  sm-line basic-smartphone sm-nav-dropdown-icons"></i>Devices <span class=" smicon-new smicon-angle-right pull-right arrow-font-size"></span></a></li>-->
-                                    <!--      -->
-
-                                    <li class="">
-                                        <a href="/profile/login-devices"><i class="sm-line sm-line basic-smartphone sm-nav-dropdown-icons"></i>Devices <span class="smicon-new smicon-angle-right pull-right arrow-font-size"></span></a>
-                                    </li>
-
-                                    <li class="deletesidemenu">
-                                        <a href="/profile/delete" data-username="Abdul26">
-                                            <i class="sm-line basic-trashcan-remove sm-nav-dropdown-icons"></i>Delete Profile <span class="smicon-new smicon-angle-right pull-right arrow-font-size"></span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
+      
         <!-- Content Row -->
         <div class="">
             <div class="col-lg-12 col-md-12" id="professionSearch">
@@ -108,132 +28,8 @@
                                     <a href="#" id="changeBreadcrum" class="breadcrumLast">Profession</a>
                                 </nav>
 
-                                <nav class="nav-sidebar searchLeftnav">
-                                    <ul class="nav tabs">
-                                        <!--<li class="" style="background-color: #a8217e;color: #fff;padding: 10px; font-size:23px;height: 52px;">-->
-                                        <!--<span class="smicon smicon-cog arrow-font-size" style="font-size:26px;position:relative;top:3px;">-->
-                                        <!--</span>-->
-                                        <!--<span>Search</span></li>-->
+                                @include('search.side-nav-search')
 
-                                        <!-- start dynamic -->
-
-                                        <li class="">
-                                            <a href="/search">
-                                                <div class="pull-left serachBaricon">
-                                                    <span class="icon smicon-new smicon-search-quick2 male"></span>
-                                                </div>
-                                                <div class="pull-left searchBarname">
-                                                    Quick
-                                                </div>
-                                                <div class="pull-left searcyBartickicon">
-                                                    <div class="pull-left icontickbox">
-                                                        <i class="smicon-new smicon-check tab1" style="line-height: 9px; visibility: visible;"></i>
-                                                    </div>
-                                                    <div class="pull-left iconarrowright">
-                                                        <i class="smicon-new smicon-angle-right"></i>
-                                                    </div>
-                                                    <div class="clearfix"></div>
-                                                </div>
-                                                <div class="clearfix"></div>
-                                            </a>
-                                        </li>
-
-                                        <li class="">
-                                            <a href="/religion">
-                                                <div class="pull-left serachBaricon">
-                                                    <span class="icon smicon-new smicon-religion male"></span>
-                                                </div>
-                                                <div class="pull-left searchBarname">
-                                                    Religion
-                                                </div>
-                                                <div class="pull-left searcyBartickicon">
-                                                    <div class="pull-left icontickbox">
-                                                        <i class="smicon-new smicon-check tab2" style="line-height: 9px; visibility: hidden;"></i>
-                                                    </div>
-                                                    <div class="pull-left iconarrowright">
-                                                        <i class="smicon-new smicon-angle-right"></i>
-                                                    </div>
-                                                    <div class="clearfix"></div>
-                                                </div>
-                                                <div class="clearfix"></div>
-                                            </a>
-                                        </li>
-
-                                        <li class="">
-                                            <a href="/education">
-                                                <div class="pull-left serachBaricon">
-                                                    <span class="icon smicon-new smicon-education male"></span>
-                                                </div>
-                                                <div class="pull-left searchBarname educaitonname">
-                                                    Education
-                                                </div>
-                                                <div class="pull-left searcyBartickicon">
-                                                    <div class="pull-left icontickbox">
-                                                        <i class="smicon-new smicon-check tab3" style="line-height: 9px; visibility: hidden;"></i>
-                                                    </div>
-                                                    <div class="pull-left iconarrowright">
-                                                        <i class="smicon-new smicon-angle-right"></i>
-                                                    </div>
-                                                    <div class="clearfix"></div>
-                                                </div>
-                                                <div class="clearfix"></div>
-                                            </a>
-                                        </li>
-
-                                        <li class="">
-                                            <a href="/personal">
-                                                <div class="pull-left serachBaricon">
-                                                    <span class="icon smicon-new smicon-user male"></span>
-                                                </div>
-                                                <div class="pull-left searchBarname">
-                                                    Personal
-                                                </div>
-                                                <div class="pull-left searcyBartickicon">
-                                                    <div class="pull-left icontickbox">
-                                                        <i class="smicon-new smicon-check tab4" style="line-height: 9px; visibility: hidden;"></i>
-                                                    </div>
-                                                    <div class="pull-left iconarrowright">
-                                                        <i class="smicon-new smicon-angle-right"></i>
-                                                    </div>
-                                                    <div class="clearfix"></div>
-                                                </div>
-                                                <div class="clearfix"></div>
-                                            </a>
-                                        </li>
-
-                                        <!-- need to build this as dynamic -->
-
-                                        <br />
-                                        <br />
-
-                                        <li class="active">
-                                            <a href="/profession" data-title="Profession Search">
-                                                <div class="pull-left serachBaricon">
-                                                    <span class="icon smicon-new smicon-profession male"></span>
-                                                </div>
-                                                <div class="pull-left searchBarname">
-                                                    Profession
-                                                </div>
-                                                <div class="pull-left searcyBartickicon">
-                                                    <div class="pull-left icontickbox">
-                                                        <i class="smicon-new smicon-check" style="line-height: 9px; visibility: hidden;"></i>
-                                                    </div>
-                                                    <div class="pull-left iconarrowright">
-                                                        <i class="smicon-new smicon-angle-right"></i>
-                                                    </div>
-                                                    <div class="clearfix"></div>
-                                                </div>
-                                                <div class="clearfix"></div>
-                                            </a>
-                                        </li>
-
-                                        <br />
-                                        <br />
-
-                                        <br />
-                                        <br />
-                                    </ul>
-                                </nav>
                             </div>
                             <!-- tab content -->
 
@@ -250,21 +46,24 @@
                                             <div id="Gender-group" class="form-group">
                                                 <label for="Gender" class="col-sm-3 control-label">Gender</label>
                                                 <div class="col-sm-8">
-                                                    <div class="input-group input-group-maxwidth btn-group btn-group-radio">
-                                                        <input name="Gender" id="Gender-" type="radio" class="radio" value="" checked="" />
-                                                        <label id="label-Gender-" for="Gender-" class="btn">
-                                                            Any Gender &nbsp;&nbsp;&nbsp;<span class="smicon-new smicon-male-shape male" style="font-size: 20px; color: #007ea5;"></span>&nbsp;
-                                                            <span class="smicon-new smicon-female-shape female" style="font-size: 20px;"></span>
-                                                        </label>
+                                                                    <div class="input-group input-group-maxwidth btn-group btn-group-radio">
+                                                                        <input name="Gender" id="Gender-" type="radio" class="radio" value="" checked="" />
+                                                                        <label id="label-Gender-" for="Gender-" class="btn">
+                                                                            Any Gender <span class="fa fa-male" style="font-size: 20px; color: #007ea5;"></span>
+                                                                            <span class="fa fa-female " style="font-size: 20px; color:rgb(128, 31, 31)"></span>
+                                                                        </label>
 
-                                                        <input name="Gender" id="Gender-1" type="radio" class="radio" value="1" />
-                                                        <label id="label-Gender-1" for="Gender-1" class="btn"> Male &nbsp;&nbsp;&nbsp;<span class="smicon-new smicon-male-shape male" style="font-size: 20px; color: #007ea5;"></span></label>
+                                                                        <input name="Gender" id="Gender-1" type="radio" class="radio" value="1" />
+                                                                        <label id="label-Gender-1" for="Gender-1" class="btn">
+                                                                            Male &nbsp;&nbsp;&nbsp;<span class="fa fa-male" style="font-size: 20px; color: #007ea5;"></span>
+                                                                        </label>
 
-                                                        <input name="Gender" id="Gender-2" type="radio" class="radio" value="2" />
-                                                        <label id="label-Gender-2" for="Gender-2" class="btn"> Female &nbsp;&nbsp;&nbsp;<span class="smicon-new smicon-female-shape female" style="font-size: 20px;"></span></label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-1 label-tick hidelabel"><span id="Gender-span-success" class="smicon-new smicon-check form-control-feedback male span-info-label" title=""></span></div>
+                                                                        <input name="Gender" id="Gender-2" type="radio" class="radio" value="2" />
+                                                                        <label id="label-Gender-2" for="Gender-2" class="btn">
+                                                                            Female &nbsp;&nbsp;&nbsp;<span class="fa fa-female" style="font-size: 20px;color:rgb(128, 31, 31)"></span>
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
                                             </div>
                                             <div id="MinAge-group" class="form-group">
                                                 <label for="MinAge" class="col-sm-3 control-label">

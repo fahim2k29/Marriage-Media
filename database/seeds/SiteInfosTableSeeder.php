@@ -13,8 +13,8 @@ class SiteInfosTableSeeder extends Seeder
     public function run()
     {
         SiteInfo::create([
-            'name' => 'Company',
-            'site_title' => 'Software Company',
+            'name' => 'Bismillah Marriage',
+            'site_title' => 'Muslim Marriage, shaadi all over the world.',
         ]);
     }
 }

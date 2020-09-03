@@ -22,9 +22,6 @@ class DatabaseSeeder extends Seeder
             SiteInfosTableSeeder::class,
             UsersTableSeeder::class,
             
-
-
-
         ]);
     }
 }

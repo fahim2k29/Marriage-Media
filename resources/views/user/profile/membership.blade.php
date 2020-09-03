@@ -1,4 +1,4 @@
-@extends('user.profile.app') @section('content')
+@extends('user.dashboard.app') @section('content')
 
 
 <style>
@@ -101,19 +101,19 @@
                                         <div class="col-sm-4 col-md-4 col-xs-12">
                                             <div class="box-1 center">
                                                <a class="btnselect" data-id="558b2b2b">
-                                                    <div class="div-popular">{{$offer->name}}</div>
+                                                    <div class="div-popular"><b>{{$offer->name}}</b></div>
                                                 </a>
                                                 <div class="panel panel-pricing">
                                                     <a class="btnselect" data-id="ee48014c">
                                                         <div class="panel-heading">
-                                                            <h3>{{$offer->duration}}</h3>
+                                                            <h3>{{$offer->duration}} Days</h3>
                                                         </div>
                                                         <div class="panel-body text-center">
                                                             <p class="quote-text Pricetags" style="font-size: 35px"> ${{number_format($offer->price, 2)}}</p>
                                                         </div>
                                                         <ul>
-                                                            <li>{{$offer->duration}} subscription is ${{number_format($offer->price, 2)}}</li>
-                                                            <li>Then ${{number_format($offer->price, 2)}} every {{$offer->duration}} thereafter</li>
+                                                            <li>{{$offer->duration}} days subscription is ${{number_format($offer->price, 2)}}</li>
+                                                            <li>Then ${{number_format($offer->price, 2)}} every {{$offer->duration}} days thereafter</li>
                                                         </ul>
                                                         
                                                     </a>

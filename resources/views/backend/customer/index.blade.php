@@ -23,25 +23,27 @@
     ])
 
     <table class="table table-bordered">
-        <thead >
+        <thead>
             <tr user="row">
                 <th class="bg-dark" style="width: 10%">ID</th>
                 <th class="bg-dark" style="width: 20%">Name</th>
                 <th class="bg-dark" style="width: 20%">Address</th>
-                {{-- <th class="bg-dark" style="width: 20%">Image</th> --}}
+                <th class="bg-dark" style="width: 20%">Package</th>
+                <th class="bg-dark" style="width: 20%">purchase Date</th>
+                <th class="bg-dark" style="width: 20%">Expire Date</th>
                 <th class="bg-dark" style="">Action</th>
             </tr>
         </thead>
         
     <tbody>
-       {{-- @php($key=1) --}}
         @foreach ($users as $key=> $user)
-        {{-- @foreach ($addPhotos as $addPhoto) --}}
             <tr>
                 <td>{{$key+1}}</td>
                 <td>{{$user->UserName}}</td>
-                <td>{{$user->Country}}</td>            
-                {{-- <td><img src="{{asset('frontend/assets/images/')}}/{{ $addPhoto->image }}"  class="img-responsive img-circle"  height="40"width="60" alt="No Image"></td> --}}
+                <td>{{$user->Country}}</td>   
+                <td></td>
+                <td></td>
+                <td></td>         
                 <td>
                     <div class="btn-group btn-group-mini btn-corner">
                         <a href="{{ route('backend.customer.show', $user->id) }}"

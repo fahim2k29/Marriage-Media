@@ -781,10 +781,6 @@
         <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
         <script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-NNGBZLJ"></script> --}}
         
-        <meta name="viewport" content="width=1200" />
-        
-        <link href="/images/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
-        <meta name="apple-itunes-app" content="app-id=1116597910" />
 
         <title> {{$info->name}}  </title>
 
