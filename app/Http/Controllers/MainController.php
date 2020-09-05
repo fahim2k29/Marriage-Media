@@ -23,6 +23,7 @@ use App\PersonalData;
 use App\ReligionData;
 use App\SignupData;
 use App\User;
+use App\Models\Banner;
 
 class MainController extends Controller
 {
@@ -49,6 +50,7 @@ class MainController extends Controller
         $data['prsn']       = User::with('personal')->get();
         $data['img']        = User::with('addphoto')->get();
         $data['user']       = User::first(['DOB_year']);
+        $data['banners']    = Banner::all();
         return view('index', $data);
     }
 

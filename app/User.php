@@ -12,7 +12,7 @@ use App\Personal;
 use App\Religion;
 use App\AddPhoto;
 
-class User extends Authenticatable 
+class User extends Authenticatable implements MustVerifyEmail
 {
     use Notifiable;
 
@@ -21,8 +21,8 @@ class User extends Authenticatable
      *
      * @var array
      */
-    
     // protected $table = 'user'; 
+    
     
     protected $fillable = [
         'UserName',

@@ -164,41 +164,29 @@
                 <div class="container">
                     <div class="newsucess-stories">
                         <div class="picscroll">
+                        @foreach($banners as $banner)
+                            @if(!empty ($banner->video))
+                            <div class="col-md-3 card">
+                                <a href="{{ $banner->video }}">
+                                @foreach(explode('=',$banner->video) as $row)
+                                 @if ($loop->last) 
+                                    <img src="http://i1.ytimg.com/vi/{{$row}}/default.jpg" class="img-responsive" />
+                                    <span class="playbutton"><i class="fa fa-play-circle"></i></span>
+                                    @endif
+                                @endforeach
+                                </a>
+                            </div>
+                            
+                            @else
                             <div class="col-md-3 card">
                                 <a href="/success-story/soniaandabid">
-                                    <img src="/frontend/assets/images/soniaandabid.jpg" class="img-responsive imagesuccess-story" />
-                                </a>
-                                <a href="/success-story/soniaandabid">
-                                    <span class="playbutton"><i class="glyphicon glyphicon-play"></i></span>
+                                    <img src="{{ asset($banner->image) }}" class="img-responsive"  />
                                 </a>
                             </div>
+                                @endif
+                        @endforeach
 
-                            <div class="col-md-3 card">
-                                <a href="/success-story/AdilandAmira">
-                                    <img src="/frontend/assets/images/adilandamira.jpg" class="img-responsive imagesuccess-story" />
-                                </a>
-                                <a href="/success-story/AdilandAmira">
-                                    <span class="playbutton"><i class="glyphicon glyphicon-play"></i></span>
-                                </a>
-                            </div>
-
-                            <div class="col-md-3 card">
-                                <a href="/success-story/WaqasandAishiya">
-                                    <img src="/frontend/assets/images/waqasandaishiya.jpg" class="img-responsive imagesuccess-story" />
-                                </a>
-                                <a href="/success-story/WaqasandAishiya">
-                                    <span class="playbutton"><i class="glyphicon glyphicon-play"></i></span>
-                                </a>
-                            </div>
-
-                            <div class="col-md-3 card">
-                                <a href="/success-story/RussellandTaslima">
-                                    <img src="/frontend/assets/images/russelandtaslima.jpg" class="img-responsive imagesuccess-story" />
-                                </a>
-                                <a href="/success-story/RussellandTaslima">
-                                    <span class="playbutton"><i class="glyphicon glyphicon-play"></i></span>
-                                </a>
-                            </div>
+                           
                         </div>
                     </div>
                 </div>

@@ -914,18 +914,6 @@
                                     Search
                                 </a>
                             </li>
-
-                            <li class="primary-font-2 light-font fontsize-12">
-                                <a href="/find/men">
-                                    Men
-                                </a>
-                            </li>
-
-                            <li class="primary-font-2 light-font fontsize-12">
-                                <a href="/find/women">
-                                    Women
-                                </a>
-                            </li>
                         </ul>
                     </div>
                     <div class="col-xs-3">

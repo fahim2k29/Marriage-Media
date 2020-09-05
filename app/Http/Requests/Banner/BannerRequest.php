@@ -15,7 +15,8 @@ class BannerRequest extends FormRequest
     {
         return [
             'position'  => 'required|integer|unique:banners',
-            'image'     => 'required|image|dimensions:min_width=100,min_height=100',
+            'video'     =>  '',
+            'image'     => 'image|dimensions:min_width=100,min_height=100',
         ];
     }
 

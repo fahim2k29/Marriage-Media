@@ -15,7 +15,8 @@ class CreateBannersTable extends Migration
     {
         Schema::create('banners', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('image');
+            $table->string('image')->nullable();
+            $table->string('video')->nullable();
             $table->integer('position');
             $table->timestamps();
         });

@@ -917,19 +917,7 @@
                                 <a href="/search">
                                     Search
                                 </a>
-                            </li>
-
-                            <li class="primary-font-2 light-font fontsize-12">
-                                <a href="/find/men">
-                                    Men
-                                </a>
-                            </li>
-
-                            <li class="primary-font-2 light-font fontsize-12">
-                                <a href="/find/women">
-                                   Women
-                                </a>
-                            </li>
+                            </li>                        
                         </ul>
                     </div>
                     <div class="col-xs-3">

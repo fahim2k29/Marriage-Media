@@ -45,7 +45,7 @@ Route::group(['prefix' => '/quick-page'], function (){
 });
  
 // Offer page
-Route::group(['prefix' => '/offer'], function (){
+Route::group(['prefix' => '/package'], function (){
     Route::get('/','OfferController@index')->name('backend.site_config.offer.index');
     Route::get('/create','OfferController@create')->name('backend.site_config.offer.create');
     Route::get('/edit/{id}','OfferController@edit')->name('backend.site_config.offer.edit');

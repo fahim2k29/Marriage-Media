@@ -19,9 +19,7 @@ class VerificationController extends Controller
     |
     */
 
-    // use VerifiesEmails {
-	// 	verify as parentVerify;
-	// }
+    use VerifiesEmails;
 
     /**
      * Where to redirect users after verification.

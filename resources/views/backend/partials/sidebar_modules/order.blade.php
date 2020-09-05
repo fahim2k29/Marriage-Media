@@ -16,7 +16,7 @@
             <b class="arrow"></b>
         </li>
     </ul>
-    <ul class="submenu">
+    <!-- <ul class="submenu">
         <li class="{{ $routeName === 'backend.order.delivery' ? 'open' : ''}}">
             <a href="{{ route('backend.order.delivery') }}">
                 <i class="menu-icon fa fa-caret-right"></i>
@@ -24,5 +24,5 @@
             </a>
             <b class="arrow"></b>
         </li>
-    </ul>
+    </ul> -->
 </li>

@@ -42,15 +42,22 @@ class BannerController extends Controller
      */
     public function store(BannerRequest $request)
     {   
+        
+        if((is_null($request->image)&& is_null($request->video))||(!empty($request->image)&&!empty($request->video)))
+        {
+            return back()->with('message','Please insert atleast 1 file!');
+        }
+        else
+        {
         $all =($request->all());
         $all['image'] = (new SimpleUpload)
             ->file($request->image)
             ->dirName('banners')
             ->save();
-
         Banner::create($all);
-
         return back()->with('message', 'Banner Added Successfully!');
+
+        }
     }
 
     /**

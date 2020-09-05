@@ -44,6 +44,18 @@
                     {{-- <strong class="red">Minimum 150x33 pixels</strong> --}}
                 </div>
             </div>
+            
+            <div class="form-group">
+                <label class="col-sm-2 bolder" for="image">Video Link
+                </label>
+                <div class="col-sm-4">
+                    <input name="video"
+                           type="text"
+                           id="video"
+                           class="form-control"
+                           onchange="readURL(this);">
+                </div>
+            </div>
             <div class="form-group">
                 <label class="col-sm-2 bolder" for="image">Position
                 </label>

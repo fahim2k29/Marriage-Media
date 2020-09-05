@@ -68,7 +68,7 @@
 
 <script src="/frontend/assets/js/paypal.min.js"></script>
 
-{{-- <script>
+<!-- <script>
     paypal.Button.render({
         env: 'sandbox', // Or 'production'
         locale: 'en_US',
@@ -105,7 +105,7 @@
             });
         }
     }, '#paypal-button');
-</script> --}}
+</script> -->
 
 <script>
   paypal.Button.render({

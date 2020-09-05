@@ -137,6 +137,7 @@ Route::post('execute-payment', function(Request $request){
     }
     
     ResultPrinter::printResult("Get Payment", "Payment", $payment->getId(), null, $payment);
+    
     return $payment;
 } 
 else {

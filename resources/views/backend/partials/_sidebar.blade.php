@@ -28,6 +28,7 @@
 
         {{-- Site Config --}}
         @include('backend.partials.sidebar_modules.site_config')
+        
     </ul>
 
     <div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">

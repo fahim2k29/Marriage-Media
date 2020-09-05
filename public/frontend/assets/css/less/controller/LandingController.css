@@ -366,7 +366,8 @@ body {
 }
 
 .tab-content .img-responsive {
-    width: auto
+    width: auto;
+
 }
 
 .secondFont {
@@ -4887,6 +4888,7 @@ div.bhoechie-tab div.bhoechie-tab-content:not(.active) {
 
 #LandingController .sectionnewsSuccessStoriesContent .picscroll .card img {
     box-shadow: 0 4px 8px -5px #000;
+    width: 180px;
     height: 144px
 }
 
