@@ -10,19 +10,26 @@
 
                 <div class="section-bottom topstories clearfix">
                     <div class="bottom-scroller">
-                        @foreach ($stories as $story)                 
-                        
-                        <a href="{{ route('successStory_show', $story->id) }}">
-                            <div class="gallery-image pull-left">
-                                <div class="caption" style="display: none;">
-                                    <h4 style="text-align: center"><span class="malecolor">{{ $story->title }} </h4>
-                                </div>
-                                <div></div>
-                                <img src="{{ asset($story->main_image) }}" class="img-responsive" style="height:200px; width:225px;" />
+                        @foreach($stories as $story)
+                            @if(!empty ($story->video))
+                            <div class="col-md-3 card">
+                                <a href="{{ route('successStory_show', $story->id) }}">
+                                @foreach(explode('=',$story->video) as $row)
+                                 @if ($loop->last) 
+                                    <img src="http://i1.ytimg.com/vi/{{$row}}/default.jpg" class="img-responsive" />
+                                    <span class="playbutton"><i class="fa fa-play-circle"></i></span>
+                                    @endif
+                                @endforeach
+                                </a>
                             </div>
-                        </a>
-
-                            @endforeach
+                            @else
+                            <div class="col-md-3 card">
+                                <a href="{{ route('successStory_show', $story->id) }}">
+                                    <img src="{{ asset($story->image) }}" class="img-responsive"  />
+                                </a>
+                            </div>
+                                @endif
+                        @endforeach   
 
                        
                     </div>

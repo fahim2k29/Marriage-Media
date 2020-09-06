@@ -52,11 +52,7 @@
                                                                 <label for="Gender" class="col-sm-3 control-label">Gender</label>
                                                                 <div class="col-sm-8">
                                                                     <div class="input-group input-group-maxwidth btn-group btn-group-radio">
-                                                                        <input name="Gender" id="Gender-" type="radio" class="radio" value="" checked="" />
-                                                                        <label id="label-Gender-" for="Gender-" class="btn">
-                                                                            Any Gender <span class="fa fa-male" style="font-size: 20px; color: #007ea5;"></span>
-                                                                            <span class="fa fa-female " style="font-size: 20px; color:rgb(128, 31, 31)"></span>
-                                                                        </label>
+                                                                        
 
                                                                         <input name="Gender" id="Gender-1" type="radio" class="radio" value="1" />
                                                                         <label id="label-Gender-1" for="Gender-1" class="btn">
@@ -70,7 +66,7 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            <div id="MinAge-group" class="form-group">
+                                                            {{-- <div id="MinAge-group" class="form-group">
                                                                 <label for="MinAge" class="col-sm-3 control-label">
                                                                     Minimum Age
                                                                     <!--<i class="smicon smicon-question" data-original-title="" style="margin-left: 4px;"></i> -->
@@ -95,17 +91,13 @@
                                                                         <select name="MaxAge" id="MaxAge" class="form-control-values select2-hidden-accessible" data-select2-id="MaxAge" tabindex="-1" aria-hidden="true">
                                                                             <option value="" selected="" data-select2-id="4">Any</option>
                                                                             <option value="19" data-select2-id="124">19</option>
-                                                                            <option value="20" data-select2-id="125">20</option>
-                                                                            <option value="21" data-select2-id="126">21</option>
-                                                                            <option value="22" data-select2-id="127">22</option>
-                                                                            <option value="23" data-select2-id="128">23</option>
-                                                                            <option value="100" data-select2-id="205">50</option>
+                                                                           
                                                                         </select>
                                                                     </div>
                                                                 </div>
 
                                                                 <div class="col-sm-1 label-tick hidelabel"><span id="MaxAge-span-success" class="smicon-new smicon-check form-control-feedback male span-info-label" title=""></span></div>
-                                                            </div>
+                                                            </div> --}}
                                                             <div id="Country-group" class="form-group">
                                                                 <label for="Country" class="col-sm-3 control-label">
                                                                     Country

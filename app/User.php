@@ -2,15 +2,16 @@
 
 namespace App;
 
-use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\CanResetPassword;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 use App\Aboutme;
 use App\Education;
 use App\Personal;
 use App\Religion;
 use App\AddPhoto;
+use Illuminate\Database\Eloquent\Model;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
@@ -45,9 +46,9 @@ class User extends Authenticatable implements MustVerifyEmail
      *
      * @var array
      */
-    // protected $hidden = [
-    //     'password', 'remember_token',
-    // ];
+    protected $hidden = [
+        'password', 'remember_token',
+    ];
 
     /**
      * The attributes that should be cast to native types.
@@ -57,6 +58,8 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
 
     // public function personal()
     //  {
@@ -92,4 +95,5 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->hasOne(AddPhoto::class, 'user_id', 'id');
     }
+    
 }

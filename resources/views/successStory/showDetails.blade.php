@@ -8,6 +8,27 @@
                 <div class="main-image">
                     <div class="videoWrapper">
                         <!-- Copy & Pasted from YouTube -->
+
+                      
+                            @if(!empty ($stories->video))
+                            <div class="col-md-3 card">
+                                <a href="{{ $stories->video }}">
+                                @foreach(explode('=',$stories->video) as $row)
+                                 @if ($loop->last) 
+                                    <img src="http://i1.ytimg.com/vi/{{$row}}/default.jpg" />
+                                    <span class="playbutton"><i class="fa fa-youtube-play"></i></span>
+                                    @endif
+                                @endforeach
+                                </a>
+                            </div>
+                            @else
+                            <div class="col-md-3 card">
+                                <a href="#">
+                                    <img src="{{ asset($stories->image) }}"/>
+                                </a>
+                            </div>
+                            @endif
+                                               
                         <iframe width="560" height="349" src="https://www.youtube.com/embed/ZQOL92VBUN0?rel=0&amp;hd=1" frameborder="0" allowfullscreen=""></iframe>
                     </div>
                 </div>
@@ -24,14 +45,14 @@
 
                 <div class="maincontent">
                     <div class="leftContent col-md-8">
-                        <h2>Sharing jokes and warm fuzzy feelings!</h2>
+                        <h2> {!! $stories->description !!}</h2>
                        <p>
                        </p>
-                        <div style="text-align: center;"><img alt="*" src="{{asset($stories->main_image)}}" style="height: 273px; width: 394px;" /></div>
+                        {{-- <div style="text-align: center;"><img alt="*" src="{{asset($stories->main_image)}}" style="height: 273px; width: 394px;" /></div>
                         <p>&nbsp;</p>
                         {!! $stories->description !!}
                         <div style="text-align: center;"><img alt="*" src="{{asset($stories->body_image)}}" style="height: 273px; width: 395px;" /></div>
-                        <p>&nbsp;</p>
+                        <p>&nbsp;</p> --}}
 
                         <p>
                             <br />
@@ -53,7 +74,7 @@
                             <div class="moresuccess"><h3>More Success Stories</h3></div>
                             <div class="gallery-image pull-left">
                                 <a href="/success-story/soniaandabid">
-                                    <img src="{{asset($stories->body_image)}}" width="180px" height="180px" class="img-responsive" />
+                                    {{-- <img src="{{asset($stories->body_image)}}" width="180px" height="180px" class="img-responsive" /> --}}
                                 </a>
                             </div>
                             
@@ -68,4 +89,4 @@
     </div>
     <!-- /.row -->
 </div>
-@endsections
+@endsection

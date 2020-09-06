@@ -33,36 +33,18 @@ Route::group(['prefix' => 'sadmin', 'middleware' => ['auth:admin', 'admin'], 'na
 
 Auth::routes();
 
-    Route::get('/welcome/{id}', 'HomeController@welcome')->name('welcome');
     
-
     
     Auth::routes(['verify' => true]);
 
-Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/home', 'HomeController@index')->name('home');
 // Route::get('/', 'HomeController@index')->name('home')->middleware('verified');
 
-    Route::get('/user/dashboard', 'HomeController@user_dashboard')->name('user_dashboard');
-    Route::get('/user/dashboard/profile', 'HomeController@user_dashboard_profile')->name('user_dashboard_profile');
+    
     Route::post('/signup/create_one', 'HomeController@register_create_one')->name('register_create_one');
     
     //...!...profile update//
-    Route::post('/profile_update/aboutme', 'HomeController@aboutme_update')->name('aboutme_update');
-    Route::post('/profile_update/education', 'HomeController@education_update')->name('education_update');
-    Route::post('/profile_update/personal', 'HomeController@personal_update')->name('personal_update');
-    Route::post('/profile_update/religion', 'HomeController@religion_update')->name('religion_update');
-    Route::post('/profile_update/personalInfo', 'HomeController@personalInfo_update')->name('personalInfo_update');
     
-    Route::get('/changePassword', 'HomeController@changePassword')->name('changePassword');
-    Route::post('/changePassword/store', 'HomeController@changePassword_store')->name('changePassword_store');
-    Route::get('/editPhoto', 'HomeController@editPhoto')->name('editPhoto');
-    Route::get('/editPersonalInfo', 'HomeController@editPersonalInfo')->name('editPersonalInfo');
-    Route::get('/changeUsername', 'HomeController@changeUsername')->name('changeUsername');
-    Route::post('/changeUsername/store', 'HomeController@changeUsername_store')->name('changeUsername_store');
-    Route::get('/changeEmail', 'HomeController@changeEmail')->name('changeEmail');
-    Route::post('/changeEmail/store', 'HomeController@changeEmail_store')->name('changeEmail_store');
-    Route::get('/membership/packages', 'HomeController@packages')->name('packages');
-    Route::get('/showInfo/{id}', 'HomeController@showInfo')->name('showInfo');
 
 
 Route::get('/', 'MainController@index')->name('single');
@@ -83,6 +65,7 @@ Route::get('/search', 'SearchController@index')->name('search_quick');
 Route::get('/pages/news/Umrah-Winners/{id}', 'FooterController@Umrah_Winners')->name('Umrah_Winners');
 Route::get('/success_story', 'SuccessStoryController@successStory')->name('successStory');
 Route::get('/success_story/{id}', 'SuccessStoryController@successStory_show')->name('successStory_show');
+Route::get('/delete/{successStory}','SuccessStoryController@destroy')->name('backend.site_config.successStory.destroy');
 
 
 
@@ -90,6 +73,7 @@ Route::get('/success_story/{id}', 'SuccessStoryController@successStory_show')->n
 
 
 Route::group(['middleware' => ['verified']], function () {
+    
     Route::get('/signup', 'MainController@register_form_one')->name('register_form_one');
     Route::get('/signup/aboutme', 'MainController@aboutme')->name('aboutme');
         Route::post('/signup/aboutme/create', 'MainController@aboutme_create')->name('aboutme_create');
@@ -103,6 +87,35 @@ Route::group(['middleware' => ['verified']], function () {
         Route::post('/signup/officeUse/create', 'MainController@officeUse_create')->name('officeUse_create');
     Route::get('/signup/addPhoto', 'MainController@addPhoto')->name('addPhoto');
     Route::post('/signup/addPhoto/create', 'MainController@addPhoto_create')->name('addPhoto_create');
+
+    Route::get('/welcome/{id}', 'HomeController@welcome')->name('welcome');
+    Route::get('/make-payment', 'HomeController@make_payment')->name('make_payment');
+
+
+    
+
+    Route::get('/user/dashboard', 'HomeController@user_dashboard')->name('user_dashboard');
+    Route::get('/user/dashboard/profile', 'HomeController@user_dashboard_profile')->name('user_dashboard_profile');
+
+    Route::post('/profile_update/aboutme', 'HomeController@aboutme_update')->name('aboutme_update');
+    Route::post('/profile_update/education', 'HomeController@education_update')->name('education_update');
+    Route::post('/profile_update/personal', 'HomeController@personal_update')->name('personal_update');
+    Route::post('/profile_update/religion', 'HomeController@religion_update')->name('religion_update');
+    Route::post('/profile_update/personalInfo', 'HomeController@personalInfo_update')->name('personalInfo_update');
+    
+    Route::get('/changePassword', 'HomeController@changePassword')->name('changePassword');
+    Route::post('/changePassword/store', 'HomeController@changePassword_store')->name('changePassword_store');
+    Route::get('/editPhoto', 'HomeController@editPhoto')->name('editPhoto');
+    Route::get('/editPersonalInfo', 'HomeController@editPersonalInfo')->name('editPersonalInfo');
+    Route::get('/changeUsername', 'HomeController@changeUsername')->name('changeUsername');
+    Route::post('/changeUsername/store', 'HomeController@changeUsername_store')->name('changeUsername_store');
+    Route::get('/changeEmail', 'HomeController@changeEmail')->name('changeEmail');
+    Route::post('/changeEmail/store', 'HomeController@changeEmail_store')->name('changeEmail_store');
+    Route::get('/membership/packages', 'HomeController@packages')->name('packages');
+
+    Route::post('/payment/store', 'HomeController@payment_store')->name('payment_store');
+
+    Route::get('/showInfo/{id}', 'HomeController@showInfo')->name('showInfo');
 
 });
 

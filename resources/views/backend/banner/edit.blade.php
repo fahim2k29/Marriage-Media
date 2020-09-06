@@ -26,22 +26,38 @@
             <div class="form-group">
                 <label class="col-sm-2 bolder" for="image">Image
                 </label>
-                <div class="col-sm-4">
+                <div class="col-sm-8">
                     <input name="image"
                            type="file"
+                           id="image"
                            class="form-control"
                            onchange="readURL(this);">
                     <strong class="red">{{ $errors->first('image') }}</strong>
                     @if($errors->first('image'))
                         <br>
                     @endif
-                   {{--  <strong class="red">Minimum 150x33 pixels</strong> --}}
+                    {{-- <strong class="red">Minimum 150x33 pixels</strong> --}}
                 </div>
             </div>
+            
+            <div class="form-group">
+                <label class="col-sm-2 bolder" for="image">Video Link
+                </label>
+                <div class="col-sm-8">
+                    <input name="video"
+                           type="text"
+                           id="video"
+                           value="{{$banner->video}}"
+                           class="form-control"
+                           onchange="readURL(this);">
+                </div>
+            </div>
+            
+
                        <div class="form-group">
                 <label class="col-sm-2 bolder" for="image">Position
                 </label>
-                <div class="col-sm-4">
+                <div class="col-sm-8">
                     <input name="position"
                            type="text"
                            value="{{ $banner->position }}" 
@@ -54,6 +70,9 @@
                     @endif
                     {{-- <strong class="red">Minimum 150x33 pixels</strong> --}}
                 </div>
+            </div>
+            <div>
+                <p>Please Insert 1 file [Image or Video link]</p>
             </div>
 
             <!-- Buttons -->

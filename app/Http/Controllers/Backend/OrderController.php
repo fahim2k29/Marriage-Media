@@ -17,17 +17,15 @@ class OrderController extends Controller
     public function index()
     {
 
-         $sotries = SuccessStory::all();
-        // dd($sotry);
-        return view('backend.order.index', compact('sotries'));
+         $stories = SuccessStory::paginate(10);
+        // dd($sotries);
+        return view('backend.order.index', compact('stories'));
     }
 
     public function view()
     {
         return view('backend.order.view');
     }
-
-
 
     public function delivery()
     {
@@ -45,12 +43,7 @@ class OrderController extends Controller
     {
          return view('backend.order.create');
 
-// title
-// main_image
-// description
-// body_image
-// address
-// marriage_date
+
     }
 
     /**
@@ -61,21 +54,21 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        
-         $all =($request->all());
-        $all['main_image'] = (new SimpleUpload)
-            ->file($request->main_image)
+
+        if((is_null($request->image)&& is_null($request->video))||(!empty($request->image)&&!empty($request->video)))
+        {
+            return back()->with('error','Please insert atleast 1 file!');
+        }
+        else
+        {
+        $all =($request->all());
+        $all['image'] = (new SimpleUpload)
+            ->file($request->image)
             ->dirName('Blog.Success')
             ->save();
-
-        $all['body_image'] = (new SimpleUpload)
-        ->file($request->body_image)
-        ->dirName('Blog.Success')
-        ->save();
-
         SuccessStory::create($all);
-
         return back()->with('message', 'Story Added Successfully!');
+        }       
     }
     /**
      * Display the specified resource.
@@ -117,9 +110,6 @@ class OrderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        //
-    }
+    
 
 }

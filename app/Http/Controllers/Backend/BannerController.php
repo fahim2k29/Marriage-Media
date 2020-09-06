@@ -45,7 +45,7 @@ class BannerController extends Controller
         
         if((is_null($request->image)&& is_null($request->video))||(!empty($request->image)&&!empty($request->video)))
         {
-            return back()->with('message','Please insert atleast 1 file!');
+            return back()->with('error','Please insert atleast 1 file!');
         }
         else
         {
@@ -81,6 +81,7 @@ class BannerController extends Controller
     {
         $banner = Banner::find($id);
          // dd($banner);
+         
         return view('backend.banner.edit',compact('banner'));
 
     }
@@ -94,17 +95,34 @@ class BannerController extends Controller
      */
     public function update(BannerUpdateRequest $request, Banner $banner)
     {
-        $all = $request->all();
-        // dd($all);
+        // $all = $request->all();
+        // // dd($all);
+        // $all['image'] = (new SimpleUpload)
+        //     ->file($request->image)
+        //     ->dirName('banners')
+        //     ->deleteIfExists($banner->image)
+        //     ->save();
+
+        // $all = $banner->update($all);
+        // // dd($all);
+        // return back()->with('message', 'Banner Update Successfully!');
+
+
+          if((is_null($request->image)&& is_null($request->video))||(!empty($request->image)&&!empty($request->video)))
+        {
+            return back()->with('error','Please insert atleast 1 file!');
+        }
+        else
+        {
+        $all =($request->all());
         $all['image'] = (new SimpleUpload)
             ->file($request->image)
             ->dirName('banners')
-            ->deleteIfExists($banner->image)
             ->save();
-
         $all = $banner->update($all);
-        // dd($all);
+        // Banner::update($all);
         return back()->with('message', 'Banner Update Successfully!');
+        }
     }
 
     /**

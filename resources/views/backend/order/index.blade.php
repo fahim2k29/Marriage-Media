@@ -27,32 +27,37 @@
         <tr>
             <th class="bg-dark" style="">SL</th>
             <th class="bg-dark" style="">Title</th>
-            <th class="bg-dark" style="">Main-Image</th>
-            <th class="bg-dark" style="">Description</th>
-            <th class="bg-dark" style="">Body-Image</th>
-            <th class="bg-dark" style="">Address</th>
-            <th class="bg-dark" style="">Marriage Date</th>
+            <th class="bg-dark" style="">Image/Video</th>
             <th class="bg-dark" style="">Action</th>
         </tr>
 
      
-        @forelse($sotries as $key => $story)
+        @forelse($stories as $key => $story)
             <tr>
                 <td> {{ $key+1 }} </td>
                 <td> {{$story->title}}</td>
-                <td> <img src="{{ asset($story->main_image) }}"
-                         height="30"
-                         width="120"
-                         alt="No Image"> </td>  
-
-                <td>{!! $story->description  !!}</td>
-                <td><img src="{{ asset($story->body_image) }}"
-                         height="30"
-                         width="120"
-                         alt="No Image"> </td>
-
-                <td>{{ $story->address }}</td>
-                <td>{{ $story->marriage_date }}</td>
+                <td> 
+                     @if(!empty ($story->video))
+                            <div class="col-md-3 card">
+                                <a href="{{ $story->video }}">
+                                @foreach(explode('=',$story->video) as $row)
+                                 @if ($loop->last) 
+                                    <img src="http://i1.ytimg.com/vi/{{$row}}/default.jpg" class="img-responsive" />
+                                    <span class="playbutton"><i class="fa fa-play-circle"></i></span>
+                                @endif
+                                @endforeach
+                                </a>
+                            </div>
+                            @else
+                            <div class="col-md-3 card">
+                                <a href="/success-story">
+                                    <img src="{{ asset($story->image) }}" class="img-responsive"  />
+                                    {{-- <img src="{{ asset($story->image) }}" class="img-responsive"  />xdfghns --}}
+                                </a>
+                            </div>
+                    @endif 
+                        
+                </td>                              
                 <td>
                     <div class="btn-group btn-group-mini btn-corner">
                         <a href="{{ route('backend.order.show') }}"
@@ -62,20 +67,20 @@
                         </a>
 
                         <button type="button" class="btn btn-xs btn-danger"
-                                onclick="delete_check()"
+                                onclick="delete_check({{$story->id}})"
                                 title="Delete">
                             <i class="ace-icon fa fa-trash-o"></i>
                         </button>
                     </div>
-                    <form action=""
-                          id="deleteCheck_{{-- {{ $banner->id }} --}}" method="GET">
+                    <form action="{{ route('backend.site_config.successStory.destroy', $story->id)}}"
+                          id="deleteCheck_{{ $story->id }}" method="GET">
                         @csrf
                     </form>
                 </td>
             </tr>
         @empty
             <tr>
-                <td colspan="8">No data available in table</td>
+                <td colspan="4">No data available in table</td>
             </tr>
         @endforelse
         </tbody>

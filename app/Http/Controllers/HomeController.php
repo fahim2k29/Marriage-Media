@@ -14,6 +14,7 @@ use App\OfficeUse;
 use App\AddPhoto;
 use App\Employment;
 use App\Models\Offer;
+use App\Payment;
 use App\PersonalData;
 use App\ReligionData;
 use App\Rules\MatchOldPassword;
@@ -50,7 +51,21 @@ class HomeController extends Controller
     {
         $offer = Offer::where('id', $id)->first();
         // dd($offer);
+        session()->put('item_id',$id);
         return view('welcome', compact('offer'));
+    }
+
+    public function make_payment()
+    {
+        Payment::create([
+        'user_id'       =>auth()->id(),
+        'package_id'    =>1,
+        'price'         =>Offer::price(),
+        'status'        =>1,
+        'purchase_date' =>Carbon::now(),
+        'expire_date'   =>Offer::duration(),
+        ]);
+
     }
 
     // public function index()

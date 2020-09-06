@@ -34,10 +34,24 @@
                 <td>{{ $key + 1 }}</td>
                 
                 <td>
-                    <img src="{{ asset($banner->image) }}"
-                         height="30"
-                         width="120"
-                         alt="No Image">
+                   @if(!empty ($banner->video))
+                            <div class="col-md-3 card">
+                                <a href="{{ $banner->video }}">
+                                @foreach(explode('=',$banner->video) as $row)
+                                 @if ($loop->last) 
+                                    <img src="http://i1.ytimg.com/vi/{{$row}}/default.jpg" class="img-responsive" />
+                                    <span class="playbutton"><i class="fa fa-play-circle"></i></span>
+                                    @endif
+                                @endforeach
+                                </a>
+                            </div>
+                            @else
+                            <div class="col-md-3 card">
+                                <a href="/success-story">
+                                    <img src="{{ asset($banner->image) }}" class="img-responsive"  />
+                                </a>
+                            </div>
+                    @endif
                 </td>
                 <td>
                     <div class="btn-group btn-group-mini btn-corner">

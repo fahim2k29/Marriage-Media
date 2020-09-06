@@ -995,7 +995,7 @@
 
                         <div class="col-xs-3">
                            
-                            <a href="https://www.smartsoftware.com.bd/">Developed By:  <b> SmartSoftware Ltd. </b></a>                               
+                            <a href="https://www.smartsoftware.com.bd/">Developed By:  <b> Smart Software Ltd. </b></a>                               
 
                             
                         </div>

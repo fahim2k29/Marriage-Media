@@ -16,11 +16,9 @@ class CreateSuccessStoriesTable extends Migration
         Schema::create('success_stories', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('title');
-            $table->string('main_image');
+            $table->string('image')->nullable();
+            $table->string('video')->nullable();
             $table->text('description');
-            $table->string('body_image');
-            $table->string('address');
-            $table->string('marriage_date');
             $table->timestamps();
         });
     }

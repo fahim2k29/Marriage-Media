@@ -9,11 +9,8 @@ class SuccessStory extends Model
 
     protected $fillable = [
         'title',
-        'main_image',
+        'image',
+        'video',
         'description',
-        'body_image',
-        'address',
-        'marriage_date',
-
     ];
 }

@@ -43,13 +43,12 @@
                 </div>
             </div>
 
-
             <!-- Image -->
-            <div class="form-group">
-                <label class="col-sm-2 bolder" for="image">Main_Image
+           <div class="form-group">
+                <label class="col-sm-2 bolder" for="image">Image
                 </label>
                 <div class="col-sm-8">
-                    <input name="main_image"
+                    <input name="image"
                            type="file"
                            id="image"
                            class="form-control"
@@ -61,10 +60,24 @@
                     {{-- <strong class="red">Minimum 150x33 pixels</strong> --}}
                 </div>
             </div>
+            <div >
+                <p style="color: green"> <b>Please insert image or videoLink</b> </p>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 bolder" for="image">Video Link
+                </label>
+                <div class="col-sm-8">
+                    <input name="video"
+                           type="text"
+                           id="video"
+                           class="form-control"
+                           onchange="readURL(this);">
+                </div>
+            </div>
 
 
             <div class="form-group">
-                    <label class="col-sm-2 no-padding-right bolder" for="description">Description </label>
+                    <label class="col-sm-2 no-padding-right bolder required" for="description">Description </label>
                     <div class="col-sm-8">
                         @include('backend.components.summer_note',[
                         'name'=>'description',
@@ -75,56 +88,6 @@
                     </div>
             </div>
 
-            <div class="form-group">
-                <label class="col-sm-2 bolder" for="image">Body_image
-                </label>
-                <div class="col-sm-8">
-                    <input name="body_image"
-                           type="file"
-                           id="image"
-                           class="form-control"
-                           >
-                    <strong class="red">{{ $errors->first('image') }}</strong>
-                    @if($errors->first('image'))
-                        <br>
-                    @endif
-                    {{-- <strong class="red">Minimum 150x33 pixels</strong> --}}
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label class="col-sm-2 bolder" for="address">Address
-                </label>
-                <div class="col-sm-8">
-                    <input name="address"
-                           type="text"
-                           id="address"
-                           class="form-control"
-                           onchange="readURL(this);">
-                    <strong class="red">{{ $errors->first('address') }}</strong>
-                    @if($errors->first('address'))
-                        <br>
-                    @endif
-                    {{-- <strong class="red">Minimum 150x33 pixels</strong> --}}
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label class="col-sm-2 bolder" for="address">Marriage Date
-                </label>
-                <div class="col-sm-8">
-                    <input name="marriage_date"
-                           type="date"
-                           id="date"
-                           class="form-control"
-                           onchange="readURL(this);">
-                    <strong class="red">{{ $errors->first('marriage_date') }}</strong>
-                    @if($errors->first('marriage_date'))
-                        <br>
-                    @endif
-                    {{-- <strong class="red">Minimum 150x33 pixels</strong> --}}
-                </div>
-            </div>
             
 
             <!-- Buttons -->

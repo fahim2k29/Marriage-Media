@@ -8,8 +8,8 @@
                     <ul >
                          @foreach ($slider as $key => $slide)
                          <li  style="background-color: rgb(0, 0, 0);">
-                                <div class="item{{ $key == 0 ? ' active' : '' }}">
-                                    <img src="{{ $slide->image }}" height="620px" width="1350px" >
+                                <div class="item{{ $key == 0 ? ' active' : '' }}" id="slider-wh">
+                                    <img src="{{ $slide->image }}"  >
                                 </div>
                             </li>
                             @endforeach
@@ -154,8 +154,7 @@
             <section class="sectionOurNewApp module">
                 <div class="container">
                     <div class="bgBackground">
-                        <img style="width: 100%; height:100%;" id="Image-Maps-Com-image-maps-2017-10-23-040457" class="img-responsive imageOurnewapp" src="/frontend/assets/images/middle_banner_back.png" border="0" usemap="#image-maps-2017-10-23-040457" alt="" />
-                        
+                        <img src="/frontend/assets/images/middle_banner_back.png" border="0" usemap="#image-maps-2017-10-23-040457" alt="" />
                     </div>
                 </div>
             </section>
@@ -164,11 +163,11 @@
                 <div class="container">
                     <div class="newsucess-stories">
                         <div class="picscroll">
-                        @foreach($banners as $banner)
-                            @if(!empty ($banner->video))
+                        @foreach($stories as $story)
+                            @if(!empty ($story->video))
                             <div class="col-md-3 card">
-                                <a href="{{ $banner->video }}">
-                                @foreach(explode('=',$banner->video) as $row)
+                                <a href="{{ route('successStory_show', $story->id) }}">
+                                @foreach(explode('=',$story->video) as $row)
                                  @if ($loop->last) 
                                     <img src="http://i1.ytimg.com/vi/{{$row}}/default.jpg" class="img-responsive" />
                                     <span class="playbutton"><i class="fa fa-play-circle"></i></span>
@@ -176,17 +175,14 @@
                                 @endforeach
                                 </a>
                             </div>
-                            
                             @else
                             <div class="col-md-3 card">
-                                <a href="/success-story/soniaandabid">
-                                    <img src="{{ asset($banner->image) }}" class="img-responsive"  />
+                                <a href="{{ route('successStory_show', $story->id) }}">
+                                    <img src="{{ asset($story->image) }}" class="img-responsive"  />
                                 </a>
                             </div>
                                 @endif
-                        @endforeach
-
-                           
+                        @endforeach                           
                         </div>
                     </div>
                 </div>

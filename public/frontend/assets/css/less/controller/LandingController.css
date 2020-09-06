@@ -239,7 +239,15 @@ body {
 @media screen and (min-width:900px) {
     .colwac-lg-3 {
         width: 20%;
-        float: left!important
+        float: left!important;
+    }
+    .bgBackground img {
+        height: 100%;
+        width: 100%;
+    }
+    #slider-wh img {
+        height: 620px;
+        width: 1350px;
     }
 }
 
@@ -248,12 +256,28 @@ body {
         width: 12%;
         float: left!important
     }
+    .bgBackground img {
+        height: 100%;
+        width: 100%;
+    }
+    #slider-wh img {
+        height: 620px;
+        width: 1350px;
+    }
 }
 
 @media screen and (min-width:1460px) and (max-width:1732px) {
     .colwac-lg-3 {
         width: 18%;
         float: left!important
+    }
+    .bgBackground img {
+        height: 100%;
+        width: 100%;
+    }
+    #slider-wh img {
+        height: 620px;
+        width: 1350px;
     }
 }
 
@@ -262,6 +286,14 @@ body {
         width: 25%;
         float: left!important
     }
+    .bgBackground img {
+        height: 100%;
+        width: 100%;
+    }
+    #slider-wh img {
+        height: 620px;
+        width: 1350px;
+    }
 }
 
 @media screen and (min-width:2220px) and (max-width:2415px) {
@@ -269,12 +301,28 @@ body {
         width: 27%;
         float: left!important
     }
+    .bgBackground img {
+        height: 100%;
+        width: 100%;
+    }
+    #slider-wh img {
+        height: 620px;
+        width: 1350px;
+    }
 }
 
 @media screen and (min-width:2415px) {
     .colwac-lg-3 {
         width: 29%;
         float: left!important
+    }
+    .bgBackground img {
+        height: 100%;
+        width: 100%;
+    }
+    #slider-wh img {
+        height: 620px;
+        width: 1350px;
     }
 }
 
@@ -367,7 +415,6 @@ body {
 
 .tab-content .img-responsive {
     width: auto;
-
 }
 
 .secondFont {
