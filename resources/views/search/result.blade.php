@@ -16,7 +16,7 @@
             <div class="clearfix topSearchBarwithTags">
                 <div class="pull-left tagsSection">
                     <div class="searchTags">
-                        <form id="frmResult" class="frmResult" action="/searchdisplayresults" method="post">
+                        {{-- <form id="frmResult" class="frmResult" action="/searchdisplayresults" method="post"> --}}
                             <input type="hidden" name="removekeys" id="removekeys" value="" />
 
                             <ul class="tag clearfix" style="margin-top: 5px;">
@@ -31,24 +31,26 @@
 
                                 <li class="tag-item pointerCursor">Add Criteria<span class="smicon-new smicon-plus" style="margin-left: 10px; font-size: 12px;"></span></li>
                             </ul>
-                        </form>
+                        {{-- </form> --}}
                     </div>
                 </div>
 
                 <div class="pull-left savesearchSection">
                     <div class="saveSearchDiv" style="font-weight: normal;">
-                        <form method="post" name="frmsavesearch" id="frmsavesearch" action="/savesearch">
+                        <form id="signupform" class="form-horizontal username-search" role="form" action="{{route('search_username_result')}}" method="get">
+
+                        {{-- <form  name="frmsavesearch" id="frmsavesearch" action="{{route('search_username_result')}}" method="get"> --}}
                             <label for="notify" style="color: #a8217e;">
-                                <input type="checkbox" class="input-control checkbox" checked="" name="notify" value="1" style="visibility: visible; display: inline-block;" /> Notify me of matches that meet my search criteria.
+                                <input type="checkbox" class="input-control checkbox" checked="" name="UserName" value="1" style="visibility: visible; display: inline-block;" /> Notify me of matches that meet my search criteria.
                             </label>
 
                             <!-- <input class="btn btn-primary" type="button" value="Save Search" id="btnSearch" name="btnSearch" /> -->
 
                             <div class="" style="width: 100%;">
                                 <div class="input-group secondFont" id="saveSearch" style="font-size: 17px;">
-                                    <input type="text" class="form-control" id="txtSearch" name="txtSearch" required="required" placeholder="Search name to be saved" />
+                                    <input type="text" class="form-control" id="txtSearch" name="UserName" required="required" placeholder="Search name to be saved" />
                                     <span class="input-group-btn">
-                                        <button class="btn btn-primary" type="submit" id="btnSearch" name="btnSearch">Save Search</button>
+                                        <button class="btn btn-primary" type="submit" id="btnSearch" name="Submit">Save Search</button>
                                     </span>
                                 </div>
                                 <!-- /input-group -->
@@ -58,8 +60,8 @@
                     </div>
 
                     <div class="userbuttons">
-                        <a class="btn btn-primary btnrefinesearch" href="/search/refine">Refine Search</a>
-                        <a class="btn btn-primary btnsearchagain" href="/search">Reset Search</a>
+                        <a class="btn btn-primary btnrefinesearch" href="/search">Again Search</a>
+                        {{-- <a class="btn btn-primary btnsearchagain" href="/search">Reset Search</a> --}}
                     </div>
                 </div>
 
@@ -81,8 +83,11 @@
                                         data-page="1"
                                         style="margin-top: 0px; padding-bottom: 0px; height: auto; width: auto;"
                                     >
-                                        @foreach($users as $user) {{-- @foreach ($religions as $religion) --}} {{-- ..!..card --}}
-                                        <div itemscope="" itemtype="http://schema.org/Person" class="photoSearchbox photoBox clearfix MoniKhanom female" id="photoBox-MoniKhanom ">
+
+                                    {{-- @dd($datas) --}}
+                                    @foreach($datas as $user) 
+                                
+                                        <div itemscope="" itemtype="http://schema.org/Person" class="photoSearchbox  clearfix MoniKhanom female" id="photoBox-MoniKhanom ">
                                             <span class="hidden"><a itemprop="url" href="/user/MoniKhanom"></a> </span>
                                             <a href="{{ route('showInfo', $user->id) }}" target="_parent" title="MoniKhanom ">
                                                 <div class="mainBox clearfix female">
@@ -90,7 +95,7 @@
                                                         <div class="div-gallery-status">Online</div>
 
                                                         @if (isset($user->addphoto))
-                                                        <img src="{{asset('frontend/assets/images/')}}/{{ $user->addphoto->image }}" height="160" width="157" />
+                                                        <img src="{{asset($user->addphoto->image) }}" height="160" width="157" />
                                                         @else
                                                         <img src="{{asset('frontend/assets/images/')}}/default2.jpg" height="160" width="157" />
                                                         @endif
@@ -124,20 +129,22 @@
                                                                     <i class="fa fa-star" aria-hidden="true" style="color: green;"></i>
                                                                     @else
                                                                     <i class="fa fa-star-o" aria-hidden="true"></i>
-                                                                    @endif @if($user->religion)
-                                                                    <i class="fa fa-star" aria-hidden="true" style="color: green;"></i>
-                                                                    @else
-                                                                    <i class="fa fa-star-o" aria-hidden="true"></i>
-                                                                    @endif @if($user->personal)
-                                                                    <i class="fa fa-star" aria-hidden="true" style="color: green;"></i>
-                                                                    @else
-                                                                    <i class="fa fa-star-o" aria-hidden="true"></i>
-                                                                    @endif @if($user->addphoto)
+                                                                    @endif
+                                                                    @if($user->personal)
                                                                     <i class="fa fa-star" aria-hidden="true" style="color: green;"></i>
                                                                     @else
                                                                     <i class="fa fa-star-o" aria-hidden="true"></i>
                                                                     @endif
-
+                                                                    @if($user->religion)
+                                                                    <i class="fa fa-star" aria-hidden="true" style="color: green;"></i>
+                                                                    @else
+                                                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                                                    @endif 
+                                                                    @if($user->addphoto)
+                                                                    <i class="fa fa-star" aria-hidden="true" style="color: green;"></i>
+                                                                    @else
+                                                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                                                    @endif
                                                                     <i class="fa fa-star-o" aria-hidden="true"></i>
 
                                                                     {{-- <span class="sm-line female star-full"> </span>
@@ -153,7 +160,9 @@
                                             </a>
                                             <span class="clearfix"></span>
                                         </div>
-                                        {{-- ../..card --}} @endforeach {{-- @endforeach --}}
+                                        @endforeach 
+                                        {{-- ../..card --}} 
+                                        {{-- @endforeach --}}
                                     </div>
 
                                     <div

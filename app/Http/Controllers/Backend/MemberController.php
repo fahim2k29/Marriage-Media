@@ -8,21 +8,16 @@ use App\Personal;
 use App\User;
 use Illuminate\Http\Request;
 
-class CustomerController extends Controller
+class MemberController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+public function index()
     {
 
         $users      = User::all();
         $addPhotos  = AddPhoto::all();
         // $photo = User::with('addPhoto')->get();
         // dd($photo->toArray());
-        return view('backend.customer.index', compact('users','addPhotos'));
+        return view('backend.member.index', compact('users','addPhotos'));
     }
 
     /**
@@ -58,7 +53,7 @@ class CustomerController extends Controller
         $personals = Personal::whereuser_id($id)->first();
         // dd($personals);
         $addPhotos=AddPhoto::whereuser_id($id)->first();
-        return view('backend.customer.show', compact('users','addPhotos', 'personals'));
+        return view('backend.member.show', compact('users','addPhotos', 'personals'));
     }
 
     /**

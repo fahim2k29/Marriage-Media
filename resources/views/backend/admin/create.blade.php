@@ -1,7 +1,7 @@
 @extends('backend.layouts.master')
-@section('title', 'Add Slider')
+@section('title', 'Add User')
 @section('page-header')
-    <i class="fa fa-info"></i> Add Story
+    <i class="fa fa-info"></i> Add User
 @endsection
 @push('css')
     <style>
@@ -11,43 +11,27 @@
             }
         }
     </style>
-@endpush
+@endpush    
 
 @section('content')
     @include('backend.components.page_header', [
-       'fa' => 'fa fa-list',
-       'name' => 'Story List',
-       'route' =>route('backend.order.index'),
+    //    'fa' => 'fa fa-list',
+    //    'name' => 'Offer List',
+    //    'route' =>route('backend.site_config.offer.index'),
     ])
 
-    <div class="col-sm-9">
-        <form class="form-horizontal" method="post" action="{{route('backend.order.store')}}"
+    <div class="col-sm-9 col-md-12">
+        <form class="form-horizontal" method="post" action="{{route('backend.admin.store')}}"
               role="form"
               enctype="multipart/form-data">
         @csrf
 
-        <div class="form-group">
-                <label class="col-sm-2 bolder" for="image">Story Title
-                </label>
-                <div class="col-sm-8">
-                    <input name="title"
-                           type="text"
-                           id="title"
-                           class="form-control"
-                           >
-                    <strong class="red">{{ $errors->first('title') }}</strong>
-                    @if($errors->first('title'))
-                        <br>
-                    @endif
-                    {{-- <strong class="red">Minimum 150x33 pixels</strong> --}}
-                </div>
-            </div>
 
             <!-- Image -->
-           <div class="form-group">
+            {{-- <div class="form-group">
                 <label class="col-sm-2 bolder" for="image">Image
                 </label>
-                <div class="col-sm-8">
+                <div class="col-sm-4">
                     <input name="image"
                            type="file"
                            id="image"
@@ -57,37 +41,61 @@
                     @if($errors->first('image'))
                         <br>
                     @endif
+                    <strong class="red">Minimum 150x33 pixels</strong> 
+                </div>
+            </div> --}}
+
+            <div class="form-group">
+                <label class="col-sm-2 bolder" for="name"> Name
+                </label>
+                <div class="col-sm-4">
+                    <input name="name"
+                           type="text"
+                           id="name"
+                           class="form-control"
+                           onchange="readURL(this);">
+                    <strong class="red">{{ $errors->first('name') }}</strong>
+                    @if($errors->first('name'))
+                        <br>
+                    @endif
                     {{-- <strong class="red">Minimum 150x33 pixels</strong> --}}
                 </div>
             </div>
-            <div >
-                <p style="color: green"> <b>Please insert image or videoLink</b> </p>
-            </div>
+
             <div class="form-group">
-                <label class="col-sm-2 bolder" for="image">Video Link
+                <label class="col-sm-2 bolder" for="email"> Email
                 </label>
-                <div class="col-sm-8">
-                    <input name="video"
-                           type="text"
-                           id="video"
+                <div class="col-sm-4">
+                    <input name="email"
+                           type="email"
+                           id="email"
+                           
                            class="form-control"
-                           onchange="readURL(this);">
+                           >
+                    <strong class="red">{{ $errors->first('email') }}</strong>
+                    @if($errors->first('email'))
+                        <br>
+                    @endif
+                    {{-- <strong class="red">Minimum 150x33 pixels</strong> --}}
                 </div>
             </div>
 
-
             <div class="form-group">
-                    <label class="col-sm-2 no-padding-right bolder required" for="description">Description </label>
-                    <div class="col-sm-8">
-                        @include('backend.components.summer_note',[
-                        'name'=>'description',
-                        ])
-                        <div class="col-sm-9 col-sm-offset-2">
-                            <strong class=" red">{{ $errors->first('description') }}</strong>
-                        </div>
-                    </div>
+                <label class="col-sm-2 bolder" for="password"> Password
+                </label>
+                <div class="col-sm-4">
+                    <input name="password"
+                           type="password"
+                           id="password"
+                           class="form-control"
+                           >
+                    <strong class="red">{{ $errors->first('password') }}</strong>
+                    @if($errors->first('password'))
+                        <br>
+                    @endif
+                    {{-- <strong class="red">Minimum 150x33 pixels</strong> --}}
+                </div>
             </div>
-
             
 
             <!-- Buttons -->
@@ -96,7 +104,7 @@
                     <button class="btn btn-sm btn-success submit create-button"><i class="fa fa-save"></i> Add
                     </button>
 
-                    <a href="{{route('backend.site_config.slider.index')}}" class="btn btn-sm btn-gray"> <i
+                    <a href="{{route('backend.admin.index')}}" class="btn btn-sm btn-gray"> <i
                             class="fa fa-refresh"></i>
                         Cancel</a>
                 </div>
@@ -104,7 +112,7 @@
         </form>
     </div>
 
-    <div class="col-sm-3">
+    {{-- <div class="col-sm-3">
         <div class="widget-box first">
             <div class="widget-header">
                 <h4 class="widget-title">Current Image</h4>
@@ -127,7 +135,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 @endsection
 
 @push('js')

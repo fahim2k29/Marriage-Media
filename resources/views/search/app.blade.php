@@ -821,7 +821,9 @@
                         <div class="col-md-2 col-lg-2 logo_topbar">
                             <div class="abslogo_position">
                                 <a href="/">
-                                    <img src="/frontend/assets/images/header-logo.gif" border="0" style="height: 65px;" />
+                                    <img src="/frontend/assets/images/marriageMedia.png" border="0" style="height: 100px; margin-top: 0px;" />
+
+                                    {{-- <img src="/frontend/assets/images/mmdb.png" border="0" style="height: 65px;" /> --}}
                                 </a>
                             </div>
                         </div>

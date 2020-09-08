@@ -14,6 +14,7 @@ use App\OfficeUse;
 use App\AddPhoto;
 use App\Employment;
 use App\Models\Offer;
+use App\Models\Package;
 use App\Payment;
 use App\PersonalData;
 use App\ReligionData;
@@ -49,22 +50,27 @@ class HomeController extends Controller
 
     public function welcome($id)
     {
-        $offer = Offer::where('id', $id)->first();
+        $offer = Package::where('id', $id)->first();
         // dd($offer);
         session()->put('item_id',$id);
         return view('welcome', compact('offer'));
     }
 
-    public function make_payment()
+    public function paypal_payment(Request $request, $id)
     {
-        Payment::create([
-        'user_id'       =>auth()->id(),
-        'package_id'    =>1,
-        'price'         =>Offer::price(),
-        'status'        =>1,
-        'purchase_date' =>Carbon::now(),
-        'expire_date'   =>Offer::duration(),
-        ]);
+        
+       return view('/');
+        // $info = Religion::whereuser_id($user_id)->first();
+
+
+        // Payment::create([
+        // 'user_id'       =>auth()->id(),
+        // 'package_id'    =>$request->item_id,
+        // 'price'         =>$item->amount,
+        // 'status'        =>1,
+        // 'purchase_date' =>Carbon::now(),
+        // 'expire_date'   =>Offer::duration(),
+        // ]);
 
     }
 
@@ -283,7 +289,7 @@ class HomeController extends Controller
         $userid = Auth::id();
         $user = User::whereid($userid)->first();
         $addPhoto = AddPhoto::whereuser_id($userid)->first();
-        $offers = Offer::all();
+        $offers = Package::all();
         return view('user.profile.membership', compact('user','addPhoto','offers'));
     }
 

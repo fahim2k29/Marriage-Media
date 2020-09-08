@@ -821,7 +821,7 @@
         <header class="landing-header transition">
             <div class="container">
                 <h1 class="landing-header__logo">
-                    <a href="/" title=""><img src="/frontend/assets/images/marriageMedia.png" alt="" /></a>
+                    <a href="/" title=""><img src="/frontend/assets/images/marriageMedia.png" alt="" style="height: 150px; width:232px; margin-top: 5px;" /></a>
                   
                 </h1>
 

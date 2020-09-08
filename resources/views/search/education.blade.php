@@ -40,7 +40,7 @@
                                 </div>
 
                                 <div id="signupbox" class="col-md-11 col-lg-11 leftmargin boxforms">
-                                    <form id="frmsearchMain" class="form-horizontal" role="form" action="{{ route('search_users')}}" method="get">
+                                    <form action="{{ route('search_education_result')}}" method="get">
                                         <div class="tab-content">
                                             <div class="tab-pane text-style" id="tab1" data-counter="0">
                                                 <div class="panel panel-info" style="border: 0px; box-shadow: 0 0px 0px rgba(0, 0, 0, 0.05);">
@@ -68,15 +68,17 @@
                                                     <div class="panel-body">
                                                         <div role="form" class="form-horizontal">
                                                             <div id="FirstLang-group" class="form-group">
-                                                                <label for="FirstLang" class="col-sm-3 control-label" data-placeholder="Select your option">
+                                                                <label for="FirstLang" class="col-sm-3 control-label" data-placeholder="Select your option"><span class="required">*</span>
                                                                     First Language
                                                                 </label>
+
                                                                 <div class="col-sm-8">
                                                                     <div class="input-group input-group-maxwidth">
                                                                         <select
                                                                             name="FirstLang"
                                                                             id="FirstLang"
-                                                                            data-placeholder="Select your option"
+                                                                            required="required"
+                                                                            data-error="Please fill out this field."
                                                                             class="select2-hidden-accessible"
                                                                             data-select2-id="FirstLang"
                                                                             tabindex="-1"
@@ -99,7 +101,7 @@
                                                                 <div class="col-sm-8">
                                                                     <div class="input-group input-group-maxwidth">
                                                                         <select
-                                                                            name="SecondLang[]"
+                                                                            name="SecondLang"
                                                                             id="SecondLang"
                                                                             data-placeholder="Select your option"
                                                                             class="select2-hidden-accessible"
@@ -170,7 +172,7 @@
                                                                 <div class="col-sm-1 label-tick hidelabel"><span id="Income-span-success" class="form-control-feedback male span-info-label" title=""><i class="fa fa-check fas-lg" style="color: #337ab7"></i></span></div>
                                                             </div>
                                                             <div id="Employment-group" class="form-group">
-                                                                <label for="Employment" class="col-sm-3 control-label" data-placeholder="Select your option">
+                                                                <label for="Employment" class="col-sm-3 control-label" data-placeholder="Select your option"><span class="required">*</span>
                                                                     Profession
                                                                 </label>
                                                                 <div class="col-sm-8">
@@ -179,8 +181,8 @@
                                                                             name="Employment"
                                                                             id="Employment"
                                                                             data-placeholder="Select your option"
-                                                                            class="select2-hidden-accessible"
                                                                             data-select2-id="Employment"
+                                                                            required="required"
                                                                             tabindex="-1"
                                                                             aria-hidden="true"
                                                                         >

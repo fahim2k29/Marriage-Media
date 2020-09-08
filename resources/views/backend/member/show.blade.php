@@ -18,8 +18,8 @@
 @section('content')
     @include('backend.components.page_header', [
        'fa' => 'fa fa-pencil',
-       'name' => 'List customer',
-       'route' => route('backend.customer.index')
+       'name' => 'List member',
+       'route' => route('backend.member.index')
     ])
 
    <div class="col-xs-12 col-sm-3 center">

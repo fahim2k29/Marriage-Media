@@ -61,12 +61,15 @@
         <div class="flex-center position-ref full-height">
             <div class="content">
                 <div class="links">
-                    <div id="paypal-button"></div>
+                    <div id="paypal-button">
+                {{-- <input type="hidden" id="paypal_route" value="{{ route('paypal_payment') }}"> --}}
+                    </div>
                 </div>
             </div>
         </div>
 
 <script src="/frontend/assets/js/paypal.min.js"></script>
+
 
 <!-- <script>
     paypal.Button.render({
@@ -141,14 +144,10 @@
     onAuthorize: function(data, actions) {
       return actions.payment.execute().then(function() {
         // Show a confirmation message to the buyer
-        $.ajax({
-               type:'get',
-               url:'/make-payment',
-               success:function() {
-               alert('Thank you for your purchase!');
-               window.location='/'
-               }
-            });
+        window.alert('Thank you for your purchase!');
+        window.location='/'
+        // var payurl = $('#paypal_route').val();
+        
       });
     }
   }, '#paypal-button');

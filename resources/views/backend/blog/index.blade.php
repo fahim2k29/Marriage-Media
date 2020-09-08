@@ -1,6 +1,6 @@
 @extends('backend.layouts.master')
 
-@section('title','Order-List')
+@section('title','Blog-List')
 @section('page-header')
     <i class="fa fa-list"></i> Success story List
 @stop
@@ -19,7 +19,7 @@
     @include('backend.components.page_header', [
        'fa' => 'fa fa-pencil',
        'name' => 'Story Create',
-       'route' => route('backend.order.create')
+       'route' => route('backend.blog.create')
     ])
 
     <table class="table table-bordered">
@@ -60,7 +60,7 @@
                 </td>                              
                 <td>
                     <div class="btn-group btn-group-mini btn-corner">
-                        <a href="{{ route('backend.order.show') }}"
+                        <a href="{{ route('backend.blog.show') }}"
                            class="btn btn-xs btn-info"
                            title="Edit">
                             <i class="ace-icon fa fa-eye"></i>

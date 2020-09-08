@@ -16,14 +16,18 @@ Route::group(['prefix' => 'sadmin', 'middleware' => ['auth:admin', 'admin'], 'na
     // Product
     require_once __DIR__ . '/backend/product.php';
 
-    // Customer
-    require_once __DIR__ . '/backend/customer.php';
+    // Member
+    require_once __DIR__ . '/backend/member.php';
 
     // Order
-    require_once __DIR__ . '/backend/order.php';
+    require_once __DIR__ . '/backend/blog.php';
 
-    // Purchase
-    require_once __DIR__ . '/backend/purchase.php';
+    // Package
+    require_once __DIR__ . '/backend/package.php';
+
+    //Admin_User
+    require_once __DIR__ . '/backend/admin.php';
+
 });
 
  
@@ -42,6 +46,7 @@ Auth::routes();
 
     
     Route::post('/signup/create_one', 'HomeController@register_create_one')->name('register_create_one');
+    Route::get('/signup/aboutme', 'MainController@aboutme')->name('aboutme');
     
     //...!...profile update//
     
@@ -49,7 +54,7 @@ Auth::routes();
 
 Route::get('/', 'MainController@index')->name('single');
     
-
+Route::get('/signup', 'MainController@register_form_one')->name('register_form_one');
 
    //Route::get('/form', 'MainController@form')->name('form');
 
@@ -57,15 +62,18 @@ Route::get('/search', 'SearchController@index')->name('search_quick');
     Route::get('/religion', 'SearchController@search_religion')->name('search_religion');
     Route::get('/education', 'SearchController@search_education')->name('search_education');
     Route::get('/personal', 'SearchController@search_personal')->name('search_personal');
-    Route::get('/profession', 'SearchController@search_profession')->name('search_profession');
-    Route::get('/search/result', 'SearchController@search_result')->name('search_result');
-    Route::get('/search/users', 'SearchController@search_users')->name('search_users');
+    Route::get('/username', 'SearchController@search_username')->name('search_username');
+    // Route::get('/search/result', 'SearchController@search_result')->name('search_result');
 
 
 Route::get('/pages/news/Umrah-Winners/{id}', 'FooterController@Umrah_Winners')->name('Umrah_Winners');
 Route::get('/success_story', 'SuccessStoryController@successStory')->name('successStory');
 Route::get('/success_story/{id}', 'SuccessStoryController@successStory_show')->name('successStory_show');
 Route::get('/delete/{successStory}','SuccessStoryController@destroy')->name('backend.site_config.successStory.destroy');
+
+Route::get('/paypal/payment/pass', 'HomeController@paypal_payment')->name('paypal_payment');
+
+
 
 
 
@@ -74,8 +82,6 @@ Route::get('/delete/{successStory}','SuccessStoryController@destroy')->name('bac
 
 Route::group(['middleware' => ['verified']], function () {
     
-    Route::get('/signup', 'MainController@register_form_one')->name('register_form_one');
-    Route::get('/signup/aboutme', 'MainController@aboutme')->name('aboutme');
         Route::post('/signup/aboutme/create', 'MainController@aboutme_create')->name('aboutme_create');
     Route::get('/signup/education', 'MainController@education')->name('education');
         Route::post('/signup/education/create', 'MainController@education_create')->name('education_create');
@@ -90,9 +96,6 @@ Route::group(['middleware' => ['verified']], function () {
 
     Route::get('/welcome/{id}', 'HomeController@welcome')->name('welcome');
     Route::get('/make-payment', 'HomeController@make_payment')->name('make_payment');
-
-
-    
 
     Route::get('/user/dashboard', 'HomeController@user_dashboard')->name('user_dashboard');
     Route::get('/user/dashboard/profile', 'HomeController@user_dashboard_profile')->name('user_dashboard_profile');
@@ -116,6 +119,13 @@ Route::group(['middleware' => ['verified']], function () {
     Route::post('/payment/store', 'HomeController@payment_store')->name('payment_store');
 
     Route::get('/showInfo/{id}', 'HomeController@showInfo')->name('showInfo');
+
+    Route::get('/search/users', 'SearchController@search_users')->name('search_users');
+    Route::get('/search/education/result', 'SearchController@search_education_result')->name('search_education_result');
+    Route::get('/search/religion/result', 'SearchController@search_religion_result')->name('search_religion_result');
+    Route::get('/search/personal/result', 'SearchController@search_personal_result')->name('search_personal_result');
+    Route::get('/search/username/result', 'SearchController@search_username_result')->name('search_username_result');
+
 
 });
 

@@ -87,13 +87,13 @@
 
                                      
 
-                                          <li class="{{request()->segment(1)=='profession' ? 'active' : ''}}">
-                                            <a href="/profession" data-title="Profession Search">
+                                          <li class="{{request()->segment(1)=='username' ? 'active' : ''}}">
+                                            <a href="/username" data-title="Profession Search">
                                                 <div class="pull-left serachBaricon">
                                                     <span class="fa fa-universal-access"></span>
                                                 </div>
                                                 <div class="pull-left searchBarname">
-                                                    Profession
+                                                    Username
                                                 </div>
                                                 <div class="pull-left searcyBartickicon">
                                                     <div class="pull-left icontickbox">

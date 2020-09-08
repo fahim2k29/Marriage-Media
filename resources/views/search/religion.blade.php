@@ -44,18 +44,11 @@
                                 </div>
 
                                 <div id="signupbox" class="col-md-11 col-lg-11 leftmargin boxforms">
-                                    <form id="frmsearchMain" class="form-horizontal" role="form" action="{{ route('search_users')}}" method="get">
+                                    <form id="frmsearchMain" class="form-horizontal" role="form" action="{{ route('search_religion_result')}}" method="get">
                                         <div class="tab-content">
                                             <div class="tab-pane text-style active" id="tab2" data-counter="0">
                                                 <div class="panel panel-info" style="border: 0px; box-shadow: 0 0px 0px rgba(0, 0, 0, 0.05);">
-                                                    <!--
-                                        <div class="panel-heading">
-                                            <div class="panel-title">
-                                                Search Religion
-                                            </div>
-                                            <hr />
-                                        </div>
-                                        -->
+                                                   
                                                     <div class="panel-body">
                                                         <div role="form" class="form-horizontal">
                                                             <div id="Sect-group" class="form-group">

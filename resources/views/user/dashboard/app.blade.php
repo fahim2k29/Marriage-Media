@@ -875,7 +875,7 @@
                         <div class="col-md-2 col-lg-2 logo_topbar">
                             <div class="abslogo_position">
                                 <a href="/user/dashboard">
-                                    <img src="/frontend/assets/images/mmdb.png" border="0" style="height: 50px;" />
+                                    <img src="/frontend/assets/images/marriageMedia.png" border="0" style="height: 100px;" />
                                 </a>
                             </div>
                         </div>

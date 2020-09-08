@@ -46,7 +46,7 @@
                 <td></td>         
                 <td>
                     <div class="btn-group btn-group-mini btn-corner">
-                        <a href="{{ route('backend.customer.show', $user->id) }}"
+                        <a href="{{ route('backend.member.show', $user->id) }}"
                            class="btn btn-xs btn-info"
                            title="Edit">
                             <i class="ace-icon fa fa-pencil"></i>

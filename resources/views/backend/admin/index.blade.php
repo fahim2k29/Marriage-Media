@@ -1,8 +1,8 @@
 @extends('backend.layouts.master')
 
-@section('title',' Package List')
+@section('title',' User List')
 @section('page-header')
-    <i class="fa fa-list"></i> Package List
+    <i class="fa fa-list"></i> User List
 @stop
 
 @push('css')
@@ -27,30 +27,20 @@
         <tr>
             <th class="bg-dark" style="width: 10px">SL</th>
             <th class="bg-dark" style="width: 40%">Name</th>
-            <th class="bg-dark" style="width: 40%">Price</th>
-            <th class="bg-dark" style="width: 40%">Duration</th>
+            <th class="bg-dark" style="width: 40%">Emain</th>
             <th class="bg-dark" style="">Action</th>
         </tr>
-        @forelse($offers as $key => $offer)
+        @forelse($users as $key => $offer)
             <tr>
                 <td>{{ $key + 1 }}</td>
-                
-                {{-- <td>
-                    <img src="{{ asset($offer->image) }}"
-                         height="30"
-                         width="120"
-                         alt="No Image">
-                </td> --}}
 
                 <td>{{ $offer->name }}</td>
 
-                <td>{{ $offer->price }}</td>
-
-                <td>{{ $offer->duration }}</td>
-
+                <td>{{ $offer->email }}</td>
+            
                 <td>
                     <div class="btn-group btn-group-mini btn-corner">
-                        <a href="{{ route('backend.site_config.offer.edit', $offer->id) }}"
+                        <a href="{{ route('backend.admin.edit', $offer->id) }}"
                            class="btn btn-xs btn-info"
                            title="Edit">
                             <i class="ace-icon fa fa-pencil"></i>
@@ -62,7 +52,7 @@
                             <i class="ace-icon fa fa-trash-o"></i>
                         </button>
                     </div>
-                    <form action="{{ route('backend.site_config.offer.destroy', $offer->id)}}"
+                    <form action="{{ route('backend.admin.destroy', $offer->id)}}"
                           id="deleteCheck_{{ $offer->id }}" method="GET">
                         @csrf
                     </form>
@@ -70,13 +60,13 @@
             </tr>
         @empty
             <tr>
-                <td colspan="3">No data available in table</td>
+                <td colspan="5">No data available in table</td>
             </tr>
         @endforelse
         </tbody>
     </table>
 
-    @include('backend.partials._paginate', ['data' => $offers])
+    @include('backend.partials._paginate', ['data' => $users])
 @endsection
 
 @push('js')

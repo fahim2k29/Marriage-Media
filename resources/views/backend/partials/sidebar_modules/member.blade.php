@@ -1,5 +1,5 @@
   
-        <li class="{{ strpos($routeName, 'backend.customer') === 0 ? 'active open' : ''}}">
+        <li class="{{ strpos($routeName, 'backend.member') === 0 ? 'active open' : ''}}">
             <a href="#" class="dropdown-toggle">
                 <i class="menu-icon fa fa-users"></i>
                 <span class="menu-text">
@@ -9,8 +9,8 @@
             </a>
             <b class="arrow"></b>
             <ul class="submenu">
-                <li class="{{ $routeName === 'backend.customer.index' ? 'open' : ''}}">
-                    <a href="{{ route('backend.customer.index') }}">
+                <li class="{{ $routeName === 'backend.member.index' ? 'open' : ''}}">
+                    <a href="{{ route('backend.member.index') }}">
                         <i class="menu-icon fa fa-caret-right"></i>
                         All Member
                     </a>

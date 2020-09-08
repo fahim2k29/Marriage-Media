@@ -1,8 +1,8 @@
 @extends('backend.layouts.master')
 
-@section('title','Order-Show')
+@section('title','Blog-Show')
 @section('page-header')
-    <i class="fa fa-list"></i> Order Show
+    <i class="fa fa-list"></i> Blog Show
 @stop
 
 @push('css')

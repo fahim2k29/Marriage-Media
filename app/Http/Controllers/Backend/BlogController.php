@@ -3,33 +3,28 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
-use App\SuccessStory;
 use Illuminate\Http\Request;
+use App\SuccessStory;
 use NabilAnam\SimpleUpload\SimpleUpload;
 
-class OrderController extends Controller
+class BlogController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
 
          $stories = SuccessStory::paginate(10);
         // dd($sotries);
-        return view('backend.order.index', compact('stories'));
+        return view('backend.blog.index', compact('stories'));
     }
 
     public function view()
     {
-        return view('backend.order.view');
+        return view('backend.blog.view');
     }
 
     public function delivery()
     {
-        return view('backend.order.delivery');
+        return view('backend.blog.delivery');
     }
 
     
@@ -41,7 +36,7 @@ class OrderController extends Controller
      */
     public function create()
     {
-         return view('backend.order.create');
+         return view('backend.blog.create');
 
 
     }
@@ -78,7 +73,7 @@ class OrderController extends Controller
      */
     public function show()
     {
-        return view('backend.order.show');
+        return view('backend.blog.show');
     }
 
     /**
@@ -103,13 +98,4 @@ class OrderController extends Controller
     {
         //
     }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    
-
 }

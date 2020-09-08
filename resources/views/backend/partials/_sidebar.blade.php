@@ -14,20 +14,24 @@
         {{-- Dashboard --}}
         @include('backend.partials.sidebar_modules.dashboard')
 
-        {{-- Order --}}
-        @include('backend.partials.sidebar_modules.order')
+        {{-- Blog --}}
+        @include('backend.partials.sidebar_modules.blog')
 
-        {{-- Purchase --}}
-        @include('backend.partials.sidebar_modules.purchase')
+        {{-- Package --}}
+        @include('backend.partials.sidebar_modules.package')
 
         {{-- Product --}}
         {{-- @include('backend.partials.sidebar_modules.product') --}}
 
          {{-- Customer --}}
-        @include('backend.partials.sidebar_modules.customer')
+        @include('backend.partials.sidebar_modules.member')
 
         {{-- Site Config --}}
         @include('backend.partials.sidebar_modules.site_config')
+
+        {{-- Admin --}}
+        @include('backend.partials.sidebar_modules.admin')
+
         
     </ul>
 
