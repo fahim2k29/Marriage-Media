@@ -19,6 +19,7 @@ class CreatePackagesTable extends Migration
             $table->string('duration');
             $table->float('price');
             $table->timestamps();
+           
         });
     }
 

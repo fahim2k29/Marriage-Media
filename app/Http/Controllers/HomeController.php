@@ -20,6 +20,7 @@ use App\PersonalData;
 use App\ReligionData;
 use App\Rules\MatchOldPassword;
 use App\SignupData;
+Use App\Transaction;
 use Auth;
 use Illuminate\Support\Facades\Hash;
 
@@ -48,30 +49,53 @@ class HomeController extends Controller
         return view('home');
     }
 
+
     public function welcome($id)
     {
         $offer = Package::where('id', $id)->first();
-        // dd($offer);
+        // dd($offer->price);
+        $price = $offer->price;
+        session()->put('item_price',$price);
         session()->put('item_id',$id);
         return view('welcome', compact('offer'));
     }
 
-    public function paypal_payment(Request $request, $id)
+
+    public function paypal_payment($item_id)
     {
-        
-       return view('/');
-        // $info = Religion::whereuser_id($user_id)->first();
 
+        $data['user']       = User::find(auth()->id())->first();
+        $data['addPhoto']   = AddPhoto::whereuser_id(auth()->id())->first();
+        $data['users']      = User::paginate(30);
+        $data['emp']        = User::with('education')->get();
+        $data['rlgn']       = User::with('religion')->get();
+        $data['prsn']       = User::with('personal')->get();
+        $data['img']        = User::with('addphoto')->get();
+        $data['dob']       = User::first(['DOB_year']);
 
-        // Payment::create([
-        // 'user_id'       =>auth()->id(),
-        // 'package_id'    =>$request->item_id,
-        // 'price'         =>$item->amount,
-        // 'status'        =>1,
-        // 'purchase_date' =>Carbon::now(),
-        // 'expire_date'   =>Offer::duration(),
-        // ]);
-
+        $user_id = Auth::id();
+        $item_price = Package::whereid($item_id)->first();
+        $item_duration = Package::whereid($item_id)->first();
+        $purchase_date = Carbon::now()->format('Y-m-d H:i:s');
+        $expire_date = Carbon::now()->addDays($item_duration->duration)->format('Y-m-d H:i:s');
+    
+        Payment::create([
+        'user_id'       =>$user_id,
+        'package_id'    =>$item_id,
+        'price'         =>$item_price->price,
+        'status'        =>1,
+        'purchase_date' =>$purchase_date,
+        'expire_date'   =>$expire_date,
+        ]);
+        Transaction::create([
+        'user_id'               =>$user_id,
+        'fk_created_by'         =>$user_id,
+        'fk_updated_by'         =>$user_id,
+        'amount'                =>$item_price->price,
+        'transactionable_type'  =>'paypal',
+        'transactionable_id'    =>'1',
+        ]);
+        return view('user.dashboard.index', $data)->with('message','Thank you for your purchase!');
     }
 
     // public function index()
@@ -98,7 +122,6 @@ class HomeController extends Controller
         return view('user.dashboard.index', $data);
             
     }
-
     public function user_dashboard_profile()
     {
         $userid = Auth::id();
@@ -284,13 +307,34 @@ class HomeController extends Controller
         return view('user.profile.changeEmail', compact('user', 'officeUse', 'addPhoto', 'signupdatas'));
     }
 
-     public function packages()
+    public function packages()
     {
         $userid = Auth::id();
         $user = User::whereid($userid)->first();
         $addPhoto = AddPhoto::whereuser_id($userid)->first();
         $offers = Package::all();
-        return view('user.profile.membership', compact('user','addPhoto','offers'));
+        $pay = Payment::whereuser_id($userid)->wherestatus(1)->first();
+        if(!empty($pay)){
+            $item_duration = Package::whereid($pay->package_id)->first();
+            $diff_day = Carbon::now()->diffInDays($pay->expire_date);
+            
+            $now = Carbon::now();
+    
+            $start_date = $pay->purchase_date;
+    
+            $end_date = $pay->expire_date;
+            if($now->between($start_date,$end_date)){
+                
+            } else {
+                Payment::whereid($pay->id)->update([
+                            'status'=>0,
+                        ]);
+            $pay = Payment::whereuser_id($userid)->wherestatus(1)->first();
+
+            }
+        }
+       
+        return view('user.profile.membership', compact('user','addPhoto','offers', 'pay'));
     }
 
     public function changeEmail_store(Request $request)

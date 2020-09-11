@@ -16,8 +16,6 @@ class PaymentPaypalController extends Controller
             'EPyeN-2YX2TWgdwSDlPvp7NzoHRwr87pjaqqUZH5GOM3vWK2zRGe-2wZ04FCMsAqhdI_wm68T-2bJWOY'
         )
     );
-
-
         $payer = new Payer();
         $payer->setPaymentMethod("paypal");
 
@@ -89,42 +87,8 @@ class PaymentPaypalController extends Controller
         return $payment;
     }
 
-
-
-
-
-
-     public function execute_Payment(Request $request)
+    public function execute_Payment(Request $request)
     {    
-
-        $user_id = auth()->id();
-        // $info = OfficeUse::whereuser_id($user_id)->first();
-         Transaction::create([
-            'user_id' => $user_id,
-            'fk_created_by' => $request->
-            'fk_updated_by' => $request->
-            'amount' => $request->
-            'transactionable_type' => $request->
-            'transactionable_id' => $request->
-
-            
-        ]);
-       Payment::create([
-
-            'user_id' => $user_id,
-            'package_id' => $request->
-            'quantity' => $request->
-            'price' => $request->
-            'discount' => $request->
-            'status' => $request->
-            'purchase_date' => $request->
-            'expire_date' => $request->
-            'payment_amount' => $request->
-            'payment_method' => $request->
-            'transaction_id' => $request->
-           
-        ]);
-
 
         $apiContext = new \PayPal\Rest\ApiContext(
         new \PayPal\Auth\OAuthTokenCredential(

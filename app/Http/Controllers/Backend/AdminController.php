@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use App\Models\Admin;
 use Illuminate\Http\Request;
+use Hash;
 
 class AdminController extends Controller
 {
@@ -33,13 +34,16 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-        $all = $request->all();
-        // $all['image'] = (new SimpleUpload)
-        //     ->file($request->image)
-        //     ->dirName('offers')
-        //     ->save();
+        // $all = $request->all();
+        // $all = Hash::make($request['password']);
 
-        Admin::create($all);
+        Admin::create([
+            'name' =>$request->name,
+            'email' =>$request->email,
+            'password' =>Hash::make($request['password']),
+            'is_super' =>true,
+        ]);
+
         return back()->with('message','User Created Successfully');
     }
 

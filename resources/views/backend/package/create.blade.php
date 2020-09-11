@@ -82,7 +82,7 @@
             </div>
 
             <div class="form-group">
-                <label class="col-sm-2 bolder" for="duration"> Duration (Month)
+                <label class="col-sm-2 bolder" for="duration"> Duration (Day)
                 </label>
                 <div class="col-sm-4">
                     <input name="duration"

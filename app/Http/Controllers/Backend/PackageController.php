@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Offer;
 use App\Http\Requests\Offer\OfferRequest;
 use App\Http\Requests\Offer\OfferUpdateRequest;
 use App\Models\Package;
@@ -16,7 +15,6 @@ class PackageController extends Controller
     {
         $offers = Package::paginate(10);
         return view('backend.package.index',compact('offers'));
-
     }
 
     /**
@@ -38,11 +36,6 @@ class PackageController extends Controller
     public function store(OfferRequest $request)
     {
         $all = $request->all();
-        // $all['image'] = (new SimpleUpload)
-        //     ->file($request->image)
-        //     ->dirName('offers')
-        //     ->save();
-
         Package::create($all);
         return back()->with('message','Package Created Successfully');
     }

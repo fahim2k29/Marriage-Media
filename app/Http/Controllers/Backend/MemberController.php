@@ -6,6 +6,10 @@ use App\AddPhoto;
 use App\Http\Controllers\Controller;
 use App\Personal;
 use App\User;
+use App\Payment;
+
+use App\Models\Package;
+
 use Illuminate\Http\Request;
 
 class MemberController extends Controller
@@ -13,10 +17,10 @@ class MemberController extends Controller
 public function index()
     {
 
-        $users      = User::all();
+        $users      = User::with('payment')->get();
+        $user      = Payment::with('package')->get();
+        // dd($user);
         $addPhotos  = AddPhoto::all();
-        // $photo = User::with('addPhoto')->get();
-        // dd($photo->toArray());
         return view('backend.member.index', compact('users','addPhotos'));
     }
 
@@ -53,6 +57,7 @@ public function index()
         $personals = Personal::whereuser_id($id)->first();
         // dd($personals);
         $addPhotos=AddPhoto::whereuser_id($id)->first();
+
         return view('backend.member.show', compact('users','addPhotos', 'personals'));
     }
 

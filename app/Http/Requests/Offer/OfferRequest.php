@@ -14,7 +14,7 @@ public function authorize()
     public function rules()
     {
         return [
-            'name' => 'required|unique:offers',
+            'name' => 'required|unique:packages',
             'price' => 'required',
             'duration' => 'required|string',
 

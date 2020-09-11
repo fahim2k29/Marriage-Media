@@ -11,6 +11,10 @@ use App\Education;
 use App\Personal;
 use App\Religion;
 use App\AddPhoto;
+use App\Models\Package;
+
+
+
 use Illuminate\Database\Eloquent\Model;
 
 class User extends Authenticatable implements MustVerifyEmail
@@ -94,6 +98,11 @@ class User extends Authenticatable implements MustVerifyEmail
     public function addphoto()
     {
         return $this->hasOne(AddPhoto::class, 'user_id', 'id');
+    }
+
+    public function payment()
+    {
+        return $this->hasOne(Payment::class, 'user_id', 'id');
     }
     
 }

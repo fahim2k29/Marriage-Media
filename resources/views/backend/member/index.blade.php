@@ -28,7 +28,7 @@
                 <th class="bg-dark" style="width: 10%">ID</th>
                 <th class="bg-dark" style="width: 20%">Name</th>
                 <th class="bg-dark" style="width: 20%">Address</th>
-                <th class="bg-dark" style="width: 20%">Package</th>
+                <th class="bg-dark" style="width: 20%">Package-Price</th>
                 <th class="bg-dark" style="width: 20%">purchase Date</th>
                 <th class="bg-dark" style="width: 20%">Expire Date</th>
                 <th class="bg-dark" style="">Action</th>
@@ -41,9 +41,10 @@
                 <td>{{$key+1}}</td>
                 <td>{{$user->UserName}}</td>
                 <td>{{$user->Country}}</td>   
-                <td></td>
-                <td></td>
-                <td></td>         
+                <td>$ {{ number_format($user->payment->package->price, 2) }}</td>
+                <td>{{ $user->payment->purchase_date }} </td>
+                <td>{{ $user->payment->expire_date }} </td>
+      
                 <td>
                     <div class="btn-group btn-group-mini btn-corner">
                         <a href="{{ route('backend.member.show', $user->id) }}"

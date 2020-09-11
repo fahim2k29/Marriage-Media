@@ -14,7 +14,7 @@ class OfferUpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|unique:offers',
+            'name' => 'required|unique:packages',
             'price' => 'required|max:4',
             'duration' => 'required|string',
         ];

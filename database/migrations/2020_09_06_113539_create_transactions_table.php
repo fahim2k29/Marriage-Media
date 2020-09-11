@@ -23,7 +23,6 @@ class CreateTransactionsTable extends Migration
             $table->unsignedBigInteger('transactionable_id');
             $table->timestamps();
 
-
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('fk_created_by')->references('id')->on('users');
             $table->foreign('fk_updated_by')->references('id')->on('users');

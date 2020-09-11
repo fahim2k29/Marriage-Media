@@ -61,54 +61,23 @@
         <div class="flex-center position-ref full-height">
             <div class="content">
                 <div class="links">
-                    <div id="paypal-button">
-                {{-- <input type="hidden" id="paypal_route" value="{{ route('paypal_payment') }}"> --}}
-                    </div>
+                    <div id="paypal-button"></div>
+                                @if(is_null(Session::get('item_id') && Session::get('item_price')))
+                                @else
+                                <?php
+                                    $item_id =   Session::get('item_id');
+                                    $item_price = Session::get('item_price');
+                                ?>      
+                                {{Session::get('item_id')}}   
+                                {{Session::get('item_price')}}                          
+
+                                @endif
                 </div>
             </div>
         </div>
 
 <script src="/frontend/assets/js/paypal.min.js"></script>
 
-
-<!-- <script>
-    paypal.Button.render({
-        env: 'sandbox', // Or 'production'
-        locale: 'en_US',
-        style: {
-                size: 'small',
-                color: 'gold',
-                shape: 'pill',
-            },
-        commit: true,
-        // Set up the payment:
-        // 1. Add a payment callback
-        payment: function(data, actions) {
-        // 2. Make a request to your server
-        return actions.request.post('/api/create-payment')
-            .then(function(res) {
-            // 3. Return res.id from the response
-            // console.log(res);
-            return res.id;
-            });
-        },
-        
-        // Execute the payment:
-        // 1. Add an onAuthorize callback
-        onAuthorize: function(data, actions) {
-        // 2. Make a request to your server
-        return actions.request.post('/api/execute-payment', {
-            paymentID: data.paymentID,
-            payerID:   data.payerID
-        })
-            .then(function(res) {
-                console.log(res);
-                alert('PAYMENT WENT THROUGH!!');
-            // 3. Show the buyer a confirmation message.
-            });
-        }
-    }, '#paypal-button');
-</script> -->
 
 <script>
   paypal.Button.render({
@@ -144,10 +113,15 @@
     onAuthorize: function(data, actions) {
       return actions.payment.execute().then(function() {
         // Show a confirmation message to the buyer
-        window.alert('Thank you for your purchase!');
-        window.location='/'
-        // var payurl = $('#paypal_route').val();
-        
+            // window.alert('Thank you for your purchase!');
+            // window.location='/'
+            
+            var item_id = '<?php echo $item_id; ?>';
+           
+            window.location = '/paypal/payment/' + item_id;
+
+          
+
       });
     }
   }, '#paypal-button');
