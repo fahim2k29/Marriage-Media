@@ -11,6 +11,9 @@ class Package extends Model
         'name','price','duration',
     ];
   
-
+    public function package()
+    {
+        return $this->hasMany('App\Models\Package', 'package_id', 'id');
+    }
     
 }

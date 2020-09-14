@@ -12,32 +12,40 @@
             }
         }
     </style>
+    <style>
+.collapsible {
+  background-color: #428BCA;
+  color: white;
+  cursor: pointer;
+  padding: 7px;
+  width: 50%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+.active, .collapsible:hover {
+  background-color: #555;
+}
+.content {
+  padding: 0 15px;
+  width:50%;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+}
+</style>
 @endpush
 
 @section('content')
     @include('backend.components.page_header')
     <div class="col-sm-9">
         <form class="form-horizontal" method="post"
-              action="{{route('backend.admin.update',$offer->id)}}"
+              action="{{route('backend.admin.update',$user->id)}}"
               role="form" enctype="multipart/form-data">
         @csrf
 
-            <!-- Image -->
-            {{-- <div class="form-group">
-                <label class="col-sm-2 bolder" for="image">Image
-                </label>
-                <div class="col-sm-4">
-                    <input name="image"
-                           type="file"
-                           class="form-control"
-                           onchange="readURL(this);">
-                    <strong class="red">{{ $errors->first('image') }}</strong>
-                    @if($errors->first('image'))
-                        <br>
-                    @endif
-                    <strong class="red">Minimum 150x33 pixels</strong>
-                </div>
-            </div> --}}
+           
 
              <div class="form-group">
                 <label class="col-sm-2 bolder" for="name">Name
@@ -45,7 +53,7 @@
                 <div class="col-sm-4">
                     <input name="name"
                            type="text"
-                           value="{{ $offer->name }}" 
+                           value="{{ $user->name }}" 
                            id="name"
                            class="form-control"
                            >
@@ -57,18 +65,18 @@
                 </div>
             </div>
 
-                <div class="form-group">
+            <div class="form-group">
                 <label class="col-sm-2 bolder" for="price">Email
                 </label>
                 <div class="col-sm-4">
                     <input name="email"
                            type="email"
                            step="any"
-                           value="{{ $offer->email }}" 
+                           value="{{ $user->email }}" 
                            id="email"
                            class="form-control"
                            >
-                    {{-- <strong class="red">{{ $errors->first('price') }}</strong> --}}
+                    {{-- <strong class="red">{{ $errors->first('email') }}</strong> --}}
                     @if($errors->first('email'))
                         <br>
                     @endif
@@ -76,7 +84,30 @@
                 </div>
             </div>
 
-             
+            <button type="button" class="collapsible">Update Password </button>
+            <div class="content">
+            <div class="form-group">
+                <label class="col-sm-2 bolder" for="price">Password
+                </label>
+                <div class="col-sm-6">
+                    <input name="password"
+                           type="password"
+                           step="any"
+                           require="required"  
+                           id="password"
+                           class="form-control"
+                           >
+                    {{-- <strong class="red">{{ $errors->first('password') }}</strong> --}}
+                    @if($errors->first('password'))
+                        <br>
+                    @endif
+                    
+                </div>
+                
+            </div>
+            </div>  
+            <br><br>   
+
             <!-- Buttons -->
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-4">
@@ -88,6 +119,9 @@
                 </div>
             </div>
         </form>
+
+
+
     </div>
    
 @endsection
@@ -104,5 +138,20 @@
                 reader.readAsDataURL(input.files[0]);
             }
         }
+    </script>
+    <script>
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+    for (i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.display === "block") {
+        content.style.display = "none";
+        } else {
+        content.style.display = "block";
+        }
+    });
+    }
     </script>
 @endpush

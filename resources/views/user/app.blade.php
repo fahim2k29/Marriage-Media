@@ -747,14 +747,14 @@
                 display: none;
                 position: absolute;
                 background-color: #f1f1f1;
-                min-width: 80px;
-                box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                min-width: 60px;
+                box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.2);
                 z-index: 1;
             }
 
             .dropdown-content a {
                 color: rgb(0, 0, 0);
-                padding: 7px 7px;
+                padding: 5px 5px;
                 text-decoration: none;
                 display: block;
             }
@@ -855,17 +855,15 @@
                                     </a>
                                 </button>
 
-                                <div class="dropdown-content">
-                                    <a href="/user/dashboard">Dashboard</a>
+                                <div class="dropdown-content">                                   
                                     <a
                                         class="dropdown-item"
                                         href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
-                        document.getElementById('logout-form').submit();"
+                                        document.getElementById('logout-form').submit();"
                                     >
                                         {{ __('Logout') }}
                                     </a>
-
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="padding-left: 30px;">
                                         @csrf
                                     </form>

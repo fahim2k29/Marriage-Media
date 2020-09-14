@@ -38,42 +38,9 @@
 <div class="leftDetails">
 <div class="pull-left userBigPic">
     <div class="rate-statut-wrapper absolute-position">
-        <!-- ngIf: contentCtr.otherPictures && contentCtr.otherPictures.totalImages >= 1 -->
+       
     </div>
-    {{-- <div class="userinfoonpic">
-        <div class="col-md-12">
-            <div class="pull-left usernameLeft2 usernamesection">
-                <div class="pull-left">
-                    <h1>
-                    <a href="/user/fahim900" title="fahim900">{{$aboutme->UserName}}</a>
-                    </h1>
-                </div>
-
-                <div class="pull-left userAge">
-                    23
-                </div>
-                <div class="clearfix"></div>
-            </div>
-            <div class="pull-right flagposition">
-                <div style="display: inline-block;">
-                    <i class="sm-flag-medium bd"></i>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-12">
-            <div class="pull-left contentHeadline">
-                <h2>{{$aboutme->Headline}}</h2>
-            </div>
-            <div class="pull-right">
-                <div class="starSection">
-                    <div class="pointerCursor ratingUser"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    --}}
-        <img align="left" class="img-responsive" src="{{asset('frontend/assets/images/')}}/{{ $addPhoto->image }}"  class="img-responsive img-circle" >
+        <img align="left" class="img-responsive" src="{{asset($addPhoto->image) }}"  class="img-responsive img-circle" >
        
 
     {{-- <img
@@ -449,13 +416,11 @@
 <div class="userProfileView male editsection previewsection" style="display: block;">
 <div class="detialBarProfileview detialBarProfileview-edit">
 <div class="leftDetails">
-<a href="/profile/photos" style="color: #fff; cursor: pointer;">
+
     <div class="upload-image fill-absolute sm-button neutral-text-color-3 sm-inline-edit-profile">
         <div class="empty-icon-text vertical-alignment-in-parent center-align white-text-color">
             <i class="z-page-click-target sm-line camera fontsize-42 lineheight-54 block-element"></i>
-            <span class="add-text block-element fontsize-12 uppercase-text bold-text"> Add Photo</span>
-
-            <!--                                    <span class="click-ink ink-on infinite-loop"></span>-->
+            
         </div>
 
         <div class="rate-statut-wrapper absolute-position">
@@ -463,16 +428,7 @@
         </div>
 
         <div class="userinfoonpic male">
-            <div class="col-md-12">
-                <div class="starSection">
-                    <div class="pointerCursor ratingUser">
-                        <div class="rating">
-                            <span class="sm-line none star-full"></span><span class="sm-line none star-full"></span><span class="sm-line none star-empty graybackGround"></span>
-                            <span class="sm-line none star-empty graybackGround"></span><span class="sm-line none star-empty graybackGround"></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            
             <div class="col-md-12" style="padding-right: 5px;">
                 <div class="z-page-click-target edit-highlight"></div>
 
@@ -483,46 +439,14 @@
                         </h1>
                     </div>
 
-                    <!--                                                <div class="pull-left userAge1">-->
-                    <!--                                                    --><!---->
-                    <!--                                                    <div class="z-page-click-target  online-badge absolute-position ng-scope"></div>-->
-                    <!---->
-                    <!--                                                </div>-->
-                    <!---->
-                    <!--                                                <div class="pull-left">-->
-                    <!--                                                    <a href="/profile/edit#edit">-->
-                    <!--                                                        <div class="z-page-click-target absolute-position edit-icon sm-line software-pencil  "></div>-->
-                    <!--                                                    </a>-->
-                    <!--                                                </div>-->
-
+                  
                     <div class="clearfix"></div>
                 </div>
 
-                <!--                                        <div class="col-md-3" style="padding: 0px; margin-top: -9px;">-->
-                <!--                                            <div class="pull-right flagposition">-->
-                <!--                                                <input type="checkbox" id="switch" /><label for="switch">Toggle</label>-->
-                <!--                                            </div>-->
-                <!--                                        </div>-->
             </div>
         </div>
     </div>
-</a>
-<!--                        <div class="pull-left userBigPic userUplaodPicBig" >-->
-<!--                            <div class="panel panel-success dragbox-div dragbox-private-div dropzone dragprofileedit"-->
-<!--                                 data-isRegister="false" data-imagetype="primary">-->
-<!---->
-<!--                                <form action="/pictureupload" class="" id="my-awesome-dropzone">-->
-<!---->
-<!--                                    <div class="dz-message"><span class="smicon-new smicon-plus "></span>-->
-<!--                                        <br/>-->
-<!---->
-<!---->
-<!--                                        <span class="dropcontent"> Drop files here or click to upload.</span> <br></div>-->
-<!---->
-<!--                                </form>-->
-<!---->
-<!--                            </div>-->
-<!--                        </div>-->
+
 
 <div class="clearfix"></div>
 

@@ -93,7 +93,7 @@
                             <!--Your first month is charged at (USD) $49.00, and renewed at (USD) $49.00 each month until you cancel it.
                         3 month membership is (USD) $99.00 (up-front) and renewed at (USD) $33.00 each month after until you cancel it.-->
 
-                                        @if(is_null($pay))
+                        @if(is_null($pay))
                             <div class="clearfix upgradePagepackages">
                                 <div class="mainPackages">
                                     
@@ -142,10 +142,28 @@
                                     </div>
                                 </div>
                             </div>
-                            @else
-
-
-                            @endif
+                        @else
+                        <h3>Your Current Package :</h3>
+                             <table class="table table-bordered" >
+                                        <thead style="background-color:#3CB371;">
+                                            <tr user="row">                                            
+                                                <th class="bg-dark" style="width: 20%">Package Name</th>
+                                                <th class="bg-dark" style="width: 20%">Package-Price</th>
+                                                <th class="bg-dark" style="width: 20%">purchase Date</th>
+                                                <th class="bg-dark" style="width: 20%">Expire Date</th>
+                                            </tr>
+                                        </thead>
+                                    <tbody >
+                                            <tr>
+                                                {{-- @dd($item); --}}
+                                                <td>{{$item->name}}</td>
+                                                <td>$ {{$item->price}}</td>  
+                                                <td>{{$pay->purchase_date }} </td>
+                                                <td>{{$pay->expire_date }}  <span style="color:red;"><b>Remain {{$diff_days}} Days</b></span></td>
+                                            </tr>
+                                    </tbody>
+                                </table>
+                        @endif
 
                             <div class="clearfix upgradePagePackagesContent" style="display: none;">
                                 <span class="col-xs-12">*Your first month is charged at (USD) $49.00 , and for your convenience your subscription is renewed at (USD) $49.00 every month after your first month until you cancel it.</span>

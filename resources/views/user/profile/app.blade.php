@@ -803,7 +803,7 @@
                                                 </a>
                                             </li>
 
-                                            <li class="">
+                                            {{-- <li class="">
                                                 <a href="/gallery">
                                                     <span style="font-size: 25px; color: rgb(66, 197, 230);">
                                                         <i class="fa fa-picture-o"></i>
@@ -811,7 +811,7 @@
                                                     <div class="icontopheader_left sm-icondefaultcolor">Gallery</div>
                                                     <div class="clearfix"></div>
                                                 </a>
-                                            </li>
+                                            </li> --}}
 
                                             <li class="searchlink">
                                                 <a href="/search">

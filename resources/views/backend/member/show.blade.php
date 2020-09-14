@@ -54,15 +54,11 @@
                     <div class="profile-info-name"> Profile Picture </div>
 
                     <div class="profile-info-value">
-                        <span class="editable editable-click" id="">
-                            @if(isset($addPhotos))
-                        <img id="avatar" class="editable img-responsive editable-click editable-empty" 
-                        src="{{asset('frontend/assets/images/')}}/{{ $addPhotos->image }}" alt="Alex's Avatar" height="300px" width="200px"
-                        >
-                         @else
-                        <img src="{{asset('frontend/assets/images/')}}/default.png" class="img-responsive img-circle" height="300px" width="200px"/>
+                       @if(isset($addPhotos))
+                        <img src="{{asset($addPhotos->image) }}" class="img-responsive img-circle" />
+                        @else
+                        <img src="{{asset('frontend/assets/images/')}}/default2.jpg" class="img-responsive img-circle" />
                         @endif
-                        </span>
                     </div>
                 </div>
 
@@ -79,7 +75,7 @@
 
                     <div class="profile-info-value">
                         <i class=" light-orange bigger-110"></i>
-                        <span class="editable editable-click" id="country">{{$users->Email}}</span>
+                        <span class="editable editable-click" id="country">{{$users->email}}</span>
                         {{-- <span class="editable editable-click" id="city">Amsterdam</span> --}}
                     </div>
                 </div>

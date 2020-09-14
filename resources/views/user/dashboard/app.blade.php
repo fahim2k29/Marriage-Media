@@ -812,12 +812,6 @@
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-        {{-- <script type="text/javascript" async="" src="https://www.google-analytics.com/plugins/ua/ec.js"></script>
-        <script src="https://connect.facebook.net/signals/config/2251928191696851?v=2.9.22&amp;r=stable" async=""></script>
-        <script async="" src="https://connect.facebook.net/en_US/fbevents.js"></script>
-        <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
-        <script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-NNGBZLJ"></script> --}}
-
         <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
 
         <meta name="viewport" content="width=1200" />
@@ -826,17 +820,15 @@
 
         <title>{{$info->name}}</title>
 
-        
-        
         <link rel="stylesheet" href="/frontend/assets/css/less/font-awesome.css" />
         <link rel="stylesheet" href="font-awesome-animation.min.css" />
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-        
+
         <link href="/frontend/assets/css/less/global.css" media="screen" rel="stylesheet" type="text/css" />
         <link href="/frontend/assets/css/less/controller/DashboardController.css" media="screen" rel="stylesheet" type="text/css" />
         <link href="/frontend/assets/css/less/controller/ProfileController.css" media="screen" rel="stylesheet" type="text/css" />
         <link href="/frontend/assets/css/less/controller/MembershipController.css" media="screen" rel="stylesheet" type="text/css" />
-        
+
         <script type="text/javascript" src="/frontend/assets/js/global.min.js"></script>
         <script type="text/javascript" src="/frontend/assets/js/controller/DashboardController.min.js"></script>
         <script type="text/javascript" src="/frontend/assets/js/MembershipController.min.js"></script>
@@ -896,7 +888,7 @@
                                                 </a>
                                             </li>
 
-                                            <li class="">
+                                            {{-- <li class="">
                                                 <a href="/gallery">
                                                     <span style="font-size: 25px; color: rgb(66, 197, 230);">
                                                         <i class="fa fa-picture-o"></i>
@@ -904,7 +896,7 @@
                                                     <div class="icontopheader_left sm-icondefaultcolor">Gallery</div>
                                                     <div class="clearfix"></div>
                                                 </a>
-                                            </li>
+                                            </li> --}}
 
                                             <li class="searchlink">
                                                 <a href="/search">
@@ -916,7 +908,7 @@
                                             </li>
 
                                             <li class="no-cpu">
-                                                <a href="/profile/favourites">
+                                                <a href="#">
                                                     <span style="font-size: 25px; color: red;">
                                                         <i class="fa fa-heart fa-spin"></i>
                                                     </span>
@@ -952,7 +944,7 @@
                                                     <a href="/user/dashboard">
                                                         <img class="img-circle" src="{{asset('frontend/assets/images/')}}/default2.jpg" height="32px" width="32px" />
                                                     </a>
-                                                </div>                                                 
+                                                </div>
                                                 @endif
 
                                                 <div style="margin-top: 10px;">
@@ -1012,36 +1004,12 @@
                             <li class="liheader male-text-color fontsize-12">
                                 <h4 class="primary-text-color fontsize-14">News</h4>
                             </li>
-                            
-                            @foreach ($pages ->where('section', 2) as $page)
-                            {{-- @dd($page); --}}
+
+                            @foreach ($pages ->where('section', 2) as $page) {{-- @dd($page); --}}
                             <li class="primary-font-2 light-font fontsize-12">
                                 <a href="/pages/news/Umrah-Winners/{{$page->id}}"> {{$page->name}} </a>
                             </li>
                             @endforeach
-                            
-                                
-                            {{-- @endforeach --}}
-
-                            {{-- <li class="primary-font-2 light-font fontsize-12">
-                            <a href="/pages/news/{{$page->slug}}/{{$page->id}}"> {{$page->name}} </a>
-                            </li>
-                            <li class="primary-font-2 light-font fontsize-12">
-                                <a href="/pages/news/Reviews/3"> Reviews </a>
-                            </li>
-                            <li class="primary-font-2 light-font fontsize-12">
-                                <a href="/pages/news/In-The-News"> In The News </a>
-                            </li>
-                            <li class="primary-font-2 light-font fontsize-12">
-                                <a href="/pages/news/Site-News">
-                                    Site News
-                                </a>
-                            </li>
-                            <li class="primary-font-2 light-font fontsize-12">
-                                <a href="/pages/news/PR">
-                                    PR
-                                </a>
-                            </li> --}}
                         </ul>
                     </div>
                     <div class="col-xs-3">
@@ -1049,14 +1017,12 @@
                             <li class="liheader female-text-color">
                                 <h4 class="primary-text-color fontsize-14">Our Standards</h4>
                             </li>
-                            
-                            @foreach ($pages->where('section', 3) as $page)
-                            {{-- @dd($page); --}}
+
+                            @foreach ($pages->where('section', 3) as $page) {{-- @dd($page); --}}
                             <li class="primary-font-2 light-font fontsize-12">
                                 <a href="/pages/news/Umrah-Winners/{{$page->id}}"> {{$page->name}} </a>
                             </li>
                             @endforeach
-
                         </ul>
                     </div>
 
@@ -1065,8 +1031,7 @@
                             <li class="liheader male-text-color">
                                 <h4 class="primary-text-color fontsize-14">Help</h4>
                             </li>
-                           @foreach ($pages->where('section', 4) as $page)
-                            {{-- @dd($page); --}}
+                            @foreach ($pages->where('section', 4) as $page) {{-- @dd($page); --}}
                             <li class="primary-font-2 light-font fontsize-12">
                                 <a href="/pages/news/Umrah-Winners/{{$page->id}}"> {{$page->name}} </a>
                             </li>
@@ -1147,17 +1112,57 @@
                                     </div>
                                 </div>
                             </div>
-                            <div id="messaging-threads"></div>
-                            <div id="messaging-thread">
+                            <div id="messaging-threads">
+                                @php $users = App\User::with('addphoto')->get(); // @dd($users) @endphp @foreach ($users as $user)
+                                <div class="thread" data-toggle="tooltip" data-original-title="" title="" rel="11782988-6ba8-5f32-a1f7-b04f2f7f2efc">
+                                    <input type="checkbox" />
+
+                                    <div class="image-holder">
+                                        @if (isset($user->addphoto))
+                                        <img class="img-circle" src="{{asset($user->addphoto->image) }}" height="45px" width="45px" />
+                                        @else
+                                        <img class="img-circle" src="{{asset('frontend/assets/images/')}}/default2.jpg" height="45px" width="45px" />
+                                        @endif
+                                        <div class="badge">1</div>
+                                    </div>
+                                    <div class="UserName">{{$user->UserName}}</div>
+
+                                    <div class="date">03 September</div>
+                                    <div class="last-message-text"></div>
+                                    <span class="glyphicon glyphicon-remove delete"></span>
+                                    <ul class="nav pull-right dots-menu">
+                                        <li class="dropdown">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">...</a>
+                                            <ul class="dropdown-menu extra-options" style="display: none;">
+                                                <li class="extralinks viewprofile cant-block">View Profile</li>
+                                                <li class="extralinks blockuser">Block User</li>
+                                                <li class="extralinks markasunread cant-block">Mark as Unread</li>
+                                                <li class="extralinks markasread cant-block">Mark as Read</li>
+                                                <li class="extralinks blockcountry block-country" data-country="country">Block Messages From United Arab Emirates</li>
+                                                <li class="extralinks removeborder-extralinks report-button btn-report">Report User</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+
+                                    <div class="overlay"><div class="loader-img"></div></div>
+                                </div>
+                                @endforeach
+                            </div>
+
+                            <div id="messaging-thread" class="administrator" rel="05032246-0f8a-59f3-a5a1-ba63b603f8e2">
                                 <div class="thread-header">
                                     <div class="user-details">
-                                        <div class="image-holder"><img src="" /></div>
-                                        <div class="userdetail-section">
-                                            <div class="username"></div>
-                                            <div class="user-blocked badge-info">Blocked</div>
-                                            <div class="details"></div>
+                                        <div class="image-holder">
+                                            <img
+                                                src="//gallery.singlemuslim.com/primary/70x70/ZjJjZTc2NmZhMGIyYTQ0MgulezlixAXw5pAYm--SSIMnP7zdTmznGvboThskjZxX3Y7zNjLbolTyIEj81Vk6IuXiwYJJgdrHF-sQ0Dtuj7eXm2TLM_tNGEyK5_XpqD69UpxVZHN5zaMNA_nPgxYBrg$$$.jpg"
+                                            />
                                         </div>
-                                        <div class="user-buttons">
+                                        <div class="userdetail-section">
+                                            <div class="username">Administrator</div>
+                                            <div class="user-blocked badge-info" style="display: none;">Blocked</div>
+                                            <div class="details">Administrator / -- / Just Muslim / Avon / United Kingdom</div>
+                                        </div>
+                                        <div class="user-buttons" style="display: none;">
                                             <div id="messages-thread-block-user" class="pull-left block-button">
                                                 <span class="sm-line basic-ban"></span><br />
                                                 <span class="button-label">Block User</span>
@@ -1173,8 +1178,42 @@
                                     </div>
                                 </div>
                                 <div class="messages">
-                                    <div class="wrapper"></div>
-                                    <div class="nomessagefound">You have no messages</div>
+                                    <div class="wrapper">
+                                        <div id="messages-loader">Loading More</div>
+                                                                
+                                       
+                                        <div class="message sent" rel="662aa5d6-e761-11ea-82f8-0cc47a546f98">
+                                            <div class="date" style="display: none;">26 August</div>
+                                            <div class="bubble">
+                                                <div class="text">sdtjhaert6sdfgwryjerth</div>
+
+                                                <div class="overlay"><div class="loader-img"></div></div>
+                                            </div>
+
+                                            <div class="controls">
+                                                <a id="messages-thread-delete-message" href="#"><span class="sm-line basic-trashcan"></span><span class="button-label">Delete</span></a>
+                                            </div>
+                                        </div>
+                                        <div class="message received" rel="77b1999d-f4dc-11ea-917d-0cc47a546c48">
+                                            <div class="date">Today</div>
+                                            <div class="bubble">
+                                                <div class="text">
+                                                    Assalamu'alaikum Hope you are in the best of health and Imaan! - Priority member support - See who's read your messages Don't delay, upgrade today and In'Shaa'Allah you could be one of
+                                                    our next success stories. Jazakallah'o khair wasalaam Aisha
+                                                </div>
+
+                                                <div class="overlay"><div class="loader-img"></div></div>
+                                            </div>
+
+                                            <div class="controls">
+                                                <a id="messages-thread-delete-message" href="#"><span class="sm-line basic-trashcan"></span><span class="button-label">Delete</span></a>
+                                                <a id="messages-thread-spam-message" href="#"><span class="message_ban sm-line basic-ban"></span><span class="button-label">Spam</span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="nomessagefound" style="display: none;">You have no messages</div>
+
+                                    <!--            <div class="pre-written"></div>-->
                                 </div>
 
                                 <div class="footer">
@@ -1184,64 +1223,31 @@
                                         Send
                                     </button>
                                 </div>
-                                <div class="footer footer-overlay"></div>
-                                <div class="overlay">
-                                    <div class="loader-img"></div>
-                                </div>
+                                <div class="footer footer-overlay" style="display: none;"></div>
+                                <div class="overlay"><div class="loader-img"></div></div>
                             </div>
-                            <div id="messaging-templates">
-                                <div class="thread" data-toggle="tooltip" data-original-title="" title="">
-                                    <input type="checkbox" />
-
-                                    <div class="image-holder">
-                                        <img src="" />
-                                        <div class="badge"></div>
-                                    </div>
-
-                                    <div class="username"></div>
-                                    <div class="date"></div>
-                                    <div class="last-message-text"></div>
-                                    <span class="glyphicon glyphicon-remove delete"></span>
-                                    <ul class="nav pull-right dots-menu">
-                                        <li class="dropdown">
-                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">...</a>
-                                            <ul class="dropdown-menu extra-options">
-                                                <li class="extralinks viewprofile">View Profile</li>
-                                                <li class="extralinks blockuser">Block</li>
-                                                <li class="extralinks markasunread cant-block">Mark as Unread</li>
-                                                <li class="extralinks markasread cant-block">Mark as Read</li>
-                                                <li class="extralinks blockcountry block-country" data-country="country">Block Message From</li>
-                                                <li class="extralinks removeborder-extralinks report-button btn-report">Report User</li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-
-                                    <div class="overlay">
-                                        <div class="loader-img"></div>
-                                    </div>
-                                </div>
-                                <div class="message">
-                                    <div class="date"></div>
-                                    <div class="bubble">
-                                        <div class="text"></div>
-                                        <div class="seen"><span class="glyphicon glyphicon-ok"></span></div>
-                                        <div class="overlay">
-                                            <div class="loader-img"></div>
-                                        </div>
-                                    </div>
-
-                                    <div class="controls">
-                                        <a id="messages-thread-delete-message" href="#"><span class="sm-line basic-trashcan"></span><span class="button-label">Delete</span></a>
-                                        <a id="messages-thread-spam-message" href="#"><span class="message_ban sm-line basic-ban"></span><span class="button-label">Spam</span></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="packages packagesSectionNew" style="display: none;"></div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
+        {{--
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+            var receiver_id = "";
+            var my_id = "{{ Auth::id() }}";
+            $(document).ready(function () {
+                $(".user").click(function () {
+                    $(".user").removeClass("active");
+                    $(this).addClass("active");
+
+                    receiver_id = $(this).attr("id");
+                    alert(receiver_id);
+                });
+            });
+        </script>
+        --}}
 
         <script type="text/javascript" id="">
             !(function (b, e, f, g, a, c, d) {

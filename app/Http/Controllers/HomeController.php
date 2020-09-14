@@ -78,6 +78,7 @@ class HomeController extends Controller
         $item_duration = Package::whereid($item_id)->first();
         $purchase_date = Carbon::now()->format('Y-m-d H:i:s');
         $expire_date = Carbon::now()->addDays($item_duration->duration)->format('Y-m-d H:i:s');
+        
     
         Payment::create([
         'user_id'       =>$user_id,
@@ -122,6 +123,14 @@ class HomeController extends Controller
         return view('user.dashboard.index', $data);
             
     }
+
+    public function changeStatus(Request $request)
+    {
+        $user = User::find($request->id)->update(['status' => $request->status]);
+
+        return response()->json(['success'=>'Status changed successfully.']);
+    }
+
     public function user_dashboard_profile()
     {
         $userid = Auth::id();
@@ -307,6 +316,7 @@ class HomeController extends Controller
         return view('user.profile.changeEmail', compact('user', 'officeUse', 'addPhoto', 'signupdatas'));
     }
 
+
     public function packages()
     {
         $userid = Auth::id();
@@ -333,8 +343,12 @@ class HomeController extends Controller
 
             }
         }
+        $item = Package::whereid($pay->package_id)->first();
+        $diff_days = Carbon::now()->diffInDays($pay->expire_date);
+
+
        
-        return view('user.profile.membership', compact('user','addPhoto','offers', 'pay'));
+        return view('user.profile.membership', compact('user','addPhoto','offers', 'pay','item','diff_days'));
     }
 
     public function changeEmail_store(Request $request)

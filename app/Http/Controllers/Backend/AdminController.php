@@ -37,6 +37,13 @@ class AdminController extends Controller
         // $all = $request->all();
         // $all = Hash::make($request['password']);
 
+
+         $validatedData = $request->validate([
+        'name' => 'required|unique:admins|max:255',
+        'email'=> 'required|email',
+        'password' => 'required',
+        ]);
+
         Admin::create([
             'name' =>$request->name,
             'email' =>$request->email,
@@ -66,8 +73,8 @@ class AdminController extends Controller
      */
     public function edit($id)
     {
-       $offer = Admin::find($id);
-       return view('backend.admin.edit',compact('offer'));
+       $user = Admin::find($id);
+       return view('backend.admin.edit',compact('user'));
     }
 
     /**
@@ -77,19 +84,27 @@ class AdminController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request,Admin $user)
+    public function update(Request $request, $id)
     {
-        $all = $request->all();
-        // $all['image'] = (new SimpleUpload)
-        //     ->file($request->image)
-        //     ->dirName('banners')
-        //     ->deleteIfExists($offer->image)
-        //     ->save();
-
-        $all = $user->update($all);
-        
-        return back()->with('message', 'Admin Update Successfully!');
+         if($request->password != ''){
+            Admin::where('id', $id)->update([
+                'name' =>$request->name,
+                'email' =>$request->email,
+                'password' =>Hash::make($request['password']),
+                'is_super' =>true,
+            ]);
+        }
+        else{
+            Admin::where('id', $id)->update([
+                'name' =>$request->name,
+                'email' =>$request->email,
+                'is_super' =>true,
+            ]);            
+        }
+        return redirect()->route('backend.admin.index')->with('message', 'Admin Update Successfully!');
     }
+
+   
 
     /**
      * Remove the specified resource from storage.

@@ -99,7 +99,7 @@ Route::get('/signup/addPhoto', 'MainController@addPhoto')->name('addPhoto');
 Route::post('/signup/addPhoto/create', 'MainController@addPhoto_create')->name('addPhoto_create');
 
 });
-
+Route::get('change-status', 'HomeController@changeStatus');
 
 Route::get('/welcome/{id}', 'HomeController@welcome')->name('welcome');
 Route::get('/make-payment', 'HomeController@make_payment')->name('make_payment');
@@ -124,9 +124,7 @@ Route::post('/changeEmail/store', 'HomeController@changeEmail_store')->name('cha
 Route::get('/membership/packages', 'HomeController@packages')->name('packages');
 
 Route::post('/payment/store', 'HomeController@payment_store')->name('payment_store');
-
 Route::get('/showInfo/{id}', 'HomeController@showInfo')->name('showInfo');
-
 Route::get('/paypal/payment/{id}', 'HomeController@paypal_payment')->name('paypal_payment');
 
     Route::get('/search/users', 'SearchController@search_users')->name('search_users');
@@ -134,6 +132,9 @@ Route::get('/paypal/payment/{id}', 'HomeController@paypal_payment')->name('paypa
     Route::get('/search/religion/result', 'SearchController@search_religion_result')->name('search_religion_result');
     Route::get('/search/personal/result', 'SearchController@search_personal_result')->name('search_personal_result');
     Route::get('/search/username/result', 'SearchController@search_username_result')->name('search_username_result');
+
+    Route::get('/message/{id}', 'MessageController@message')->name('message');
+
 
 
 });

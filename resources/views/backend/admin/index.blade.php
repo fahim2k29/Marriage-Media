@@ -27,7 +27,7 @@
         <tr>
             <th class="bg-dark" style="width: 10px">SL</th>
             <th class="bg-dark" style="width: 40%">Name</th>
-            <th class="bg-dark" style="width: 40%">Emain</th>
+            <th class="bg-dark" style="width: 40%">Email</th>
             <th class="bg-dark" style="">Action</th>
         </tr>
         @forelse($users as $key => $offer)
@@ -43,7 +43,7 @@
                         <a href="{{ route('backend.admin.edit', $offer->id) }}"
                            class="btn btn-xs btn-info"
                            title="Edit">
-                            <i class="ace-icon fa fa-pencil"></i>
+                            <i class="ace-icon fa fa-pencil">Update</i>
                         </a>
 
                         <button type="button" class="btn btn-xs btn-danger"

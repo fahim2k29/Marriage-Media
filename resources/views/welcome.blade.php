@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>{{$info->name}}</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
@@ -67,10 +67,7 @@
                                 <?php
                                     $item_id =   Session::get('item_id');
                                     $item_price = Session::get('item_price');
-                                ?>      
-                                {{Session::get('item_id')}}   
-                                {{Session::get('item_price')}}                          
-
+                                ?>
                                 @endif
                 </div>
             </div>
@@ -113,7 +110,7 @@
     onAuthorize: function(data, actions) {
       return actions.payment.execute().then(function() {
         // Show a confirmation message to the buyer
-            // window.alert('Thank you for your purchase!');
+            window.alert('Thank you for your purchase!');
             // window.location='/'
             
             var item_id = '<?php echo $item_id; ?>';

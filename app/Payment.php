@@ -25,4 +25,5 @@ class Payment extends Model
     {
         return $this->belongsTo('App\Models\Package', 'package_id', 'id');
     }
+    
 }

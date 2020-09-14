@@ -16,12 +16,12 @@ class MemberController extends Controller
 {
 public function index()
     {
-
-        $users      = User::with('payment')->get();
-        $user      = Payment::with('package')->get();
-        // dd($user);
+        
+        $users     = User::with('payment')->get();
+        $use      = Payment::with('package')->get();
+        // dd($user;
         $addPhotos  = AddPhoto::all();
-        return view('backend.member.index', compact('users','addPhotos'));
+        return view('backend.member.index', compact('users','addPhotos','use'));
     }
 
     /**
