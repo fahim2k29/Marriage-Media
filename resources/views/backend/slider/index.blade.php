@@ -35,8 +35,7 @@
                 
                 <td>
                     <img src="{{ asset($slider->image) }}"
-                         height="30"
-                         width="120"
+                   height="8%"
                          alt="No Image">
                 </td>
                 <td>

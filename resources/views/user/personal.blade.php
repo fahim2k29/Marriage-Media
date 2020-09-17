@@ -72,9 +72,9 @@
                                                             <select name="Citizenship" id="Citizenship" data-select2-id="Citizenship" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
                                                                 <option value="{{$personal->Citizenship}}" selected="">{{$personal->Citizenship}}</option>
 
-                                                                @foreach ($personaldatas as $personaldata)
+                                                                @foreach ($countries as $personaldata)
 
-                                                                <option>{{$personaldata-> Citizenship_data}}</option>
+                                                                <option>{{$personaldata-> name}}</option>
 
                                                                 @endforeach
                                                             </select>
@@ -87,9 +87,9 @@
                                                             <select name="Origin" id="Origin" data-select2-id="Origin" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
                                                                 <option value="{{$personal->Origin}}" selected="">{{$personal->Origin}}</option>
 
-                                                                @foreach ($personaldatas as $personaldata)
+                                                                @foreach ($countries as $personaldata)
 
-                                                                <option>{{$personaldata-> Origin_data}}</option>
+                                                                <option>{{$personaldata-> name}}</option>
 
                                                                 @endforeach
                                                             </select>
@@ -309,9 +309,9 @@
                                                             <select name="Citizenship" id="Citizenship" required="required" data-select2-id="Citizenship" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
                                                                 <option value="" selected="" data-select2-id="4">Select Option</option>
 
-                                                                @foreach ($personaldatas as $personaldata)
+                                                                @foreach ($countries as $personaldata)
 
-                                                                <option>{{$personaldata-> Citizenship_data}}</option>
+                                                                <option>{{$personaldata-> name}}</option>
 
                                                                 @endforeach
                                                             </select>
@@ -324,9 +324,9 @@
                                                             <select name="Origin" id="Origin" required="required" data-select2-id="Origin" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
                                                                 <option value="" selected="" data-select2-id="4">Select Option</option>
 
-                                                                @foreach ($personaldatas as $personaldata)
+                                                                @foreach ($countries as $personaldata)
 
-                                                                <option>{{$personaldata-> Origin_data}}</option>
+                                                                <option>{{$personaldata-> name}}</option>
 
                                                                 @endforeach
                                                             </select>

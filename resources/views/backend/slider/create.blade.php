@@ -41,7 +41,7 @@
                     @if($errors->first('image'))
                         <br>
                     @endif
-                    {{-- <strong class="red">Minimum 150x33 pixels</strong> --}}
+                  
                 </div>
             </div>
             <div class="form-group">

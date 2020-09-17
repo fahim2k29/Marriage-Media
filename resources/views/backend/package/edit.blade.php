@@ -58,7 +58,7 @@
             </div>
 
                 <div class="form-group">
-                <label class="col-sm-2 bolder" for="price">Price (USD)
+                <label class="col-sm-2 bolder" for="price">Price (EURO)
                 </label>
                 <div class="col-sm-4">
                     <input name="price"

@@ -9,7 +9,7 @@
                          @foreach ($slider as $key => $slide)
                          <li  style="background-color: rgb(0, 0, 0);">
                                 <div class="item{{ $key == 0 ? ' active' : '' }}" id="slider-wh">
-                                    <img src="{{ $slide->image }}"  >
+                                    <img src="{{ $slide->image }}"  class="img-fluid max-width: 100%">
                                 </div>
                             </li>
                             @endforeach
@@ -154,7 +154,7 @@
             <section class="sectionOurNewApp module">
                 <div class="container">
                     <div class="bgBackground">
-                        <img src="/frontend/assets/images/middle_banner_back.png" border="0" usemap="#image-maps-2017-10-23-040457" alt="" />
+                        <img src="/frontend/assets/images/middle_banner_back.png" border="0" usemap="#image-maps-2017-10-23-040457" class="img-fluid w-100" alt="" />
                     </div>
                 </div>
             </section>

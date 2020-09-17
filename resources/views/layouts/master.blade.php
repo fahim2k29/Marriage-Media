@@ -733,14 +733,15 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
         {{-- <script type="text/javascript" async="" src="/frontend/assets/js/plugins/ec.js"></script>
-        <script src="https://connect.facebook.net/signals/config/2251928191696851?v=2.9.22&amp;r=stable" async=""></script>
-        <script async="" src="https://connect.facebook.net/en_US/fbevents.js"></script>
-        <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
-        <script type="text/javascript" async="" src="https://www.gstatic.com/recaptcha/releases/nuX0GNR875hMLA1LR7ayD9tc/recaptcha__en.js"></script>
-        <script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-NNGBZLJ"></script> --}}
-       
-
-        <meta name="viewport" content="width=1200" />
+            <script src="https://connect.facebook.net/signals/config/2251928191696851?v=2.9.22&amp;r=stable" async=""></script>
+            <script async="" src="https://connect.facebook.net/en_US/fbevents.js"></script>
+            <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
+            <script type="text/javascript" async="" src="https://www.gstatic.com/recaptcha/releases/nuX0GNR875hMLA1LR7ayD9tc/recaptcha__en.js"></script>
+            <script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-NNGBZLJ"></script> --}}
+            
+            
+            <meta name="viewport" content="width=1200" />
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link href="/frontend/assets/images/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
         <meta name="apple-itunes-app" content="app-id=1116597910" />
 
@@ -1004,160 +1005,8 @@
             </div>
         </footer>
 
-         <div class="site-overlay"></div>
-         <div class="site-overlaynotification"></div>
-         <div id="MessagesController">
-             <div class="modal fade modal-wide" id="chatModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="false">
-                 <div class="modal-dialog">
-                     <div class="modal-content">
-                         <div id="messaging">
-                             <div class="options">
-                                 <div class="option">
-                                     <div class="check-threads pull-right">Edit</div>
-                                     <div class="check-threads-selectall pull-left">Select All</div>
-                                     <div class="show-thread-deleteoption">
-                                         <div class="pull-right cancellink"><span class="pipeline">|</span>Cancel</div>
-                                         <div class="pull-right deletelink">Delete</div>
-                                         <div class="clearfix"></div>
-                                     </div>
-                                 </div>
-                                 <div class="option-readunred">
-                                     <div class="input-group btn-group btn-group-radio">
-                                         <input
-                                             id="general_hidden_all-0"
-                                             group="general_unread_hidden"
-                                             type="radio"
-                                             class="form-control"
-                                             checked="checked"
-                                             value="0"
-                                             data-size="mini"
-                                             data-toggle="toggle"
-                                             data-on="Yes"
-                                             data-off="No"
-                                             data-onstyle="success"
-                                             data-offstyle="default"
-                                             name="general_hidden_message"
-                                         />
-                                         <label id="label-general_hidden_all" for="general_hidden_all-0" class="activtab"> All Messages</label>
- 
-                                         <input
-                                             id="general_unread-1"
-                                             group="general_unread_hidden"
-                                             type="radio"
-                                             class="form-control"
-                                             value="1"
-                                             data-size="mini"
-                                             data-toggle="toggle"
-                                             data-on="Yes"
-                                             data-off="No"
-                                             data-onstyle="success"
-                                             data-offstyle="default"
-                                             name="general_hidden_message"
-                                         />
-                                         <label id="label-general_unread_hidden" for="general_unread-1" class=" ">
-                                             Unread
-                                             <span class="badge progress-bar-danger badge-xs unreadthread messageCounterUpdatemessage" style="display: none;"> 0 </span>
-                                         </label>
-                                     </div>
- 
-                                     <!--            Unread Only : <input id="messages-threads-unread-only" type="checkbox" data-size="mini" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="default">-->
-                                 </div>
-                             </div>
-                             <div id="messaging-threads"></div>
-                             <div id="messaging-thread">
-                                 <div class="thread-header">
-                                     <div class="user-details">
-                                         <div class="image-holder"><img src="" /></div>
-                                         <div class="userdetail-section">
-                                             <div class="username"></div>
-                                             <div class="user-blocked badge-info">Blocked</div>
-                                             <div class="details"></div>
-                                         </div>
-                                         <div class="user-buttons">
-                                             <div id="messages-thread-block-user" class="pull-left block-button">
-                                                 <span class="sm-line basic-ban"></span><br />
-                                                 <span class="button-label">Block User</span>
-                                             </div>
-                                             <div id="messages-thread-report-user" class="pull-left report-button btn-report">
-                                                 <span class="sm-line basic-flag1"></span><br />
-                                                 <span class="button-label">Report User</span>
-                                             </div>
-                                         </div>
-                                     </div>
-                                     <div class="pull-right closeButton">
-                                         <button type="button" class="close clos_padding" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
-                                     </div>
-                                 </div>
-                                 <div class="messages">
-                                     <div class="wrapper"></div>
-                                     <div class="nomessagefound">You have no messages</div>
- 
-                                     <!--            <div class="pre-written"></div>-->
-                                 </div>
- 
-                                 <div class="footer">
-                                     <textarea id="messageText" name="message" data-noelastic="1" style=""></textarea>
-                                     <button type="submit">
-                                         <span class="glyphicon glyphicon-send"></span><br />
-                                         Send
-                                     </button>
-                                 </div>
-                                 <div class="footer footer-overlay"></div>
-                                 <div class="overlay"><div class="loader-img"></div></div>
-                             </div>
-                             <div id="messaging-templates">
-                                 <div class="thread" data-toggle="tooltip">
-                                     <input type="checkbox" />
- 
-                                     <div class="image-holder">
-                                         <img src="" />
-                                         <div class="badge"></div>
-                                     </div>
- 
-                                     <div class="username"></div>
-                                     <div class="date"></div>
-                                     <div class="last-message-text"></div>
-                                     <span class="glyphicon glyphicon-remove delete"></span>
-                                     <ul class="nav pull-right dots-menu">
-                                         <li class="dropdown">
-                                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">...</a>
-                                             <ul class="dropdown-menu extra-options">
-                                                 <li class="extralinks viewprofile">View Profile</li>
-                                                 <li class="extralinks blockuser">Block</li>
-                                                 <li class="extralinks markasunread cant-block">Mark as Unread</li>
-                                                 <li class="extralinks markasread cant-block">Mark as Read</li>
-                                                 <li class="extralinks blockcountry block-country" data-country="country">Block Message From</li>
-                                                 <li class="extralinks removeborder-extralinks report-button btn-report">Report User</li>
-                                             </ul>
-                                         </li>
-                                     </ul>
- 
-                                     <div class="overlay"><div class="loader-img"></div></div>
-                                 </div>
-                                 <div class="message">
-                                     <div class="date"></div>
-                                     <div class="bubble">
-                                         <div class="text"></div>
-                                         <div class="seen"><span class="glyphicon glyphicon-ok"></span></div>
-                                         <div class="overlay"><div class="loader-img"></div></div>
-                                     </div>
- 
-                                     <div class="controls">
-                                         <a id="messages-thread-delete-message" href="#"><span class="sm-line basic-trashcan"></span><span class="button-label">Delete</span></a>
-                                         <a id="messages-thread-spam-message" href="#"><span class="message_ban sm-line basic-ban"></span><span class="button-label">Spam</span></a>
-                                     </div>
-                                 </div>
-                             </div>
-                             <div class="packages packagesSectionNew" style="display: none;">
-                                 <div class="userMessagePackages">
-                                     <h2 class="nomessageclass" style="display: none;">You have no messages</h2>
-                                 </div>
-                             </div>
-                         </div>
-                     </div>
-                 </div>
-             </div>
-         </div>
+        
+         
  
          <!-- Global site tag (gtag.js) - Google Analytics -->
  

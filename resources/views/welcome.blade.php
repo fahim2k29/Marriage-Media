@@ -79,7 +79,7 @@
 <script>
   paypal.Button.render({
     // Configure environment
-    env: 'sandbox',
+    env: 'production',
     client: {
       sandbox: 'demo_sandbox_client_id',
       production: 'demo_production_client_id'
@@ -101,7 +101,7 @@
         transactions: [{
           amount: {
             total: {{$offer->price}},
-            currency: 'EUR'
+            currency: 'GBP'
           }
         }]
       });

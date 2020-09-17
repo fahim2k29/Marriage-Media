@@ -324,6 +324,7 @@ class HomeController extends Controller
         $addPhoto = AddPhoto::whereuser_id($userid)->first();
         $offers = Package::all();
         $pay = Payment::whereuser_id($userid)->wherestatus(1)->first();
+        
         if(!empty($pay)){
             $item_duration = Package::whereid($pay->package_id)->first();
             $diff_day = Carbon::now()->diffInDays($pay->expire_date);
@@ -343,12 +344,8 @@ class HomeController extends Controller
 
             }
         }
-        $item = Package::whereid($pay->package_id)->first();
-        $diff_days = Carbon::now()->diffInDays($pay->expire_date);
-
-
-       
-        return view('user.profile.membership', compact('user','addPhoto','offers', 'pay','item','diff_days'));
+          
+        return view('user.profile.membership', compact('user','addPhoto','offers', 'pay'));
     }
 
     public function changeEmail_store(Request $request)

@@ -25,6 +25,8 @@ use App\SignupData;
 use App\User;
 use App\Models\Banner;
 use App\SuccessStory;
+use App\Country;
+
 
 class MainController extends Controller
 {
@@ -58,8 +60,10 @@ class MainController extends Controller
     public function register_form_one()
     {
         $signupdatas = SignupData::all();
+        $countries  = Country::all();
+        // dd($countries->toArray());
 
-        return view('user.register', compact('signupdatas'));
+        return view('user.register', compact('signupdatas', 'countries'));
     }
     
     public function aboutme()
@@ -137,7 +141,8 @@ class MainController extends Controller
         $user_id = Auth::user()->id;
         $personal = Personal::whereuser_id($user_id)->first();
         $personaldatas = PersonalData::all();
-        return view('user.personal', compact('personal', 'personaldatas'));
+        $countries  = Country::all();
+        return view('user.personal', compact('personal', 'personaldatas', 'countries'));
     }
     function personal_create(Request $request)
     {

@@ -82,8 +82,8 @@
                             <div class="controls">
                                 <select name="Country" id="Country" required="required" data-error="Please fill out this field." class="select2-hidden-accessible" data-select2-id="Country" tabindex="-1" aria-hidden="true">
                                     <option value="" selected="" data-select2-id="4">Select Country</option>
-                                    @foreach ($signupdatas as $signupdata)
-                                    <option>{{$signupdata->Country_data}}</option>
+                                    @foreach ($countries as $signupdata)
+                                    <option>{{$signupdata->name}}</option>
                                     @endforeach
                                 </select>
                             </div>

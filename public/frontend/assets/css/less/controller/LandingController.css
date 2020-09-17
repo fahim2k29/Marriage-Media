@@ -133,8 +133,8 @@ body {
     font-size: 12px;
     line-height: 1.42857143;
     border-radius: 15px;
-    background-color: #5cb85c!important;
-    border-color: #5cb85c!important
+    background-color: #5c72b8!important;
+    border-color: #5c72b8!important
 }
 
 #messagegrid .btn-circle-counter-white {
@@ -262,7 +262,7 @@ body {
     }
     #slider-wh img {
         height: 620px;
-        width: 1350px;
+        
     }
 }
 

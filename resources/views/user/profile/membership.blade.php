@@ -147,7 +147,7 @@
                              <table class="table table-bordered" >
                                         <thead style="background-color:#3CB371;">
                                             <tr user="row">                                            
-                                                <th class="bg-dark" style="width: 20%">Package Name</th>
+                                                
                                                 <th class="bg-dark" style="width: 20%">Package-Price</th>
                                                 <th class="bg-dark" style="width: 20%">purchase Date</th>
                                                 <th class="bg-dark" style="width: 20%">Expire Date</th>
@@ -156,10 +156,10 @@
                                     <tbody >
                                             <tr>
                                                 {{-- @dd($item); --}}
-                                                <td>{{$item->name}}</td>
-                                                <td>$ {{$item->price}}</td>  
+                                                {{-- <td>{{$pay->name}}</td> --}}
+                                                <td>$ {{number_format($pay->price, 2)}}</td>  
                                                 <td>{{$pay->purchase_date }} </td>
-                                                <td>{{$pay->expire_date }}  <span style="color:red;"><b>Remain {{$diff_days}} Days</b></span></td>
+                                                <td>{{$pay->expire_date }}</td>
                                             </tr>
                                     </tbody>
                                 </table>
