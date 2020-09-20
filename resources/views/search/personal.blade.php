@@ -72,8 +72,8 @@
                                                                             aria-hidden="true"
                                                                         >
                                                                             <option>Select Option</option>
-                                                                            @foreach ($personaldatas as $personaldata)
-                                                                            <option>{{$personaldata->Citizenship_data}}</option>
+                                                                            @foreach ($country as $personaldata)
+                                                                            <option>{{$personaldata->name}}</option>
                                                                             @endforeach
                                                                         </select>
                                                                     </div>
@@ -91,8 +91,8 @@
                                                                     <div class="input-group input-group-maxwidth">
                                                                         <select name="Origin" id="Origin" data-placeholder="Select your option" class="select2-hidden-accessible" data-select2-id="Origin" tabindex="-1" aria-hidden="true">
                                                                             <option>Select Option</option>
-                                                                            @foreach ($personaldatas as $personaldata)
-                                                                            <option>{{$personaldata->Origin_data}}</option>
+                                                                            @foreach ($country as $personaldata)
+                                                                            <option>{{$personaldata->name}}</option>
                                                                             @endforeach
                                                                         </select>
                                                                     </div>

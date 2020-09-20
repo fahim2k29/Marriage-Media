@@ -18,7 +18,7 @@
                     <b class="arrow"></b>
                 </li>
             </ul> --}}
-            <ul class="submenu">
+            <!-- <ul class="submenu">
                 <li class="{{ $routeName === 'backend.site_config.banner' ? 'open' : ''}}">
                     <a href="{{route('backend.site_config.banner.index')}}">
                         <i class="menu-icon fa fa-caret-right"></i>
@@ -26,7 +26,7 @@
                     </a>
                     <b class="arrow"></b>
                 </li>
-            </ul>
+            </ul> -->
             <ul class="submenu">
                 <li class="{{ $routeName === 'backend.site_config.slider' ? 'open' : ''}}">
                     <a href="{{route('backend.site_config.slider.index')}}">

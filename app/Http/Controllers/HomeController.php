@@ -377,7 +377,7 @@ class HomeController extends Controller
         // dd($aboutmes);
         $addPhotos  = AddPhoto::whereuser_id($id)->first();
         // dd($aboutmes->toArray());
-        return view('user.profile.showInfo', compact('user', 'aboutmes', 'addPhoto', 'signupdatas', 'users', 'addPhotos','religions', 'personals', 'educations'));
+        return view('user.profile.showInfo', compact('user', 'aboutmes', 'addPhoto','users', 'addPhotos','religions', 'personals', 'educations'));
     } 
 
     

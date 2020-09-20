@@ -74,8 +74,8 @@
                                                                 <div class="col-sm-8">
                                                                     <div class="input-group input-group-maxwidth">
                                                                         <select name="Country" id="Country" class="form-control-values select2-hidden-accessible" data-select2-id="Country" tabindex="-1" aria-hidden="true">                                                                      <option>Select Option</option>
-                                                                            @foreach ($signupdatas as $signupdata)
-                                                                            <option>{{$signupdata->Country_data}}</option>
+                                                                            @foreach ($country as $signupdata)
+                                                                            <option>{{$signupdata->name}}</option>
                                                                             @endforeach
                                                                         </select>
                                                                     </div>

@@ -19,18 +19,7 @@
                         {{-- <form id="frmResult" class="frmResult" action="/searchdisplayresults" method="post"> --}}
                             <input type="hidden" name="removekeys" id="removekeys" value="" />
 
-                            <ul class="tag clearfix" style="margin-top: 5px;">
-                                <li class="tag-item-change tag-item-primarycolor" data-value="050" data-label="Country">
-                                    <span class="tag-item-change-span">
-                                        Country : Bangladesh
-                                    </span>
-                                    <span fieldname="Country" class="smicon-new smicon-remove" style="margin-left: 7px; font-size: 12px;"></span>
-
-                                    <input type="hidden" name="Country" value="050" />
-                                </li>
-
-                                <li class="tag-item pointerCursor">Add Criteria<span class="smicon-new smicon-plus" style="margin-left: 10px; font-size: 12px;"></span></li>
-                            </ul>
+                           
                         {{-- </form> --}}
                     </div>
                 </div>

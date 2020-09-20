@@ -830,7 +830,7 @@
                         <div class="col-md-2 col-lg-2 logo_topbar">
                             <div class="abslogo_position">
                                 <a href="/">
-                                    <img src="/frontend/assets/images/mmdb.png" border="0" style="height: 65px;" />
+                                    <img src="/frontend/assets/images/marriageMedia.png" border="0" style="height: 90px;" />
                                 </a>
                             </div>
                         </div>
@@ -984,7 +984,7 @@
                         <div class="col-xs-9">
                             <p style="font-size: 13px;">
                                 <?php echo date("Y"); ?>
-                                &copy; {{$info->site_title}}
+                                &copy; {{$info->name}}
                             </p>
                         </div>
 

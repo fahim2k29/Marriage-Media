@@ -16,25 +16,21 @@ class EmploymentTableSeeder extends Seeder
          
 
         Employment::create([
-            
             'employment_value' => 'Communications Manager',
             'employment_EducationLevel'=>'Bachelors degree',
             'employment_Language'=>'English',
             ]);
         Employment::create([
-          
           'employment_value' => 'Concierge',
           'employment_EducationLevel'=>'Masters degree',
           'employment_Language'=>'Bengali',
             ]);
         Employment::create([
-            
             'employment_value' => 'Desk Manager',
             'employment_EducationLevel'=>'College',
             'employment_Language'=>'Arabic',
             ]);
         Employment::create([
-    
             'employment_value' => 'Desk Manager',
             'employment_EducationLevel'=>'College',
             'employment_Language'=>'Arabic',

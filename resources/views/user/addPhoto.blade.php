@@ -81,29 +81,7 @@
                                                                     <ul>
                                                                         <li>
                                                                               <div class="col-sm-3">
-        <div class="widget-box first">
-            <div class="widget-header">
-                <h4 class="widget-title">Current Image</h4>
-
-                <div class="widget-toolbar">
-                    <a href="#" data-action="collapse">
-                        <i class="ace-icon fa fa-chevron-up"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="widget-body"
-                 style="display:flex; align-items: center; justify-content: center; height:100px;">
-                <div class="widget-main">
-                    <div class="form-group">
-                        <div class="col-xs-12">
-                            <img id="current" src="" width="100" height="100" class="img-responsive center-block"
-                                 alt="image">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+        
                                                                             {{-- <img src="/frontend/assets/images/guideline_images/primarypic.jpg" class="img-responsive" /> --}}
                                                                         </li>
                                                                     </ul>
@@ -116,8 +94,8 @@
                                                                         <li style="width: 100%;">Passport Style</li>
                                                                         <li style="width: 100%;">Clear face image</li>
 
-                                                                        <li class="span-icon smicon-new smicon-remove newlistyle"><span class="secondFont">No sun glasses</span></li>
-                                                                        <li class="span-icon smicon-new smicon-remove newlistyle"><span class="secondFont">No snapchat filters</span></li>
+                                                                        <li ><span class="secondFont">No sun glasses</span></li>
+                                                                        <li><span class="secondFont">No snapchat filters</span></li>
                                                                     </ul>
                                                                 </div>
                                                                 <div class="clearfix"></div>

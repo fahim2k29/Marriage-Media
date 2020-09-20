@@ -187,7 +187,7 @@
 
                         <div class="width-100 shortcut-boxes padding-box">
                             <div class="box width-48 pull-left bg-white margin-right-5">
-                                <a href="/profile/blocked">
+                                <a href="#">
                                     <div class="z-page-click-target icon padding-box double-padding">
                                         <span style="font-size: 56px; color: rgb(66, 197, 230);">
                                             <i class="fa fa-ban"></i>
@@ -199,7 +199,7 @@
                                 </a>
                             </div>
                             <div class="box width-48 bg-white pull-right">
-                                <a href="/profile/communication-preferences">
+                                <a href="#">
                                     <div class="z-page-click-target icon padding-box double-padding relative-position">
                                         <span style="font-size: 56px; color: rgb(66, 197, 230);">
                                             <i class="fa fa-envelope-open-o"></i>
@@ -219,7 +219,7 @@
 
                         <div class="width-100 shortcut-boxes padding-box">
                             <div class="box width-48 pull-left bg-white margin-right-5">
-                                <a href="/pages/helpandsupportnew">
+                                <a href="#">
                                     <div class="z-page-click-target icon padding-box double-padding">
                                         <span style="font-size: 56px; color: rgb(66, 197, 230);">
                                             <i class="fa fa-question-circle-o"></i>
@@ -231,7 +231,7 @@
                                 </a>
                             </div>
                             <div class="box width-48 bg-white pull-right">
-                                <a href="/page/contactus">
+                                <a href="#">
                                     <div class="z-page-click-target icon padding-box double-padding">
                                         <span style="font-size: 56px; color: rgb(66, 197, 230);">
                                             <i class="fa fa-address-book-o"></i>
@@ -303,9 +303,9 @@
                         </div>
                         <div class="clearfix"></div>
 
-                        <div class="width-100 shortcut-boxes padding-box">
+                        <!-- <div class="width-100 shortcut-boxes padding-box">
                             <div class="box width-48 pull-left bg-white margin-right-5">
-                                <a href="/success-stories">
+                                <a href="#">
                                     <div class="z-page-click-target icon padding-box double-padding">
                                         <span style="font-size: 56px; color: rgb(66, 197, 230);">
                                             <i class="fa fa-snowflake-o"></i>
@@ -317,7 +317,7 @@
                                 </a>
                             </div>
                             <div class="box width-48 bg-white pull-right">
-                                <a href="/page/news/allnews/In%20The%20News">
+                                <a href="#">
                                     <div class="z-page-click-target icon padding-box double-padding">
                                         <span style="font-size: 56px; color: rgb(66, 197, 230);">
                                             <i class="fa fa-newspaper-o"></i>
@@ -331,11 +331,11 @@
                             </div>
 
                             <div class="clearfix"></div>
-                        </div>
+                        </div> -->
 
-                        <div class="width-100 shortcut-boxes padding-box">
+                        <!-- <div class="width-100 shortcut-boxes padding-box">
                             <div class="box width-48 pull-left bg-white margin-right-5">
-                                <a href="/page/terms_and_conditions">
+                                <a href="#">
                                     <div class="icon padding-box double-padding">
                                         <span style="font-size: 56px; color: rgb(66, 197, 230);">
                                             <i class="fa fa-link"></i>
@@ -361,7 +361,7 @@
                             </div>
 
                             <div class="clearfix"></div>
-                        </div>
+                        </div> -->
 
                         <div class="sm-info-cards quick-link-panel">
                             <div class="clearfix"></div>

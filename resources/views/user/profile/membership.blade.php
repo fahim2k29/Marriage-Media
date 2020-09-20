@@ -143,7 +143,7 @@
                                 </div>
                             </div>
                         @else
-                        <h3>Your Current Package :</h3>
+                        <h3>Package Information :</h3>
                              <table class="table table-bordered" >
                                         <thead style="background-color:#3CB371;">
                                             <tr user="row">                                            

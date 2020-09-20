@@ -12,8 +12,8 @@ class PaymentPaypalController extends Controller
     {
         $apiContext = new \PayPal\Rest\ApiContext(
         new \PayPal\Auth\OAuthTokenCredential(
-            'AUx7DbC8y8w37IjdcCrJpYJ4YP1LLrzPsEDvpZx36wMmuYaDYNfkWJ1WfrNbsV_sPtGkk43ktED7vQEi',  //clientID
-            'EHK9G-7xXlTwBoRzWm_FsIi4p_UH3jKICUdhJo-szB5S1RGGSzXa0NrVYZB0UdkePEVMVxyJrjm4BJey'  //clientSecret
+            'AS5y_yc9FRQPLU1cnqloG-ZZDetRrJX9RRnpQJQ6zzEvgONxcRkw-ko5wAl8ToSzqGSufWRqe7Bs5WVP',  //clientID
+            'EPyeN-2YX2TWgdwSDlPvp7NzoHRwr87pjaqqUZH5GOM3vWK2zRGe-2wZ04FCMsAqhdI_wm68T-2bJWOY'  //clientSecret
         )
     );
         $payer = new Payer();
@@ -92,8 +92,8 @@ class PaymentPaypalController extends Controller
 
         $apiContext = new \PayPal\Rest\ApiContext(
         new \PayPal\Auth\OAuthTokenCredential(
-            'AUx7DbC8y8w37IjdcCrJpYJ4YP1LLrzPsEDvpZx36wMmuYaDYNfkWJ1WfrNbsV_sPtGkk43ktED7vQEi', //clientID
-            'EHK9G-7xXlTwBoRzWm_FsIi4p_UH3jKICUdhJo-szB5S1RGGSzXa0NrVYZB0UdkePEVMVxyJrjm4BJey' //clientSecret
+            'AS5y_yc9FRQPLU1cnqloG-ZZDetRrJX9RRnpQJQ6zzEvgONxcRkw-ko5wAl8ToSzqGSufWRqe7Bs5WVP',  //clientID
+            'EPyeN-2YX2TWgdwSDlPvp7NzoHRwr87pjaqqUZH5GOM3vWK2zRGe-2wZ04FCMsAqhdI_wm68T-2bJWOY'  //clientSecret
         )
     );
         

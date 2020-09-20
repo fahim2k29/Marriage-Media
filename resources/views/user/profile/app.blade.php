@@ -986,7 +986,7 @@
                         <div class="col-xs-9">
                             <p style="font-size: 13px;">
                                 <?php echo date("Y"); ?>
-                                &copy; {{$info->site_title}}
+                                &copy; {{$info->name}}
                             </p>
                         </div>
 

@@ -79,7 +79,7 @@
 <script>
   paypal.Button.render({
     // Configure environment
-    env: 'production',
+    env: 'sandbox',
     client: {
       sandbox: 'demo_sandbox_client_id',
       production: 'demo_production_client_id'

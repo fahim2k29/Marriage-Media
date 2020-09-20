@@ -12,6 +12,8 @@ use App\Religion;
 use App\ReligionData;
 use App\SignupData;
 use App\User;
+use App\Country;
+
 use Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth as FacadesAuth;
@@ -20,8 +22,8 @@ class SearchController extends Controller
 {
     public function index()
     {
-        $signupdatas = SignupData::all();
-        return view('search.quick', compact('signupdatas'));
+        $country = Country::all();
+        return view('search.quick', compact('country'));
     }
 
     public function search_religion()
@@ -40,7 +42,9 @@ class SearchController extends Controller
     public function search_personal()
     {
         $personaldatas = PersonalData::all();
-        return view('search.personal', compact('personaldatas'));
+        $country = Country::all();
+
+        return view('search.personal', compact('personaldatas','country'));
     }
 
     public function search_username()

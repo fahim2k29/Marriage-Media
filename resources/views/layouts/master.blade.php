@@ -746,12 +746,10 @@
         <meta name="apple-itunes-app" content="app-id=1116597910" />
 
       
-            @if(!empty($info->site_title && $info->short_desc))
-
-            <title>{{$info->site_title}} - {{$info->short_desc}} </title>
-           
+            @if(!empty($info->name))
+            <title>{{$info->name}}</title>
             @else
-           <title> Company Name</title>
+           <title> Bismillah Marriage</title>
             @endif
 
         
@@ -990,7 +988,7 @@
 
                     <div class="col-xs-12">
                         <div class="col-xs-9">
-                            <p style="font-size: 13px;">  <?php echo date("Y"); ?> &copy;  {{$info->site_title}} </p>
+                            <p style="font-size: 13px;">  <?php echo date("Y"); ?> &copy;  {{$info->name}} </p>
                         </div>
                         
 
