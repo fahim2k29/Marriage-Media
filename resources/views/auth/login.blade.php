@@ -8,7 +8,7 @@
             @foreach ($slider as $key => $slide)
             <li  style="background-color: rgb(0, 0, 0);">
                 <div class="item{{ $key == 0 ? ' active' : '' }}">
-                    <img src="{{ $slide->image }}" height="620px" width="1350px" >
+                    <img src="{{ $slide->image }}" height="620px" width="100%" >
                 </div>
             </li>
             @endforeach
