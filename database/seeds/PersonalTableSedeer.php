@@ -13,6 +13,9 @@ class PersonalTableSedeer extends Seeder
     public function run()
     {
          PersonalData::create([
+             
+            'Citizenship_data' => 'dth',
+            'Origin_data' => 'dth',
             'Relocation_data'=> 'Nationally',
             'Income_data'=> '15000-25000',
             'MarryIn_data'=> 'As soon as possible',
@@ -29,6 +32,8 @@ class PersonalTableSedeer extends Seeder
             ]);
 
             PersonalData::create([
+            'Citizenship_data' => 'dth',
+            'Origin_data' => 'dth',
             'Relocation_data'=> 'Internationally',
             'Income_data'=> '25000-35000',
             'MarryIn_data'=> 'Next Year',
