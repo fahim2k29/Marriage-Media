@@ -69,7 +69,7 @@
                                                     <div id="Citizenship-group" class="form-group has-feedback form-control-group">
                                                         <label for="Citizenship" class="control-label"><span class="required">*</span> My Citizenship</label>
                                                         <div class="controls">
-                                                            <select name="Citizenship" id="Citizenship" data-select2-id="Citizenship" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
+                                                            <select name="Citizenship" class="select2" id="Citizenship" data-select2-id="Citizenship" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
                                                                 <option value="{{$personal->Citizenship}}" selected="">{{$personal->Citizenship}}</option>
 
                                                                 @foreach ($countries as $personaldata)
@@ -84,7 +84,7 @@
                                                     <div id="Origin-group" class="form-group has-feedback form-control-group">
                                                         <label for="Origin" class="control-label"><span class="required">*</span> Country of Origin</label>
                                                         <div class="controls">
-                                                            <select name="Origin" id="Origin" data-select2-id="Origin" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
+                                                            <select name="Origin" class="select2" id="Origin" data-select2-id="Origin" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
                                                                 <option value="{{$personal->Origin}}" selected="">{{$personal->Origin}}</option>
 
                                                                 @foreach ($countries as $personaldata)
@@ -99,7 +99,7 @@
                                                     <div id="Relocation-group" class="form-group has-feedback form-control-group">
                                                         <label for="Relocation" class="control-label"><span class="required">*</span> Willing to Relocate?</label>
                                                         <div class="controls">
-                                                            <select name="Relocation" id="Relocation" data-select2-id="Relocation" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
+                                                            <select name="Relocation" class="select2" id="Relocation" data-select2-id="Relocation" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
                                                                 <option value="{{$personal->Relocation}}" selected="">{{$personal->Relocation}}</option>
 
                                                                 @foreach ($personaldatas as $personaldata)
@@ -114,7 +114,7 @@
                                                     <div id="Income-group" class="form-group has-feedback form-control-group">
                                                         <label for="Income" class="control-label"><span class="required">*</span> My Income</label>
                                                         <div class="controls">
-                                                            <select name="Income" id="Income" data-select2-id="Income" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
+                                                            <select name="Income" class="select2" id="Income" data-select2-id="Income" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
                                                                 <option value="{{$personal->Income}}" selected="">{{$personal->Income}}</option>
 
                                                                 @foreach ($personaldatas as $personaldata)
@@ -129,7 +129,7 @@
                                                     <div id="MarryIn-group" class="form-group has-feedback form-control-group">
                                                         <label for="MarryIn" class="control-label"><span class="required">*</span> I am Looking to Marry</label>
                                                         <div class="controls">
-                                                            <select name="MarryIn" id="MarryIn" data-select2-id="MarryIn" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
+                                                            <select name="MarryIn" class="select2" id="MarryIn" data-select2-id="MarryIn" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
                                                                 <option value="{{$personal->MarryIn}}" selected="">{{$personal->MarryIn}}</option>
 
                                                                 @foreach ($personaldatas as $personaldata)
@@ -144,7 +144,7 @@
                                                     <div id="MaritalStatus-group" class="form-group has-feedback form-control-group">
                                                         <label for="MaritalStatus" class="control-label"><span class="required">*</span> Marital Status</label>
                                                         <div class="controls">
-                                                            <select name="MaritalStatus" id="MaritalStatus" data-select2-id="MaritalStatus" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
+                                                            <select name="MaritalStatus" class="select2" id="MaritalStatus" data-select2-id="MaritalStatus" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
                                                                 <option value="{{$personal->MaritalStatus}}" selected="">{{$personal->MaritalStatus}}</option>
 
                                                                 @foreach ($personaldatas as $personaldata)
@@ -159,7 +159,7 @@
                                                     <div id="Children-group" class="form-group has-feedback form-control-group">
                                                         <label for="Children" class="control-label"><span class="required">*</span> Would I like to have Children?</label>
                                                         <div class="controls">
-                                                            <select name="Children" id="Children" data-select2-id="Children" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
+                                                            <select name="Children" class="select2" id="Children" data-select2-id="Children" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
                                                                 <option value="{{$personal->Children}}" selected="">{{$personal->Children}}</option>
 
                                                                 @foreach ($personaldatas as $personaldata)
@@ -174,7 +174,7 @@
                                                     <div id="HaveChildren-group" class="form-group has-feedback form-control-group">
                                                         <label for="HaveChildren" class="control-label"><span class="required">*</span> Do I have children?</label>
                                                         <div class="controls">
-                                                            <select name="HaveChildren" id="HaveChildren" data-select2-id="HaveChildren" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
+                                                            <select name="HaveChildren" class="select2" id="HaveChildren" data-select2-id="HaveChildren" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
                                                                 <option value="{{$personal->HaveChildren}}" selected="">{{$personal->HaveChildren}}</option>
 
                                                                 @foreach ($personaldatas as $personaldata)
@@ -189,7 +189,7 @@
                                                     <div id="Living-group" class="form-group has-feedback form-control-group">
                                                         <label for="Living" class="control-label"><span class="required">*</span> My Living Arrangements?</label>
                                                         <div class="controls">
-                                                            <select name="Living" id="Living" data-select2-id="Living" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
+                                                            <select name="Living" class="select2" id="Living" data-select2-id="Living" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
                                                                 <option value="{{$personal->Living}}" selected="">{{$personal->Living}}</option>
 
                                                                 @foreach ($personaldatas as $personaldata)
@@ -204,14 +204,22 @@
                                                     <div id="Height-group" class="form-group has-feedback form-control-group">
                                                         <label for="Height" class="control-label"><span class="required">*</span> My Height</label>
                                                         <div class="controls">
-                                                            <select name="Height" id="Height" data-select2-id="Height" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
+                                                            <select name="Height" class="select2" id="Height" data-select2-id="Height" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
                                                                 <option value="{{$personal->Height}}" selected="">{{$personal->Height}}</option>
-
-                                                                @foreach ($personaldatas as $personaldata)
-
-                                                                <option>{{$personaldata-> Height_data}}</option>
-
-                                                                @endforeach
+                                                                <option value="1.35m">1.35m</option>
+                                                                <option value="1.4m">1.4m</option>
+                                                                <option value="1.45m">1.45m</option>
+                                                                <option value="1.5m">1.5m</option>
+                                                                <option value="1.55m">1.55m</option>
+                                                                <option value="1.6m">1.6m</option>
+                                                                <option value="1.65m">1.65m</option>
+                                                                <option value="1.7m">1.7m</option>
+                                                                <option value="1.75m">1.75m</option>
+                                                                <option value="1.8m">1.8m</option>
+                                                                <option value="1.85m">1.85m</option>
+                                                                <option value="1.9m">1.9m</option>
+                                                                <option value="1.92m">1.92m</option>
+                                                                <option value="1.95m">1.95m</option>
                                                             </select>
                                                         </div>
                                                     </div>
@@ -219,7 +227,7 @@
                                                     <div id="Build-group" class="form-group has-feedback form-control-group">
                                                         <label for="Build" class="control-label"><span class="required">*</span> My Build</label>
                                                         <div class="controls">
-                                                            <select name="Build" id="Build" data-select2-id="Build" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
+                                                            <select name="Build" class="select2" id="Build" data-select2-id="Build" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
                                                                 <option value="{{$personal->Build}}" selected="">{{$personal->Build}}</option>
 
                                                                 @foreach ($personaldatas as $personaldata)
@@ -234,7 +242,7 @@
                                                     <div id="Hair-group" class="form-group has-feedback form-control-group">
                                                         <label for="Hair" class="control-label"><span class="required">*</span> My Hair Colour</label>
                                                         <div class="controls">
-                                                            <select name="Hair" id="Hair" data-select2-id="Hair" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
+                                                            <select name="Hair" class="select2" id="Hair" data-select2-id="Hair" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
                                                                 <option value="{{$personal->Hair}}" selected="">{{$personal->Hair}}</option>
 
                                                                 @foreach ($personaldatas as $personaldata)
@@ -249,7 +257,7 @@
                                                     <div id="EyeColour-group" class="form-group has-feedback form-control-group">
                                                         <label for="EyeColour" class="control-label"><span class="required">*</span> Colour of My Eyes</label>
                                                         <div class="controls">
-                                                            <select name="EyeColour" id="EyeColour" data-select2-id="EyeColour" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
+                                                            <select name="EyeColour" class="select2" id="EyeColour" data-select2-id="EyeColour" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
                                                                 <option value="{{$personal->EyeColour}}" selected="">{{$personal->EyeColour}}</option>
 
                                                                 @foreach ($personaldatas as $personaldata)
@@ -264,7 +272,7 @@
                                                     <div id="Smoke-group" class="form-group has-feedback form-control-group">
                                                         <label for="Smoke" class="control-label"><span class="required">*</span> Do I Smoke?</label>
                                                         <div class="controls">
-                                                            <select name="Smoke" id="Smoke" data-select2-id="Smoke" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
+                                                            <select name="Smoke" class="select2" id="Smoke" data-select2-id="Smoke" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
                                                                 <option value="{{$personal->Smoke}}" selected="">{{$personal->Smoke}}</option>
 
                                                                 @foreach ($personaldatas as $personaldata)
@@ -279,7 +287,7 @@
                                                     <div id="Disabilities-group" class="form-group has-feedback form-control-group">
                                                         <label for="Disabilities" class="control-label"><span class="required">*</span> Do I Have Any Disabilities?</label>
                                                         <div class="controls">
-                                                            <select name="Disabilities" id="Disabilities" data-select2-id="Disabilities" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
+                                                            <select name="Disabilities" class="select2" id="Disabilities" data-select2-id="Disabilities" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
                                                                 <option value="{{$personal->Disabilities}}" selected="">{{$personal->Disabilities}}</option>
 
                                                                 @foreach ($personaldatas as $personaldata)
@@ -306,7 +314,7 @@
                                                     <div id="Citizenship-group" class="form-group has-feedback form-control-group">
                                                         <label for="Citizenship" class="control-label"><span class="required">*</span> My Citizenship</label>
                                                         <div class="controls">
-                                                            <select name="Citizenship" id="Citizenship" required="required" data-select2-id="Citizenship" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
+                                                            <select name="Citizenship" class="select2" id="Citizenship" required="required" data-select2-id="Citizenship" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
                                                                 <option value="" selected="" data-select2-id="4">Select Option</option>
 
                                                                 @foreach ($countries as $personaldata)
@@ -321,7 +329,7 @@
                                                     <div id="Origin-group" class="form-group has-feedback form-control-group">
                                                         <label for="Origin" class="control-label"><span class="required">*</span> Country of Origin</label>
                                                         <div class="controls">
-                                                            <select name="Origin" id="Origin" required="required" data-select2-id="Origin" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
+                                                            <select name="Origin" class="select2" id="Origin" required="required" data-select2-id="Origin" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
                                                                 <option value="" selected="" data-select2-id="4">Select Option</option>
 
                                                                 @foreach ($countries as $personaldata)
@@ -336,7 +344,7 @@
                                                     <div id="Relocation-group" class="form-group has-feedback form-control-group">
                                                         <label for="Relocation" class="control-label"><span class="required">*</span> Willing to Relocate?</label>
                                                         <div class="controls">
-                                                            <select name="Relocation" id="Relocation" required="required" data-select2-id="Relocation" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
+                                                            <select name="Relocation" class="select2" id="Relocation" required="required" data-select2-id="Relocation" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
                                                                 <option value="" selected="" data-select2-id="4">Select Option</option>
 
                                                                 @foreach ($personaldatas as $personaldata)
@@ -351,14 +359,14 @@
                                                     <div id="Income-group" class="form-group has-feedback form-control-group">
                                                         <label for="Income" class="control-label"><span class="required">*</span> My Income</label>
                                                         <div class="controls">
-                                                            <select name="Income" id="Income" required="required" data-select2-id="Income" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
+                                                            <select name="Income" class="select2" id="Income" required="required" data-select2-id="Income" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
                                                                 <option value="" selected="" data-select2-id="4">Select Option</option>
+                                                                <option value="15,000-25,000" >15,000-25,000</option>
+                                                                <option value="25,000-40,000" >25,000-40,000</option>
+                                                                <option value="40,000-60,000" >40,000-60,000</option>
+                                                                <option value="over 60,000" >Over 60,000</option>
 
-                                                                @foreach ($personaldatas as $personaldata)
-
-                                                                <option>{{$personaldata-> Income_data}}</option>
-
-                                                                @endforeach
+                                                               
                                                             </select>
                                                         </div>
                                                     </div>
@@ -366,7 +374,7 @@
                                                     <div id="MarryIn-group" class="form-group has-feedback form-control-group">
                                                         <label for="MarryIn" class="control-label"><span class="required">*</span> I am Looking to Marry</label>
                                                         <div class="controls">
-                                                            <select name="MarryIn" id="MarryIn" required="required" data-select2-id="MarryIn" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
+                                                            <select name="MarryIn" class="select2" id="MarryIn" required="required" data-select2-id="MarryIn" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
                                                                 <option value="" selected="" data-select2-id="4">Select Option</option>
 
                                                                 @foreach ($personaldatas as $personaldata)
@@ -381,7 +389,7 @@
                                                     <div id="MaritalStatus-group" class="form-group has-feedback form-control-group">
                                                         <label for="MaritalStatus" class="control-label"><span class="required">*</span> Marital Status</label>
                                                         <div class="controls">
-                                                            <select name="MaritalStatus" id="MaritalStatus" required="required" data-select2-id="MaritalStatus" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
+                                                            <select name="MaritalStatus" class="select2" id="MaritalStatus" required="required" data-select2-id="MaritalStatus" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
                                                                 <option value="" selected="" data-select2-id="4">Select Option</option>
 
                                                                 @foreach ($personaldatas as $personaldata)
@@ -396,7 +404,7 @@
                                                     <div id="Children-group" class="form-group has-feedback form-control-group">
                                                         <label for="Children" class="control-label"><span class="required">*</span> Would I like to have Children?</label>
                                                         <div class="controls">
-                                                            <select name="Children" id="Children" required="required" data-select2-id="Children" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
+                                                            <select name="Children" class="select2" id="Children" required="required" data-select2-id="Children" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
                                                                 <option value="" selected="" data-select2-id="4">Select Option</option>
 
                                                                 @foreach ($personaldatas as $personaldata)
@@ -411,7 +419,7 @@
                                                     <div id="HaveChildren-group" class="form-group has-feedback form-control-group">
                                                         <label for="HaveChildren" class="control-label"><span class="required">*</span> Do I have children?</label>
                                                         <div class="controls">
-                                                            <select name="HaveChildren" id="HaveChildren" required="required" data-select2-id="HaveChildren" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
+                                                            <select name="HaveChildren" class="select2" id="HaveChildren" required="required" data-select2-id="HaveChildren" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
                                                                 <option value="" selected="" data-select2-id="4">Select Option</option>
 
                                                                 @foreach ($personaldatas as $personaldata)
@@ -426,7 +434,7 @@
                                                     <div id="Living-group" class="form-group has-feedback form-control-group">
                                                         <label for="Living" class="control-label"><span class="required">*</span> My Living Arrangements?</label>
                                                         <div class="controls">
-                                                            <select name="Living" id="Living" required="required" data-select2-id="Living" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
+                                                            <select name="Living" class="select2" id="Living" required="required" data-select2-id="Living" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
                                                                 <option value="" selected="" data-select2-id="4">Select Option</option>
 
                                                                 @foreach ($personaldatas as $personaldata)
@@ -441,14 +449,22 @@
                                                     <div id="Height-group" class="form-group has-feedback form-control-group">
                                                         <label for="Height" class="control-label"><span class="required">*</span> My Height</label>
                                                         <div class="controls">
-                                                            <select name="Height" id="Height" required="required" data-select2-id="Height" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
+                                                            <select name="Height" class="select2" id="Height" required="required" data-select2-id="Height" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
                                                                 <option value="" selected="" data-select2-id="4">Select Option</option>
-
-                                                                @foreach ($personaldatas as $personaldata)
-
-                                                                <option>{{$personaldata-> Height_data}}</option>
-
-                                                                @endforeach
+                                                                <option value="1.35m">1.35m</option>
+                                                                <option value="1.4m">1.4m</option>
+                                                                <option value="1.45m">1.45m</option>
+                                                                <option value="1.5m">1.5m</option>
+                                                                <option value="1.55m">1.55m</option>
+                                                                <option value="1.6m">1.6m</option>
+                                                                <option value="1.65m">1.65m</option>
+                                                                <option value="1.7m">1.7m</option>
+                                                                <option value="1.75m">1.75m</option>
+                                                                <option value="1.8m">1.8m</option>
+                                                                <option value="1.85m">1.85m</option>
+                                                                <option value="1.9m">1.9m</option>
+                                                                <option value="1.92m">1.92m</option>
+                                                                <option value="1.95m">1.95m</option>
                                                             </select>
                                                         </div>
                                                         
@@ -457,7 +473,7 @@
                                                     <div id="Build-group" class="form-group has-feedback form-control-group">
                                                         <label for="Build" class="control-label"><span class="required">*</span> My Build</label>
                                                         <div class="controls">
-                                                            <select name="Build" id="Build" required="required" data-select2-id="Build" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
+                                                            <select name="Build" class="select2" id="Build" required="required" data-select2-id="Build" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
                                                                 <option value="" selected="" data-select2-id="4">Select Option</option>
 
                                                                 @foreach ($personaldatas as $personaldata)
@@ -472,7 +488,7 @@
                                                     <div id="Hair-group" class="form-group has-feedback form-control-group">
                                                         <label for="Hair" class="control-label"><span class="required">*</span> My Hair Colour</label>
                                                         <div class="controls">
-                                                            <select name="Hair" id="Hair" required="required" data-select2-id="Hair" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
+                                                            <select name="Hair" class="select2" id="Hair" required="required" data-select2-id="Hair" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
                                                                 <option value="" selected="" data-select2-id="4">Select Option</option>
 
                                                                 @foreach ($personaldatas as $personaldata)
@@ -487,7 +503,7 @@
                                                     <div id="EyeColour-group" class="form-group has-feedback form-control-group">
                                                         <label for="EyeColour" class="control-label"><span class="required">*</span> Colour of My Eyes</label>
                                                         <div class="controls">
-                                                            <select name="EyeColour" id="EyeColour" required="required" data-select2-id="EyeColour" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
+                                                            <select name="EyeColour" class="select2" id="EyeColour" required="required" data-select2-id="EyeColour" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
                                                                 <option value="" selected="" data-select2-id="4">Select Option</option>
 
                                                                 @foreach ($personaldatas as $personaldata)
@@ -502,7 +518,7 @@
                                                     <div id="Smoke-group" class="form-group has-feedback form-control-group">
                                                         <label for="Smoke" class="control-label"><span class="required">*</span> Do I Smoke?</label>
                                                         <div class="controls">
-                                                            <select name="Smoke" id="Smoke" required="required" data-select2-id="Smoke" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
+                                                            <select name="Smoke" class="select2" id="Smoke" required="required" data-select2-id="Smoke" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
                                                                 <option value="" selected="" data-select2-id="4">Select Option</option>
 
                                                                 @foreach ($personaldatas as $personaldata)
@@ -517,7 +533,7 @@
                                                     <div id="Disabilities-group" class="form-group has-feedback form-control-group">
                                                         <label for="Disabilities" class="control-label"><span class="required">*</span> Do I Have Any Disabilities?</label>
                                                         <div class="controls">
-                                                            <select name="Disabilities" id="Disabilities" required="required" data-select2-id="Disabilities" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
+                                                            <select name="Disabilities" class="select2" id="Disabilities" required="required" data-select2-id="Disabilities" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
                                                                 <option value="" selected="" data-select2-id="4">Select Option</option>
 
                                                                 @foreach ($personaldatas as $personaldata)

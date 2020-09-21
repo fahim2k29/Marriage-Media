@@ -114,8 +114,8 @@
                                                     <div id="Country-group" class="form-group has-feedback form-control-group">
                                                         <label for="Country" class="control-label"><span class="required">*</span>Country</label>
                                                         <div class="controls">
-                                                            <select name="Country" id="Country" data-select2-id="Country" tabindex="-1" aria-hidden="true">
-                                                                <option value="{{$users->Country}}">{{$users->Country}}</option>
+                                                            <select name="Country" class="select2" id="Country" data-select2-id="Country" tabindex="-1" aria-hidden="true">
+                                                                <option value="{{$users->Country}}" readonly>{{$users->Country}}</option>
                                                             </select>
                                                         </div>
                                                         <div class="col-sm-9 col-md-offset-3">
@@ -158,17 +158,17 @@
                                                         <div class="controls">
                                                             <div class="row">
                                                                 <div class="col-xs-3">
-                                                                    <select name="DOB_day" id="DOB-day" data-select2-id="DOB-day" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
+                                                                    <select name="DOB_day" class="select2" id="DOB-day" data-select2-id="DOB-day" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
                                                                         <option value="{{$users->DOB_day}}">{{$users->DOB_day}}</option>
                                                                     </select>
                                                                 </div>
                                                                 <div class="col-xs-5">
-                                                                    <select name="DOB_month" id="DOB-month" data-select2-id="DOB-month" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
+                                                                    <select name="DOB_month" class="select2" id="DOB-month" data-select2-id="DOB-month" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
                                                                         <option value="{{$users->DOB_month}}">{{$users->DOB_month}}</option>
                                                                     </select>
                                                                 </div>
                                                                 <div class="col-xs-4">
-                                                                    <select name="DOB_year" id="DOB-year" data-select2-id="DOB-year" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
+                                                                    <select name="DOB_year" class="select2" id="DOB-year" data-select2-id="DOB-year" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
                                                                         <option value="{{$users->DOB_year}}">{{$users->DOB_year}}</option>
                                                                     </select>
                                                                 </div>
@@ -230,8 +230,8 @@
                                                     <div id="Country-group" class="form-group has-feedback form-control-group">
                                                         <label for="Country" class="control-label"><span class="required">*</span> Country</label>
                                                         <div class="controls">
-                                                            <select name="Country" id="Country" class="form-control-values select2-hidden-accessible" data-select2-id="Country" tabindex="-1" aria-hidden="true">
-                                                                <option value="{{$users->Country}}">{{$users->Country}}</option>
+                                                            <select name="Country" class="select2" id="Country" class="form-control-values select2-hidden-accessible" data-select2-id="Country" tabindex="-1" aria-hidden="true">
+                                                                <option value="{{$users->Country}}" readonly>{{$users->Country}}</option>
                                                             </select>
                                                         </div>
                                                     </div>
@@ -271,17 +271,17 @@
                                                         <div class="controls">
                                                             <div class="row">
                                                                 <div class="col-xs-3">
-                                                                    <select name="DOB_day" id="DOB-day" data-select2-id="DOB-day" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
+                                                                    <select name="DOB_day" class="select2" id="DOB-day" data-select2-id="DOB-day" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
                                                                         <option value="{{$users->DOB_day}}">{{$users->DOB_day}}</option>
                                                                     </select>
                                                                 </div>
                                                                 <div class="col-xs-5">
-                                                                    <select name="DOB_month" id="DOB-month" data-select2-id="DOB-month" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
+                                                                    <select name="DOB_month" class="select2" id="DOB-month" data-select2-id="DOB-month" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
                                                                         <option value="{{$users->DOB_month}}">{{$users->DOB_month}}</option>
                                                                     </select>
                                                                 </div>
                                                                 <div class="col-xs-4">
-                                                                    <select name="DOB_year" id="DOB-year" data-select2-id="DOB-year" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
+                                                                    <select name="DOB_year" class="select2" id="DOB-year" data-select2-id="DOB-year" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
                                                                         <option value="{{$users->DOB_year}}">{{$users->DOB_year}}</option>
                                                                     </select>
                                                                 </div>

@@ -19,7 +19,7 @@
                         <div id="UserName-group" class="form-group has-feedback form-control-group">
                             <label for="UserName" class="control-label"><span class="required">*</span> Create a Username</label>
                             <div class="controls">
-                                <input name="UserName" id="UserName" type="text" required="required" class="form-control" placeholder="Ex: fahim9" />
+                                <input name="UserName" id="UserName" type="text" required="required" class="form-control" placeholder="Your First name" />
                             </div>
                             <div class="col-sm-9">
                                 <small class="red" style="color: brown;">{{ $errors->first('UserName') }}</small>
@@ -80,7 +80,7 @@
                         <div id="Country-group" class="form-group has-feedback form-control-group">
                             <label for="Country" class="control-label"><span class="required">*</span> Where do you live?</label>
                             <div class="controls">
-                                <select name="Country" id="Country" required="required" data-error="Please fill out this field." class="select2-hidden-accessible" data-select2-id="Country" tabindex="-1" aria-hidden="true">
+                                <select name="Country" id="Country" required="required" data-error="Please fill out this field." class="select2-hidden-accessible select2" data-select2-id="Country" tabindex="-1" aria-hidden="true">
                                     <option value="" selected="" data-select2-id="4">Select Country</option>
                                     @foreach ($countries as $signupdata)
                                     <option>{{$signupdata->name}}</option>
@@ -95,7 +95,7 @@
                         <div id="Gender-group" class="form-group has-feedback form-control-group">
                             <label for="Gender" class="control-label"><span class="required">*</span> Select Your Gender</label>
                             <div class="controls">
-                                <select name="Gender" id="Gender" data-error="Please fill out this field." required="required" class="select2-hidden-accessible" data-select2-id="Gender" tabindex="-1" aria-hidden="true">
+                                <select name="Gender" id="Gender" data-error="Please fill out this field." required="required" class="select2-hidden-accessible select2" data-select2-id="Gender" tabindex="-1" aria-hidden="true">
                                     <option value="" selected="" data-select2-id="4">Select Your Gender</option>
                                     <option value="Male" data-select2-id="292">Male</option>
                                     <option value="Female" data-select2-id="293">Female</option>
@@ -108,7 +108,7 @@
                             <div class="controls">
                                 <div class="row">
                                     <div class="col-xs-3">
-                                        <select name="DOB_day" id="DOB-day" required="required" data-select2-id="DOB-day" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
+                                        <select name="DOB_day" id="DOB-day" required="required" data-select2-id="DOB-day" class="select2" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
                                             <option value="" selected="" data-select2-id="4">Select Day</option>
                                             @foreach ($signupdatas as $signupdata)
                                             <option>{{$signupdata->DOB_day_data}}</option>
@@ -116,7 +116,7 @@
                                         </select>
                                     </div>
                                     <div class="col-xs-5">
-                                        <select name="DOB_month" id="DOB-month" required="required" data-select2-id="DOB-month" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
+                                        <select name="DOB_month" id="DOB-month" required="required" data-select2-id="DOB-month" class="select2" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
                                             <option value="" selected="" data-select2-id="4">Select Month</option>
                                             @foreach ($signupdatas as $signupdata)
                                             <option>{{$signupdata->DOB_month_data}}</option>
@@ -124,11 +124,12 @@
                                         </select>
                                     </div>
                                     <div class="col-xs-4">
-                                        <select name="DOB_year" id="DOB-year" required="required" data-select2-id="DOB-year" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
-                                            <option value="" selected="" data-select2-id="4">Select Year</option>
-                                            @foreach ($signupdatas as $signupdata)
-                                            <option>{{$signupdata->DOB_year_data}}</option>
-                                            @endforeach
+                                        <select name="DOB_year" id="DOB-year" required="required" data-select2-id="DOB-year" class="select2" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
+                                            <option value="" selected="" data-select2-id="4">Select</option>
+                                            @for ($i = $now; $i >= 1986; $i--)
+                                                <option value="{{ $i-16 }}">{{ $i-16 }}</option>
+                                            @endfor
+
                                         </select>
                                     </div>
                                 </div>
@@ -138,7 +139,7 @@
                         <div id="RegistrationReason-group" class="form-group has-feedback form-control-group">
                             <label for="RegistrationReason" class="control-label"><span class="required">*</span> Reason for Registering?</label>
                             <div class="controls">
-                                <select name="RegistrationReason" id="RegistrationReason" required="required" data-error="Please fill out this field." data-select2-id="RegistrationReason" tabindex="-1" aria-hidden="true">
+                                <select name="RegistrationReason" id="RegistrationReason" required="required" class="select2" data-error="Please fill out this field." data-select2-id="RegistrationReason" tabindex="-1" aria-hidden="true">
                                     <option value="" selected="" data-select2-id="4">Select Registration Reason</option>
                                     @foreach ($signupdatas as $signupdata)
                                     <option>{{$signupdata->RegistrationReason_data}}</option>
@@ -153,7 +154,7 @@
                         <div id="HearAboutUs-group" class="form-group has-feedback form-control-group">
                             <label for="HearAboutUs" class="control-label"><span class="required">*</span> Where did you hear about us?</label>
                             <div class="controls">
-                                <select name="HearAboutUs" id="HearAboutUs" required="required" data-error="Please fill out this field." data-select2-id="HearAboutUs" tabindex="-1" aria-hidden="true">
+                                <select name="HearAboutUs" id="HearAboutUs" required="required" class="select2" data-error="Please fill out this field." data-select2-id="HearAboutUs" tabindex="-1" aria-hidden="true">
                                     <option value="" selected="" data-select2-id="4"> Select </option>
                                     @foreach ($signupdatas as $signupdata)
                                     <option>{{$signupdata->HearAboutUs_data}}</option>
@@ -169,8 +170,24 @@
 
                             <div class="col-md-12">
                                 <input id="password" type="password" required="required" class="form-control @error('password') is-invalid @enderror" placeholder="At least 8 digits" name="password" required autocomplete="new-password" />
+                                <div class="col-md-4 col-form-label text-md-right">
+                                <input type="checkbox" onclick="myFunction()">Show Password
+                                </div>
                                 <div class="col-sm-9">
                                     <small class="red" style="color: brown;">{{ $errors->first('password') }}</small>
+                                </div>
+                                <span id="Email-span-success" class="smicon-new form-control-feedback male span-info-label" data-toggle="tooltip" data-placement="right" title="" data-original-title="Make your password strong">
+                                    <i class="fa fa-info-circle" aria-hidden="true"></i>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="password" class="col-md-4 col-form-label text-md-right"><span class="required">*</span>{{ __('Confirm Password') }}</label>
+                            <div class="col-md-12">
+                                <input id="password" type="password" required="required" class="form-control @error('password') is-invalid @enderror" placeholder="Re-type your password" name="confirm_password" required autocomplete="new-password" />
+                                <div class="col-sm-9">
+                                    <small class="red" style="color: brown;">{{ $errors->first('confirm_password') }}</small>
                                 </div>
                                 <span id="Email-span-success" class="smicon-new form-control-feedback male span-info-label" data-toggle="tooltip" data-placement="right" title="" data-original-title="Make your password strong">
                                     <i class="fa fa-info-circle" aria-hidden="true"></i>
@@ -190,9 +207,9 @@
                             </div>
                         </div>
 
-                        <div id="termsandcondition-group" class="form-group has-feedback form-control-group">
+                        <!-- <div id="termsandcondition-group" class="form-group has-feedback form-control-group">
                             <a target="_blank" href="/page/terms_and_conditions">Click here to read Terms and Conditions</a> / <a target="_blank" href="/page/privacy_security">Privacy Policy</a>
-                        </div>
+                        </div> -->
                         {{--
                         <div id="captcha-group" class="form-group has-feedback form-control-group">
                             <div class="g-recaptcha" data-sitekey="6Ldb-HoUAAAAALVVpryBLPYkK4ldXAmzkMvUl9TH" data-badge="inline" data-size="invisible" data-callback="setResponse">
@@ -255,6 +272,17 @@
                             document.getElementById("signupbox-register").submit();
                         }
                     </script>
+                    <script>
+                        function myFunction() {
+                        var x = document.getElementById("password");
+                        if (x.type === "password") {
+                            x.type = "text";
+                        } else {
+                            x.type = "password";
+                        }
+                        }
+                    </script>
+                    
                 </div>
             </div>
         </div>

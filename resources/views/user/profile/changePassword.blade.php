@@ -62,7 +62,9 @@
                                                     <label for="password" class="col-md-4 col-form-label text-md-right">New Password</label>
 
                                                     <div class="col-md-6">
-                                                        <input id="new_password" type="password" class="form-control" placeholder="At least 8 character" name="new_password" autocomplete="current-password" />
+                                                    
+                                                    <input id="myInput" type="password" class="form-control" placeholder="new password" name="new_password" autocomplete="current-password" />
+                                                    <input type="checkbox" onclick="myFunction()">Show Password
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
@@ -80,6 +82,7 @@
                                                     </div>
                                                 </div>
                                             </form>
+
                                         </div>
                                     </div>
                                 </div>
@@ -95,3 +98,13 @@
 </div>
 
 @endsection
+<script>
+function myFunction() {
+  var check = document.getElementById("myInput");
+  if (check.type === "password") {
+    check.type = "text";
+  } else {
+    check.type = "password";
+  }
+}
+</script>

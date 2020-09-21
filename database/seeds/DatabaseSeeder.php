@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
             SignupTableSeeder::class,
             SiteInfosTableSeeder::class,
             UsersTableSeeder::class,
+            JobTableSeeder::class,
             
         ]);
     }

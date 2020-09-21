@@ -69,9 +69,12 @@ class RegisterController extends Controller
             'HearAboutUs'=>'required',
             'Accept'=>'required',
             'password'=>'required|min:8',
-
+            'confirm_password' => 'required|same:password',
         ]);
     }
+
+        
+    
 
 
     /**

@@ -26,6 +26,7 @@ use App\User;
 use App\Models\Banner;
 use App\SuccessStory;
 use App\Country;
+use App\Job;
 
 
 class MainController extends Controller
@@ -62,8 +63,12 @@ class MainController extends Controller
         $signupdatas = SignupData::all();
         $countries  = Country::all();
         // dd($countries->toArray());
+        $max = 55;
+        $now = Carbon::now()->format('Y');
+        // $year =Carbon::now()->diff(Carbon::parse($max))->format('%Y');
+        // dd($year);
 
-        return view('user.register', compact('signupdatas', 'countries'));
+        return view('user.register', compact('signupdatas', 'countries', 'now'));
     }
     
     public function aboutme()
@@ -103,7 +108,9 @@ class MainController extends Controller
         $user_id = Auth::user()->id;
         $education = Education::whereuser_id($user_id)->first();
         $employments = Employment::all();
-        return view('user.education', compact('education', 'employments'));
+        $jobs = Job::all();
+      
+        return view('user.education', compact('education', 'employments', 'jobs'));
     }
     function education_create(Request $request)
     {

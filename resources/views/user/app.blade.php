@@ -789,7 +789,6 @@
 
         <link rel="stylesheet" href="/frontend/assets/css/less/font-awesome.min.css" />
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-        
         <link href="/frontend/assets/css/less/controller/SearchController.css" media="screen" rel="stylesheet" type="text/css" />
         <script type="text/javascript" src="/frontend/assets/js/controller/SearchController.min.js"></script>
 
@@ -817,6 +816,7 @@
                 f.parentNode.insertBefore(j, f);
             })(window, document, "script", "dataLayer", "GTM-NNGBZLJ");
         </script>
+        <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
     </head>
 
     <body id="UserController" class="hiddenScroll">
@@ -998,156 +998,35 @@
 
         <div class="site-overlay"></div>
         <div class="site-overlaynotification"></div>
-        <div id="MessagesController">
-            <div class="modal fade modal-wide" id="chatModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="false">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div id="messaging">
-                            <div class="options">
-                                <div class="option">
-                                    <div class="check-threads pull-right">Edit</div>
-                                    <div class="check-threads-selectall pull-left">Select All</div>
-                                    <div class="show-thread-deleteoption">
-                                        <div class="pull-right cancellink"><span class="pipeline">|</span>Cancel</div>
-                                        <div class="pull-right deletelink">Delete</div>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                </div>
-                                <div class="option-readunred">
-                                    <div class="input-group btn-group btn-group-radio">
-                                        <input
-                                            id="general_hidden_all-0"
-                                            group="general_unread_hidden"
-                                            type="radio"
-                                            class="form-control"
-                                            checked="checked"
-                                            value="0"
-                                            data-size="mini"
-                                            data-toggle="toggle"
-                                            data-on="Yes"
-                                            data-off="No"
-                                            data-onstyle="success"
-                                            data-offstyle="default"
-                                            name="general_hidden_message"
-                                        />
-                                        <label id="label-general_hidden_all" for="general_hidden_all-0" class="activtab"> All Messages</label>
+        
+        <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+        <script>
+        // In your Javascript (external .js resource or <script> tag)
+        $(document).ready(function() {
+            $('.select2').select2();
+        });
+        </script>
 
-                                        <input
-                                            id="general_unread-1"
-                                            group="general_unread_hidden"
-                                            type="radio"
-                                            class="form-control"
-                                            value="1"
-                                            data-size="mini"
-                                            data-toggle="toggle"
-                                            data-on="Yes"
-                                            data-off="No"
-                                            data-onstyle="success"
-                                            data-offstyle="default"
-                                            name="general_hidden_message"
-                                        />
-                                        <label id="label-general_unread_hidden" for="general_unread-1" class=" ">
-                                            Unread
-                                            <span class="badge progress-bar-danger badge-xs unreadthread messageCounterUpdatemessage" style="display: none;"> 0 </span>
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="messaging-threads"></div>
-                            <div id="messaging-thread">
-                                <div class="thread-header">
-                                    <div class="user-details">
-                                        <div class="image-holder"><img src="" /></div>
-                                        <div class="userdetail-section">
-                                            <div class="username"></div>
-                                            <div class="user-blocked badge-info">Blocked</div>
-                                            <div class="details"></div>
-                                        </div>
-                                        <div class="user-buttons">
-                                            <div id="messages-thread-block-user" class="pull-left block-button">
-                                                <span class="sm-line basic-ban"></span><br />
-                                                <span class="button-label">Block User</span>
-                                            </div>
-                                            <div id="messages-thread-report-user" class="pull-left report-button btn-report">
-                                                <span class="sm-line basic-flag1"></span><br />
-                                                <span class="button-label">Report User</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="pull-right closeButton">
-                                        <button type="button" class="close clos_padding" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
-                                    </div>
-                                </div>
-                                <div class="messages">
-                                    <div class="wrapper"></div>
-                                    <div class="nomessagefound">You have no messages</div>
-
-                                    <!--            <div class="pre-written"></div>-->
-                                </div>
-
-                                <div class="footer">
-                                    <textarea id="messageText" name="message" data-noelastic="1" style=""></textarea>
-                                    <button type="submit">
-                                        <span class="glyphicon glyphicon-send"></span><br />
-                                        Send
-                                    </button>
-                                </div>
-                                <div class="footer footer-overlay"></div>
-                                <div class="overlay"><div class="loader-img"></div></div>
-                            </div>
-                            <div id="messaging-templates">
-                                <div class="thread" data-toggle="tooltip" data-original-title="" title="" style="display: none;">
-                                    <input type="checkbox" />
-
-                                    <div class="image-holder">
-                                        <img src="" />
-                                        <div class="badge"></div>
-                                    </div>
-
-                                    <div class="username"></div>
-                                    <div class="date"></div>
-                                    <div class="last-message-text"></div>
-                                    <span class="glyphicon glyphicon-remove delete"></span>
-                                    <ul class="nav pull-right dots-menu">
-                                        <li class="dropdown">
-                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">...</a>
-                                            <ul class="dropdown-menu extra-options" style="display: none;">
-                                                <li class="extralinks viewprofile">View Profile</li>
-                                                <li class="extralinks blockuser">Block</li>
-                                                <li class="extralinks markasunread cant-block">Mark as Unread</li>
-                                                <li class="extralinks markasread cant-block">Mark as Read</li>
-                                                <li class="extralinks blockcountry block-country" data-country="country">Block Message From</li>
-                                                <li class="extralinks removeborder-extralinks report-button btn-report">Report User</li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-
-                                    <div class="overlay"><div class="loader-img"></div></div>
-                                </div>
-                                <div class="message">
-                                    <div class="date"></div>
-                                    <div class="bubble">
-                                        <div class="text"></div>
-                                        <div class="seen"><span class="glyphicon glyphicon-ok"></span></div>
-                                        <div class="overlay"><div class="loader-img"></div></div>
-                                    </div>
-
-                                    <div class="controls">
-                                        <a id="messages-thread-delete-message" href="#"><span class="sm-line basic-trashcan"></span><span class="button-label">Delete</span></a>
-                                        <a id="messages-thread-spam-message" href="#"><span class="message_ban sm-line basic-ban"></span><span class="button-label">Spam</span></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="packages packagesSectionNew" style="display: none;">
-                                <div class="userMessagePackages">
-                                    <h2 class="nomessageclass" style="display: none;">You have no messages</h2>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+       <script type="text/javascript" id="">
+            !(function (b, e, f, g, a, c, d) {
+                b.fbq ||
+                    ((a = b.fbq = function () {
+                        a.callMethod ? a.callMethod.apply(a, arguments) : a.queue.push(arguments);
+                    }),
+                    b._fbq || (b._fbq = a),
+                    (a.push = a),
+                    (a.loaded = !0),
+                    (a.version = "2.0"),
+                    (a.queue = []),
+                    (c = e.createElement(f)),
+                    (c.async = !0),
+                    (c.src = g),
+                    (d = e.getElementsByTagName(f)[0]),
+                    d.parentNode.insertBefore(c, d));
+            })(window, document, "script", "https://connect.facebook.net/en_US/fbevents.js");
+            fbq("init", "2251928191696851");
+            fbq("trackCustom", "PageViewDesktop");
+        </script>
 
         <script type="text/javascript" id="">
             !(function (b, e, f, g, a, c, d) {
@@ -1169,43 +1048,5 @@
             fbq("init", "2251928191696851");
             fbq("trackCustom", "PageViewDesktop");
         </script>
-        <noscript><img height="1" width="1" style="display: none;" src="https://www.facebook.com/tr?id=2251928191696851&amp;ev=PageView&amp;noscript=1" /></noscript>
-
-        <script type="text/javascript" id="">
-            !(function (b, e, f, g, a, c, d) {
-                b.fbq ||
-                    ((a = b.fbq = function () {
-                        a.callMethod ? a.callMethod.apply(a, arguments) : a.queue.push(arguments);
-                    }),
-                    b._fbq || (b._fbq = a),
-                    (a.push = a),
-                    (a.loaded = !0),
-                    (a.version = "2.0"),
-                    (a.queue = []),
-                    (c = e.createElement(f)),
-                    (c.async = !0),
-                    (c.src = g),
-                    (d = e.getElementsByTagName(f)[0]),
-                    d.parentNode.insertBefore(c, d));
-            })(window, document, "script", "https://connect.facebook.net/en_US/fbevents.js");
-            fbq("init", "2251928191696851");
-            fbq("trackCustom", "PageViewDesktop");
-        </script>
-        <noscript><img height="1" width="1" style="display: none;" src="https://www.facebook.com/tr?id=2251928191696851&amp;ev=PageView&amp;noscript=1" /></noscript>
-        <div style="visibility: hidden; position: absolute; width: 100%; top: -10000px; left: 0px; right: 0px; transition: visibility 0s linear 0.3s, opacity 0.3s linear 0s; opacity: 0;">
-            <div style="width: 100%; height: 100%; position: fixed; top: 0px; left: 0px; z-index: 2000000000; background-color: rgb(255, 255, 255); opacity: 0.5;"></div>
-            <div style="margin: 0px auto; top: 0px; left: 0px; right: 0px; position: absolute; border: 1px solid rgb(204, 204, 204); z-index: 2000000000; background-color: rgb(255, 255, 255); overflow: hidden;">
-                <iframe
-                    title="recaptcha challenge"
-                    src="https://www.google.com/recaptcha/api2/bframe?hl=en&amp;v=nuX0GNR875hMLA1LR7ayD9tc&amp;k=6Ldb-HoUAAAAALVVpryBLPYkK4ldXAmzkMvUl9TH&amp;cb=veysi23anss6"
-                    name="c-q66thv4yeh61"
-                    frameborder="0"
-                    scrolling="no"
-                    sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"
-                    style="width: 100%; height: 100%;"
-                >
-                </iframe>
-            </div>
-        </div>
     </body>
 </html>

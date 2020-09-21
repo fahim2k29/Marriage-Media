@@ -37,33 +37,6 @@
                                     <div class="bs-wizard-info text-center">Religion</div>
                                 </div>
 
-                                <!--                    <div class="col-md-1 col-lg-2 bs-wizard-step complete">-->
-                                <!--                        <div class="text-center bs-wizard-stepnum">Step 1</div>-->
-                                <!--                        <div class="progress"><div class="progress-bar"></div></div>-->
-                                <!--                        <a href="/register/aboutyou" class="bs-wizard-dot"></a>-->
-                                <!--                        <div class="bs-wizard-info text-center"><a href="/register/aboutyou">About You</a></div>-->
-                                <!--                    </div>-->
-                                <!---->
-                                <!--                    <div class="col-md-2 col-lg-2 bs-wizard-step complete"> complete -->
-                                <!--                        <div class="text-center bs-wizard-stepnum">Step 2</div>-->
-                                <!--                        <div class="progress"><div class="progress-bar"></div></div>-->
-                                <!--                        <a href="/register/religion" class="bs-wizard-dot"></a>-->
-                                <!--                        <div class="bs-wizard-info text-center"><a href="/register/religion">Religion</a></div>-->
-                                <!--                    </div>-->
-                                <!---->
-                                <!--                    <div class="col-md-2 col-lg-2 bs-wizard-step active"> complete -->
-                                <!--                        <div class="text-center bs-wizard-stepnum">Step 3</div>-->
-                                <!--                        <div class="progress"><div class="progress-bar"></div></div>-->
-                                <!--                        <a href="#" class="bs-wizard-dot"></a>-->
-                                <!--                        <div class="bs-wizard-info text-center">Education</div>-->
-                                <!--                    </div>-->
-                                <!---->
-                                <!--                    <div class="col-md-2 col-lg-2 bs-wizard-step disabled"> active -->
-                                <!--                        <div class="text-center bs-wizard-stepnum">Step 4</div>-->
-                                <!--                        <div class="progress"><div class="progress-bar"></div></div>-->
-                                <!--                        <a href="#" class="bs-wizard-dot"></a>-->
-                                <!--                        <div class="bs-wizard-info text-center">Personal</div>-->
-                                <!--                    </div>-->
 
                                 <div class="col-md-2 col-lg-2 bs-wizard-step disabled">
                                     <!-- active -->
@@ -98,11 +71,16 @@
                                                     <div id="EducationLevel-group" class="form-group has-feedback form-control-group">
                                                         <label for="EducationLevel" class="control-label"><span class="required">*</span> My Education Level</label>
                                                         <div class="controls">
-                                                            <select name="EducationLevel" id="EducationLevel" data-select2-id="EducationLevel" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
+                                                            <select name="EducationLevel" id="EducationLevel" class="select2" data-select2-id="EducationLevel" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
                                                                 <option value="{{$education-> EducationLevel}}" selected="">{{$education-> EducationLevel}}</option>
-                                                                @foreach ($employments as $employment)
-                                                                <option>{{$employment-> employment_EducationLevel}}</option>
-                                                                @endforeach
+                                                                <option value="Hogh-School">Hogh-School</option>
+                                                                <option value="College">College</option>
+                                                                <option value="Graduate">Graduate</option>
+                                                                <option value="Masters Degree">Masters Degree</option>
+                                                                <option value="Doctorate">Doctorate</option>
+                                                                <option value="Non-Graduate">Non-Graduate</option>
+                                                                <option value="Others">Others</option>
+                                                                
                                                             </select>
                                                         </div>
                                                     </div>
@@ -124,12 +102,12 @@
                                                     <div id="Employment-group" class="form-group has-feedback form-control-group">
                                                         <label for="Employment" class="control-label"><span class="required">*</span> My Profession</label>
                                                         <div class="controls">
-                                                            <select name="Employment" id="Employment" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
+                                                            <select name="Employment" id="Employment" tabindex="-1" class="select2" aria-hidden="true" data-error="Please fill out this field.">
                                                                 <option value="{{$education-> Employment}}" selected="">{{$education-> Employment}}</option>
 
-                                                                @foreach ($employments as $employment)
+                                                                @foreach ($jobs as $employment)
 
-                                                                <option>{{$employment-> employment_value}}</option>
+                                                                <option>{{$employment-> job_title}}</option>
 
                                                                 @endforeach
                                                             </select>
@@ -139,14 +117,18 @@
                                                     <div id="FirstLang-group" class="form-group has-feedback form-control-group">
                                                         <label for="FirstLang" class="control-label"><span class="required">*</span> My First Language</label>
                                                         <div class="controls">
-                                                            <select name="FirstLang" id="FirstLang" data-select2-id="FirstLang" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
+                                                            <select name="FirstLang" id="FirstLang" class="select2" data-select2-id="FirstLang" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
                                                                 <option value="{{$education-> FirstLang}}" selected="">{{$education-> FirstLang}}</option>
-
-                                                                @foreach ($employments as $employment)
-
-                                                                <option>{{$employment-> employment_Language}}</option>
-
-                                                                @endforeach
+                                                                <option value="English" >English </option>
+                                                                <option value="Mandarin Chinese" >Mandarin Chinese </option>
+                                                                <option value="Hindi">Hindi </option>
+                                                                <option value="Spanish" >Spanish </option>
+                                                                <option value="French" >French </option>
+                                                                <option value="Standard Arabic" >Standard Arabic </option>
+                                                                <option value="Bengali" >Bengali </option>
+                                                                <option value="Russian" >Russian </option>
+                                                                <option value="Portuguese" >Portuguese </option>
+                                                                <option value="Indonesian" >Indonesian </option>
                                                             </select>
                                                         </div>
                                                     </div>
@@ -154,14 +136,18 @@
                                                     <div id="SecondLang-group" class="form-group has-feedback form-control-group">
                                                         <label for="SecondLang" class="control-label"><span class="required">*</span> My Second Language</label>
                                                         <div class="controls">
-                                                            <select name="SecondLang" id="SecondLang" data-select2-id="SecondLang" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
+                                                            <select name="SecondLang" id="SecondLang" class="select2" data-select2-id="SecondLang" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
                                                                 <option value="{{$education-> SecondLang}}" selected="">{{$education-> SecondLang}}</option>
-
-                                                                @foreach ($employments as $employment)
-
-                                                                <option>{{$employment-> employment_Language}}</option>
-
-                                                                @endforeach
+                                                                <option value="English" >English </option>
+                                                                <option value="Mandarin Chinese" >Mandarin Chinese </option>
+                                                                <option value="Hindi">Hindi </option>
+                                                                <option value="Spanish" >Spanish </option>
+                                                                <option value="French" >French </option>
+                                                                <option value="Standard Arabic" >Standard Arabic </option>
+                                                                <option value="Bengali" >Bengali </option>
+                                                                <option value="Russian" >Russian </option>
+                                                                <option value="Portuguese" >Portuguese </option>
+                                                                <option value="Indonesian" >Indonesian </option>
                                                             </select>
                                                         </div>
                                                     </div>
@@ -179,24 +165,15 @@
                                                     <div id="EducationLevel-group" class="form-group has-feedback form-control-group">
                                                         <label for="EducationLevel" class="control-label"><span class="required">*</span> My Education Level</label>
                                                         <div class="controls">
-                                                            <select name="EducationLevel" id="EducationLevel" required="required" data-select2-id="EducationLevel" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
+                                                            <select name="EducationLevel" id="EducationLevel" class="select2" required="required" data-select2-id="EducationLevel" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
                                                                 <option value="" selected="" data-select2-id="4">Select Option</option>
-
-                                                                @foreach ($employments as $employment)
-
-                                                                <option>{{$employment-> employment_EducationLevel}}</option>
-
-                                                                @endforeach {{--
-                                                                <option value="27" data-select2-id="13">Bachelors degree</option>
-                                                                <option value="25" data-select2-id="14">College</option>
-                                                                <option value="30" data-select2-id="15">Doctorate</option>
-                                                                <option value="24" data-select2-id="16">High school</option>
-                                                                <option value="28" data-select2-id="17">Masters degree</option>
-                                                                <option value="26" data-select2-id="18">Non degree qualification</option>
-                                                                <option value="32" data-select2-id="19">Prefer not to say</option>
-                                                                <option value="29" data-select2-id="20">Other degree</option>
-                                                                <option value="31" data-select2-id="21">Other</option>
-                                                                --}}
+                                                                <option value="Hogh-School">Hogh-School</option>
+                                                                <option value="College">College</option>
+                                                                <option value="Graduate">Graduate</option>
+                                                                <option value="Masters Degree">Masters Degree</option>
+                                                                <option value="Doctorate">Doctorate</option>
+                                                                <option value="Non-Graduate">Non-Graduate</option>
+                                                                <option value="Others">Others</option>
                                                             </select>
                                                         </div>
                                                     </div>
@@ -218,12 +195,12 @@
                                                     <div id="Employment-group" class="form-group has-feedback form-control-group">
                                                         <label for="Employment" class="control-label"><span class="required">*</span> My Profession</label>
                                                         <div class="controls">
-                                                            <select name="Employment" id="Employment" required="required" tabindex="-1" aria-hidden="true" data-error="Please fill out this field." class="form-control">
+                                                            <select name="Employment" id="Employment" class="select2" required="required" tabindex="-1" aria-hidden="true" data-error="Please fill out this field." class="form-control">
                                                                 <option value="" selected="" data-select2-id="4">Select Option</option>
 
-                                                                @foreach ($employments as $employment)
+                                                                @foreach ($jobs as $employment)
 
-                                                                <option>{{$employment-> employment_value}}</option>
+                                                                <option>{{$employment-> job_title}}</option>
 
                                                                 @endforeach
                                                             </select>
@@ -233,21 +210,18 @@
                                                     <div id="FirstLang-group" class="form-group has-feedback form-control-group">
                                                         <label for="FirstLang" class="control-label"><span class="required">*</span> My First Language</label>
                                                         <div class="controls">
-                                                            <select name="FirstLang" id="FirstLang" required="required" data-select2-id="FirstLang" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
+                                                            <select name="FirstLang" id="FirstLang" required="required" class="select2" data-select2-id="FirstLang" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
                                                                 <option value="" selected="" data-select2-id="4">Select Option</option>
-                                                                @foreach ($employments as $employment)
-
-                                                                <option>{{$employment-> employment_Language}}</option>
-
-                                                                @endforeach {{--
-                                                                <option value="76" data-select2-id="160">English</option>
-                                                                <option value="78" data-select2-id="161">Arabic</option>
-                                                                <option value="429" data-select2-id="162">Balochi</option>
-                                                                <option value="469" data-select2-id="191">Kashmiri</option>
-                                                                <option value="499" data-select2-id="192">Korean</option>
-                                                                <option value="564" data-select2-id="193">Saraiki</option>
-                                                                <option value="583" data-select2-id="194">Sindhi</option>
-                                                                --}}
+                                                                <option value="English" >English </option>
+                                                                <option value="Mandarin Chinese" >Mandarin Chinese </option>
+                                                                <option value="Hindi">Hindi </option>
+                                                                <option value="Spanish" >Spanish </option>
+                                                                <option value="French" >French </option>
+                                                                <option value="Standard Arabic" >Standard Arabic </option>
+                                                                <option value="Bengali" >Bengali </option>
+                                                                <option value="Russian" >Russian </option>
+                                                                <option value="Portuguese" >Portuguese </option>
+                                                                <option value="Indonesian" >Indonesian </option>
                                                             </select>
                                                         </div>
                                                     </div>
@@ -255,13 +229,18 @@
                                                     <div id="SecondLang-group" class="form-group has-feedback form-control-group">
                                                         <label for="SecondLang" class="control-label"><span class="required">*</span> My Second Language</label>
                                                         <div class="controls">
-                                                            <select name="SecondLang" id="SecondLang" required="required" data-select2-id="SecondLang" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
-                                                                <option value="" selected="" data-select2-id="4">Select Option</option>
-                                                                @foreach ($employments as $employment)
-
-                                                                <option>{{$employment-> employment_Language}}</option>
-
-                                                                @endforeach
+                                                            <select name="SecondLang" id="SecondLang" class="select2" required="required" data-select2-id="SecondLang" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
+                                                            <option value="" selected="" data-select2-id="4">Select Option</option>
+                                                                <option value="English" >English </option>
+                                                                <option value="Mandarin Chinese" >Mandarin Chinese </option>
+                                                                <option value="Hindi">Hindi </option>
+                                                                <option value="Spanish" >Spanish </option>
+                                                                <option value="French" >French </option>
+                                                                <option value="Standard Arabic" >Standard Arabic </option>
+                                                                <option value="Bengali" >Bengali </option>
+                                                                <option value="Russian" >Russian </option>
+                                                                <option value="Portuguese" >Portuguese </option>
+                                                                <option value="Indonesian" >Indonesian </option>
                                                             </select>
                                                         </div>
                                                     </div>
