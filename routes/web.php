@@ -99,6 +99,7 @@ Route::get('/signup/addPhoto', 'MainController@addPhoto')->name('addPhoto');
 Route::post('/signup/addPhoto/create', 'MainController@addPhoto_create')->name('addPhoto_create');
 
 });
+
 Route::get('change-status', 'HomeController@changeStatus');
 
 Route::get('/welcome/{id}', 'HomeController@welcome')->name('welcome');

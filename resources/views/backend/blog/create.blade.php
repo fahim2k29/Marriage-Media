@@ -42,7 +42,9 @@
                     {{-- <strong class="red">Minimum 150x33 pixels</strong> --}}
                 </div>
             </div>
-
+            <div >
+                <p style="color: red"> <b>Please insert image or videoLink</b> </p>
+            </div>
             <!-- Image -->
            <div class="form-group">
                 <label class="col-sm-2 bolder" for="image">Image
@@ -61,7 +63,7 @@
                 </div>
             </div>
             <div >
-                <p style="color: green"> <b>Please insert image or videoLink</b> </p>
+                <p style="color: red"> <b>Please insert image or videoLink</b> </p>
             </div>
             <div class="form-group">
                 <label class="col-sm-2 bolder" for="image">Video Link

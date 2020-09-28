@@ -90,9 +90,7 @@
                                 <div class="clearfix"></div>
                             </div>
                             <br><br><br>
-                            <!--Your first month is charged at (USD) $49.00, and renewed at (USD) $49.00 each month until you cancel it.
-                        3 month membership is (USD) $99.00 (up-front) and renewed at (USD) $33.00 each month after until you cancel it.-->
-
+                           
                         @if(is_null($pay))
                             <div class="clearfix upgradePagepackages">
                                 <div class="mainPackages">
@@ -110,11 +108,11 @@
                                                             <h3>{{$offer->duration}} Days</h3>
                                                         </div>
                                                         <div class="panel-body text-center">
-                                                            <p class="quote-text Pricetags" style="font-size: 35px"> ${{number_format($offer->price, 2)}}</p>
+                                                            <p class="quote-text Pricetags" style="font-size: 35px"> £{{number_format($offer->price, 2)}}</p>
                                                         </div>
                                                         <ul>
-                                                            <li>{{$offer->duration}} days subscription is ${{number_format($offer->price, 2)}}</li>
-                                                            <li>Then ${{number_format($offer->price, 2)}} every {{$offer->duration}} days thereafter</li>
+                                                            <li>{{$offer->duration}} days subscription is £{{number_format($offer->price, 2)}}</li>
+                                                            <li>Then £{{number_format($offer->price, 2)}} every {{$offer->duration}} days thereafter</li>
                                                         </ul>
                                                         
                                                     </a>
@@ -157,7 +155,7 @@
                                             <tr>
                                                 {{-- @dd($item); --}}
                                                 {{-- <td>{{$pay->name}}</td> --}}
-                                                <td>$ {{number_format($pay->price, 2)}}</td>  
+                                                <td>£ {{number_format($pay->price, 2)}}</td>  
                                                 <td>{{$pay->purchase_date }} </td>
                                                 <td>{{$pay->expire_date }}</td>
                                             </tr>
@@ -165,19 +163,7 @@
                                 </table>
                         @endif
 
-                            <div class="clearfix upgradePagePackagesContent" style="display: none;">
-                                <span class="col-xs-12">*Your first month is charged at (USD) $49.00 , and for your convenience your subscription is renewed at (USD) $49.00 every month after your first month until you cancel it.</span>
-
-                                <span class="col-xs-12">
-                                    **3 months membership is (USD) $99.00 (payable up-front), and for your convenience your Gold Membership is renewed at the great rate of just (USD) $99.00 every month after your first 3 months until you
-                                    cancel it.
-                                </span>
-
-                                <span class="col-xs-12">
-                                    ***12 months membership is (USD) $180.00 (payable up-front), and for your convenience your Gold Membership is renewed at the great rate of just (USD) $180.00 every month after your first 12 months until
-                                    you cancel it.
-                                </span>
-                            </div>
+                          
                             <div class="clearfix upgradePageMustread">
                                 <hr />
 
