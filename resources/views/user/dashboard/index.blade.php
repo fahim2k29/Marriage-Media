@@ -249,31 +249,7 @@
 
                         <div class="divBottomsectionadv">
                             <!-- success stories -->
-                            <a href="/page/news/allnews/In%20The%20News">
-                                <div class="story-box news relative-position four-by-three hidden-overflow z-page-click-target page-click rounded-corner twenty" style="margin-bottom: 15px;">
-                                    <div
-                                        class="story-image-wrapper fill-absolute background-size contain center z-page-click-targe hasImageToLoad imageLoaded"
-                                        style="background-image: url('https://img.youtube.com/vi/9CfXZ6UnDsE/hqdefault.jpg');"
-                                    >
-                                        <!-- ngIf: !contentCtr.articles[1].youtubeVideoID -->
-                                        <img
-                                            ng-src="https://img.youtube.com/vi/9CfXZ6UnDsE/hqdefault.jpg"
-                                            alt=""
-                                            class="ios-image imageonload z-page-click-targe ng-scope ng-isolate-scope loaded"
-                                            fill-background="true"
-                                            ng-if="!contentCtr.articles[1].youtubeVideoID"
-                                            loaded="true"
-                                            src="https://img.youtube.com/vi/9CfXZ6UnDsE/hqdefault.jpg"
-                                        />
-                                        <!-- end ngIf: !contentCtr.articles[1].youtubeVideoID -->
-                                    </div>
-                                    <div class="story-image-overlay fill-absolute sm-shadow-transparent litle-more sm-color z-page-click-targe">
-                                        <span style="font-size: 64; color: white;">
-                                            <span class="playbutton"><i class="glyphicon glyphicon-play"></i></span>
-                                        </span>
-                                    </div>
-                                </div>
-                            </a>
+                            
                             <style>
                                 .latest-controlpanel .article-box .story-box.news {
                                     background: #dedede;

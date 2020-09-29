@@ -110,17 +110,22 @@
                                     <div class="col-xs-3">
                                         <select name="DOB_day" id="DOB-day" required="required" data-select2-id="DOB-day" class="select2" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
                                             <option value="" selected="" data-select2-id="4">Select Day</option>
-                                            @foreach ($signupdatas as $signupdata)
-                                            <option>{{$signupdata->DOB_day_data}}</option>
-                                            @endforeach
+                                            @for($i = 1; $i <= 31; $i++){
+                                                <option value="{{$i}}">{{$i}}</option>
+                                            }
+                                            @endfor
                                         </select>
                                     </div>
                                     <div class="col-xs-5">
                                         <select name="DOB_month" id="DOB-month" required="required" data-select2-id="DOB-month" class="select2" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
                                             <option value="" selected="" data-select2-id="4">Select Month</option>
-                                            @foreach ($signupdatas as $signupdata)
-                                            <option>{{$signupdata->DOB_month_data}}</option>
+                                            @foreach ($months as $month) {
+                                                <option value="{{$month}}">{{$month}}</option>
+                                            }
                                             @endforeach
+                                            <!-- @foreach ($signupdatas as $signupdata)
+                                            <option>{{$signupdata->DOB_month_data}}</option>
+                                            @endforeach -->
                                         </select>
                                     </div>
                                     <div class="col-xs-4">
@@ -135,6 +140,8 @@
                                 </div>
                             </div>
                         </div>
+
+                      
 
                         <div id="RegistrationReason-group" class="form-group has-feedback form-control-group">
                             <label for="RegistrationReason" class="control-label"><span class="required">*</span> Reason for Registering?</label>

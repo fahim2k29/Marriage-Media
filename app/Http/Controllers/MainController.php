@@ -65,11 +65,12 @@ class MainController extends Controller
         // dd($countries->toArray());
         $max = 55;
         $now = Carbon::now()->format('Y');
+        $months = array("January","February","March","April","May","June","July","August","September","October","November","December");
+       
         // $year =Carbon::now()->diff(Carbon::parse($max))->format('%Y');
-        // dd($year);
-
-        return view('user.register', compact('signupdatas', 'countries', 'now'));
+        return view('user.register', compact('signupdatas', 'countries', 'now','months'));
     }
+    
     
     public function aboutme()
     {
