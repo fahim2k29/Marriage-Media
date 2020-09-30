@@ -176,9 +176,9 @@
                                                                             aria-hidden="true"
                                                                         >
                                                                             <option>Select Option</option>
-                                                                            @foreach ($personaldatas as $personaldata)
-                                                                            <option>{{$personaldata->MaritalStatus_data}}</option>
-                                                                            @endforeach
+                                                                            <option value="Never Married">Never Married</option>
+                                                                            <option value="Divorced">Divorced</option>
+                                                                            <option value="Widowed">Widowed</option>
                                                                         </select>
                                                                     </div>
                                                                 </div>
@@ -253,9 +253,9 @@
                                                                     <div class="input-group input-group-maxwidth">
                                                                         <select name="Build" id="Build" data-placeholder="Select your option" class="select2-hidden-accessible" data-select2-id="Build" tabindex="-1" aria-hidden="true">
                                                                             <option>Select Option</option>
-                                                                            @foreach ($personaldatas as $personaldata)
-                                                                            <option>{{$personaldata->Build_data}}</option>
-                                                                            @endforeach
+                                                                            <option value="Slim">Slim</option>
+                                                                            <option value="Medium">Medium</option>
+                                                                            <option value="Large">Large</option>
                                                                         </select>
                                                                     </div>
                                                                 </div>
@@ -271,9 +271,10 @@
                                                                     <div class="input-group input-group-maxwidth">
                                                                         <select name="Hair" id="Hair" data-placeholder="Select your option" class="select2-hidden-accessible" data-select2-id="Hair" tabindex="-1" aria-hidden="true">
                                                                             <option>Select Option</option>
-                                                                            @foreach ($personaldatas as $personaldata)
-                                                                            <option>{{$personaldata->Hair_data}}</option>
-                                                                            @endforeach
+                                                                            <option value="Black">Black</option>
+                                                                            <option value="White">White</option>
+                                                                            <option value="Brunette">Brunette</option>
+                                                                            <option value="Blonde">Blonde</option>
                                                                         </select>
                                                                     </div>
                                                                 </div>
@@ -314,10 +315,14 @@
                                                                             tabindex="-1"
                                                                             aria-hidden="true"
                                                                         >
-                                                                            <option>Select Option</option>
-                                                                            @foreach ($personaldatas as $personaldata)
-                                                                            <option>{{$personaldata->EyeColour_data}}</option>
-                                                                            @endforeach
+                                                                        <option>Select Option</option>
+                                                                        <option value="Amber">Amber</option>
+                                                                        <option value="Blue">Blue</option>
+                                                                        <option value="Brown">Brown</option>
+                                                                        <option value="Gray">Gray</option>
+                                                                        <option value="Green">Green</option>
+                                                                        <option value="Hazel">Hazel</option>
+                                                                        <option value="Red">Red</option>
                                                                         </select>
                                                                     </div>
                                                                 </div>
@@ -333,9 +338,24 @@
                                                                     <div class="input-group input-group-maxwidth">
                                                                         <select name="Height" id="MinHeight" class="form-control-values select2-hidden-accessible" data-select2-id="MinHeight" tabindex="-1" aria-hidden="true">
                                                                             <option>Select Option</option>
-                                                                            @foreach ($personaldatas as $personaldata)
-                                                                            <option>{{$personaldata->Height_data}}</option>
-                                                                            @endforeach
+                                                                            <option value="4ft">4ft</option>
+                                                                            <option value="4.2ft">4.2ft</option>
+                                                                            <option value="4.5ft">4.5ft</option>
+                                                                            <option value="4.8ft">4.8ft</option>
+                                                                            <option value="5ft">5ft</option>
+                                                                            <option value="5.2ft">5.2ft</option>
+                                                                            <option value="5.5ft">5.5ft</option>
+                                                                            <option value="5.8ft">5.8ft</option>
+                                                                            <option value="6ft">6ft</option>
+                                                                            <option value="6.2ft">6.2ft</option>
+                                                                            <option value="6.5ft">6.5ft</option>
+                                                                            <option value="6.8ft">6.8ft</option>
+                                                                            <option value="7ft">7ft</option>
+                                                                            <option value="7.2ft">7.2ft</option>
+                                                                            <option value="7.5ft">7.5ft</option>
+                                                                            <option value="7.8ft">7.8ft</option>
+                                                                            <option value="8ft">8ft</option>
+                                                                            
                                                                         </select>
                                                                     </div>
                                                                 </div>
@@ -375,7 +395,6 @@
                                                                 <div class="col-md-8 col-lg-8" style="text-align: right; float: right;">
                                                                     <button name="Submit" id="Submit" type="submit" class="btn btn-success btn-lg btn-submit-search secondFont">Search Now</button>
                                                                 </div>
-                                                                <div class="col-md-4 col-lg-4 addcriteria secondFont" nextlink="#tab1">+ Add more criteria</div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -405,7 +424,6 @@
                                                                 <div class="col-md-8 col-lg-8" style="text-align: right; float: right;">
                                                                     <button name="Submit" id="Submit" type="submit" class="btn btn-success btn-lg btn-submit-search secondFont">Search Now</button>
                                                                 </div>
-                                                                <div class="col-md-4 col-lg-4 addcriteria secondFont" nextlink="#tab1">+ Add more criteria</div>
                                                             </div>
                                                         </div>
                                                     </div>

@@ -116,12 +116,12 @@
                                                         <div class="controls">
                                                             <select name="Income" class="select2" id="Income" data-select2-id="Income" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
                                                                 <option value="{{$personal->Income}}" selected="">{{$personal->Income}}</option>
-
-                                                                @foreach ($personaldatas as $personaldata)
-
-                                                                <option>{{$personaldata-> Income_data}}</option>
-
-                                                                @endforeach
+                                                                <option value="$ 2,000-5,000" > $ 2,000-5,000</option>
+                                                                <option value="$ 5,000-8,000" > $ 5,000-8,000</option>
+                                                                <option value="$ 8,000-10,000" > $ 8,000-10,000</option>
+                                                                <option value="$ 10,000-$ 15,000" > $ 10,000-$ 15,000</option>
+                                                                <option value="Over $ 20,000" >Over $ 20,000</option>
+                                                                <option value="Prefer not to Say" >Prefer not to Say</option>
                                                             </select>
                                                         </div>
                                                     </div>
@@ -131,11 +131,8 @@
                                                         <div class="controls">
                                                             <select name="MarryIn" class="select2" id="MarryIn" data-select2-id="MarryIn" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
                                                                 <option value="{{$personal->MarryIn}}" selected="">{{$personal->MarryIn}}</option>
-
                                                                 @foreach ($personaldatas as $personaldata)
-
                                                                 <option>{{$personaldata-> MarryIn_data}}</option>
-
                                                                 @endforeach
                                                             </select>
                                                         </div>
@@ -146,12 +143,9 @@
                                                         <div class="controls">
                                                             <select name="MaritalStatus" class="select2" id="MaritalStatus" data-select2-id="MaritalStatus" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
                                                                 <option value="{{$personal->MaritalStatus}}" selected="">{{$personal->MaritalStatus}}</option>
-
-                                                                @foreach ($personaldatas as $personaldata)
-
-                                                                <option>{{$personaldata-> MaritalStatus_data}}</option>
-
-                                                                @endforeach
+                                                                <option value="Never Married">Never Married</option>
+                                                                <option value="Divorced">Divorced</option>
+                                                                <option value="Widowed">Widowed</option>
                                                             </select>
                                                         </div>
                                                     </div>
@@ -206,20 +200,24 @@
                                                         <div class="controls">
                                                             <select name="Height" class="select2" id="Height" data-select2-id="Height" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
                                                                 <option value="{{$personal->Height}}" selected="">{{$personal->Height}}</option>
-                                                                <option value="1.35m">1.35m</option>
-                                                                <option value="1.4m">1.4m</option>
-                                                                <option value="1.45m">1.45m</option>
-                                                                <option value="1.5m">1.5m</option>
-                                                                <option value="1.55m">1.55m</option>
-                                                                <option value="1.6m">1.6m</option>
-                                                                <option value="1.65m">1.65m</option>
-                                                                <option value="1.7m">1.7m</option>
-                                                                <option value="1.75m">1.75m</option>
-                                                                <option value="1.8m">1.8m</option>
-                                                                <option value="1.85m">1.85m</option>
-                                                                <option value="1.9m">1.9m</option>
-                                                                <option value="1.92m">1.92m</option>
-                                                                <option value="1.95m">1.95m</option>
+                                                                <option>Select Option</option>
+                                                                    <option value="4ft">4ft</option>
+                                                                    <option value="4.2ft">4.2ft</option>
+                                                                    <option value="4.5ft">4.5ft</option>
+                                                                    <option value="4.8ft">4.8ft</option>
+                                                                    <option value="5ft">5ft</option>
+                                                                    <option value="5.2ft">5.2ft</option>
+                                                                    <option value="5.5ft">5.5ft</option>
+                                                                    <option value="5.8ft">5.8ft</option>
+                                                                    <option value="6ft">6ft</option>
+                                                                    <option value="6.2ft">6.2ft</option>
+                                                                    <option value="6.5ft">6.5ft</option>
+                                                                    <option value="6.8ft">6.8ft</option>
+                                                                    <option value="7ft">7ft</option>
+                                                                    <option value="7.2ft">7.2ft</option>
+                                                                    <option value="7.5ft">7.5ft</option>
+                                                                    <option value="7.8ft">7.8ft</option>
+                                                                    <option value="8ft">8ft</option>
                                                             </select>
                                                         </div>
                                                     </div>
@@ -229,12 +227,9 @@
                                                         <div class="controls">
                                                             <select name="Build" class="select2" id="Build" data-select2-id="Build" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
                                                                 <option value="{{$personal->Build}}" selected="">{{$personal->Build}}</option>
-
-                                                                @foreach ($personaldatas as $personaldata)
-
-                                                                <option>{{$personaldata-> Build_data}}</option>
-
-                                                                @endforeach
+                                                                <option value="Slim">Slim</option>
+                                                                <option value="Medium">Medium</option>
+                                                                <option value="Large">Large</option>
                                                             </select>
                                                         </div>
                                                     </div>
@@ -244,12 +239,11 @@
                                                         <div class="controls">
                                                             <select name="Hair" class="select2" id="Hair" data-select2-id="Hair" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
                                                                 <option value="{{$personal->Hair}}" selected="">{{$personal->Hair}}</option>
-
-                                                                @foreach ($personaldatas as $personaldata)
-
-                                                                <option>{{$personaldata-> Hair_data}}</option>
-
-                                                                @endforeach
+                                                                <option value="Black">Black</option>
+                                                                <option value="White">White</option>
+                                                                <option value="Brunette">Brunette</option>
+                                                                <option value="Blonde">Blonde</option>
+                                                                        
                                                             </select>
                                                         </div>
                                                     </div>
@@ -259,12 +253,13 @@
                                                         <div class="controls">
                                                             <select name="EyeColour" class="select2" id="EyeColour" data-select2-id="EyeColour" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
                                                                 <option value="{{$personal->EyeColour}}" selected="">{{$personal->EyeColour}}</option>
-
-                                                                @foreach ($personaldatas as $personaldata)
-
-                                                                <option>{{$personaldata-> EyeColour_data}}</option>
-
-                                                                @endforeach
+                                                                <option value="Amber">Amber</option>
+                                                                <option value="Blue">Blue</option>
+                                                                <option value="Brown">Brown</option>
+                                                                <option value="Gray">Gray</option>
+                                                                <option value="Green">Green</option>
+                                                                <option value="Hazel">Hazel</option>
+                                                                <option value="Red">Red</option>
                                                             </select>
                                                         </div>
                                                     </div>
@@ -361,12 +356,12 @@
                                                         <div class="controls">
                                                             <select name="Income" class="select2" id="Income" required="required" data-select2-id="Income" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
                                                                 <option value="" selected="" data-select2-id="4">Select Option</option>
-                                                                <option value="15,000-25,000" >15,000-25,000</option>
-                                                                <option value="25,000-40,000" >25,000-40,000</option>
-                                                                <option value="40,000-60,000" >40,000-60,000</option>
-                                                                <option value="over 60,000" >Over 60,000</option>
-
-                                                               
+                                                                <option value="$ 2,000-5,000" > $ 2,000-5,000</option>
+                                                                <option value="$ 5,000-8,000" > $ 5,000-8,000</option>
+                                                                <option value="$ 8,000-10,000" > $ 8,000-10,000</option>
+                                                                <option value="$ 10,000-$ 15,000" > $ 10,000-$ 15,000</option>
+                                                                <option value="Over $ 20,000" >Over $ 20,000</option>
+                                                                <option value="Prefer not to Say" >Prefer not to Say</option>
                                                             </select>
                                                         </div>
                                                     </div>
@@ -391,12 +386,9 @@
                                                         <div class="controls">
                                                             <select name="MaritalStatus" class="select2" id="MaritalStatus" required="required" data-select2-id="MaritalStatus" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
                                                                 <option value="" selected="" data-select2-id="4">Select Option</option>
-
-                                                                @foreach ($personaldatas as $personaldata)
-
-                                                                <option>{{$personaldata-> MaritalStatus_data}}</option>
-
-                                                                @endforeach
+                                                                <option value="Never Married">Never Married</option>
+                                                                <option value="Divorced">Divorced</option>
+                                                                <option value="Widowed">Widowed</option>
                                                             </select>
                                                         </div>
                                                     </div>
@@ -475,12 +467,9 @@
                                                         <div class="controls">
                                                             <select name="Build" class="select2" id="Build" required="required" data-select2-id="Build" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
                                                                 <option value="" selected="" data-select2-id="4">Select Option</option>
-
-                                                                @foreach ($personaldatas as $personaldata)
-
-                                                                <option>{{$personaldata-> Build_data}}</option>
-
-                                                                @endforeach
+                                                                <option value="Slim">Slim</option>
+                                                                <option value="Medium">Medium</option>
+                                                                <option value="Large">Large</option>
                                                             </select>
                                                         </div>
                                                     </div>
@@ -490,12 +479,10 @@
                                                         <div class="controls">
                                                             <select name="Hair" class="select2" id="Hair" required="required" data-select2-id="Hair" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
                                                                 <option value="" selected="" data-select2-id="4">Select Option</option>
-
-                                                                @foreach ($personaldatas as $personaldata)
-
-                                                                <option>{{$personaldata-> Hair_data}}</option>
-
-                                                                @endforeach
+                                                                <option value="Black">Black</option>
+                                                                <option value="White">White</option>
+                                                                <option value="Brunette">Brunette</option>
+                                                                <option value="Blonde">Blonde</option>
                                                             </select>
                                                         </div>
                                                     </div>
@@ -505,12 +492,13 @@
                                                         <div class="controls">
                                                             <select name="EyeColour" class="select2" id="EyeColour" required="required" data-select2-id="EyeColour" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
                                                                 <option value="" selected="" data-select2-id="4">Select Option</option>
-
-                                                                @foreach ($personaldatas as $personaldata)
-
-                                                                <option>{{$personaldata-> EyeColour_data}}</option>
-
-                                                                @endforeach
+                                                                <option value="Amber">Amber</option>
+                                                                <option value="Blue">Blue</option>
+                                                                <option value="Brown">Brown</option>
+                                                                <option value="Gray">Gray</option>
+                                                                <option value="Green">Green</option>
+                                                                <option value="Hazel">Hazel</option>
+                                                                <option value="Red">Red</option>
                                                             </select>
                                                         </div>
                                                     </div>

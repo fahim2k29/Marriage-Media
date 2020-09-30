@@ -134,9 +134,9 @@
                                                         <div class="controls">
                                                             <select name="Halaal" id="Halaal" class="select2" data-select2-id="Halaal" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
                                                                 <option value="{{$religion->Halaal}}" selected="">{{$religion->Halaal}}</option>
-                                                                @foreach ($religiondatas as $religiondata)
-                                                                <option>{{$religiondata->Halaal_data}}</option>
-                                                                @endforeach
+                                                                <option value="Always">Always</option>
+                                                                <option value="Usually">Usually</option>
+                                                                <option value="Never">Never</option>
                                                             </select>
                                                         </div>
                                                     </div>
@@ -159,7 +159,9 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                @else
+
+                                            @else
+
                                                 <input type="hidden" name="is_prev" id="is_prev" value="0" />
                                                 <div role="form" class="form-horizontal">
                                                     <div id="Religiosness-group" class="form-group has-feedback form-control-group">
@@ -181,7 +183,8 @@
                                                                 <option value="" selected="" data-select2-id="4">Select Option</option>
                                                                 <option value="Just Muslim" >Just Muslim</option>
                                                                 <option value="Sunni" >Sunni</option>
-                                                                <option value="Shia" >Shia</option>                                                                
+                                                                <option value="Shia" >Shia</option>   
+                                                                <option value="Other-Please ask me" >Other-Please ask me</option>                                                                  
                                                             </select>
                                                         </div>
                                                     </div>
@@ -227,9 +230,9 @@
                                                         <div class="controls">
                                                             <select name="Halaal" class="select2" id="Halaal" required="required" data-select2-id="Halaal" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
                                                                 <option value="" selected="" data-select2-id="4">Select Option</option>
-                                                                @foreach ($religiondatas as $religiondata)
-                                                                <option>{{$religiondata->Halaal_data}}</option>
-                                                                @endforeach
+                                                                <option value="Always">Always</option>
+                                                                <option value="Usually">Usually</option>
+                                                                <option value="Never">Never</option>
                                                             </select>
                                                         </div>
                                                     </div>

@@ -73,7 +73,7 @@
                                                         <div class="controls">
                                                             <select name="EducationLevel" id="EducationLevel" class="select2" data-select2-id="EducationLevel" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
                                                                 <option value="{{$education-> EducationLevel}}" selected="">{{$education-> EducationLevel}}</option>
-                                                                <option value="Hogh-School">Hogh-School</option>
+                                                                <option value="High-School">High-School</option>
                                                                 <option value="College">College</option>
                                                                 <option value="Graduate">Graduate</option>
                                                                 <option value="Masters Degree">Masters Degree</option>
@@ -122,17 +122,20 @@
                                                                 <option value="English" >English </option>
                                                                 <option value="Mandarin Chinese" >Mandarin Chinese </option>
                                                                 <option value="Hindi">Hindi </option>
+                                                                <option value="Italian">Italian </option>
                                                                 <option value="Spanish" >Spanish </option>
                                                                 <option value="French" >French </option>
+                                                                <option value="German" >German </option>
                                                                 <option value="Standard Arabic" >Standard Arabic </option>
                                                                 <option value="Bengali" >Bengali </option>
                                                                 <option value="Russian" >Russian </option>
+                                                                <option value="Japanese" >Japanese </option>
                                                                 <option value="Portuguese" >Portuguese </option>
                                                                 <option value="Indonesian" >Indonesian </option>
                                                             </select>
                                                         </div>
                                                     </div>
-
+                                                   
                                                     <div id="SecondLang-group" class="form-group has-feedback form-control-group">
                                                         <label for="SecondLang" class="control-label"><span class="required">*</span> My Second Language</label>
                                                         <div class="controls">
@@ -141,11 +144,14 @@
                                                                 <option value="English" >English </option>
                                                                 <option value="Mandarin Chinese" >Mandarin Chinese </option>
                                                                 <option value="Hindi">Hindi </option>
+                                                                <option value="Italian">Italian </option>
                                                                 <option value="Spanish" >Spanish </option>
                                                                 <option value="French" >French </option>
+                                                                <option value="German" >German </option>
                                                                 <option value="Standard Arabic" >Standard Arabic </option>
                                                                 <option value="Bengali" >Bengali </option>
                                                                 <option value="Russian" >Russian </option>
+                                                                <option value="Japanese" >Japanese </option>
                                                                 <option value="Portuguese" >Portuguese </option>
                                                                 <option value="Indonesian" >Indonesian </option>
                                                             </select>
@@ -167,7 +173,7 @@
                                                         <div class="controls">
                                                             <select name="EducationLevel" id="EducationLevel" class="select2" required="required" data-select2-id="EducationLevel" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
                                                                 <option value="" selected="" data-select2-id="4">Select Option</option>
-                                                                <option value="Hogh-School">Hogh-School</option>
+                                                                <option value="High-School">High-School</option>
                                                                 <option value="College">College</option>
                                                                 <option value="Graduate">Graduate</option>
                                                                 <option value="Masters Degree">Masters Degree</option>
@@ -215,11 +221,14 @@
                                                                 <option value="English" >English </option>
                                                                 <option value="Mandarin Chinese" >Mandarin Chinese </option>
                                                                 <option value="Hindi">Hindi </option>
+                                                                <option value="Italian">Italian </option>
                                                                 <option value="Spanish" >Spanish </option>
                                                                 <option value="French" >French </option>
+                                                                <option value="German" >German </option>
                                                                 <option value="Standard Arabic" >Standard Arabic </option>
                                                                 <option value="Bengali" >Bengali </option>
                                                                 <option value="Russian" >Russian </option>
+                                                                <option value="Japanese" >Japanese </option>
                                                                 <option value="Portuguese" >Portuguese </option>
                                                                 <option value="Indonesian" >Indonesian </option>
                                                             </select>
@@ -231,16 +240,19 @@
                                                         <div class="controls">
                                                             <select name="SecondLang" id="SecondLang" class="select2" required="required" data-select2-id="SecondLang" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
                                                             <option value="" selected="" data-select2-id="4">Select Option</option>
-                                                                <option value="English" >English </option>
-                                                                <option value="Mandarin Chinese" >Mandarin Chinese </option>
-                                                                <option value="Hindi">Hindi </option>
-                                                                <option value="Spanish" >Spanish </option>
-                                                                <option value="French" >French </option>
-                                                                <option value="Standard Arabic" >Standard Arabic </option>
-                                                                <option value="Bengali" >Bengali </option>
-                                                                <option value="Russian" >Russian </option>
-                                                                <option value="Portuguese" >Portuguese </option>
-                                                                <option value="Indonesian" >Indonesian </option>
+                                                            <option value="English" >English </option>
+                                                            <option value="Mandarin Chinese" >Mandarin Chinese </option>
+                                                            <option value="Hindi">Hindi </option>
+                                                            <option value="Italian">Italian </option>
+                                                            <option value="Spanish" >Spanish </option>
+                                                            <option value="French" >French </option>
+                                                            <option value="German" >German </option>
+                                                            <option value="Standard Arabic" >Standard Arabic </option>
+                                                            <option value="Bengali" >Bengali </option>
+                                                            <option value="Russian" >Russian </option>
+                                                            <option value="Japanese" >Japanese </option>
+                                                            <option value="Portuguese" >Portuguese </option>
+                                                            <option value="Indonesian" >Indonesian </option>
                                                             </select>
                                                         </div>
                                                     </div>

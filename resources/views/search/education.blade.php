@@ -85,9 +85,19 @@
                                                                             aria-hidden="true"
                                                                         >
                                                                             <option>Select Option</option>
-                                                                            @foreach ($employments as $employment)
-                                                                            <option>{{$employment->employment_Language}}</option>
-                                                                            @endforeach
+                                                                            <option value="English" >English </option>
+                                                                            <option value="Mandarin Chinese" >Mandarin Chinese </option>
+                                                                            <option value="Hindi">Hindi </option>
+                                                                            <option value="Italian">Italian </option>
+                                                                            <option value="Spanish" >Spanish </option>
+                                                                            <option value="French" >French </option>
+                                                                            <option value="German" >German </option>
+                                                                            <option value="Standard Arabic" >Standard Arabic </option>
+                                                                            <option value="Bengali" >Bengali </option>
+                                                                            <option value="Russian" >Russian </option>
+                                                                            <option value="Japanese" >Japanese </option>
+                                                                            <option value="Portuguese" >Portuguese </option>
+                                                                            <option value="Indonesian" >Indonesian </option>
                                                                         </select>
                                                                     </div>
                                                                 </div>
@@ -110,9 +120,19 @@
                                                                             aria-hidden="true"
                                                                         >
                                                                             <option>Select Option</option>
-                                                                            @foreach ($employments as $employment)
-                                                                            <option>{{$employment->employment_Language}}</option>
-                                                                            @endforeach
+                                                                            <option value="English" >English </option>
+                                                                            <option value="Mandarin Chinese" >Mandarin Chinese </option>
+                                                                            <option value="Hindi">Hindi </option>
+                                                                            <option value="Italian">Italian </option>
+                                                                            <option value="Spanish" >Spanish </option>
+                                                                            <option value="French" >French </option>
+                                                                            <option value="German" >German </option>
+                                                                            <option value="Standard Arabic" >Standard Arabic </option>
+                                                                            <option value="Bengali" >Bengali </option>
+                                                                            <option value="Russian" >Russian </option>
+                                                                            <option value="Japanese" >Japanese </option>
+                                                                            <option value="Portuguese" >Portuguese </option>
+                                                                            <option value="Indonesian" >Indonesian </option>
                                                                         </select>
                                                                     </div>
                                                                 </div>
@@ -135,9 +155,14 @@
                                                                             aria-hidden="true"
                                                                         >
                                                                             <option>Select Option</option>
-                                                                            @foreach ($employments as $employment)
-                                                                            <option>{{$employment->employment_EducationLevel}}</option>
-                                                                            @endforeach
+                                                                            <option value="High-School">High-School</option>
+                                                                            <option value="College">College</option>
+                                                                            <option value="Graduate">Graduate</option>
+                                                                            <option value="Masters Degree">Masters Degree</option>
+                                                                            <option value="Doctorate">Doctorate</option>
+                                                                            <option value="Non-Graduate">Non-Graduate</option>
+                                                                            <option value="Others">Others</option>
+                                                                
                                                                         </select>
                                                                     </div>
                                                                 </div>
@@ -162,9 +187,12 @@
                                                                             aria-hidden="true"
                                                                         >
                                                                             <option>Select Option</option>
-                                                                            @foreach ($personaldatas as $personaldata)
-                                                                            <option>{{$personaldata->Income_data}}</option>
-                                                                            @endforeach
+                                                                            <option value="$ 2,000-5,000" > $ 2,000 - 5,000 </option>
+                                                                            <option value="$ 5,000-8,000" > $ 5,000 - 8,000</option>
+                                                                            <option value="$ 8,000-10,000" > $ 8,000 - 10,000</option>
+                                                                            <option value="$ 10,000-$ 15,000" > $ 10,000 - $ 15,000</option>
+                                                                            <option value="Over $ 20,000" >Over $ 20,000</option>
+                                                                            <option value="Prefer not to Say" >Prefer not to Say</option>
                                                                         </select>
                                                                     </div>
                                                                 </div>
@@ -187,8 +215,10 @@
                                                                             aria-hidden="true"
                                                                         >
                                                                             <option>Select Option</option>
-                                                                            @foreach ($employments as $employment)
-                                                                            <option>{{$employment->employment_value}}</option>
+                                                                            @foreach ($jobs as $employment)
+
+                                                                            <option>{{$employment-> job_title}}</option>
+            
                                                                             @endforeach
                                                                         </select>
                                                                     </div>
@@ -200,7 +230,7 @@
                                                                 <div class="col-md-8 col-lg-8" style="text-align: right; float: right;">
                                                                     <button name="Submit" id="Submit" type="submit" class="btn btn-success btn-lg btn-submit-search secondFont">Search Now</button>
                                                                 </div>
-                                                                <div class="col-md-4 col-lg-4 addcriteria secondFont" nextlink="#tab4">+ Add more criteria</div>
+                                                                {{-- <div class="col-md-4 col-lg-4 addcriteria secondFont" nextlink="#tab4">+ Add more criteria</div> --}}
                                                             </div>
                                                         </div>
                                                     </div>

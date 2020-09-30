@@ -21,10 +21,10 @@
                                 <nav class="secondFont breadcrumbs-newstyle" style="">
                                     <a href="/dashboard">Home</a>
 
-                                    <i class="smicon-new smicon-angle-right"></i>
+                                    <i class="fa fa-angle-right"></i>
                                     <a href="/search">Search</a>
 
-                                    <i class="smicon-new smicon-angle-right"></i>
+                                    <i class="fa fa-angle-right"></i>
                                     <a href="#" id="changeBreadcrum" class="breadcrumLast">Username</a>
                                 </nav>
 

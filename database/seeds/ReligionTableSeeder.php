@@ -16,8 +16,8 @@ class ReligionTableSeeder extends Seeder
             'Religiosness_data'=>'Very religious',
             'Sect_data'=>'Just Muslim',
             'Hijab_data'=>'Yes Hijab',
-            'Beard_data'=>'No',
-            'Convert_data'=>'No',
+            'Beard_data'=>'Yes',
+            'Convert_data'=>'Yes',
             'Halaal_data'=>'I Always Keep Halal',
             'Salaah_data'=>'Always',
         ]);   
@@ -26,8 +26,8 @@ class ReligionTableSeeder extends Seeder
             'Religiosness_data'=>'Somewhat religious',
             'Sect_data'=>'Sunni',
             'Hijab_data'=>'Yes Niqab',
-            'Beard_data'=>'Yes',
-            'Convert_data'=>'Yes',
+            'Beard_data'=>'No',
+            'Convert_data'=>'No',
             'Halaal_data'=>'Usually Keep Halal',
             'Salaah_data'=>'Usually',
         ]);

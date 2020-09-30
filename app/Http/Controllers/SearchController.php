@@ -13,6 +13,7 @@ use App\ReligionData;
 use App\SignupData;
 use App\User;
 use App\Country;
+use App\Job;
 
 use Auth;
 use Illuminate\Http\Request;
@@ -36,7 +37,8 @@ class SearchController extends Controller
     {
         $employments = Employment::all();
         $personaldatas = PersonalData::all();
-        return view('search.education', compact('employments', 'personaldatas'));
+        $jobs = Job::all();
+        return view('search.education', compact('employments', 'personaldatas','jobs'));
     }
 
     public function search_personal()

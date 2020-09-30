@@ -26,7 +26,7 @@
                                     <a href="/search">Search</a>
 
                                     <i class="fa fa-angle-right"></i>
-                                    <a href="#" id="changeBreadcrum" class="breadcrumLast">Education</a>
+                                    <a href="#" id="changeBreadcrum" class="breadcrumLast">Religion</a>
                                 </nav>
 
                                 @include('search.side-nav-search')
@@ -193,7 +193,6 @@
                                                                 <div class="col-md-8 col-lg-8" style="text-align: right; float: right;">
                                                                     <button name="Submit" id="Submit" type="submit" class="btn btn-success btn-lg btn-submit-search secondFont">Search Now</button>
                                                                 </div>
-                                                                <div class="col-md-4 col-lg-4 addcriteria secondFont" nextlink="#tab3">+ Add more criteria</div>
                                                             </div>
                                                         </div>
                                                     </div>
