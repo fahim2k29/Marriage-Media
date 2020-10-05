@@ -187,6 +187,7 @@
                             <li class="primary-font-2 light-font fontsize-12">
                                 <a href="/search">
                                     Search
+                                    
                                 </a>
                             </li>                        
                         </ul>
@@ -198,34 +199,13 @@
                             </li>
                             
                             @foreach ($pages ->where('section', 2) as $page)
-                            {{-- @dd($page); --}}
+                            @if($pages[0]->status == 1)
                             <li class="primary-font-2 light-font fontsize-12">
                                 <a href="/pages/news/Umrah-Winners/{{$page->id}}"> {{$page->name}} </a>
                             </li>
+                            @endif
                             @endforeach
                             
-                                
-                            {{-- @endforeach --}}
-
-                            {{-- <li class="primary-font-2 light-font fontsize-12">
-                            <a href="/pages/news/{{$page->slug}}/{{$page->id}}"> {{$page->name}} </a>
-                            </li>
-                            <li class="primary-font-2 light-font fontsize-12">
-                                <a href="/pages/news/Reviews/3"> Reviews </a>
-                            </li>
-                            <li class="primary-font-2 light-font fontsize-12">
-                                <a href="/pages/news/In-The-News"> In The News </a>
-                            </li>
-                            <li class="primary-font-2 light-font fontsize-12">
-                                <a href="/pages/news/Site-News">
-                                    Site News
-                                </a>
-                            </li>
-                            <li class="primary-font-2 light-font fontsize-12">
-                                <a href="/pages/news/PR">
-                                    PR
-                                </a>
-                            </li> --}}
                         </ul>
                     </div>
                     <div class="col-xs-3">
@@ -234,11 +214,17 @@
                                 <h4 class="primary-text-color fontsize-14">Our Standards</h4>
                             </li>
                             
+                           
                             @foreach ($pages->where('section', 3) as $page)
-                            {{-- @dd($page); --}}
+                            @if($pages[1]->status == 1)
                             <li class="primary-font-2 light-font fontsize-12">
-                                <a href="/pages/news/Umrah-Winners/{{$page->id}}"> {{$page->name}} </a>
+                                <a href="/pages/news/Umrah-Winners/{{$page->id}}">
+                                 {{$page->name}} 
+                              
+                                 </a>
                             </li>
+                            @endif
+
                             @endforeach
 
                         </ul>
@@ -250,10 +236,13 @@
                                 <h4 class="primary-text-color fontsize-14">Help</h4>
                             </li>
                            @foreach ($pages->where('section', 4) as $page)
-                            {{-- @dd($page); --}}
+                           @if($pages[2]->status == 1)
+                            
                             <li class="primary-font-2 light-font fontsize-12">
                                 <a href="/pages/news/Umrah-Winners/{{$page->id}}"> {{$page->name}} </a>
                             </li>
+                            @endif
+
                             @endforeach
                         </ul>
                     </div>

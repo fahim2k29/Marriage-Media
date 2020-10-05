@@ -37,8 +37,6 @@ class BlogController extends Controller
     public function create()
     {
          return view('backend.blog.create');
-
-
     }
 
     /**
@@ -62,7 +60,7 @@ class BlogController extends Controller
             ->dirName('Blog.Success')
             ->save();
         SuccessStory::create($all);
-        return back()->with('message', 'Story Added Successfully!');
+        return redirect()->route('backend.blog.index')->with('message', 'Story Added Successfully!');
         }       
     }
     /**

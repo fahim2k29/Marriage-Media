@@ -97,11 +97,11 @@
             <!-- Buttons -->
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-4">
-                    <button class="btn btn-sm btn-success submit"><i class="fa fa-save"></i> Update</button>
 
                     <a href="{{ route('backend.package.index') }}" class="btn btn-sm btn-gray"> <i
                             class="fa fa-refresh"></i>
                         Cancel</a>
+                    <button class="btn btn-sm btn-success submit"><i class="fa fa-save"></i> Update</button>
                 </div>
             </div>
         </form>

@@ -70,7 +70,7 @@ class PackageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request,Offer $offer)
+    public function update(Request $request,Package $offer)
     {
         $all = $request->all();
         // $all['image'] = (new SimpleUpload)

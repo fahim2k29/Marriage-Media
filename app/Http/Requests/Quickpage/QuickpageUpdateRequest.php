@@ -9,7 +9,7 @@ class QuickpageUpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'          => 'required|string|unique:quick_pages',
+            'name'          => 'required|string',
             'short_desc'    => 'required',
 
         ];

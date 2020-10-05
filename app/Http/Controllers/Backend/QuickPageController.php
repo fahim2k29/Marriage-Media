@@ -42,7 +42,7 @@ class QuickPageController extends Controller
         // dd($request);
         $all = $request->all();
         QuickPage::create($all);
-        return back()->with('message', 'Quick Page created Successfully.');
+        return redirect()->route('backend.site_config.quick-page.index')->with('message', 'Quick Page created Successfully.');
 
     }
 
@@ -81,7 +81,8 @@ class QuickPageController extends Controller
     {
         $page = QuickPage::find($id);
         $page->update($request->all());
-       return back()->with('message', 'Quick Page updated Successfully.');
+        return redirect()
+        ->route('backend.site_config.quick-page.index')->with('message', 'Quick Page updated Successfully.');
     }
 
     /**

@@ -3,7 +3,7 @@
 <div class="container headerColor">
    <div class="page-header pageheaderown">
       <div class="pageheader-heading">
-         <h3>Umrah Winners</h3>
+         <h3>{{$stories->name}}</h3>
       </div>
    </div>
 </div>
@@ -18,14 +18,12 @@
                <div class="container">
                   <div id="blog">
                      <ol class="breadcrumb" style="margin-bottom: 5px;">
-                        <li><a href="/pages/news/successstories">Home</a></li>
-                        <li><a href="/pages/news/successstories">Success Story</a></li>
-
-                        <li><a href="#"> Umrah Winners </a></li>
+                        <li><a href="/pages/news/successstories">Home</a></li>                       
+                        <li><a href="#"> {{$stories->name}} </a></li>
                      </ol>
 
                      <br />
-                    {{-- @foreach ($stories as $story) --}}
+                  
                         
                     <div id="photoBoxHolder_searchvisitor" data-startpage="1" data-searchurl="/page/news/resultjsoncmspages?type=Umrah Winners&amp;page=1">
                        <div id="results-page-visitors1" class="row text-center results-page galleryPage row isLoaded onscreen_search" data-page="1" style="padding-bottom: 0px; height: auto; width: auto;">
@@ -37,7 +35,7 @@
                           </div>
                        </div>
                     </div>
-                    {{-- @endforeach --}}
+                
 
 
                      <div class="col-md-12 gap10"></div>

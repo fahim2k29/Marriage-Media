@@ -39,9 +39,6 @@
                 <td>{{ $page->name }}</td>
                 <td>{{ $page->slug }}</td>
                 <td>{{ $page->section }}</td>
-                {{-- <td>
-                    {!! \Illuminate\Support\Str::limit($page->short_desc,50) !!}
-                </td> --}}
                 <td>{{ $page->status == 1 ? 'active' : 'inactive'  }}</td>
                 <td>
                     <div class="btn-group btn-group-mini btn-corner">
