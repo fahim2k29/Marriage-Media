@@ -112,12 +112,11 @@
                             <a href="/search" class="has-dropdown" title="Search for your perfect marriage partner">Search </a>
                             <div class="nav--item-dropdown login login-links">
                                 <a href="" class="has-dropdown" title="Search for your perfect marriage partner"> </a>
-                                <ul class="nav--item-dropdownli">
-                                    <a href="" class="has-dropdown" title="Search for your perfect marriage partner"> </a>
-                                    <li><a href="" class="has-dropdown" title="Search for your perfect marriage partner"></a><a href="/search" class="navlinks">Search</a></li>
-                                    <li><a href="/profession" class="navlinks">Profession Search</a></li>
-                                    <li><a href="/search/result" class="navlinks">Photo Gallery</a></li>
-                                    <li><a href="/usernamesearch" class="navlinks">Username Search</a></li>
+                                <ul class="nav--item-dropdownli">                                                                        
+                                    <li><a href="/username" class="navlinks">Search by Username</a></li>
+                                    <li><a href="/religion" class="navlinks">Search by Religion</a></li>
+                                    <li><a href="/education" class="navlinks">Search by Education</a></li>
+                                    <li><a href="/personal" class="navlinks">Search by Personal</a></li>
                                 </ul>
                             </div>
                         </li>

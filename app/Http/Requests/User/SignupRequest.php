@@ -27,8 +27,8 @@ class SignupRequest extends FormRequest
         'FirstName' => 'required|string|min:3',
         'LastName' => 'required|string|min:3',
         'Address' => 'required|min:4',
-        'City' => 'required|string|min:3|max:15',
-        'PostCode' => 'required|min:4|max:6',
+        'City' => 'required',
+        'PostCode' => 'required',
         'ContactTel' => 'required',
         'MobileTel' => 'required',
         ];

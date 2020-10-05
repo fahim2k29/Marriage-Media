@@ -126,7 +126,7 @@
                                                     <div id="PostCode-group" class="form-group has-feedback form-control-group">
                                                         <label for="PostCode" class="control-label"><span class="required">*</span> Post/Zip Code</label>
                                                         <div class="controls">
-                                                            <input name="PostCode" id="PostCode" type="text" required="required" value="{{$officeUse->PostCode}}" class="form-control" />
+                                                            <input name="PostCode" id="PostCode" type="text" maxlength="15" required="required" value="{{$officeUse->PostCode}}" class="form-control" />
                                                         </div>
                                                         <div class="col-sm-9 col-md-offset-3">
                                                             <small class="red" style="color: brown;">{{ $errors->first('PostCode') }}</small>
@@ -240,7 +240,7 @@
                                                     <div id="PostCode-group" class="form-group has-feedback form-control-group">
                                                         <label for="PostCode" class="control-label"><span class="required">*</span> Post/Zip Code</label>
                                                         <div class="controls">
-                                                            <input name="PostCode" id="PostCode" type="number" required="required" value="" class="form-control" />
+                                                            <input name="PostCode" type="text" required="required" value="" class="form-control" />
                                                         </div>
                                                         <div class="col-sm-9 col-md-offset-3">
                                                             <small class="red" style="color: brown;">{{ $errors->first('PostCode') }}</small>
@@ -250,7 +250,7 @@
                                                     <div id="ContactTel-group" class="form-group has-feedback form-control-group">
                                                         <label for="ContactTel" class="control-label"><span class="required">*</span> Contact Tel</label>
                                                         <div class="controls">
-                                                            <input name="ContactTel" id="ContactTel" type="number" required="required" value="" class="form-control" />
+                                                            <input name="ContactTel" id="ContactTel" type="text" minlength="6" maxlength="14" size="14" onkeypress='return event.charCode >= 48 && event.charCode <= 57' required="required" value="" class="form-control" />
                                                         </div>
                                                         <div class="col-sm-9 col-md-offset-3">
                                                             <small class="red" style="color: brown;">{{ $errors->first('ContactTel') }}</small>
@@ -260,7 +260,7 @@
                                                     <div id="MobileTel-group" class="form-group has-feedback form-control-group">
                                                         <label for="MobileTel" class="control-label"> Mobile Tel</label>
                                                         <div class="controls">
-                                                            <input name="MobileTel" id="MobileTel" type="number" value="" class="form-control" />
+                                                            <input name="MobileTel" id="MobileTel" type="text" maxlength="14" minlength="6" size="14" onkeypress='return event.charCode >=48 && event.charCode <= 57' value="" class="form-control" />
                                                         </div>
                                                         <div class="col-sm-9 col-md-offset-3">
                                                             <small class="red" style="color: brown;">{{ $errors->first('MobileTel') }}</small>

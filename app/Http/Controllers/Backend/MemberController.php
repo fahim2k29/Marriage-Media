@@ -92,10 +92,17 @@ public function index()
      */
     public function destroy($id)
     {
+        User::findOrFail($id)->delete();
         //  User::where('id',$id)->delete();
-        //          return redirect()->route('backend.customer.index')
-        //          ->with('success','User deleted successfully from the user list.');
+                 return back()
+                 ->with('success','User deleted successfully from the user list.');
     }
      
+    // public function destroy(User $offer)
+    // {
+    //      $offer->delete();
+
+    //     return back()->with('message', 'Deleted Successfully!');
+    // }
 
 }

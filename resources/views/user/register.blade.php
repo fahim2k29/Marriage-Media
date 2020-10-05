@@ -80,8 +80,8 @@
                         <div id="Country-group" class="form-group has-feedback form-control-group">
                             <label for="Country" class="control-label"><span class="required">*</span> Where do you live?</label>
                             <div class="controls">
-                                <select name="Country" id="Country" required="required" data-error="Please fill out this field." class="select2-hidden-accessible select2" data-select2-id="Country" tabindex="-1" aria-hidden="true">
-                                    <option value="" selected="" data-select2-id="4">Select Country</option>
+                                <select name="Country" id="Country" required="required" data-error="Please fill out this field." class="select2" tabindex="-1" aria-hidden="true">
+                                    <option>Select Country</option>
                                     @foreach ($countries as $signupdata)
                                     <option>{{$signupdata->name}}</option>
                                     @endforeach
@@ -95,10 +95,10 @@
                         <div id="Gender-group" class="form-group has-feedback form-control-group">
                             <label for="Gender" class="control-label"><span class="required">*</span> Select Your Gender</label>
                             <div class="controls">
-                                <select name="Gender" id="Gender" data-error="Please fill out this field." required="required" class="select2-hidden-accessible select2" data-select2-id="Gender" tabindex="-1" aria-hidden="true">
-                                    <option value="" selected="" data-select2-id="4">Select Your Gender</option>
-                                    <option value="Male" data-select2-id="292">Male</option>
-                                    <option value="Female" data-select2-id="293">Female</option>
+                                <select name="Gender" id="Gender" data-error="Please fill out this field." required="required" class="select2"  tabindex="-1" aria-hidden="true">
+                                    <option>Select Your Gender</option>
+                                    <option value="Male" >Male</option>
+                                    <option value="Female">Female</option>
                                 </select>
                             </div>
                         </div>
@@ -108,8 +108,8 @@
                             <div class="controls">
                                 <div class="row">
                                     <div class="col-xs-3">
-                                        <select name="DOB_day" id="DOB-day" required="required" data-select2-id="DOB-day" class="select2" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
-                                            <option value="" selected="" data-select2-id="4">Select Day</option>
+                                        <select name="DOB_day" id="DOB-day" required="required"  class="select2" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
+                                            <option>Select Day</option>
                                             @for($i = 1; $i <= 31; $i++){
                                                 <option value="{{$i}}">{{$i}}</option>
                                             }
@@ -117,20 +117,18 @@
                                         </select>
                                     </div>
                                     <div class="col-xs-5">
-                                        <select name="DOB_month" id="DOB-month" required="required" data-select2-id="DOB-month" class="select2" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
-                                            <option value="" selected="" data-select2-id="4">Select Month</option>
+                                        <select name="DOB_month" id="DOB-month" required="required" class="select2" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
+                                            <option>Select Month</option>
                                             @foreach ($months as $month) {
                                                 <option value="{{$month}}">{{$month}}</option>
                                             }
                                             @endforeach
-                                            <!-- @foreach ($signupdatas as $signupdata)
-                                            <option>{{$signupdata->DOB_month_data}}</option>
-                                            @endforeach -->
+                                           
                                         </select>
                                     </div>
                                     <div class="col-xs-4">
                                         <select name="DOB_year" id="DOB-year" required="required" data-select2-id="DOB-year" class="select2" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
-                                            <option value="" selected="" data-select2-id="4">Select</option>
+                                            <option>Select</option>
                                             @for ($i = $now; $i >= 1986; $i--)
                                                 <option value="{{ $i-16 }}">{{ $i-16 }}</option>
                                             @endfor
@@ -214,38 +212,7 @@
                             </div>
                         </div>
 
-                        <!-- <div id="termsandcondition-group" class="form-group has-feedback form-control-group">
-                            <a target="_blank" href="/page/terms_and_conditions">Click here to read Terms and Conditions</a> / <a target="_blank" href="/page/privacy_security">Privacy Policy</a>
-                        </div> -->
-                        {{--
-                        <div id="captcha-group" class="form-group has-feedback form-control-group">
-                            <div class="g-recaptcha" data-sitekey="6Ldb-HoUAAAAALVVpryBLPYkK4ldXAmzkMvUl9TH" data-badge="inline" data-size="invisible" data-callback="setResponse">
-                                <div class="grecaptcha-badge" data-style="inline" style="width: 256px; height: 60px; box-shadow: gray 0px 0px 5px;">
-                                    <div class="grecaptcha-logo">
-                                        <iframe
-                                            src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6Ldb-HoUAAAAALVVpryBLPYkK4ldXAmzkMvUl9TH&amp;co=aHR0cHM6Ly9zaW5nbGVtdXNsaW0uY29tOjQ0Mw..&amp;hl=en&amp;v=nuX0GNR875hMLA1LR7ayD9tc&amp;size=invisible&amp;badge=inline&amp;cb=xu38qdujrxgn"
-                                            width="256"
-                                            height="60"
-                                            role="presentation"
-                                            name="a-q66thv4yeh61"
-                                            frameborder="0"
-                                            scrolling="no"
-                                            sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"
-                                        ></iframe>
-                                    </div>
-                                    <div class="grecaptcha-error"></div>
-                                    <textarea
-                                        id="g-recaptcha-response"
-                                        name="g-recaptcha-response"
-                                        class="g-recaptcha-response"
-                                        style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"
-                                    ></textarea>
-                                </div>
-                                <iframe style="display: none;"></iframe>
-                            </div>
-                        </div>
-                        --}}
-
+                        
                         <div class="form-group">
                             <div class="col-sm-offset-9 col-sm-2">
                                 <button name="Submit" id="Submit" type="submit" class="btn btn-primary btn-submit-register registerUserbtn">Register</button>

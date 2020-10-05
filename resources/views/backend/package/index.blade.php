@@ -26,10 +26,10 @@
         <tbody>
         <tr>
             <th class="bg-dark" style="width: 10px">SL</th>
-            <th class="bg-dark" style="width: 40%">Name</th>
-            <th class="bg-dark" style="width: 40%">Price</th>
-            <th class="bg-dark" style="width: 40%">Duration</th>
-            <th class="bg-dark" style="">Action</th>
+            <th class="bg-dark" style="width: 30%">Name</th>
+            <th class="bg-dark" style="width: 20%">Price</th>
+            <th class="bg-dark" style="width: 20%">Duration</th>
+            <th class="bg-dark" style="width: 20%">Action</th>
         </tr>
         @forelse($offers as $key => $offer)
             <tr>

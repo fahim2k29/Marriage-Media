@@ -172,7 +172,7 @@
                                                         <label for="EducationLevel" class="control-label"><span class="required">*</span> My Education Level</label>
                                                         <div class="controls">
                                                             <select name="EducationLevel" id="EducationLevel" class="select2" required="required" data-select2-id="EducationLevel" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
-                                                                <option value="" selected="" data-select2-id="4">Select Option</option>
+                                                                <option >Select Option</option>
                                                                 <option value="High-School">High-School</option>
                                                                 <option value="College">College</option>
                                                                 <option value="Graduate">Graduate</option>
@@ -202,7 +202,7 @@
                                                         <label for="Employment" class="control-label"><span class="required">*</span> My Profession</label>
                                                         <div class="controls">
                                                             <select name="Employment" id="Employment" class="select2" required="required" tabindex="-1" aria-hidden="true" data-error="Please fill out this field." class="form-control">
-                                                                <option value="" selected="" data-select2-id="4">Select Option</option>
+                                                                <option >Select Option</option>
 
                                                                 @foreach ($jobs as $employment)
 
@@ -217,7 +217,7 @@
                                                         <label for="FirstLang" class="control-label"><span class="required">*</span> My First Language</label>
                                                         <div class="controls">
                                                             <select name="FirstLang" id="FirstLang" required="required" class="select2" data-select2-id="FirstLang" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
-                                                                <option value="" selected="" data-select2-id="4">Select Option</option>
+                                                                <option >Select Option</option>
                                                                 <option value="English" >English </option>
                                                                 <option value="Mandarin Chinese" >Mandarin Chinese </option>
                                                                 <option value="Hindi">Hindi </option>
@@ -239,7 +239,7 @@
                                                         <label for="SecondLang" class="control-label"><span class="required">*</span> My Second Language</label>
                                                         <div class="controls">
                                                             <select name="SecondLang" id="SecondLang" class="select2" required="required" data-select2-id="SecondLang" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
-                                                            <option value="" selected="" data-select2-id="4">Select Option</option>
+                                                            <option >Select Option</option>
                                                             <option value="English" >English </option>
                                                             <option value="Mandarin Chinese" >Mandarin Chinese </option>
                                                             <option value="Hindi">Hindi </option>

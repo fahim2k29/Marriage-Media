@@ -6,6 +6,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
         <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+        
 
         <meta name="viewport" content="width=1200" />
         <link href="/images/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />

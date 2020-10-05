@@ -16,6 +16,7 @@
 
         <meta name="viewport" content="width=1200" />
         <link href="/images/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+        
         <meta name="apple-itunes-app" content="app-id=1116597910" />
 
         <link rel="stylesheet" href="/frontend/assets/css/less/font-awesome.min.css" />

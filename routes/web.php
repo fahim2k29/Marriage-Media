@@ -62,12 +62,6 @@ Route::get('/', 'MainController@index')->name('single');
 
 //Route::get('/form', 'MainController@form')->name('form');
 Route::get('/search', 'SearchController@index')->name('search_quick');
-    Route::get('/religion', 'SearchController@search_religion')->name('search_religion');
-    Route::get('/education', 'SearchController@search_education')->name('search_education');
-    Route::get('/personal', 'SearchController@search_personal')->name('search_personal');
-
-
-Route::get('/search', 'SearchController@index')->name('search_quick');
 Route::get('/religion', 'SearchController@search_religion')->name('search_religion');
 Route::get('/education', 'SearchController@search_education')->name('search_education');
 Route::get('/personal', 'SearchController@search_personal')->name('search_personal');

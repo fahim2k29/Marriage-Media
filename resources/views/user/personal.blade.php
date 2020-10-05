@@ -442,21 +442,24 @@
                                                         <label for="Height" class="control-label"><span class="required">*</span> My Height</label>
                                                         <div class="controls">
                                                             <select name="Height" class="select2" id="Height" required="required" data-select2-id="Height" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
-                                                                <option value="" selected="" data-select2-id="4">Select Option</option>
-                                                                <option value="1.35m">1.35m</option>
-                                                                <option value="1.4m">1.4m</option>
-                                                                <option value="1.45m">1.45m</option>
-                                                                <option value="1.5m">1.5m</option>
-                                                                <option value="1.55m">1.55m</option>
-                                                                <option value="1.6m">1.6m</option>
-                                                                <option value="1.65m">1.65m</option>
-                                                                <option value="1.7m">1.7m</option>
-                                                                <option value="1.75m">1.75m</option>
-                                                                <option value="1.8m">1.8m</option>
-                                                                <option value="1.85m">1.85m</option>
-                                                                <option value="1.9m">1.9m</option>
-                                                                <option value="1.92m">1.92m</option>
-                                                                <option value="1.95m">1.95m</option>
+                                                                <option>Select Option</option>
+                                                                    <option value="4ft">4ft</option>
+                                                                    <option value="4.2ft">4.2ft</option>
+                                                                    <option value="4.5ft">4.5ft</option>
+                                                                    <option value="4.8ft">4.8ft</option>
+                                                                    <option value="5ft">5ft</option>
+                                                                    <option value="5.2ft">5.2ft</option>
+                                                                    <option value="5.5ft">5.5ft</option>
+                                                                    <option value="5.8ft">5.8ft</option>
+                                                                    <option value="6ft">6ft</option>
+                                                                    <option value="6.2ft">6.2ft</option>
+                                                                    <option value="6.5ft">6.5ft</option>
+                                                                    <option value="6.8ft">6.8ft</option>
+                                                                    <option value="7ft">7ft</option>
+                                                                    <option value="7.2ft">7.2ft</option>
+                                                                    <option value="7.5ft">7.5ft</option>
+                                                                    <option value="7.8ft">7.8ft</option>
+                                                                    <option value="8ft">8ft</option>
                                                             </select>
                                                         </div>
                                                         

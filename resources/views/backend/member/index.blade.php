@@ -26,14 +26,14 @@
     <table class="table table-bordered">
         <thead>
             <tr user="row">
-                <th class="bg-dark" style="width: 10%">ID</th>
+                <th class="bg-dark" style="width: 5%">ID</th>
                 <th class="bg-dark" style="width: 20%">Name</th>
                 <th class="bg-dark" style="width: 20%">Address</th>
-                <th class="bg-dark" style="width: 20%">Package-Price</th>
+                <th class="bg-dark" style="width: 5%">Package-Price</th>
                 <th class="bg-dark" style="width: 20%">purchase Date</th>
                 <th class="bg-dark" style="width: 20%">Expire Date</th>
+                <th class="bg-dark" style="width: 10%">Action</th>
                 {{-- <th class="bg-dark" style="width: 20%">Status</th> --}}
-                <th class="bg-dark" style="">Action</th>
             </tr>
         </thead>
         
@@ -54,18 +54,17 @@
                             <i class="ace-icon fa fa-pencil"></i>
                         </a>
                         <button type="submit" class="btn btn-xs btn-danger"
-                            onclick="delete_check()"
+                            onclick="delete_check({{$user->id}})"
                             title="Delete">
                             <i class="ace-icon fa fa-trash-o"></i>
                         </button>
-
-                    {{-- <form action="{{ route('backend.customer.destroy', $user->id)}}" id="deleteCheck_{{ $user->id }}" method="POST">
-                        @csrf
-                        @method('POST')
-                    </form> --}}
-                                            
                     </div>
+                        <form action="{{ route('backend.member.destroy', $user->id)}}" 
+                        id="deleteCheck_{{ $user->id }}" method="GET">
+                                @csrf                                
+                        </form>                        
                 </td>
+               
             </tr>
         @endforeach
         {{-- @endforeach --}}

@@ -279,65 +279,7 @@
                         </div>
                         <div class="clearfix"></div>
 
-                        <!-- <div class="width-100 shortcut-boxes padding-box">
-                            <div class="box width-48 pull-left bg-white margin-right-5">
-                                <a href="#">
-                                    <div class="z-page-click-target icon padding-box double-padding">
-                                        <span style="font-size: 56px; color: rgb(66, 197, 230);">
-                                            <i class="fa fa-snowflake-o"></i>
-                                        </span>
-                                    </div>
-                                    <div class="account text-box bg-orange font-color-white" style="color: rgb(255, 152, 0);">
-                                        Success Stories
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="box width-48 bg-white pull-right">
-                                <a href="#">
-                                    <div class="z-page-click-target icon padding-box double-padding">
-                                        <span style="font-size: 56px; color: rgb(66, 197, 230);">
-                                            <i class="fa fa-newspaper-o"></i>
-                                        </span>
-                                    </div>
-
-                                    <div class="account text-box bg-geenish font-color-white" style="color: rgb(142, 175, 82);">
-                                        In The news
-                                    </div>
-                                </a>
-                            </div>
-
-                            <div class="clearfix"></div>
-                        </div> -->
-
-                        <!-- <div class="width-100 shortcut-boxes padding-box">
-                            <div class="box width-48 pull-left bg-white margin-right-5">
-                                <a href="#">
-                                    <div class="icon padding-box double-padding">
-                                        <span style="font-size: 56px; color: rgb(66, 197, 230);">
-                                            <i class="fa fa-link"></i>
-                                        </span>
-                                    </div>
-                                    <div class="account text-box bg-pink font-color-white" style="color: rgb(234, 62, 121);">
-                                        Terms and Conditions
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="box width-48 bg-white pull-right">
-                                <a href="/page/privacy_security">
-                                    <div class="icon padding-box double-padding">
-                                        <span style="font-size: 56px; color: rgb(66, 197, 230);">
-                                            <i class="fa fa-user-secret"></i>
-                                        </span>
-                                    </div>
-
-                                    <div class="account text-box bg-bluish font-color-white" style="color: rgb(33, 150, 243);">
-                                        Privacy and Security
-                                    </div>
-                                </a>
-                            </div>
-
-                            <div class="clearfix"></div>
-                        </div> -->
+                       
 
                         <div class="sm-info-cards quick-link-panel">
                             <div class="clearfix"></div>
