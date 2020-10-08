@@ -81,7 +81,7 @@ class PackageController extends Controller
 
         $all = $offer->update($all);
         
-        return back()->with('message', 'Package Update Successfully!');
+        return redirect()->route('backend.package.index')->with('message', 'Package Updated Successfully!');
     }
 
     /**
@@ -90,7 +90,7 @@ class PackageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Offer $offer)
+    public function destroy(Package $offer)
     {
          $offer->delete();
 

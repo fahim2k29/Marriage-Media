@@ -19,7 +19,7 @@
                                     </div>
 
                                     <div class="pull-left userAge">
-                                        <b> {{\Carbon\Carbon::parse($users->DOB_year)->diff(\Carbon\Carbon::now())->format('%y')}}</b>
+                                        <b> {{\Carbon\Carbon::createFromDate($users->DOB_year)->diff(\Carbon\Carbon::now())->format('%y')}}</b>
                                     </div>
                                     <div class="clearfix"></div>
                                 </div>

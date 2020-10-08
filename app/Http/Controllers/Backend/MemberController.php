@@ -44,7 +44,7 @@ public function index()
     {
         //
     }
-
+//php intelephense
     /**
      * Display the specified resource.
      *
@@ -53,7 +53,7 @@ public function index()
      */
     public function show($id)
     {
-        $users= User::findOrFail($id);
+        $users= User::find($id);
         $personals = Personal::whereuser_id($id)->first();
         // dd($personals);
         $addPhotos=AddPhoto::whereuser_id($id)->first();
@@ -93,16 +93,10 @@ public function index()
     public function destroy($id)
     {
         User::findOrFail($id)->delete();
-        //  User::where('id',$id)->delete();
-                 return back()
-                 ->with('success','User deleted successfully from the user list.');
+        return back()
+        ->with('success','User deleted successfully from the user list.');
     }
      
-    // public function destroy(User $offer)
-    // {
-    //      $offer->delete();
-
-    //     return back()->with('message', 'Deleted Successfully!');
-    // }
+    
 
 }

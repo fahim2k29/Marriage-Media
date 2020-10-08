@@ -74,11 +74,13 @@
                                                 class="dropdown-item"
                                                 href="{{ route('logout') }}"
                                                 onclick="event.preventDefault();
-                                    document.getElementById('logout-form').submit();"
+                                                document.getElementById('logout-form').submit();"
                                             >
                                                 {{ __('Logout') }}
                                             </a>
+                                            
                                         </div>
+                                        
 
                                         <div class="onoffswitch1">
                                             <input type="checkbox" name="onoffswitch1" class="onoffswitch1-checkbox" id="myonoffswitch1" checked="" group="general_hidden" user_group="general" value="1" />
@@ -88,6 +90,7 @@
                                             </label>
                                         </div>
                                     </form>
+                                    
                                 </div>
                                 <div class="clearfix"></div>
  {{-- <img src="{{ asset($slider->image) }}"
@@ -111,8 +114,8 @@
                                 </div>
                                 <div class="user-details padding-box center-align fontsize-24 primary-font-2 padding-large">
                                     <span class="Male-text-color"> {{ Auth::user()->UserName }} </span>
-                                    <span class="padding-box ng-binding Male-text-color"> {{\Carbon\Carbon::parse($dob->DOB_year)->diff(\Carbon\Carbon::now())->format('%y')}}</span>
-
+                                    <span class="padding-box ng-binding Male-text-color"> </span>
+                                    <!-- {{\Carbon\Carbon::parse($users[1]->DOB_year)->diff(\Carbon\Carbon::now())->format('%y')}} -->
                                     {{--
                                     <div class="rating rating-2 Male-text-color z-page-click-target page-click tutorial-step rating" data-for="show-star-help">
                                         <div class="rating">
@@ -333,7 +336,7 @@
                                             </div>
 
                                             <div class="activity-box">
-                                                @foreach ($users as $us) {{-- @for($i = 0; $i < count($us); $i++) --}}
+                                                @foreach ($users as $us) 
                                                 <div class="photoGallerybox-dashboard photoBoxDashboard clearfix Shhhh female" id="photoBox-Shhhh">
                                                     <a href="{{ route('showInfo', $us->id) }}" target="_parent" title="Shhhh">
                                                         <div class="mainBox item">
@@ -341,9 +344,7 @@
                                                             <!--    <div class="onlineGallery">Online</div>-->
                                                             <!--    -->
                                                             <div class="mainImage">
-                                                                {{-- @if ($us->addphoto)
-                                                                <img class="img-responsive" src="{{asset('frontend/assets/images/')}}/{{ $us->addphoto->image }}" height="211" width="211" alt="Shhhh" />
-                                                                @endif --}} 
+                                                               
                                                                 @if (isset($us->addphoto))
                                                                 <img class="img-responsive" src="{{asset($us->addphoto->image) }}" height="211" width="211" />
                                                                 @else
@@ -364,7 +365,7 @@
                                                                         {{$us->UserName}}
                                                                     </div>
                                                                     <div class="pull-right usernamesection-age female">
-                                                                        {{\Carbon\Carbon::parse($us->DOB_year)->diff(\Carbon\Carbon::now())->format('%y')}}
+                                                                        {{\Carbon\Carbon::createFromDate($us->DOB_year)->diff(\Carbon\Carbon::now())->format('%y')}}
                                                                     </div>
                                                                 </div>
                                                                 <div class="country-flag secondFont clearfix">
@@ -381,7 +382,7 @@
                                                         </div>
                                                     </a>
                                                 </div>
-                                                @endforeach {{-- @endfor --}}
+                                                @endforeach 
 
                                                 <div class="clearfix"></div>
                                             </div>

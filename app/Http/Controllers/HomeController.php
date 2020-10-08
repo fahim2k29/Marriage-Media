@@ -21,6 +21,7 @@ use App\ReligionData;
 use App\Rules\MatchOldPassword;
 use App\SignupData;
 Use App\Transaction;
+Use App\UserLougoutTime;
 use Auth;
 use Illuminate\Support\Facades\Hash;
 
@@ -58,8 +59,7 @@ class HomeController extends Controller
         session()->put('item_price',$price);
         session()->put('item_id',$id);
         return view('welcome', compact('offer'));
-    }
-
+    }    
 
     public function paypal_payment($item_id)
     {
@@ -112,12 +112,13 @@ class HomeController extends Controller
     {
         $data['user']       = User::find(auth()->id())->first();
         $data['addPhoto']   = AddPhoto::whereuser_id(auth()->id())->first();
-        $data['users']      = User::paginate(30);
+        $data['users']      = User::all();
         $data['emp']        = User::with('education')->get();
         $data['rlgn']       = User::with('religion')->get();
         $data['prsn']       = User::with('personal')->get();
         $data['img']        = User::with('addphoto')->get();
         $data['dob']       = User::first(['DOB_year']);
+        // dd($data['users'] );
         
         // dd($emp->toArray());
         return view('user.dashboard.index', $data);

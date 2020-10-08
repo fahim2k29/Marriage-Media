@@ -67,7 +67,7 @@ Route::get('/education', 'SearchController@search_education')->name('search_educ
 Route::get('/personal', 'SearchController@search_personal')->name('search_personal');
 Route::get('/username', 'SearchController@search_username')->name('search_username');
 
-// Route::get('/search/result', 'SearchController@search_result')->name('search_result');
+Route::get('/search/result', 'SearchController@search_result')->name('search_result');
 
 
 Route::get('/pages/news/Umrah-Winners/{id}', 'FooterController@Umrah_Winners')->name('Umrah_Winners');
@@ -100,6 +100,7 @@ Route::get('/welcome/{id}', 'HomeController@welcome')->name('welcome');
 Route::get('/make-payment', 'HomeController@make_payment')->name('make_payment');
 
 Route::get('/user/dashboard', 'HomeController@user_dashboard')->name('user_dashboard');
+
 Route::get('/user/dashboard/profile', 'HomeController@user_dashboard_profile')->name('user_dashboard_profile');
 
 Route::post('/profile_update/aboutme', 'HomeController@aboutme_update')->name('aboutme_update');
@@ -122,13 +123,13 @@ Route::post('/payment/store', 'HomeController@payment_store')->name('payment_sto
 Route::get('/showInfo/{id}', 'HomeController@showInfo')->name('showInfo');
 Route::get('/paypal/payment/{id}', 'HomeController@paypal_payment')->name('paypal_payment');
 
-    Route::get('/search/users', 'SearchController@search_users')->name('search_users');
-    Route::get('/search/education/result', 'SearchController@search_education_result')->name('search_education_result');
-    Route::get('/search/religion/result', 'SearchController@search_religion_result')->name('search_religion_result');
-    Route::get('/search/personal/result', 'SearchController@search_personal_result')->name('search_personal_result');
-    Route::get('/search/username/result', 'SearchController@search_username_result')->name('search_username_result');
+Route::get('/search/users', 'SearchController@search_users')->name('search_users');
+Route::get('/search/education/result', 'SearchController@search_education_result')->name('search_education_result');
+Route::get('/search/religion/result', 'SearchController@search_religion_result')->name('search_religion_result');
+Route::get('/search/personal/result', 'SearchController@search_personal_result')->name('search_personal_result');
+Route::get('/search/username/result', 'SearchController@search_username_result')->name('search_username_result');
 
-    Route::get('/message/{id}', 'MessageController@message')->name('message');
+Route::get('/message/{id}', 'MessageController@message')->name('message');
 
 
 

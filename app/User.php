@@ -105,5 +105,9 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->hasOne(Payment::class, 'user_id', 'id');
     }
+    public function userLogoutTime()
+    {
+        return $this->hasOne(UserLogoutTime::class, 'user_id', 'id');
+    }
     
 }

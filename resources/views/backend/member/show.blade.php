@@ -130,7 +130,7 @@
                     <div class="profile-info-name">Resistered/Joined </div>
 
                     <div class="profile-info-value">
-                        <span class="editable editable-click" id="signup">2010/06/20</span>
+                        <span class="editable editable-click" id="signup">{{$users->created_at}}</span>
                     </div>
                 </div>
 
@@ -138,7 +138,7 @@
                     <div class="profile-info-name"> Last Time Active </div>
 
                     <div class="profile-info-value">
-                        <span class="editable editable-click" id="login">3 hours ago</span>
+                        <span class="editable editable-click" id="login">{{\Carbon\Carbon::parse($users->created_at)->diffForHumans()}}</span>
                     </div>
                 </div>
     </div>

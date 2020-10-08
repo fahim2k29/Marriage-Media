@@ -95,7 +95,7 @@
                                                             <div class="pull-left usernamesection">
                                                                 {{$user->UserName}}
                                                             </div>
-                                                            <div class="pull-right">{{\Carbon\Carbon::parse($user->DOB_year)->diff(\Carbon\Carbon::now())->format('%y')}}</div>
+                                                            <div class="pull-right">{{\Carbon\Carbon::createFromDate($user->DOB_year)->diff(\Carbon\Carbon::now())->format('%y')}}</div>
                                                         </div>
 
                                                         <div class="sector clearfix secondFont" itemprop="jobTitle">
