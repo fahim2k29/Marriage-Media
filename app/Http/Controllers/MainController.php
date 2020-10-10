@@ -30,16 +30,7 @@ use App\Job;
 
 
 class MainController extends Controller
-{
-    // public function __construct()
-    // {
-      
-    //    \View::Share([
-    //        'aboutme' => Aboutme::first()
-    //    ]);        
-    // }
-
-    
+{    
     public function index()
     {
         // $users  = User::all()->random(30);
@@ -62,12 +53,8 @@ class MainController extends Controller
     {
         $signupdatas = SignupData::all();
         $countries  = Country::all();
-        // dd($countries->toArray());
-        $max = 55;
         $now = Carbon::now()->format('Y');
         $months = array("January","February","March","April","May","June","July","August","September","October","November","December");
-       
-        // $year =Carbon::now()->diff(Carbon::parse($max))->format('%Y');
         return view('user.register', compact('signupdatas', 'countries', 'now','months'));
     }
     
@@ -77,7 +64,6 @@ class MainController extends Controller
         $user_id = Auth::user()->id;
         $aboutme = Aboutme::whereuser_id($user_id)->first();
         return view('user.aboutme', compact('aboutme'));
-        // return view('user.aboutme');
     }
     function aboutme_create(Request $request)
     {
@@ -299,8 +285,7 @@ class MainController extends Controller
 
     function addPhoto_create(Request $request, SimpleUpload $upload)
     {
-        // $id = Auth::user()->id;
-        // $data = $request->all();
+        
         $data['user_id'] = Auth::user()->id;
         $data['image'] = $upload->file($request->image)
             ->dirName('User_Profile')->resizeImage(320, 240)

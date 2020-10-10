@@ -99,14 +99,6 @@ class HomeController extends Controller
         return view('user.dashboard.index', $data)->with('message','Thank you for your purchase!');
     }
 
-    // public function index()
-    // {
-    //     $userid = Auth::id();
-    //     $addPhoto = AddPhoto::whereuser_id($userid)->first();
-    //     $user   = User::all();
-    //     $dob = User::first(['DOB_year']);
-    //     return view('user.dashboard.index', compact('addPhoto' , 'user', 'dob'));
-    // }
 
     public function user_dashboard()
     {
@@ -118,9 +110,7 @@ class HomeController extends Controller
         $data['prsn']       = User::with('personal')->get();
         $data['img']        = User::with('addphoto')->get();
         $data['dob']       = User::first(['DOB_year']);
-        // dd($data['users'] );
-        
-        // dd($emp->toArray());
+       
         return view('user.dashboard.index', $data);
             
     }

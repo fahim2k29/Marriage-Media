@@ -830,7 +830,8 @@
                         <div class="col-md-2 col-lg-2 logo_topbar">
                             <div class="abslogo_position">
                                 <a href="/">
-                                    <img src="/frontend/assets/images/marriageMedia.png" border="0" style="height: 90px;" />
+                                    <img src="/frontend/assets/images/marriageMedia.png" border="0" style="height: 215px;margin-top: -60px;margin-left: -110px;width: 453px;" />
+
                                 </a>
                             </div>
                         </div>
