@@ -27,9 +27,9 @@ class User extends Authenticatable implements MustVerifyEmail
      *
      * @var array
      */
-    // protected $table = 'user'; 
-    
-    
+    // protected $table = 'user';
+
+
     protected $fillable = [
         'UserName',
         'email',
@@ -43,9 +43,14 @@ class User extends Authenticatable implements MustVerifyEmail
         'HearAboutUs',
         'Accept',
         'password',
-        
+
     ];
 
+
+    public function scopeRelations($query)
+    {
+        $query->with('aboutme','education','religion','personal','addphoto');
+    }
     /**
      * The attributes that should be hidden for arrays.
      *
@@ -80,7 +85,7 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->hasOne(Religion::class, 'user_id', 'id');
     }
-    
+
     public function officeuse()
     {
         return $this->hasOne(OfficeUse::class, 'user_id', 'id');
@@ -109,5 +114,5 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->hasOne(UserLogoutTime::class, 'user_id', 'id');
     }
-    
+
 }

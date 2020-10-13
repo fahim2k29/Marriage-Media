@@ -24,25 +24,19 @@
                                     <i class="smicon-new smicon-angle-right"></i>
                                     <a href="#" id="changeBeadcrum" class="breadcrumLast">Change Password</a>
                                 </nav>
-                                @include('user.profile.profile-sidebar')                         
+                                @include('user.profile.profile-sidebar')
 
                             </div>
                             <div class="col-lg-9 col-md-9 minheightprofile" style="padding: 0px;">
                                 <div class="subTitleround secondFont headingchange">Change Password</div>
 
                                 <div id="signupbox" class="col-md-11 col-lg-11 leftmargin boxforms">
-                                    <!-- server side error snippet  -->
-                                    <!-- success snippet  -->
-                                    <!-- Exception snippet  -->
-
-                                    <!--  <div class="col-xs-10" style="padding-bottom: 20px;">
-        Note: your password will be email to you.
-    </div>
--->
+                                   
                                     <div class="panel panel-info">
                                         <div class="panel-body">
                                             <form method="POST" action="{{ route('changePassword_store') }}">
-                                                @csrf @if (session()->has('success'))
+                                                @csrf
+                                                @if (session()->has('success'))
                                                 <h4 class="text-success">{{ session('success') }}</h4>
                                                 @endif
                                                 <br />
@@ -62,7 +56,7 @@
                                                     <label for="password" class="col-md-4 col-form-label text-md-right">New Password</label>
 
                                                     <div class="col-md-6">
-                                                    
+
                                                     <input id="myInput" type="password" class="form-control" placeholder="new password" name="new_password" autocomplete="current-password" />
                                                     <input type="checkbox" onclick="myFunction()">Show Password
                                                     </div>

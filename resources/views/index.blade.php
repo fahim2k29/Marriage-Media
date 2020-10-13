@@ -7,11 +7,9 @@
                 <div class="sectionHomeSlider">
                     <ul >
                          @foreach ($slider as $key => $slide)
-                         <li  style="background-color: rgb(0, 0, 0);">
                                 <div class="item{{ $key == 0 ? ' active' : '' }}" id="slider-wh">
-                                    <img src="{{ $slide->image }}"  class="img-fluid max-width: 100%">
+                                    <img src="{{ $slide->image }}"  class="img-fluid w-100">
                                 </div>
-                            </li>
                             @endforeach
                     </ul>
                 </div>
@@ -30,7 +28,7 @@
                     <div class="container">
                         <div class="registerSection">
                             <div class="no-target button-wrapper cell-block-center grid fix-flex wrap padding-box double-padding" style="padding-top: 89%;">
-                                
+
                                 <a href="/login">
                                     <div
                                         id="btnLogin1"
@@ -61,95 +59,7 @@
                 </div>
             </section>
 
-            {{-- <section class="sectionOnline galleryGrid" style="margin-top: 0px;">
-                @foreach ($users as $user) 
-                <div itemscope="" itemtype="http://schema.org/Person" class="flip-container wrapper" data-variable="1">
-                    <a href="#" itemprop="url">
-                        <img src="/frontend/assets/images/4.png" class="imgfiller" />
 
-                        <div class="mainFront front">
-                            <div class="slidetrigger3">
-                                <img
-                                    itemprop="image"
-                                    src="//gallery.singlemuslim.com/primary/270x270/NGQ4ODVjZWRmYWMzMGNlMqji42Ps9z8aZWKPyd8SQ_mVzZJbee9znlf8HcABTBgN4lWjRRAIhWz07ldmrgEyqK_jM2cEo_IceLT9zeWMtyJCZvgdVwDITmshjiHa1XEgYUl9IHcdX4jLz2w5nbRHMQ$$$.jpg"
-                                    class="img-responsive slide"
-                                />
-                            </div>
-                            <div class="slidecontent3 male">
-                                <div class="hover-userinfo">
-                                    <div class="user-title">
-                                        <div class="pull-left username" itemprop="name">{{$user->UserName}}</div>
-                                        <div class="pull-right age">{{\Carbon\Carbon::parse($user->DOB_year)->diff(\Carbon\Carbon::now())->format('%y')}}</div>
-                                        <div class="clearfix"></div>
-                                    </div>
-
-                                    <div class="country-flag clearfix">
-                                        <div class="pull-left country">
-                                            <span itemprop="jobTitle"> 
-                                                @if ($user->education)
-                                                {{ $user->education->Employment }}
-                                                @endif
-                                            </span>
-                                        </div>
-                                        <div class="pull-right countryflag"><i itemprop="nationality" class="sm-flag-medium gb"></i></div>
-                                    </div>
-
-                                    <div class="pull-left country hidden" itemprop="homeLocation" itemscope="" itemtype="http://schema.org/Place">
-                                        <span itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress">
-                                            <span itemprop="addressLocality">
-                                                Greater London
-                                            </span>
-                                            <div class="hidden" itemprop="addressCountry">{{$user->Country}}</div>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mainBack back show" isempty="true">
-                            <div class="slidetrigger3">
-                                <img
-                                    itemprop="image"
-                                    src="//gallery.singlemuslim.com/primary/270x270/ZjhkNGJlOTAzYTRhN2RkZIPeK9X6nayVpiUQ8AVur5x4WyoIHGV8b7zad2MCOtpEpHKjfFRkeeO7g24r65NmDTGloI5bYm1o1ByUZhaYQ594HSJ-nd_HQAR_pQsjpfNqcI4-DJIrM7-FTAbkxV3SVvQIQVZyPWIJx1YblE8pJRY$$.jpg"
-                                    class="img-responsive slide"
-                                />
-                            </div>
-                            <div class="slidecontent3 male">
-                                <div class="hover-userinfo">
-                                    <div class="user-title">
-                                        <div class="pull-left username" itemprop="name">{{$user->UserName}}</div>
-                                        <div class="pull-right age">{{\Carbon\Carbon::parse($user->DOB_year)->diff(\Carbon\Carbon::now())->format('%y')}}</div>
-                                        <div class="clearfix"></div>
-                                    </div>
-
-                                    <div class="country-flag clearfix">
-                                        <div class="pull-left country">
-                                            <span itemprop="jobTitle"> 
-                                                @if ($user->education)
-                                                {{ $user->education->Employment }}
-                                                @endif
-                                            </span>
-                                        </div>
-                                        <div class="pull-right countryflag"><i itemprop="nationality" class="sm-flag-medium gb"></i></div>
-                                    </div>
-
-                                    <div class="pull-left country hidden" itemprop="homeLocation" itemscope="" itemtype="http://schema.org/Place">
-                                        <span itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress">
-                                            <span itemprop="addressLocality">
-                                                West Midlands
-                                            </span>
-                                            <div class="hidden" itemprop="addressCountry">{{$user->Country}}</div>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                @endforeach
-
-
-                <div class="clearfix"></div>
-            </section> --}}
 
             <section class="sectionOurNewApp module">
                 <div class="container">
@@ -168,7 +78,7 @@
                             <div class="col-md-3 card">
                                 <a href="{{ route('successStory_show', $story->id) }}">
                                 @foreach(explode('=',$story->video) as $row)
-                                 @if ($loop->last) 
+                                 @if ($loop->last)
                                     <img src="http://i1.ytimg.com/vi/{{$row}}/default.jpg" class="img-responsive" />
                                     <span class="playbutton"><i class="fa fa-play-circle"></i></span>
                                     @endif
@@ -182,15 +92,15 @@
                                 </a>
                             </div>
                                 @endif
-                        @endforeach                           
+                        @endforeach
                         </div>
                     </div>
                 </div>
             </section>
         </div>
-    
+
         <!-- /.container -->
 
-       
-   
+
+
 @endsection

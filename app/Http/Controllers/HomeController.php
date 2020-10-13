@@ -50,7 +50,6 @@ class HomeController extends Controller
         return view('home');
     }
 
-
     public function welcome($id)
     {
         $offer = Package::where('id', $id)->first();
@@ -59,27 +58,17 @@ class HomeController extends Controller
         session()->put('item_price',$price);
         session()->put('item_id',$id);
         return view('welcome', compact('offer'));
-    }    
+    }
 
     public function paypal_payment($item_id)
     {
-
-        $data['user']       = User::find(auth()->id())->first();
-        $data['addPhoto']   = AddPhoto::whereuser_id(auth()->id())->first();
-        $data['users']      = User::paginate(30);
-        $data['emp']        = User::with('education')->get();
-        $data['rlgn']       = User::with('religion')->get();
-        $data['prsn']       = User::with('personal')->get();
-        $data['img']        = User::with('addphoto')->get();
-        $data['dob']       = User::first(['DOB_year']);
-
+        $data['users'] =  User::relations()->get();
+        $data['photo']= AddPhoto::where('user_id',auth()->id())->first()->image;
         $user_id = Auth::id();
         $item_price = Package::whereid($item_id)->first();
         $item_duration = Package::whereid($item_id)->first();
         $purchase_date = Carbon::now()->format('Y-m-d H:i:s');
         $expire_date = Carbon::now()->addDays($item_duration->duration)->format('Y-m-d H:i:s');
-        
-    
         Payment::create([
         'user_id'       =>$user_id,
         'package_id'    =>$item_id,
@@ -102,41 +91,25 @@ class HomeController extends Controller
 
     public function user_dashboard()
     {
-        $data['user']       = User::find(auth()->id())->first();
-        $data['addPhoto']   = AddPhoto::whereuser_id(auth()->id())->first();
-        $data['users']      = User::all();
-        $data['emp']        = User::with('education')->get();
-        $data['rlgn']       = User::with('religion')->get();
-        $data['prsn']       = User::with('personal')->get();
-        $data['img']        = User::with('addphoto')->get();
-        $data['dob']       = User::first(['DOB_year']);
-       
+        $data['users'] =  User::relations()->get();
+        $data['photo']= AddPhoto::where('user_id',auth()->id())->first()->image;
         return view('user.dashboard.index', $data);
-            
     }
 
     public function changeStatus(Request $request)
     {
         $user = User::find($request->id)->update(['status' => $request->status]);
-
         return response()->json(['success'=>'Status changed successfully.']);
     }
 
     public function user_dashboard_profile()
     {
-        $userid = Auth::id();
-        $user = User::whereid($userid)->first();
-        $aboutme = Aboutme::whereuser_id($userid)->first();
-        $education = Education::whereuser_id($userid)->first();
-        $personal = Personal::whereuser_id($userid)->first();
-        $religion = Religion::whereuser_id($userid)->first();
-        $officeUse = OfficeUse::whereuser_id($userid)->first();
-        $addPhoto = AddPhoto::whereuser_id($userid)->first();
+        $user = User::with('aboutme','education','religion','officeuse','personal','addphoto')->where('id',auth()->id())->first();
         $signupdatas = SignupData::all();
         $employments = Employment::all();
         $personaldatas = PersonalData::all();
         $religiondatas = ReligionData::all();
-        return view('user.profile.index', compact('user', 'aboutme', 'education', 'personal', 'religion', 'officeUse', 'addPhoto', 'employments', 'signupdatas', 'personaldatas', 'religiondatas'));
+        return view('user.profile.index', compact('user','employments', 'signupdatas', 'personaldatas', 'religiondatas'));
     }
 
     function aboutme_update(Request $request)
@@ -223,7 +196,7 @@ class HomeController extends Controller
             'PostCode' => $request->PostCode,
             'ContactTel' => $request->ContactTel,
             'MobileTel' => $request->MobileTel,
-            
+
         ]);
         User::find($user_id)->update([
             'Country' => $request->Country,
@@ -231,7 +204,7 @@ class HomeController extends Controller
             'DOB_month' => $request->DOB_month,
             'DOB_year' => $request->DOB_year,
         ]);
-    
+
             return back();
     }
 
@@ -315,27 +288,22 @@ class HomeController extends Controller
         $addPhoto = AddPhoto::whereuser_id($userid)->first();
         $offers = Package::all();
         $pay = Payment::whereuser_id($userid)->wherestatus(1)->first();
-        
+
         if(!empty($pay)){
             $item_duration = Package::whereid($pay->package_id)->first();
             $diff_day = Carbon::now()->diffInDays($pay->expire_date);
-            
             $now = Carbon::now();
-    
             $start_date = $pay->purchase_date;
-    
             $end_date = $pay->expire_date;
             if($now->between($start_date,$end_date)){
-                
             } else {
                 Payment::whereid($pay->id)->update([
                             'status'=>0,
                         ]);
             $pay = Payment::whereuser_id($userid)->wherestatus(1)->first();
-
             }
         }
-          
+
         return view('user.profile.membership', compact('user','addPhoto','offers', 'pay'));
     }
 
@@ -355,23 +323,11 @@ class HomeController extends Controller
 
     public function showInfo($id)
     {
-        $userid = Auth::id();
-        $user = User::whereid($userid)->first();
-        $addPhoto = AddPhoto::whereuser_id($userid)->first();
-        // $signupdatas = SignupData::all();
-        
-        $users      = User::findOrFail($id);
-        $aboutmes   = Aboutme::whereuser_id($id)->first();
-        $personals  = Personal::whereuser_id($id)->first();
-        $educations = Education::whereuser_id($id)->first();
-        $religions  = Religion::whereuser_id($id)->first();
-        // dd($aboutmes);
-        $addPhotos  = AddPhoto::whereuser_id($id)->first();
-        // dd($aboutmes->toArray());
-        return view('user.profile.showInfo', compact('user', 'aboutmes', 'addPhoto','users', 'addPhotos','religions', 'personals', 'educations'));
-    } 
+        $users  = User::relations()->find($id);
+        return view('user.profile.showinfo', compact('users'));
+    }
 
-    
+
 
 
 

@@ -7,7 +7,7 @@
             <div class="userProfileView female parallax parallax-1" itemscope="" itemtype="http://schema.org/Person">
                 <div class="alertpostion"></div>
 
-                <div class="topbarProfileview">                  
+                <div class="topbarProfileview">
                     <div class="pull-left userBigPic">
                         <div class="userinfoonpic">
                             <div class="col-md-12">
@@ -37,61 +37,46 @@
                                 <div class="pull-right">
                                     <div class="starSection">
                                         <div class="pointerCursor ratingUser">
-                                            {{--
-                                            <div class="rating">
-                                                <span class="sm-line none star-full"></span><span class="sm-line none star-empty graybackGround"></span><span class="sm-line none star-empty graybackGround"></span>
-                                                <span class="sm-line none star-empty graybackGround"></span>
-                                                <span class="sm-line none star-empty graybackGround"></span>
-                                            </div>
-                                            --}}
+
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
-                         @if(isset($addPhotos))
-                        <img src="{{asset($addPhotos->image) }}"  height="316px" width="316px" style="padding-top:85px"/>
+                         @if(isset($users->addphoto))
+                        <img src="{{asset($users->addphoto->image) }}"  height="316px" width="316px" style="padding-top:85px"/>
                         @else
                         <img src="{{asset('frontend/assets/images/')}}/default2.jpg" height="316px" width="316px" style="padding-top:85px"/>
                         @endif
-
-                        
-
-                      
                     </div>
-
                     <span class="clearfix"></span>
                 </div>
                 <div class="detialBarProfileview">
                     <div class="leftDetails">
                         <div class="pull-left online-offline"></div>
-
                         <div class="col-lg-12 profile-info-row">
                             <div class="pull-left profileLabel">
                                 My Sect
                             </div>
                             <div class="pull-left profileContent">
-                                @if ($religions) {{ $religions->Sect }} @endif
+                                @if ($users->religion) {{ $users->religion->Sect }} @endif
                             </div>
                         </div>
-
                         <div class="col-lg-12 profile-info-row">
                             <div class="pull-left profileLabel">
                                 Religiousness
                             </div>
                             <div class="pull-left profileContent">
-                                @if ($religions) {{ $religions->Religiosness }} @endif
+                                @if ($users->religion) {{ $users->religion->Religiosness }} @endif
                             </div>
                         </div>
-
                         <div class="col-lg-12 profile-info-row">
                             <div class="pull-left profileLabel">
                                 My Profession
                             </div>
                             <div class="pull-left profileContent">
                                 <span itemprop="jobTitle">
-                                    @if ($educations) {{ $educations->Employment }} @endif
+                                    @if ($users->education) {{ $users->education->Employment }} @endif
                                 </span>
                             </div>
                         </div>
@@ -101,7 +86,7 @@
                                 Marital Status
                             </div>
                             <div class="pull-left profileContent">
-                                @if ($personals) {{$personals->MaritalStatus }} @endif
+                                @if ($users->personal) {{$users->personal->MaritalStatus }} @endif
                             </div>
                         </div>
 
@@ -130,23 +115,23 @@
                                 Registration Reason
                             </div>
                             <div class="pull-left profileContent">
-                            
+
                                 {{ $users->RegistrationReason }}
                             </div>
                         </div>
 
                         <div class="clearfix"></div>
-                        <div class="col-lg-12 contentshare"> 
-                          <div class="hidebuttons"> 
-                            <a class="btn icon-btn btn-primary btn-report togetherbutton" data-error="" data-toggle="tooltip" data-placement="top" title="" data-username="Jaequilin" data-userkey="YWU1YTY3OTUyMzY3ZmEyYhwgLF5RmSK7JuLlhZxPGHNs579tvQI2h0tEulQQlypa$" data-original-title=""> 
-                              <span><i class="fa fa-ban"></i><br /> 
-                                <span class="messagecolor">Report</span> 
-                            </a> 
-                            <a class="btn icon-btn btn-primary togetherbutton btn-blockUser" data-username="Jaequilin" data-userkey="YWU1YTY3OTUyMzY3ZmEyYhwgLF5RmSK7JuLlhZxPGHNs579tvQI2h0tEulQQlypa$" data-toggle="confirmation" data-btn-ok-label="Block User" data-popout="true" data-isblocked="false"> 
-                              <span><i class="fa fa-ban"></i></span><br /> 
-                              <span class="messagecolor">Block</span> 
-                            </a> 
-                          </div> 
+                        <div class="col-lg-12 contentshare">
+                          <div class="hidebuttons">
+                            <a class="btn icon-btn btn-primary btn-report togetherbutton" data-error="" data-toggle="tooltip" data-placement="top" title="" data-username="Jaequilin" data-userkey="YWU1YTY3OTUyMzY3ZmEyYhwgLF5RmSK7JuLlhZxPGHNs579tvQI2h0tEulQQlypa$" data-original-title="">
+                              <span><i class="fa fa-ban"></i><br />
+                                <span class="messagecolor">Report</span>
+                            </a>
+                            <a class="btn icon-btn btn-primary togetherbutton btn-blockUser" data-username="Jaequilin" data-userkey="YWU1YTY3OTUyMzY3ZmEyYhwgLF5RmSK7JuLlhZxPGHNs579tvQI2h0tEulQQlypa$" data-toggle="confirmation" data-btn-ok-label="Block User" data-popout="true" data-isblocked="false">
+                              <span><i class="fa fa-ban"></i></span><br />
+                              <span class="messagecolor">Block</span>
+                            </a>
+                          </div>
                         </div>
                     </div>
 
@@ -158,7 +143,7 @@
                                 </div>
                                 <div class="col-md-12 detailpart">
                                     <span itemprop="description">
-                                        @if ($aboutmes) {{ $aboutmes->Description }} @endif
+                                        @if ($users->aboutme) {{ $users->aboutme->Description }} @endif
                                     </span>
                                 </div>
                                 <p class="read-more">Read More</p>
@@ -170,7 +155,7 @@
                                     What I Am Looking For
                                 </div>
                                 <div class="col-md-12 detailpart">
-                                    @if ($aboutmes) {{ $aboutmes->LookingFor }} @endif
+                                    @if ($users->aboutme) {{ $users->aboutme->LookingFor }} @endif
                                 </div>
                                 <p class="read-more">Read More</p>
                                 <div class="clearfix"></div>
@@ -186,7 +171,7 @@
 
                                         <div class="col-md-6 font-size-class">
                                             <span>
-                                                @if ($personals) {{ $personals->Citizenship }} @endif
+                                                @if ($users->personal) {{$users->personal->Citizenship }} @endif
                                             </span>
                                         </div>
 
@@ -195,7 +180,7 @@
                                         <div class="col-md-6 font-size-class-header">Country of Origin</div>
 
                                         <div class="col-md-6 font-size-class">
-                                            @if ($personals) {{ $personals->Origin }} @endif
+                                            @if ($users->personal) {{$users->personal->Origin }} @endif
                                         </div>
 
                                         <div class="clearfix"></div>
@@ -203,7 +188,7 @@
                                         <div class="col-md-6 font-size-class-header">Willing to Relocate?</div>
 
                                         <div class="col-md-6 font-size-class">
-                                            @if ($personals) {{ $personals->Relocation }} @endif
+                                            @if ($users->personal) {{$users->personal->Relocation }} @endif
                                         </div>
 
                                         <div class="clearfix"></div>
@@ -211,7 +196,7 @@
                                         <div class="col-md-6 font-size-class-header">I am Looking to Marry</div>
 
                                         <div class="col-md-6 font-size-class">
-                                            @if ($personals) {{ $personals->MarryIn }} @endif
+                                            @if ($users->personal) {{$users->personal->MarryIn }} @endif
                                         </div>
 
                                         <div class="clearfix"></div>
@@ -219,7 +204,7 @@
                                         <div class="col-md-6 font-size-class-header">My Income</div>
 
                                         <div class="col-md-6 font-size-class">
-                                            @if ($personals) {{ $personals->Income }} @endif
+                                            @if ($users->personal) {{$users->personal->Income }} @endif
                                         </div>
 
                                         <div class="clearfix"></div>
@@ -227,7 +212,7 @@
                                         <div class="col-md-6 font-size-class-header">Marital Status</div>
 
                                         <div class="col-md-6 font-size-class">
-                                            @if ($personals) {{ $personals->MaritalStatus }} @endif
+                                            @if ($users->personal) {{$users->personal->MaritalStatus }} @endif
                                         </div>
 
                                         <div class="clearfix"></div>
@@ -235,7 +220,7 @@
                                         <div class="col-md-6 font-size-class-header">Would I like to have Children?</div>
 
                                         <div class="col-md-6 font-size-class">
-                                            @if ($personals) {{ $personals->HaveChildren }} @endif
+                                            @if ($users->personal) {{$users->personal->HaveChildren }} @endif
                                         </div>
 
                                         <div class="clearfix"></div>
@@ -243,7 +228,7 @@
                                         <div class="col-md-6 font-size-class-header">Do I have children?</div>
 
                                         <div class="col-md-6 font-size-class">
-                                            @if ($personals) {{ $personals->Children }} @endif
+                                            @if ($users->personal) {{$users->personal->Children }} @endif
                                         </div>
 
                                         <div class="clearfix"></div>
@@ -251,7 +236,7 @@
                                         <div class="col-md-6 font-size-class-header">My Living Arrangements?</div>
 
                                         <div class="col-md-6 font-size-class">
-                                            @if ($personals) {{ $personals->Living }} @endif
+                                            @if ($users->personal) {{$users->personal->Living }} @endif
                                         </div>
 
                                         <div class="clearfix"></div>
@@ -279,7 +264,7 @@
                                         <div class="col-md-6 font-size-class-header">My Height</div>
 
                                         <div class="col-md-6 font-size-class">
-                                            @if ($personals) {{ $personals->Height }} @endif
+                                            @if ($users->personal) {{$users->personal->Height }} @endif
                                         </div>
 
                                         <div class="clearfix"></div>
@@ -287,7 +272,7 @@
                                         <div class="col-md-6 font-size-class-header">My Build</div>
 
                                         <div class="col-md-6 font-size-class">
-                                            @if ($personals) {{ $personals->Build }} @endif
+                                            @if ($users->personal) {{$users->personal->Build }} @endif
                                         </div>
 
                                         <div class="clearfix"></div>
@@ -295,7 +280,7 @@
                                         <div class="col-md-6 font-size-class-header">My Hair Colour</div>
 
                                         <div class="col-md-6 font-size-class">
-                                            @if ($personals) {{ $personals->Hair }} @endif
+                                            @if ($users->personal) {{$users->personal->Hair }} @endif
                                         </div>
 
                                         <div class="clearfix"></div>
@@ -303,7 +288,7 @@
                                         <div class="col-md-6 font-size-class-header">Colour of My Eyes</div>
 
                                         <div class="col-md-6 font-size-class">
-                                            @if ($personals) {{ $personals->EyeColour }} @endif
+                                            @if ($users->personal) {{$users->personal->EyeColour }} @endif
                                         </div>
 
                                         <div class="clearfix"></div>
@@ -311,7 +296,7 @@
                                         <div class="col-md-6 font-size-class-header">Do I Smoke?</div>
 
                                         <div class="col-md-6 font-size-class">
-                                            @if ($personals) {{ $personals->Smoke }} @endif
+                                            @if ($users->personal) {{$users->personal->Smoke }} @endif
                                         </div>
 
                                         <div class="clearfix"></div>
@@ -319,7 +304,7 @@
                                         <div class="col-md-6 font-size-class-header">Do I Have Any Disabilities?</div>
 
                                         <div class="col-md-6 font-size-class">
-                                            @if ($personals) {{ $personals->Disabilities }} @endif
+                                            @if ($users->personal) {{$users->personal->Disabilities }} @endif
                                         </div>
 
                                         <div class="clearfix"></div>
@@ -337,7 +322,7 @@
                                         <div class="col-md-6 font-size-class-header">My Education Level</div>
 
                                         <div class="col-md-6 font-size-class">
-                                            @if ($educations) {{ $educations->EducationLevel }} @endif
+                                            @if ($users->education) {{ $users->education->EducationLevel }} @endif
                                         </div>
 
                                         <div class="clearfix"></div>
@@ -346,7 +331,7 @@
 
                                         <div class="col-md-6 font-size-class">
                                             <span itemprop="knowsAbout">
-                                                @if ($educations) {{$educations->SubjectStudied }} @endif
+                                                @if ($users->education) {{ $users->education->SubjectStudied }} @endif
                                             </span>
                                         </div>
 
@@ -366,7 +351,7 @@
 
                                         <div class="col-md-6 font-size-class">
                                             <span itemprop="knowsLanguage">
-                                                @if ($educations) {{ $educations->FirstLang }} @endif
+                                                @if ($users->education) {{ $users->education->FirstLang }} @endif
                                             </span>
                                         </div>
 
@@ -375,7 +360,7 @@
                                         <div class="col-md-6 font-size-class-header">My Second Language</div>
 
                                         <div class="col-md-6 font-size-class">
-                                            @if ($educations) {{ $educations->SecondLang }} @endif
+                                            @if ($users->education) {{ $users->education->SecondLang }} @endif
                                         </div>
 
                                         <div class="clearfix"></div>
@@ -393,7 +378,7 @@
                                         <div class="col-md-6 font-size-class-header">My Profession</div>
 
                                         <div class="col-md-6 font-size-class">
-                                            @if ($educations) {{ $educations->Employment }} @endif
+                                            @if ($users->education) {{ $users->education->Employment }} @endif
                                         </div>
 
                                         <div class="clearfix"></div>
@@ -401,7 +386,7 @@
                                         <div class="col-md-6 font-size-class-header">My Job Title</div>
 
                                         <div class="col-md-6 font-size-class">
-                                            @if ($educations) {{ $educations->JobTitle }} @endif
+                                            @if ($users->education) {{ $users->education->JobTitle }} @endif
                                         </div>
 
                                         <div class="clearfix"></div>
@@ -419,7 +404,7 @@
                                         <div class="col-md-6 font-size-class-header">Religiousness</div>
 
                                         <div class="col-md-6 font-size-class">
-                                            @if ($religions) {{ $religions->Religiosness }} @endif
+                                            @if ($users->religion) {{ $users->religion->Religiosness }} @endif
                                         </div>
 
                                         <div class="clearfix"></div>
@@ -427,7 +412,7 @@
                                         <div class="col-md-6 font-size-class-header">My Sect</div>
 
                                         <div class="col-md-6 font-size-class">
-                                            @if ($religions) {{ $religions->Sect }} @endif
+                                            @if ($users->religion) {{ $users->religion->Sect }} @endif
                                         </div>
 
                                         <div class="clearfix"></div>
@@ -435,7 +420,7 @@
                                         <div class="col-md-6 font-size-class-header">Hijab/Niqab</div>
 
                                         <div class="col-md-6 font-size-class">
-                                            @if ($religions) {{ $religions->Hijab }} @endif
+                                            @if ($users->religion) {{ $users->religion->Hijab }} @endif
                                         </div>
 
                                         <div class="clearfix"></div>
@@ -443,7 +428,7 @@
                                         <div class="col-md-6 font-size-class-header">Beard</div>
 
                                         <div class="col-md-6 font-size-class">
-                                            @if ($religions) {{ $religions->Beard }} @endif
+                                            @if ($users->religion) {{ $users->religion->Beard }} @endif
                                         </div>
 
                                         <div class="clearfix"></div>
@@ -451,7 +436,7 @@
                                         <div class="col-md-6 font-size-class-header">Are You a Revert?</div>
 
                                         <div class="col-md-6 font-size-class">
-                                            @if ($religions) {{ $religions->Convert }} @endif
+                                            @if ($users->religion) {{ $users->religion->Convert }} @endif
                                         </div>
 
                                         <div class="clearfix"></div>
@@ -459,7 +444,7 @@
                                         <div class="col-md-6 font-size-class-header">Do You Keep Halal?</div>
 
                                         <div class="col-md-6 font-size-class">
-                                            @if ($religions) {{ $religions->Halaal }} @endif
+                                            @if ($users->religion) {{ $users->religion->Halaal }} @endif
                                         </div>
 
                                         <div class="clearfix"></div>
@@ -467,7 +452,7 @@
                                         <div class="col-md-6 font-size-class-header">Do You Perform Salaah?</div>
 
                                         <div class="col-md-6 font-size-class">
-                                            @if ($religions) {{ $religions->Salaah }} @endif
+                                            @if ($users->religion) {{ $users->religion->Salaah }} @endif
                                         </div>
 
                                         <div class="clearfix"></div>
@@ -480,10 +465,10 @@
                     <div class="clearfix"></div>
                 </div>
 
-             
+
                 <div class="clearfix"></div>
             </div>
-         
+
             <script>
                 var $el, $ps, $up, totalHeight;
 

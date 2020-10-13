@@ -1,12 +1,12 @@
 <html lang="en">
     <head>
-       
+
 
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
         <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-        
+
 
         <meta name="viewport" content="width=1200" />
         <link href="/images/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
@@ -61,7 +61,7 @@
                         <div class="col-md-2 col-lg-2 logo_topbar">
                             <div class="abslogo_position">
                                 <a href="/user/dashboard">
-                                    <img src="/frontend/assets/images/marriageMedia.png" border="0" style="height: 215px;margin-top: -60px;margin-left: -110px;width: 453px;" />
+                                    <img src="/frontend/assets/images/marriageMedia.png" border="0" style="height: 145px;margin-top: -40px;margin-left: -110px;width: 453px;" />
                                 </a>
                             </div>
                         </div>
@@ -127,10 +127,13 @@
                                                 </a>
                                             </li>
                                             <li class="dropdown" style="padding-top: 5px; text-align: center;">
-                                                @if (isset($addPhoto->image))
+                                                @php
+                                                    $photo = App\AddPhoto::where('user_id',auth()->id())->first()->image;
+                                                @endphp
+                                                @if (isset($photo))
                                                 <div style="float: left; padding-right: 10px; padding-left: 8px; line-height: 32px;">
                                                     <a href="/user/dashboard">
-                                                        <img class="img-circle" src="{{asset($addPhoto->image) }}" height="32px" width="32px" />
+                                                        <img class="img-circle" src="{{asset($photo) }}" height="32px" width="32px" />
                                                     </a>
                                                 </div>
                                                 @else
@@ -142,7 +145,7 @@
                                                 @endif
 
                                                 <div style="margin-top: 10px;">
-                                                    <a href="/user/dashboard" class="dropdown-toggle" data-toggle="dropdown" style="font-size: 10px;"> {{Auth::user()->UserName}} </a>
+                                                    <a href="/user/dashboard" class="dropdown-toggle" data-toggle="dropdown" style="font-size: 10px;">{{Auth::user()->UserName}} </a>
                                                 </div>
                                                 <div style="clear: both;"></div>
                                             </li>
@@ -374,8 +377,8 @@
                                 <div class="messages">
                                     <div class="wrapper">
                                         <div id="messages-loader">Loading More</div>
-                                                                
-                                       
+
+
                                         <div class="message sent" rel="662aa5d6-e761-11ea-82f8-0cc47a546f98">
                                             <div class="date" style="display: none;">26 August</div>
                                             <div class="bubble">
@@ -484,7 +487,7 @@
             })(window, document, "script", "https://connect.facebook.net/en_US/fbevents.js");
             fbq("init", "2251928191696851");
             fbq("trackCustom", "PageViewDesktop");
-        </script>  
+        </script>
         <noscript><img height="1" width="1" style="display: none;" src="https://www.facebook.com/tr?id=2251928191696851&amp;ev=PageView&amp;noscript=1" /></noscript>
     </body>
 </html>

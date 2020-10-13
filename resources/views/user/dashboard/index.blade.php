@@ -69,18 +69,17 @@
                                 <div class="livebutton pull-right flagposition">
                                     <form id="logout-form" action="{{ route('logout')}}" method="POST">
                                         @csrf
-                                        <div class="noborder-right abs-logout logout-button">
+                                        <div class="noborder-right abs-logout logout-button" style="margin-top: 20px">
                                             <a
                                                 class="dropdown-item"
-                                                href="{{ route('logout') }}"
+                                                href="{{ route('logout')}}"
                                                 onclick="event.preventDefault();
                                                 document.getElementById('logout-form').submit();"
                                             >
                                                 {{ __('Logout') }}
                                             </a>
-                                            
+
                                         </div>
-                                        
 
                                         <div class="onoffswitch1">
                                             <input type="checkbox" name="onoffswitch1" class="onoffswitch1-checkbox" id="myonoffswitch1" checked="" group="general_hidden" user_group="general" value="1" />
@@ -90,19 +89,17 @@
                                             </label>
                                         </div>
                                     </form>
-                                    
+
                                 </div>
                                 <div class="clearfix"></div>
- {{-- <img src="{{ asset($slider->image) }}"
-                         height="30"
-                         width="120"
-                         alt="No Image"> --}}
+
                                 <div class="img welcome tutorial-step" onclick="window.location.href='/profile/photos'" style="cursor: pointer;">
                                     <div class="sm-controlpanel-image no-target fill-absolute z-page-click-target page-click ng-isolate-scope" data-for="open-control" data-name="gallery">
                                         <div class="no-target fill-absolute ng-scope">
                                             <div class="z-page-click-target page-click fill-absolute view-other fill-parent hidden-overflow relative-position photo-box ng-scope" data-for="my-photo">
-                                                @if(isset($addPhoto))
-                                                <img src="{{asset($addPhoto->image) }}" class="img-responsive img-circle" />
+
+                                                @if(isset($photo))
+                                                <img src="{{asset($photo) }}" class="img-responsive img-circle" />
                                                 @else
                                                 <img src="{{asset('frontend/assets/images/')}}/default2.jpg" class="img-responsive img-circle" />
                                                 @endif
@@ -115,7 +112,7 @@
                                 <div class="user-details padding-box center-align fontsize-24 primary-font-2 padding-large">
                                     <span class="Male-text-color"> {{ Auth::user()->UserName }} </span>
                                     <span class="padding-box ng-binding Male-text-color"> </span>
-                                    <!-- {{\Carbon\Carbon::parse($users[1]->DOB_year)->diff(\Carbon\Carbon::now())->format('%y')}} -->
+                                    <!-- {{\Carbon\Carbon::parse(Auth::user()->DOB_year)->diff(\Carbon\Carbon::now())->format('%y')}} -->
                                     {{--
                                     <div class="rating rating-2 Male-text-color z-page-click-target page-click tutorial-step rating" data-for="show-star-help">
                                         <div class="rating">
@@ -252,7 +249,7 @@
 
                         <div class="divBottomsectionadv">
                             <!-- success stories -->
-                            
+
                             <style>
                                 .latest-controlpanel .article-box .story-box.news {
                                     background: #dedede;
@@ -282,7 +279,7 @@
                         </div>
                         <div class="clearfix"></div>
 
-                       
+
 
                         <div class="sm-info-cards quick-link-panel">
                             <div class="clearfix"></div>
@@ -334,29 +331,17 @@
                                                 </h6>
                                                 <div class="clearfix"></div>
                                             </div>
-
                                             <div class="activity-box">
-                                                @foreach ($users as $us) 
-                                                <div class="photoGallerybox-dashboard photoBoxDashboard clearfix Shhhh female" id="photoBox-Shhhh">
+                                                @foreach ($users as $us)
+                                                <div class="photoGallerybox-dashboard photoBoxDashboard" id="photoBox-Shhhh">
                                                     <a href="{{ route('showInfo', $us->id) }}" target="_parent" title="Shhhh">
                                                         <div class="mainBox item">
-                                                            <!--    -->
-                                                            <!--    <div class="onlineGallery">Online</div>-->
-                                                            <!--    -->
                                                             <div class="mainImage">
-                                                               
                                                                 @if (isset($us->addphoto))
                                                                 <img class="img-responsive" src="{{asset($us->addphoto->image) }}" height="211" width="211" />
                                                                 @else
                                                                 <img src="{{asset('frontend/assets/images/')}}/default2.jpg" height="160" width="211" />
                                                                 @endif
-
-                                                                <!--        -->
-                                                                <!--        <div class="secondFont noofPic">-->
-                                                                <!--            + -->
-                                                                <!--?//=$search["gallerySize"]?-->
-                                                                <!--</div>-->
-                                                                <!--        -->
                                                                 <div class="absolute-position background-box"></div>
                                                             </div>
                                                             <div class="userInfo clearfix">
@@ -374,15 +359,13 @@
                                                                     </div>
                                                                     <div class="pull-right flag-position"><i class="sm-flag-medium gb"></i></div>
                                                                 </div>
-
                                                                 <div class="pull-left"></div>
-
                                                                 <span class="clearfix"></span>
                                                             </div>
                                                         </div>
                                                     </a>
                                                 </div>
-                                                @endforeach 
+                                                @endforeach
 
                                                 <div class="clearfix"></div>
                                             </div>
@@ -421,51 +404,7 @@
                     </div>
                 </div>
 
-                <div id="modalShareProfile" class="modal fade">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <!-- dialog body -->
-                            <div class="modal-body">
-                                <div class="custom_dialog">
-                                    <button type="button" class="close" data-dismiss="modal">x</button>
-                                </div>
 
-                                <div class="panel panel-default">
-                                    <div class="panel-body gallerylist">
-                                        <div class="templatemainMessageBox">
-                                            <div class="pull-left userInfomessage">
-                                                <div class="mainbodyuser">
-                                                    <div class="span3">
-                                                        <form id="signupform" class="form-horizontal" role="form" action="#" method="post" data-toggle="validator" novalidate="true">
-                                                            <label class="col-xs-3">* Your Name:</label>
-                                                            <input type="text" name="txtYourname" placeholder="Your Name" class="col-xs-9" />
-                                                            <label class="col-xs-3">* Your Email:</label>
-                                                            <input type="email" name="txtYouremail" placeholder="Your Email" class="col-xs-9" />
-                                                            <label class="col-xs-3">Friend's Name:</label>
-                                                            <input type="text" name="txtFriendsname" placeholder="Friends Name" class="col-xs-9" />
-                                                            <label class="col-xs-3">Friend's Email:</label>
-                                                            <input type="email" name="txtFriendemail" placeholder="Friends Email" class="col-xs-9" />
-                                                            <label class="col-xs-3">Message:</label>
-                                                            <textarea name="txtMessage" id="txtMessage" class="col-xs-9" placeholder="Type your message here" style="overflow-x: hidden; overflow-wrap: break-word; resize: none;"></textarea>
-                                                            <br />
-                                                            <br />
-                                                            <br />
-                                                            <input type="submit" value="Send Now" class="btn btn-primary pull-right" />
-                                                            <div class="clearfix"></div>
-                                                        </form>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="clearfix"></div>
-                            </div>
-                            <!-- dialog buttons -->
-                        </div>
-                    </div>
-                </div>
                 <!-- end of structure of dashboard -->
 
                 <div class="modal fade modalPictureEdit" role="dialog" id="gridSystemModal" aria-labelledby="gridSystemModalLabel">

@@ -38,17 +38,11 @@
 <div class="leftDetails">
 <div class="pull-left userBigPic">
     <div class="rate-statut-wrapper absolute-position">
-       
+        @php
+        $photo = App\AddPhoto::where('user_id',auth()->id())->first()->image;
+        @endphp
     </div>
-        <img align="left" class="img-responsive" src="{{asset($addPhoto->image) }}"  class="img-responsive img-circle" >
-       
-
-    {{-- <img
-        align="left"
-        class="img-responsive"
-        src=""
-        alt="fahim900"
-    /> --}}
+        <img align="left" class="img-responsive" src="{{asset($photo) }}"  class="img-responsive img-circle" >
 </div>
 
 <div class="col-lg-12 profile-info-row">
@@ -56,7 +50,7 @@
         My Sect
     </div>
     <div class="pull-left profileContent secondFont">
-        {{$religion->Sect}}
+        {{$user->religion->Sect}}
     </div>
 </div>
 
@@ -65,7 +59,7 @@
         Religiousness
     </div>
     <div class="pull-left profileContent secondFont">
-        {{$religion->Religiosness}}
+        {{$user->religion->Religiosness}}
     </div>
 </div>
 
@@ -74,7 +68,7 @@
         My Profession
     </div>
     <div class="pull-left profileContent secondFont">
-        {{$education->Employment}}
+        {{$user->education->Employment}}
     </div>
 </div>
 
@@ -83,7 +77,7 @@
         Marital Status
     </div>
     <div class="pull-left profileContent secondFont">
-        {{$personal->MaritalStatus}}
+        {{$user->personal->MaritalStatus}}
     </div>
 </div>
 
@@ -119,7 +113,7 @@
             A Little Bit About Me
         </div>
         <div class="col-md-12 detailpart">
-            {{$aboutme->Description}}
+            {{$user->aboutme->Description}}
         </div>
         <p class="read-more">Read More</p>
         <div class="clearfix"></div>
@@ -133,7 +127,7 @@
             What I Am Looking For
         </div>
         <div class="col-md-12 detailpart">
-            {{$aboutme->LookingFor}}
+            {{$user->aboutme->LookingFor}}
         </div>
         <p class="read-more">Read More</p>
         <div class="clearfix"></div>
@@ -147,63 +141,63 @@
             <div class="col-md-12 detailpart">
                 <div class="col-md-6 font-size-class-header">My Citizenship</div>
                 <div class="col-md-6 font-size-class">
-                    {{$personal->Citizenship}}
+                    {{$user->personal->Citizenship}}
                 </div>
 
                 <div class="clearfix"></div>
 
                 <div class="col-md-6 font-size-class-header">Country of Origin</div>
                 <div class="col-md-6 font-size-class">
-                    {{$personal->Origin}}
+                    {{$user->personal->Origin}}
                 </div>
 
                 <div class="clearfix"></div>
 
                 <div class="col-md-6 font-size-class-header">Willing to Relocate?</div>
                 <div class="col-md-6 font-size-class">
-                    {{$personal->Relocation}}
+                    {{$user->personal->Relocation}}
                 </div>
 
                 <div class="clearfix"></div>
 
                 <div class="col-md-6 font-size-class-header">I am Looking to Marry</div>
                 <div class="col-md-6 font-size-class">
-                    {{$personal->MarryIn}}
+                    {{$user->personal->MarryIn}}
                 </div>
 
                 <div class="clearfix"></div>
 
                 <div class="col-md-6 font-size-class-header">My Income</div>
                 <div class="col-md-6 font-size-class">
-                    {{$personal->Income}}
+                    {{$user->personal->Income}}
                 </div>
 
                 <div class="clearfix"></div>
 
                 <div class="col-md-6 font-size-class-header">Marital Status</div>
                 <div class="col-md-6 font-size-class">
-                    {{$personal->MaritalStatus}}
+                    {{$user->personal->MaritalStatus}}
                 </div>
 
                 <div class="clearfix"></div>
 
                 <div class="col-md-6 font-size-class-header">Would I like to have Children?</div>
                 <div class="col-md-6 font-size-class">
-                    {{$personal->Children}}
+                    {{$user->personal->Children}}
                 </div>
 
                 <div class="clearfix"></div>
 
                 <div class="col-md-6 font-size-class-header">Do I have children?</div>
                 <div class="col-md-6 font-size-class">
-                    {{$personal->HaveChildren}}
+                    {{$user->personal->HaveChildren}}
                 </div>
 
                 <div class="clearfix"></div>
 
                 <div class="col-md-6 font-size-class-header">My Living Arrangements?</div>
                 <div class="col-md-6 font-size-class">
-                    {{$personal->Living}}
+                    {{$user->personal->Living}}
                 </div>
 
                 <div class="clearfix"></div>
@@ -232,42 +226,42 @@
             <div class="col-md-12 detailpart">
                 <div class="col-md-6 font-size-class-header">My Height</div>
                 <div class="col-md-6 font-size-class">
-                    {{$personal->Height}}
+                    {{$user->personal->Height}}
                 </div>
 
                 <div class="clearfix"></div>
 
                 <div class="col-md-6 font-size-class-header">My Build</div>
                 <div class="col-md-6 font-size-class">
-                    {{$personal->Build}}
+                    {{$user->personal->Build}}
                 </div>
 
                 <div class="clearfix"></div>
 
                 <div class="col-md-6 font-size-class-header">My Hair Colour</div>
                 <div class="col-md-6 font-size-class">
-                    {{$personal->Hair}}
+                    {{$user->personal->Hair}}
                 </div>
 
                 <div class="clearfix"></div>
 
                 <div class="col-md-6 font-size-class-header">Colour of My Eyes</div>
                 <div class="col-md-6 font-size-class">
-                    {{$personal->EyeColour}}
+                    {{$user->personal->EyeColour}}
                 </div>
 
                 <div class="clearfix"></div>
 
                 <div class="col-md-6 font-size-class-header">Do I Smoke?</div>
                 <div class="col-md-6 font-size-class">
-                    {{$personal->Smoke}}
+                    {{$user->personal->Smoke}}
                 </div>
 
                 <div class="clearfix"></div>
 
                 <div class="col-md-6 font-size-class-header">Do I Have Any Disabilities?</div>
                 <div class="col-md-6 font-size-class">
-                    {{$personal->Disabilities}}
+                    {{$user->personal->Disabilities}}
                 </div>
 
                 <div class="clearfix"></div>
@@ -284,14 +278,14 @@
             <div class="col-md-12 detailpart">
                 <div class="col-md-6 font-size-class-header">My Education Level</div>
                 <div class="col-md-6 font-size-class">
-                    {{$education->EducationLevel}}
+                    {{$user->education->EducationLevel}}
                 </div>
 
                 <div class="clearfix"></div>
 
                 <div class="col-md-6 font-size-class-header">Subject I Studied</div>
                 <div class="col-md-6 font-size-class">
-                    {{$education->SubjectStudied}}
+                    {{$user->education->SubjectStudied}}
                 </div>
 
                 <div class="clearfix"></div>
@@ -308,14 +302,14 @@
             <div class="col-md-12 detailpart">
                 <div class="col-md-6 font-size-class-header">My First Language</div>
                 <div class="col-md-6 font-size-class">
-                    {{$education->FirstLang}}
+                    {{$user->education->FirstLang}}
                 </div>
 
                 <div class="clearfix"></div>
 
                 <div class="col-md-6 font-size-class-header">My Second Language</div>
                 <div class="col-md-6 font-size-class">
-                    {{$education->SecondLang}}
+                    {{$user->education->SecondLang}}
                 </div>
 
                 <div class="clearfix"></div>
@@ -332,14 +326,14 @@
             <div class="col-md-12 detailpart">
                 <div class="col-md-6 font-size-class-header">My Profession</div>
                 <div class="col-md-6 font-size-class">
-                    {{$education->Employment}}
+                    {{$user->education->Employment}}
                 </div>
 
                 <div class="clearfix"></div>
 
                 <div class="col-md-6 font-size-class-header">My Job Title</div>
                 <div class="col-md-6 font-size-class">
-                    {{$education->JobTitle}}
+                    {{$user->education->JobTitle}}
                 </div>
 
                 <div class="clearfix"></div>
@@ -356,14 +350,14 @@
             <div class="col-md-12 detailpart">
                 <div class="col-md-6 font-size-class-header">Religiousness</div>
                 <div class="col-md-6 font-size-class">
-                    {{$religion->Religiosness}}
+                    {{$user->religion->Religiosness}}
                 </div>
 
                 <div class="clearfix"></div>
 
                 <div class="col-md-6 font-size-class-header">My Sect</div>
                 <div class="col-md-6 font-size-class">
-                    {{$religion->Sect}}
+                    {{$user->religion->Sect}}
 
                 </div>
 
@@ -371,35 +365,35 @@
 
                 <div class="col-md-6 font-size-class-header">Hijab/Niqab</div>
                 <div class="col-md-6 font-size-class">
-                    {{$religion->Hijab}}
+                    {{$user->religion->Hijab}}
                 </div>
 
                 <div class="clearfix"></div>
 
                 <div class="col-md-6 font-size-class-header">Beard</div>
                 <div class="col-md-6 font-size-class">
-                    {{$religion->Beard}}
+                    {{$user->religion->Beard}}
                 </div>
 
                 <div class="clearfix"></div>
 
                 <div class="col-md-6 font-size-class-header">Are You a Revert?</div>
                 <div class="col-md-6 font-size-class">
-                    {{$religion->Convert}}
+                    {{$user->religion->Convert}}
                 </div>
 
                 <div class="clearfix"></div>
 
                 <div class="col-md-6 font-size-class-header">Do You Keep Halal?</div>
                 <div class="col-md-6 font-size-class">
-                    {{$religion->Halaal}}
+                    {{$user->religion->Halaal}}
                 </div>
 
                 <div class="clearfix"></div>
 
                 <div class="col-md-6 font-size-class-header">Do You Perform Salaah?</div>
                 <div class="col-md-6 font-size-class">
-                    {{$religion->Salaah}}
+                    {{$user->religion->Salaah}}
                 </div>
 
                 <div class="clearfix"></div>
@@ -420,7 +414,7 @@
     <div class="upload-image fill-absolute sm-button neutral-text-color-3 sm-inline-edit-profile">
         <div class="empty-icon-text vertical-alignment-in-parent center-align white-text-color">
             <i class="z-page-click-target sm-line camera fontsize-42 lineheight-54 block-element"></i>
-            
+
         </div>
 
         <div class="rate-statut-wrapper absolute-position">
@@ -428,7 +422,7 @@
         </div>
 
         <div class="userinfoonpic male">
-            
+
             <div class="col-md-12" style="padding-right: 5px;">
                 <div class="z-page-click-target edit-highlight"></div>
 
@@ -439,7 +433,7 @@
                         </h1>
                     </div>
 
-                  
+
                     <div class="clearfix"></div>
                 </div>
 
@@ -452,7 +446,7 @@
 
 <nav class="nav-sidebar">
     <ul class="nav">
-        
+
         <li class="active">
             <a href="/user/dashboard/profile"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>  Edit My Profile </a>
         </li>
@@ -470,7 +464,7 @@
         <li class="">
             <a href="/editPhoto"><i class="fa fa-picture-o" aria-hidden="true"></i>  Edit My Photos </a>
         </li>
-        
+
 
         <h6 class="dropdown-header sidemenuheader">Account &amp; Security</h6>
 
@@ -490,7 +484,7 @@
             <a href="#"><i class="fa fa-ban" aria-hidden="true"></i> Blocked Users </a>
         </li>
         <li class="">
-            <a href="#"><i class="fa fa-envelope-open-o" aria-hidden="true"></i> Communication Preferences 
+            <a href="#"><i class="fa fa-envelope-open-o" aria-hidden="true"></i> Communication Preferences
             </a>
         </li>
         <!--        <li class="--><!--"><a href="/profile/devices"><i class=" sm-line  sm-line basic-smartphone sm-nav-dropdown-icons"></i>Devices <span class=" smicon-new smicon-angle-right pull-right arrow-font-size"></span></a></li>-->
@@ -525,7 +519,7 @@
                     <label for="Headline" class="col-sm-4 control-label"><span class="required">*</span> Headline</label>
                     <div class="col-sm-8">
                         <div class="input-group input-group-maxwidth">
-                            <input name="Headline" id="Headline" type="text" required="required" value="{{$aboutme->Headline}}" class="form-control" />
+                            <input name="Headline" id="Headline" type="text" required="required" value="{{$user->aboutme->Headline}}" class="form-control" />
                         </div>
                     </div>
                     <div class="clearfix"></div>
@@ -536,7 +530,7 @@
                     <label for="Description" class="col-sm-4 control-label"><span class="required">*</span> A Little Bit About Me</label>
                     <div class="col-sm-8">
                         <div class="input-group input-group-maxwidth">
-                            <textarea name="Description" id="Description" required="required" class="form-control" style="overflow: hidden; overflow-wrap: break-word; resize: none; height: 52.2222px;">{{$aboutme->Description}}</textarea>
+                            <textarea name="Description" id="Description" required="required" class="form-control" style="overflow: hidden; overflow-wrap: break-word; resize: none; height: 52.2222px;">{{$user->aboutme->Description}}</textarea>
                         </div>
                     </div>
                     <div class="clearfix"></div>
@@ -547,7 +541,7 @@
                     <label for="LookingFor" class="col-sm-4 control-label"><span class="required">*</span> What I Am Looking For</label>
                     <div class="col-sm-8">
                         <div class="input-group input-group-maxwidth">
-                            <textarea name="LookingFor" id="LookingFor" required="required" class="form-control" style="overflow: hidden; overflow-wrap: break-word; resize: none; height: 52.2222px;">{{$aboutme->LookingFor}}</textarea>
+                            <textarea name="LookingFor" id="LookingFor" required="required" class="form-control" style="overflow: hidden; overflow-wrap: break-word; resize: none; height: 52.2222px;">{{$user->aboutme->LookingFor}}</textarea>
                         </div>
                     </div>
                     <div class="clearfix"></div>
@@ -580,16 +574,16 @@
                     <div class="col-sm-8">
                         <div class="input-group input-group-maxwidth">
                             <select name="EducationLevel" id="EducationLevel" required="required"  data-select2-id="EducationLevel" tabindex="-1" aria-hidden="true">
-                                <option >{{$education-> EducationLevel}}</option>
-                        
+                                <option >{{$user->education-> EducationLevel}}</option>
+
                                 @foreach ($employments as $employment)
-                                    
+
                                 <option >{{$employment-> employment_EducationLevel}}</option>
 
                                 @endforeach
 
                             </select>
-                            
+
                         </div>
                     </div>
                     <div class="clearfix"></div>
@@ -600,7 +594,7 @@
                     <label for="SubjectStudied" class="col-sm-4 control-label"><span class="required">*</span> Subject I Studied</label>
                     <div class="col-sm-8">
                         <div class="input-group input-group-maxwidth">
-                        <input name="SubjectStudied" id="SubjectStudied" type="text" required="required" value="{{$education->SubjectStudied}}" class="form-control" />
+                        <input name="SubjectStudied" id="SubjectStudied" type="text" required="required" value="{{$user->education->SubjectStudied}}" class="form-control" />
                         </div>
                     </div>
                     <div class="clearfix"></div>
@@ -611,7 +605,7 @@
                     <label for="JobTitle" class="col-sm-4 control-label"><span class="required">*</span> My Job Title</label>
                     <div class="col-sm-8">
                         <div class="input-group input-group-maxwidth">
-                            <input name="JobTitle" id="JobTitle" type="text" required="required" value="{{$education->JobTitle}}" class="form-control" />
+                            <input name="JobTitle" id="JobTitle" type="text" required="required" value="{{$user->education->JobTitle}}" class="form-control" />
                         </div>
                     </div>
                     <div class="clearfix"></div>
@@ -623,16 +617,16 @@
                     <div class="col-sm-8">
                         <div class="input-group input-group-maxwidth">
                             <select name="Employment" id="Employment" required="required"  data-select2-id="Employment" tabindex="-1" aria-hidden="true">
-                               
-                                <option >{{$education-> Employment}}</option>
-                        
+
+                                <option >{{$user->education-> Employment}}</option>
+
                                 @foreach ($employments as $employment)
-                                    
+
                                 <option >{{$employment-> employment_value}}</option>
 
                                 @endforeach
                             </select>
-                           
+
                         </div>
                     </div>
                     <div class="clearfix"></div>
@@ -644,16 +638,16 @@
                     <div class="col-sm-8">
                         <div class="input-group input-group-maxwidth">
                             <select name="FirstLang" id="FirstLang" required="required"  data-select2-id="FirstLang" tabindex="-1" aria-hidden="true">
-                               
-                                <option >{{$education-> FirstLang}}</option>
-                        
+
+                                <option >{{$user->education-> FirstLang}}</option>
+
                                 @foreach ($employments as $employment)
-                                    
+
                                 <option >{{$employment-> employment_Language}}</option>
 
                                 @endforeach
                             </select>
-                            
+
                         </div>
                     </div>
                     <div class="clearfix"></div>
@@ -665,17 +659,17 @@
                     <div class="col-sm-8">
                         <div class="input-group input-group-maxwidth">
                             <select name="SecondLang" id="SecondLang" required="required"  data-select2-id="SecondLang" tabindex="-1" aria-hidden="true">
-                                
-                                <option >{{$education-> SecondLang}}</option>
-                        
+
+                                <option >{{$user->education-> SecondLang}}</option>
+
                                 @foreach ($employments as $employment)
-                                    
+
                                 <option >{{$employment-> employment_Language}}</option>
 
                                 @endforeach
-                               
+
                             </select>
-                            
+
                         </div>
                     </div>
                     <div class="clearfix"></div>
@@ -695,14 +689,14 @@
                                 aria-hidden="true"
                             >
                                 <option >{{$user-> RegistrationReason}}</option>
-                        
+
                                 @foreach ($signupdatas as $signupdata)
-                                    
+
                                 <option >{{$signupdata-> RegistrationReason_data}}</option>
 
                                 @endforeach
                             </select>
-                            
+
                         </div>
                     </div>
                     <div class="clearfix"></div>
@@ -735,17 +729,17 @@
                     <div class="col-sm-8">
                         <div class="input-group input-group-maxwidth">
                             <select name="Citizenship" id="Citizenship" required="required"  data-select2-id="Citizenship" tabindex="-1" aria-hidden="true">
-                                
-                                <option>{{$personal->Citizenship}}</option>
-                                                                                                        
+
+                                <option>{{$user->personal->Citizenship}}</option>
+
                                 @foreach ($personaldatas as $personaldata)
-                                    
+
                                 <option >{{$personaldata-> Citizenship_data}}</option>
 
                                 @endforeach
 
                             </select>
-                            
+
                         </div>
                     </div>
                     <div class="clearfix"></div>
@@ -757,17 +751,17 @@
                     <div class="col-sm-8">
                         <div class="input-group input-group-maxwidth">
                             <select name="Origin" id="Origin" required="required"  data-select2-id="Origin" tabindex="-1" aria-hidden="true">
-                                
-                                <option>{{$personal->Origin}}</option>
-                                                                                                        
+
+                                <option>{{$user->personal->Origin}}</option>
+
                                 @foreach ($personaldatas as $personaldata)
-                                    
+
                                 <option >{{$personaldata-> Origin_data}}</option>
 
                                 @endforeach
 
                             </select>
-                            
+
                         </div>
                     </div>
                     <div class="clearfix"></div>
@@ -779,16 +773,16 @@
                     <div class="col-sm-8">
                         <div class="input-group input-group-maxwidth">
                             <select name="Relocation" id="Relocation" required="required"  data-select2-id="Relocation" tabindex="-1" aria-hidden="true">
-                               
-                                <option>{{$personal->Relocation}}</option>
-                                                                                                        
+
+                                <option>{{$user->personal->Relocation}}</option>
+
                                 @foreach ($personaldatas as $personaldata)
-                                    
+
                                 <option >{{$personaldata-> Relocation_data}}</option>
 
                                 @endforeach
                             </select>
-                            
+
                         </div>
                     </div>
                     <div class="clearfix"></div>
@@ -800,15 +794,15 @@
                     <div class="col-sm-8">
                         <div class="input-group input-group-maxwidth">
                             <select name="Income" id="Income" required="required"  data-select2-id="Income" tabindex="-1" aria-hidden="true">
-                                <option>{{$personal->Income}}</option>
-                                                                                                        
+                                <option>{{$user->personal->Income}}</option>
+
                                 @foreach ($personaldatas as $personaldata)
-                                    
+
                                 <option >{{$personaldata-> Income_data}}</option>
 
                                 @endforeach
                             </select>
-                            
+
                         </div>
                     </div>
                     <div class="clearfix"></div>
@@ -820,17 +814,17 @@
                     <div class="col-sm-8">
                         <div class="input-group input-group-maxwidth">
                             <select name="MarryIn" id="MarryIn" required="required"  data-select2-id="MarryIn" tabindex="-1" aria-hidden="true">
-                               
-                                <option>{{$personal->MarryIn}}</option>
-                                                                                                        
+
+                                <option>{{$user->personal->MarryIn}}</option>
+
                                 @foreach ($personaldatas as $personaldata)
-                                    
+
                                 <option >{{$personaldata-> MarryIn_data}}</option>
 
                                 @endforeach
 
                             </select>
-                            
+
                         </div>
                     </div>
                     <div class="clearfix"></div>
@@ -842,17 +836,17 @@
                     <div class="col-sm-8">
                         <div class="input-group input-group-maxwidth">
                             <select name="MaritalStatus" id="MaritalStatus" required="required"  data-select2-id="MaritalStatus" tabindex="-1" aria-hidden="true">
-                               
-                                <option>{{$personal->MaritalStatus}}</option>
-                                                                                                        
+
+                                <option>{{$user->personal->MaritalStatus}}</option>
+
                                 @foreach ($personaldatas as $personaldata)
-                                    
+
                                 <option >{{$personaldata-> MaritalStatus_data}}</option>
 
-                                @endforeach                                
+                                @endforeach
 
                             </select>
-                            
+
                         </div>
                     </div>
                     <div class="clearfix"></div>
@@ -864,15 +858,15 @@
                     <div class="col-sm-8">
                         <div class="input-group input-group-maxwidth">
                             <select name="Children" id="Children" required="required"  data-select2-id="Children" tabindex="-1" aria-hidden="true">
-                                <option>{{$personal->Children}}</option>
-                                                                                                        
+                                <option>{{$user->personal->Children}}</option>
+
                                 @foreach ($personaldatas as $personaldata)
-                                    
+
                                 <option >{{$personaldata-> Children_data}}</option>
 
                                 @endforeach
                             </select>
-                            
+
                         </div>
                     </div>
                     <div class="clearfix"></div>
@@ -884,15 +878,15 @@
                     <div class="col-sm-8">
                         <div class="input-group input-group-maxwidth">
                             <select name="HaveChildren" id="HaveChildren" required="required"  data-select2-id="HaveChildren" tabindex="-1" aria-hidden="true">
-                                <option>{{$personal->HaveChildren}}</option>
-                                                                                                        
+                                <option>{{$user->personal->HaveChildren}}</option>
+
                                 @foreach ($personaldatas as $personaldata)
-                                    
+
                                 <option >{{$personaldata-> HaveChildren_data}}</option>
 
                                 @endforeach
                             </select>
-                            
+
                         </div>
                     </div>
                     <div class="clearfix"></div>
@@ -904,15 +898,15 @@
                     <div class="col-sm-8">
                         <div class="input-group input-group-maxwidth">
                             <select name="Living" id="Living" required="required"  data-select2-id="Living" tabindex="-1" aria-hidden="true">
-                                <option>{{$personal->Living}}</option>
-                                                                                                        
+                                <option>{{$user->personal->Living}}</option>
+
                                 @foreach ($personaldatas as $personaldata)
-                                    
+
                                 <option >{{$personaldata-> Living_data}}</option>
 
                                 @endforeach
                             </select>
-                            
+
                         </div>
                     </div>
                     <div class="clearfix"></div>
@@ -924,15 +918,15 @@
                     <div class="col-sm-8">
                         <div class="input-group input-group-maxwidth">
                             <select name="Height" id="Height" required="required"  data-select2-id="Height" tabindex="-1" aria-hidden="true">
-                                <option>{{$personal->Height}}</option>
-                                                                                                        
+                                <option>{{$user->personal->Height}}</option>
+
                                 @foreach ($personaldatas as $personaldata)
-                                    
+
                                 <option >{{$personaldata-> Height_data}}</option>
 
                                 @endforeach
                             </select>
-                           
+
                         </div>
                     </div>
                     <div class="clearfix"></div>
@@ -944,15 +938,15 @@
                     <div class="col-sm-8">
                         <div class="input-group input-group-maxwidth">
                             <select name="Build" id="Build" required="required"  data-select2-id="Build" tabindex="-1" aria-hidden="true">
-                                <option>{{$personal->Build}}</option>
-                                                                                                        
+                                <option>{{$user->personal->Build}}</option>
+
                                 @foreach ($personaldatas as $personaldata)
-                                    
+
                                 <option >{{$personaldata-> Build_data}}</option>
 
                                 @endforeach
                             </select>
-                            
+
                         </div>
                     </div>
                     <div class="clearfix"></div>
@@ -964,15 +958,15 @@
                     <div class="col-sm-8">
                         <div class="input-group input-group-maxwidth">
                             <select name="Hair" id="Hair" required="required"  data-select2-id="Hair" tabindex="-1" aria-hidden="true">
-                               <option>{{$personal->Hair}}</option>
-                                                                                                        
+                               <option>{{$user->personal->Hair}}</option>
+
                                 @foreach ($personaldatas as $personaldata)
-                                    
+
                                 <option >{{$personaldata-> Hair_data}}</option>
 
                                 @endforeach
                             </select>
-                            
+
                         </div>
                     </div>
                     <div class="clearfix"></div>
@@ -984,15 +978,15 @@
                     <div class="col-sm-8">
                         <div class="input-group input-group-maxwidth">
                             <select name="EyeColour" id="EyeColour" required="required"  data-select2-id="EyeColour" tabindex="-1" aria-hidden="true">
-                                <option>{{$personal->HaveChildren}}</option>
-                                                                                                        
+                                <option>{{$user->personal->HaveChildren}}</option>
+
                                 @foreach ($personaldatas as $personaldata)
-                                    
+
                                 <option >{{$personaldata-> HaveChildren_data}}</option>
 
                                 @endforeach
                             </select>
-                            
+
                         </div>
                     </div>
                     <div class="clearfix"></div>
@@ -1004,15 +998,15 @@
                     <div class="col-sm-8">
                         <div class="input-group input-group-maxwidth">
                             <select name="Smoke" id="Smoke" required="required"  data-select2-id="Smoke" tabindex="-1" aria-hidden="true">
-                                <option>{{$personal->Smoke}}</option>
-                                                                                                        
+                                <option>{{$user->personal->Smoke}}</option>
+
                                 @foreach ($personaldatas as $personaldata)
-                                    
+
                                 <option >{{$personaldata-> Smoke_data}}</option>
 
                                 @endforeach
                             </select>
-                            
+
                         </div>
                     </div>
                     <div class="clearfix"></div>
@@ -1024,15 +1018,15 @@
                     <div class="col-sm-8">
                         <div class="input-group input-group-maxwidth">
                             <select name="Disabilities" id="Disabilities" required="required"  data-select2-id="Disabilities" tabindex="-1" aria-hidden="true">
-                                <option>{{$personal->Disabilities}}</option>
-                                                                                                        
+                                <option>{{$user->personal->Disabilities}}</option>
+
                                 @foreach ($personaldatas as $personaldata)
-                                    
+
                                 <option >{{$personaldata-> Disabilities_data}}</option>
 
                                 @endforeach
                             </select>
-                            
+
                         </div>
                     </div>
                     <div class="clearfix"></div>
@@ -1065,15 +1059,15 @@
                     <div class="col-sm-8">
                         <div class="input-group input-group-maxwidth">
                             <select name="Religiosness" id="Religiosness" required="required"  data-select2-id="Religiosness" tabindex="-1" aria-hidden="true">
-                                <option>{{$religion->Religiosness}}</option>
-                                                                                                        
+                                <option>{{$user->religion->Religiosness}}</option>
+
                                 @foreach ($religiondatas as $religiondata)
-                                    
+
                                 <option >{{$religiondata-> Religiosness_data}}</option>
 
                                 @endforeach
                             </select>
-                            
+
                         </div>
                     </div>
                     <div class="clearfix"></div>
@@ -1085,15 +1079,15 @@
                     <div class="col-sm-8">
                         <div class="input-group input-group-maxwidth">
                             <select name="Sect" id="Sect" required="required"  data-select2-id="Sect" tabindex="-1" aria-hidden="true">
-                                <option>{{$religion->Sect}}</option>
-                                                                                                        
+                                <option>{{$user->religion->Sect}}</option>
+
                                 @foreach ($religiondatas as $religiondata)
-                                    
+
                                 <option >{{$religiondata-> Sect_data}}</option>
 
                                 @endforeach
                             </select>
-                            
+
                         </div>
                     </div>
                     <div class="clearfix"></div>
@@ -1105,15 +1099,15 @@
                     <div class="col-sm-8">
                         <div class="input-group input-group-maxwidth">
                             <select name="Hijab" id="Hijab" required="required"  data-select2-id="Hijab" tabindex="-1" aria-hidden="true">
-                                <option>{{$religion->Hijab}}</option>
-                                                                                                        
+                                <option>{{$user->religion->Hijab}}</option>
+
                                 @foreach ($religiondatas as $religiondata)
-                                    
+
                                 <option >{{$religiondata-> Hijab_data}}</option>
 
                                 @endforeach
                             </select>
-                            
+
                         </div>
                     </div>
                     <div class="clearfix"></div>
@@ -1125,15 +1119,15 @@
                     <div class="col-sm-8">
                         <div class="input-group input-group-maxwidth">
                             <select name="Beard" id="Beard" required="required"  data-select2-id="Beard" tabindex="-1" aria-hidden="true">
-                                <option>{{$religion->Beard}}</option>
-                                                                                                        
+                                <option>{{$user->religion->Beard}}</option>
+
                                 @foreach ($religiondatas as $religiondata)
-                                    
+
                                 <option >{{$religiondata-> Beard_data}}</option>
 
                                 @endforeach
                             </select>
-                            
+
                         </div>
                     </div>
                     <div class="clearfix"></div>
@@ -1145,15 +1139,15 @@
                     <div class="col-sm-8">
                         <div class="input-group input-group-maxwidth">
                             <select name="Convert" id="Convert" required="required"  data-select2-id="Convert" tabindex="-1" aria-hidden="true">
-                                <option>{{$religion->Convert}}</option>
-                                                                                                        
+                                <option>{{$user->religion->Convert}}</option>
+
                                 @foreach ($religiondatas as $religiondata)
-                                    
+
                                 <option >{{$religiondata-> Convert_data}}</option>
 
                                 @endforeach
                             </select>
-                            
+
                         </div>
                     </div>
                     <div class="clearfix"></div>
@@ -1165,15 +1159,15 @@
                     <div class="col-sm-8">
                         <div class="input-group input-group-maxwidth">
                             <select name="Halaal" id="Halaal" required="required"  data-select2-id="Halaal" tabindex="-1" aria-hidden="true">
-                                 <option>{{$religion->Halaal}}</option>
-                                                                                                        
+                                 <option>{{$user->religion->Halaal}}</option>
+
                                 @foreach ($religiondatas as $religiondata)
-                                    
+
                                 <option >{{$religiondata-> Halaal_data}}</option>
 
                                 @endforeach
                             </select>
-                            
+
                         </div>
                     </div>
                     <div class="clearfix"></div>
@@ -1185,13 +1179,13 @@
                     <div class="col-sm-8">
                         <div class="input-group input-group-maxwidth">
                             <select name="Salaah" id="Salaah" required="required"  data-select2-id="Salaah" tabindex="-1" aria-hidden="true">
-                                <option>{{$religion->Salaah}}</option>                                                                                                       
-                                @foreach ($religiondatas as $religiondata)                                    
+                                <option>{{$user->religion->Salaah}}</option>
+                                @foreach ($religiondatas as $religiondata)
                                 <option >{{$religiondata-> Salaah_data}}</option>
 
                                 @endforeach
                             </select>
-                            
+
                         </div>
                     </div>
                     <div class="clearfix"></div>
@@ -1248,7 +1242,7 @@
                             <div class="description" style="display: none;"></div>
                         </div>
                     </div>
-                    
+
                     <div class="currentViewer">
                         <div class="arrow"></div>
                     </div>

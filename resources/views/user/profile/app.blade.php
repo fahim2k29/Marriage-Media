@@ -1,6 +1,6 @@
 <html lang="en">
     <head>
-       
+
 
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -16,7 +16,7 @@
 
         <meta name="viewport" content="width=1200" />
         <link href="/images/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
-        
+
         <meta name="apple-itunes-app" content="app-id=1116597910" />
 
         <link rel="stylesheet" href="/frontend/assets/css/less/font-awesome.min.css" />
@@ -123,10 +123,13 @@
                                                 </a>
                                             </li>
                                             <li class="dropdown" style="padding-top: 5px; text-align: center;">
-                                                 @if (isset($addPhoto->image))
+                                                @php
+                                                $photo = App\AddPhoto::where('user_id',auth()->id())->first()->image;
+                                                @endphp
+                                                @if (isset($photo))
                                                 <div style="float: left; padding-right: 10px; padding-left: 8px; line-height: 32px;">
                                                     <a href="/user/dashboard">
-                                                        <img class="img-circle" src="{{asset('frontend/assets/images/')}}/{{ $addPhoto->image }}" height="32px" width="32px" />
+                                                        <img class="img-circle" src="{{asset($photo) }}" height="32px" width="32px" />
                                                     </a>
                                                 </div>
                                                 @else
@@ -134,7 +137,7 @@
                                                     <a href="/user/dashboard">
                                                         <img class="img-circle" src="{{asset('frontend/assets/images/')}}/default2.jpg" height="32px" width="32px" />
                                                     </a>
-                                                </div>                                                 
+                                                </div>
                                                 @endif
 
                                                 <div style="margin-top: 10px;">
@@ -196,15 +199,15 @@
                             <li class="liheader male-text-color fontsize-12">
                                 <h4 class="primary-text-color fontsize-14">News</h4>
                             </li>
-                            
+
                             @foreach ($pages ->where('section', 2) as $page)
                             {{-- @dd($page); --}}
                             <li class="primary-font-2 light-font fontsize-12">
                                 <a href="/pages/news/Umrah-Winners/{{$page->id}}"> {{$page->name}} </a>
                             </li>
                             @endforeach
-                            
-                                
+
+
                             {{-- @endforeach --}}
 
                             {{-- <li class="primary-font-2 light-font fontsize-12">
@@ -233,7 +236,7 @@
                             <li class="liheader female-text-color">
                                 <h4 class="primary-text-color fontsize-14">Our Standards</h4>
                             </li>
-                            
+
                             @foreach ($pages->where('section', 3) as $page)
                             {{-- @dd($page); --}}
                             <li class="primary-font-2 light-font fontsize-12">
