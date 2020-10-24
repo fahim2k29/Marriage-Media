@@ -35,13 +35,15 @@
                     <input name="image"
                            type="file"
                            id="image"
+                           resize="200,100"
                            class="form-control"
                            onchange="readURL(this);">
+                           <strong>Please insert w:300px, H:200px</strong>
                     <strong class="red">{{ $errors->first('image') }}</strong>
                     @if($errors->first('image'))
                         <br>
                     @endif
-                  
+
                 </div>
             </div>
             <div class="form-group">
@@ -60,7 +62,7 @@
                     {{-- <strong class="red">Minimum 150x33 pixels</strong> --}}
                 </div>
             </div>
-            
+
 
             <!-- Buttons -->
             <div class="form-group">

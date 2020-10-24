@@ -16,8 +16,7 @@ class SliderUpdateRequest extends FormRequest
     {
         return [
             'position' => 'required|integer|unique:sliders',
-
-            // 'image' => 'nullable|image|dimensions:min_width=100,min_height=100',
+            'image' => 'required|image|dimensions:max_width=300,max_height=200',
         ];
     }
 

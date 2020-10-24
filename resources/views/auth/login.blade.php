@@ -12,7 +12,8 @@
 
         <div class="carousel-inner" role="listbox">
 
-            <div >
+            <div
+            class="carousel-item active"style="background-image: url(frontend/newassets/img/intro-carousel/11.jpg)">>
             <div class="carousel-container">
               <div class="container">
                 <div class="row">

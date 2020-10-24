@@ -32,10 +32,10 @@
         @forelse($sliders as $key => $slider)
             <tr>
                 <td>{{ $key + 1 }}</td>
-                
+
                 <td>
                     <img src="{{ asset($slider->image) }}"
-                   height="8%"
+                   height="50" width="100"
                          alt="No Image">
                 </td>
                 <td>

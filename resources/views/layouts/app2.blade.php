@@ -74,7 +74,7 @@
                     <li class="{{request()->segment(2)=='dashboard' ? 'active' : ''}}"><a href="/user/dashboard">Home</a></li>
                     <li class="{{request()->segment(1)=='search' ? 'active' : ''}}"><a href="/search">Search</a></li>
                     <li><a href="#Messages">Messages</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#portfolio">Profile</a></li>
                     <li class="{{request()->segment(2)=='packages' ? 'active' : ''}}"><a href="/membership/packages">Membership</a></li>
                     <li class="drop-down">
                         @php
@@ -108,7 +108,7 @@
             @else
             <ul>
                 <li class="{{request()->segment(1)=='' ? 'active' : ''}}"><a href="/">Home</a></li>
-                <li class="{{request()->segment(3)=='all' ? 'active' : ''}}"><a href="/search/result/all">Portfolio</a></li>
+                <li class="{{request()->segment(3)=='all' ? 'active' : ''}}"><a href="/search/result/all">Profile</a></li>
                 <li class="{{request()->segment(2)=='list' ? 'active' : ''}}"><a href="/successStory/list">SuccessStory</a>
                 <li class="drop-down"><a href="">Search</a>
                   <ul>

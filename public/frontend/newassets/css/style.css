@@ -1714,7 +1714,8 @@ section {
 
 .login-form{
     padding: 20px;
-  border: 1px solid #18d26e;
+    border: 2px solid #18d26e;
+    box-shadow: 3px 4px #18d26e;
 }
 .sign-up{
     background-color: white;
