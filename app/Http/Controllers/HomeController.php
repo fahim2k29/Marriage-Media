@@ -12,7 +12,9 @@ use App\Personal;
 use App\Religion;
 use App\OfficeUse;
 use App\AddPhoto;
+use App\Country;
 use App\Employment;
+use App\Job;
 use App\Models\Offer;
 use App\Models\Package;
 use App\Payment;
@@ -24,6 +26,7 @@ Use App\Transaction;
 Use App\UserLougoutTime;
 use Auth;
 use Illuminate\Support\Facades\Hash;
+use NabilAnam\SimpleUpload\SimpleUpload;
 
 class HomeController extends Controller
 {
@@ -109,7 +112,9 @@ class HomeController extends Controller
         $employments = Employment::all();
         $personaldatas = PersonalData::all();
         $religiondatas = ReligionData::all();
-        return view('user.profile.index', compact('user','employments', 'signupdatas', 'personaldatas', 'religiondatas'));
+        $jobs = Job::get('job_title');
+        $countries  = Country::get('name');
+        return view('user.profile.index', compact('user','countries','employments','jobs','signupdatas', 'personaldatas', 'religiondatas'));
     }
 
     function aboutme_update(Request $request)
@@ -237,6 +242,30 @@ class HomeController extends Controller
         return view('user.profile.editPhoto', compact('user', 'addPhoto'));
     }
 
+
+
+    public function editPhotoUpdate(Request $request)
+    {
+        $request->validate([
+            'image' => 'required',
+        ]);
+        $id = auth()->id();
+        $whyPeopleLoves = AddPhoto::find($id);
+        if ($request->file('image')){
+            $images = $request->file('image');
+            foreach ($images as $image){
+                $rand = rand();
+                $imageName = $rand.'.'.$image->getClientOriginalExtension();
+                $image->move(public_path("images/whyPeopleLove/".date("Y").'/'.date('M').'/'.date('D')),$imageName);
+                $imgPath = "whyPeopleLove/".date("Y").'/'.date('M').'/'.date('D').'/'.$imageName;
+                $whyPeopleLoves->image = $imgPath;
+            }
+        }
+        $whyPeopleLoves->update();
+        return redirect()->back();
+
+    }
+
     public function editPersonalInfo()
     {
         $userid = Auth::id();
@@ -244,7 +273,10 @@ class HomeController extends Controller
         $officeUse = OfficeUse::whereuser_id($userid)->first();
         $addPhoto = AddPhoto::whereuser_id($userid)->first();
         $signupdatas = SignupData::all();
-        return view('user.profile.editPersonalInfo', compact('user', 'officeUse', 'addPhoto', 'signupdatas'));
+        $countries  = Country::all();
+        $now = Carbon::now()->format('Y');
+        $months = array("January","February","March","April","May","June","July","August","September","October","November","December");
+        return view('user.profile.editPersonalInfo', compact('countries','now','months', 'user', 'officeUse', 'addPhoto', 'signupdatas'));
     }
 
     public function changeUsername()

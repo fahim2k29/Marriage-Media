@@ -3,8 +3,9 @@
 namespace App\Http\Middleware;
 
 use Closure;
-use Auth;
 use App\AddPhoto;
+use Illuminate\Support\Facades\Auth;
+
 class CheckLoggedin
 {
     /**
@@ -17,15 +18,15 @@ class CheckLoggedin
     public function handle($request, Closure $next)
     {
         if (Auth::check()){
-            $id = Auth::id();
+            $id =  Auth::id();
             $photo = AddPhoto::whereuser_id($id)->first();
+
             if(is_null($photo))
             {
-            return $next($request);
+                return $next($request);
             }
             else{
                 return redirect()->route('user_dashboard');
-                // return view('user.dashboard.index');
             }
         }
         else{
@@ -33,8 +34,8 @@ class CheckLoggedin
         }
 
     }
-       
-    
+
+
 }
 
 

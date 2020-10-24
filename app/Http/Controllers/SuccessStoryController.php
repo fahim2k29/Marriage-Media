@@ -7,6 +7,11 @@ use App\SuccessStory;
 
 class SuccessStoryController extends Controller
 {
+    public function successStory_list()
+    {   $stories = SuccessStory::all();
+        return view('successStory.list',compact('stories'));
+    }
+
       public function successStory()
     {
         $stories = SuccessStory::all();
@@ -17,7 +22,6 @@ class SuccessStoryController extends Controller
     {
 
         $stories  = SuccessStory::whereid($id)->first();
-        // dd($stories->image);
         return view('successStory.showDetails', compact('stories'));
     }
 

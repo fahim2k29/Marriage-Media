@@ -3,6 +3,7 @@
 namespace App\Http\Requests\Slider;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class SliderUpdateRequest extends FormRequest
 {
@@ -15,6 +16,7 @@ class SliderUpdateRequest extends FormRequest
     {
         return [
             'position' => 'required|integer|unique:sliders',
+
             // 'image' => 'nullable|image|dimensions:min_width=100,min_height=100',
         ];
     }

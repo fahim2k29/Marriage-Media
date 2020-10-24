@@ -2,7 +2,7 @@
 
 @section('title','Edit Origin')
 @section('page-header')
-    <i class="fa fa-pencil"></i> Edit Origin
+    <i class="fa fa-pencil"></i> Edit Slider
 @stop
 @push('css')
     <style>
@@ -46,7 +46,7 @@
                 <div class="col-sm-4">
                     <input name="position"
                            type="text"
-                           value="{{ $slider->position }}" 
+                           value="{{ $slider->position }}"
                            id="position"
                            class="form-control"
                            >

@@ -32,7 +32,10 @@
         {{-- Admin --}}
         @include('backend.partials.sidebar_modules.admin')
 
-        
+        {{-- Conatct information --}}
+        @include('backend.partials.sidebar_modules.contactUs')
+
+
     </ul>
 
     <div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">

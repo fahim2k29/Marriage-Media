@@ -1,532 +1,296 @@
+@extends('layouts.app2') @section('content')
+<section class="sign-up" style="background-color: white">
+    <div class="container ">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div style="text-align: center"> {{$users->UserName}}'s Information</div>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="card">
+                                        <div class="card-header">
+                                            @if (isset($users->addphoto))
+                                            <img src="{{asset($users->addphoto->image) }}" class="img-fluid" style="width: 100%; height:100%" >
+                                            @else
+                                                @if($users->Gender == 'Male')
+                                                    <img src="{{asset('assets/images/avatars')}}/avatar3.png" class="img-fluid" style="width: 100%;height:100%" />
+                                                @else
+                                                    <img src="{{asset('assets/images/avatars')}}/profile-pic.jpg" class="img-fluid" style="width: 100%;height:100%" />
+                                                @endif
+                                            @endif
+                                        </div>
+                                        <div class="card-body">
+                                                <div class="row eachPart">
+                                                    <label class="col-md-6 detailsName">My sect</label>
+                                                    <label class="col-md-6 detailsValue" > @if ($users->religion) {{ $users->religion->Sect }} @endif</label>
+                                                </div>
+                                                <div class="row eachPart" >
+                                                    <label class="col-md-7 detailsName" >Religiousness</label>
+                                                    <label class="col-md-5 detailsValue" >  @if ($users->religion) {{ $users->religion->Religiosness }} @endif</label>
+                                                </div>
+                                                <div  class="row eachPart" >
+                                                    <label class=" col-md-6 detailsName" >My Profession</label>
+                                                    <label class=" col-md-6 detailsValue" >@if ($users->education) {{ $users->education->Employment }} @endif</label>
+                                                </div>
+                                                <div class="row eachPart" >
+                                                    <label class=" col-md-6 detailsName" >Marital Status</label>
+                                                    <label class=" col-md-6 detailsValue" > @if ($users->personal) {{$users->personal->MaritalStatus }} @endif</label>
+                                                </div>
+                                                <div class="row eachPart" >
+                                                    <label class=" col-md-6 detailsName" >Country</label>
+                                                    <label class=" col-md-6 detailsValue" >{{ $users->Country }}</label>
+                                                </div>
+                                                <div class="row eachPart" >
+                                                    <label class=" col-md-7 detailsName" >Registration Reason</label>
+                                                    <label class=" col-md-5 detailsValue" >{{ $users->RegistrationReason }}</label>
+                                                </div>
 
-@extends('user.dashboard.app') @section('content')
-
-<div class="container" style="margin-top: 250px;">
-    <div class="row">
-        <div class="col-md-12" id="showuserProfileSearch">
-            <div class="userProfileView female parallax parallax-1" itemscope="" itemtype="http://schema.org/Person">
-                <div class="alertpostion"></div>
-
-                <div class="topbarProfileview">
-                    <div class="pull-left userBigPic">
-                        <div class="userinfoonpic">
-                            <div class="col-md-12">
-                                <div class="pull-left usernameLeft usernamesection">
-                                    <div class="pull-left nameuser">
-                                        <h1>
-                                            <a href="/user/Jaequilin" title="Jaequilin"><span itemprop="name">{{$users->UserName}}</span></a>
-                                        </h1>
-                                    </div>
-
-                                    <div class="pull-left userAge">
-                                        <b> {{\Carbon\Carbon::createFromDate($users->DOB_year)->diff(\Carbon\Carbon::now())->format('%y')}}</b>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                                <div class="pull-right flagposition">
-                                    <div style="display: inline-block;">
-                                        <i class="sm-flag-medium bd"></i>
-                                    </div>
+                                                    {{-- <a class="btn icon-btn btn-primary btn-report togetherbutton" data-error="" data-toggle="tooltip" data-placement="top" title="" data-username="Jaequilin" data-userkey="YWU1YTY3OTUyMzY3ZmEyYhwgLF5RmSK7JuLlhZxPGHNs579tvQI2h0tEulQQlypa$" data-original-title="">
+                                                      <span><i class="fa fa-ban"></i><br />
+                                                        <span class="messagecolor">Report</span>
+                                                    </a>
+                                                    <a class="btn icon-btn btn-primary togetherbutton btn-blockUser" data-username="Jaequilin" data-userkey="YWU1YTY3OTUyMzY3ZmEyYhwgLF5RmSK7JuLlhZxPGHNs579tvQI2h0tEulQQlypa$" data-toggle="confirmation" data-btn-ok-label="Block User" data-popout="true" data-isblocked="false">
+                                                      <span><i class="fa fa-ban"></i></span><br />
+                                                      <span class="messagecolor">Block</span>
+                                                    </a> --}}
+                                        </div>
                                 </div>
                             </div>
 
-                            <div class="col-md-12">
-                                <div class="pull-left contentHeadline fontsize-12">
-                                    <h2 class="fontsize-12">{{$users->UserName}}</h2>
+                            <div class="col-md-9">
+                                <div class="card">
+                                    <div class="card-header">
+                                        A Little Bit About Me
+                                    </div>
+                                    <div class="card-body " >
+                                        <p> @if ($users->aboutme) {{ $users->aboutme->Description }} @endif</p>
+                                        {{-- <a   name="load_more" id="load_more" class="btn btn-success">Load More</a> --}}
+                                    </div>
                                 </div>
-                                <div class="pull-right">
-                                    <div class="starSection">
-                                        <div class="pointerCursor ratingUser">
+                                <div class="card" style="margin-top: 10px">
+                                    <div class="card-header">
+                                        What I Am Looking For
+                                    </div>
+                                    <div class="card-body " >
+                                        <p> @if ($users->aboutme) {{ $users->aboutme->LookingFor }} @endif</p>
+                                        {{-- <a   name="load_more" id="load_more" class="btn btn-success">Load More</a> --}}
+                                    </div>
+                                </div>
 
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="card" style="margin: 10px 0px 5px 0px">
+                                            <div class="card-header">
+                                                Personal Information
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="col-md-12 detailpart">
+                                                    <div class="row eachPart">
+                                                        <div class="col-md-6 detailsName">My Citizenship</div>
+                                                        <div class="col-md-6 detailsValue"> @if ($users->personal) {{$users->personal->Citizenship }} @endif </div>
+                                                    </div>
+                                                    <div class="row eachPart">
+                                                        <div class="col-md-6 detailsName">Country of Origin</div>
+                                                        <div class="col-md-6 detailsValue"> @if ($users->personal) {{$users->personal->Origin }} @endif </div>
+                                                    </div>
+                                                    <div class="row eachPart">
+                                                        <div class="col-md-7 detailsName">Willing to Relocate?</div>
+                                                        <div class="col-md-5 detailsValue">  @if ($users->personal) {{$users->personal->Relocation }} @endif </div>
+                                                    </div>
+                                                    <div class="row eachPart">
+                                                        <div class="col-md-7 detailsName">I am Looking to Marry</div>
+                                                        <div class="col-md-5 detailsValue">  @if ($users->personal) {{$users->personal->MarryIn }} @endif</div>
+                                                    </div>
+                                                    <div class="row eachPart">
+                                                        <div class="col-md-6 detailsName">My Income</div>
+                                                        <div class="col-md-6 detailsValue">  @if ($users->personal) {{$users->personal->Income }} @endif </div>
+                                                    </div>
+                                                    <div class="row eachPart">
+                                                        <div class="col-md-6 detailsName">Marital Status</div>
+                                                        <div class="col-md-6 detailsValue"> @if ($users->personal) {{$users->personal->MaritalStatus }} @endif </div>
+                                                    </div>
+                                                    <div class="row eachPart">
+                                                        <div class="col-md-6 detailsName">Would I like to have Children?</div>
+                                                        <div class="col-md-6 detailsValue"> @if ($users->personal) {{$users->personal->HaveChildren }} @endif </div>
+                                                    </div>
+                                                    <div class="row eachPart">
+                                                        <div class="col-md-6 detailsName">Do I have children?</div>
+                                                        <div class="col-md-6 detailsValue">@if ($users->personal) {{$users->personal->Children }} @endif </div>
+                                                    </div>
+                                                    <div class="row eachPart">
+                                                        <div class="col-md-6 detailsName">My Living Arrangements?</div>
+                                                        <div class="col-md-6 detailsValue">@if ($users->personal) {{$users->personal->Living }} @endif </div>
+                                                    </div>
+                                                    <div class="row eachPart">
+                                                        <div class="col-md-6 detailsName">Country</div>
+                                                        <div class="col-md-6 detailsValue">{{$users->Country}}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="card" style="margin: 10px 0px 20px 0px">
+                                            <div class="card-header">
+                                                Appearance
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="col-md-12 detailpart">
+                                                    <div class="row eachPart">
+                                                        <div class="col-md-6 detailsName">My Height</div>
+                                                        <div class="col-md-6 detailsValue"> @if ($users->personal) {{$users->personal->Height }} @endif </div>
+                                                    </div>
+                                                    <div class="clearfix"></div>
+
+                                                    <div class="row eachPart">
+                                                        <div class="col-md-6 detailsName">My Build</div>
+                                                        <div class="col-md-6 detailsValue"> @if ($users->personal) {{$users->personal->Build }} @endif </div>
+                                                    </div>
+                                                    <div class="clearfix"></div>
+
+                                                    <div class="row eachPart">
+                                                        <div class="col-md-6 detailsName">My Hair Colour</div>
+                                                        <div class="col-md-6 detailsValue">  @if ($users->personal) {{$users->personal->Hair }} @endif </div>
+                                                    </div>
+                                                    <div class="clearfix"></div>
+
+                                                    <div class="row eachPart">
+                                                        <div class="col-md-6 detailsName">Colour of My Eyes</div>
+                                                        <div class="col-md-6 detailsValue">  @if ($users->personal) {{$users->personal->EyeColour }} @endif </div>
+                                                    </div>
+                                                    <div class="clearfix"></div>
+
+                                                    <div class="row eachPart">
+                                                        <div class="col-md-6 detailsName">Do I Smoke?</div>
+                                                        <div class="col-md-6 detailsValue">@if ($users->personal) {{$users->personal->Smoke }} @endif</div>
+                                                    </div>
+                                                    <div class="clearfix"></div>
+
+                                                    <div class="row eachPart">
+                                                        <div class="col-md-6 detailsName">Do I Have Any Disabilities?</div>
+                                                        <div class="col-md-6 detailsValue">  @if ($users->personal) {{$users->personal->Disabilities }} @endif </div>
+                                                    </div>
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card" style="margin: 20px 0px 5px 0px">
+                                            <div class="card-header">
+                                                Language
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="col-md-12 detailpart">
+                                                    <div class="row eachPart">
+                                                        <div class="col-md-6 detailsName">First Language</div>
+                                                        <div class="col-md-6 detailsValue">  @if ($users->education) {{ $users->education->FirstLang }} @endif</div>
+                                                    </div>
+                                                    <div class="row eachPart">
+                                                        <div class="col-md-6 detailsName">Second Language</div>
+                                                        <div class="col-md-6 detailsValue">  @if ($users->education) {{ $users->education->SecondLang }} @endif</div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
+
+                                <div class="row" >
+                                    <div class="col-md-6">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                Education
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="row eachPart">
+                                                    <div class="col-md-6 detailsName">My Education Level</div>
+                                                    <div class="col-md-6 detailsValue">@if ($users->education) {{ $users->education->EducationLevel }} @endif </div>
+                                                </div>
+                                                <div class="row eachPart">
+                                                    <div class="col-md-6 detailsName">Subject I Studied</div>
+                                                    <div class="col-md-6 detailsValue">@if ($users->education) {{ $users->education->SubjectStudied }} @endif </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                Work
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="row eachPart">
+                                                    <div class="col-md-6 detailsName">My Profession</div>
+                                                    <div class="col-md-6 detailsValue">@if ($users->education) {{ $users->education->Employment }} @endif</div>
+                                                </div>
+                                                <div class="row eachPart">
+                                                    <div class="col-md-6 detailsName">My Job Title</div>
+                                                    <div class="col-md-6 detailsValue">@if ($users->education) {{ $users->education->JobTitle }} @endif</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row" style="margin-top: 10px">
+                                    <div class="col-md-12">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                Religion
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="row eachPart">
+                                                            <div class="col-md-6 detailsName">Religiousness</div>
+                                                            <div class="col-md-6 detailsValue">@if ($users->religion) {{ $users->religion->Religiosness }} @endif </div>
+                                                        </div>
+                                                        <div class="row eachPart">
+                                                            <div class="col-md-6 detailsName">My Sect</div>
+                                                            <div class="col-md-6 detailsValue">@if ($users->religion) {{ $users->religion->Sect }} @endif </div>
+                                                        </div>
+                                                        <div class="row eachPart">
+                                                            <div class="col-md-6 detailsName">Hijab/Niqab</div>
+                                                            <div class="col-md-6 detailsValue"> @if ($users->religion) {{ $users->religion->Hijab }} @endif</div>
+                                                        </div>
+                                                        <div class="row eachPart">
+                                                            <div class="col-md-6 detailsName">Beard</div>
+                                                            <div class="col-md-6 detailsValue">@if ($users->religion) {{ $users->religion->Beard }} @endif</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="row eachPart">
+                                                            <div class="col-md-6 detailsName">Are You a Revert?</div>
+                                                            <div class="col-md-6 detailsValue">@if ($users->religion) {{ $users->religion->Convert }} @endif</div>
+                                                        </div>
+                                                        <div class="row eachPart">
+                                                            <div class="col-md-6 detailsName">Do You Keep Halal?</div>
+                                                            <div class="col-md-6 detailsValue">@if ($users->religion) {{ $users->religion->Halaal }} @endif</div>
+                                                        </div>
+                                                        <div class="row eachPart">
+                                                            <div class="col-md-6 detailsName">Do You Perform Salaah?</div>
+                                                            <div class="col-md-6 detailsValue">@if ($users->religion) {{ $users->religion->Salaah }} @endif</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
                             </div>
                         </div>
-                         @if(isset($users->addphoto))
-                        <img src="{{asset($users->addphoto->image) }}"  height="316px" width="316px" style="padding-top:85px"/>
-                        @else
-                        <img src="{{asset('frontend/assets/images/')}}/default2.jpg" height="316px" width="316px" style="padding-top:85px"/>
-                        @endif
                     </div>
-                    <span class="clearfix"></span>
                 </div>
-                <div class="detialBarProfileview">
-                    <div class="leftDetails">
-                        <div class="pull-left online-offline"></div>
-                        <div class="col-lg-12 profile-info-row">
-                            <div class="pull-left profileLabel">
-                                My Sect
-                            </div>
-                            <div class="pull-left profileContent">
-                                @if ($users->religion) {{ $users->religion->Sect }} @endif
-                            </div>
-                        </div>
-                        <div class="col-lg-12 profile-info-row">
-                            <div class="pull-left profileLabel">
-                                Religiousness
-                            </div>
-                            <div class="pull-left profileContent">
-                                @if ($users->religion) {{ $users->religion->Religiosness }} @endif
-                            </div>
-                        </div>
-                        <div class="col-lg-12 profile-info-row">
-                            <div class="pull-left profileLabel">
-                                My Profession
-                            </div>
-                            <div class="pull-left profileContent">
-                                <span itemprop="jobTitle">
-                                    @if ($users->education) {{ $users->education->Employment }} @endif
-                                </span>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-12 profile-info-row">
-                            <div class="pull-left profileLabel">
-                                Marital Status
-                            </div>
-                            <div class="pull-left profileContent">
-                                @if ($users->personal) {{$users->personal->MaritalStatus }} @endif
-                            </div>
-                        </div>
-
-                        <div class="col-lg-12 profile-info-row">
-                            <div class="pull-left profileLabel">
-                                Country
-                            </div>
-                            <div class="pull-left profileContent">
-                                <div style="display: inline-block;">
-                                    <i class="sm-flag-medium bd"></i>
-                                </div>
-
-                                <span itemprop="homeLocation" itemscope="" itemtype="http://schema.org/Place">
-                                    <span itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress">
-                                        <span itemprop="addressCountry">
-                                        {{ $users->Country }}
-                                        </span>
-                                        <span class="hidden" itemprop="addressRegion"> </span>
-                                    </span>
-                                </span>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-12 profile-info-row">
-                            <div class="pull-left profileLabel">
-                                Registration Reason
-                            </div>
-                            <div class="pull-left profileContent">
-
-                                {{ $users->RegistrationReason }}
-                            </div>
-                        </div>
-
-                        <div class="clearfix"></div>
-                        <div class="col-lg-12 contentshare">
-                          <div class="hidebuttons">
-                            <a class="btn icon-btn btn-primary btn-report togetherbutton" data-error="" data-toggle="tooltip" data-placement="top" title="" data-username="Jaequilin" data-userkey="YWU1YTY3OTUyMzY3ZmEyYhwgLF5RmSK7JuLlhZxPGHNs579tvQI2h0tEulQQlypa$" data-original-title="">
-                              <span><i class="fa fa-ban"></i><br />
-                                <span class="messagecolor">Report</span>
-                            </a>
-                            <a class="btn icon-btn btn-primary togetherbutton btn-blockUser" data-username="Jaequilin" data-userkey="YWU1YTY3OTUyMzY3ZmEyYhwgLF5RmSK7JuLlhZxPGHNs579tvQI2h0tEulQQlypa$" data-toggle="confirmation" data-btn-ok-label="Block User" data-popout="true" data-isblocked="false">
-                              <span><i class="fa fa-ban"></i></span><br />
-                              <span class="messagecolor">Block</span>
-                            </a>
-                          </div>
-                        </div>
-                    </div>
-
-                    <div class="pull-right rightDetails">
-                        <div class="userinfosectiontop">
-                            <div class="sections userinfosection">
-                                <div class="col-md-12 headings">
-                                    A Little Bit About Me
-                                </div>
-                                <div class="col-md-12 detailpart">
-                                    <span itemprop="description">
-                                        @if ($users->aboutme) {{ $users->aboutme->Description }} @endif
-                                    </span>
-                                </div>
-                                <p class="read-more">Read More</p>
-                                <div class="clearfix"></div>
-                            </div>
-
-                            <div class="sections userinfosection">
-                                <div class="col-md-12 headings">
-                                    What I Am Looking For
-                                </div>
-                                <div class="col-md-12 detailpart">
-                                    @if ($users->aboutme) {{ $users->aboutme->LookingFor }} @endif
-                                </div>
-                                <p class="read-more">Read More</p>
-                                <div class="clearfix"></div>
-                            </div>
-
-                            <div class="col-md-6 nopaddinginfo personal information-paddingright">
-                                <div class="sections userinfosection-group personal information-minheight">
-                                    <div class="col-md-12 headings">
-                                        Personal Information
-                                    </div>
-                                    <div class="col-md-12 detailpart">
-                                        <div class="col-md-6 font-size-class-header">My Citizenship</div>
-
-                                        <div class="col-md-6 font-size-class">
-                                            <span>
-                                                @if ($users->personal) {{$users->personal->Citizenship }} @endif
-                                            </span>
-                                        </div>
-
-                                        <div class="clearfix"></div>
-
-                                        <div class="col-md-6 font-size-class-header">Country of Origin</div>
-
-                                        <div class="col-md-6 font-size-class">
-                                            @if ($users->personal) {{$users->personal->Origin }} @endif
-                                        </div>
-
-                                        <div class="clearfix"></div>
-
-                                        <div class="col-md-6 font-size-class-header">Willing to Relocate?</div>
-
-                                        <div class="col-md-6 font-size-class">
-                                            @if ($users->personal) {{$users->personal->Relocation }} @endif
-                                        </div>
-
-                                        <div class="clearfix"></div>
-
-                                        <div class="col-md-6 font-size-class-header">I am Looking to Marry</div>
-
-                                        <div class="col-md-6 font-size-class">
-                                            @if ($users->personal) {{$users->personal->MarryIn }} @endif
-                                        </div>
-
-                                        <div class="clearfix"></div>
-
-                                        <div class="col-md-6 font-size-class-header">My Income</div>
-
-                                        <div class="col-md-6 font-size-class">
-                                            @if ($users->personal) {{$users->personal->Income }} @endif
-                                        </div>
-
-                                        <div class="clearfix"></div>
-
-                                        <div class="col-md-6 font-size-class-header">Marital Status</div>
-
-                                        <div class="col-md-6 font-size-class">
-                                            @if ($users->personal) {{$users->personal->MaritalStatus }} @endif
-                                        </div>
-
-                                        <div class="clearfix"></div>
-
-                                        <div class="col-md-6 font-size-class-header">Would I like to have Children?</div>
-
-                                        <div class="col-md-6 font-size-class">
-                                            @if ($users->personal) {{$users->personal->HaveChildren }} @endif
-                                        </div>
-
-                                        <div class="clearfix"></div>
-
-                                        <div class="col-md-6 font-size-class-header">Do I have children?</div>
-
-                                        <div class="col-md-6 font-size-class">
-                                            @if ($users->personal) {{$users->personal->Children }} @endif
-                                        </div>
-
-                                        <div class="clearfix"></div>
-
-                                        <div class="col-md-6 font-size-class-header">My Living Arrangements?</div>
-
-                                        <div class="col-md-6 font-size-class">
-                                            @if ($users->personal) {{$users->personal->Living }} @endif
-                                        </div>
-
-                                        <div class="clearfix"></div>
-
-                                        <div class="col-md-6 font-size-class-header">Country</div>
-
-                                        <div class="col-md-6 font-size-class">
-                                            {{$users->Country}}
-                                        </div>
-
-                                        <div class="clearfix"></div>
-
-                                        <div class="clearfix"></div>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-6 nopaddinginfo appearance-paddingright">
-                                <div class="sections userinfosection-group appearance-minheight">
-                                    <div class="col-md-12 headings">
-                                        Appearance
-                                    </div>
-                                    <div class="col-md-12 detailpart">
-                                        <div class="col-md-6 font-size-class-header">My Height</div>
-
-                                        <div class="col-md-6 font-size-class">
-                                            @if ($users->personal) {{$users->personal->Height }} @endif
-                                        </div>
-
-                                        <div class="clearfix"></div>
-
-                                        <div class="col-md-6 font-size-class-header">My Build</div>
-
-                                        <div class="col-md-6 font-size-class">
-                                            @if ($users->personal) {{$users->personal->Build }} @endif
-                                        </div>
-
-                                        <div class="clearfix"></div>
-
-                                        <div class="col-md-6 font-size-class-header">My Hair Colour</div>
-
-                                        <div class="col-md-6 font-size-class">
-                                            @if ($users->personal) {{$users->personal->Hair }} @endif
-                                        </div>
-
-                                        <div class="clearfix"></div>
-
-                                        <div class="col-md-6 font-size-class-header">Colour of My Eyes</div>
-
-                                        <div class="col-md-6 font-size-class">
-                                            @if ($users->personal) {{$users->personal->EyeColour }} @endif
-                                        </div>
-
-                                        <div class="clearfix"></div>
-
-                                        <div class="col-md-6 font-size-class-header">Do I Smoke?</div>
-
-                                        <div class="col-md-6 font-size-class">
-                                            @if ($users->personal) {{$users->personal->Smoke }} @endif
-                                        </div>
-
-                                        <div class="clearfix"></div>
-
-                                        <div class="col-md-6 font-size-class-header">Do I Have Any Disabilities?</div>
-
-                                        <div class="col-md-6 font-size-class">
-                                            @if ($users->personal) {{$users->personal->Disabilities }} @endif
-                                        </div>
-
-                                        <div class="clearfix"></div>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-6 nopaddinginfo education-paddingright">
-                                <div class="sections userinfosection-group education-minheight">
-                                    <div class="col-md-12 headings">
-                                        Education
-                                    </div>
-                                    <div class="col-md-12 detailpart">
-                                        <div class="col-md-6 font-size-class-header">My Education Level</div>
-
-                                        <div class="col-md-6 font-size-class">
-                                            @if ($users->education) {{ $users->education->EducationLevel }} @endif
-                                        </div>
-
-                                        <div class="clearfix"></div>
-
-                                        <div class="col-md-6 font-size-class-header">Subject I Studied</div>
-
-                                        <div class="col-md-6 font-size-class">
-                                            <span itemprop="knowsAbout">
-                                                @if ($users->education) {{ $users->education->SubjectStudied }} @endif
-                                            </span>
-                                        </div>
-
-                                        <div class="clearfix"></div>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-6 nopaddinginfo language-paddingright">
-                                <div class="sections userinfosection-group language-minheight">
-                                    <div class="col-md-12 headings">
-                                        Language
-                                    </div>
-                                    <div class="col-md-12 detailpart">
-                                        <div class="col-md-6 font-size-class-header">My First Language</div>
-
-                                        <div class="col-md-6 font-size-class">
-                                            <span itemprop="knowsLanguage">
-                                                @if ($users->education) {{ $users->education->FirstLang }} @endif
-                                            </span>
-                                        </div>
-
-                                        <div class="clearfix"></div>
-
-                                        <div class="col-md-6 font-size-class-header">My Second Language</div>
-
-                                        <div class="col-md-6 font-size-class">
-                                            @if ($users->education) {{ $users->education->SecondLang }} @endif
-                                        </div>
-
-                                        <div class="clearfix"></div>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-6 nopaddinginfo work-paddingright">
-                                <div class="sections userinfosection-group work-minheight">
-                                    <div class="col-md-12 headings">
-                                        Work
-                                    </div>
-                                    <div class="col-md-12 detailpart">
-                                        <div class="col-md-6 font-size-class-header">My Profession</div>
-
-                                        <div class="col-md-6 font-size-class">
-                                            @if ($users->education) {{ $users->education->Employment }} @endif
-                                        </div>
-
-                                        <div class="clearfix"></div>
-
-                                        <div class="col-md-6 font-size-class-header">My Job Title</div>
-
-                                        <div class="col-md-6 font-size-class">
-                                            @if ($users->education) {{ $users->education->JobTitle }} @endif
-                                        </div>
-
-                                        <div class="clearfix"></div>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-6 nopaddinginfo religion-paddingright">
-                                <div class="sections userinfosection-group religion-minheight">
-                                    <div class="col-md-12 headings">
-                                        Religion
-                                    </div>
-                                    <div class="col-md-12 detailpart">
-                                        <div class="col-md-6 font-size-class-header">Religiousness</div>
-
-                                        <div class="col-md-6 font-size-class">
-                                            @if ($users->religion) {{ $users->religion->Religiosness }} @endif
-                                        </div>
-
-                                        <div class="clearfix"></div>
-
-                                        <div class="col-md-6 font-size-class-header">My Sect</div>
-
-                                        <div class="col-md-6 font-size-class">
-                                            @if ($users->religion) {{ $users->religion->Sect }} @endif
-                                        </div>
-
-                                        <div class="clearfix"></div>
-
-                                        <div class="col-md-6 font-size-class-header">Hijab/Niqab</div>
-
-                                        <div class="col-md-6 font-size-class">
-                                            @if ($users->religion) {{ $users->religion->Hijab }} @endif
-                                        </div>
-
-                                        <div class="clearfix"></div>
-
-                                        <div class="col-md-6 font-size-class-header">Beard</div>
-
-                                        <div class="col-md-6 font-size-class">
-                                            @if ($users->religion) {{ $users->religion->Beard }} @endif
-                                        </div>
-
-                                        <div class="clearfix"></div>
-
-                                        <div class="col-md-6 font-size-class-header">Are You a Revert?</div>
-
-                                        <div class="col-md-6 font-size-class">
-                                            @if ($users->religion) {{ $users->religion->Convert }} @endif
-                                        </div>
-
-                                        <div class="clearfix"></div>
-
-                                        <div class="col-md-6 font-size-class-header">Do You Keep Halal?</div>
-
-                                        <div class="col-md-6 font-size-class">
-                                            @if ($users->religion) {{ $users->religion->Halaal }} @endif
-                                        </div>
-
-                                        <div class="clearfix"></div>
-
-                                        <div class="col-md-6 font-size-class-header">Do You Perform Salaah?</div>
-
-                                        <div class="col-md-6 font-size-class">
-                                            @if ($users->religion) {{ $users->religion->Salaah }} @endif
-                                        </div>
-
-                                        <div class="clearfix"></div>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-
-
-                <div class="clearfix"></div>
             </div>
-
-            <script>
-                var $el, $ps, $up, totalHeight;
-
-                $(function () {
-                    $(".read-more").on("click", function () {
-                        var readmore = $(this);
-                        if (readmore.text() == "Read More") {
-                            readmore.text("Read Less");
-                        } else {
-                            readmore.text("Read More");
-                        }
-
-                        readmore.parent().find(".detailpart").toggleClass("heightAuto");
-                    });
-
-                    $(".userinfosection .button").on("click", function () {
-                        totalHeight = 0;
-
-                        $el = $(this);
-                        $p = $el.parent();
-                        $up = $p.parent();
-                        $ps = $up.find("div:not('.read-more')");
-
-                        // measure how tall inside should be by adding together heights of all inside paragraphs (except read-more paragraph)
-                        $ps.each(function () {
-                            totalHeight += $(this).outerHeight();
-                        });
-
-                        $up.css({
-                            // Set height to prevent instant jumpdown when max height is removed
-                            height: $up.height(),
-                            "max-height": 9999,
-                        }).animate({
-                            height: totalHeight,
-                        });
-
-                        // fade out read-more
-                        $p.fadeOut();
-
-                        // prevent jump-down
-                        return false;
-                    });
-                });
-            </script>
-
-            <style>
-                #ProfileController .male .item {
-                    padding: 0px !important;
-                    box-shadow: 0 0 0px 0px #e6e6e6;
-                    border-radius: 0px;
-                }
-                #ProfileController .female .item {
-                    margin-left: 0px;
-                    box-shadow: 0 0 0px 0px #e6e6e6;
-                    border-radius: 0px;
-                }
-            </style>
         </div>
     </div>
-</div>
+
+
+</section>
+
 @endsection

@@ -21,6 +21,11 @@ use Illuminate\Support\Facades\Auth as FacadesAuth;
 
 class SearchController extends Controller
 {
+    public function search_result_all()
+    {   $users = User::relations()->get();
+        return view('search.allView', compact('users'));
+    }
+
     public function index()
     {
         $country = Country::all();
@@ -66,14 +71,14 @@ class SearchController extends Controller
     public function search_username_result(Request $request)
     {
          $datas = User::where('UserName', $request->UserName)->get();
-         
+
         return view('search.result', compact('datas'));
     }
 
 
      public function search_education_result(Request $request)
     {
-            
+
         $datas = User::find(auth()->id())->with('education','personal','religion','addphoto')
             ->whereHas('education', function($q) use($request) {
                 $q->where('EducationLevel', $request->EducationLevel)
@@ -83,14 +88,14 @@ class SearchController extends Controller
             })
             ->whereHas('personal', function($q) use($request) {
                 $q->where('Income', $request->Income);
-            })->get();         
+            })->get();
         return view('search.result', compact('datas'));
     }
 
 
        public function search_religion_result(Request $request)
     {
-            
+
         $datas = User::find(auth()->id())->with('education','personal','religion','addphoto')
         ->whereHas('religion', function($q) use($request) {
                 $q->where('Sect', $request->Sect)
@@ -102,11 +107,11 @@ class SearchController extends Controller
                 ->where('Salaah', $request->Salaah);
             })
          ->get();
-                      
+
         return view('search.result', compact('datas'));
     }
 
-       
+
 
       public function search_personal_result(Request $request)
     {
@@ -134,8 +139,7 @@ class SearchController extends Controller
 
     }
 
-    
-        
+
+
 
 }
-  

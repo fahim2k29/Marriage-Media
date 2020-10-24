@@ -1,1273 +1,678 @@
-@extends('user.dashboard.app') @section('content')
-
-<div class="container">
-<div class="row">
-<div class="col-md-12" id="editOwnProfile">
-<div class="modal fade" id="notificationModal" tabindex="-1" role="dialog" aria-labelledby="notificationModal" aria-hidden="true">
-<div class="modal-dialog" role="document">
-<div class="modal-content">
-
-<div class="modal-body">
-    <div class="photoBoxHolder2">
-        <div class="notifications customheight"></div>
-    </div>
-</div>
-</div>
-</div>
-</div>
-
-
-
-<!-- need to work on it -->
-
-<div class="buttons-profile" style="padding: 8px 10px 10px 33px;">
-<div class="pull-right btn-group btn-toggle">
-<button class="btn btn-xs btn-preview radiusLeft btn-default">Preview</button>
-<button class="btn btn-xs btn-preview radiusRight active btn-primary">Edit</button>
-</div>
-
-<!--
-<a class="pull-right btn icon-btn btn-primary btnprofileEdit_ownprofile togetherbutton" > <span class="icon smicon smicon-visitors solid iconabsolute male "></span> <span class="messagecolor" >Preview</span></a>
-<a class="pull-right btn icon-btn btn-primary btnprofileEdit_ownprofile togetherbutton"> <span class="icon smicon smicon-pencil solid iconabsolute male "></span> <span class="messagecolor" >Edit Profile</span></a>
--->
-<span class="clearfix"></span>
-</div>
-
-<div class="userProfileView male previewsection" style="display: none;">
-<div class="detialBarProfileview detialBarProfileview-edit">
-<div class="leftDetails">
-<div class="pull-left userBigPic">
-    <div class="rate-statut-wrapper absolute-position">
-        @php
-        $photo = App\AddPhoto::where('user_id',auth()->id())->first()->image;
-        @endphp
-    </div>
-        <img align="left" class="img-responsive" src="{{asset($photo) }}"  class="img-responsive img-circle" >
-</div>
-
-<div class="col-lg-12 profile-info-row">
-    <div class="pull-left profileLabel">
-        My Sect
-    </div>
-    <div class="pull-left profileContent secondFont">
-        {{$user->religion->Sect}}
-    </div>
-</div>
-
-<div class="col-lg-12 profile-info-row">
-    <div class="pull-left profileLabel">
-        Religiousness
-    </div>
-    <div class="pull-left profileContent secondFont">
-        {{$user->religion->Religiosness}}
-    </div>
-</div>
-
-<div class="col-lg-12 profile-info-row">
-    <div class="pull-left profileLabel">
-        My Profession
-    </div>
-    <div class="pull-left profileContent secondFont">
-        {{$user->education->Employment}}
-    </div>
-</div>
-
-<div class="col-lg-12 profile-info-row">
-    <div class="pull-left profileLabel">
-        Marital Status
-    </div>
-    <div class="pull-left profileContent secondFont">
-        {{$user->personal->MaritalStatus}}
-    </div>
-</div>
-
-<div class="col-lg-12 profile-info-row">
-    <div class="pull-left profileLabel">
-        Country
-    </div>
-    <div class="pull-left profileContent secondFont">
-        {{$user->Country}}
-    </div>
-</div>
-
-<div class="col-lg-12 profile-info-row">
-    <div class="pull-left profileLabel">
-        Registration Reason
-    </div>
-    <div class="pull-left profileContent secondFont">
-        {{$user->RegistrationReason}}
-    </div>
-</div>
-
-<div class="clearfix"></div>
-
-
-</div>
-<div class="pull-right rightDetails rightDetails-edit">
-<div class="userinfosectiontop">
-    <div class="sections userinfosection">
-        <div class="edit-profileicon">
-            <a href="/profile/edit#edit"> <span class="sm-line software-pencil"></span></a>
-        </div>
-        <div class="col-md-12 headings">
-            A Little Bit About Me
-        </div>
-        <div class="col-md-12 detailpart">
-            {{$user->aboutme->Description}}
-        </div>
-        <p class="read-more">Read More</p>
-        <div class="clearfix"></div>
-    </div>
-
-    <div class="sections userinfosection">
-        <div class="edit-profileicon">
-            <a href="/profile/edit#edit"> <span class="sm-line software-pencil"></span></a>
-        </div>
-        <div class="col-md-12 headings">
-            What I Am Looking For
-        </div>
-        <div class="col-md-12 detailpart">
-            {{$user->aboutme->LookingFor}}
-        </div>
-        <p class="read-more">Read More</p>
-        <div class="clearfix"></div>
-    </div>
-
-    <div class="col-md-6 nopaddinginfo personal information-paddingright">
-        <div class="sections userinfosection-group personal information-minheight">
-            <div class="col-md-12 headings">
-                Personal Information
-            </div>
-            <div class="col-md-12 detailpart">
-                <div class="col-md-6 font-size-class-header">My Citizenship</div>
-                <div class="col-md-6 font-size-class">
-                    {{$user->personal->Citizenship}}
-                </div>
-
-                <div class="clearfix"></div>
-
-                <div class="col-md-6 font-size-class-header">Country of Origin</div>
-                <div class="col-md-6 font-size-class">
-                    {{$user->personal->Origin}}
-                </div>
-
-                <div class="clearfix"></div>
-
-                <div class="col-md-6 font-size-class-header">Willing to Relocate?</div>
-                <div class="col-md-6 font-size-class">
-                    {{$user->personal->Relocation}}
-                </div>
-
-                <div class="clearfix"></div>
-
-                <div class="col-md-6 font-size-class-header">I am Looking to Marry</div>
-                <div class="col-md-6 font-size-class">
-                    {{$user->personal->MarryIn}}
-                </div>
-
-                <div class="clearfix"></div>
-
-                <div class="col-md-6 font-size-class-header">My Income</div>
-                <div class="col-md-6 font-size-class">
-                    {{$user->personal->Income}}
-                </div>
-
-                <div class="clearfix"></div>
-
-                <div class="col-md-6 font-size-class-header">Marital Status</div>
-                <div class="col-md-6 font-size-class">
-                    {{$user->personal->MaritalStatus}}
-                </div>
-
-                <div class="clearfix"></div>
-
-                <div class="col-md-6 font-size-class-header">Would I like to have Children?</div>
-                <div class="col-md-6 font-size-class">
-                    {{$user->personal->Children}}
-                </div>
-
-                <div class="clearfix"></div>
-
-                <div class="col-md-6 font-size-class-header">Do I have children?</div>
-                <div class="col-md-6 font-size-class">
-                    {{$user->personal->HaveChildren}}
-                </div>
-
-                <div class="clearfix"></div>
-
-                <div class="col-md-6 font-size-class-header">My Living Arrangements?</div>
-                <div class="col-md-6 font-size-class">
-                    {{$user->personal->Living}}
-                </div>
-
-                <div class="clearfix"></div>
-
-                <div class="col-md-6 font-size-class-header">Country</div>
-                <div class="col-md-6 font-size-class">
-                    {{$user->Country}}
-                </div>
-
-                <div class="clearfix"></div>
-
-                <div class="col-md-6 font-size-class-header">Distance</div>
-                <div class="col-md-6 font-size-class"></div>
-
-                <div class="clearfix"></div>
-            </div>
-            <div class="clearfix"></div>
-        </div>
-    </div>
-
-    <div class="col-md-6 nopaddinginfo appearance-paddingright">
-        <div class="sections userinfosection-group appearance-minheight">
-            <div class="col-md-12 headings">
-                Appearance
-            </div>
-            <div class="col-md-12 detailpart">
-                <div class="col-md-6 font-size-class-header">My Height</div>
-                <div class="col-md-6 font-size-class">
-                    {{$user->personal->Height}}
-                </div>
-
-                <div class="clearfix"></div>
-
-                <div class="col-md-6 font-size-class-header">My Build</div>
-                <div class="col-md-6 font-size-class">
-                    {{$user->personal->Build}}
-                </div>
-
-                <div class="clearfix"></div>
-
-                <div class="col-md-6 font-size-class-header">My Hair Colour</div>
-                <div class="col-md-6 font-size-class">
-                    {{$user->personal->Hair}}
-                </div>
-
-                <div class="clearfix"></div>
-
-                <div class="col-md-6 font-size-class-header">Colour of My Eyes</div>
-                <div class="col-md-6 font-size-class">
-                    {{$user->personal->EyeColour}}
-                </div>
-
-                <div class="clearfix"></div>
-
-                <div class="col-md-6 font-size-class-header">Do I Smoke?</div>
-                <div class="col-md-6 font-size-class">
-                    {{$user->personal->Smoke}}
-                </div>
-
-                <div class="clearfix"></div>
-
-                <div class="col-md-6 font-size-class-header">Do I Have Any Disabilities?</div>
-                <div class="col-md-6 font-size-class">
-                    {{$user->personal->Disabilities}}
-                </div>
-
-                <div class="clearfix"></div>
-            </div>
-            <div class="clearfix"></div>
-        </div>
-    </div>
-
-    <div class="col-md-6 nopaddinginfo education-paddingright">
-        <div class="sections userinfosection-group education-minheight">
-            <div class="col-md-12 headings">
-                Education
-            </div>
-            <div class="col-md-12 detailpart">
-                <div class="col-md-6 font-size-class-header">My Education Level</div>
-                <div class="col-md-6 font-size-class">
-                    {{$user->education->EducationLevel}}
-                </div>
-
-                <div class="clearfix"></div>
-
-                <div class="col-md-6 font-size-class-header">Subject I Studied</div>
-                <div class="col-md-6 font-size-class">
-                    {{$user->education->SubjectStudied}}
-                </div>
-
-                <div class="clearfix"></div>
-            </div>
-            <div class="clearfix"></div>
-        </div>
-    </div>
-
-    <div class="col-md-6 nopaddinginfo language-paddingright">
-        <div class="sections userinfosection-group language-minheight">
-            <div class="col-md-12 headings">
-                Language
-            </div>
-            <div class="col-md-12 detailpart">
-                <div class="col-md-6 font-size-class-header">My First Language</div>
-                <div class="col-md-6 font-size-class">
-                    {{$user->education->FirstLang}}
-                </div>
-
-                <div class="clearfix"></div>
-
-                <div class="col-md-6 font-size-class-header">My Second Language</div>
-                <div class="col-md-6 font-size-class">
-                    {{$user->education->SecondLang}}
-                </div>
-
-                <div class="clearfix"></div>
-            </div>
-            <div class="clearfix"></div>
-        </div>
-    </div>
-
-    <div class="col-md-6 nopaddinginfo work-paddingright">
-        <div class="sections userinfosection-group work-minheight">
-            <div class="col-md-12 headings">
-                Work
-            </div>
-            <div class="col-md-12 detailpart">
-                <div class="col-md-6 font-size-class-header">My Profession</div>
-                <div class="col-md-6 font-size-class">
-                    {{$user->education->Employment}}
-                </div>
-
-                <div class="clearfix"></div>
-
-                <div class="col-md-6 font-size-class-header">My Job Title</div>
-                <div class="col-md-6 font-size-class">
-                    {{$user->education->JobTitle}}
-                </div>
-
-                <div class="clearfix"></div>
-            </div>
-            <div class="clearfix"></div>
-        </div>
-    </div>
-
-    <div class="col-md-6 nopaddinginfo religion-paddingright">
-        <div class="sections userinfosection-group religion-minheight">
-            <div class="col-md-12 headings">
-                Religion
-            </div>
-            <div class="col-md-12 detailpart">
-                <div class="col-md-6 font-size-class-header">Religiousness</div>
-                <div class="col-md-6 font-size-class">
-                    {{$user->religion->Religiosness}}
-                </div>
-
-                <div class="clearfix"></div>
-
-                <div class="col-md-6 font-size-class-header">My Sect</div>
-                <div class="col-md-6 font-size-class">
-                    {{$user->religion->Sect}}
-
-                </div>
-
-                <div class="clearfix"></div>
-
-                <div class="col-md-6 font-size-class-header">Hijab/Niqab</div>
-                <div class="col-md-6 font-size-class">
-                    {{$user->religion->Hijab}}
-                </div>
-
-                <div class="clearfix"></div>
-
-                <div class="col-md-6 font-size-class-header">Beard</div>
-                <div class="col-md-6 font-size-class">
-                    {{$user->religion->Beard}}
-                </div>
-
-                <div class="clearfix"></div>
-
-                <div class="col-md-6 font-size-class-header">Are You a Revert?</div>
-                <div class="col-md-6 font-size-class">
-                    {{$user->religion->Convert}}
-                </div>
-
-                <div class="clearfix"></div>
-
-                <div class="col-md-6 font-size-class-header">Do You Keep Halal?</div>
-                <div class="col-md-6 font-size-class">
-                    {{$user->religion->Halaal}}
-                </div>
-
-                <div class="clearfix"></div>
-
-                <div class="col-md-6 font-size-class-header">Do You Perform Salaah?</div>
-                <div class="col-md-6 font-size-class">
-                    {{$user->religion->Salaah}}
-                </div>
-
-                <div class="clearfix"></div>
-            </div>
-            <div class="clearfix"></div>
-        </div>
-    </div>
-</div>
-</div>
-<div class="clearfix"></div>
-</div>
-</div>
-
-<div class="userProfileView male editsection previewsection" style="display: block;">
-<div class="detialBarProfileview detialBarProfileview-edit">
-<div class="leftDetails">
-
-    <div class="upload-image fill-absolute sm-button neutral-text-color-3 sm-inline-edit-profile">
-        <div class="empty-icon-text vertical-alignment-in-parent center-align white-text-color">
-            <i class="z-page-click-target sm-line camera fontsize-42 lineheight-54 block-element"></i>
-
-        </div>
-
-        <div class="rate-statut-wrapper absolute-position">
-            <!-- ngIf: contentCtr.otherPictures && contentCtr.otherPictures.totalImages >= 1 -->
-        </div>
-
-        <div class="userinfoonpic male">
-
-            <div class="col-md-12" style="padding-right: 5px;">
-                <div class="z-page-click-target edit-highlight"></div>
-
-                <div class="pull-left usernameLeft usernamesection">
-                    <div class="pull-left">
-                        <h1 style="margin-top: 10px;">
-                            {{$user->UserName}}
-                        </h1>
+@extends('layouts.app2') @section('content')
+<section class="sign-up" style="background-color: white">
+    <div class="container ">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div style="text-align: center">Search for a match</div>
                     </div>
-
-
-                    <div class="clearfix"></div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-
-<div class="clearfix"></div>
-
-<nav class="nav-sidebar">
-    <ul class="nav">
-
-        <li class="active">
-            <a href="/user/dashboard/profile"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>  Edit My Profile </a>
-        </li>
-        <li class="">
-            <a href="/editPersonalInfo"><i class="fa fa-pencil" aria-hidden="true"></i>  Edit Personal Info </a>
-        </li>
-        <li class="bottombodernone">
-            <a href="#"><i class="fa fa-bell-o" aria-hidden="true"></i>  Notifications / Preferences </a>
-        </li>
-
-        <!--        <li class="--><!-- bottombodernone"><a href="/profile/communication-preferences"><i class="sm-line basic-alarm sm-nav-dropdown-icons"></i>Notifications / Preferences <span class=" smicon-new smicon-angle-right pull-right arrow-font-size"></span></a></li>-->
-        <!--       -->
-
-        <h6 class="dropdown-header sidemenuheader">Photos</h6>
-        <li class="">
-            <a href="/editPhoto"><i class="fa fa-picture-o" aria-hidden="true"></i>  Edit My Photos </a>
-        </li>
-
-
-        <h6 class="dropdown-header sidemenuheader">Account &amp; Security</h6>
-
-        <li class="">
-            <a href="/changeUsername"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Change Username </a>
-        </li>
-        <li class="">
-            <a href="/changeEmail"><i class="fa fa-envelope" aria-hidden="true"></i> Change Email </a>
-        </li>
-        <li class="">
-            <a href="/changePassword"><i class="fa fa-unlock-alt" aria-hidden="true"></i> Change Password </a>
-        </li>
-        <li class="">
-            <a href="/membership/packages"><i class="fa fa-delicious" aria-hidden="true"></i> Memberships History </a>
-        </li>
-        <li class="">
-            <a href="#"><i class="fa fa-ban" aria-hidden="true"></i> Blocked Users </a>
-        </li>
-        <li class="">
-            <a href="#"><i class="fa fa-envelope-open-o" aria-hidden="true"></i> Communication Preferences
-            </a>
-        </li>
-        <!--        <li class="--><!--"><a href="/profile/devices"><i class=" sm-line  sm-line basic-smartphone sm-nav-dropdown-icons"></i>Devices <span class=" smicon-new smicon-angle-right pull-right arrow-font-size"></span></a></li>-->
-        <!--      -->
-
-        <li class="">
-            <a href="#"><i class="fa fa-desktop" aria-hidden="true"></i> Devices </a>
-        </li>
-
-        <li class="deletesidemenu">
-            <a href="#" data-username="fahim900">
-                <i class="fa fa-trash-o" aria-hidden="true"></i> Delete Profile
-            </a>
-        </li>
-    </ul>
-</nav>
-
-<div class="clearfix"></div>
-</div>
-<div class="pull-right rightDetails rightDetails-edit">
-<div class="userinfosectiontop">
-{{-- <form id="settingprofile_afterlogin" class="form-horizontal" role="form" action="/profile/edit" method="post" data-toggle="validator" novalidate="true"> --}}
-    <div class="sections userinfosection">
-        <div class="col-md-12 headings">
-            About Me
-        </div>
-        <form method="post" action="{{ route('aboutme_update' ) }}">
-            @csrf
-        <div class="col-md-12 detailpart detailpart-edit">
-            <div role="form" class="form-horizontal">
-                <div id="Headline-group" class="form-group Headline-row">
-                    <label for="Headline" class="col-sm-4 control-label"><span class="required">*</span> Headline</label>
-                    <div class="col-sm-8">
-                        <div class="input-group input-group-maxwidth">
-                            <input name="Headline" id="Headline" type="text" required="required" value="{{$user->aboutme->Headline}}" class="form-control" />
-                        </div>
-                    </div>
-                    <div class="clearfix"></div>
-                    <span class="help-block with-errors" aria-hidden="false"></span>
-                    <div class="clearfix"></div>
-                </div>
-                <div id="Description-group" class="form-group Description-row">
-                    <label for="Description" class="col-sm-4 control-label"><span class="required">*</span> A Little Bit About Me</label>
-                    <div class="col-sm-8">
-                        <div class="input-group input-group-maxwidth">
-                            <textarea name="Description" id="Description" required="required" class="form-control" style="overflow: hidden; overflow-wrap: break-word; resize: none; height: 52.2222px;">{{$user->aboutme->Description}}</textarea>
-                        </div>
-                    </div>
-                    <div class="clearfix"></div>
-                    <span class="help-block with-errors" aria-hidden="false"></span>
-                    <div class="clearfix"></div>
-                </div>
-                <div id="LookingFor-group" class="form-group LookingFor-row">
-                    <label for="LookingFor" class="col-sm-4 control-label"><span class="required">*</span> What I Am Looking For</label>
-                    <div class="col-sm-8">
-                        <div class="input-group input-group-maxwidth">
-                            <textarea name="LookingFor" id="LookingFor" required="required" class="form-control" style="overflow: hidden; overflow-wrap: break-word; resize: none; height: 52.2222px;">{{$user->aboutme->LookingFor}}</textarea>
-                        </div>
-                    </div>
-                    <div class="clearfix"></div>
-                    <span class="help-block with-errors" aria-hidden="false"></span>
-                    <div class="clearfix"></div>
-                </div>
-                <div class="form-group">
-                    <div class="col-md-12 col-lg-12" style="text-align: right;">
-                        <span class="pull-left required firstFont_new" style="margin-left: 128px; margin-top: 8px;">* Required Field</span>
-                        <button name="Submit" id="Submit" type="submit" class="btn btn-primary firstFont_new btn-primary-theme">Update</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </form>
-
-        <div class="clearfix"></div>
-    </div>
-
-    <div class="sections userinfosection">
-        <div class="col-md-12 headings">
-            Education and Work
-        </div>
-        <div class="col-md-12 detailpart detailpart-edit">
-            <div role="form" class="form-horizontal">
-                <form method="post" action="{{ route('education_update' ) }}">
-                @csrf
-                <div id="EducationLevel-group" class="form-group EducationLevel-row">
-                    <label for="EducationLevel" class="col-sm-4 control-label"><span class="required">*</span> My Education Level</label>
-                    <div class="col-sm-8">
-                        <div class="input-group input-group-maxwidth">
-                            <select name="EducationLevel" id="EducationLevel" required="required"  data-select2-id="EducationLevel" tabindex="-1" aria-hidden="true">
-                                <option >{{$user->education-> EducationLevel}}</option>
-
-                                @foreach ($employments as $employment)
-
-                                <option >{{$employment-> employment_EducationLevel}}</option>
-
-                                @endforeach
-
-                            </select>
-
-                        </div>
-                    </div>
-                    <div class="clearfix"></div>
-                    <span class="help-block with-errors" aria-hidden="false"></span>
-                    <div class="clearfix"></div>
-                </div>
-                <div id="SubjectStudied-group" class="form-group SubjectStudied-row">
-                    <label for="SubjectStudied" class="col-sm-4 control-label"><span class="required">*</span> Subject I Studied</label>
-                    <div class="col-sm-8">
-                        <div class="input-group input-group-maxwidth">
-                        <input name="SubjectStudied" id="SubjectStudied" type="text" required="required" value="{{$user->education->SubjectStudied}}" class="form-control" />
-                        </div>
-                    </div>
-                    <div class="clearfix"></div>
-                    <span class="help-block with-errors" aria-hidden="false"></span>
-                    <div class="clearfix"></div>
-                </div>
-                <div id="JobTitle-group" class="form-group JobTitle-row">
-                    <label for="JobTitle" class="col-sm-4 control-label"><span class="required">*</span> My Job Title</label>
-                    <div class="col-sm-8">
-                        <div class="input-group input-group-maxwidth">
-                            <input name="JobTitle" id="JobTitle" type="text" required="required" value="{{$user->education->JobTitle}}" class="form-control" />
-                        </div>
-                    </div>
-                    <div class="clearfix"></div>
-                    <span class="help-block with-errors" aria-hidden="false"></span>
-                    <div class="clearfix"></div>
-                </div>
-                <div id="Employment-group" class="form-group Employment-row">
-                    <label for="Employment" class="col-sm-4 control-label"><span class="required">*</span> My Profession</label>
-                    <div class="col-sm-8">
-                        <div class="input-group input-group-maxwidth">
-                            <select name="Employment" id="Employment" required="required"  data-select2-id="Employment" tabindex="-1" aria-hidden="true">
-
-                                <option >{{$user->education-> Employment}}</option>
-
-                                @foreach ($employments as $employment)
-
-                                <option >{{$employment-> employment_value}}</option>
-
-                                @endforeach
-                            </select>
-
-                        </div>
-                    </div>
-                    <div class="clearfix"></div>
-                    <span class="help-block with-errors" aria-hidden="false"></span>
-                    <div class="clearfix"></div>
-                </div>
-                <div id="FirstLang-group" class="form-group FirstLang-row">
-                    <label for="FirstLang" class="col-sm-4 control-label"><span class="required">*</span> My First Language</label>
-                    <div class="col-sm-8">
-                        <div class="input-group input-group-maxwidth">
-                            <select name="FirstLang" id="FirstLang" required="required"  data-select2-id="FirstLang" tabindex="-1" aria-hidden="true">
-
-                                <option >{{$user->education-> FirstLang}}</option>
-
-                                @foreach ($employments as $employment)
-
-                                <option >{{$employment-> employment_Language}}</option>
-
-                                @endforeach
-                            </select>
-
-                        </div>
-                    </div>
-                    <div class="clearfix"></div>
-                    <span class="help-block with-errors" aria-hidden="false"></span>
-                    <div class="clearfix"></div>
-                </div>
-                <div id="SecondLang-group" class="form-group SecondLang-row">
-                    <label for="SecondLang" class="col-sm-4 control-label"><span class="required">*</span> My Second Language</label>
-                    <div class="col-sm-8">
-                        <div class="input-group input-group-maxwidth">
-                            <select name="SecondLang" id="SecondLang" required="required"  data-select2-id="SecondLang" tabindex="-1" aria-hidden="true">
-
-                                <option >{{$user->education-> SecondLang}}</option>
-
-                                @foreach ($employments as $employment)
-
-                                <option >{{$employment-> employment_Language}}</option>
-
-                                @endforeach
-
-                            </select>
-
-                        </div>
-                    </div>
-                    <div class="clearfix"></div>
-                    <span class="help-block with-errors" aria-hidden="false"></span>
-                    <div class="clearfix"></div>
-                </div>
-                <div id="RegistrationReason-group" class="form-group RegistrationReason-row">
-                    <label for="RegistrationReason" class="col-sm-4 control-label"><span class="required">*</span> Registration Reason</label>
-                    <div class="col-sm-8">
-                        <div class="input-group input-group-maxwidth">
-                            <select
-                                name="RegistrationReason"
-                                id="RegistrationReason"
-                                required="required"
-                                data-select2-id="RegistrationReason"
-                                tabindex="-1"
-                                aria-hidden="true"
-                            >
-                                <option >{{$user-> RegistrationReason}}</option>
-
-                                @foreach ($signupdatas as $signupdata)
-
-                                <option >{{$signupdata-> RegistrationReason_data}}</option>
-
-                                @endforeach
-                            </select>
-
-                        </div>
-                    </div>
-                    <div class="clearfix"></div>
-                    <span class="help-block with-errors" aria-hidden="false"></span>
-                    <div class="clearfix"></div>
-                </div>
-                <div class="form-group">
-                    <div class="col-md-12 col-lg-12" style="text-align: right;">
-                        <span class="pull-left required firstFont_new" style="margin-left: 128px; margin-top: 8px;">* Required Field</span>
-                        <button name="Submit" id="Submit" type="submit" class="btn btn-primary firstFont_new btn-primary-theme">Update</button>
-                    </div>
-                </div>
-                </form>
-            </div>
-        </div>
-
-        <div class="clearfix"></div>
-    </div>
-
-    <div class="sections userinfosection">
-        <div class="col-md-12 headings">
-            Personal
-        </div>
-        <div class="col-md-12 detailpart detailpart-edit">
-            <div role="form" class="form-horizontal">
-                <form method="post" action="{{ route('personal_update' ) }}">
-                @csrf
-                <div id="Citizenship-group" class="form-group Citizenship-row">
-                    <label for="Citizenship" class="col-sm-4 control-label"><span class="required">*</span> My Citizenship</label>
-                    <div class="col-sm-8">
-                        <div class="input-group input-group-maxwidth">
-                            <select name="Citizenship" id="Citizenship" required="required"  data-select2-id="Citizenship" tabindex="-1" aria-hidden="true">
-
-                                <option>{{$user->personal->Citizenship}}</option>
-
-                                @foreach ($personaldatas as $personaldata)
-
-                                <option >{{$personaldata-> Citizenship_data}}</option>
-
-                                @endforeach
-
-                            </select>
-
-                        </div>
-                    </div>
-                    <div class="clearfix"></div>
-                    <span class="help-block with-errors" aria-hidden="false"></span>
-                    <div class="clearfix"></div>
-                </div>
-                <div id="Origin-group" class="form-group Origin-row">
-                    <label for="Origin" class="col-sm-4 control-label"><span class="required">*</span> Country of Origin</label>
-                    <div class="col-sm-8">
-                        <div class="input-group input-group-maxwidth">
-                            <select name="Origin" id="Origin" required="required"  data-select2-id="Origin" tabindex="-1" aria-hidden="true">
-
-                                <option>{{$user->personal->Origin}}</option>
-
-                                @foreach ($personaldatas as $personaldata)
-
-                                <option >{{$personaldata-> Origin_data}}</option>
-
-                                @endforeach
-
-                            </select>
-
-                        </div>
-                    </div>
-                    <div class="clearfix"></div>
-                    <span class="help-block with-errors" aria-hidden="false"></span>
-                    <div class="clearfix"></div>
-                </div>
-                <div id="Relocation-group" class="form-group Relocation-row">
-                    <label for="Relocation" class="col-sm-4 control-label"><span class="required">*</span> Willing to Relocate?</label>
-                    <div class="col-sm-8">
-                        <div class="input-group input-group-maxwidth">
-                            <select name="Relocation" id="Relocation" required="required"  data-select2-id="Relocation" tabindex="-1" aria-hidden="true">
-
-                                <option>{{$user->personal->Relocation}}</option>
-
-                                @foreach ($personaldatas as $personaldata)
-
-                                <option >{{$personaldata-> Relocation_data}}</option>
-
-                                @endforeach
-                            </select>
-
-                        </div>
-                    </div>
-                    <div class="clearfix"></div>
-                    <span class="help-block with-errors" aria-hidden="false"></span>
-                    <div class="clearfix"></div>
-                </div>
-                <div id="Income-group" class="form-group Income-row">
-                    <label for="Income" class="col-sm-4 control-label"><span class="required">*</span> My Income</label>
-                    <div class="col-sm-8">
-                        <div class="input-group input-group-maxwidth">
-                            <select name="Income" id="Income" required="required"  data-select2-id="Income" tabindex="-1" aria-hidden="true">
-                                <option>{{$user->personal->Income}}</option>
-
-                                @foreach ($personaldatas as $personaldata)
-
-                                <option >{{$personaldata-> Income_data}}</option>
-
-                                @endforeach
-                            </select>
-
-                        </div>
-                    </div>
-                    <div class="clearfix"></div>
-                    <span class="help-block with-errors" aria-hidden="false"></span>
-                    <div class="clearfix"></div>
-                </div>
-                <div id="MarryIn-group" class="form-group MarryIn-row">
-                    <label for="MarryIn" class="col-sm-4 control-label"><span class="required">*</span> I am Looking to Marry</label>
-                    <div class="col-sm-8">
-                        <div class="input-group input-group-maxwidth">
-                            <select name="MarryIn" id="MarryIn" required="required"  data-select2-id="MarryIn" tabindex="-1" aria-hidden="true">
-
-                                <option>{{$user->personal->MarryIn}}</option>
-
-                                @foreach ($personaldatas as $personaldata)
-
-                                <option >{{$personaldata-> MarryIn_data}}</option>
-
-                                @endforeach
-
-                            </select>
-
-                        </div>
-                    </div>
-                    <div class="clearfix"></div>
-                    <span class="help-block with-errors" aria-hidden="false"></span>
-                    <div class="clearfix"></div>
-                </div>
-                <div id="MaritalStatus-group" class="form-group MaritalStatus-row">
-                    <label for="MaritalStatus" class="col-sm-4 control-label"><span class="required">*</span> Marital Status</label>
-                    <div class="col-sm-8">
-                        <div class="input-group input-group-maxwidth">
-                            <select name="MaritalStatus" id="MaritalStatus" required="required"  data-select2-id="MaritalStatus" tabindex="-1" aria-hidden="true">
-
-                                <option>{{$user->personal->MaritalStatus}}</option>
-
-                                @foreach ($personaldatas as $personaldata)
-
-                                <option >{{$personaldata-> MaritalStatus_data}}</option>
-
-                                @endforeach
-
-                            </select>
-
-                        </div>
-                    </div>
-                    <div class="clearfix"></div>
-                    <span class="help-block with-errors" aria-hidden="false"></span>
-                    <div class="clearfix"></div>
-                </div>
-                <div id="Children-group" class="form-group Children-row">
-                    <label for="Children" class="col-sm-4 control-label"><span class="required">*</span> Would I like to have Children?</label>
-                    <div class="col-sm-8">
-                        <div class="input-group input-group-maxwidth">
-                            <select name="Children" id="Children" required="required"  data-select2-id="Children" tabindex="-1" aria-hidden="true">
-                                <option>{{$user->personal->Children}}</option>
-
-                                @foreach ($personaldatas as $personaldata)
-
-                                <option >{{$personaldata-> Children_data}}</option>
-
-                                @endforeach
-                            </select>
-
-                        </div>
-                    </div>
-                    <div class="clearfix"></div>
-                    <span class="help-block with-errors" aria-hidden="false"></span>
-                    <div class="clearfix"></div>
-                </div>
-                <div id="HaveChildren-group" class="form-group HaveChildren-row">
-                    <label for="HaveChildren" class="col-sm-4 control-label"><span class="required">*</span> Do I have children?</label>
-                    <div class="col-sm-8">
-                        <div class="input-group input-group-maxwidth">
-                            <select name="HaveChildren" id="HaveChildren" required="required"  data-select2-id="HaveChildren" tabindex="-1" aria-hidden="true">
-                                <option>{{$user->personal->HaveChildren}}</option>
-
-                                @foreach ($personaldatas as $personaldata)
-
-                                <option >{{$personaldata-> HaveChildren_data}}</option>
-
-                                @endforeach
-                            </select>
-
-                        </div>
-                    </div>
-                    <div class="clearfix"></div>
-                    <span class="help-block with-errors" aria-hidden="false"></span>
-                    <div class="clearfix"></div>
-                </div>
-                <div id="Living-group" class="form-group Living-row">
-                    <label for="Living" class="col-sm-4 control-label"><span class="required">*</span> My Living Arrangements?</label>
-                    <div class="col-sm-8">
-                        <div class="input-group input-group-maxwidth">
-                            <select name="Living" id="Living" required="required"  data-select2-id="Living" tabindex="-1" aria-hidden="true">
-                                <option>{{$user->personal->Living}}</option>
-
-                                @foreach ($personaldatas as $personaldata)
-
-                                <option >{{$personaldata-> Living_data}}</option>
-
-                                @endforeach
-                            </select>
-
-                        </div>
-                    </div>
-                    <div class="clearfix"></div>
-                    <span class="help-block with-errors" aria-hidden="false"></span>
-                    <div class="clearfix"></div>
-                </div>
-                <div id="Height-group" class="form-group Height-row">
-                    <label for="Height" class="col-sm-4 control-label"><span class="required">*</span> My Height</label>
-                    <div class="col-sm-8">
-                        <div class="input-group input-group-maxwidth">
-                            <select name="Height" id="Height" required="required"  data-select2-id="Height" tabindex="-1" aria-hidden="true">
-                                <option>{{$user->personal->Height}}</option>
-
-                                @foreach ($personaldatas as $personaldata)
-
-                                <option >{{$personaldata-> Height_data}}</option>
-
-                                @endforeach
-                            </select>
-
-                        </div>
-                    </div>
-                    <div class="clearfix"></div>
-                    <span class="help-block with-errors" aria-hidden="false"></span>
-                    <div class="clearfix"></div>
-                </div>
-                <div id="Build-group" class="form-group Build-row">
-                    <label for="Build" class="col-sm-4 control-label"><span class="required">*</span> My Build</label>
-                    <div class="col-sm-8">
-                        <div class="input-group input-group-maxwidth">
-                            <select name="Build" id="Build" required="required"  data-select2-id="Build" tabindex="-1" aria-hidden="true">
-                                <option>{{$user->personal->Build}}</option>
-
-                                @foreach ($personaldatas as $personaldata)
-
-                                <option >{{$personaldata-> Build_data}}</option>
-
-                                @endforeach
-                            </select>
-
-                        </div>
-                    </div>
-                    <div class="clearfix"></div>
-                    <span class="help-block with-errors" aria-hidden="false"></span>
-                    <div class="clearfix"></div>
-                </div>
-                <div id="Hair-group" class="form-group Hair-row">
-                    <label for="Hair" class="col-sm-4 control-label"><span class="required">*</span> My Hair Colour</label>
-                    <div class="col-sm-8">
-                        <div class="input-group input-group-maxwidth">
-                            <select name="Hair" id="Hair" required="required"  data-select2-id="Hair" tabindex="-1" aria-hidden="true">
-                               <option>{{$user->personal->Hair}}</option>
-
-                                @foreach ($personaldatas as $personaldata)
-
-                                <option >{{$personaldata-> Hair_data}}</option>
-
-                                @endforeach
-                            </select>
-
-                        </div>
-                    </div>
-                    <div class="clearfix"></div>
-                    <span class="help-block with-errors" aria-hidden="false"></span>
-                    <div class="clearfix"></div>
-                </div>
-                <div id="EyeColour-group" class="form-group EyeColour-row">
-                    <label for="EyeColour" class="col-sm-4 control-label"><span class="required">*</span> Colour of My Eyes</label>
-                    <div class="col-sm-8">
-                        <div class="input-group input-group-maxwidth">
-                            <select name="EyeColour" id="EyeColour" required="required"  data-select2-id="EyeColour" tabindex="-1" aria-hidden="true">
-                                <option>{{$user->personal->HaveChildren}}</option>
-
-                                @foreach ($personaldatas as $personaldata)
-
-                                <option >{{$personaldata-> HaveChildren_data}}</option>
-
-                                @endforeach
-                            </select>
-
-                        </div>
-                    </div>
-                    <div class="clearfix"></div>
-                    <span class="help-block with-errors" aria-hidden="false"></span>
-                    <div class="clearfix"></div>
-                </div>
-                <div id="Smoke-group" class="form-group Smoke-row">
-                    <label for="Smoke" class="col-sm-4 control-label"><span class="required">*</span> Do I Smoke?</label>
-                    <div class="col-sm-8">
-                        <div class="input-group input-group-maxwidth">
-                            <select name="Smoke" id="Smoke" required="required"  data-select2-id="Smoke" tabindex="-1" aria-hidden="true">
-                                <option>{{$user->personal->Smoke}}</option>
-
-                                @foreach ($personaldatas as $personaldata)
-
-                                <option >{{$personaldata-> Smoke_data}}</option>
-
-                                @endforeach
-                            </select>
-
-                        </div>
-                    </div>
-                    <div class="clearfix"></div>
-                    <span class="help-block with-errors" aria-hidden="false"></span>
-                    <div class="clearfix"></div>
-                </div>
-                <div id="Disabilities-group" class="form-group Disabilities-row">
-                    <label for="Disabilities" class="col-sm-4 control-label"><span class="required">*</span> Do I Have Any Disabilities?</label>
-                    <div class="col-sm-8">
-                        <div class="input-group input-group-maxwidth">
-                            <select name="Disabilities" id="Disabilities" required="required"  data-select2-id="Disabilities" tabindex="-1" aria-hidden="true">
-                                <option>{{$user->personal->Disabilities}}</option>
-
-                                @foreach ($personaldatas as $personaldata)
-
-                                <option >{{$personaldata-> Disabilities_data}}</option>
-
-                                @endforeach
-                            </select>
-
-                        </div>
-                    </div>
-                    <div class="clearfix"></div>
-                    <span class="help-block with-errors" aria-hidden="false"></span>
-                    <div class="clearfix"></div>
-                </div>
-                <div class="form-group">
-                    <div class="col-md-12 col-lg-12" style="text-align: right;">
-                        <span class="pull-left required firstFont_new" style="margin-left: 128px; margin-top: 8px;">* Required Field</span>
-                        <button name="Submit" id="Submit" type="submit" class="btn btn-primary firstFont_new btn-primary-theme">Update</button>
-                    </div>
-                </div>
-            </form>
-            </div>
-        </div>
-
-        <div class="clearfix"></div>
-    </div>
-
-    <div class="sections userinfosection">
-        <div class="col-md-12 headings">
-            Religion
-        </div>
-        <div class="col-md-12 detailpart detailpart-edit">
-            <div role="form" class="form-horizontal">
-                <form method="post" action="{{ route('religion_update' ) }}">
-                @csrf
-                <div id="Religiosness-group" class="form-group Religiosness-row">
-                    <label for="Religiosness" class="col-sm-4 control-label"><span class="required">*</span> Religiousness</label>
-                    <div class="col-sm-8">
-                        <div class="input-group input-group-maxwidth">
-                            <select name="Religiosness" id="Religiosness" required="required"  data-select2-id="Religiosness" tabindex="-1" aria-hidden="true">
-                                <option>{{$user->religion->Religiosness}}</option>
-
-                                @foreach ($religiondatas as $religiondata)
-
-                                <option >{{$religiondata-> Religiosness_data}}</option>
-
-                                @endforeach
-                            </select>
-
-                        </div>
-                    </div>
-                    <div class="clearfix"></div>
-                    <span class="help-block with-errors" aria-hidden="false"></span>
-                    <div class="clearfix"></div>
-                </div>
-                <div id="Sect-group" class="form-group Sect-row">
-                    <label for="Sect" class="col-sm-4 control-label"><span class="required">*</span> My Sect</label>
-                    <div class="col-sm-8">
-                        <div class="input-group input-group-maxwidth">
-                            <select name="Sect" id="Sect" required="required"  data-select2-id="Sect" tabindex="-1" aria-hidden="true">
-                                <option>{{$user->religion->Sect}}</option>
-
-                                @foreach ($religiondatas as $religiondata)
-
-                                <option >{{$religiondata-> Sect_data}}</option>
-
-                                @endforeach
-                            </select>
-
-                        </div>
-                    </div>
-                    <div class="clearfix"></div>
-                    <span class="help-block with-errors" aria-hidden="false"></span>
-                    <div class="clearfix"></div>
-                </div>
-                <div id="Hijab-group" class="form-group Hijab-row">
-                    <label for="Hijab" class="col-sm-4 control-label"><span class="required">*</span> Do you prefer Hijab/Niqab?</label>
-                    <div class="col-sm-8">
-                        <div class="input-group input-group-maxwidth">
-                            <select name="Hijab" id="Hijab" required="required"  data-select2-id="Hijab" tabindex="-1" aria-hidden="true">
-                                <option>{{$user->religion->Hijab}}</option>
-
-                                @foreach ($religiondatas as $religiondata)
-
-                                <option >{{$religiondata-> Hijab_data}}</option>
-
-                                @endforeach
-                            </select>
-
-                        </div>
-                    </div>
-                    <div class="clearfix"></div>
-                    <span class="help-block with-errors" aria-hidden="false"></span>
-                    <div class="clearfix"></div>
-                </div>
-                <div id="Beard-group" class="form-group Beard-row">
-                    <label for="Beard" class="col-sm-4 control-label"><span class="required">*</span> Do you have a beard?</label>
-                    <div class="col-sm-8">
-                        <div class="input-group input-group-maxwidth">
-                            <select name="Beard" id="Beard" required="required"  data-select2-id="Beard" tabindex="-1" aria-hidden="true">
-                                <option>{{$user->religion->Beard}}</option>
-
-                                @foreach ($religiondatas as $religiondata)
-
-                                <option >{{$religiondata-> Beard_data}}</option>
-
-                                @endforeach
-                            </select>
-
-                        </div>
-                    </div>
-                    <div class="clearfix"></div>
-                    <span class="help-block with-errors" aria-hidden="false"></span>
-                    <div class="clearfix"></div>
-                </div>
-                <div id="Convert-group" class="form-group Convert-row">
-                    <label for="Convert" class="col-sm-4 control-label"><span class="required">*</span> Are You a Revert?</label>
-                    <div class="col-sm-8">
-                        <div class="input-group input-group-maxwidth">
-                            <select name="Convert" id="Convert" required="required"  data-select2-id="Convert" tabindex="-1" aria-hidden="true">
-                                <option>{{$user->religion->Convert}}</option>
-
-                                @foreach ($religiondatas as $religiondata)
-
-                                <option >{{$religiondata-> Convert_data}}</option>
-
-                                @endforeach
-                            </select>
-
-                        </div>
-                    </div>
-                    <div class="clearfix"></div>
-                    <span class="help-block with-errors" aria-hidden="false"></span>
-                    <div class="clearfix"></div>
-                </div>
-                <div id="Halaal-group" class="form-group Halaal-row">
-                    <label for="Halaal" class="col-sm-4 control-label"><span class="required">*</span> Do You Keep Halal?</label>
-                    <div class="col-sm-8">
-                        <div class="input-group input-group-maxwidth">
-                            <select name="Halaal" id="Halaal" required="required"  data-select2-id="Halaal" tabindex="-1" aria-hidden="true">
-                                 <option>{{$user->religion->Halaal}}</option>
-
-                                @foreach ($religiondatas as $religiondata)
-
-                                <option >{{$religiondata-> Halaal_data}}</option>
-
-                                @endforeach
-                            </select>
-
-                        </div>
-                    </div>
-                    <div class="clearfix"></div>
-                    <span class="help-block with-errors" aria-hidden="false"></span>
-                    <div class="clearfix"></div>
-                </div>
-                <div id="Salaah-group" class="form-group Salaah-row">
-                    <label for="Salaah" class="col-sm-4 control-label"><span class="required">*</span> Do You Perform Salaah?</label>
-                    <div class="col-sm-8">
-                        <div class="input-group input-group-maxwidth">
-                            <select name="Salaah" id="Salaah" required="required"  data-select2-id="Salaah" tabindex="-1" aria-hidden="true">
-                                <option>{{$user->religion->Salaah}}</option>
-                                @foreach ($religiondatas as $religiondata)
-                                <option >{{$religiondata-> Salaah_data}}</option>
-
-                                @endforeach
-                            </select>
-
-                        </div>
-                    </div>
-                    <div class="clearfix"></div>
-                    <span class="help-block with-errors" aria-hidden="false"></span>
-                    <div class="clearfix"></div>
-                </div>
-                <div class="form-group">
-                    <div class="col-md-12 col-lg-12" style="text-align: right;">
-                        <span class="pull-left required firstFont_new" style="margin-left: 128px; margin-top: 8px;">* Required Field</span>
-                        <button name="Submit" id="Submit" type="submit" class="btn btn-primary firstFont_new btn-primary-theme">Update</button>
-                    </div>
-                </div>
-            </form>
-            </div>
-        </div>
-
-        <div class="clearfix"></div>
-    </div>
-
-</div>
-</div>
-<div class="clearfix"></div>
-</div>
-</div>
-
-<div id="modalPictureGallery" class="modal fade">
-<div class="modal-dialog">
-<div class="modal-content">
-<!-- dialog body -->
-<div class="modal-body">
-    <div class="custom_dialog">
-        <!--        <button type="button" class="close" data-dismiss="modal">  </button>  -->
-    </div>
-
-    <div class="col-lg-12 col-md-12 nopadding">
-        <div class="panel panel-default">
-            <div class="panel-body gallerylist">
-                <!-- Start Minimal Gallery Html Containers -->
-
-                <div id="inlineProfileGallery">
-                    <div class="viewer">
-                        <div class="picture holder">
-                            <div class="description" style="display: none;"></div>
-                        </div>
-                        <div class="picture main">
-                            <div class="controls prev next">
-                                <a class="prev">
-                                    <div></div>
-                                </a>
-                                <a class="next">
-                                    <div></div>
-                                </a>
+                   <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-3" >
+                                <div class="card" style="background-color: #f8f9fa">
+                                    @include('user.profile.nav-sidebar')
+                                </div>
                             </div>
-                            <div class="description" style="display: none;"></div>
+                            <div class="col-md-9">
+                                <div class="card">
+                                        <div class="card-header">
+                                            <div class="col-md-12 headings">
+                                                About Me
+                                            </div>
+                                        </div>
+                                        <div class="card-body">
+                                            <form method="post" action="{{ route('aboutme_update' ) }}">
+                                                @csrf
+                                                <div class="form-group row">
+                                                    <div class="col-md-4 text-center">
+                                                        <label for="Headline" class="control-label"><span class="required">*</span> Headline</label>
+                                                    </div>
+                                                    <div class="col-md-8">
+                                                        <input name="Headline" id="Headline" type="text" required="required" value="{{$user->aboutme->Headline}}" class="form-control" />
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <div class="col-md-4 text-center">
+                                                        <label for="Description" class="control-label"><span class="required">*</span> A Little Bit About Me</label>
+                                                    </div>
+                                                    <div class="col-md-8">
+                                                        <textarea name="Description" rows="3" id="Description" required="required" class="form-control">{{$user->aboutme->Description}}</textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <div class="col-md-4 text-center">
+                                                        <label for="LookingFor" class="control-label"><span class="required">*</span> What I Am Looking For</label>
+                                                    </div>
+                                                    <div class="col-md-8">
+                                                        <textarea name="LookingFor" rows="3" id="LookingFor" required="required" class="form-control">{{$user->aboutme->LookingFor}}</textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <div class="col-md-12 col-lg-12" style="text-align: right;">
+                                                        <span class="pull-left required firstFont_new" style="color: #18d26e">* Required Field</span>
+                                                        <button name="Submit" id="Submit" type="submit" class="btn btn-primary firstFont_new btn-primary-theme">Update</button>
+                                                    </div>
+                                                </div>
+
+                                            </form>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                </div>
+                                <div class="card">
+                                        <div class="card-header">
+                                            <div class="col-md-12 headings">
+                                                Education and Work
+                                            </div>
+                                        </div>
+                                        <div class="card-body">
+                                            <form method="post" action="{{ route('education_update' ) }}">
+                                                @csrf
+                                                <div class="form-group row">
+                                                    <div class="col-md-4 text-center">
+                                                            <label for="EducationLevel" class="control-label"><span class="required">*</span> My Education Level</label>
+                                                    </div>
+                                                    <div class="col-md-8">
+                                                        <select name="EducationLevel" class="form-control" id="EducationLevel" required="required"  data-select2-id="EducationLevel" tabindex="-1" aria-hidden="true">
+                                                            <option >{{$user->education-> EducationLevel}}</option>
+                                                           <option value="High-School">High-School</option>
+                                                            <option value="College">College</option>
+                                                            <option value="Graduate">Graduate</option>
+                                                            <option value="Masters Degree">Masters Degree</option>
+                                                            <option value="Doctorate">Doctorate</option>
+                                                            <option value="Non-Graduate">Non-Graduate</option>
+                                                            <option value="Others">Others</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <div class="col-md-4 text-center">
+                                                        <label for="SubjectStudied" class="control-label"><span class="required">*</span> Subject I Studied</label>
+                                                    </div>
+                                                    <div class="col-md-8">
+                                                        <input name="SubjectStudied" id="SubjectStudied" type="text" required="required" value="{{$user->education->SubjectStudied}}" class="form-control" />
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <div class="col-md-4 text-center">
+                                                        <label for="JobTitle" class="control-label"><span class="required">*</span> My Job Title</label>
+                                                    </div>
+                                                    <div class="col-md-8">
+                                                        <input name="JobTitle" id="JobTitle" type="text" required="required" value="{{$user->education->JobTitle}}" class="form-control" />
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <div class="col-md-4 text-center">
+                                                        <label for="Employment" class="control-label"><span class="required">*</span> My Profession</label>
+                                                    </div>
+                                                    <div class="col-md-8">
+                                                        <select name="Employment" id="Employment" required="required" class="form-control"  data-select2-id="Employment" tabindex="-1" aria-hidden="true">
+                                                            <option >{{$user->education->Employment}}</option>
+                                                           @foreach ($jobs as $employment)
+                                                            <option>{{$employment->job_title}}</option>
+                                                            @endforeach
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <div class="col-md-4 text-center">
+                                                        <label for="FirstLang" class=" control-label"><span class="required">*</span> My First Language</label>
+                                                    </div>
+                                                    <div class="col-md-8">
+                                                        <select name="FirstLang" id="FirstLang" required="required" class="form-control"  data-select2-id="FirstLang" tabindex="-1" aria-hidden="true">
+                                                            <option >{{$user->education->FirstLang}}</option>
+                                                           <option value="English" >English </option>
+                                                            <option value="Mandarin Chinese" >Mandarin Chinese </option>
+                                                            <option value="Hindi">Hindi </option>
+                                                            <option value="Italian">Italian </option>
+                                                            <option value="Spanish" >Spanish </option>
+                                                            <option value="French" >French </option>
+                                                            <option value="German" >German </option>
+                                                            <option value="Standard Arabic" >Standard Arabic </option>
+                                                            <option value="Bengali" >Bengali </option>
+                                                            <option value="Russian" >Russian </option>
+                                                            <option value="Japanese" >Japanese </option>
+                                                            <option value="Portuguese" >Portuguese </option>
+                                                            <option value="Indonesian" >Indonesian </option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <div class="col-md-4 text-center">
+                                                         <label for="SecondLang" class=" control-label"><span class="required">*</span> My Second Language</label>
+                                                    </div>
+                                                    <div class="col-md-8">
+                                                        <select name="SecondLang" id="SecondLang" required="required" class="form-control"  data-select2-id="SecondLang" tabindex="-1" aria-hidden="true">
+                                                            <option >{{$user->education->SecondLang}}</option>
+                                                           <option value="English" >English </option>
+                                                            <option value="Mandarin Chinese" >Mandarin Chinese </option>
+                                                            <option value="Hindi">Hindi </option>
+                                                            <option value="Italian">Italian </option>
+                                                            <option value="Spanish" >Spanish </option>
+                                                            <option value="French" >French </option>
+                                                            <option value="German" >German </option>
+                                                            <option value="Standard Arabic" >Standard Arabic </option>
+                                                            <option value="Bengali" >Bengali </option>
+                                                            <option value="Russian" >Russian </option>
+                                                            <option value="Japanese" >Japanese </option>
+                                                            <option value="Portuguese" >Portuguese </option>
+                                                            <option value="Indonesian" >Indonesian </option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <div class="col-md-4 text-center">
+                                                         <label for="RegistrationReason" class="control-label"><span class="required">*</span> Registration Reason</label>
+                                                    </div>
+                                                    <div class="col-sm-8">
+
+                                                            <select
+                                                                name="RegistrationReason"
+                                                                id="RegistrationReason"
+                                                                class="form-control"
+                                                                required="required"
+                                                                data-select2-id="RegistrationReason"
+                                                                tabindex="-1"
+                                                                aria-hidden="true"
+                                                            >
+                                                                <option >{{$user->RegistrationReason}}</option>
+                                                                <option value="I am registering to find myself partner">I am registering to find myself partner</option>
+                                                                <option value="I am registering to find my sister a partner">I am registering to find my sister a partner</option>
+                                                                <option value="I am registering to find my brother a partner">I am registering to find my brother a partner</option>
+                                                                <option value="I am registering to find my son a partner">I am registering to find my son a partner</option>
+                                                                <option value="I am registering to find my daughter a partner">I am registering to find my daughter a partner</option>
+                                                                <option value="I am registering to find my friend a partner">I am registering to find my friend a partner</option>
+                                                                <option value="Others">Others</option>
+                                                            </select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <div class="col-md-12 col-lg-12" style="text-align: right;">
+                                                        <span class="pull-left required firstFont_new" style="color: #18d26e">* Required Field</span>
+                                                        <button name="Submit" id="Submit" type="submit" class="btn btn-primary firstFont_new btn-primary-theme">Update</button>
+                                                    </div>
+                                                </div>
+
+                                            </form>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        <div class="col-md-12 headings">
+                                            Personal
+                                        </div>
+                                    </div>
+                                      <div class="card-body">
+                                            <div class="col-md-12 detailpart detailpart-edit">
+                                                <div role="form" class="form-horizontal">
+                                                    <form method="post" action="{{ route('personal_update' ) }}">
+                                                    @csrf
+                                                    <div id="Citizenship-group" class="form-group Citizenship-row">
+                                                        <label for="Citizenship" class="control-label"><span class="required">*</span> My Citizenship</label>
+                                                        <div class="col-sm-8">
+                                                            <div class="input-group input-group-maxwidth">
+                                                                <select name="Citizenship" class="form-control" id="Citizenship" required="required"  data-select2-id="Citizenship" tabindex="-1" aria-hidden="true">
+
+                                                                    <option>{{$user->personal->Citizenship}}</option>
+                                                                    @foreach ($countries as $personaldata)
+                                                                    <option>{{$personaldata->name}}</option>
+                                                                    @endforeach
+
+                                                                </select>
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="clearfix"></div>
+                                                        <span class="help-block with-errors" aria-hidden="false"></span>
+                                                        <div class="clearfix"></div>
+                                                    </div>
+                                                    <div id="Origin-group" class="form-group Origin-row">
+                                                        <label for="Origin" class="col-sm-4 control-label"><span class="required">*</span> Country of Origin</label>
+                                                        <div class="col-sm-8">
+                                                            <div class="input-group input-group-maxwidth">
+                                                                <select name="Origin" class="form-control" id="Origin" required="required"  data-select2-id="Origin" tabindex="-1" aria-hidden="true">
+
+                                                                    <option>{{$user->personal->Origin}}</option>
+                                                                    @foreach ($countries as $personaldata)
+                                                                    <option>{{$personaldata->name}}</option>
+                                                                    @endforeach
+
+                                                                </select>
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="clearfix"></div>
+                                                        <span class="help-block with-errors" aria-hidden="false"></span>
+                                                        <div class="clearfix"></div>
+                                                    </div>
+                                                    <div id="Relocation-group" class="form-group Relocation-row">
+                                                        <label for="Relocation" class="col-sm-4 control-label"><span class="required">*</span> Willing to Relocate?</label>
+                                                        <div class="col-sm-8">
+                                                            <div class="input-group input-group-maxwidth">
+                                                                <select name="Relocation" class="form-control" id="Relocation" required="required"  data-select2-id="Relocation" tabindex="-1" aria-hidden="true">
+
+                                                                    <option>{{$user->personal->Relocation}}</option>
+
+                                                                    @foreach ($countries as $personaldata)
+                                                                    <option>{{$personaldata->name}}</option>
+                                                                    @endforeach
+                                                                </select>
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="clearfix"></div>
+                                                        <span class="help-block with-errors" aria-hidden="false"></span>
+                                                        <div class="clearfix"></div>
+                                                    </div>
+                                                    <div id="Income-group" class="form-group Income-row">
+                                                        <label for="Income" class="col-sm-4 control-label"><span class="required">*</span> My Income</label>
+                                                        <div class="col-sm-8">
+                                                            <div class="input-group input-group-maxwidth">
+                                                                <select name="Income" class="form-control" id="Income" required="required"  data-select2-id="Income" tabindex="-1" aria-hidden="true">
+                                                                    <option>{{$user->personal->Income}}</option>
+                                                                    <option value="$ 2,000-5,000" > $ 2,000-5,000</option>
+                                                                    <option value="$ 5,000-8,000" > $ 5,000-8,000</option>
+                                                                    <option value="$ 8,000-10,000" > $ 8,000-10,000</option>
+                                                                    <option value="$ 10,000-$ 15,000" > $ 10,000-$ 15,000</option>
+                                                                    <option value="Over $ 20,000" >Over $ 20,000</option>
+                                                                    <option value="Prefer not to Say" >Prefer not to Say</option>
+                                                                </select>
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="clearfix"></div>
+                                                        <span class="help-block with-errors" aria-hidden="false"></span>
+                                                        <div class="clearfix"></div>
+                                                    </div>
+                                                    <div id="MarryIn-group" class="form-group MarryIn-row">
+                                                        <label for="MarryIn" class="col-sm-4 control-label"><span class="required">*</span> I am Looking to Marry</label>
+                                                        <div class="col-sm-8">
+                                                            <div class="input-group input-group-maxwidth">
+                                                                <select name="MarryIn" class="form-control" id="MarryIn" required="required"  data-select2-id="MarryIn" tabindex="-1" aria-hidden="true">
+
+                                                                    <option>{{$user->personal->MarryIn}}</option>
+
+                                                                    @foreach ($personaldatas as $personaldata)
+                                                                    <option>{{$personaldata-> MarryIn_data}}</option>
+                                                                    @endforeach
+
+                                                                </select>
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="clearfix"></div>
+                                                        <span class="help-block with-errors" aria-hidden="false"></span>
+                                                        <div class="clearfix"></div>
+                                                    </div>
+                                                    <div id="MaritalStatus-group" class="form-group MaritalStatus-row">
+                                                        <label for="MaritalStatus" class="col-sm-4 control-label"><span class="required">*</span> Marital Status</label>
+                                                        <div class="col-sm-8">
+                                                            <div class="input-group input-group-maxwidth">
+                                                                <select name="MaritalStatus" class="form-control" id="MaritalStatus" required="required"  data-select2-id="MaritalStatus" tabindex="-1" aria-hidden="true">
+
+                                                                    <option>{{$user->personal->MaritalStatus}}</option>
+
+                                                                    <option value="Never Married">Never Married</option>
+                                                                    <option value="Divorced">Divorced</option>
+                                                                    <option value="Widowed">Widowed</option>
+                                                                </select>
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="clearfix"></div>
+                                                        <span class="help-block with-errors" aria-hidden="false"></span>
+                                                        <div class="clearfix"></div>
+                                                    </div>
+                                                    <div id="Children-group" class="form-group Children-row">
+                                                        <label for="Children" class="col-sm-4 control-label"><span class="required">*</span> Would I like to have Children?</label>
+                                                        <div class="col-sm-8">
+                                                            <div class="input-group input-group-maxwidth">
+                                                                <select name="Children" class="form-control" id="Children" required="required"  data-select2-id="Children" tabindex="-1" aria-hidden="true">
+                                                                    <option>{{$user->personal->Children}}</option>
+
+                                                                    @foreach ($personaldatas as $personaldata)
+                                                                    <option>{{$personaldata-> Children_data}}</option>
+                                                                    @endforeach
+                                                                </select>
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="clearfix"></div>
+                                                        <span class="help-block with-errors" aria-hidden="false"></span>
+                                                        <div class="clearfix"></div>
+                                                    </div>
+                                                    <div id="HaveChildren-group" class="form-group HaveChildren-row">
+                                                        <label for="HaveChildren" class="col-sm-4 control-label"><span class="required">*</span> Do I have children?</label>
+                                                        <div class="col-sm-8">
+                                                            <div class="input-group input-group-maxwidth">
+                                                                <select name="HaveChildren" class="form-control" id="HaveChildren" required="required"  data-select2-id="HaveChildren" tabindex="-1" aria-hidden="true">
+                                                                    <option>{{$user->personal->HaveChildren}}</option>
+
+                                                                    @foreach ($personaldatas as $personaldata)
+                                                                    <option>{{$personaldata-> HaveChildren_data}}</option>
+                                                                    @endforeach
+                                                                </select>
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="clearfix"></div>
+                                                        <span class="help-block with-errors" aria-hidden="false"></span>
+                                                        <div class="clearfix"></div>
+                                                    </div>
+                                                    <div id="Living-group" class="form-group Living-row">
+                                                        <label for="Living" class="col-sm-4 control-label"><span class="required">*</span> My Living Arrangements?</label>
+                                                        <div class="col-sm-8">
+                                                            <div class="input-group input-group-maxwidth">
+                                                                <select name="Living" class="form-control" id="Living" required="required"  data-select2-id="Living" tabindex="-1" aria-hidden="true">
+                                                                    <option>{{$user->personal->Living}}</option>
+
+                                                                    @foreach ($personaldatas as $personaldata)
+                                                                    <option>{{$personaldata-> Living_data}}</option>
+                                                                    @endforeach
+                                                                </select>
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="clearfix"></div>
+                                                        <span class="help-block with-errors" aria-hidden="false"></span>
+                                                        <div class="clearfix"></div>
+                                                    </div>
+                                                    <div id="Height-group" class="form-group Height-row">
+                                                        <label for="Height" class="col-sm-4 control-label"><span class="required">*</span> My Height</label>
+                                                        <div class="col-sm-8">
+                                                            <div class="input-group input-group-maxwidth">
+                                                                <select name="Height" class="form-control" id="Height" required="required"  data-select2-id="Height" tabindex="-1" aria-hidden="true">
+                                                                    <option>{{$user->personal->Height}}</option>
+                                                                    <option value="4ft">4ft</option>
+                                                                    <option value="4.2ft">4.2ft</option>
+                                                                    <option value="4.5ft">4.5ft</option>
+                                                                    <option value="4.8ft">4.8ft</option>
+                                                                    <option value="5ft">5ft</option>
+                                                                    <option value="5.2ft">5.2ft</option>
+                                                                    <option value="5.5ft">5.5ft</option>
+                                                                    <option value="5.8ft">5.8ft</option>
+                                                                    <option value="6ft">6ft</option>
+                                                                    <option value="6.2ft">6.2ft</option>
+                                                                    <option value="6.5ft">6.5ft</option>
+                                                                    <option value="6.8ft">6.8ft</option>
+                                                                    <option value="7ft">7ft</option>
+                                                                    <option value="7.2ft">7.2ft</option>
+                                                                    <option value="7.5ft">7.5ft</option>
+                                                                    <option value="7.8ft">7.8ft</option>
+                                                                    <option value="8ft">8ft</option>
+                                                                </select>
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="clearfix"></div>
+                                                        <span class="help-block with-errors" aria-hidden="false"></span>
+                                                        <div class="clearfix"></div>
+                                                    </div>
+                                                    <div id="Build-group" class="form-group Build-row">
+                                                        <label for="Build" class="col-sm-4 control-label"><span class="required">*</span> My Build</label>
+                                                        <div class="col-sm-8">
+                                                            <div class="input-group input-group-maxwidth">
+                                                                <select name="Build" class="form-control" id="Build" required="required"  data-select2-id="Build" tabindex="-1" aria-hidden="true">
+                                                                    <option>{{$user->personal->Build}}</option>
+                                                                    <option value="Slim">Slim</option>
+                                                                    <option value="Medium">Medium</option>
+                                                                    <option value="Large">Large</option>
+                                                                </select>
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="clearfix"></div>
+                                                        <span class="help-block with-errors" aria-hidden="false"></span>
+                                                        <div class="clearfix"></div>
+                                                    </div>
+                                                    <div id="Hair-group" class="form-group Hair-row">
+                                                        <label for="Hair" class="col-sm-4 control-label"><span class="required">*</span> My Hair Colour</label>
+                                                        <div class="col-sm-8">
+                                                            <div class="input-group input-group-maxwidth">
+                                                                <select name="Hair" class="form-control" id="Hair" required="required"  data-select2-id="Hair" tabindex="-1" aria-hidden="true">
+                                                                   <option>{{$user->personal->Hair}}</option>
+                                                                   <option value="Black">Black</option>
+                                                                   <option value="White">White</option>
+                                                                   <option value="Brunette">Brunette</option>
+                                                                   <option value="Blonde">Blonde</option>
+                                                                </select>
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="clearfix"></div>
+                                                        <span class="help-block with-errors" aria-hidden="false"></span>
+                                                        <div class="clearfix"></div>
+                                                    </div>
+                                                    <div id="EyeColour-group" class="form-group EyeColour-row">
+                                                        <label for="EyeColour" class="col-sm-4 control-label"><span class="required">*</span> Colour of My Eyes</label>
+                                                        <div class="col-sm-8">
+                                                            <div class="input-group input-group-maxwidth">
+                                                                <select name="EyeColour" class="form-control" id="EyeColour" required="required"  data-select2-id="EyeColour" tabindex="-1" aria-hidden="true">
+                                                                    <option>{{$user->personal->HaveChildren}}</option>
+                                                                    <option value="Amber">Amber</option>
+                                                                    <option value="Blue">Blue</option>
+                                                                    <option value="Brown">Brown</option>
+                                                                    <option value="Gray">Gray</option>
+                                                                    <option value="Green">Green</option>
+                                                                    <option value="Hazel">Hazel</option>
+                                                                    <option value="Red">Red</option>
+                                                                </select>
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="clearfix"></div>
+                                                        <span class="help-block with-errors" aria-hidden="false"></span>
+                                                        <div class="clearfix"></div>
+                                                    </div>
+                                                    <div id="Smoke-group" class="form-group Smoke-row">
+                                                        <label for="Smoke" class="col-sm-4 control-label"><span class="required">*</span> Do I Smoke?</label>
+                                                        <div class="col-sm-8">
+                                                            <div class="input-group input-group-maxwidth">
+                                                                <select name="Smoke" class="form-control" id="Smoke" required="required"  data-select2-id="Smoke" tabindex="-1" aria-hidden="true">
+                                                                    <option>{{$user->personal->Smoke}}</option>
+                                                                    @foreach ($personaldatas as $personaldata)
+                                                                    <option>{{$personaldata-> Smoke_data}}</option>
+                                                                    @endforeach
+                                                                </select>
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="clearfix"></div>
+                                                        <span class="help-block with-errors" aria-hidden="false"></span>
+                                                        <div class="clearfix"></div>
+                                                    </div>
+                                                    <div id="Disabilities-group" class="form-group Disabilities-row">
+                                                        <label for="Disabilities" class="col-sm-4 control-label"><span class="required">*</span> Do I Have Any Disabilities?</label>
+                                                        <div class="col-sm-8">
+                                                            <div class="input-group input-group-maxwidth">
+                                                                <select name="Disabilities" class="form-control" id="Disabilities" required="required"  data-select2-id="Disabilities" tabindex="-1" aria-hidden="true">
+                                                                    <option>{{$user->personal->Disabilities}}</option>
+                                                                    @foreach ($personaldatas as $personaldata)
+                                                                    <option>{{$personaldata-> Disabilities_data}}</option>
+                                                                    @endforeach
+                                                                </select>
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="clearfix"></div>
+                                                        <span class="help-block with-errors" aria-hidden="false"></span>
+                                                        <div class="clearfix"></div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="col-md-12 col-lg-12" style="text-align: right;">
+                                                            <span class="pull-left required firstFont_new" style="color:#18d26e">* Required Field</span>
+                                                            <button name="Submit" id="Submit" type="submit" class="btn btn-primary firstFont_new btn-primary-theme">Update</button>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                                </div>
+                                            </div>
+
+                                            <div class="clearfix"></div>
+                                         </div>
+                                    </div>
+
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <div class="col-md-12 headings">
+                                                Religion
+                                            </div>
+                                        </div>
+                                        <div class="crd-body">
+                                                <div class="col-md-12 detailpart detailpart-edit">
+                                                    <div role="form" class="form-horizontal">
+                                                        <form method="post" action="{{ route('religion_update' ) }}">
+                                                        @csrf
+                                                        <div id="Religiosness-group" class="form-group Religiosness-row">
+                                                            <label for="Religiosness" class="col-sm-4 control-label"><span class="required">*</span> Religiousness</label>
+                                                            <div class="col-sm-8">
+                                                                <div class="input-group input-group-maxwidth">
+                                                                    <select name="Religiosness" class="form-control" id="Religiosness" required="required"  data-select2-id="Religiosness" tabindex="-1" aria-hidden="true">
+                                                                        <option>{{$user->religion->Religiosness}}</option>
+
+                                                                        @foreach ($religiondatas as $religiondata)
+
+                                                                        <option >{{$religiondata-> Religiosness_data}}</option>
+
+                                                                        @endforeach
+                                                                    </select>
+
+                                                                </div>
+                                                            </div>
+                                                            <div class="clearfix"></div>
+                                                            <span class="help-block with-errors" aria-hidden="false"></span>
+                                                            <div class="clearfix"></div>
+                                                        </div>
+                                                        <div id="Sect-group" class="form-group Sect-row">
+                                                            <label for="Sect" class="col-sm-4 control-label"><span class="required">*</span> My Sect</label>
+                                                            <div class="col-sm-8">
+                                                                <div class="input-group input-group-maxwidth">
+                                                                    <select name="Sect" class="form-control" id="Sect" required="required"  data-select2-id="Sect" tabindex="-1" aria-hidden="true">
+                                                                        <option>{{$user->religion->Sect}}</option>
+                                                                        <option value="Just Muslim" >Just Muslim</option>
+                                                                        <option value="Sunni" >Sunni</option>
+                                                                        <option value="Shia" >Shia</option>
+                                                                        <option value="Other-Please ask me" >Other-Please ask me</option>
+                                                                    </select>
+
+                                                                </div>
+                                                            </div>
+                                                            <div class="clearfix"></div>
+                                                            <span class="help-block with-errors" aria-hidden="false"></span>
+                                                            <div class="clearfix"></div>
+                                                        </div>
+                                                        <div id="Hijab-group" class="form-group Hijab-row">
+                                                            <label for="Hijab" class="col-sm-4 control-label"><span class="required">*</span> Do you prefer Hijab/Niqab?</label>
+                                                            <div class="col-sm-8">
+                                                                <div class="input-group input-group-maxwidth">
+                                                                    <select name="Hijab" class="form-control" id="Hijab" required="required"  data-select2-id="Hijab" tabindex="-1" aria-hidden="true">
+                                                                        <option>{{$user->religion->Hijab}}</option>
+                                                                        @foreach ($religiondatas as $religiondata)
+                                                                        <option>{{$religiondata->Hijab_data}}</option>
+                                                                        @endforeach
+                                                                     </select>
+
+                                                                </div>
+                                                            </div>
+                                                            <div class="clearfix"></div>
+                                                            <span class="help-block with-errors" aria-hidden="false"></span>
+                                                            <div class="clearfix"></div>
+                                                        </div>
+                                                        <div id="Beard-group" class="form-group Beard-row">
+                                                            <label for="Beard" class="col-sm-4 control-label"><span class="required">*</span> Do you have a beard?</label>
+                                                            <div class="col-sm-8">
+                                                                <div class="input-group input-group-maxwidth">
+                                                                    <select name="Beard" class="form-control" id="Beard" required="required"  data-select2-id="Beard" tabindex="-1" aria-hidden="true">
+                                                                        <option>{{$user->religion->Beard}}</option>
+
+                                                                        @foreach ($religiondatas as $religiondata)
+
+                                                                        <option >{{$religiondata-> Beard_data}}</option>
+
+                                                                        @endforeach
+                                                                    </select>
+
+                                                                </div>
+                                                            </div>
+                                                            <div class="clearfix"></div>
+                                                            <span class="help-block with-errors" aria-hidden="false"></span>
+                                                            <div class="clearfix"></div>
+                                                        </div>
+                                                        <div id="Convert-group" class="form-group Convert-row">
+                                                            <label for="Convert" class="col-sm-4 control-label"><span class="required">*</span> Are You a Revert?</label>
+                                                            <div class="col-sm-8">
+                                                                <div class="input-group input-group-maxwidth">
+                                                                    <select name="Convert" class="form-control" id="Convert" required="required"  data-select2-id="Convert" tabindex="-1" aria-hidden="true">
+                                                                        <option>{{$user->religion->Convert}}</option>
+
+                                                                        @foreach ($religiondatas as $religiondata)
+
+                                                                        <option >{{$religiondata-> Convert_data}}</option>
+
+                                                                        @endforeach
+                                                                    </select>
+
+                                                                </div>
+                                                            </div>
+                                                            <div class="clearfix"></div>
+                                                            <span class="help-block with-errors" aria-hidden="false"></span>
+                                                            <div class="clearfix"></div>
+                                                        </div>
+                                                        <div id="Halaal-group" class="form-group Halaal-row">
+                                                            <label for="Halaal" class="col-sm-4 control-label"><span class="required">*</span> Do You Keep Halal?</label>
+                                                            <div class="col-sm-8">
+                                                                <div class="input-group input-group-maxwidth">
+                                                                    <select name="Halaal" class="form-control" id="Halaal" required="required"  data-select2-id="Halaal" tabindex="-1" aria-hidden="true">
+                                                                         <option>{{$user->religion->Halaal}}</option>
+                                                                         <option value="Always">Always</option>
+                                                                         <option value="Usually">Usually</option>
+                                                                         <option value="Never">Never</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="clearfix"></div>
+                                                            <span class="help-block with-errors" aria-hidden="false"></span>
+                                                            <div class="clearfix"></div>
+                                                        </div>
+                                                        <div id="Salaah-group" class="form-group Salaah-row">
+                                                            <label for="Salaah" class="col-sm-4 control-label"><span class="required">*</span> Do You Perform Salaah?</label>
+                                                            <div class="col-sm-8">
+                                                                <div class="input-group input-group-maxwidth">
+                                                                    <select name="Salaah" class="form-control" id="Salaah" required="required"  data-select2-id="Salaah" tabindex="-1" aria-hidden="true">
+                                                                        <option>{{$user->religion->Salaah}}</option>
+                                                                        @foreach ($religiondatas as $religiondata)
+                                                                        <option >{{$religiondata->Salaah_data}}</option>
+
+                                                                        @endforeach
+                                                                    </select>
+
+                                                                </div>
+                                                            </div>
+                                                            <div class="clearfix"></div>
+                                                            <span class="help-block with-errors" aria-hidden="false"></span>
+                                                            <div class="clearfix"></div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <div class="col-md-12 col-lg-12" style="text-align: right;">
+                                                                <span class="pull-left required firstFont_new" style="color:#18d26e">* Required Field</span>
+                                                                <button name="Submit" id="Submit" type="submit" class="btn btn-primary firstFont_new btn-primary-theme">Update</button>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                    </div>
+                                                </div>
+
+                                                <div class="clearfix"></div>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-
-                    <div class="currentViewer">
-                        <div class="arrow"></div>
-                    </div>
                 </div>
-
-                <div style="clear: both;"></div>
             </div>
         </div>
-    </div>
+</section>
 
-    <div class="clearfix"></div>
-</div>
-<!-- dialog buttons -->
-</div>
-</div>
-</div>
-<!-- dialog for background image -->
-
-<script>
-$(function () {
-// debugger;
-var tabindex = $('.nav-tabs a[href="#tab_default_' + tabindex + '"]').tab("show");
-});
-</script>
-</div>
-</div>
-</div>
 @endsection

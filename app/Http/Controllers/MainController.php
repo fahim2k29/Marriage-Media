@@ -11,6 +11,7 @@ use Auth;
 use Image;
 use App\Aboutme;
 use App\AddPhoto;
+use App\ContactUs;
 use App\Education;
 use App\Main;
 use App\OfficeUse;
@@ -30,7 +31,7 @@ use App\Job;
 
 
 class MainController extends Controller
-{    
+{
     public function index()
     {
         // $users  = User::all()->random(30);
@@ -46,7 +47,8 @@ class MainController extends Controller
         $data['img']        = User::with('addphoto')->get();
         $data['user']       = User::first(['DOB_year']);
         $data['stories']    = SuccessStory::all();
-        return view('index', $data);
+        $data['contacts']   = ContactUs::all();
+        return view('index2', $data);
     }
 
     public function register_form_one()
@@ -57,8 +59,8 @@ class MainController extends Controller
         $months = array("January","February","March","April","May","June","July","August","September","October","November","December");
         return view('user.register', compact('signupdatas', 'countries', 'now','months'));
     }
-    
-    
+
+
     public function aboutme()
     {
         $user_id = Auth::user()->id;
@@ -96,7 +98,7 @@ class MainController extends Controller
         $education = Education::whereuser_id($user_id)->first();
         $employments = Employment::all();
         $jobs = Job::all();
-      
+
         return view('user.education', compact('education', 'employments', 'jobs'));
     }
     function education_create(Request $request)
@@ -285,7 +287,7 @@ class MainController extends Controller
 
     function addPhoto_create(Request $request, SimpleUpload $upload)
     {
-        
+
         $data['user_id'] = Auth::user()->id;
         $data['image'] = $upload->file($request->image)
             ->dirName('User_Profile')->resizeImage(320, 240)

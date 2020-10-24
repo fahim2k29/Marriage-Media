@@ -15,7 +15,7 @@
                             <div class="col-md-3 card">
                                 <a href="{{ route('successStory_show', $story->id) }}">
                                 @foreach(explode('=',$story->video) as $row)
-                                 @if ($loop->last) 
+                                 @if ($loop->last)
                                     <img src="http://i1.ytimg.com/vi/{{$row}}/default.jpg" class="img-responsive" />
                                     <span class="playbutton"><i class="fa fa-play-circle"></i></span>
                                     @endif
@@ -29,9 +29,9 @@
                                 </a>
                             </div>
                                 @endif
-                        @endforeach   
+                        @endforeach
 
-                       
+
                     </div>
                     <div class="clearfix"></div>
                 </div>

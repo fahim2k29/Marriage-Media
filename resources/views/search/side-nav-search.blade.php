@@ -1,7 +1,9 @@
-<nav class="nav-sidebar searchLeftnav">
-                                    <ul class="nav tabs">
+
+
+                               <nav class="nav-sidebar searchLeftnav nav-sidebar">
+                                    <ul class="nav tabs" style="display: block">
                                         <li class="{{request()->segment(1)=='search' ? 'active' : ''}}">
-                                            <a href="/search" data-title="Quick" aria-expanded="true" class="current">
+                                            <a href="/search" data-title="Quick" aria-expanded="true" class="btn btn-light btn-block btn-lg">
                                                 <div class="pull-left serachBaricon">
                                                     <span class="fa fa-search"></span>
                                                 </div>
@@ -21,8 +23,8 @@
                                             </a>
                                         </li>
 
-                                    <li class="{{request()->segment(1)=='religion' ? 'active' : ''}}">
-                                            <a href="/religion" data-title="Religion" aria-expanded="false" class="current">
+                                         <li class="{{request()->segment(1)=='religion' ? 'active' : ''}}">
+                                            <a href="/religion" data-title="Religion" aria-expanded="false" class="btn btn-light btn-block btn-lg">
                                                 <div class="pull-left serachBaricon">
                                                     <span class="fa fa-moon-o"></span>
                                                 </div>
@@ -42,8 +44,8 @@
                                             </a>
                                         </li>
 
-                                    <li class="{{request()->segment(1)=='education' ? 'active' : ''}}">
-                                            <a href="/education" data-title="Education">
+                                        <li class="{{request()->segment(1)=='education' ? 'active' : ''}}">
+                                            <a href="/education" data-title="Education" class="btn btn-light btn-block btn-lg">
                                                 <div class="pull-left serachBaricon">
                                                     <span class="fa fa-graduation-cap"></span>
                                                 </div>
@@ -65,7 +67,7 @@
                                         </li>
 
                                          <li class="{{request()->segment(1)=='personal' ? 'active' : ''}}">
-                                            <a href="/personal" data-title="Personal" aria-expanded="false" class="current">
+                                            <a href="/personal" data-title="Personal" aria-expanded="false" class="btn btn-light btn-block btn-lg">
                                                 <div class="pull-left serachBaricon">
                                                     <span class="fa fa-user"></span>
                                                 </div>
@@ -85,10 +87,10 @@
                                             </a>
                                         </li>
 
-                                     
+
 
                                           <li class="{{request()->segment(1)=='username' ? 'active' : ''}}">
-                                            <a href="/username" data-title="Profession Search">
+                                            <a href="/username" data-title="Profession Search" class="btn btn-light btn-block btn-lg">
                                                 <div class="pull-left serachBaricon">
                                                     <span class="fa fa-universal-access"></span>
                                                 </div>
@@ -114,6 +116,5 @@
                                         <br />
                                         <br />
                                     </ul>
-
-                                   
                                 </nav>
+

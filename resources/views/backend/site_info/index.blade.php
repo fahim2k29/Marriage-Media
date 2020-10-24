@@ -134,15 +134,15 @@
                     <strong class=" red">{{ $errors->first('meta_key') }}</strong>
                 </div>
             </div>
-            
+
              <div class="form-group">
-                <label class="col-sm-2 no-padding-right bolder" for="short_desc">Description</label>
+                <label class="col-sm-2 no-padding-right bolder" for="short_desc">About US (Maximum 50 words)</label>
                 <div class="col-sm-10">
                                 <textarea name="short_desc"
                                           id="short_desc"
-                                          rows="1"
+                                          rows="3"
                                           class="form-control"
-                                          placeholder="short_desc"
+                                          placeholder="Maximum 50 words"
                                           style="resize: none;padding: 5px 4px 6px !important;">{{ $info->short_desc ?? old('short_desc') }}</textarea>
                 </div>
                 <div class="col-sm-9 col-sm-offset-2">
@@ -162,7 +162,7 @@
                     </div>
                 </div>
             </div> --}}
-            
+
              <div class="form-group">
                 <label class="col-sm-2 no-padding-right bolder" for="meta_desc">Meta Description</label>
                 <div class="col-sm-10">

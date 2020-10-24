@@ -1,269 +1,202 @@
-@extends('user.app') @section('content')
+@extends('layouts.app2')
 
-<!-- Page Content -->
-<div class="wide_fullbgimage signup wide_login_bg">
-    <div class="container" id="signup">
-        <!-- Content Row -->
+@section('content')
 
-        <div id="signupbox-register-form" style="margin-top: 50px;" class="col-md-10 col-lg-10 col-md-offset-1 col-md-offset-1 userregister">
-            <div class="panel panel-info">
-                <div class="panel-heading">
-                    <div class="panel-title">Sign Up</div>
-                </div>
-                <div class="panel-body">
-                    <form method="POST" action="{{ route('register' ) }}">
-                        @csrf
-
-                        <input type="hidden" id="captcha-response" name="captcha-response" />
-
-                        <div id="UserName-group" class="form-group has-feedback form-control-group">
-                            <label for="UserName" class="control-label"><span class="required">*</span> Create a Username</label>
-                            <div class="controls">
-                                <input name="UserName" id="UserName" type="text" required="required" class="form-control" placeholder="Your First name" />
-                            </div>
-                            <div class="col-sm-9">
+    <section class="sign-up">
+        <div class="container ">
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-9">
+                    <div class="card">
+                        <div class="card-header">
+                            <div>Sign Up</div>
+                        </div>
+                       <div class="card-body signup-form">
+                        <form method="POST" action="{{ route('register' ) }}">
+                            @csrf
+                            <div class="form-group row">
+                                <div class="col-md-3">
+                                    <label for="UserName" class="control-label"><span class="required">*</span> Username</label>
+                                </div>
+                                <div class="col-md-9">
+                                    <input name="UserName" id="UserName" type="text" required="required" class="form-control" placeholder="Your First name" />
+                                </div>
                                 <small class="red" style="color: brown;">{{ $errors->first('UserName') }}</small>
                             </div>
-                            <span id="UserName-span-success" class="smicon-new form-control-feedback male span-info-label" data-toggle="tooltip" data-placement="right" title="" data-original-title="Letters, numbers, underscores only">
-                                <i class="fa fa-info-circle" aria-hidden="true"></i>
-                            </span>
-
-                            <span class="help-block with-errors" aria-hidden="false"></span>
-
-                            <div class="clearfix"></div>
-                        </div>
-
-                        <div id="Email-group" class="form-group has-feedback form-control-group">
-                            <label for="email" class="control-label"><span class="required">*</span> Enter your Email</label>
-                            <div class="controls">
-                                <input name="email" id="email" type="email" placeholder="Enter Your Email" data-remote="/registerCheckEmail" required="required" class="form-control" />
-                            </div>
-                            <div class="col-sm-9">
+                            <div class="form-group row">
+                                <div class="col-md-3">
+                                    <label for="email" class="control-label"><span class="required">*</span> Email</label>
+                                </div>
+                                <div class="col-md-9">
+                                    <input name="email" id="email" type="email" placeholder="Enter Your Email" data-remote="/registerCheckEmail" required="required" class="form-control" />
+                                </div>
                                 <small class="red" style="color: brown;">{{ $errors->first('email') }}</small>
                             </div>
-                            <span
-                                id="Email-span-success"
-                                class="smicon-new form-control-feedback male span-info-label"
-                                data-toggle="tooltip"
-                                data-placement="right"
-                                title=""
-                                data-original-title="Your Verification Code will be sent to this Email"
-                            >
-                                <i class="fa fa-info-circle" aria-hidden="true"></i>
-                            </span>
-
-                            <span class="help-block with-errors" aria-hidden="false"></span>
-                            <div class="clearfix"></div>
-                        </div>
-
-                        <div id="ConfirmEmail-group" class="form-group has-feedback form-control-group">
-                            <label for="ConfirmEmail" class="control-label"><span class="required">*</span> Confirm your Email</label>
-                            <div class="controls">
-                                <input name="ConfirmEmail" id="ConfirmEmail" placeholder="Confirm Your Email" type="email" data-match="#Email" required="required" data-error="Please fill out this field." class="form-control" />
-                            </div>
-                            <div class="col-sm-9">
+                            <div class="form-group row">
+                                <div class="col-md-3">
+                                    <label for="ConfirmEmail" class="control-label"><span class="required">*</span> Confirm Email</label>
+                                </div>
+                                <div class="col-md-9">
+                                    <input name="ConfirmEmail" id="ConfirmEmail" placeholder="Confirm Your Email" type="email" data-match="#Email" required="required" data-error="Please fill out this field." class="form-control" />
+                                </div>
                                 <small class="red" style="color: brown;">{{ $errors->first('ConfirmEmail') }}</small>
                             </div>
-                            <span
-                                id="ConfirmEmail-span-success"
-                                class="smicon-new form-control-feedback smicon-info male span-info-label"
-                                data-toggle="tooltip"
-                                data-placement="right"
-                                title=""
-                                data-original-title=""
-                                style="display: none;"
-                            ></span>
-                            <span class="help-block with-errors" aria-hidden="false"></span>
-                            <div class="clearfix"></div>
-                        </div>
-
-                        <div id="Country-group" class="form-group has-feedback form-control-group">
-                            <label for="Country" class="control-label"><span class="required">*</span> Where do you live?</label>
-                            <div class="controls">
-                                <select name="Country" id="Country" required="required" data-error="Please fill out this field." class="select2" tabindex="-1" aria-hidden="true">
-                                    <option>Select Country</option>
-                                    @foreach ($countries as $signupdata)
-                                    <option>{{$signupdata->name}}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-
-                            <span class="help-block with-errors" aria-hidden="false"></span>
-                            <div class="clearfix"></div>
-                        </div>
-
-                        <div id="Gender-group" class="form-group has-feedback form-control-group">
-                            <label for="Gender" class="control-label"><span class="required">*</span> Select Your Gender</label>
-                            <div class="controls">
-                                <select name="Gender" id="Gender" data-error="Please fill out this field." required="required" class="select2"  tabindex="-1" aria-hidden="true">
-                                    <option>Select Your Gender</option>
-                                    <option value="Male" >Male</option>
-                                    <option value="Female">Female</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div id="DOB-group" class="form-group has-feedback form-control-group">
-                            <label for="DOB" class="control-label"><span class="required">*</span> Your Date of Birth</label>
-                            <div class="controls">
-                                <div class="row">
-                                    <div class="col-xs-3">
-                                        <select name="DOB_day" id="DOB-day" required="required"  class="select2" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
-                                            <option>Select Day</option>
-                                            @for($i = 1; $i <= 31; $i++){
-                                                <option value="{{$i}}">{{$i}}</option>
-                                            }
-                                            @endfor
-                                        </select>
-                                    </div>
-                                    <div class="col-xs-5">
-                                        <select name="DOB_month" id="DOB-month" required="required" class="select2" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
-                                            <option>Select Month</option>
-                                            @foreach ($months as $month) {
-                                                <option value="{{$month}}">{{$month}}</option>
-                                            }
+                            <div class="form-group row">
+                                <div class="col-md-3">
+                                    <label for="Country" class="control-label"><span class="required">*</span> Where do you live?</label>
+                                </div>
+                                <div class="col-md-9">
+                                    <select name="Country" class="form-control" id="Country" required="required" data-error="Please fill out this field."  tabindex="-1" aria-hidden="true">
+                                        <option>Select Country</option>
+                                            @foreach ($countries as $signupdata)
+                                            <option>{{$signupdata->name}}</option>
                                             @endforeach
-                                           
-                                        </select>
-                                    </div>
-                                    <div class="col-xs-4">
-                                        <select name="DOB_year" id="DOB-year" required="required" data-select2-id="DOB-year" class="select2" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
-                                            <option>Select</option>
-                                            @for ($i = $now; $i >= 1986; $i--)
-                                                <option value="{{ $i-16 }}">{{ $i-16 }}</option>
-                                            @endfor
-
-                                        </select>
-                                    </div>
+                                    </select>
                                 </div>
                             </div>
-                        </div>
-
-                      
-
-                        <div id="RegistrationReason-group" class="form-group has-feedback form-control-group">
-                            <label for="RegistrationReason" class="control-label"><span class="required">*</span> Reason for Registering?</label>
-                            <div class="controls">
-                                <select name="RegistrationReason" id="RegistrationReason" required="required" class="select2" data-error="Please fill out this field." data-select2-id="RegistrationReason" tabindex="-1" aria-hidden="true">
-                                    <option value="" selected="" data-select2-id="4">Select Registration Reason</option>
-                                    @foreach ($signupdatas as $signupdata)
-                                    <option>{{$signupdata->RegistrationReason_data}}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-
-                            <span class="help-block with-errors" aria-hidden="false"></span>
-                            <div class="clearfix"></div>
-                        </div>
-
-                        <div id="HearAboutUs-group" class="form-group has-feedback form-control-group">
-                            <label for="HearAboutUs" class="control-label"><span class="required">*</span> Where did you hear about us?</label>
-                            <div class="controls">
-                                <select name="HearAboutUs" id="HearAboutUs" required="required" class="select2" data-error="Please fill out this field." data-select2-id="HearAboutUs" tabindex="-1" aria-hidden="true">
-                                    <option value="" selected="" data-select2-id="4"> Select </option>
-                                    @foreach ($signupdatas as $signupdata)
-                                    <option>{{$signupdata->HearAboutUs_data}}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-
-                            <div class="clearfix"></div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right"><span class="required">*</span>{{ __('Password') }}</label>
-
-                            <div class="col-md-12">
-                                <input id="password" type="password" required="required" class="form-control @error('password') is-invalid @enderror" placeholder="At least 8 digits" name="password" required autocomplete="new-password" />
-                                <div class="col-md-4 col-form-label text-md-right">
-                                <input type="checkbox" onclick="myFunction()">Show Password
+                            <div class="form-group row">
+                                <div class="col-md-3">
+                                    <label for="Gender" class="control-label"><span class="required">*</span> Select Your Gender</label>
                                 </div>
-                                <div class="col-sm-9">
-                                    <small class="red" style="color: brown;">{{ $errors->first('password') }}</small>
+                                <div class="col-md-9">
+                                    <select class="form-control" name="Gender" id="Gender" data-error="Please fill out this field." required="required"  tabindex="-1" aria-hidden="true">
+                                        <option value="" selected="">Select Your Gender</option>
+                                        <option value="Male" >Male</option>
+                                        <option value="Female">Female</option>
+                                    </select>
                                 </div>
-                                <span id="Email-span-success" class="smicon-new form-control-feedback male span-info-label" data-toggle="tooltip" data-placement="right" title="" data-original-title="Make your password strong">
-                                    <i class="fa fa-info-circle" aria-hidden="true"></i>
-                                </span>
                             </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right"><span class="required">*</span>{{ __('Confirm Password') }}</label>
-                            <div class="col-md-12">
-                                <input id="password" type="password" required="required" class="form-control @error('password') is-invalid @enderror" placeholder="Re-type your password" name="confirm_password" required autocomplete="new-password" />
-                                <div class="col-sm-9">
-                                    <small class="red" style="color: brown;">{{ $errors->first('confirm_password') }}</small>
+                            <div class="form-group row">
+                                <div class="col-md-3">
+                                    <label for="DOB" class="control-label"><span class="required">*</span> Your Date of Birth</label>
                                 </div>
-                                <span id="Email-span-success" class="smicon-new form-control-feedback male span-info-label" data-toggle="tooltip" data-placement="right" title="" data-original-title="Make your password strong">
-                                    <i class="fa fa-info-circle" aria-hidden="true"></i>
-                                </span>
-                            </div>
-                        </div>
-
-                        <div id="Accept-group" class="form-group has-feedback form-control-group">
-                            <div class="checkbox">
-                                <label class=""> <span class="required">*</span> Terms and Conditions </label>
-
-                                <div class="controls">
-                                    <input name="Accept" id="Accept-1" type="checkbox" value="1" data-error="Please fill out this field." required="" />
+                                <div class="col-md-3">
+                                    <select name="DOB_day" class="form-control" id="DOB-day" required="required"   tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
+                                        <option>Select Day</option>
+                                        @for($i = 1; $i <= 31; $i++){
+                                            <option value="{{$i}}">{{$i}}</option>
+                                        }
+                                        @endfor
+                                    </select>
                                 </div>
-                                <div class="help-block with-errors"></div>
-                                <div class="clearfix"></div>
+                                <div class="col-md-3">
+                                    <select name="DOB_month" class="form-control" id="DOB-month" required="required" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
+                                        <option>Select Month</option>
+                                        @foreach ($months as $month) {
+                                            <option value="{{$month}}">{{$month}}</option>
+                                        }
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="col-md-3">
+                                    <select name="DOB_year" class="form-control" id="DOB-year" required="required" data-select2-id="DOB-year" tabindex="-1" aria-hidden="true" data-error="Please fill out this field.">
+                                        <option>Select</option>
+                                        @for ($i = $now; $i >= 1986; $i--)
+                                            <option value="{{ $i-16 }}">{{ $i-16 }}</option>
+                                        @endfor
+                                    </select>
+                                </div>
                             </div>
-                        </div>
-
-                        
-                        <div class="form-group">
-                            <div class="col-sm-offset-9 col-sm-2">
-                                <button name="Submit" id="Submit" type="submit" class="btn btn-primary btn-submit-register registerUserbtn">Register</button>
+                            <div class="form-group row">
+                                <div class="col-md-3">
+                                    <label for="RegistrationReason" class="control-label"><span class="required">*</span> Registration Reason</label>
+                                </div>
+                                <div class="col-md-9">
+                                    <select name="RegistrationReason" class="form-control" id="RegistrationReason" required="required" data-error="Please fill out this field." data-select2-id="RegistrationReason" tabindex="-1" aria-hidden="true">
+                                        <option value="" selected="" data-select2-id="4">Select Registration Reason</option>
+                                        <option value="I am registering to find myself partner">I am registering to find myself partner</option>
+                                        <option value="I am registering to find my sister a partner">I am registering to find my sister a partner</option>
+                                        <option value="I am registering to find my brother a partner">I am registering to find my brother a partner</option>
+                                        <option value="I am registering to find my son a partner">I am registering to find my son a partner</option>
+                                        <option value="I am registering to find my daughter a partner">I am registering to find my daughter a partner</option>
+                                        <option value="I am registering to find my friend a partner">I am registering to find my friend a partner</option>
+                                        <option value="Others">Others</option>
+                                    </select>
+                                </div>
                             </div>
-                        </div>
-                    </form>
+                            <div class="form-group row">
+                                <div class="col-md-3">
+                                    <label for="HearAboutUs" class="control-label"><span class="required">*</span> Where did you hear about us?</label>
+                                </div>
+                                <div class="col-md-9">
+                                    <select name="HearAboutUs" class="form-control" id="HearAboutUs" required="required"  data-error="Please fill out this field." data-select2-id="HearAboutUs" tabindex="-1" aria-hidden="true">
+                                        <option value="" selected="" data-select2-id="4"> Select </option>
+                                        <option value="Google">Google</option>
+                                        <option value="Friend or Family">Friend or Family</option>
+                                        <option value="Radio">Radio</option>
+                                        <option value="Newspaper">Newspaper</option>
+                                        <option value="Tv Advert">Tv Advert</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-3">
+                                    <label for="password" class="control-label"><span class="required">*</span>{{ __('Password') }}</label>
+                                </div>
+                                <div class="col-md-9">
+                                    <input id="password" type="password" required="required" class="form-control @error('password') is-invalid @enderror" placeholder="At least 8 digits" name="password" required autocomplete="new-password" />
+                                    <input type="checkbox" onclick="myFunction()"> <small> Show Password </small>                                </div>
+                                <small class="red" style="color: brown;">{{ $errors->first('password') }}</small>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-3">
+                                    <label for="password" class="control-label"><span class="required">*</span>{{ __('Confirm Password') }}</label>
+                                </div>
+                                <div class="col-md-9">
+                                    <input id="password" type="password" required="required" class="form-control @error('password') is-invalid @enderror" placeholder="Re-type your password" name="confirm_password" required autocomplete="new-password" />
+                                </div>
+                                <small class="red" style="color: brown;">{{ $errors->first('confirm_password') }}</small>
+                            </div>
+                            <div class="form-group row">
 
-                    <span class="pull-left required" style="margin-left: 68px; margin-top: -110px;">* Required Field</span>
-
-                    <script src="https://www.google.com/recaptcha/api.js" async="" defer=""></script>
-
-                    <script>
-                        $(function () {
-                            // dataLayer.push({
-                            //     'event':'formSubmit'
-                            // });
-                            $(".btn-submit-register").on("click", function () {
-                                var validator = $("#signupbox-register").data("bs.validator");
-                                validator.validate();
-
-                                if (!validator.hasErrors()) {
-                                    $(this).html('<div class="loading">Register    <span style="padding-left: 20px">        <img src="/images/loading.gif" style="width: 20px;" /></span></div>');
-                                    grecaptcha.execute();
-                                } else {
-                                }
-                            });
-                        });
-
-                        function setResponse(response) {
-                            document.getElementById("captcha-response").value = response;
-                            document.getElementById("signupbox-register").submit();
-                        }
-                    </script>
-                    <script>
-                        function myFunction() {
-                        var x = document.getElementById("password");
-                        if (x.type === "password") {
-                            x.type = "text";
-                        } else {
-                            x.type = "password";
-                        }
-                        }
-                    </script>
-                    
+                                <div class="col-md-3">
+                                    <label class="control-label" style="color: #18d26e"> <span class="required">*</span> <small> <a href="#">Terms and Conditions</a></small>  </label>
+                                </div>
+                                <div class="col-md-1">
+                                    <input name="Accept"  id="Accept-1" type="checkbox" value="1" data-error="Please fill out this field." required="" />
+                                </div>
+                                <div class="col-md-8 text-right">
+                                    <small class="control-label" style="color: red" >* Required Field</small>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-sm btn-block">Register</button>
+                        </form>
+                       </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- /.row -->
-</div>
+    </section>
+    <script>
+        $(function () {
 
-<!-- /.container -->
+            $(".btn-submit-register").on("click", function () {
+                var validator = $("#signupbox-register").data("bs.validator");
+                validator.validate();
 
+                if (!validator.hasErrors()) {
+                    $(this).html('<div class="loading">Register    <span style="padding-left: 20px">        <img src="/images/loading.gif" style="width: 20px;" /></span></div>');
+                    grecaptcha.execute();
+                } else {
+                }
+            });
+        });
+
+        function setResponse(response) {
+            document.getElementById("captcha-response").value = response;
+            document.getElementById("signupbox-register").submit();
+        }
+    </script>
+    <script>
+        function myFunction() {
+        var x = document.getElementById("password");
+        if (x.type === "password") {
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }
+        }
+    </script>
 @endsection
+
+

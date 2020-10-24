@@ -41,7 +41,7 @@ class RegisterController extends Controller
     }
 
 
-    
+
     /**
      * Get a validator for an incoming registration request.
      *
@@ -51,7 +51,6 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            
             'UserName' => 'required|string|unique:users',
             'email'=>'required|string|email|unique:users',
             'ConfirmEmail'=>'required|same:email',
@@ -68,8 +67,8 @@ class RegisterController extends Controller
         ]);
     }
 
-        
-    
+
+
 
 
     /**
@@ -81,7 +80,7 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         return User::create([
-            
+
             'UserName' => $data['UserName'],
             'email' => $data['email'],
             'ConfirmEmail' => $data['ConfirmEmail'],
@@ -92,7 +91,7 @@ class RegisterController extends Controller
             'DOB_year' => $data['DOB_year'],
             'RegistrationReason' => $data['RegistrationReason'],
             'HearAboutUs' => $data['HearAboutUs'],
-            'Accept' => $data['Accept'],         
+            'Accept' => $data['Accept'],
             'password' => Hash::make($data['password']),
         ]);
         return redirect()->route('aboutme');

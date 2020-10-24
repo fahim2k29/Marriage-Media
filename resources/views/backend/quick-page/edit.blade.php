@@ -48,9 +48,6 @@
                                     <option value="{{ $page->section }}">{{ $page->section }}</option>
                                     <option value="1">First Section</option>
                                     <option value="2">Second Section</option>
-                                    <option value="3">Third Section</option>
-                                    <option value="4">Fourth Section</option>
-
                                 </select>
                             </div>
                             <strong class=" red">{{ $errors->first('Section') }}</strong>

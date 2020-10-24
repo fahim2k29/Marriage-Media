@@ -44,11 +44,9 @@
                     <div class="col-md-10">
                             <div class="text-center">
                                 <select class="chosen-select col-sm-5 no-padding-right bolder" id="section" name="section">
-                                    <option value="">- Select -</option>                                   
+                                    <option value="">- Select -</option>
+                                    <option value="1">First Section</option>
                                     <option value="2">Second Section</option>
-                                    <option value="3">Third Section</option>
-                                    <option value="4">Fourth Section</option>
-
                                 </select>
                             </div>
                             <strong class=" red">{{ $errors->first('Section') }}</strong>

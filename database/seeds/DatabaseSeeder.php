@@ -11,7 +11,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        
+
         $this->call([
             AboutusTableSeeder::class,
             AdminsTableSeeder::class,
@@ -23,7 +23,8 @@ class DatabaseSeeder extends Seeder
             SiteInfosTableSeeder::class,
             UsersTableSeeder::class,
             JobTableSeeder::class,
-            
+            ContactUSTableSeeder::class,
+
         ]);
     }
 }
