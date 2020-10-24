@@ -55,7 +55,7 @@ Route::post('/signup/create_one', 'HomeController@register_create_one')->name('r
 //...!...profile update//
 
 
-Route::get('/', 'MainController@index')->name('single')->middleware('CheckAuthRedirectDashboard');
+Route::get('/', 'MainController@index')->name('single')->middleware('CheckLoggedin');
 
 //Route::get('/form', 'MainController@form')->name('form');
 Route::get('/search', 'SearchController@index')->name('search_quick');

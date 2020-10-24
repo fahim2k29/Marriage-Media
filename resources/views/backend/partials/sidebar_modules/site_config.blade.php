@@ -45,26 +45,26 @@
                     <b class="arrow"></b>
                 </li>
             </ul> --}}
-            
+
             <ul class="submenu">
                 <li class="{{ $routeName === 'backend.site_config.quick-page' ? 'open' : ''}}">
                     <a href="{{route('backend.site_config.quick-page.index')}}">
                         <i class="menu-icon fa fa-caret-right"></i>
-                       Pages
+                       Footer Pages
                     </a>
                     <b class="arrow"></b>
                 </li>
             </ul>
-            
-            
+
+
             <ul class="submenu">
                 <li class="{{ $routeName === 'backend.site_config.info' ? 'open' : ''}}">
                     <a href="{{route('backend.site_config.info')}}">
                         <i class="menu-icon fa fa-caret-right"></i>
-                        Configuration
+                       Company Configuration
                     </a>
                     <b class="arrow"></b>
                 </li>
             </ul>
-            
+
         </li>

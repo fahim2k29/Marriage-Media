@@ -242,6 +242,21 @@ class HomeController extends Controller
         return view('user.profile.editPhoto', compact('user', 'addPhoto'));
     }
 
+    // public function editPhotoUpdate(Request $request)
+    // {
+    //     $id = auth()->id();
+    //     $service = AddPhoto::where('user_id',$id)->first();
+    //     if($request->hasFile('image')) {
+    //         $image = $request->file('image');
+    //         $filename = $image->getClientOriginalName();
+    //         $image->move(public_path('images/services'), $filename);
+    //         $service->image = $request->file('image')->getClientOriginalName();
+    //     }
+
+    //     $service->update();
+
+    //     return redirect()->back();
+    // }
 
 
     public function editPhotoUpdate(Request $request)
@@ -249,20 +264,19 @@ class HomeController extends Controller
         $request->validate([
             'image' => 'required',
         ]);
+
         $id = auth()->id();
-        $whyPeopleLoves = AddPhoto::find($id);
+        $whyPeopleLoves = AddPhoto::where('user_id',$id)->first();
         if ($request->file('image')){
-            $images = $request->file('image');
-            foreach ($images as $image){
+            $image = $request->file('image');
                 $rand = rand();
                 $imageName = $rand.'.'.$image->getClientOriginalExtension();
-                $image->move(public_path("images/whyPeopleLove/".date("Y").'/'.date('M').'/'.date('D')),$imageName);
-                $imgPath = "whyPeopleLove/".date("Y").'/'.date('M').'/'.date('D').'/'.$imageName;
+                $image->move(public_path("uploads/User_Profile/".date("Y").'/'.date('M').'/'.date('D')),$imageName);
+                $imgPath = "User_Profile/".date("Y").'/'.date('M').'/'.date('D').'/'.$imageName;
                 $whyPeopleLoves->image = $imgPath;
             }
-        }
-        $whyPeopleLoves->update();
-        return redirect()->back();
+        $whyPeopleLoves->save();
+        return back();
 
     }
 

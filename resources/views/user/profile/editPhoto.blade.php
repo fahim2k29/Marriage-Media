@@ -30,13 +30,14 @@
                                                                 <form action="{{ route('editPhoto.update') }}" method="post" enctype="multipart/form-data">
                                                                     @csrf
                                                                 <div class="card-body">
-                                                                    <input name="image[]"
+                                                                    
+                                                                    <input name="image"
                                                                         type="file"
                                                                         id="image"
                                                                         class="form-control"
                                                                         onchange="readURL(this);">
-                                                                    <strong class="red">{{ $errors->first('image[]') }}</strong>
-                                                                    @if($errors->first('image[]'))
+                                                                    <strong class="red">{{ $errors->first('image') }}</strong>
+                                                                    @if($errors->first('image'))
                                                                         <br>
                                                                     @endif
 

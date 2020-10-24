@@ -17,17 +17,11 @@ class CheckLoggedin
      */
     public function handle($request, Closure $next)
     {
-        if (Auth::check()){
-            $id =  Auth::id();
-            $photo = AddPhoto::whereuser_id($id)->first();
+        $id =  Auth::id();
+        $photo = AddPhoto::where('user_id', $id)->first();
 
-            if(is_null($photo))
-            {
-                return $next($request);
-            }
-            else{
+        if (Auth::check() && isset($photo)){
                 return redirect()->route('user_dashboard');
-            }
         }
         else{
             return $next($request);

@@ -4,6 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
   @if(!empty($info->name))
     <title>{{$info->name}}</title>
   @else
@@ -36,7 +37,10 @@
 </head>
 
 <body>
-
+    @php
+    $id =  Auth::id();
+    $photo = App\AddPhoto::whereuser_id($id)->first();
+    @endphp
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top header-transparent" style="background-color: teal">
     <div class="container-fluid">
@@ -44,7 +48,7 @@
       <div class="row justify-content-center">
         <div class="col-xl-11 d-flex align-items-center">
           <h1 class="logo mr-auto">
-              @if (Auth::check())
+              @if (Auth::check() && isset($photo))
                 <a href="/user/dashboard">
                     @if(!empty($info->name))
                     {{$info->name}}
@@ -64,10 +68,7 @@
 
             </h1>
           <nav class="nav-menu d-none d-lg-block">
-              @php
-                    $id =  Auth::id();
-                    $photo = App\AddPhoto::whereuser_id($id)->first();
-              @endphp
+
             @if (Auth::check() && isset($photo))
                 <ul>
                     <li class="{{request()->segment(2)=='dashboard' ? 'active' : ''}}"><a href="/user/dashboard">Home</a></li>

@@ -31,17 +31,17 @@
             <th class="bg-dark" style="">Action</th>
         </tr>
 
-     
+
         @forelse($stories as $key => $story)
             <tr>
                 <td> {{ $key+1 }} </td>
                 <td> {{$story->title}}</td>
-                <td> 
+                <td>
                      @if(!empty ($story->video))
                             <div class="col-md-3 card">
                                 <a href="{{ $story->video }}">
                                 @foreach(explode('=',$story->video) as $row)
-                                 @if ($loop->last) 
+                                 @if ($loop->last)
                                     <img src="http://i1.ytimg.com/vi/{{$row}}/default.jpg" class="img-responsive" />
                                     <span class="playbutton"><i class="fa fa-play-circle"></i></span>
                                 @endif
@@ -55,16 +55,16 @@
                                     {{-- <img src="{{ asset($story->image) }}" class="img-responsive"  />xdfghns --}}
                                 </a>
                             </div>
-                    @endif 
-                        
-                </td>                              
+                    @endif
+
+                </td>
                 <td>
                     <div class="btn-group btn-group-mini btn-corner">
-                        <a href="{{ route('backend.blog.show') }}"
+                        {{-- <a href="{{ route('backend.blog.show') }}"
                            class="btn btn-xs btn-info"
                            title="Edit">
                             <i class="ace-icon fa fa-eye"></i>
-                        </a>
+                        </a> --}}
 
                         <button type="button" class="btn btn-xs btn-danger"
                                 onclick="delete_check({{$story->id}})"
