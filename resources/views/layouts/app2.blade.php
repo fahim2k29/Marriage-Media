@@ -146,9 +146,7 @@
 
           <div class="col-lg-3 col-md-6 footer-info">
             <h3>Bismnillah Marriage</h3>
-            <p>Bismillah-Marriage.com brings to you a secure platform where you can meet thousands
-                of Muslim singles from around the world who are looking for a deep,
-                loving and long lasting marriage</p>
+            <p>{!! substr($info->short_desc, 0,  150) !!} ...</p>
           </div>
 
           <div class="col-lg-3 col-md-6 footer-links">

@@ -46,7 +46,7 @@
 
         <header class="section-header">
           <h3>About Us</h3>
-          <p>Bismillah-Marriage.com brings to you a secure platform where you can meet thousands of Muslim singles from around the world who are looking for a deep, loving and long lasting marriage</p>
+          <p>{!! $info->short_desc !!}</p>
         </header>
       </div>
     </section><!-- End About Us Section -->

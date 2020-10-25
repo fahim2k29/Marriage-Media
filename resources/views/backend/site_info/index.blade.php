@@ -53,8 +53,68 @@
                 </div>
             </div>
 
+            <div class="form-group">
+                <label class="col-sm-2 no-padding-right bolder" for="short_desc">About US (Maximum 50 words)</label>
+                <div class="col-sm-10">
+                                <textarea name="short_desc"
+                                          rows="7"
+                                          class="form-control"
+                                          maxlength="400"
+                                          placeholder="Maximum 50 words"
+                                          style="resize: none;padding: 5px 4px 6px !important;">{!! $info->short_desc !!}</textarea>
+                </div>
+                <div class="col-sm-9 col-sm-offset-2">
+                    <strong class=" red">{{ $errors->first('short_desc') }}</strong>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-2 no-padding-right bolder" for="meta_key">Meta Key </label>
+
+                <div class="col-sm-10">
+                    <input name="meta_key"
+                           type="text"
+                           id="meta_key"
+                           placeholder="Meta Key"
+                           class="form-control"
+                           value="{{ $info->meta_key }}">
+                </div>
+                <div class="col-sm-9 col-sm-offset-2">
+                    <strong class=" red">{{ $errors->first('meta_key') }}</strong>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-2 no-padding-right bolder" for="meta_desc">Meta Description</label>
+                <div class="col-sm-10">
+                                <textarea name="meta_desc"
+                                          rows="6"
+                                          class="form-control"
+                                          maxlength="400"
+                                          placeholder="Maximum 50 words"
+                                          style="resize: none;padding: 5px 4px 6px !important;">{{ $info->meta_desc }}</textarea>
+                </div>
+                <div class="col-sm-9 col-sm-offset-2">
+                    <strong class=" red">{{ $errors->first('short_desc') }}</strong>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-sm btn-success">
+                            <i class="ace-icon fa fa-floppy-o"></i>
+                            Submit
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
 
 
+
+{{--
             <div class="form-group">
                 <label class="col-sm-2 no-padding-right bolder" for="email">Email</label>
 
@@ -69,9 +129,9 @@
                 <div class="col-sm-9 col-sm-offset-2">
                     <strong class=" red">{{ $errors->first('email') }}</strong>
                 </div>
-            </div>
+            </div> --}}
 
-            <div class="form-group">
+            {{-- <div class="form-group">
                 <label class="col-sm-2 no-padding-right bolder" for="mobile">Mobile</label>
                 <div class="col-sm-10 ">
                     <input name="mobile"
@@ -99,9 +159,9 @@
                 <div class="col-sm-9 col-sm-offset-2">
                     <strong class=" red">{{ $errors->first('address') }}</strong>
                 </div>
-            </div>
+            </div> --}}
 
-            <div class="form-group">
+            {{-- <div class="form-group">
                 <label class="col-sm-2 no-padding-right bolder" for="logo">Logo
                 </label>
                 <div class="col-sm-10 ">
@@ -116,82 +176,9 @@
                 </div>
                 <label class="col-sm-offset-2 col-sm-10  red text-align-left"
                        for="logo">Minimum 150x33 pixels</label>
-            </div>
-
-
-            <div class="form-group">
-                <label class="col-sm-2 no-padding-right bolder" for="meta_key">Meta Key</label>
-
-                <div class="col-sm-10">
-                    <input name="meta_key"
-                           type="text"
-                           id="meta_key"
-                           placeholder="Meta Key"
-                           class="form-control"
-                           value="{{ $info->meta_key ?? old('meta_key') }}">
-                </div>
-                <div class="col-sm-9 col-sm-offset-2">
-                    <strong class=" red">{{ $errors->first('meta_key') }}</strong>
-                </div>
-            </div>
-
-             <div class="form-group">
-                <label class="col-sm-2 no-padding-right bolder" for="short_desc">About US (Maximum 50 words)</label>
-                <div class="col-sm-10">
-                                <textarea name="short_desc"
-                                          id="short_desc"
-                                          rows="3"
-                                          class="form-control"
-                                          placeholder="Maximum 50 words"
-                                          style="resize: none;padding: 5px 4px 6px !important;">{{ $info->short_desc ?? old('short_desc') }}</textarea>
-                </div>
-                <div class="col-sm-9 col-sm-offset-2">
-                    <strong class=" red">{{ $errors->first('short_desc') }}</strong>
-                </div>
-            </div>
-
-            {{-- <div class="form-group">
-                <label class="col-sm-2 no-padding-right bolder" for="short_desc">Description </label>
-                <div class="col-sm-10">
-                    @include('backend.components.summer_note',[
-                    'name'=>'short_desc',
-                    'content'=>$info->short_desc ?? old('short_desc')
-                    ])
-                    <div class="col-sm-9 col-sm-offset-2">
-                        <strong class=" red">{{ $errors->first('short_desc') }}</strong>
-                    </div>
-                </div>
             </div> --}}
 
-             <div class="form-group">
-                <label class="col-sm-2 no-padding-right bolder" for="meta_desc">Meta Description</label>
-                <div class="col-sm-10">
-                                <textarea name="meta_desc"
-                                          id="meta_desc"
-                                          rows="1"
-                                          class="form-control"
-                                          placeholder="meta_desc"
-                                          style="resize: none;padding: 5px 4px 6px !important;">{{ $info->meta_desc ?? old('meta_desc') }}</textarea>
-                </div>
-                <div class="col-sm-9 col-sm-offset-2">
-                    <strong class=" red">{{ $errors->first('meta_desc') }}</strong>
-                </div>
-            </div>
-
-
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="pull-right">
-                        <button type="submit" class="btn btn-sm btn-success">
-                            <i class="ace-icon fa fa-floppy-o"></i>
-                            Submit
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </form>
-    </div>
-
+{{--
     <div class="col-sm-3">
         <div class="widget-box first">
             <div class="widget-header">
@@ -239,7 +226,7 @@
                 </div>
             </div>
         </div><!-- /.col -->
-    </div>
+    </div> --}}
 @endsection
 
 @push('js')

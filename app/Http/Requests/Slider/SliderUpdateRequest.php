@@ -15,7 +15,7 @@ class SliderUpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            'position' => 'required|integer|unique:sliders',
+            'position' => 'required|integer',
             'image' => 'required|image|dimensions:max_width=300,max_height=200',
         ];
     }
@@ -25,7 +25,6 @@ class SliderUpdateRequest extends FormRequest
         return [
             'position.required' => "position is required.",
             'position.integer'   => 'position must be Number.',
-            'position.unique'   => 'This number has already been taken.',
         ];
     }
 }
