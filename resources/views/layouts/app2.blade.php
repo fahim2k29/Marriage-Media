@@ -153,7 +153,7 @@
             <h4>Useful Links</h4>
             <ul>
               @foreach ($pages->where('section', 1) as $page)
-                  @if($pages[0]->status == 1)
+                  @if($page->status == 1)
                   <li class="primary-font-2 light-font fontsize-12"> <i class="ion-ios-arrow-right"></i>
                       <a href="/pages/{{$page->id}}"> {{$page->name}} </a>
                   </li>
@@ -191,7 +191,7 @@
             <h4>Help</h4>
             <ul>
               @foreach ($pages->where('section', 2) as $page)
-                  @if($pages[1]->status == 1)
+                  @if($page->status == 1)
                   <li class="primary-font-2 light-font fontsize-12"><i class="ion-ios-arrow-right"></i>
                       <a href="/pages/{{$page->id}}"> {{$page->name}} </a>
                   </li>
