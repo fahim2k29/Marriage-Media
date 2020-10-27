@@ -54,17 +54,33 @@
             </div>
 
             <div class="form-group">
-                <label class="col-sm-2 no-padding-right bolder" for="short_desc">About US (Maximum 50 words)</label>
+                <label class="col-sm-2 no-padding-right bolder" for="short_desc">About US</label>
                 <div class="col-sm-10">
                                 <textarea name="short_desc"
                                           rows="7"
                                           class="form-control"
                                           maxlength="400"
-                                          placeholder="Maximum 50 words"
+                                          placeholder="About Us"
                                           style="resize: none;padding: 5px 4px 6px !important;">{!! $info->short_desc !!}</textarea>
                 </div>
                 <div class="col-sm-9 col-sm-offset-2">
                     <strong class=" red">{{ $errors->first('short_desc') }}</strong>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-2 no-padding-right bolder" for="address">Short Description</label>
+                <div class="col-sm-10">
+                                <textarea name="address"
+                                          id="address"
+                                          rows="3"
+                                          maxlength="150"
+                                          class="form-control"
+                                          placeholder="Short Description"
+                                          style="resize: none;padding: 5px 4px 6px !important;">{{ $info->address ?? old('address') }}</textarea>
+                </div>
+                <div class="col-sm-9 col-sm-offset-2">
+                    <strong class=" red">{{ $errors->first('address') }}</strong>
                 </div>
             </div>
 

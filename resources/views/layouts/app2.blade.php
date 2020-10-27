@@ -145,8 +145,13 @@
         <div class="row">
 
           <div class="col-lg-3 col-md-6 footer-info">
-            <h3>Bismnillah Marriage</h3>
-            <p>{!! substr($info->short_desc, 0,  150) !!} ...</p>
+            @if(!empty($info->name))
+            <h3>{{$info->name}}</h3>
+          @else
+            <h3> Bismillah Marriage</h3>
+          @endif
+
+            <p>{!! $info->address !!}</p>
           </div>
 
           <div class="col-lg-3 col-md-6 footer-links">
