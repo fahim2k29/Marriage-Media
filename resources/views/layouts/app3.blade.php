@@ -37,10 +37,6 @@
 </head>
 
 <body>
-    @php
-    $id =  Auth::id();
-    $photo = App\AddPhoto::whereuser_id($id)->first();
-    @endphp
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top header-transparent" style="background-color: teal">
     <div class="container-fluid">
@@ -48,56 +44,15 @@
       <div class="row justify-content-center">
         <div class="col-xl-11 d-flex align-items-center">
           <h1 class="logo mr-auto">
-              @if (Auth::check() && isset($photo))
-                <a href="/user/dashboard">
+                <a href="/">
                     @if(!empty($info->name))
                     {{$info->name}}
                     @else
                     BismillahMarriage
                     @endif
                 </a>
-                @else
-                    <a href="/">
-                        @if(!empty($info->name))
-                        {{$info->name}}
-                        @else
-                        BismillahMarriage
-                        @endif
-                    </a>
-                @endif
-
             </h1>
           <nav class="nav-menu d-none d-lg-block">
-
-            @if (Auth::check() && isset($photo))
-                <ul>
-                    <li class="{{request()->segment(2)=='dashboard' ? 'active' : ''}}"><a href="/user/dashboard">Home</a></li>
-                    <li class="{{request()->segment(1)=='search' ? 'active' : ''}}"><a href="/search">Search</a></li>
-                    <li><a href="#Messages">Messages</a></li>
-                    <li><a href="#portfolio">Profile</a></li>
-                    <li class="{{request()->segment(2)=='packages' ? 'active' : ''}}"><a href="/membership/packages">Membership</a></li>
-                    <li class="drop-down">
-                        @php
-                            $photo = App\AddPhoto::where('user_id',auth()->id())->first();
-                            $user = App\User::where('id',auth()->id())->first();
-                        @endphp
-                        <a href="/user/dashboard" style="margin-top:-10px">
-                        <img class="rounded-circle" src="{{asset($photo->image) }}" height="38px" width="40px" /></a>
-                            <ul>
-                                <li><a href="/user/dashboard/profile">Profile</a></li>
-                                <li><a href="/editPhoto">My Photos</a></li>
-                                <li><a  href="{{ route('logout') }}" onclick="event.preventDefault();
-                                    document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
-                                    </a>
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" >
-                                        @csrf
-                                    </form>
-                                </li>
-                            </ul>
-                    </li>
-                </ul>
-            @else
             <ul>
                 <li class="{{request()->segment(1)=='' ? 'active' : ''}}"><a href="/">Home</a></li>
                 <li class="{{request()->segment(3)=='all' ? 'active' : ''}}"><a href="/search/result/all">Profile</a></li>
@@ -112,8 +67,20 @@
                   </ul>
                 </li>
                 <li class="{{request()->segment(2)=='index' ? 'active' : ''}}"><a href="/contactUs/index">Contact Us</a></li>
+                @if (Auth::check())
+                <li><a  href="{{ route('logout') }}" onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();">
+                    {{ __('Logout') }}
+                    </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" >
+                        @csrf
+                    </form>
+                </li>
+                @else
+                <li></li>
+                @endif
               </ul>
-            @endif
+
           </nav><!-- .nav-menu -->
         </div>
       </div>

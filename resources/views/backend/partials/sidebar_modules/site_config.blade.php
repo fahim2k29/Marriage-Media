@@ -8,25 +8,6 @@
                 <b class="arrow fa fa-angle-down"></b>
             </a>
             <b class="arrow"></b>
-
-            {{-- <ul class="submenu">
-                <li class="{{ $routeName === 'backend.site_config.about-us' ? 'open' : ''}}">
-                    <a href="{{route('backend.site_config.about-us')}}">
-                        <i class="menu-icon fa fa-caret-right"></i>
-                        About-us
-                    </a>
-                    <b class="arrow"></b>
-                </li>
-            </ul> --}}
-            <!-- <ul class="submenu">
-                <li class="{{ $routeName === 'backend.site_config.banner' ? 'open' : ''}}">
-                    <a href="{{route('backend.site_config.banner.index')}}">
-                        <i class="menu-icon fa fa-caret-right"></i>
-                       Banner
-                    </a>
-                    <b class="arrow"></b>
-                </li>
-            </ul> -->
             <ul class="submenu">
                 <li class="{{ $routeName === 'backend.site_config.slider' ? 'open' : ''}}">
                     <a href="{{route('backend.site_config.slider.index')}}">
@@ -36,21 +17,13 @@
                     <b class="arrow"></b>
                 </li>
             </ul>
-            {{-- <ul class="submenu">
-                <li class="{{ $routeName === 'backend.site_config.offer' ? 'open' : ''}}">
-                    <a href="{{route('backend.site_config.offer.index')}}">
-                        <i class="menu-icon fa fa-caret-right"></i>
-                       Offer
-                    </a>
-                    <b class="arrow"></b>
-                </li>
-            </ul> --}}
+            
 
             <ul class="submenu">
                 <li class="{{ $routeName === 'backend.site_config.quick-page' ? 'open' : ''}}">
                     <a href="{{route('backend.site_config.quick-page.index')}}">
                         <i class="menu-icon fa fa-caret-right"></i>
-                       Footer Pages
+                       quick Pages
                     </a>
                     <b class="arrow"></b>
                 </li>
@@ -61,7 +34,7 @@
                 <li class="{{ $routeName === 'backend.site_config.info' ? 'open' : ''}}">
                     <a href="{{route('backend.site_config.info')}}">
                         <i class="menu-icon fa fa-caret-right"></i>
-                       Company Configuration
+                       Configuration
                     </a>
                     <b class="arrow"></b>
                 </li>

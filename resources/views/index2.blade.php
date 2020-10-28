@@ -1,4 +1,4 @@
-@extends('layouts.app2')
+@extends('layouts.app3')
 
 @section('content')
 
@@ -13,10 +13,14 @@
         @foreach ($slider as $key => $slide)
             <div class="carousel-item{{ $key == 0 ? ' active' : '' }}" style="background-image: url({{ $slide->image }})">
                 <div class="carousel-container">
-                <div class="container">
-                    <a href="/login" class="btn-get-started scrollto animate__animated animate__fadeInUp">Login </a> <br>
-                    <a href="/signup" class="btn-get-started scrollto animate__animated animate__fadeInUp">Register</a>
-                </div>
+                    @if (Auth::check())
+                    <div class="container"></div>
+                    @else
+                    <div class="container">
+                        <a href="/login" class="btn-get-started scrollto animate__animated animate__fadeInUp">Login </a> <br>
+                        <a href="/signup" class="btn-get-started scrollto animate__animated animate__fadeInUp">Register</a>
+                    </div>
+                    @endif
                 </div>
             </div>
         @endforeach

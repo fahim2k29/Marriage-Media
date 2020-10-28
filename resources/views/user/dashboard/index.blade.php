@@ -13,16 +13,7 @@
                         </div>
                         <div class="card-body">
                             <div>
-
-                                @if (isset($photo))
                                 <img src="{{asset($photo) }}" class="img-fluid" style="width: 100%; height:100%" >
-                                @else
-                                    @if($users->Gender == 'Male')
-                                        <img src="{{asset('assets/images/avatars')}}/avatar3.png" class="img-fluid" style="width: 100%;height:100%" />
-                                    @else
-                                        <img src="{{asset('assets/images/avatars')}}/profile-pic.jpg" class="img-fluid" style="width: 100%;height:100%" />
-                                    @endif
-                                @endif
                             </div>
                             <div class="text-center">
                                 <span style="font-weight: 700">ShortName: {{ Auth::user()->UserName }}</span>  ||  <span style="font-weight: 700;color:#18d26e">Age: {{\Carbon\Carbon::createFromDate(Auth::user()->DOB_year)->diff(\Carbon\Carbon::now())->format('%y')}}</span>
@@ -92,7 +83,7 @@
               <a href="{{ route('showInfo', $us->id) }}" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
             </figure>
             <div class="portfolio-info">
-               
+
               <h4><a href="{{ route('showInfo', $us->id) }}">{{$us->UserName}}   {{ (int)Carbon\Carbon::now()->format('Y') - (int)$us->DOB_year }}</a></h4>
               <p> @if ($us->education) {{ $us->education->Employment }} @endif</p>
             </div>

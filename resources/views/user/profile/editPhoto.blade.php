@@ -30,8 +30,10 @@
                                                                 <form action="{{ route('editPhoto.update') }}" method="post" enctype="multipart/form-data">
                                                                     @csrf
                                                                 <div class="card-body">
-                                                                    
-                                                                    <input name="image"
+
+                                                                    <input
+
+                                                                        name="image"
                                                                         type="file"
                                                                         id="image"
                                                                         class="form-control"

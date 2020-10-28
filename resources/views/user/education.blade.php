@@ -1,4 +1,4 @@
-@extends('layouts.app2') @section('content')
+@extends('layouts.app3') @section('content')
 <section class="sign-up" style="background-color: white">
     <div class="container ">
         <div class="row">

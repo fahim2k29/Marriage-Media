@@ -1,7 +1,9 @@
 <?php
 
 use App\Home;
+
 namespace App\Http\Controllers;
+
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use App\Registration_form;
@@ -22,11 +24,15 @@ use App\PersonalData;
 use App\ReligionData;
 use App\Rules\MatchOldPassword;
 use App\SignupData;
-Use App\Transaction;
-Use App\UserLougoutTime;
+use App\Transaction;
+use App\UserLougoutTime;
 use Auth;
 use Illuminate\Support\Facades\Hash;
 use NabilAnam\SimpleUpload\SimpleUpload;
+use Intervention\Image\Exception\NotReadableException;
+use Intervention\Image\ImageManagerStatic as Image;
+
+
 
 class HomeController extends Controller
 {
@@ -45,7 +51,7 @@ class HomeController extends Controller
 
     public function __construct()
     {
-        $this->middleware(['auth','verified']);
+        $this->middleware(['auth', 'verified']);
     }
 
     public function index()
@@ -58,63 +64,63 @@ class HomeController extends Controller
         $offer = Package::where('id', $id)->first();
         // dd($offer->price);
         $price = $offer->price;
-        session()->put('item_price',$price);
-        session()->put('item_id',$id);
+        session()->put('item_price', $price);
+        session()->put('item_id', $id);
         return view('welcome', compact('offer'));
     }
 
     public function paypal_payment($item_id)
     {
         $data['users'] =  User::relations()->get();
-        $data['photo']= AddPhoto::where('user_id',auth()->id())->first()->image;
+        $data['photo'] = AddPhoto::where('user_id', auth()->id())->first()->image;
         $user_id = Auth::id();
         $item_price = Package::whereid($item_id)->first();
         $item_duration = Package::whereid($item_id)->first();
         $purchase_date = Carbon::now()->format('Y-m-d H:i:s');
         $expire_date = Carbon::now()->addDays($item_duration->duration)->format('Y-m-d H:i:s');
         Payment::create([
-        'user_id'       =>$user_id,
-        'package_id'    =>$item_id,
-        'price'         =>$item_price->price,
-        'status'        =>1,
-        'purchase_date' =>$purchase_date,
-        'expire_date'   =>$expire_date,
+            'user_id'       => $user_id,
+            'package_id'    => $item_id,
+            'price'         => $item_price->price,
+            'status'        => 1,
+            'purchase_date' => $purchase_date,
+            'expire_date'   => $expire_date,
         ]);
         Transaction::create([
-        'user_id'               =>$user_id,
-        'fk_created_by'         =>$user_id,
-        'fk_updated_by'         =>$user_id,
-        'amount'                =>$item_price->price,
-        'transactionable_type'  =>'paypal',
-        'transactionable_id'    =>'1',
+            'user_id'               => $user_id,
+            'fk_created_by'         => $user_id,
+            'fk_updated_by'         => $user_id,
+            'amount'                => $item_price->price,
+            'transactionable_type'  => 'paypal',
+            'transactionable_id'    => '1',
         ]);
-        return view('user.dashboard.index', $data)->with('message','Thank you for your purchase!');
+        return view('user.dashboard.index', $data)->with('message', 'Thank you for your purchase!');
     }
 
 
     public function user_dashboard()
     {
         $data['users'] =  User::relations()->get();
-        $data['photo']= AddPhoto::where('user_id',auth()->id())->first()->image;
+        $data['photo'] = AddPhoto::where('user_id', auth()->id())->first()->image;
         return view('user.dashboard.index', $data);
     }
 
     public function changeStatus(Request $request)
     {
         $user = User::find($request->id)->update(['status' => $request->status]);
-        return response()->json(['success'=>'Status changed successfully.']);
+        return response()->json(['success' => 'Status changed successfully.']);
     }
 
     public function user_dashboard_profile()
     {
-        $user = User::with('aboutme','education','religion','officeuse','personal','addphoto')->where('id',auth()->id())->first();
+        $user = User::with('aboutme', 'education', 'religion', 'officeuse', 'personal', 'addphoto')->where('id', auth()->id())->first();
         $signupdatas = SignupData::all();
         $employments = Employment::all();
         $personaldatas = PersonalData::all();
         $religiondatas = ReligionData::all();
         $jobs = Job::get('job_title');
         $countries  = Country::get('name');
-        return view('user.profile.index', compact('user','countries','employments','jobs','signupdatas', 'personaldatas', 'religiondatas'));
+        return view('user.profile.index', compact('user', 'countries', 'employments', 'jobs', 'signupdatas', 'personaldatas', 'religiondatas'));
     }
 
     function aboutme_update(Request $request)
@@ -210,7 +216,7 @@ class HomeController extends Controller
             'DOB_year' => $request->DOB_year,
         ]);
 
-            return back();
+        return back();
     }
 
     public function changePassword()
@@ -266,19 +272,18 @@ class HomeController extends Controller
         ]);
 
         $id = auth()->id();
-        $whyPeopleLoves = AddPhoto::where('user_id',$id)->first();
-        if ($request->file('image')){
+        $whyPeopleLoves = AddPhoto::where('user_id', $id)->first();
+        if ($request->file('image')) {
             $image = $request->file('image');
-                $rand = rand();
-                $imageName = $rand.'.'.$image->getClientOriginalExtension();
-                $image->move(public_path("uploads/User_Profile/".date("Y").'/'.date('M').'/'.date('D')),$imageName);
-                $imgPath = "User_Profile/".date("Y").'/'.date('M').'/'.date('D').'/'.$imageName;
-                $whyPeopleLoves->image = $imgPath;
-            }
+            $rand = rand();
+            $imageName = $rand . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path("uploads/User_Profile/" . date("Y") . '/' . date('M') . '/' . date('D')), $imageName);
+            $imgPath = "User_Profile/" . date("Y") . '/' . date('M') . '/' . date('D') . '/' . $imageName;
+            $whyPeopleLoves->image = $imgPath;
+        }
         $whyPeopleLoves->save();
         return back();
-
-    }
+        }
 
     public function editPersonalInfo()
     {
@@ -289,8 +294,8 @@ class HomeController extends Controller
         $signupdatas = SignupData::all();
         $countries  = Country::all();
         $now = Carbon::now()->format('Y');
-        $months = array("January","February","March","April","May","June","July","August","September","October","November","December");
-        return view('user.profile.editPersonalInfo', compact('countries','now','months', 'user', 'officeUse', 'addPhoto', 'signupdatas'));
+        $months = array("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
+        return view('user.profile.editPersonalInfo', compact('countries', 'now', 'months', 'user', 'officeUse', 'addPhoto', 'signupdatas'));
     }
 
     public function changeUsername()
@@ -335,22 +340,22 @@ class HomeController extends Controller
         $offers = Package::all();
         $pay = Payment::whereuser_id($userid)->wherestatus(1)->first();
 
-        if(!empty($pay)){
+        if (!empty($pay)) {
             $item_duration = Package::whereid($pay->package_id)->first();
             $diff_day = Carbon::now()->diffInDays($pay->expire_date);
             $now = Carbon::now();
             $start_date = $pay->purchase_date;
             $end_date = $pay->expire_date;
-            if($now->between($start_date,$end_date)){
+            if ($now->between($start_date, $end_date)) {
             } else {
                 Payment::whereid($pay->id)->update([
-                            'status'=>0,
-                        ]);
-            $pay = Payment::whereuser_id($userid)->wherestatus(1)->first();
+                    'status' => 0,
+                ]);
+                $pay = Payment::whereuser_id($userid)->wherestatus(1)->first();
             }
         }
 
-        return view('user.profile.membership', compact('user','addPhoto','offers', 'pay'));
+        return view('user.profile.membership', compact('user', 'addPhoto', 'offers', 'pay'));
     }
 
     public function changeEmail_store(Request $request)
@@ -372,9 +377,4 @@ class HomeController extends Controller
         $users  = User::relations()->find($id);
         return view('user.profile.showinfo', compact('users'));
     }
-
-
-
-
-
 }

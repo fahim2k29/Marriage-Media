@@ -15,7 +15,7 @@ class SliderUpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            'position' => 'required|integer',
+            'position' => 'required|integer|unique:sliders,position,'.$this->slider->id,
             'image' => 'required|image|dimensions:max_width=300,max_height=200',
         ];
     }
