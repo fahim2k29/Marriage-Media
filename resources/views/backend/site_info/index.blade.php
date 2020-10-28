@@ -59,7 +59,7 @@
                                 <textarea name="short_desc"
                                           rows="7"
                                           class="form-control"
-                                          maxlength="400"
+                                          maxlength="1500"
                                           placeholder="About Us"
                                           style="resize: none;padding: 5px 4px 6px !important;">{!! $info->short_desc !!}</textarea>
                 </div>
