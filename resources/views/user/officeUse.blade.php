@@ -75,7 +75,7 @@
                                 <label for="ContactTel" class="control-label"><span class="required">*</span> Contact Tel</label>
                             </div>
                             <div class="col-md-9">
-                                <input name="ContactTel" required="required" id="ContactTel" type="text" maxlength="14" minlength="6" size="14" onkeypress='return event.charCode >=48 && event.charCode <= 57' required="required" value="{{$officeUse->ContactTel}}" class="form-control" />
+                                <input name="ContactTel" required="required" id="ContactTel" type="text" maxlength="14" minlength="6" size="14" onkeypress='return event.charCode >=48 && event.charCode <= 57'  value="{{$officeUse->ContactTel}}" class="form-control" />
                             </div>
                             <small class="red" style="color: brown;">{{ $errors->first('ContactTel') }}</small>
                         </div>

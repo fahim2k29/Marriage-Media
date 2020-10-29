@@ -2,16 +2,47 @@
 <html lang="en">
 
 <head>
+    @if(!empty($info->name))
+    <title>{{$info->name}} - {{$info->site_title}}</title>
+    @else
+        <title> Bismillah Marriage</title>
+    @endif
+    <meta name="description" content="{{ $info->meta_desc }}" />
+    <meta name="keywords" content="{{ $info->meta_key }}" />
+    <meta name="title" content="{{ $info->site_title }}" />
+    <link rel="canonical" href="https://www.lovemarriage.info/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="{{$info->name}} - {{$info->site_title}}" />
+    <meta property="og:description" content="{{ $info->meta_desc }}" />
+    <meta property="og:url" content="https://www.lovemarriage.info/" />
+    <meta property="og:site_name" content="{{ $info->name }}" />
+    <meta property="og:image" content="https://www.smartsoftware.com.bd/assets/img/logo/software-company-bangladesh.png" />
+    <meta property="og:image:secure_url" content="https://www.smartsoftware.com.bd/assets/img/logo/software-company-bangladesh.png" />
+    <meta property="og:image:alt" content="software company Bangladesh">
+    <meta property="og:image:type" content="image/png" />
+    <meta name="twitter:title" content="{{ $info->site_title }}" />
+    <meta name="twitter:description" content="{{$info->site_title}}" />
+    <meta name="Googlebot" content="all" />
+    <meta http-equiv="imagetoolbar" content="yes" />
+    <meta name="Author" content="Smart Software Ltd." />
+    <meta name="Copyright" content="Smart Software Ltd." />
+    <meta name="owner" content="Smart Software Ltd." />
+    <meta name="Rating" content="General" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta name="distribution" content="Global" />
+    <meta name="classification" content="{{$info->site_title}}" />
+    <meta name="robots" content="follow,index" />
+    <meta property="og:locale" content="en_US">
+    <meta property="article:publisher" content="https://www.facebook.com/loveMarriage">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:creator" content="@SmartSoftwarebd">
+
+
+{{--
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-  @if(!empty($info->name))
-    <title>{{$info->name}}</title>
-  @else
-    <title> Bismillah Marriage</title>
-  @endif
   <meta content="" name="description">
-  <meta content="" name="keywords">
+  <meta content="" name="keywords"> --}}
 
   <!-- Favicons -->
   <link href="/frontend/newassets/img/favicon.png" rel="icon">
@@ -139,9 +170,9 @@
           <div class="col-lg-3 col-md-6 footer-info">
             @if(!empty($info->name))
             <h3>{{$info->name}}</h3>
-          @else
-            <h3> Bismillah Marriage</h3>
-          @endif
+            @else
+                <h3> Bismillah Marriage</h3>
+            @endif
 
             <p>{!! $info->address !!}</p>
           </div>

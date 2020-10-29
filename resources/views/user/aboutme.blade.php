@@ -18,7 +18,7 @@
                                 <label for="Headline" class="control-label"><span class="required">*</span> Headline</label>
                             </div>
                             <div class="col-md-9">
-                                <input name="Headline" id="Headline" type="text" required="required" value="{{ $aboutme->Headline }}" class="form-control" />
+                                <input name="Headline"  id="Headline" type="text" required="required" value="{{ $aboutme->Headline }}" class="form-control" />
                             </div>
                         </div>
                         <div class="form-group row">

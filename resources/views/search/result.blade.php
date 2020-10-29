@@ -7,6 +7,7 @@
                     <div class="card-header">
                         <div style="text-align: center">Search match</div>
                     </div>
+                    
                     <div class="card-body">
                         <div class="row">
                             @foreach($datas as $user)

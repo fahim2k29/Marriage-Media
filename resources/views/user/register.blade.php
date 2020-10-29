@@ -46,7 +46,7 @@
                                     <label for="Country" class="control-label"><span class="required">*</span> Where do you live?</label>
                                 </div>
                                 <div class="col-md-9">
-                                    <select name="Country" class="form-control" id="Country" required="required" data-error="Please fill out this field."  tabindex="-1" aria-hidden="true">
+                                    <select name="Country" class="form-control" id="Country" required="required" data-error="Please fill out this field."  tabindex="-1" aria-hidden="true" onkeyup="filterFunction()">
                                         <option>Select Country</option>
                                             @foreach ($countries as $signupdata)
                                             <option>{{$signupdata->name}}</option>
