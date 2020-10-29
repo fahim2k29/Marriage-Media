@@ -82,7 +82,7 @@
           <div class="portfolio-wrap">
             <figure>
                 @if (isset($us->addphoto))
-                <img src="{{asset($us->addphoto->image) }}" class="img-fluid" style="width: 100%; height:100%" >
+                <img src="{{asset('User_Profile/'.$us->addphoto->image) }}" class="img-fluid" style="width: 100%; height:100%" >
                 @else
                 @if($us->Gender == 'Male')
                     <img src="{{asset('assets/images/avatars')}}/avatar3.png" class="img-fluid" style="width: 100%;height:100%" />
