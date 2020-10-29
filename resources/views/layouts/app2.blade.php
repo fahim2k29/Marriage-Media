@@ -82,7 +82,7 @@
                             $user = App\User::where('id',auth()->id())->first();
                         @endphp
                         <a href="/user/dashboard" style="margin-top:-10px">
-                        <img class="rounded-circle" src="{{asset($photo->image) }}" height="38px" width="40px" /></a>
+                        <img class="rounded-circle" src="{{asset('User_Profile/'.$photo->image) }}" height="38px" width="40px" /></a>
                             <ul>
                                 <li><a href="/user/dashboard/profile">Profile</a></li>
                                 <li><a href="/editPhoto">My Photos</a></li>

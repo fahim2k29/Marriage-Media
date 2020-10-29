@@ -288,12 +288,27 @@ class MainController extends Controller
     function addPhoto_create(Request $request, SimpleUpload $upload)
     {
 
-        $data['user_id'] = Auth::user()->id;
-        $data['image'] = $upload->file($request->image)
-            ->dirName('User_Profile')->resizeImage(320, 240)
-            ->save();
 
-        AddPhoto::create($data);
+        $id = Auth::user()->id;
+
+        $image = time().'.'.$request->image->extension();
+
+        $request->image->move(public_path('User_Profile'), $image);
+
+        $obj =  new AddPhoto();
+
+        $obj->user_id = $id;
+
+        $obj->image = $image;
+
+        $obj->save();
+
+        // $data['user_id'] = Auth::user()->id;
+        // $data['image'] = $upload->file($request->image)
+        //     ->dirName('User_Profile')->resizeImage(320, 240)
+        //     ->save();
+
+        // AddPhoto::create($data);
 
 
         // $last_inserted_id = AddPhoto::insertGetId([

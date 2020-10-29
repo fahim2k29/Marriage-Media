@@ -34,6 +34,7 @@ use Intervention\Image\ImageManagerStatic as Image;
 
 
 
+
 class HomeController extends Controller
 {
     /**
@@ -267,22 +268,14 @@ class HomeController extends Controller
 
     public function editPhotoUpdate(Request $request)
     {
-        $request->validate([
-            'image' => 'required',
-        ]);
+        $id = Auth::user()->id;
 
-        $id = auth()->id();
-        $whyPeopleLoves = AddPhoto::where('user_id', $id)->first();
-        if ($request->file('image')) {
-            $image = $request->file('image');
-            $rand = rand();
-            $imageName = $rand . '.' . $image->getClientOriginalExtension();
-            $image->move(public_path("uploads/User_Profile/" . date("Y") . '/' . date('M') . '/' . date('D')), $imageName);
-            $imgPath = "User_Profile/" . date("Y") . '/' . date('M') . '/' . date('D') . '/' . $imageName;
-            $whyPeopleLoves->image = $imgPath;
-        }
-        $whyPeopleLoves->save();
-        return back();
+        $image = time().'.'.$request->image->extension();
+        $request->image->move(public_path('User_Profile'), $image);
+        AddPhoto::where('user_id',$id)->update([
+               'image' => $image,
+        ]);
+        return back()->with('message','Successfuly Update Your Profile Picture');
         }
 
     public function editPersonalInfo()

@@ -13,7 +13,7 @@
                         </div>
                         <div class="card-body">
                             <div>
-                                <img src="{{asset($photo) }}" class="img-fluid" style="width: 100%; height:100%" >
+                                <img src="{{asset('User_Profile/'.$photo) }}" class="img-fluid" style="width: 100%; height:100%" >
                             </div>
                             <div class="text-center">
                                 <span style="font-weight: 700">ShortName: {{ Auth::user()->UserName }}</span>  ||  <span style="font-weight: 700;color:#18d26e">Age: {{\Carbon\Carbon::createFromDate(Auth::user()->DOB_year)->diff(\Carbon\Carbon::now())->format('%y')}}</span>

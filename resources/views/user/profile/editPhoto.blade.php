@@ -17,8 +17,7 @@
                             <div class="col-md-9">
                                 <div class="panel panel-info">
 
-                                        <form method="post" action="{{ route('editPhoto.update' ) }}">
-                                            @csrf
+
                                             <div class="card">
                                                 <div class="card-header">
                                                     <div>Update Your Profile Picture</div>
@@ -78,7 +77,7 @@
                                                                 <div class="card-body">
                                                                     <div class="view view-sixth">
                                                                         <div><h5>Your Previous Photo</h5></div>
-                                                                        <img src="{{asset($addPhoto->image)}}" class="img-fluid"/>
+                                                                        <img src="{{asset('User_Profile/'.$addPhoto->image)}}" class="img-fluid"/>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -88,7 +87,7 @@
                                                 </div>
                                             </div>
 
-                                        </form>
+
                                     </div>
                                 </div>
                             </div>
